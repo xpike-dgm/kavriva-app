@@ -42,4 +42,6 @@ Binding sources: `TASK_REGISTRY.md` + `ROUTING_AND_TRACEABILITY.md` (Step 5); St
   round 2 re-test SUFFICIENT + MATCH (hashes verified by separate context)
 - [x] rollback rehearsal completed: 3 files deleted → git status clean, only .gitkeeps remain → all 3
   re-created byte-identical (registry digest 4CBF0133…B23A match, pack copy SHA256 match)
-- [ ] Gate 8 readiness audit completed
+- [x] Gate 8 readiness audit round 1: BLOCKED on 3 procedural items only (uncommitted evidence) → closed:
+  E-PR-001 VERIFIED committed+pushed (`732fa9e`), PROOF_PACK tracked here, checklist flipped with evidence;
+  re-audit round 2 pending
