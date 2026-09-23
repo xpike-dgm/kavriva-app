@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Stable identity/fingerprint; idempotency; CONFLICT/REJECTED semantics. Contents live in the binding source above.
+used_by: (server-internal — no declared external consumer yet; product-code consumers deferred with the code)

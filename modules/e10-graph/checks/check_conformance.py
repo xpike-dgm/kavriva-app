@@ -34,6 +34,8 @@ for r in recs:
         if not isinstance(link, str):
             continue
         link = link.strip().strip("`")
+        if link.startswith("[[") and link.endswith("]]"):
+            link = link[2:-2]
         if link.startswith("planning "):
             continue
         target = (APP_ROOT / link).resolve()

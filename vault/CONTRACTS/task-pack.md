@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Minimum pack + registry states; manual-carry compatible. Contents live in the binding source above.
+used_by: [[modules/e10-graph/MANIFEST.md]] (enforced by the owner capsule per its manifest)

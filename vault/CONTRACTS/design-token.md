@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Tokens finalized per design gate; this record enforces the gate, never finalizes tokens. Contents live in the binding source above.
+used_by: [[modules/e10-graph/MANIFEST.md]] (enforced by the owner capsule per its manifest)

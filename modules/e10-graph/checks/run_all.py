@@ -6,7 +6,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 CHECKS = ["check_manifests.py", "check_contracts.py", "check_packs.py",
           "check_identity.py", "check_orphans.py", "check_links.py",
-          "check_edges.py", "check_conformance.py"]
+          "check_edges.py", "check_conformance.py", "check_trace.py",
+          "check_design.py"]
 worst = 0
 for c in CHECKS:
     r = subprocess.run([sys.executable, str(HERE / c)] + sys.argv[1:],

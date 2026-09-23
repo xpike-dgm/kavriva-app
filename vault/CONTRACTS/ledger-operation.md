@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Identity operation + fingerprint + version; no silent last-writer-wins on critical data. Contents live in the binding source above.
+used_by: [[modules/e01-app/MANIFEST.md]] (declared consumption; single truth in that manifest)

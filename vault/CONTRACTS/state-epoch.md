@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Verbatim state word; floors win ties; epoch reaches all edges. Contents live in the binding source above.
+used_by: (server-internal — no declared external consumer yet; product-code consumers deferred with the code)

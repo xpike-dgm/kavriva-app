@@ -21,9 +21,11 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--plan-root", default="")
 args = ap.parse_args()
 code = 0
+edges = 0
 for p in repo_files():
     text = read(p)
     refs = re.findall(r"`([^`]*\.md)`", text)
+    refs += re.findall(r"\[\[([^\]]*\.md)\]\]", text)
     for ref in refs:
         if "://" in ref or ref.startswith("http") or "*" in ref:
             continue
@@ -61,6 +63,8 @@ for p in repo_files():
             ok = ref in KNOWN_PLANNING or norm in KNOWN_PLANNING
         if not ok:
             code = fail(f"{p.name}: dangling reference: {ref}") or 1
+        else:
+            edges += 1
     labels = []
     for m in re.finditer(r"(?<![A-Za-z/])(" + "|".join(OPEN_LABELS) + r")(?![A-Za-z/])", text):
         start = max(0, m.start() - 25)
@@ -70,5 +74,7 @@ for p in repo_files():
         labels.append(m.group(1))
     if labels and not refs:
         code = fail(f"{p.name}: open-link labels without any reference: {','.join(sorted(set(labels)))}") or 1
-print("check-links: done")
+if edges == 0:
+    code = fail("graph has zero resolved edges (Obsidian view would be empty)") or 1
+print(f"check-links: done, edges = {edges}")
 sys.exit(code)

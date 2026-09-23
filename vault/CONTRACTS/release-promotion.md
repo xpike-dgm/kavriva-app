@@ -10,3 +10,4 @@ supersedes: ~
 ```
 
 Sealed package, single gate; rollback is lethal-error route only. Contents live in the binding source above.
+used_by: (none direct — e02-panel reaches E6 flows only via E3 serving per its manifest; owner E6 governs e07 lanes)

@@ -22,6 +22,8 @@ shape fields); `RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked ne
 | `checks/check-links` | R-014 | broken reference; open-link label smoothed over (MISSING/UNOWNED/BLOCKED/CONFLICT/UNVERIFIED hidden) | T2 |
 | `checks/check-edges` | R-003 | cross-module use without declared allowed edge; dependency cycle | T2 |
 | `checks/conformance-record` | R-013 | conformance shape incomplete (test ID, contract ID+version, subject digest, result, evidence links, gate verdict, reviewer, timestamp) | T3 |
+| `checks/check-trace` | R-014 | registry row without resolvable evidence or owner-manifest; contract without owner module (OUT-3 B-07) | T2 |
+| `checks/check-design` | R-011/R-012 | design-token record unversioned; manifest Links without capability/feature/design reference (OUT-3 B-07) | T2 |
 
 ## Consequence tiers → task classes (from VALIDATION_STRATEGY.md, by reference)
 
