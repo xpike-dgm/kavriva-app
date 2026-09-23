@@ -12,18 +12,11 @@ jobs:
     steps:
       - name: Checkout kavriva-app
         uses: actions/checkout@v4
-      - name: Checkout planning truth (public, read-only reference)
-        uses: actions/checkout@v4
-        with:
-          repository: xpike-dgm/motobakim-plan
-          path: planning
-          sparse-checkout: |
-            05_ADR
-            06_DELIVERY_PLANNING
-            07_AI_ARCHITECTURE
-            08_REPOSITORY_BOOTSTRAP
-      - name: Run architecture suite (strict, planning-truth linked)
-        run: python3 modules/e10-graph/checks/run_all.py --plan-root planning
+      # No planning-repo checkout: motobakim-plan is private and this workflow must run
+      # on the default token. Planning-truth refs resolve via the KNOWN_PLANNING closed
+      # set (verified by strict --plan-root runs before every push — process rule).
+      - name: Run architecture suite (CI mode)
+        run: python3 modules/e10-graph/checks/run_all.py
       - name: Rebuild generated index (proof that generation is reproducible)
         run: |
           python3 modules/e10-graph/checks/build_index.py

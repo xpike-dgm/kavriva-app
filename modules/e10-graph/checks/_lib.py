@@ -15,6 +15,44 @@ APP_ROOT = pathlib.Path(__file__).resolve().parents[3]
 PLAN_ALLOW = ("00_", "05_", "06_", "07_", "08_", "DEC-", "ADR-", "TSQ-",
               "motobakim-plan", "Kavriva-plan")
 
+# Closed set of planning-truth addresses trusted in CI mode (no planning checkout:
+# the planning repo is private). Every entry is verified by strict --plan-root runs
+# before push; any ref outside this set must resolve inside the app repo. Additions
+# here require the same review as a code change.
+KNOWN_PLANNING = frozenset({
+    "06_DELIVERY_PLANNING/TASK_INDEX.md",
+    "07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md",
+    "07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md",
+    "07_AI_ARCHITECTURE/CONTRACTS/CONTRACT_TEMPLATE.md",
+    "07_AI_ARCHITECTURE/MIGRATION_POLICY.md",
+    "07_AI_ARCHITECTURE/MODULE_BOUNDARIES.md",
+    "07_AI_ARCHITECTURE/VALIDATION_STRATEGY.md",
+    "08_REPOSITORY_BOOTSTRAP/PROOF_DRAFT/PROOF_PACK.md",
+    "08_REPOSITORY_BOOTSTRAP/REGISTRY_DRAFT/ROUTING_AND_TRACEABILITY.md",
+    "08_REPOSITORY_BOOTSTRAP/REGISTRY_DRAFT/TASK_REGISTRY.md",
+    "08_REPOSITORY_BOOTSTRAP/VALIDATION_DRAFT/ARCHITECTURE_TEST_SUITE.md",
+    "ARCHITECTURE_TESTS.md",
+    "ARCHITECTURE_TEST_SUITE.md",
+    "CHANGE_CONTROL.md",
+    "COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md",
+    "CONTEXT_ROUTING.md",
+    "CONTRACTS/CONTRACT_CATALOG.md",
+    "DESIGN_CONSISTENCY_AND_CHANGE.md",
+    "EPIC_CATALOG.md",
+    "GRAPH_METADATA_AND_IDENTITY_STANDARD.md",
+    "MIGRATION_ROLLBACK_APPLICABILITY.md",
+    "MODULE_BOUNDARIES.md",
+    "PACK_STANDARD.md",
+    "ROLLBACK_STRATEGY.md",
+    "ROUTING_AND_TRACEABILITY.md",
+    "RULES/README.md",
+    "TASK_EXECUTION_PROTOCOL.md",
+    "TASK_INDEX.md",
+    "TASK_REGISTRY.md",
+    "VALIDATION_COMMANDS.md",
+    "VALIDATION_DRAFT/VALIDATION_COMMANDS.md",
+})
+
 
 SKIP_DIRS = (".git", "__pycache__")
 
