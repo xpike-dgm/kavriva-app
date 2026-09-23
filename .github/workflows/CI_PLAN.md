@@ -1,6 +1,6 @@
-# CI PLAN (DRAFT — Phase-8 Step 4, pending independent review)
+# CI PLAN (INSTALLED — Phase-8 Step 4 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
-Status: REVIEWED PASS (round 1: CHANGES_REQUESTED 2 findings → narrow remediation; round 2: independent re-review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (round 1: CHANGES_REQUESTED 2 findings → narrow remediation; round 2: independent re-review PASS, no open findings, 2026-09-22; installed to `.github/workflows/CI_PLAN.md`)
 Record: `V-CI-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources (single truth, not copied): `DEC-0051` (free = templates + GitHub automation; no API

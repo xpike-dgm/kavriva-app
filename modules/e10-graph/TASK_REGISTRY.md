@@ -1,10 +1,10 @@
-# TASK REGISTRY (DRAFT — Phase-8 Step 5, pending independent review)
+# TASK REGISTRY (INSTALLED — Phase-8 Step 5 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
-Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (round 1: independent review PASS, no open findings, 2026-09-22; installed to `modules/e10-graph/TASK_REGISTRY.md`)
 Record: `V-REG-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/GRAPH_METADATA_AND_IDENTITY_STANDARD.md` (task-registry section:
-`06_DELIVERY_PLANNING/TASK_INDEX.md` frozen planning truth, 7 columns; READY-lifecycle only on the physical
+`planning 06_DELIVERY_PLANNING/TASK_INDEX.md` frozen planning truth, 7 columns; READY-lifecycle only on the physical
 registry with explicit migration/`supersedes` rule; `Evidence` is a Phase-8 field); `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`
 (lifecycle states + CHANGES_REQUESTED loop + different-chat review); `planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md` (14 fields);
 `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers). Install address: `kavriva-app/vault/REGISTRY/`

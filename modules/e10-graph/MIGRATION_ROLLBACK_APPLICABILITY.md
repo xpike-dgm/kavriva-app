@@ -3,7 +3,7 @@
 Status: INSTALLED (Step-6 matrix REVIEWED PASS + installed 2026-09-22; coverage mapping added 2026-09-23, OUT-3 B-21)
 Record: `V-MIG-001` (first claim in this draft; collisions rejected per identity standard)
 
-Binding sources (single truth, not copied): `07_AI_ARCHITECTURE/MIGRATION_POLICY.md` (migration rules by
+Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/MIGRATION_POLICY.md` (migration rules by
 reference to ADR-007/ADR-003); `planning 07_AI_ARCHITECTURE/ROLLBACK_STRATEGY.md` (rollback-as-new-event, quarantine, floors, task-level
 safe return); `planning 07_AI_ARCHITECTURE/DESIGN_CONSISTENCY_AND_CHANGE.md` + `planning 07_AI_ARCHITECTURE/CHANGE_CONTROL.md` (change-invoked re-validation);
 `DEC-0030` (destructive-change owner approval); Step-2 manifests (per-module change/rollback sections, which

@@ -1,9 +1,9 @@
-# VALIDATION COMMANDS (DRAFT — Phase-8 Step 3, pending independent review)
+# VALIDATION COMMANDS (INSTALLED — Phase-8 Step 3 REVIEWED PASS + B-07 rows; OUT-3 B-19 header fix 2026-09-23)
 
-Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (round 1: independent review PASS, no open findings, 2026-09-22; installed to `modules/e10-graph/checks/VALIDATION_COMMANDS.md`)
 Record: `V-CMD-001` (first claim in this draft; collisions rejected per identity standard)
 
-Binding sources (single truth, not copied): `07_AI_ARCHITECTURE/VALIDATION_STRATEGY.md` (check classes +
+Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/VALIDATION_STRATEGY.md` (check classes +
 consequence tiers + run/verify/enforce ownership); `planning 07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (detection families + conformance
 shape fields); `planning 07_AI_ARCHITECTURE/RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked never duplicated);
 `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md` (lifecycle); `DEC-0051` (free = templates + GitHub automation; no API actuation);

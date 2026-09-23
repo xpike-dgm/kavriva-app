@@ -1,6 +1,6 @@
-# ROUTING AND TRACEABILITY (DRAFT — Phase-8 Step 5, pending independent review)
+# ROUTING AND TRACEABILITY (INSTALLED — Phase-8 Step 5 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
-Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (round 1: independent review PASS, no open findings, 2026-09-22; installed to `modules/e10-graph/ROUTING_AND_TRACEABILITY.md`)
 Record: `V-RT-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources: `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md` (selection rule, inputs/output, manual-carry binding);

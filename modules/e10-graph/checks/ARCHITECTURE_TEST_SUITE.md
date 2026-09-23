@@ -1,9 +1,9 @@
-# ARCHITECTURE TEST SUITE (DRAFT — Phase-8 Step 3, pending independent review)
+# ARCHITECTURE TEST SUITE (INSTALLED — Phase-8 Step 3 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
-Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (round 1: independent review PASS, no open findings, 2026-09-22; installed to `modules/e10-graph/checks/ARCHITECTURE_TEST_SUITE.md`)
 Record: `V-TST-001` (first claim in this draft; collisions rejected per identity standard)
 
-Binding sources: `07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (families + detection map + conformance shape);
+Binding sources: `planning 07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (families + detection map + conformance shape);
 `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers); `planning 07_AI_ARCHITECTURE/RULES/README.md` (rule→gate mapping).
 Companion: `VALIDATION_COMMANDS.md` (this step; command addresses + tiers). Install address:
 `modules/e10-graph/checks/` (suite spec alongside command specs).

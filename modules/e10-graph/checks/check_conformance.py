@@ -22,14 +22,12 @@ edir = APP_ROOT / "vault" / "EVIDENCE"
 recs = sorted(edir.glob("*.md")) if edir.exists() else []
 code = 0
 n = 0
-by_id = {}
 for r in recs:
     text = read(r)
     data = parse_simple(meta_yaml(text))
     if not data.get("test_id"):
         continue
     n += 1
-    by_id[data["test_id"]] = r.name
     for f in FIELDS:
         v = data.get(f)
         if not v:
