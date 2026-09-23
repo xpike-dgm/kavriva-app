@@ -3,9 +3,9 @@
 Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
 Record: `V-RT-001` (first claim in this draft; collisions rejected per identity standard)
 
-Binding sources: `CONTEXT_ROUTING.md` (selection rule, inputs/output, manual-carry binding);
-`COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers enumerated + bidirectional chain);
-`TASK_EXECUTION_PROTOCOL.md`; `DEC-0041` (parallel eligibility preserved); `DEC-0051` (manual-carry default).
+Binding sources: `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md` (selection rule, inputs/output, manual-carry binding);
+`planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers enumerated + bidirectional chain);
+`planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`; `DEC-0041` (parallel eligibility preserved); `DEC-0051` (manual-carry default).
 Companion: `TASK_REGISTRY.md` (this step). Install address: `modules/e10-graph/` (router rules) +
 `vault/` (trace graph); no router software selected here.
 
@@ -34,7 +34,7 @@ Companion: `TASK_REGISTRY.md` (this step). Install address: `modules/e10-graph/`
 
 ## Acceptance of THIS draft
 
-1. Selection rule + inputs/output match `CONTEXT_ROUTING.md` exactly (manual check — no invented criterion).
+1. Selection rule + inputs/output match `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md` exactly (manual check — no invented criterion).
 2. Chain order + bidirectionality + open-link visibility match closure matrix (manual check).
 3. Manual-carry default + HELD actuation stated (manual check vs DEC-0051).
 4. Reviewer verdict PASS, zero open findings, different context (R-007).

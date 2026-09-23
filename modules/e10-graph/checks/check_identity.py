@@ -3,13 +3,13 @@ from pathlib import Path
 import re
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, repo_files, read, fence_yaml, parse_simple, reject, fail
+from _lib import APP_ROOT, repo_files, read, meta_yaml, parse_simple, reject, fail
 
 ID_KEYS = ("task_id", "test_id", "contract", "pack_id")
 seen, slugs, code = {}, {}, 0
 for p in repo_files():
     text = read(p)
-    data = parse_simple(fence_yaml(text))
+    data = parse_simple(meta_yaml(text))
     m = re.search(r"^Record:\s*`([^`]+)`", text, re.M)
     ids = [f"{k}:{data[k]}" for k in ID_KEYS if data.get(k)]
     if m:

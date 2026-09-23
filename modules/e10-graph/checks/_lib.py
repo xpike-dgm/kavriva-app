@@ -20,6 +20,17 @@ PLAN_ALLOW = ("00_", "05_", "06_", "07_", "08_", "DEC-", "ADR-", "TSQ-",
 # before push; any ref outside this set must resolve inside the app repo. Additions
 # here require the same review as a code change.
 KNOWN_PLANNING = frozenset({
+    "08_REPOSITORY_BOOTSTRAP/CI_DRAFT/CI_PLAN.md",
+    "08_REPOSITORY_BOOTSTRAP/VALIDATION_DRAFT/VALIDATION_COMMANDS.md",
+    "07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md",
+    "07_AI_ARCHITECTURE/ROLLBACK_STRATEGY.md",
+    "07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md",
+    "06_DELIVERY_PLANNING/EPIC_CATALOG.md",
+    "07_AI_ARCHITECTURE/DESIGN_CONSISTENCY_AND_CHANGE.md",
+    "07_AI_ARCHITECTURE/CONTEXT_ROUTING.md",
+    "07_AI_ARCHITECTURE/CHANGE_CONTROL.md",
+    "07_AI_ARCHITECTURE/GRAPH_METADATA_AND_IDENTITY_STANDARD.md",
+    "07_AI_ARCHITECTURE/RULES/README.md",
     "07_AI_ARCHITECTURE/CONTRACTS/CONTRACT_CATALOG.md",
     "06_DELIVERY_PLANNING/TASK_INDEX.md",
     "07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md",
@@ -71,7 +82,7 @@ def fence_yaml(text):
 
 
 def frontmatter_yaml(text):
-    m = re.match(r"---\n(.*?)\n---(?:\n|$)", text, re.S)
+    m = re.search(r"^---\n(.*?)\n---\s*$", text, re.S | re.M)
     return m.group(1) if m else ""
 
 

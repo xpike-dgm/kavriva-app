@@ -4,9 +4,9 @@ Status: REVIEWED PASS (round 1: CHANGES_REQUESTED 2 findings → narrow remediat
 Record: `V-CI-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources (single truth, not copied): `DEC-0051` (free = templates + GitHub automation; no API
-actuation); Step-3 `VALIDATION_DRAFT/VALIDATION_COMMANDS.md` (8 commands × T1/T2/T3) +
-`ARCHITECTURE_TEST_SUITE.md` (gate signals FAIL / WARN-then-FAIL / REJECT); `RULES/README.md`
-(rule→gate mapping: per-task review / release gate / bootstrap gate); `TASK_EXECUTION_PROTOCOL.md`
+actuation); Step-3 `planning 08_REPOSITORY_BOOTSTRAP/VALIDATION_DRAFT/VALIDATION_COMMANDS.md` (8 commands × T1/T2/T3) +
+`ARCHITECTURE_TEST_SUITE.md` (gate signals FAIL / WARN-then-FAIL / REJECT); `planning 07_AI_ARCHITECTURE/RULES/README.md`
+(rule→gate mapping: per-task review / release gate / bootstrap gate); `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`
 (lifecycle + different-chat review); Step-1 blueprint (`.github/workflows/` address reservation).
 Install addresses: `kavriva-app/.github/workflows/` (workflow files) — this draft is the spec; YAML wiring
 is installation after PASS + owner approval.

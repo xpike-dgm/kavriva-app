@@ -1,11 +1,11 @@
 """check-links (R-014): backticked/wikilink .md references resolve; open-link labels visible.
 
-Resolution order: parent-relative, APP-relative, kavriva-app/-prefixed, unique-basename
-shortcut (exactly one in-app match), plan-tree (strict --plan-root) or KNOWN_PLANNING
-closed set (CI mode). Pathed refs (containing /) NEVER consult the closed set: they must
-resolve in-app or match a full planning path (OUT-3 B-04 — a deleted in-app file must not
-validate through a same-basename planning entry). Smoothing: a file carrying open-link
-labels with no reference at all FAILs (unsourced claim). Zero resolved edges FAILs.
+Bare refs (no /) resolve IN-APP UNIQUE ONLY — never the plan tree, never the closed set.
+Planning refs use the `planning <full-path>` form (in-app: APP-relative; strict: plan-tree;
+CI: KNOWN_PLANNING full paths). Pathed refs must resolve in-app or match a full planning
+path. Frozen proof copy vault/PACKS/P-PROOF-001.md is exempt from ref validation
+(byte-frozen at proof time with its legacy bare refs, verified then; deleted-file attacks
+are caught independently by check-presence). Zero resolved edges FAILs.
 """
 import argparse
 import re
@@ -17,16 +17,20 @@ from _lib import APP_ROOT, repo_files, read, fail
 OPEN_LABELS = ("MISSING", "UNOWNED", "BLOCKED", "CONFLICT", "UNVERIFIED",
                "PENDING", "HELD", "TBD")
 
+FROZEN = ("vault/PACKS/P-PROOF-001.md",)
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--plan-root", default="")
 args = ap.parse_args()
 code = 0
 edges = 0
 for p in repo_files():
+    rel = p.relative_to(APP_ROOT).as_posix()
     text = read(p)
     refs = re.findall(r"`([^`]*\.md)`", text)
     refs += re.findall(r"\[\[([^\]]*\.md)\]\]", text)
-    for ref in refs:
+    check_refs = refs if rel not in FROZEN else []
+    for ref in check_refs:
         if "://" in ref or ref.startswith("http") or "*" in ref:
             continue
         ok = False
@@ -41,7 +45,7 @@ for p in repo_files():
         if not ok and ref.startswith("kavriva-app/"):
             ok = (APP_ROOT / ref[len("kavriva-app/"):]).exists() or \
                 (APP_ROOT.parent / ref).exists()
-        if not ok:
+        if not ok and "/" not in ref:
             base = ref.split("/")[-1]
             pool = list(APP_ROOT.rglob(base))
             pool = [x for x in pool if ".git" not in x.parts]
@@ -53,11 +57,6 @@ for p in repo_files():
             pref = ref[len("planning "):] if ref.startswith("planning ") else ref
             if (proot / pref).exists():
                 ok = True
-            elif "/" not in ref:
-                base = ref.split("/")[-1]
-                pool = list(proot.rglob(base))
-                if len(pool) == 1:
-                    ok = True
         if not ok and not args.plan_root:
             from _lib import KNOWN_PLANNING
             norm = ref[len("planning "):] if ref.startswith("planning ") else ref

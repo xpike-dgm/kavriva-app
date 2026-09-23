@@ -47,4 +47,4 @@ decision-layer logic up to — but never including — final authority.
 
 - Requirements/design: `C9.1`..`C9.7`, `F9.*`; `DEC-0028`, `DEC-0029`.
 - Architecture: seam rows (E9 proposes / E1 renders / E3 verifies); `R-001`, `R-003`, `R-004`, `R-007`, `R-009`, `R-013`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E9 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E9 rows (Step 5 builds).

@@ -4,9 +4,9 @@ Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-
 Record: `V-CMD-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources (single truth, not copied): `07_AI_ARCHITECTURE/VALIDATION_STRATEGY.md` (check classes +
-consequence tiers + run/verify/enforce ownership); `ARCHITECTURE_TESTS.md` (detection families + conformance
-shape fields); `RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked never duplicated);
-`TASK_EXECUTION_PROTOCOL.md` (lifecycle); `DEC-0051` (free = templates + GitHub automation; no API actuation);
+consequence tiers + run/verify/enforce ownership); `planning 07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (detection families + conformance
+shape fields); `planning 07_AI_ARCHITECTURE/RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked never duplicated);
+`planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md` (lifecycle); `DEC-0051` (free = templates + GitHub automation; no API actuation);
 `DEC-0052`/`DEC-0056` (different-chat verify, loop-until-PASS). Install addresses: `modules/e10-graph/checks/`
 (specs) + `vault/EVIDENCE/` (records).
 
@@ -38,12 +38,12 @@ shape fields); `RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked ne
 - No linter/runner/vendor/language selection; no coverage-%/timeout/threshold numbers (Phase-7 guardrail).
 - No check implementation in this step (algorithms live in `ARCHITECTURE_TEST_SUITE.md`, in words);
   Step 4 wires specs to CI events; implementation language stays HELD for Step 4.
-- `checks/` specs never duplicate the rule→gate mapping (`RULES/README.md` owns it).
+- `checks/` specs never duplicate the rule→gate mapping (`planning 07_AI_ARCHITECTURE/RULES/README.md` owns it).
 
 ## Acceptance of THIS draft
 
 1. Every R-001..R-005, R-011..R-014 auto/semi-auto rule owns ≥1 command row above (manual check; R-006..R-010
    are manual-discipline rules with no command — listed here so the gap is explicit, not hidden).
-2. Tiers cover all 10 epics' task classes with no epic unassigned (manual check vs `EPIC_CATALOG.md`).
+2. Tiers cover all 10 epics' task classes with no epic unassigned (manual check vs `planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md`).
 3. No vendor/number/implementation selection smuggled (manual check vs guardrails above).
 4. Reviewer verdict PASS, zero open findings, different context (R-007).

@@ -11,12 +11,12 @@ import json
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, read, fence_yaml, parse_simple
+from _lib import APP_ROOT, read, meta_yaml, parse_simple
 
 rdir = APP_ROOT / "vault" / "REGISTRY"
 rows = []
 for p in sorted(rdir.glob("*.md")):
-    data = parse_simple(fence_yaml(read(p)))
+    data = parse_simple(meta_yaml(read(p)))
     if data.get("task_id"):
         rows.append(data)
 by_id = {r["task_id"]: r for r in rows}

@@ -45,11 +45,11 @@ Helpers, storage layout, in-flight job state invisible outside.
 ## Change / rollback rules
 
 - Contract changes version + `supersedes` (R-011); floors/epochs change only with full-edge review.
-- Rollback: epoch + quarantine rules by reference (`ROLLBACK_STRATEGY.md`); restored systems land in
+- Rollback: epoch + quarantine rules by reference (`planning 07_AI_ARCHITECTURE/ROLLBACK_STRATEGY.md`); restored systems land in
   quarantine; forbidden-state resurrection rejected.
 
 ## Links (defined-by-reference, not copied)
 
 - Requirements/design: `C3.1`..`C3.9`, `F3.*`; `ADR-002`, `ADR-006`.
 - Architecture: seam rows (E3 verifies/serves; single end-to-end owner); `R-001`..`R-004`, `R-010`, `R-011`, `R-013`, `R-014`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E3 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E3 rows (Step 5 builds).

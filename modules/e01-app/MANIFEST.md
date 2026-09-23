@@ -43,5 +43,5 @@ No direct database access; no Supabase service_role; no signing keys; no canonic
 ## Links (defined-by-reference, not copied)
 
 - Requirements/design: `C1.0`..`C1.11`, `F1.*`, flows `SCR-001`..`SCR-038`, `A1`.
-- Architecture: `MODULE_BOUNDARIES.md` seam row (E1 renders); `R-001`, `R-003`, `R-004`, `R-011`, `R-012`, `R-013`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E1 rows (Step 5 builds).
+- Architecture: `planning 07_AI_ARCHITECTURE/MODULE_BOUNDARIES.md` seam row (E1 renders); `R-001`, `R-003`, `R-004`, `R-011`, `R-012`, `R-013`.
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E1 rows (Step 5 builds).

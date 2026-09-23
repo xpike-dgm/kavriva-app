@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, read, fence_yaml, parse_simple, fail
+from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail
 
 EXPECTED = ["authorization-tuple", "operation-identity", "state-epoch",
             "package-manifest", "ledger-operation", "audit-event",
@@ -16,7 +16,7 @@ for name in EXPECTED:
     if name not in have:
         code = fail(f"contract record missing: {name}") or 1
         continue
-    data = parse_simple(fence_yaml(read(cdir / f"{name}.md")))
+    data = parse_simple(meta_yaml(read(cdir / f"{name}.md")))
     for k in REQUIRED:
         if k not in data:
             code = fail(f"{name}: field missing: {k}") or 1

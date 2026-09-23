@@ -1,9 +1,9 @@
 # E-PR-002 transcript — branch-protection probe (machine record, not prose)
 
-```yaml
+---
 record: E-PR-002-TRANSCRIPT
 status: RECORDED
-```
+---
 
 Ruleset creation (app):
 `{"enforcement":"active","id":23876055,"name":"main-gates"}`

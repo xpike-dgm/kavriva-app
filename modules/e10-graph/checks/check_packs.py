@@ -8,7 +8,7 @@ import re
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, read, fence_yaml, parse_simple, fail, warn
+from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail, warn
 
 pdir = APP_ROOT / "vault" / "PACKS"
 packs = sorted(pdir.glob("*.md")) if pdir.exists() else []
@@ -21,14 +21,14 @@ for p in packs:
 dates = []
 active = False
 for p in sorted((APP_ROOT / "vault" / "REGISTRY").glob("*.md")):
-    d = parse_simple(fence_yaml(read(p)))
+    d = parse_simple(meta_yaml(read(p)))
     if d.get("last_verified"):
         dates.append(d["last_verified"])
     if d.get("status") == "IN_PROGRESS":
         active = True
 newest = max(dates) if dates else ""
 for p in packs:
-    d = parse_simple(fence_yaml(read(p)))
+    d = parse_simple(meta_yaml(read(p)))
     lv = d.get("last_verified", "")
     if not lv:
         warn(f"{p.name}: no last_verified field")

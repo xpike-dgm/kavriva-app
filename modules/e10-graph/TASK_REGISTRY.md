@@ -3,11 +3,11 @@
 Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
 Record: `V-REG-001` (first claim in this draft; collisions rejected per identity standard)
 
-Binding sources (single truth, not copied): `GRAPH_METADATA_AND_IDENTITY_STANDARD.md` (task-registry section:
+Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/GRAPH_METADATA_AND_IDENTITY_STANDARD.md` (task-registry section:
 `06_DELIVERY_PLANNING/TASK_INDEX.md` frozen planning truth, 7 columns; READY-lifecycle only on the physical
-registry with explicit migration/`supersedes` rule; `Evidence` is a Phase-8 field); `TASK_EXECUTION_PROTOCOL.md`
-(lifecycle states + CHANGES_REQUESTED loop + different-chat review); `PACK_STANDARD.md` (14 fields);
-`COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers). Install address: `kavriva-app/vault/REGISTRY/`
+registry with explicit migration/`supersedes` rule; `Evidence` is a Phase-8 field); `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`
+(lifecycle states + CHANGES_REQUESTED loop + different-chat review); `planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md` (14 fields);
+`planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers). Install address: `kavriva-app/vault/REGISTRY/`
 (per-task records) + `vault/INDEX/` (generated JSON only).
 
 ## Physical schema (8 columns = 7 planning + 1 Phase-8)
@@ -25,7 +25,7 @@ empty until the task produces evidence — never backfilled, never fabricated.
 
 ## Migration / `supersedes` rule (binding)
 
-- Planning `TASK_INDEX.md` stays frozen: never edited, never copied-then-diverged.
+- Planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` stays frozen: never edited, never copied-then-diverged.
 - Each physical row is a NEW record reusing the stable planning Task ID, with frontmatter `supersedes`
   pointing at the planning row; planning rows keep `PROPOSED` (planned, never executed there).
 - READY-lifecycle (READY→CLAIMED→IN_PROGRESS→REVIEW→DONE + BLOCKED/CANCELLED/CHANGES_REQUESTED loop)
@@ -34,7 +34,7 @@ empty until the task produces evidence — never backfilled, never fabricated.
 
 ## Lifecycle ownership (by reference, not redefined)
 
-- Claim/progress/report per `TASK_EXECUTION_PROTOCOL.md`; reviewer must be a different chat (R-007);
+- Claim/progress/report per `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`; reviewer must be a different chat (R-007);
   CHANGES_REQUESTED→narrow remediation→different-chat re-review→REVIEW; no silent state skips.
 - CANCELLED entry/exit per protocol (records archived, dependents re-planned).
 

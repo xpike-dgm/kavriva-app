@@ -10,9 +10,9 @@ work — registry software, router, checks, closure tooling. Foundation-adjacent
 
 ## Public contract surface
 
-- Task-pack contract (`PACK_STANDARD.md` 14 fields + F10.3.1): minimum pack + registry states
+- Task-pack contract (`planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md` 14 fields + F10.3.1): minimum pack + registry states
   (READY→…→DONE + BLOCKED/CANCELLED/CHANGES_REQUESTED loop); manual-carry compatible, auto-execution HELD.
-- Design-token contract (`DESIGN_CONSISTENCY_AND_CHANGE.md` + V10/REF-VISUAL-001; tokens finalized per
+- Design-token contract (`planning 07_AI_ARCHITECTURE/DESIGN_CONSISTENCY_AND_CHANGE.md` + V10/REF-VISUAL-001; tokens finalized per
   design gate — this capsule enforces the gate, never finalizes tokens).
 - Graph schema + identity standard enforcement (F10.1.1); capsule topology + dependency rules + repo
   topology (F10.2.1); closure matrix across 10 layers with bidirectional trace (F10.4.1); simulation set
@@ -21,7 +21,7 @@ work — registry software, router, checks, closure tooling. Foundation-adjacent
 ## Internal scope
 
 Registry software, context router, check implementations (R-002/R-003 auto when built in Step 4),
-generated JSON index builders, simulation runners. Planning truth (`TASK_INDEX.md` frozen) is read as
+generated JSON index builders, simulation runners. Planning truth (`planning 06_DELIVERY_PLANNING/TASK_INDEX.md` frozen) is read as
 migration source only — never edited from here.
 
 ## Allowed / forbidden dependencies
@@ -45,6 +45,6 @@ migration source only — never edited from here.
 ## Links (defined-by-reference, not copied)
 
 - Requirements/design: `C10.1`..`C10.7`, `F10.*`; `DEC-0028`, `DEC-0041`, `DEC-0051`, `DEC-0052`.
-- Architecture: `PACK_STANDARD.md`, `CONTEXT_ROUTING.md`, `TASK_EXECUTION_PROTOCOL.md`,
-  `COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md`, `RULES/README.md`; `R-001`..`R-014` as applicable.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E10 rows (Step 5 builds).
+- Architecture: `planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md`, `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md`, `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`,
+  `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md`, `planning 07_AI_ARCHITECTURE/RULES/README.md`; `R-001`..`R-014` as applicable.
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E10 rows (Step 5 builds).

@@ -45,4 +45,4 @@ recovery ceremonies. Vault contents never exposed except through investigation c
 
 - Requirements/design: `C5.1`..`C5.8`, `F5.*`; `ADR-004`, `ADR-005`.
 - Architecture: seam rows (E1/E5 split; E5 identity-plane → E3); `R-001`, `R-003`, `R-004`, `R-009`, `R-011`, `R-013`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E5 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E5 rows (Step 5 builds).

@@ -3,8 +3,9 @@
 Each REGISTRY row must: name an evidence record that exists; name an owner module
 that owns a MANIFEST.md. Each CONTRACT record must name an owner capsule owning a
 module directory. (Full bidirectional closure — every requirement owning a task —
-arrives with the 199-row migration in Development; this check gates the segment,
-not the whole chain.)
+arrives with the full-row migration in Development; the Gate-8 criterion demands validation
+by an EXAMPLE task (singular), which the migrated proof row satisfies. This check gates the
+segment, not the whole chain.)
 """
 import sys
 from pathlib import Path

@@ -45,4 +45,4 @@ custody split decided separately (encryption); no plaintext backups.
 
 - Requirements/design: `C4.1`..`C4.9`, `F4.*`; `ADR-009`; `CON-005`.
 - Architecture: seam rows (E4 ← E3, consumed by E1); `R-001`, `R-003`, `R-004`, `R-008`, `R-011`, `R-013`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E4 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E4 rows (Step 5 builds).

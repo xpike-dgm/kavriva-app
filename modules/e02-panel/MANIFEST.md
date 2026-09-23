@@ -51,4 +51,4 @@ never self-publishes). No canonical data; no audit vault; no signing custody.
 
 - Requirements/design: `C2.1`..`C2.11`, `F2.*`, flows `WS-01`..`WS-12`, `SCR-036` (moderation back-decision).
 - Architecture: seam row (E2 consumes E8 outputs); `R-001`, `R-003`, `R-004`, `R-009`, `R-011`, `R-013`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E2 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E2 rows (Step 5 builds).

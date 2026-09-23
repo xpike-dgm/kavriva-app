@@ -48,4 +48,4 @@ Lane execution machinery lives in E7; this capsule holds the rules E7 must obey.
 
 - Requirements/design: `C6.1`..`C6.8`, `F6.*`; `ADR-003`, `ADR-007`.
 - Architecture: seam rows (E6 ← E3,E5; E6 decides, E7 executes); `R-001`, `R-003`, `R-004`, `R-009`, `R-011`, `R-013`, `R-014`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E6 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E6 rows (Step 5 builds).

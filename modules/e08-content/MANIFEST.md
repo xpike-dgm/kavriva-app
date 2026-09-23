@@ -47,4 +47,4 @@ aggregators, quality dashboards. Canonical stores stay in E3; publish authority 
 
 - Requirements/design: `C8.1`..`C8.6`, `F8.*`.
 - Architecture: seam rows (E2 consumes E8 outputs); `R-001`, `R-003`, `R-004`, `R-011`, `R-013`, `R-014`.
-- Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E8 rows (Step 5 builds).
+- Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E8 rows (Step 5 builds).

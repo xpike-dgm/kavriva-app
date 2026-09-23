@@ -4,7 +4,7 @@ Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-
 Record: `V-TST-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources: `07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (families + detection map + conformance shape);
-`COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers); `RULES/README.md` (rule→gate mapping).
+`planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md` (10 layers); `planning 07_AI_ARCHITECTURE/RULES/README.md` (rule→gate mapping).
 Companion: `VALIDATION_COMMANDS.md` (this step; command addresses + tiers). Install address:
 `modules/e10-graph/checks/` (suite spec alongside command specs).
 
@@ -29,7 +29,7 @@ Companion: `VALIDATION_COMMANDS.md` (this step; command addresses + tiers). Inst
 
 ## Evidence + gating
 
-- Every family writes conformance-shaped records (8 fields per `ARCHITECTURE_TESTS.md`) to `vault/EVIDENCE/`.
+- Every family writes conformance-shaped records (8 fields per `planning 07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md`) to `vault/EVIDENCE/`.
 - Gate signals consumed by Step-4 CI (events/fail/merge) and by per-task review (R-006/R-007 manual gates);
   this suite defines signals, never CI wiring (Step 4 owns it).
 
