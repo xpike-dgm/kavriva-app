@@ -26,6 +26,8 @@ Lane execution machinery lives in E7; this capsule holds the rules E7 must obey.
 
 - Allowed: E3 (serve/source), E5 (authorize/audit).
 - Governs: E7 lane execution (E7 ← E3, E6 for policy).
+- Surface-reference note (OUT-3 B-17, non-runtime): rollout-state surfacing touches E1 surfaces
+  (T-E6-013); render-only, no E1 dependency. Declared in the seam table invoke stanza; not an edge.
 - Forbidden: executing lanes itself; merging authority roles; routine rollback of releases; OTA code
   delivery; promoting unsealed or unprovenanced packages.
 

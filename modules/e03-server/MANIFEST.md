@@ -28,8 +28,11 @@ Helpers, storage layout, in-flight job state invisible outside.
 ## Allowed / forbidden dependencies
 
 - Allowed: none inbound from epics (foundation); serves E1, E2, E4, E5, E6, E7, E8, E9 per seam table.
-  E10 has no seam-table row and no inbound epic dependency (foundation-adjacent): its tooling relationship
-  to E3 runtime, if ever needed, must be declared as a new seam with review first — not claimed here.
+  E10 tooling-plane relation declared in the seam table invoke stanza (2026-09-23, OUT-3 B-16 — the prescribed
+  change-request path; one-way tooling service, no epic runtime inbound to E10).
+- Gate-reference note (OUT-3 B-17, non-runtime): E3 tasks reference E6 gates without depending on E6 runtime
+  (T-E3-033 HELD unless E6 checks pass; T-E3-022 links T-E6-015). Declared in the seam table invoke stanza;
+  not an edge, not a dependency.
 - Forbidden: UI/presentation logic; provider-coupled code beyond the bounded runtime; client-side
   authorization trust; plaintext backups; single-provider lock-in without exit rehearsal.
 

@@ -19,6 +19,9 @@ moderasyon kararı. E2 renders + records decisions — never self-publishes, nev
 - Consumed contracts: authorization-tuple (E3, every sensitive action re-authorized at API),
   audit-event (E5). Release/promotion contract is NOT consumed directly: publish/recall operations reach
   E6-governed flows only via E3 serving (E2 deps fixed: E3, E5).
+- Invoke-only note (OUT-3 B-17, non-runtime): E2 renders invoke surfaces for E6 flows (WS-07 publish ops
+  T-E2-004, WS-11 recall impact T-E2-005, failed-state render T-E2-016); E6 authorizes and executes; the
+  invocation travels exclusively through E3 serving. Declared in the seam table invoke stanza; not an edge.
 
 ## Internal scope
 
