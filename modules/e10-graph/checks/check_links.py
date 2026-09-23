@@ -1,11 +1,11 @@
-"""check-links (R-014): backticked .md references resolve; open-link labels visible.
+"""check-links (R-014): backticked/wikilink .md references resolve; open-link labels visible.
 
-Resolution order: parent-relative, APP-relative, kavriva-app/-prefixed, plan-tree
-(strict --plan-root) or KNOWN_PLANNING closed set (CI mode). Basename shortcut is
-allowed ONLY on unique match (exactly one file with that name in the searched tree);
-zero or multiple matches FAIL. Smoothing: a file carrying open-link labels
-(MISSING/UNOWNED/BLOCKED/CONFLICT/UNVERIFIED/PENDING/HELD/TBD) with no backticked
-reference at all FAILs (unsourced claim).
+Resolution order: parent-relative, APP-relative, kavriva-app/-prefixed, unique-basename
+shortcut (exactly one in-app match), plan-tree (strict --plan-root) or KNOWN_PLANNING
+closed set (CI mode). Pathed refs (containing /) NEVER consult the closed set: they must
+resolve in-app or match a full planning path (OUT-3 B-04 — a deleted in-app file must not
+validate through a same-basename planning entry). Smoothing: a file carrying open-link
+labels with no reference at all FAILs (unsourced claim). Zero resolved edges FAILs.
 """
 import argparse
 import re
@@ -50,9 +50,10 @@ for p in repo_files():
         if not ok and args.plan_root:
             import pathlib
             proot = pathlib.Path(args.plan_root)
-            if (proot / ref).exists():
+            pref = ref[len("planning "):] if ref.startswith("planning ") else ref
+            if (proot / pref).exists():
                 ok = True
-            else:
+            elif "/" not in ref:
                 base = ref.split("/")[-1]
                 pool = list(proot.rglob(base))
                 if len(pool) == 1:
@@ -60,7 +61,10 @@ for p in repo_files():
         if not ok and not args.plan_root:
             from _lib import KNOWN_PLANNING
             norm = ref[len("planning "):] if ref.startswith("planning ") else ref
-            ok = ref in KNOWN_PLANNING or norm in KNOWN_PLANNING
+            if "/" in norm:
+                ok = norm in KNOWN_PLANNING
+            else:
+                ok = ref in KNOWN_PLANNING or norm in KNOWN_PLANNING
         if not ok:
             code = fail(f"{p.name}: dangling reference: {ref}") or 1
         else:
