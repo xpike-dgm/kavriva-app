@@ -1,5 +1,3 @@
-# Contract record — Package manifest
-
 ---
 contract: package-manifest
 owner: E4
@@ -8,6 +6,8 @@ status: PROPOSED
 content_defined_by: planning CONTRACT_CATALOG.md row 4 (ADR-009 R1/R2 + F4.1.1/F4.2.1, single truth — not copied here)
 supersedes: ~
 ---
+
+# Contract record — Package manifest
 
 Verified compact core + nested safety media; size shown upfront. Contents live in the binding source above.
 used_by: [[modules/e01-app/MANIFEST.md]] (declared consumption; single truth in that manifest)

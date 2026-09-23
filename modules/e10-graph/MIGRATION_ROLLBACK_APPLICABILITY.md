@@ -1,4 +1,4 @@
-# MIGRATION AND ROLLBACK APPLICABILITY (DRAFT — Phase-8 Step 6, pending independent review)
+# MIGRATION AND ROLLBACK APPLICABILITY (INSTALLED — Step-6 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
 Status: INSTALLED (Step-6 matrix REVIEWED PASS + installed 2026-09-22; coverage mapping added 2026-09-23, OUT-3 B-21)
 Record: `V-MIG-001` (first claim in this draft; collisions rejected per identity standard)

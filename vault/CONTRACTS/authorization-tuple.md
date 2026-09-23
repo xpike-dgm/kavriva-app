@@ -1,5 +1,3 @@
-# Contract record — API authorization tuple
-
 ---
 contract: authorization-tuple
 owner: E3
@@ -8,6 +6,8 @@ status: PROPOSED
 content_defined_by: planning CONTRACT_CATALOG.md row 1 (ADR-006 Decision 2 + F3.1.1, single truth — not copied here)
 supersedes: ~
 ---
+
+# Contract record — API authorization tuple
 
 Commit-time ALLOW/DENY/HELD with full tuple; cached claims never substitute. Contents live in the binding source above.
 used_by: [[modules/e01-app/MANIFEST.md]], [[modules/e02-panel/MANIFEST.md]] (declared consumption; single truth in those manifests)

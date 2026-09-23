@@ -78,7 +78,7 @@ def fence_yaml(text):
 
 
 def frontmatter_yaml(text):
-    m = re.search(r"^---\n(.*?)\n---\s*$", text, re.S | re.M)
+    m = re.match(r"---\n(.*?)\n---\s*(?:\n|$)", text, re.S)
     return m.group(1) if m else ""
 
 

@@ -37,8 +37,11 @@ for r in recs:
     if str(data.get("gate_verdict", "")).split()[0] not in VERDICTS:
         code = fail(f"{r.name}: verdict outside closed set: {data.get('gate_verdict')}") or 1
     dg = str(data.get("subject_digest", ""))
-    if not re.match(r"^[0-9a-fA-F]{64}\b", dg):
-        code = fail(f"{r.name}: subject_digest is not a sha256: {dg[:40]}") or 1
+    if not re.match(r"^[0-9a-fA-F]{64}\b", dg) or re.match(r"^0{64}\b", dg):
+        code = fail(f"{r.name}: subject_digest is not a real sha256: {dg[:40]}") or 1
+    ts = str(data.get("timestamp", ""))
+    if not re.match(r"^20\d\d-\d\d-\d\d$", ts):
+        code = fail(f"{r.name}: timestamp is not YYYY-MM-DD: {ts[:40]}") or 1
     for link in (data.get("evidence_links") or []):
         if not isinstance(link, str):
             continue
