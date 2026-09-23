@@ -50,6 +50,6 @@ Helpers, storage layout, in-flight job state invisible outside.
 
 ## Links (defined-by-reference, not copied)
 
-- Requirements/design: `C3.1`..`C3.8`, `F3.*`; `ADR-002`, `ADR-006`.
+- Requirements/design: `C3.1`..`C3.9`, `F3.*`; `ADR-002`, `ADR-006`.
 - Architecture: seam rows (E3 verifies/serves; single end-to-end owner); `R-001`..`R-004`, `R-010`, `R-011`, `R-013`, `R-014`.
 - Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E3 rows (Step 5 builds).

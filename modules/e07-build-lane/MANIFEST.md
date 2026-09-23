@@ -43,6 +43,6 @@ this capsule proves compliance per run.
 
 ## Links (defined-by-reference, not copied)
 
-- Requirements/design: `C7.1`..`C7.5`, `F7.*`; `DEC-0032` (Android-first).
+- Requirements/design: `C7.1`..`C7.6`, `F7.*`; `DEC-0032` (Android-first).
 - Architecture: seam rows (E7 ← E3,E6; E6 decides, E7 executes); `R-001`, `R-003`, `R-004`, `R-009`, `R-013`.
 - Tasks/tests: physical registry rows `supersedes` planning `TASK_INDEX.md` E7 rows (Step 5 builds).
