@@ -2,13 +2,20 @@
 
 Field presence alone is insufficient (empty-value forgery): every field must have
 a non-empty value. gate_verdict is drawn from a closed set {PASS, FAIL, VERIFIED,
-RECORDED, BLOCKED}; subject_digest must be 64 hex chars (sha256 of the subject).
-PENDING is forbidden everywhere (workflow states live in reviewer notes, not fields).
-Files in EVIDENCE without test_id are supporting notes: each must be referenced from
-some record's evidence_links, else FAIL (orphan non-record). Registry rows with status
-IN_PROGRESS/REVIEW/DONE and no resolvable evidence record FAIL (T3 coverage).
+RECORDED, BLOCKED}. subject_digest must be 64 hex AND must equal the recomputed sha256
+of subject_file (OUT-1 B-12 — format without recomputation is decoration). timestamp
+must be YYYY-MM-DD. PENDING is forbidden everywhere. Files in EVIDENCE without test_id
+are supporting notes: each must be referenced from some record's evidence_links, else FAIL.
+The frozen pack's integrity is guarded by E-PR-001.pack_digest recomputation (OUT-1 B-11).
+Registry rows with status IN_PROGRESS/REVIEW/DONE and no resolvable evidence record FAIL.
 Metadata source: YAML frontmatter preferred, legacy ```yaml fence accepted.
 """
+from pathlib import Path
+import hashlib
+import re
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail
 from pathlib import Path
 import re
 import sys
@@ -39,6 +46,22 @@ for r in recs:
     dg = str(data.get("subject_digest", ""))
     if not re.match(r"^[0-9a-fA-F]{64}\b", dg) or re.match(r"^0{64}\b", dg):
         code = fail(f"{r.name}: subject_digest is not a real sha256: {dg[:40]}") or 1
+    subj = str(data.get("subject_file", "")).strip().strip("`[]")
+    if subj:
+        spath = (APP_ROOT / subj).resolve()
+        try:
+            spath.relative_to(APP_ROOT)
+            live = hashlib.sha256(spath.read_bytes()).hexdigest()
+            if live.upper() != dg[:64].upper():
+                code = fail(f"{r.name}: subject_digest does not match {subj}") or 1
+        except (ValueError, OSError):
+            code = fail(f"{r.name}: subject_file unresolvable: {subj}") or 1
+    if r.name == "E-PR-001.md":
+        pack = APP_ROOT / "vault" / "PACKS" / "P-PROOF-001.md"
+        pd = str(data.get("pack_digest", ""))
+        if not re.match(r"^[0-9a-fA-F]{64}\b", pd) \
+                or hashlib.sha256(pack.read_bytes()).hexdigest().upper() != pd[:64].upper():
+            code = fail(f"{r.name}: pack_digest does not match frozen P-PROOF-001.md") or 1
     ts = str(data.get("timestamp", ""))
     if not re.match(r"^20\d\d-\d\d-\d\d$", ts):
         code = fail(f"{r.name}: timestamp is not YYYY-MM-DD: {ts[:40]}") or 1
