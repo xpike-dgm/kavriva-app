@@ -4,17 +4,16 @@
 name: architecture-checks
 on:
   push:
-    branches-ignore: []
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
+  schedule:
+    - cron: "0 6 * * 1"
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout kavriva-app
         uses: actions/checkout@v4
-      # No planning-repo checkout: motobakim-plan is private and this workflow must run
-      # on the default token. Planning-truth refs resolve via the KNOWN_PLANNING closed
-      # set (verified by strict --plan-root runs before every push — process rule).
       - name: Run architecture suite (CI mode)
         run: python3 modules/e10-graph/checks/run_all.py
       - name: Rebuild generated index (proof that generation is reproducible)
@@ -22,3 +21,13 @@ jobs:
           python3 modules/e10-graph/checks/build_index.py
           python3 modules/e10-graph/checks/routing_run.py
           git diff --exit-code -- vault/INDEX/ || (echo "INDEX not reproducible" && exit 1)
+  t3-gate:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 't3-privileged')
+    steps:
+      - name: Checkout kavriva-app
+        uses: actions/checkout@v4
+      - name: T3 conformance + identity gate
+        run: |
+          python3 modules/e10-graph/checks/check_conformance.py
+          python3 modules/e10-graph/checks/check_identity.py

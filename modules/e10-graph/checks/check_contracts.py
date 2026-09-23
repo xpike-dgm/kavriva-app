@@ -7,7 +7,8 @@ from _lib import APP_ROOT, read, fence_yaml, parse_simple, fail
 EXPECTED = ["authorization-tuple", "operation-identity", "state-epoch",
             "package-manifest", "ledger-operation", "audit-event",
             "release-promotion", "task-pack", "design-token"]
-REQUIRED = ["contract", "owner", "version", "status", "content_defined_by"]
+REQUIRED = ["contract", "owner", "version", "status", "content_defined_by",
+            "supersedes"]
 cdir = APP_ROOT / "vault" / "CONTRACTS"
 have = {p.stem for p in cdir.glob("*.md")} if cdir.exists() else set()
 code = 0
@@ -17,9 +18,12 @@ for name in EXPECTED:
         continue
     data = parse_simple(fence_yaml(read(cdir / f"{name}.md")))
     for k in REQUIRED:
-        if not data.get(k):
+        if k not in data:
             code = fail(f"{name}: field missing: {k}") or 1
     if data.get("status") not in ("PROPOSED", "APPROVED", "LOCKED"):
         code = fail(f"{name}: bad status: {data.get('status')}") or 1
+for m in sorted((APP_ROOT / "modules").iterdir()):
+    if m.is_dir() and not (m / "public").exists():
+        code = fail(f"{m.name}: public surface address missing") or 1
 print(f"check-contracts: {len(EXPECTED)} contracts expected, {len(have)} records found")
 sys.exit(code)

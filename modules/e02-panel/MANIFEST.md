@@ -28,6 +28,8 @@ never self-publishes). No canonical data; no audit vault; no signing custody.
 ## Allowed / forbidden dependencies
 
 - Allowed (consume only): E3 (serve/verify), E5 (authorize/audit), E8 outputs (derived planes only).
+- E5 → E2 authorization decisions (E2 renders decisions, E5 authorizes; change-request 2026-09-23: makes the
+  existing E5-authorizes relation machine-readable; no new edge claimed, no direct E2←E6 edge).
 - Forbidden: direct writes to canonical stores bypassing API; self-approval paths (independence enforced
   in UI); consumer-flow logic (SCR) duplicated here; E6 policy ownership; E7 lane execution.
 
