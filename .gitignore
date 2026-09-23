@@ -1,3 +1,10 @@
 # Build artifacts are never committed; checks must pass from a clean tree.
 __pycache__/
 *.pyc
+
+# Secrets and machine-local configuration (OUT-3 B-23; mirrors planning repo)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
