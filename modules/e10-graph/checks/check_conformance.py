@@ -51,7 +51,7 @@ for r in recs:
         spath = (APP_ROOT / subj).resolve()
         try:
             spath.relative_to(APP_ROOT)
-            live = hashlib.sha256(spath.read_bytes()).hexdigest()
+            live = hashlib.sha256(spath.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
             if live.upper() != dg[:64].upper():
                 code = fail(f"{r.name}: subject_digest does not match {subj}") or 1
         except (ValueError, OSError):
@@ -60,7 +60,7 @@ for r in recs:
         pack = APP_ROOT / "vault" / "PACKS" / "P-PROOF-001.md"
         pd = str(data.get("pack_digest", ""))
         if not re.match(r"^[0-9a-fA-F]{64}\b", pd) \
-                or hashlib.sha256(pack.read_bytes()).hexdigest().upper() != pd[:64].upper():
+                or hashlib.sha256(pack.read_bytes().replace(b"\r\n", b"\n")).hexdigest().upper() != pd[:64].upper():
             code = fail(f"{r.name}: pack_digest does not match frozen P-PROOF-001.md") or 1
     ts = str(data.get("timestamp", ""))
     if not re.match(r"^20\d\d-\d\d-\d\d$", ts):
