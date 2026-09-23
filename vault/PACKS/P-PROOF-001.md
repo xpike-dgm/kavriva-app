@@ -44,4 +44,4 @@ Binding sources: `TASK_REGISTRY.md` + `ROUTING_AND_TRACEABILITY.md` (Step 5); St
   re-created byte-identical (registry digest 4CBF0133…B23A match, pack copy SHA256 match)
 - [x] Gate 8 readiness audit round 1: BLOCKED on 3 procedural items only (uncommitted evidence) → closed:
   E-PR-001 VERIFIED committed+pushed (`732fa9e`), PROOF_PACK tracked here, checklist flipped with evidence;
-  re-audit round 2 pending
+  round 2 re-audit PASS (all items CLOSED on committed SHAs, CI green, deferrals recorded) — Gate 8 approval pending owner
