@@ -18,7 +18,7 @@ PLAN_ALLOW = ("00_", "05_", "06_", "07_", "08_", "DEC-", "ADR-", "TSQ-",
 
 def repo_files(suffix=".md"):
     out = []
-    for skip in (".git",):
+    for skip in (".git", "__pycache__"):
         for p in APP_ROOT.rglob(f"*{suffix}"):
             if skip not in p.parts:
                 out.append(p)

@@ -1,0 +1,3 @@
+# Build artifacts are never committed; checks must pass from a clean tree.
+__pycache__/
+*.pyc
