@@ -50,6 +50,13 @@ empty until the task produces evidence — never backfilled, never fabricated.
 - No CI-time target and no per-owner carry quota by design (Phase-7 guardrail: no numeric gates); observed runs
   9–11s are measurements, not targets.
 
+## Epic-edge migration rule (OUT-3 B-15, 2026-09-23)
+
+At row migration (Development scope), EPIC_CATALOG dependency cells inject into each epic's root tasks'
+`depends_on` as epic-gate records: E1 roots gain E3+E5+E4 gates, E2 roots E3+E5+E8-outputs, E4 roots E3,
+E5 roots E3, E6 roots E3+E5, E7 roots E3+E6, E8 roots E3, E9 roots E3+E1 (propose/render direction preserved).
+A task-level `depends_on` path, where one exists, satisfies its epic gate without duplication (recorded once).
+
 ## Acceptance of THIS draft
 
 1. 8th column + record form + migration rule present with planning truth frozen (manual check).
