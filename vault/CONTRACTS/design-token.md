@@ -1,0 +1,12 @@
+# Contract record — Design token
+
+```yaml
+contract: design-token
+owner: E10
+version: 1
+status: PROPOSED
+content_defined_by: planning CONTRACT_CATALOG.md row 9 (DESIGN_CONSISTENCY_AND_CHANGE.md + V10/REF-VISUAL-001, single truth — not copied here; tokens finalized per design gate)
+supersedes: ~
+```
+
+Tokens finalized per design gate; this record enforces the gate, never finalizes tokens. Contents live in the binding source above.

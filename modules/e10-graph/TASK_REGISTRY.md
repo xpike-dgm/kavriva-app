@@ -18,7 +18,7 @@ empty until the task produces evidence — never backfilled, never fabricated.
 
 ## Record form (Obsidian-native; no registry software selected here)
 
-- One Markdown file per task in `vault/REGISTRY/`, filename = stable task slug (e.g. `T-E3-001.md`);
+- One Markdown file per task in `vault/REGISTRY/`, filename = stable task slug (e.g. `vault/REGISTRY/T-E3-001.md`);
   YAML frontmatter carries the 8 columns + identity metadata (`status`/`last_verified`, `supersedes`, owner).
 - `vault/INDEX/` JSON is GENERATED from records (never hand-edited); readers consume records or index,
   writers touch records only.

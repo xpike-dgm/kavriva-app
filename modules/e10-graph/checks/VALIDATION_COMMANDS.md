@@ -14,7 +14,7 @@ shape fields); `RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked ne
 
 | Command address | Rule(s) | What it detects | Tier |
 |---|---|---|---|
-| `checks/check-manifests` | R-001 | capsule anatomy field missing in any `MANIFEST.md` | T1 |
+| `checks/check-manifests` | R-001 | capsule anatomy field missing in any module manifest (`modules/e01-app/MANIFEST.md` … `modules/e10-graph/MANIFEST.md`) | T1 |
 | `checks/check-contracts` | R-011, R-012 | contract field/version/`supersedes` incomplete; surface/classification not propagated | T1 |
 | `checks/check-packs` | R-005 | pack 14-field absence; stale pack (older than its task's `last_verified`) | T1 |
 | `checks/check-identity` | R-004 | duplicate slug/type (collision → reject); metadata fields absent | T2 |

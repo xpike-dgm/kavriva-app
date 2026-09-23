@@ -1,0 +1,31 @@
+# CI — architecture checks (installed in Step-7 closure of Gate-8 audit findings).
+# Spec: .github/workflows/CI_PLAN.md. Events/fail/merge per CI plan; T3 human gates
+# stay outside automation (reviewer verifies, gate enforces).
+name: architecture-checks
+on:
+  push:
+    branches-ignore: []
+  pull_request:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kavriva-app
+        uses: actions/checkout@v4
+      - name: Checkout planning truth (public, read-only reference)
+        uses: actions/checkout@v4
+        with:
+          repository: xpike-dgm/motobakim-plan
+          path: planning
+          sparse-checkout: |
+            05_ADR
+            06_DELIVERY_PLANNING
+            07_AI_ARCHITECTURE
+            08_REPOSITORY_BOOTSTRAP
+      - name: Run architecture suite (strict, planning-truth linked)
+        run: python3 modules/e10-graph/checks/run_all.py --plan-root planning
+      - name: Rebuild generated index (proof that generation is reproducible)
+        run: |
+          python3 modules/e10-graph/checks/build_index.py
+          python3 modules/e10-graph/checks/routing_run.py
+          git diff --exit-code -- vault/INDEX/ || (echo "INDEX not reproducible" && exit 1)
