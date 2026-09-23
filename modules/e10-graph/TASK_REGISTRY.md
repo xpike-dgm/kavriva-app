@@ -43,6 +43,13 @@ empty until the task produces evidence — never backfilled, never fabricated.
 - No registry software/automation selection (templates + GitHub automation only, DEC-0051); no API actuation;
   no numeric SLAs; no editing of planning truth.
 
+## INDEX concurrency + throughput rule (OUT-3 B-35, 2026-09-23)
+
+- `vault/INDEX/*.json` are GENERATED artifacts (builders: `build_index.py`, `routing_run.py`); never hand-edited.
+  Concurrent branches each regenerate on merge — hand-merged INDEX content is rejected (CI reproducibility step).
+- No CI-time target and no per-owner carry quota by design (Phase-7 guardrail: no numeric gates); observed runs
+  9–11s are measurements, not targets.
+
 ## Acceptance of THIS draft
 
 1. 8th column + record form + migration rule present with planning truth frozen (manual check).

@@ -9,10 +9,12 @@
    "context_pack": "ADR-006 Decision 2; C3.1",
    "acceptance": "Deny-by-default; cached claims rejected; reason-coded",
    "evidence": "E-PR-001 (filled after production 2026-09-22; was empty at creation per spec)",
-   "status": "READY",
+   "status": "DONE",
+   "claimed_by": "manager-proof-run P-PROOF-001",
+   "claimed_at": "2026-09-22",
    "supersedes": "planning-repo(Kavriva-plan working copy / motobakim-plan remote)@06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-001 (frozen; never edited)",
    "owner": "E3",
-   "last_verified": "2026-09-22 (proof migration P-PROOF-001)"
+   "last_verified": "2026-09-23 (proof migration P-PROOF-001; advanced READY→DONE per protocol after VERIFIED evidence, OUT-3 B-14)"
   }
  ]
 }

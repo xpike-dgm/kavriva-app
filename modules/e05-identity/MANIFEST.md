@@ -1,6 +1,6 @@
 # MODULE MANIFEST — e05-identity (E5 Giriş + yetki + denetim)
 
-Status: REVIEWED PASS (round 1: CHANGES_REQUESTED 2 findings → narrow remediation; round 2: independent re-review PASS, no open findings, 2026-09-22; install address `modules/e05-identity/MANIFEST.md`)
+Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e05-identity/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
 Record: `M-E5-001` (first claim in this draft; collisions rejected per identity standard)
 
 ## Purpose

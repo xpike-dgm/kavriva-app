@@ -1,6 +1,6 @@
 # MODULE MANIFEST — e10-graph (E10 Proje grafiği + görev altyapısı)
 
-Status: REVIEWED PASS (round 1: CHANGES_REQUESTED 2 findings → narrow remediation; round 2: independent re-review PASS, no open findings, 2026-09-22; install address `modules/e10-graph/MANIFEST.md`)
+Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e10-graph/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
 Record: `M-E10-001` (first claim in this draft; collisions rejected per identity standard)
 
 ## Purpose

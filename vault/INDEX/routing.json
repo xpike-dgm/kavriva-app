@@ -1,6 +1,7 @@
 {
  "generated_by": "routing-run (proof tooling, e10)",
- "eligible": [
-  "T-E3-001"
- ]
+ "eligible": [],
+ "excluded_by_status": {
+  "T-E3-001": "DONE"
+ }
 }

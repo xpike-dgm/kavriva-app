@@ -1,6 +1,6 @@
 # MIGRATION AND ROLLBACK APPLICABILITY (DRAFT — Phase-8 Step 6, pending independent review)
 
-Status: REVIEWED PASS (round 1: independent review PASS, no open findings, 2026-09-22; nothing installed)
+Status: INSTALLED (Step-6 matrix REVIEWED PASS + installed 2026-09-22; coverage mapping added 2026-09-23, OUT-3 B-21)
 Record: `V-MIG-001` (first claim in this draft; collisions rejected per identity standard)
 
 Binding sources (single truth, not copied): `07_AI_ARCHITECTURE/MIGRATION_POLICY.md` (migration rules by
@@ -31,6 +31,14 @@ this file makes applicable — it writes no new module rule). Install address: `
   valid data; never erases the intervening record or cancels reach-back.
 - Destructive/irreversible changes invoke higher-assurance tier + owner approval per Protocol/`DEC-0030`.
 - Task-level safe return = BLOCKED / change-request + R-009 (not a new rollback class).
+
+## Verifier coverage note (2026-09-23, OUT-3 B-21 — honest mapping, no new check invented)
+
+"Verified by" above names manifest-level test families (future product tests), NOT check-script names.
+Machine coverage today: check_edges (direction + denylist + DAG), check_identity (R-010 status/collision part),
+check_conformance (evidence shape). The rest (quarantine drills, seal/promotion, brake, derivation, flow,
+never-list, compliance, separation, split/recovery negatives) are DEFERRED to Development with the product code
+they test — recorded here, not hidden. Checklist item 8 is therefore declaration-level until then.
 
 ## Non-goals
 

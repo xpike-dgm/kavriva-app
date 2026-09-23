@@ -1,7 +1,11 @@
 """check-edges (R-003): manifests declare allowed+forbidden; DAG enforced in-repo.
 
 (1) Structural: declaration section present. (2) Denylist with same-clause
-negation handling. (3) Edge graph over explicit fragments inside the manifests:
+negation handling: service_role / signing custody (owning capsules exempt) +
+OTA enablement phrases (hot-update, hot update, code-push, code push — forbidden
+everywhere; OUT-3 B-32). ADR-014 never-list code patterns arrive with product code
+(recorded deferral: no product code exists yet to match against; manual gates
+T-E9-009/T-E6-017 hold until then). (3) Edge graph over explicit fragments inside the manifests:
 `A <- B,C` means B->A, C->A; `A -> B` means A->B; `A consumes B` means B->A;
 `consumed by B` (in module A's manifest) means A->B; `serves X, Y` (in module A's
 manifest) means A->X, A->Y on the PROVISION plane; `R renders, S serves, A
@@ -19,7 +23,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _lib import APP_ROOT, read, fail
 
 DENY = [("service_role", ("e03-server", "e05-identity")),
-        ("signing custody", ("e06-release", "e07-build-lane"))]
+        ("signing custody", ("e06-release", "e07-build-lane")),
+        ("hot-update", ()),
+        ("hot update", ()),
+        ("code-push", ()),
+        ("code push", ())]
 NEG = ("no ", "never", "without", "forbidden", "not ")
 EPICS = {f"E{i}" for i in range(1, 11)}
 mods = sorted(p for p in (APP_ROOT / "modules").iterdir() if p.is_dir())
