@@ -88,11 +88,14 @@ def meta_yaml(text):
 
 
 def parse_simple(block):
-    """Minimal mapping parse: top-level `key: value`, `[a, b]` lists, `  - item` lists."""
+    """Minimal mapping parse: top-level `key: value`, `[a, b]` lists, `  - item` lists.
+    Surrounding double quotes are stripped (standard YAML scalar quoting)."""
     data, cur = {}, None
     for raw in block.splitlines():
         if re.match(r"\s+-\s+", raw):
             item = re.sub(r"^\s+-\s+", "", raw)
+            if len(item) >= 2 and item[0] == '"' and item[-1] == '"':
+                item = item[1:-1]
             if cur:
                 data[cur].append(item)
             continue
@@ -101,6 +104,8 @@ def parse_simple(block):
             cur = None
             continue
         k, v = m.group(1), m.group(2).strip()
+        if len(v) >= 2 and v[0] == '"' and v[-1] == '"':
+            v = v[1:-1]
         if v.startswith("[") and v.endswith("]"):
             data[k] = [x.strip() for x in v[1:-1].split(",") if x.strip()]
             cur = None

@@ -26,14 +26,15 @@ ap.add_argument("--plan-root", default="")
 args = ap.parse_args()
 code = 0
 edges = 0
+wiki_edges = 0
 for p in repo_files():
     rel = p.relative_to(APP_ROOT).as_posix()
     legacy = rel in FROZEN
     text = read(p)
-    refs = re.findall(r"`([^`]*\.md)`", text)
-    refs += re.findall(r"\[\[([^\]]*\.md)\]\]", text)
-    check_refs = [] if legacy else refs
-    for ref in check_refs:
+    refs = [(m, False) for m in re.findall(r"`([^`]*\.md)`", text)]
+    refs += [(m, True) for m in re.findall(r"\[\[([^\]]*\.md)\]\]", text)]
+    check_refs = refs if rel not in FROZEN else []
+    for ref, is_wiki in check_refs:
         if "://" in ref or ref.startswith("http") or "*" in ref:
             continue
         ok = False
@@ -62,6 +63,8 @@ for p in repo_files():
             code = fail(f"{p.name}: dangling reference: {ref}") or 1
         else:
             edges += 1
+            if is_wiki:
+                wiki_edges += 1
     labels = []
     for m in re.finditer(r"(?<![A-Za-z/])(" + "|".join(OPEN_LABELS) + r")(?![A-Za-z/])", text):
         start = max(0, m.start() - 25)
@@ -73,5 +76,5 @@ for p in repo_files():
         code = fail(f"{p.name}: open-link labels without any reference: {','.join(sorted(set(labels)))}") or 1
 if edges == 0:
     code = fail("graph has zero resolved edges (Obsidian view would be empty)") or 1
-print(f"check-links: done, edges = {edges}")
+print(f"check-links: done, edges = {edges} (wikilink = {wiki_edges}, backticked = {edges - wiki_edges})")
 sys.exit(code)

@@ -4,7 +4,8 @@ Field presence alone is insufficient (empty-value forgery): every field must hav
 a non-empty value. gate_verdict is drawn from a closed set {PASS, FAIL, VERIFIED,
 RECORDED, BLOCKED}. subject_digest must be 64 hex AND must equal the recomputed sha256
 of subject_file (OUT-1 B-12 — format without recomputation is decoration). timestamp
-must be YYYY-MM-DD. PENDING is forbidden everywhere. Files in EVIDENCE without test_id
+must be YYYY-MM-DD. PENDING is forbidden everywhere. Frontmatter must be standard-YAML
+strict (no unquoted ': ', no backticks — OUT-3 B-06). Files in EVIDENCE without test_id
 are supporting notes: each must be referenced from some record's evidence_links, else FAIL.
 The frozen pack's integrity is guarded by E-PR-001.pack_digest recomputation (OUT-1 B-11).
 Registry rows with status IN_PROGRESS/REVIEW/DONE and no resolvable evidence record FAIL.
@@ -15,12 +16,7 @@ import hashlib
 import re
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail
-from pathlib import Path
-import re
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail
+from _lib import APP_ROOT, read, meta_yaml, frontmatter_yaml, parse_simple, fail
 
 FIELDS = ["test_id", "contract_id_version", "subject_digest", "result",
           "evidence_links", "gate_verdict", "reviewer", "timestamp"]
@@ -31,6 +27,17 @@ code = 0
 n = 0
 for r in recs:
     text = read(r)
+    fm = frontmatter_yaml(text)
+    if fm:
+        for raw in fm.splitlines():
+            m = re.match(r"^([A-Za-z0-9_]+):\s*(.*)$", raw)
+            if m:
+                v = m.group(2).strip()
+                if v and not (len(v) >= 2 and v[0] == '"' and v[-1] == '"') and ": " in v:
+                    code = fail(f"{r.name}: unquoted ': ' in frontmatter value: {m.group(1)}") or 1
+                    break
+        if "`" in fm:
+            code = fail(f"{r.name}: backtick inside frontmatter (quote values, no code spans)") or 1
     data = parse_simple(meta_yaml(text))
     if not data.get("test_id"):
         continue
@@ -47,7 +54,9 @@ for r in recs:
     if not re.match(r"^[0-9a-fA-F]{64}\b", dg) or re.match(r"^0{64}\b", dg):
         code = fail(f"{r.name}: subject_digest is not a real sha256: {dg[:40]}") or 1
     subj = str(data.get("subject_file", "")).strip().strip("`[]")
-    if subj:
+    if not subj:
+        code = fail(f"{r.name}: subject_file missing (recompute target required)") or 1
+    else:
         spath = (APP_ROOT / subj).resolve()
         try:
             spath.relative_to(APP_ROOT)
@@ -68,7 +77,10 @@ for r in recs:
     for link in (data.get("evidence_links") or []):
         if not isinstance(link, str):
             continue
-        link = link.strip().strip("`")
+        link = link.strip()
+        if link.startswith("`"):
+            code = fail(f"{r.name}: backtick-quoted link (quote with double quotes): {link[:40]}") or 1
+            continue
         if link.startswith("[[") and link.endswith("]]"):
             link = link[2:-2]
         if link.startswith("planning "):
@@ -86,7 +98,7 @@ for r in recs:
     data = parse_simple(meta_yaml(read(r)))
     for link in (data.get("evidence_links") or []):
         if isinstance(link, str):
-            linked.add(link.strip().strip("`").replace("[[", "").replace("]]", ""))
+            linked.add(link.strip().strip('`"').replace("[[", "").replace("]]", ""))
 for r in recs:
     text = read(r)
     data = parse_simple(meta_yaml(text))
