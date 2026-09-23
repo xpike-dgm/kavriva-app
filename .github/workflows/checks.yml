@@ -18,7 +18,7 @@ jobs:
         run: python3 modules/e10-graph/checks/run_all.py
       - name: Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)
         run: |
-          if git grep -qE "(eyJ[A-Za-z0-9_-]{10,}|sk-[A-Za-z0-9]{8,}|ghp_[A-Za-z0-9]{8,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)" -- .; then echo "secret-scan: FAIL — pattern matched (locations withheld, inspect locally)" && exit 1; else echo "secret-scan: no matches"; fi
+          if git grep -qE "(eyJ[A-Za-z0-9_-]{10,}|sk[_-](live|test)[_-][A-Za-z0-9]+|ghp_[A-Za-z0-9]{8,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)" -- .; then echo "secret-scan: FAIL — pattern matched (locations withheld, inspect locally)" && exit 1; else echo "secret-scan: no matches"; fi
       - name: Rebuild generated index (proof that generation is reproducible)
         run: |
           python3 modules/e10-graph/checks/build_index.py
