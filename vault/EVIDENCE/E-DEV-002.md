@@ -1,0 +1,32 @@
+---
+test_id: E-DEV-002
+contract_id_version: authorization-tuple v1 + ADR-006 Decision 2; T-E3-001-R1 remediation
+subject_digest: FEF471475D2B5D3EE8D444943AE605D71CDEC6B453F469A2C6C61B7B6464BE00
+subject_file: modules/e03-server/internal/postgres_commit_authorization.py
+gate_code_digest: C369E37035BDA35D08AC209DF6328F915824BE4B7635C8495CBD53ABBE8D47CE
+result: "RECORDED (14 local tests passed; 7 unit plus 7 native PostgreSQL integration tests)"
+evidence_links:
+  - "[[vault/REGISTRY/T-E3-001-R1.md]]"
+  - "[[vault/PACKS/P-E3-001-R1.md]]"
+  - "modules/e03-server/public/commit_authorization.py"
+  - "modules/e03-server/tests/test_commit_authorization.py"
+  - "modules/e03-server/tests/test_postgres_commit_authorization.py"
+  - ".github/workflows/e3-tests.yml"
+gate_verdict: "BLOCKED (PR #3 remediation approved; production canonical-source binding required for T-E3-001)"
+reviewer: "owner-supplied independent review of PR #3 head 7bc0d15d88f8ec10e93cf2063d12b71c37391ba2; approval limited to PR #2 rejection findings"
+timestamp: 2026-09-24
+status: RECORDED
+last_verified: 2026-09-24
+---
+
+# E-DEV-002 — Review remediation evidence
+
+The independent review rejected PR #2. This remediation adds `workload_id` and `delegation_chain` to required tuple fields and confirms that null values hold without an effect. It adds a psycopg adapter that reads the current tuple with `SELECT ... FOR UPDATE` and invokes a database effect writer on the same connection before commit.
+
+Local integration tests use a temporary native PostgreSQL 17.9 server with a private-schema fixture. They verify that a concurrent authority update is observed after lock wait, a competing update cannot pass the held row lock, a writer error rolls back the effect, a successful effect commits, missing authority denies despite cached ALLOW, and missing workload/delegation holds. This proves the transaction mechanism on a real engine. The fixture does not prove that production E5 policy/session/grant/epoch sources or a product-domain mutation are wired; that remains a release-blocking integration requirement.
+
+The prior PR #2 code and its original digest remain preserved by `[[vault/EVIDENCE/E-DEV-001.md]]` and its subject snapshot. On 2026-09-24, the owner supplied an independent review verdict for PR #3 head `43afb8cd9c4353d7e142295a871b173adf6065b7`: **approved for the corrections to PR #2's rejection findings only**. The review confirmed the two required tuple fields, the `FOR UPDATE` transaction adapter, the 7 unit and 7 native PostgreSQL tests, green architecture/T3 automation, and matching evidence digests. The reviewer explicitly withheld T-E3-001 DONE because the temporary test table is not connected to production E5 authorization sources or a real product mutation. This is a review verdict supplied in the task conversation, not a submitted GitHub PR review.
+
+For the reviewed PR head, [architecture checks including the T3 automation](https://github.com/xpike-dgm/kavriva-app/actions/runs/35984766955) and [E3 PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/35984766869) completed successfully on GitHub. CI and remediation approval do not prove production canonical-source binding. Keep PR #3 draft and the implementation record CHANGES_REQUESTED; no DONE claim follows.
+
+The owner supplied a second scoped independent verdict for PR #3 head `7bc0d15d88f8ec10e93cf2063d12b71c37391ba2` on 2026-09-24. It approved the three PR #2 rejection fixes after checking required tuple fields, the locked PostgreSQL read and same-transaction write, concurrency/rollback/commit tests, code digests and green CI. It again withheld T-E3-001 DONE because production E5 sources and a real product mutation are not bound. This verdict was supplied in the task conversation; it is not a submitted GitHub PR review. PR #3 remains draft and unmerged.

@@ -2,8 +2,9 @@
 
 Eligible = status READY + Depends-On all DONE (empty counts as DONE).
 EXCLUDED states (never eligible, written to output as evidence): CLAIMED
-(locked by claimed_by/claimed_at below), IN_PROGRESS, REVIEW, DONE, BLOCKED,
-CANCELLED. A VERIFIED proof row advances per protocol instead of re-listing.
+(locked by claimed_by/claimed_at below), IN_PROGRESS, CHANGES_REQUESTED,
+REVIEW, DONE, BLOCKED, CANCELLED. A VERIFIED proof row advances per protocol
+instead of re-listing.
 Order = topological depth (here: dependency count), then task ID. Writes
 vault/INDEX/routing.json as run evidence. Manual-carry default unchanged.
 """
@@ -20,7 +21,7 @@ for p in sorted(rdir.glob("*.md")):
     if data.get("task_id"):
         rows.append(data)
 by_id = {r["task_id"]: r for r in rows}
-EXCLUDED = ("CLAIMED", "IN_PROGRESS", "REVIEW", "DONE", "BLOCKED", "CANCELLED")
+EXCLUDED = ("CLAIMED", "IN_PROGRESS", "CHANGES_REQUESTED", "REVIEW", "DONE", "BLOCKED", "CANCELLED")
 eligible, excluded = [], {}
 for r in rows:
     st = r.get("status")
