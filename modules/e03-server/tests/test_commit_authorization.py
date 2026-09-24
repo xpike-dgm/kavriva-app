@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "public"))
 from commit_authorization import (  # noqa: E402
-    CommitRequest, CurrentTuple, Verdict, authorize_and_commit,
+    CommitRequest, CommitResult, CurrentTuple, Verdict, authorize_and_commit,
 )
 
 
@@ -85,6 +85,13 @@ class CommitAuthorizationTests(unittest.TestCase):
         tx = FakeTransaction(replace(CURRENT, policy_verdict=Verdict.DENY))
         result = authorize_and_commit(replace(REQUEST, cached_decision="ALLOW"), lambda: tx)
         self.assertEqual((result.verdict, result.reason_code), (Verdict.DENY, "POLICY_DENIED"))
+        self.assertNotIn("apply_effect", tx.events)
+
+    def test_reader_cannot_authorize_with_bare_allow_verdict(self):
+        tx = FakeTransaction(CommitResult(Verdict.ALLOW, "UNTRUSTED_ALLOW"))
+        result = authorize_and_commit(REQUEST, lambda: tx)
+        self.assertEqual((result.verdict, result.reason_code),
+                         (Verdict.HELD, "INVALID_CURRENT_DECISION"))
         self.assertNotIn("apply_effect", tx.events)
 
     def test_session_and_scope_changes_deny(self):

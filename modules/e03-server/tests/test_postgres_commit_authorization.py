@@ -113,7 +113,9 @@ class RealPostgresCommitTests(unittest.TestCase):
 
     def run_gate(self, writer=None, request=REQUEST):
         return authorize_and_commit(
-            request, postgres_transaction(self.dsn, writer or self.write_effect)
+            request, postgres_transaction(
+                self.dsn, writer or self.write_effect, use_test_fixture=True,
+            ),
         )
 
     def test_current_row_lock_and_effect_commit_together(self):
@@ -215,12 +217,22 @@ class RealPostgresCommitTests(unittest.TestCase):
         self.assertEqual(self.effects(), [])
 
     def test_adapter_cannot_apply_without_current_matching_allow(self):
-        with postgres_transaction(self.dsn, self.write_effect)() as tx:
+        with postgres_transaction(
+            self.dsn, self.write_effect, use_test_fixture=True,
+        )() as tx:
             with self.assertRaises(RuntimeError):
                 tx.apply_effect(REQUEST)
             tx.read_current(REQUEST)
             with self.assertRaises(RuntimeError):
                 tx.apply_effect(replace(REQUEST, actor_id="other-actor"))
+        self.assertEqual(self.effects(), [])
+
+    def test_default_reader_is_held_without_live_source(self):
+        result = authorize_and_commit(
+            REQUEST, postgres_transaction(self.dsn, self.write_effect),
+        )
+        self.assertEqual((result.verdict, result.reason_code),
+                         (Verdict.HELD, "CURRENT_READER_NOT_CONFIGURED"))
         self.assertEqual(self.effects(), [])
 
     def test_null_workload_or_delegation_holds(self):

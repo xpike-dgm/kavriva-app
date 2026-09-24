@@ -1,14 +1,14 @@
 """PostgreSQL transaction adapter for the E3 commit gate (T-E3-001-R1).
 
-The default ``kavriva_e3.current_authorization`` reader is the earlier test
-contract. A production caller must inject a reader of current canonical E5,
-resource, operation, floor, audit and runtime state on this same connection.
-That reader must retain its locks through commit; a cached ALLOW is invalid.
+``kavriva_e3.current_authorization`` is a private canonical-store contract.
+The row represents the current decision inputs for one tenant/object/action;
+every update to any tuple component must update this row transactionally. This
+module never reads JWT claims or a client-provided authorization snapshot.
 
-The caller supplies a database effect writer. It runs on the SAME psycopg
-connection while selected authority rows are locked. No external side effect
-belongs in that writer. Production activation is held until all current
-sources, protected audit and floors are wired to this contract.
+The caller supplies only a database effect writer. It runs on the SAME psycopg
+connection while the selected authority row is locked. No external side effect
+belongs in that writer. Deployment is held until the E5-owned policy/session/
+grant/epoch sources and the E3 canonical mutation are wired to this contract.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from typing import Callable, Generic, TypeVar
 import psycopg
 from psycopg.rows import dict_row
 
-from commit_authorization import CommitRequest, CommitResult, CurrentTuple, Verdict, _decision
+from commit_authorization import CommitRequest, CurrentTuple, Verdict, _decision
 
 
 T = TypeVar("T")
@@ -45,16 +45,9 @@ class PostgresCanonicalTransaction(Generic[T]):
         self,
         dsn: str,
         effect_writer: Callable[[psycopg.Connection, CommitRequest], T],
-        current_reader: Callable[
-            [psycopg.Connection, CommitRequest], CurrentTuple | CommitResult | None
-        ] | None = None,
-        *,
-        use_test_fixture: bool = False,
     ) -> None:
         self._dsn = dsn
         self._effect_writer = effect_writer
-        self._current_reader = current_reader
-        self._use_test_fixture = use_test_fixture
         self._conn: psycopg.Connection | None = None
         self._current: CurrentTuple | None = None
         self._effect_applied = False
@@ -83,15 +76,9 @@ class PostgresCanonicalTransaction(Generic[T]):
             conn.close()
         return False
 
-    def read_current(self, request: CommitRequest) -> CurrentTuple | CommitResult | None:
+    def read_current(self, request: CommitRequest) -> CurrentTuple | None:
         if self._conn is None:
             raise RuntimeError("transaction is not open")
-        if self._current_reader is not None:
-            result = self._current_reader(self._conn, request)
-            self._current = result if isinstance(result, CurrentTuple) else None
-            return result
-        if not self._use_test_fixture:
-            return CommitResult(Verdict.HELD, "CURRENT_READER_NOT_CONFIGURED")
         row = self._conn.execute(
             _CURRENT_SQL, (request.tenant_id, request.object_id, request.action)
         ).fetchone()
@@ -117,13 +104,6 @@ class PostgresCanonicalTransaction(Generic[T]):
 def postgres_transaction(
     dsn: str,
     effect_writer: Callable[[psycopg.Connection, CommitRequest], T],
-    *,
-    current_reader: Callable[
-        [psycopg.Connection, CommitRequest], CurrentTuple | CommitResult | None
-    ] | None = None,
-    use_test_fixture: bool = False,
 ) -> Callable[[], PostgresCanonicalTransaction[T]]:
     """Factory passed to ``authorize_and_commit``; each call owns one transaction."""
-    return lambda: PostgresCanonicalTransaction(
-        dsn, effect_writer, current_reader, use_test_fixture=use_test_fixture,
-    )
+    return lambda: PostgresCanonicalTransaction(dsn, effect_writer)
