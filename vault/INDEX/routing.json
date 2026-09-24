@@ -3,6 +3,7 @@
  "eligible": [],
  "excluded_by_status": {
   "T-E3-001-R1": "IN_PROGRESS",
-  "T-E3-001": "DONE"
+  "T-E3-001": "DONE",
+  "T-E5-003": "IN_PROGRESS"
  }
 }

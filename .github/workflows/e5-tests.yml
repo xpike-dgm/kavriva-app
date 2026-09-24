@@ -1,0 +1,14 @@
+name: e5-current-authority-tests
+on:
+  push:
+  pull_request:
+jobs:
+  e5-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kavriva-app
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5 pinned
+      - name: Install pinned PostgreSQL test dependencies
+        run: python3 -m pip install -r modules/e05-identity/tests/requirements.txt
+      - name: Test E5 current authority decision
+        run: python3 -m unittest discover -s modules/e05-identity/tests -v
