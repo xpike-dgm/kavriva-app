@@ -1,0 +1,12 @@
+name: e3-commit-authorization-tests
+on:
+  push:
+  pull_request:
+jobs:
+  e3-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kavriva-app
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5 pinned
+      - name: Test E3 commit authorization gate
+        run: python3 -m unittest discover -s modules/e03-server/tests -v
