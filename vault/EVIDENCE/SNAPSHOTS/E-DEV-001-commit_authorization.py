@@ -104,9 +104,9 @@ _REQUEST_FIELDS = (
     "expected_policy_version", "expected_object_generation",
 )
 _CURRENT_FIELDS = (
-    "actor_id", "workload_id", "issuer_id", "session_id", "assurance", "step_up",
+    "actor_id", "issuer_id", "session_id", "assurance", "step_up",
     "security_epoch", "tenant_id", "object_id", "scope", "classification",
-    "action", "role", "grant_id", "delegation_chain", "competence", "independence",
+    "action", "role", "grant_id", "competence", "independence",
     "policy_version", "object_generation", "release_generation",
     "schema_generation", "config_generation", "package_generation",
     "client_generation", "negative_floor", "operation_id", "fingerprint",

@@ -19,11 +19,11 @@ REQUEST = CommitRequest(
     expected_policy_version="policy-4", expected_object_generation="generation-1",
 )
 CURRENT = CurrentTuple(
-    actor_id="actor-1", workload_id="", issuer_id="issuer-1",
+    actor_id="actor-1", workload_id="NO_WORKLOAD", issuer_id="issuer-1",
     session_id="session-1", assurance="current", step_up="bound",
     security_epoch="epoch-1", tenant_id="tenant-1", object_id="object-1",
     scope="object:write", classification="private", action="update",
-    role="editor", grant_id="grant-1", delegation_chain="",
+    role="editor", grant_id="grant-1", delegation_chain="DIRECT_GRANT",
     competence="confirmed", independence="confirmed", policy_version="policy-4",
     object_generation="generation-1", release_generation="release-1",
     schema_generation="schema-1", config_generation="config-1",
@@ -131,6 +131,12 @@ class CommitAuthorizationTests(unittest.TestCase):
         result, events = self.run_gate(replace(CURRENT, audit_receipt=None))
         self.assertEqual((result.verdict, result.reason_code), (Verdict.HELD, "CURRENT_TUPLE_INCOMPLETE"))
         self.assertNotIn("apply_effect", events)
+        for missing in ("workload_id", "delegation_chain"):
+            with self.subTest(missing=missing):
+                result, events = self.run_gate(replace(CURRENT, **{missing: None}))
+                self.assertEqual((result.verdict, result.reason_code),
+                                 (Verdict.HELD, "CURRENT_TUPLE_INCOMPLETE"))
+                self.assertNotIn("apply_effect", events)
         result, events = self.run_gate(replace(CURRENT, floor_clear="False"))
         self.assertEqual((result.verdict, result.reason_code), (Verdict.HELD, "NEGATIVE_FLOOR"))
         self.assertNotIn("apply_effect", events)

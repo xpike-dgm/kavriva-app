@@ -8,5 +8,7 @@ jobs:
     steps:
       - name: Checkout kavriva-app
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5 pinned
+      - name: Install pinned PostgreSQL test dependencies
+        run: python3 -m pip install -r modules/e03-server/tests/requirements.txt
       - name: Test E3 commit authorization gate
         run: python3 -m unittest discover -s modules/e03-server/tests -v
