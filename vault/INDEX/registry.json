@@ -30,6 +30,20 @@
    "supersedes": "planning-repo(Kavriva-plan working copy / motobakim-plan remote)@06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-001 (frozen; never edited)",
    "owner": "E3",
    "last_verified": "2026-09-23 (proof migration P-PROOF-001; advanced READY→DONE per protocol after VERIFIED evidence, OUT-3 B-14)"
+  },
+  {
+   "task_id": "T-E5-003",
+   "flow_feature": "FL5.2.1/F5.2.1",
+   "objective": "Derive a current-context E5 authorization decision",
+   "depends_on": [],
+   "context_pack": "P-E5-003",
+   "acceptance": "Current-context allow/deny/hold with reason; deny by default",
+   "evidence": "E-DEV-003",
+   "status": "IN_PROGRESS",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-09-24",
+   "owner": "E5",
+   "last_verified": "2026-09-24"
   }
  ]
 }
