@@ -13,8 +13,8 @@ evidence_links:
   - "modules/e05-identity/tests/test_postgres_decision.py"
   - "supabase/migrations/20260924102337_e5_current_authority.sql"
   - ".github/workflows/e5-tests.yml"
-gate_verdict: "BLOCKED (independent review and production source writers/E3 binding not yet proved)"
-reviewer: "implementer self-check only; independent high-impact review pending"
+gate_verdict: "BLOCKED (PR #4 scoped T3 review approved; production source writers/E3 binding not yet proved)"
+reviewer: "owner-supplied independent T3 review of PR #4 head a85a353c55e043773d98dcddef2bc9e46402ecd0; approval limited to E5 decision source"
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-24
@@ -26,6 +26,8 @@ The Supabase CLI generated the additive migration name. The migration creates pr
 
 Nine tests applied the actual migration to an isolated native PostgreSQL server and passed locally on 2026-09-24. They cover an ALLOW from separate current rows, absent/cross-tenant authority, session and grant revocation/expiry, epoch change, current policy change, policy DENY/HELD, policy narrowing, missing transaction, source outage, API-role privilege denial, and row-lock ordering in both concurrent revocation directions. No Supabase account, remote database, production credential or product mutation was used.
 
-For PR #4 code head `04968cf17956bbf5305e330a3d1df61fe5134434`, [E5 native PostgreSQL CI](https://github.com/xpike-dgm/kavriva-app/actions/runs/35987929237), [architecture checks and the automatic T3 gate](https://github.com/xpike-dgm/kavriva-app/actions/runs/35987950891) passed. These checks are reproducibility and test evidence, not an independent high-impact review.
+For PR #4 code head `04968cf17956bbf5305e330a3d1df61fe5134434`, [E5 native PostgreSQL CI](https://github.com/xpike-dgm/kavriva-app/actions/runs/35987929237), [architecture checks and the automatic T3 gate](https://github.com/xpike-dgm/kavriva-app/actions/runs/35987950891) passed. These checks are reproducibility and test evidence; they do not substitute for a human independent review.
 
-The current session/grant/epoch/policy writers and identity provider adapter do not yet exist. E3 has not bound this public decision to a trusted current resource read and a real product-domain write in the same transaction. Protected audit, negative floors, privileged activation and a deployed runtime role also remain separate gates. Therefore this evidence proves a PostgreSQL-backed decision mechanism, not production-current authority or T-E3-001 DONE. The task remains IN_PROGRESS pending an independent review and the missing bindings.
+On 2026-09-24 the owner supplied an independent T3 second-eye verdict for PR #4 head `a85a353c55e043773d98dcddef2bc9e46402ecd0`: **approved for the E5 current decision source only**. The review confirmed locked current rows, reason-coded ALLOW/DENY/HELD, nine native PostgreSQL tests, green CI, and matching code/schema digests. It explicitly kept T-E5-003 IN_PROGRESS and T-E3-001 not DONE because live identity writers and the E3 integration are absent. This verdict was supplied in the task conversation; it is not a submitted GitHub PR review. PR #4 remains draft and unmerged.
+
+The current session/grant/epoch/policy writers and identity provider adapter do not yet exist. E3 has not bound this public decision to a trusted current resource read and a real product-domain write in the same transaction. Protected audit, negative floors, privileged activation and a deployed runtime role also remain separate gates. Therefore this evidence proves a PostgreSQL-backed decision mechanism, not production-current authority or T-E3-001 DONE. The task remains IN_PROGRESS pending the missing bindings.
