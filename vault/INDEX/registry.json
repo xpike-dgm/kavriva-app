@@ -2,6 +2,21 @@
  "generated_by": "build-index (proof tooling, e10)",
  "rows": [
   {
+   "task_id": "T-E3-001-R1",
+   "flow_feature": "FL3.1.1/F3.1.1",
+   "objective": "Enforce commit-time tuple decision point in product code",
+   "depends_on": [],
+   "context_pack": "P-E3-001-R1",
+   "acceptance": "Deny-by-default; cached claims rejected; reason-coded; real canonical transaction required",
+   "evidence": "E-DEV-001",
+   "status": "IN_PROGRESS",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-09-24",
+   "supersedes": "vault/REGISTRY/T-E3-001.md (DONE covers bootstrap migration only)",
+   "owner": "E3",
+   "last_verified": "2026-09-24"
+  },
+  {
    "task_id": "T-E3-001",
    "flow_feature": "FL3.1.1/F3.1.1",
    "objective": "Enforce commit-time tuple decision point",
