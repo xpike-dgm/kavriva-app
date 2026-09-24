@@ -13,7 +13,7 @@ evidence_links:
   - "modules/e03-server/tests/test_postgres_commit_authorization.py"
   - ".github/workflows/e3-tests.yml"
 gate_verdict: "BLOCKED (PR #3 remediation approved; production canonical-source binding required for T-E3-001)"
-reviewer: "owner-supplied independent review of PR #3 head 43afb8cd9c4353d7e142295a871b173adf6065b7; approval limited to PR #2 rejection findings"
+reviewer: "owner-supplied independent review of PR #3 head 7bc0d15d88f8ec10e93cf2063d12b71c37391ba2; approval limited to PR #2 rejection findings"
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-24
@@ -28,3 +28,5 @@ Local integration tests use a temporary native PostgreSQL 17.9 server with a pri
 The prior PR #2 code and its original digest remain preserved by `[[vault/EVIDENCE/E-DEV-001.md]]` and its subject snapshot. On 2026-09-24, the owner supplied an independent review verdict for PR #3 head `43afb8cd9c4353d7e142295a871b173adf6065b7`: **approved for the corrections to PR #2's rejection findings only**. The review confirmed the two required tuple fields, the `FOR UPDATE` transaction adapter, the 7 unit and 7 native PostgreSQL tests, green architecture/T3 automation, and matching evidence digests. The reviewer explicitly withheld T-E3-001 DONE because the temporary test table is not connected to production E5 authorization sources or a real product mutation. This is a review verdict supplied in the task conversation, not a submitted GitHub PR review.
 
 For the reviewed PR head, [architecture checks including the T3 automation](https://github.com/xpike-dgm/kavriva-app/actions/runs/35984766955) and [E3 PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/35984766869) completed successfully on GitHub. CI and remediation approval do not prove production canonical-source binding. Keep PR #3 draft and the implementation record CHANGES_REQUESTED; no DONE claim follows.
+
+The owner supplied a second scoped independent verdict for PR #3 head `7bc0d15d88f8ec10e93cf2063d12b71c37391ba2` on 2026-09-24. It approved the three PR #2 rejection fixes after checking required tuple fields, the locked PostgreSQL read and same-transaction write, concurrency/rollback/commit tests, code digests and green CI. It again withheld T-E3-001 DONE because production E5 sources and a real product mutation are not bound. This verdict was supplied in the task conversation; it is not a submitted GitHub PR review. PR #3 remains draft and unmerged.
