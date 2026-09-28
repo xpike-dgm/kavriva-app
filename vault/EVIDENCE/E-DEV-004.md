@@ -17,7 +17,7 @@ evidence_links:
   - "supabase/migrations/20260924131747_e3_maintenance_records.sql"
   - "[[vault/EVIDENCE/E-DEV-002.md]]"
 gate_verdict: "BLOCKED (independent T3 review and production identity, intent, audit, floor and runtime binding absent)"
-reviewer: "none; separate T3 review requested for this maintenance integration slice"
+reviewer: "none; 2026-09-28 same-chat rejection does not qualify as the required separate T3 review"
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-28
@@ -34,3 +34,5 @@ The integration's remaining tuple fields for operation intent, protected audit, 
 For PR #6 code head `951d45f`, [E3 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471381), [E5 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471327), and [architecture checks](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471362) passed. The automatic T3 job was skipped on this PR; no human second-eye verdict is recorded yet.
 
 On 2026-09-28 a separate reviewer examined PR #5 as the latest merged PR and **rejected a T-E3-001 completion claim**. PR #5 only corrected two evidence/registry sentences and cannot satisfy product acceptance. It was merged after the owner's approval without the required different-chat T3 review; that process gap is acknowledged, not counted as a task approval. This verdict did not review PR #6's implementation. PR #6 remains draft pending its own independent T3 review, and both product tasks retain their blocked/in-progress states.
+
+On 2026-09-28 the owner relayed a **rejection of PR #6 merge approval** in this same chat. The verdict accepts the narrow maintenance slice's test evidence but identifies no recorded review from a different chat. This same-chat verdict is feedback, not the required independent T3 approval. The reviewer also confirmed that test fixtures and absent production identity/E5 writers, operation intent, protected audit, negative floors and runtime binding prevent T-E3-001-R1 from being DONE. PR #6 stays open and draft; no merge or task completion is authorized by this verdict.
