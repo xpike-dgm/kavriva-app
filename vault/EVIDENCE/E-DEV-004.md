@@ -16,8 +16,8 @@ evidence_links:
   - "modules/e03-server/tests/test_maintenance_store.py"
   - "supabase/migrations/20260924131747_e3_maintenance_records.sql"
   - "[[vault/EVIDENCE/E-DEV-002.md]]"
-gate_verdict: "BLOCKED (independent T3 review and production identity, intent, audit, floor and runtime binding absent)"
-reviewer: "none; 2026-09-28 same-chat rejection does not qualify as the required separate T3 review"
+gate_verdict: "BLOCKED (PR #6 maintenance slice independently approved; formal GitHub review and production bindings remain)"
+reviewer: "owner-relayed different-chat scoped approval for PR #6 code head 20e7c5b on 2026-09-28; no GitHub review submitted"
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-28
@@ -31,8 +31,10 @@ The PostgreSQL adapter now accepts a caller-supplied current reader on its own t
 
 The integration's remaining tuple fields for operation intent, protected audit, negative floors and runtime compatibility are explicit **test fixtures**. The test also supplies identity lookup hints; there is no production authentication ingress or E5 session/grant writer. These facts prevent a production ALLOW claim. No account, remote database, live user, deployed API or privileged capability was touched. T-E3-001-R1 stays CHANGES_REQUESTED and T-E5-003 stays IN_PROGRESS. A separate T3 reviewer must inspect this slice before it can be merged or any task verdict can advance.
 
-For PR #6 code head `951d45f`, [E3 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471381), [E5 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471327), and [architecture checks](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471362) passed. The automatic T3 job was skipped on this PR; no human second-eye verdict is recorded yet.
+For PR #6 code head `951d45f`, [E3 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471381), [E5 native PostgreSQL tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471327), and [architecture checks](https://github.com/xpike-dgm/kavriva-app/actions/runs/36006471362) passed. At that point the automatic T3 job was skipped and no human second-eye verdict had been recorded.
 
 On 2026-09-28 a separate reviewer examined PR #5 as the latest merged PR and **rejected a T-E3-001 completion claim**. PR #5 only corrected two evidence/registry sentences and cannot satisfy product acceptance. It was merged after the owner's approval without the required different-chat T3 review; that process gap is acknowledged, not counted as a task approval. This verdict did not review PR #6's implementation. PR #6 remains draft pending its own independent T3 review, and both product tasks retain their blocked/in-progress states.
 
 On 2026-09-28 the owner relayed a **rejection of PR #6 merge approval** in this same chat. The verdict accepts the narrow maintenance slice's test evidence but identifies no recorded review from a different chat. This same-chat verdict is feedback, not the required independent T3 approval. The reviewer also confirmed that test fixtures and absent production identity/E5 writers, operation intent, protected audit, negative floors and runtime binding prevent T-E3-001-R1 from being DONE. PR #6 stays open and draft; no merge or task completion is authorized by this verdict.
+
+The owner subsequently relayed a different-chat review of PR #6 code head `20e7c5b` on 2026-09-28. Its verdict **approved the maintenance slice only**: same-transaction target locking and write, retained correction revisions, `USER_REPORTED` status, HELD without a production reader, explicit fixture mode and rejection of bare ALLOW. The reviewer confirmed green E3/E5/architecture checks but observed the T3 job was skipped, the PR was draft, and GitHub had no submitted review. The scoped verdict supersedes the earlier same-chat merge rejection only as an independent code assessment; it does not authorize merge until the PR is ready and the formal GitHub review is recorded. It expressly withholds T-E3-001-R1 DONE because production identity, E5 writers, operation intent, protected audit, negative floors and runtime binding remain absent.
