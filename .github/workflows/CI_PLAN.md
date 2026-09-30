@@ -32,16 +32,19 @@ is installation after PASS + owner approval.
 ## Merge gates (`main` protection logic; enforced by platform, owned by gate)
 
 1. Required green: the event's check set, re-run on latest commit (stale green never merges).
-2. Human review: different-chat reviewer (R-007); T3 additionally requires mandatory independent review
-   with agreement≠approval recorded (DEC-0052/0056; no reviewer authority beyond these sources is claimed).
+2. Independent review: different-chat reviewer (R-007) or an independent delegated sub-agent whose identified
+   verdict the owner explicitly accepts (DEC-0069). T3 still requires a recorded second eye with
+   agreement≠approval (DEC-0052/0056/0069).
 3. Scope check: change touches only its task's declared surface (manifest-declared seams; new seam use
    without declaration + review = violation, rejected at gate).
 4. Evidence: T2/T3 merges attach conformance-shaped records (`vault/EVIDENCE/`); missing evidence = block.
-5. No self-merge on `t3-privileged`; no direct pushes to `main` (all change via pull request).
+5. No T3 merge based on implementer self-review or an automatic check alone. A recorded independent verdict,
+   explicit owner acceptance, green PR checks and a PR are required; no direct pushes to `main`.
 
 ## Ownership
 
-- Automation runs checks; implementer remediates; different-chat reviewer verifies; gate enforces.
+- Automation runs checks; implementer remediates; independent reviewer verifies; owner accepts the
+  delegated verdict where DEC-0069 applies; gate enforces.
 - Check-implementation language stays HELD for installation (Step-3 deferral honored): this plan reserves
   one workflow file per check family + one aggregator; file decomposition is installation detail, not selection.
 

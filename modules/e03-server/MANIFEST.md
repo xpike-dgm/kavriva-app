@@ -11,6 +11,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 ## Public contract surface
 
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
+- Consumer maintenance API verifies a bearer login, calls E5's public current-authority surface,
+  and commits the allowed maintenance revision on the same guarded E3 transaction.
 - Operation identity contract (stable identity/fingerprint; idempotency; CONFLICT/REJECTED semantics).
 - State-dictionary / negative-floor / epoch contract (verbatim state word; floors win on ties; epoch
   reaches all edges — downloaded copies honestly unrestorable).
@@ -28,6 +30,8 @@ Helpers, storage layout, in-flight job state invisible outside.
 ## Allowed / forbidden dependencies
 
 - Allowed: none inbound from epics (foundation); serves E1, E2, E4, E5, E6, E7, E8, E9 per seam table.
+  For the declared E3-serves/E5-authorizes seam, E3 calls only E5's public
+  `consumer_authority` decision and verified-principal contract; E5 storage internals stay private.
   E10 tooling-plane relation declared in the seam table invoke stanza (2026-09-23, OUT-3 B-16 — the prescribed
   change-request path; one-way tooling service, no epic runtime inbound to E10).
 - Gate-reference note (OUT-3 B-17, non-runtime): E3 tasks reference E6 gates without depending on E6 runtime

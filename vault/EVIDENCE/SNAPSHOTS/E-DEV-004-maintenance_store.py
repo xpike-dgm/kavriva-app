@@ -36,7 +36,6 @@ class MaintenanceTarget:
     motorcycle_id: str
     classification: str
     generation: int
-    motorcycle_generation: int
 
 
 @dataclass(frozen=True)
@@ -54,8 +53,7 @@ def read_target_locked(
     with conn.cursor(row_factory=dict_row) as cur:
         if request.action == CREATE:
             cur.execute(
-                """select motorcycle_id, classification, generation,
-                          generation as motorcycle_generation
+                """select motorcycle_id, classification, generation
                    from kavriva_e3.motorcycles
                    where tenant_id = %s and motorcycle_id = %s for update""",
                 (request.tenant_id, request.object_id),
@@ -63,8 +61,7 @@ def read_target_locked(
             row = cur.fetchone()
         elif request.action == EDIT:
             cur.execute(
-                """select r.motorcycle_id, m.classification, r.generation,
-                          m.generation as motorcycle_generation
+                """select r.motorcycle_id, m.classification, r.generation
                    from kavriva_e3.maintenance_records r
                    join kavriva_e3.motorcycles m
                      on m.tenant_id = r.tenant_id
