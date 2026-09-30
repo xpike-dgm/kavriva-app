@@ -10,6 +10,7 @@ import sys
 import tempfile
 import threading
 import time
+import tomllib
 import unittest
 from dataclasses import replace
 from datetime import date, datetime, timedelta, timezone
@@ -357,6 +358,67 @@ class LiveMaintenanceTests(unittest.TestCase):
                            'EXECUTE')""",
                     (role,),
                 ).fetchone()[0])
+
+    def test_migrated_database_surface_matches_direct_path_inventory(self):
+        """Catch a new table, view, routine or client grant omitted from the inventory."""
+        config = tomllib.loads((APP / "supabase" / "config.toml").read_text(encoding="utf-8"))
+        self.assertEqual(config["api"]["schemas"], ["public", "graphql_public"])
+        self.assertFalse(config["api"]["auto_expose_new_tables"])
+        expected_tables = {
+            "kavriva_e3.motorcycles", "kavriva_e3.maintenance_records",
+            "kavriva_e3.maintenance_revisions", "kavriva_e3.negative_floors",
+            "kavriva_e3.runtime_versions", "kavriva_e3.operation_records",
+            "kavriva_e5.actor_epochs", "kavriva_e5.current_sessions",
+            "kavriva_e5.current_grants", "kavriva_e5.policy_heads",
+            "kavriva_e5.policy_rules", "kavriva_e5.consumer_enrollments",
+            "kavriva_audit.heads", "kavriva_audit.events",
+        }
+        expected_routines = {
+            "kavriva_e3.reject_maintenance_revision_change()",
+            "kavriva_e3.reject_floor_regression()",
+            "kavriva_e5.reject_lock_marker_change()",
+            "kavriva_e5.provider_session_current(uuid,uuid)",
+            "kavriva_audit.reject_event_change()",
+        }
+        schemas = ("kavriva_e3", "kavriva_e5", "kavriva_audit",
+                   "public", "graphql_public")
+        with psycopg.connect(self.dsn) as conn:
+            relations = conn.execute(
+                """select n.nspname || '.' || c.relname, c.relkind,
+                          c.oid
+                   from pg_class c join pg_namespace n on n.oid = c.relnamespace
+                   where n.nspname = any(%s) and c.relkind in ('r', 'p', 'v', 'm', 'f')
+                   order by 1""", (list(schemas),),
+            ).fetchall()
+            self.assertEqual({name for name, kind, _ in relations
+                              if kind in ("r", "p")}, expected_tables)
+            self.assertEqual({name for name, kind, _ in relations
+                              if kind in ("v", "m", "f")}, set())
+
+            routines = conn.execute(
+                """select n.nspname || '.' || p.proname || '('
+                          || replace(oidvectortypes(p.proargtypes), ', ', ',') || ')', p.oid
+                   from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+                   where n.nspname = any(%s) order by 1""", (list(schemas),),
+            ).fetchall()
+            self.assertEqual({name for name, _ in routines}, expected_routines)
+
+            for role in ("anon", "authenticated"):
+                for schema in schemas[:3]:
+                    self.assertFalse(conn.execute(
+                        "select has_schema_privilege(%s, %s, 'USAGE')",
+                        (role, schema),
+                    ).fetchone()[0], (role, schema))
+                for name, _, oid in relations:
+                    self.assertFalse(conn.execute(
+                        "select has_table_privilege(%s, %s, 'SELECT, INSERT, UPDATE, DELETE')",
+                        (role, oid),
+                    ).fetchone()[0], (role, name))
+                for name, oid in routines:
+                    self.assertFalse(conn.execute(
+                        "select has_function_privilege(%s, %s, 'EXECUTE')",
+                        (role, oid),
+                    ).fetchone()[0], (role, name))
 
     def test_limited_server_role_can_commit_but_cannot_rewrite_grants_or_audit(self):
         limited_dsn = f"postgresql://kavriva_test_api@127.0.0.1:{self.port}/postgres"

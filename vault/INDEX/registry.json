@@ -32,6 +32,20 @@
    "last_verified": "2026-09-23 (proof migration P-PROOF-001; advanced READY→DONE per protocol after VERIFIED evidence, OUT-3 B-14)"
   },
   {
+   "task_id": "T-E3-006a",
+   "flow_feature": "FL3.1.4/F3.1.4",
+   "objective": "Inventory DB/RPC direct paths",
+   "depends_on": [],
+   "context_pack": "P-E3-006a",
+   "acceptance": "Tables, views, functions and RPC inventoried with client exposure and reproducible local catalog check",
+   "evidence": "E-DEV-006",
+   "status": "REVIEW",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",
