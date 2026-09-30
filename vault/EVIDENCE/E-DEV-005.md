@@ -26,11 +26,11 @@ evidence_links:
   - "modules/e03-server/tests/verify_local_supabase_auth.py"
   - "supabase/migrations/20260930151252_e3_live_authorization.sql"
   - ".github/workflows/e3-live-auth.yml"
-gate_verdict: "BLOCKED (final PR CI and independent task-level T3 review required; no DONE claim)"
-reviewer: none
+gate_verdict: "PASS (PR #7 scope only; owner accepted delegated T3 second-eye; task DONE and production activation withheld)"
+reviewer: "gpt-6-luna max sub-agent /root/pr7_independent_review; owner explicitly accepted its corrected-head verdict on 2026-10-01 under DEC-0069"
 timestamp: 2026-09-30
 status: RECORDED
-last_verified: 2026-09-30
+last_verified: 2026-10-01
 ---
 
 # E-DEV-005 — Consumer maintenance login and authority binding
@@ -45,6 +45,8 @@ Local native PostgreSQL suites on 2026-09-30 passed 40 E3 and 14 E5 tests. They 
 
 A read-only Luna Max sub-agent independently reviewed PR #7 head `04bbbf13f3de95bc84da5b7e73b1d47e47a49b64` and requested changes: an equal or newer `floor_generation` with `blocked=false` could still commit. The correction compares the locked floor to the motorcycle's locked canonical generation for both CREATE and EDIT, with equal/newer floors held, and the migration prevents floor-generation regression. Native tests now cover CREATE at equal/newer floors, EDIT at an older floor and at equal/newer floors, no effect on denial, and rejected regression. The finding was real; the earlier green CI did not exercise it. The correction was sent through CI and re-review. This sub-agent assessment is supplemental and does not replace the project's different-chat task-level T3 review.
 
-The same read-only sub-agent re-reviewed corrected code head `687246ee3f6a865f86914743e3a5a5c2c423879d` and returned PASS for the PR scope. It verified the floor comparison, regression trigger, negative tests and historical snapshot. On that head the [real local Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724021), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724017), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724006) and [architecture plus automatic T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724009) checks passed. This supplementary verdict does not make the task DONE or replace the required different-chat task-level T3 review.
+The same read-only sub-agent re-reviewed corrected code head `687246ee3f6a865f86914743e3a5a5c2c423879d` and returned PASS for the PR scope. It verified the floor comparison, regression trigger, negative tests and historical snapshot. On that head the [real local Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724021), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724017), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724006) and [architecture plus automatic T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36748724009) checks passed. The following `66dd175` commit changed evidence text only; [its PR-head checks](https://github.com/xpike-dgm/kavriva-app/pull/7/checks) also passed.
 
-This is a runnable consumer maintenance boundary, not a hosted production activation. No hosted Supabase project, production database login, deployment, live customer or paid resource was created or changed. The runtime's future login and DB role binding, real deployment configuration, external audit/floor custody, and all privileged Internal Operations paths need separate activation and review. These local tests do not prove production-current authority. T-E3-001-R1 is awaiting independent task-level T3 review under DEC-0068; T-E5-003 remains IN_PROGRESS. Neither is DONE from this evidence alone.
+On 2026-10-01 the sole project owner explicitly accepted this named sub-agent verdict as the T3 second eye for PR #7. [Plan PR #2](https://github.com/xpike-dgm/motobakim-plan/pull/2), merged as `7338818`, records DEC-0069 and the reviewer context. This owner instruction supersedes the earlier DEC-0064 sub-agent exclusion for an owner-accepted, recorded independent review; it does not turn the review into a GitHub account approval. The review is PASS for the PR's tested consumer maintenance scope. The task and production limits below remain.
+
+This is a runnable consumer maintenance boundary, not a hosted production activation. No hosted Supabase project, production database login, deployment, live customer or paid resource was created or changed. The runtime's future login and DB role binding, real deployment configuration, external audit/floor custody, and all privileged Internal Operations paths need separate activation and review. These local tests do not prove production-current authority. T-E3-001-R1 remains REVIEW and T-E5-003 remains IN_PROGRESS. Neither is DONE from this evidence alone.
