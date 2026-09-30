@@ -158,6 +158,13 @@ def _decision(request: CommitRequest, current: CurrentTuple | None) -> CommitRes
     return CommitResult(Verdict.ALLOW, "CURRENT_TUPLE_ALLOWED")
 
 
+def decide_commit(request: CommitRequest, current: CurrentTuple | None) -> CommitResult:
+    """Public decision contract for an adapter with its own idempotency store."""
+    if any(not _present_text(getattr(request, name)) for name in _REQUEST_FIELDS):
+        return CommitResult(Verdict.DENY, "REQUEST_INCOMPLETE")
+    return _decision(request, current)
+
+
 def authorize_and_commit(
     request: CommitRequest,
     transaction: Callable[[], AbstractContextManager[CanonicalTransaction[T]]],
