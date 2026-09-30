@@ -380,7 +380,8 @@ class LiveMaintenanceTests(unittest.TestCase):
             "kavriva_e5.provider_session_current(uuid,uuid)",
             "kavriva_audit.reject_event_change()",
         }
-        schemas = ("kavriva_e3", "kavriva_e5", "kavriva_audit", "public")
+        schemas = ("kavriva_e3", "kavriva_e5", "kavriva_audit",
+                   "public", "graphql_public")
         with psycopg.connect(self.dsn) as conn:
             relations = conn.execute(
                 """select n.nspname || '.' || c.relname, c.relkind,
