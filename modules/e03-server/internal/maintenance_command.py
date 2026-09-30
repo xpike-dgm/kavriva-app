@@ -20,15 +20,14 @@ import psycopg
 from commit_authorization import (
     CommitRequest, CommitResult, CurrentTuple, Verdict, decide_commit,
 )
-from decision import AuthorityRequest, Verdict as IdentityVerdict, decide_current
+from consumer_authority import (
+    AuthorityRequest, Verdict as IdentityVerdict, WORKLOAD,
+    decide_current_on_connection, enroll_personal_tenant, grant_id,
+    lock_provider_session, sync_session,
+)
 from maintenance_store import (
     CREATE, EDIT, MaintenanceEntry, MaintenanceWriteResult,
     read_target_locked, write_maintenance_entry,
-)
-from postgres_decision import PostgresCurrentAuthority
-from postgres_identity_writer import (
-    Enrollment, WORKLOAD, enroll_personal_tenant, grant_id,
-    lock_provider_session, sync_session,
 )
 from principal import AuthenticationFailure, Principal
 
@@ -265,7 +264,7 @@ class MaintenanceCommands:
                     grant_id=grant_id(principal.actor_id, command.action),
                     operation_id=operation_id,
                 )
-                e5 = decide_current(authority_request, PostgresCurrentAuthority(conn))
+                e5 = decide_current_on_connection(conn, authority_request)
                 if e5.verdict != IdentityVerdict.ALLOW or e5.authority is None:
                     conn.rollback()
                     return CommitResult(Verdict(e5.verdict.value), e5.reason_code)

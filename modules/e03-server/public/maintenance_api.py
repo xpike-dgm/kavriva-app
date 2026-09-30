@@ -14,9 +14,9 @@ from functools import lru_cache
 from io import BytesIO
 
 from commit_authorization import CommitResult, Verdict
+from consumer_authority import SupabaseAuth
 from maintenance_command import MaintenanceCommand, MaintenanceCommands
 from maintenance_store import CREATE, EDIT
-from supabase_auth import SupabaseAuth
 
 
 _MAX_BODY = 16384

@@ -20,7 +20,7 @@ gate_verdict: "PASS for PR #6 maintenance slice only; product DONE awaits produc
 reviewer: "Codex separate-chat context 01a0e8c9-7f86-7a43-9ab4-bd7978e0da26, owner-relayed scoped approval for code head 20e7c5b on 2026-09-28"
 timestamp: 2026-09-24
 status: RECORDED
-last_verified: 2026-09-28
+last_verified: 2026-09-30
 ---
 
 # E-DEV-004 — Maintenance integration slice
@@ -42,3 +42,5 @@ The owner subsequently relayed a different-chat review of PR #6 code head `20e7c
 A separately delegated Luna Max sub-agent then reviewed PR head `a26aac3` read-only. It also approved the narrow maintenance code and withheld merge and DONE for the documented review and production gaps. This supplementary sub-agent result is not used as the mandatory non-subagent T3 review leg under DEC-0064. The T3 automation passed on `a26aac3` after the `t3-privileged` label was applied, but it runs conformance and identity checks, not the human review.
 
 The owner confirmed on 2026-09-28 that they are the project's only human. GitHub accounts `xpike-dgm` and `glix-dgm` must not be represented as two independent people. The review request sent to `glix-dgm` was withdrawn. The active `main-gates` ruleset requires a PR and green checks but sets required GitHub approving reviews to zero; the project's separate-chat review and evidence rules remain in force. No second human or alternate-account self-approval is required or claimed.
+
+Historical closure: PR #6 merged on 2026-09-30 as `310994165909b1208b8607a4349b208cd8ef8fdf`. Its limited proof and independent scoped review are unchanged. The later consumer login and authority integration is recorded together in `[[vault/EVIDENCE/E-DEV-005.md]]`, not retroactively attributed to PR #6.

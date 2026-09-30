@@ -30,7 +30,7 @@ from commit_authorization import Verdict  # noqa: E402
 from maintenance_command import MaintenanceCommand, MaintenanceCommands  # noqa: E402
 from maintenance_api import create_app  # noqa: E402
 from maintenance_store import CREATE, EDIT  # noqa: E402
-from postgres_identity_writer import revoke_consumer  # noqa: E402
+from consumer_authority import revoke_consumer  # noqa: E402
 from principal import Principal  # noqa: E402
 
 
@@ -325,7 +325,7 @@ class LiveMaintenanceTests(unittest.TestCase):
 
         def writer():
             with psycopg.connect(self.dsn) as conn:
-                from postgres_identity_writer import lock_provider_session
+                from consumer_authority import lock_provider_session
                 self.assertTrue(lock_provider_session(conn, self.principal))
                 entered.set()
                 release.wait(5)

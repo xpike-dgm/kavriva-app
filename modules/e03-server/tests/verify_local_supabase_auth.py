@@ -24,9 +24,9 @@ for path in (
 ):
     sys.path.insert(0, str(path))
 from commit_authorization import Verdict  # noqa: E402
+from consumer_authority import SupabaseAuth  # noqa: E402
 from maintenance_command import MaintenanceCommand, MaintenanceCommands  # noqa: E402
 from maintenance_store import CREATE  # noqa: E402
-from supabase_auth import SupabaseAuth  # noqa: E402
 
 
 def _post(url, key, body, bearer=None):

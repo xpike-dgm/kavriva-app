@@ -13,6 +13,8 @@ E1 renders, E3 serves, E5 authorizes (render/authorize split).
 - Audit event contract (event scope, minimum meaning, pre-impact link, integrity/alerts, investigation
   chain, management separation — `ADR-005` event/meaning rules).
 - Authorization decisions (per-request server-side; separation of duties on publish path).
+- `public/consumer_authority.py` exposes the verified consumer principal, current
+  PostgreSQL decision and bounded enrollment/session writers to E3's guarded maintenance command.
 - Accountless start + profiles + conflict-free migration; phishing-resistant login + second verification;
   epoch closes all edges (downloaded copies honestly unrestorable).
 - Recovery alone (cancel + fresh login, dual control/last-admin; recovery never grants approval/publish/
