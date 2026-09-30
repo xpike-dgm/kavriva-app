@@ -86,7 +86,7 @@ T = TypeVar("T")
 class CanonicalTransaction(Protocol[T]):
     """Read/lock and transition must share one database transaction."""
 
-    def read_current(self, request: CommitRequest) -> CurrentTuple | CommitResult | None: ...
+    def read_current(self, request: CommitRequest) -> CurrentTuple | None: ...
 
     def apply_effect(self, request: CommitRequest) -> T: ...
 
@@ -174,12 +174,7 @@ def authorize_and_commit(
     try:
         with transaction() as tx:
             current = tx.read_current(request)
-            if isinstance(current, CommitResult):
-                decision = (CommitResult(Verdict.HELD, "INVALID_CURRENT_DECISION")
-                            if current.verdict == Verdict.ALLOW or
-                            not _present_text(current.reason_code) else current)
-            else:
-                decision = _decision(request, current)
+            decision = _decision(request, current)
             if decision.verdict != Verdict.ALLOW:
                 return decision
             attempted_effect = True
