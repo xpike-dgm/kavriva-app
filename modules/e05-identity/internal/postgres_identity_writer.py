@@ -25,6 +25,7 @@ EDIT = "EDIT_MAINTENANCE_RECORD"
 class Enrollment:
     tenant_id: str
     motorcycle_id: str
+    already_enrolled: bool = False
 
 
 def grant_id(actor_id: str, action: str) -> str:
@@ -38,12 +39,10 @@ def lock_provider_session(conn: psycopg.Connection, principal: Principal) -> boo
     if conn.autocommit:
         raise RuntimeError("provider session requires a transaction")
     row = conn.execute(
-        """select s.user_id::text
-           from auth.sessions s join auth.users u on u.id = s.user_id
-           where s.id = %s::uuid for share of s, u""",
-        (principal.session_id,),
+        "select kavriva_e5.provider_session_current(%s::uuid, %s::uuid)",
+        (principal.session_id, principal.actor_id),
     ).fetchone()
-    return row is not None and row[0] == principal.actor_id
+    return row is not None and row[0] is True
 
 
 def enroll_personal_tenant(
@@ -58,16 +57,25 @@ def enroll_personal_tenant(
     if not lock_provider_session(conn, principal):
         return None
     actor = principal.actor_id
+    motorcycle_id = str(uuid4())
     inserted = conn.execute(
-        """insert into kavriva_e5.consumer_enrollments (actor_id, tenant_id)
-           values (%s, %s) on conflict do nothing returning tenant_id""",
-        (actor, actor),
+        """insert into kavriva_e5.consumer_enrollments
+           (actor_id, tenant_id, initial_motorcycle_id)
+           values (%s, %s, %s) on conflict do nothing returning tenant_id""",
+        (actor, actor, motorcycle_id),
     ).fetchone()
     if inserted is None:
-        return None
-    motorcycle_id = str(uuid4())
+        existing = conn.execute(
+            """select initial_motorcycle_id from kavriva_e5.consumer_enrollments
+               where actor_id = %s and tenant_id = %s for share""",
+            (actor, actor),
+        ).fetchone()
+        if existing is None or not sync_session(conn, principal, actor):
+            return None
+        return Enrollment(actor, existing[0], already_enrolled=True)
     conn.execute(
-        "insert into kavriva_e5.actor_epochs values (%s, %s, 1)",
+        """insert into kavriva_e5.actor_epochs
+           (tenant_id, actor_id, security_epoch) values (%s, %s, 1)""",
         (actor, actor),
     )
     conn.execute(
@@ -84,7 +92,8 @@ def enroll_personal_tenant(
         "insert into kavriva_audit.heads (tenant_id) values (%s)", (actor,),
     )
     conn.execute(
-        "insert into kavriva_e5.policy_heads values (%s, 1)", (actor,),
+        """insert into kavriva_e5.policy_heads (tenant_id, policy_version)
+           values (%s, 1)""", (actor,),
     )
     for action in (CREATE, EDIT):
         conn.execute(

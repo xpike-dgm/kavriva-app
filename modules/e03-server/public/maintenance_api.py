@@ -75,7 +75,7 @@ def _command(value, action, target_id=None):
 
 def _response(start_response, result: CommitResult):
     if result.verdict == Verdict.ALLOW:
-        status = ("200 OK" if result.reason_code == "ALREADY_COMMITTED"
+        status = ("200 OK" if result.reason_code in ("ALREADY_COMMITTED", "ALREADY_ENROLLED")
                   else "201 Created")
     elif result.verdict == Verdict.OUTCOME_UNKNOWN:
         status = "202 Accepted"

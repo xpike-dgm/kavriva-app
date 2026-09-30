@@ -80,6 +80,12 @@ def main(status_path):
         if actor != principal.actor_id:
             raise AssertionError("effect actor differs from Auth user")
     _post(api_url + "/auth/v1/logout", anon_key, {}, token)
+    with psycopg.connect(db_url) as conn:
+        if conn.execute(
+            "select 1 from auth.sessions where id = %s::uuid",
+            (principal.session_id,),
+        ).fetchone():
+            raise AssertionError("logout did not remove the provider session")
     denied = service.execute(token, MaintenanceCommand(
         **{**command.__dict__, "operation_id": str(uuid4())}
     ))

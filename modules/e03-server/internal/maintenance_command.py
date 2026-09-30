@@ -157,10 +157,15 @@ class MaintenanceCommands:
                 if enrolled is None:
                     conn.rollback()
                     return CommitResult(Verdict.DENY, "ENROLLMENT_NOT_AVAILABLE")
-                _audit(conn, enrolled.tenant_id, str(uuid4()),
-                       principal.actor_id, enrolled.motorcycle_id,
-                       "ENROLL_CONSUMER", 1, "INITIAL", "COMMITTED")
-            return CommitResult(Verdict.ALLOW, "ENROLLED", enrolled)
+                if not enrolled.already_enrolled:
+                    _audit(conn, enrolled.tenant_id, str(uuid4()),
+                           principal.actor_id, enrolled.motorcycle_id,
+                           "ENROLL_CONSUMER", 1, "INITIAL", "COMMITTED")
+            return CommitResult(
+                Verdict.ALLOW,
+                "ALREADY_ENROLLED" if enrolled.already_enrolled else "ENROLLED",
+                enrolled,
+            )
         except Exception:
             return CommitResult(Verdict.OUTCOME_UNKNOWN, "ENROLLMENT_OUTCOME_UNKNOWN")
 

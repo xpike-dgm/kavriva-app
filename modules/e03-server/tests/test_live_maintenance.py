@@ -77,6 +77,7 @@ class LiveMaintenanceTests(unittest.TestCase):
         with psycopg.connect(cls.dsn) as conn:
             conn.execute("create role anon")
             conn.execute("create role authenticated")
+            conn.execute("create role kavriva_test_api login")
             conn.execute("create schema auth")
             conn.execute("create table auth.users (id uuid primary key)")
             conn.execute("""create table auth.sessions
@@ -102,6 +103,7 @@ class LiveMaintenanceTests(unittest.TestCase):
             conn.execute("delete from auth.users")
             for migration in MIGRATIONS:
                 conn.execute(migration.read_text(encoding="utf-8"))
+            conn.execute("grant kavriva_consumer_api to kavriva_test_api")
             conn.execute("insert into auth.users values (%s), (%s)", (ACTOR, OTHER))
             conn.execute("insert into auth.sessions values (%s, %s), (%s, %s)",
                          (SESSION, ACTOR, OTHER_SESSION, OTHER))
@@ -124,6 +126,10 @@ class LiveMaintenanceTests(unittest.TestCase):
         ), **changes)
 
     def test_create_edit_and_idempotent_replay(self):
+        enrollment_replay = self.commands.enroll("verified-token")
+        self.assertEqual((enrollment_replay.reason_code,
+                          enrollment_replay.effect_result.motorcycle_id),
+                         ("ALREADY_ENROLLED", self.bike))
         create = self.command()
         result = self.commands.execute("verified-token", create)
         self.assertEqual((result.verdict, result.reason_code),
@@ -281,6 +287,31 @@ class LiveMaintenanceTests(unittest.TestCase):
                     (role,),
                 ).fetchone()[0])
 
+    def test_limited_server_role_can_commit_but_cannot_rewrite_grants_or_audit(self):
+        limited_dsn = f"postgresql://kavriva_test_api@127.0.0.1:{self.port}/postgres"
+        service = MaintenanceCommands(limited_dsn, StubAuth(self.principal))
+        result = service.execute("verified-token", self.command())
+        self.assertEqual((result.verdict, result.reason_code),
+                         (Verdict.ALLOW, "COMMITTED"))
+        with psycopg.connect(self.dsn) as conn:
+            self.assertFalse(conn.execute(
+                """select has_table_privilege(
+                       'kavriva_test_api', 'kavriva_e5.current_grants', 'UPDATE')"""
+            ).fetchone()[0])
+            self.assertFalse(conn.execute(
+                """select has_table_privilege(
+                       'kavriva_test_api', 'auth.sessions', 'SELECT')"""
+            ).fetchone()[0])
+            self.assertFalse(conn.execute(
+                """select has_table_privilege(
+                       'kavriva_test_api', 'kavriva_audit.events', 'DELETE')"""
+            ).fetchone()[0])
+        with self.assertRaises(psycopg.Error), psycopg.connect(limited_dsn) as conn:
+            conn.execute(
+                """update kavriva_e5.current_grants
+                   set lock_marker = lock_marker where actor_id = %s""",
+                (ACTOR,),
+            )
     def test_provider_session_lock_blocks_logout_until_commit(self):
         entered = threading.Event()
         release = threading.Event()
