@@ -9,10 +9,12 @@ import json
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
 import psycopg
+from psycopg import sql
 
 
 APP = Path(__file__).resolve().parents[3]
@@ -56,7 +58,19 @@ def main(status_path):
         raise AssertionError("unexpected local Auth issuer")
     auth = SupabaseAuth(api_url, anon_key, issuer, allow_local_http=True)
     principal = auth.verify(token)
-    service = MaintenanceCommands(db_url, auth)
+    local_password = uuid4().hex + uuid4().hex
+    with psycopg.connect(db_url) as conn:
+        conn.execute(sql.SQL("create role kavriva_ci_api login password {}").format(
+            sql.Literal(local_password)
+        ))
+        conn.execute("grant kavriva_consumer_api to kavriva_ci_api")
+    parsed = urlsplit(db_url)
+    limited_url = urlunsplit((
+        parsed.scheme,
+        "kavriva_ci_api:" + local_password + "@" + parsed.netloc.rsplit("@", 1)[-1],
+        parsed.path, parsed.query, parsed.fragment,
+    ))
+    service = MaintenanceCommands(limited_url, auth)
     enrolled = service.enroll(token)
     if enrolled.verdict != Verdict.ALLOW:
         raise AssertionError("verified Auth user could not enroll: " +

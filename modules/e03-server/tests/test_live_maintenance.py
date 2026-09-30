@@ -286,6 +286,12 @@ class LiveMaintenanceTests(unittest.TestCase):
                            %s, 'kavriva_e5.consumer_enrollments', 'SELECT')""",
                     (role,),
                 ).fetchone()[0])
+                self.assertFalse(conn.execute(
+                    """select has_function_privilege(
+                           %s, 'kavriva_e5.provider_session_current(uuid, uuid)',
+                           'EXECUTE')""",
+                    (role,),
+                ).fetchone()[0])
 
     def test_limited_server_role_can_commit_but_cannot_rewrite_grants_or_audit(self):
         limited_dsn = f"postgresql://kavriva_test_api@127.0.0.1:{self.port}/postgres"
