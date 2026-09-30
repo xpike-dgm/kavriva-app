@@ -2,7 +2,7 @@
 test_id: E-DEV-004
 contract_id_version: authorization-tuple v1 + ADR-004 Decision 1 + ADR-006 Decisions 2 and 3; T-E3-001-R1 maintenance slice
 subject_digest: 73E6DA06B8384C417CE7223E99BDA768901FC704B30B7D68A3840E711D319372
-subject_file: modules/e03-server/internal/maintenance_store.py
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-004-maintenance_store.py
 adapter_digest: 9150EABDC24B5D47C72A3BCDFA4A0563C8D7F12FAB3DDB511CFD909E142646D1
 gate_digest: 41DB48BBEDAEE594B922050AC13EB5A39AE2EB2EDD7BDE61A1E017DE8EB84EC7
 schema_digest: 66BFAA43A7322FD24E906AAEEA1355A956910C6FC931A3D93190512898EBA509
@@ -13,6 +13,7 @@ evidence_links:
   - "modules/e03-server/public/commit_authorization.py"
   - "modules/e03-server/internal/postgres_commit_authorization.py"
   - "modules/e03-server/internal/maintenance_store.py"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-004-maintenance_store.py"
   - "modules/e03-server/tests/test_maintenance_store.py"
   - "supabase/migrations/20260924131747_e3_maintenance_records.sql"
   - "[[vault/EVIDENCE/E-DEV-002.md]]"
@@ -44,3 +45,5 @@ A separately delegated Luna Max sub-agent then reviewed PR head `a26aac3` read-o
 The owner confirmed on 2026-09-28 that they are the project's only human. GitHub accounts `xpike-dgm` and `glix-dgm` must not be represented as two independent people. The review request sent to `glix-dgm` was withdrawn. The active `main-gates` ruleset requires a PR and green checks but sets required GitHub approving reviews to zero; the project's separate-chat review and evidence rules remain in force. No second human or alternate-account self-approval is required or claimed.
 
 Historical closure: PR #6 merged on 2026-09-30 as `310994165909b1208b8607a4349b208cd8ef8fdf`. Its limited proof and independent scoped review are unchanged. The later consumer login and authority integration is recorded together in `[[vault/EVIDENCE/E-DEV-005.md]]`, not retroactively attributed to PR #6.
+
+The original PR #6 maintenance writer is preserved byte-for-byte at `vault/EVIDENCE/SNAPSHOTS/E-DEV-004-maintenance_store.py` so this evidence's subject digest continues to identify the reviewed code after later task-level changes to the live writer.

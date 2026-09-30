@@ -183,10 +183,10 @@ class LiveMaintenanceTests(unittest.TestCase):
     def test_policy_floor_runtime_and_generation_fail_closed(self):
         cases = (
             ("update kavriva_e5.policy_rules set verdict = 'DENY'", "POLICY_DENIED"),
-            ("update kavriva_e3.negative_floors set blocked = true, floor_generation = 1",
-             "NEGATIVE_FLOOR"),
             ("update kavriva_e3.runtime_versions set min_client_generation = 2, max_client_generation = 2",
              "RUNTIME_INCOMPATIBLE"),
+            ("update kavriva_e3.negative_floors set blocked = true, floor_generation = 1",
+             "NEGATIVE_FLOOR"),
         )
         for query, expected in cases:
             with self.subTest(expected=expected):
@@ -206,6 +206,71 @@ class LiveMaintenanceTests(unittest.TestCase):
         self.assertEqual(self.commands.execute(
             "verified-token", self.command(expected_generation=2)
         ).reason_code, "AUTHORITY_CHANGED")
+
+    def test_motorcycle_floor_wins_on_equal_or_newer_generation(self):
+        for floor_generation in (1, 2):
+            with self.subTest(create_floor=floor_generation):
+                with psycopg.connect(self.dsn) as conn:
+                    conn.execute(
+                        "update kavriva_e3.negative_floors set floor_generation = %s",
+                        (floor_generation,),
+                    )
+                self.assertEqual(
+                    self.commands.execute("verified-token", self.command()).reason_code,
+                    "NEGATIVE_FLOOR",
+                )
+                with psycopg.connect(self.dsn) as conn:
+                    self.assertEqual(conn.execute(
+                        "select count(*) from kavriva_e3.maintenance_records"
+                    ).fetchone()[0], 0)
+        with self.assertRaises(psycopg.Error):
+            with psycopg.connect(self.dsn) as conn:
+                conn.execute(
+                    "update kavriva_e3.negative_floors set floor_generation = 0"
+                )
+        with psycopg.connect(self.dsn) as conn:
+            self.assertEqual(conn.execute(
+                "select floor_generation from kavriva_e3.negative_floors"
+            ).fetchone()[0], 2)
+
+    def test_edit_uses_motorcycle_generation_for_floor(self):
+        created = self.commands.execute("verified-token", self.command())
+        self.assertEqual(created.verdict, Verdict.ALLOW)
+        record_id = created.effect_result.record_id
+        with psycopg.connect(self.dsn) as conn:
+            self.assertEqual(conn.execute(
+                "select generation from kavriva_e3.motorcycles where motorcycle_id = %s",
+                (self.bike,),
+            ).fetchone()[0], 2)
+            conn.execute(
+                "update kavriva_e3.negative_floors set floor_generation = 1"
+            )
+        edit = self.command(
+            action=EDIT, target_id=record_id,
+            correction_reason="Clarified detail",
+        )
+        self.assertEqual(self.commands.execute("verified-token", edit).verdict,
+                         Verdict.ALLOW)
+        with psycopg.connect(self.dsn) as conn:
+            conn.execute(
+                "update kavriva_e3.negative_floors set floor_generation = 2"
+            )
+        for floor_generation in (2, 3):
+            with self.subTest(edit_floor=floor_generation):
+                with psycopg.connect(self.dsn) as conn:
+                    conn.execute(
+                        "update kavriva_e3.negative_floors set floor_generation = %s",
+                        (floor_generation,),
+                    )
+                held = self.commands.execute(
+                    "verified-token", replace(edit, operation_id=str(uuid4()),
+                                               expected_generation=2),
+                )
+                self.assertEqual(held.reason_code, "NEGATIVE_FLOOR")
+                with psycopg.connect(self.dsn) as conn:
+                    self.assertEqual(conn.execute(
+                        "select count(*) from kavriva_e3.maintenance_revisions"
+                    ).fetchone()[0], 2)
 
     def test_missing_audit_custody_holds_before_effect(self):
         with psycopg.connect(self.dsn) as conn:

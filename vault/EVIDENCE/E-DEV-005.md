@@ -2,20 +2,23 @@
 test_id: E-DEV-005
 contract_id_version: authorization-tuple v1 + ADR-004 Decision 1 + ADR-006 Decisions 2-4 and 6; T-E3-001-R1 consumer maintenance binding
 subject_file: modules/e03-server/internal/maintenance_command.py
-subject_digest: 3FDF8EB338B656EB2AC77105AE6B5F4F4208273A302FD8C6B10A417B75A3767C
+subject_digest: EDAC38A8953980B675CE5B7F606C8C3D22DDED5B8FEA1BD921F08DB76B945902
+target_reader_digest: 8637F91BB858CCC86B5ED6D2CF5E589DE0A17D378107F360238806AE165CAC44
+native_test_digest: 1B7E418EF6DFF7F36A460C694DB6A45A042CB8C2D992071E5EB4F65DDCBEEFF0
 api_digest: 3A8D77539F7890A0D096A5957E8EB50CC1011C55BCC405A1CE4E7DA7A7E13CE4
 e5_public_digest: FF4CD544EABC5FF915B60B1C37CC4B7C609C3C1DCAED9A0E435EA9DCEA2FE41E
 auth_digest: 8EFC207384B2E4B01B4C11E56A19360AA898F62910DEF80304F463A9A81FD960
 writer_digest: A4E76F89AFF064414FF42D522C17C78FE15273E3FCF166B909C878E894CE2FED
-schema_digest: C050923E2EBDA97F66F3B39A2DBB4B70298EF907FCD411D73C3965CA8B10E9D4
+schema_digest: FF693F9B6B216BD930175EF25726ADD7B128B7C47CD539155F177A968878CD52
 test_script_digest: E9AED62DC1E7452B5D3FDA2FEEF97273D7EC26808BA63C1A31C2BCCB46E67506
-result: "RECORDED (38 E3 and 14 E5 tests; PR #7 code-head checks passed)"
+result: "RECORDED (40 E3 and 14 E5 local tests passed after negative-floor remediation; current PR-head CI at linked checks page)"
 evidence_links:
   - "[[vault/PACKS/P-E3-001-R3.md]]"
   - "[[vault/REGISTRY/T-E3-001-R1.md]]"
   - "modules/e03-server/public/commit_authorization.py"
   - "modules/e03-server/public/maintenance_api.py"
   - "modules/e03-server/internal/maintenance_command.py"
+  - "modules/e03-server/internal/maintenance_store.py"
   - "modules/e05-identity/public/consumer_authority.py"
   - "modules/e05-identity/internal/supabase_auth.py"
   - "modules/e05-identity/internal/postgres_identity_writer.py"
@@ -36,6 +39,8 @@ The bearer-only E3 API validates a consumer access token with Supabase Auth `/us
 
 The SQL migration was generated with Supabase CLI v2.117.0 and applied only to isolated test databases. Its `kavriva_consumer_api` role has no login and no direct Auth-table access; the local CI test creates a temporary login with that role. The provider-session function takes row locks on the real Auth tables without returning personal profile data. Direct client roles have no access to the private command tables.
 
-Local native PostgreSQL suites on 2026-09-30 passed 38 E3 and 14 E5 tests. They cover create/edit and semantic retry, transaction rollback, provider logout racing a commit, E5 revocation, missing or changed policy/floor/runtime/audit sources, cross-tenant attempts, rejected client-selected authority, restricted-role privileges, and lookup after an uncertain outcome. On [PR #7](https://github.com/xpike-dgm/kavriva-app/pull/7) code head `a476f8b0e868c993ff27fd40d61bf735cb5fb634`, CI also ran real local Supabase Auth signup, token verification, restricted-role maintenance write and logout/session deletion. The [live Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548660), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548691), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548343), [architecture and automatic T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548699) checks passed. The [PR checks page](https://github.com/xpike-dgm/kavriva-app/pull/7/checks) tracks the latest head, including the evidence-only follow-up. The automatic T3 check does not replace the independent reviewer.
+Local native PostgreSQL suites on 2026-09-30 passed 40 E3 and 14 E5 tests. They cover create/edit and semantic retry, transaction rollback, provider logout racing a commit, E5 revocation, missing or changed policy/floor/runtime/audit sources, cross-tenant attempts, rejected client-selected authority, restricted-role privileges, and lookup after an uncertain outcome. On [PR #7](https://github.com/xpike-dgm/kavriva-app/pull/7) earlier code head `a476f8b0e868c993ff27fd40d61bf735cb5fb634`, CI also ran real local Supabase Auth signup, token verification, restricted-role maintenance write and logout/session deletion. The [live Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548660), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548691), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548343), [architecture and automatic T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36744548699) checks passed for that earlier head. The [PR checks page](https://github.com/xpike-dgm/kavriva-app/pull/7/checks) tracks the latest head. The automatic T3 check does not replace the independent reviewer.
+
+A read-only Luna Max sub-agent independently reviewed PR #7 head `04bbbf13f3de95bc84da5b7e73b1d47e47a49b64` and requested changes: an equal or newer `floor_generation` with `blocked=false` could still commit. The correction compares the locked floor to the motorcycle's locked canonical generation for both CREATE and EDIT, with equal/newer floors held, and the migration prevents floor-generation regression. Native tests now cover CREATE at equal/newer floors, EDIT at an older floor and at equal/newer floors, no effect on denial, and rejected regression. The finding was real; the earlier green CI did not exercise it. The changed head's CI is tracked at the PR checks page and the reviewer must re-review this correction. This sub-agent assessment is supplemental and does not replace the project's different-chat task-level T3 review.
 
 This is a runnable consumer maintenance boundary, not a hosted production activation. No hosted Supabase project, production database login, deployment, live customer or paid resource was created or changed. The runtime's future login and DB role binding, real deployment configuration, external audit/floor custody, and all privileged Internal Operations paths need separate activation and review. These local tests do not prove production-current authority. T-E3-001-R1 is awaiting independent task-level T3 review under DEC-0068; T-E5-003 remains IN_PROGRESS. Neither is DONE from this evidence alone.

@@ -20,6 +20,20 @@ create table kavriva_e3.negative_floors (
         references kavriva_e3.motorcycles (tenant_id, motorcycle_id)
 );
 
+create function kavriva_e3.reject_floor_regression()
+returns trigger language plpgsql set search_path = '' as $$
+begin
+    if new.floor_generation < old.floor_generation then
+        raise exception 'negative floor cannot move backward';
+    end if;
+    return new;
+end
+$$;
+revoke all on function kavriva_e3.reject_floor_regression() from public;
+create trigger floor_generation_monotonic
+before update of floor_generation on kavriva_e3.negative_floors
+for each row execute function kavriva_e3.reject_floor_regression();
+
 create table kavriva_e3.runtime_versions (
     scope text primary key,
     release_generation bigint not null check (release_generation > 0),

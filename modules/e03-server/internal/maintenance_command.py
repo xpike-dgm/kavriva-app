@@ -299,7 +299,11 @@ class MaintenanceCommands:
                     intended_effect=intended_effect, audit_receipt=receipt,
                     runtime_compatibility="MATCHED" if compatible else "INCOMPATIBLE",
                     policy_verdict=Verdict.ALLOW, session_current=True,
-                    floor_clear=not floor[1], audit_ready=True,
+                    # The floor is scoped to the motorcycle for both create
+                    # and edit. An equal or newer negative generation wins.
+                    floor_clear=(not floor[1] and
+                                 floor[0] < target.motorcycle_generation),
+                    audit_ready=True,
                     runtime_compatible=compatible,
                 )
                 decision = decide_commit(request, current)
