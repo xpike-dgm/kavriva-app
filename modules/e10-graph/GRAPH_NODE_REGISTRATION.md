@@ -6,7 +6,7 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: []
+used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
@@ -67,7 +67,7 @@ Explicit empty lists are valid only where there is actually no applicable relati
 
 The companion inventory records a literal frontmatter-field presence audit of all126 tracked Markdown documents at base28b3734027d72b8f592b60290c8bf5f8fc0dfe2b. It is a baseline, not a semantic conformance audit or a live generated index. It demonstrates existing gaps; current run_all green is not full registration proof. This task publishes the universal registration rule. Existing-corpus admission, complete graph closure, relation conventions, detector implementations, physical activation and production authorization are not established by publishing it. If the independent reviewer finds T-E10-001 acceptance also requires the existing corpus to be fully migrated now, task remains CHANGES_REQUESTED/IN_PROGRESS until that scope is fulfilled; no bounded PASS is used to conceal an unmet criterion.
 
-For this documentary rule: no public runtime contracts, no executable behavior/tests and no consumers claimed yet; used_by remains empty until actual convention/detector tasks reference it. Metadata dependency list is empty because canonical T-E10-001 has no task dependencies. The evidence is linked as an existing record, with its actual review state authoritative.
+For this documentary rule: no public runtime contracts, no executable behavior/tests and used_by names the present documentary consumers; no future convention/detector consumer is claimed. Metadata dependency list is empty because canonical T-E10-001 has no task dependencies. The evidence is linked as an existing record, with its actual review state authoritative.
 
 ## Registration countercases to inspect
 

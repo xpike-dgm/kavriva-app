@@ -14,7 +14,12 @@
    "module": "e10-graph",
    "owner": "E10",
    "depends_on": [],
-   "used_by": [],
+   "used_by": [
+    "P-E10-001",
+    "V-E10-NODE-001",
+    "E-DEV-027",
+    "I-E10-REGISTRATION-BASELINE"
+   ],
    "implements": [
     "ADR-015",
     "C10.1",
