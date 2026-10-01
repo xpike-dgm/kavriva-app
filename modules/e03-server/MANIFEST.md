@@ -26,6 +26,9 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
   (`vault/PROFILES/history-provenance.md`); copies and history rows never substitute for current snapshots or audit.
 - `public/object_boundary.py` verifies object bytes, direct-parent/transitive lineage and exact classification
   propagation (`vault/PROFILES/object-boundary.md`); all factory outputs quarantine and grant no access or activation.
+- `public/object_activation.py` defines exact-version validation and intent binding
+  (`vault/PROFILES/object-activation.md`); the private PostgreSQL gate records eligibility only after current
+  validation/authority checks. A receipt never publishes an object or grants future access.
 - Queue/worker job families (lease/pulse/checkpoint/DLQ/backpressure/cancel/evacuate); backup/restore
   drills + clean-room exit; cost-BOM skeleton; environment separation + promotion plumbing.
 
