@@ -138,6 +138,22 @@
    "last_verified": "2026-10-01"
   },
   {
+   "task_id": "T-E3-011",
+   "flow_feature": "FL3.2.3/F3.2.3",
+   "objective": "Object boundary and classification propagation",
+   "depends_on": [
+    "T-E3-009"
+   ],
+   "context_pack": "P-E3-011",
+   "acceptance": "Lineage, digest and classification on derivatives",
+   "evidence": "E-DEV-015",
+   "status": "DONE",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",
