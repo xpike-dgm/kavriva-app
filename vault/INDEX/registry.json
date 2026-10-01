@@ -315,7 +315,7 @@
    "context_pack": "P-E3-036",
    "acceptance": "Evidence-gated; no migration",
    "evidence": "E-DEV-026",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
