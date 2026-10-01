@@ -1,3 +1,26 @@
+---
+record_id: M-E3-001
+metadata_version: 1
+purpose: "API kapısı + kanonik veri düzeni + platform kurulumu + ortamlar. E3 serves and verifies; single end-to-end owner of runtime edges. Foundation capsule (no inbound epic dependencies)."
+domain: "module-contract"
+module: "e03-server"
+owner: "E3"
+depends_on: []
+used_by: [M-E1-001, M-E2-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, I-E10-REGISTRATION-BASELINE]
+implements:
+  - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E3"
+public_contracts:
+  - "[[modules/e03-server/MANIFEST.md#Public contract surface]]"
+internal_scope: "Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves), Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody. Helpers, storage layout, in-flight job state invisible outside. Secret custody/rotation follows `vault/PROFILES/secret-custody-rotation.md`: server-only privileged material, separate planned/emergency retirement proof; document completion does not execute rotation or prove live custody. The private maintenance history reader uses a coherent tenant-scoped database transaction; callers must authorize the read first. No history HTTP endpoint is introduced by T-E3-010. AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority."
+tasks: [T-E10-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+evidence: [E-DEV-027]
+supersedes: []
+superseded_by: []
+status: INSTALLED
+last_verified: 2026-10-01
+---
+
 # MODULE MANIFEST — e03-server (E3 Sunucu + veri omurgası)
 
 Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e03-server/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
@@ -93,3 +116,7 @@ AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack o
 - Requirements/design: `C3.1`..`C3.9`, `F3.*`; `ADR-002`, `ADR-006`.
 - Architecture: seam rows (E3 verifies/serves; single end-to-end owner); `R-001`..`R-004`, `R-010`, `R-011`, `R-013`, `R-014`.
 - Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E3 rows (Step 5 builds).
+
+## Metadata verification boundary (T-E10-001 remediation)
+
+Same stable manifest identity and original semantic body preserved. Purpose/internal scope are serialized verbatim from the existing sections; public surface is defined by an exact same-record section reference, not a new contract or runtime seam. depends_on/used_by encode the declared epic foundation DAG from the canonical epic/dependency catalog, with E2 consumption of E8 outputs and E9 propose-flow to E1 retaining their existing qualifiers; they are not an assertion of deployed calls. The baseline inventory is an actual documentary consumer. No predecessor/successor record exists for this same-ID addition. Listed tests verify installed anatomy/identity, not all future declared product behavior; E-DEV-027 records scoped metadata validation and outstanding corpus acceptance. Product activation/release/identity gates remain unresolved.
