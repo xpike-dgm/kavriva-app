@@ -22,6 +22,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
   never authoritative); object/media boundary + quarantine-first intake.
 - `public/domain_authority.py` validates and resolves the reviewed logical domain registry
   (`vault/PROFILES/domain-authority-registry.md`); metadata is never product authorization or physical activation.
+- `public/maintenance_provenance.py` defines immutable history/copy representations
+  (`vault/PROFILES/history-provenance.md`); copies and history rows never substitute for current snapshots or audit.
 - Queue/worker job families (lease/pulse/checkpoint/DLQ/backpressure/cancel/evacuate); backup/restore
   drills + clean-room exit; cost-BOM skeleton; environment separation + promotion plumbing.
 
@@ -30,6 +32,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves),
 Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody.
 Helpers, storage layout, in-flight job state invisible outside.
+The private maintenance history reader uses a coherent tenant-scoped database transaction;
+callers must authorize the read first. No history HTTP endpoint is introduced by T-E3-010.
 AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority.
 
 ## Allowed / forbidden dependencies
