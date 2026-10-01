@@ -246,6 +246,22 @@
    "last_verified": "2026-10-01"
   },
   {
+   "task_id": "T-E3-018",
+   "flow_feature": "FL3.3.2/F3.3.2",
+   "objective": "Changelog/compat-hold procedure",
+   "depends_on": [
+    "T-E3-016"
+   ],
+   "context_pack": "P-E3-018",
+   "acceptance": "Dated changelog; hold on change",
+   "evidence": "E-DEV-022",
+   "status": "REVIEW",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",
