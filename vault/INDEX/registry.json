@@ -292,6 +292,20 @@
    "last_verified": "2026-10-01"
   },
   {
+   "task_id": "T-E3-034",
+   "flow_feature": "FL3.1.1/F3.1.1",
+   "objective": "Durable-state category list",
+   "depends_on": [],
+   "context_pack": "P-E3-034",
+   "acceptance": "Categories listed, no implementation",
+   "evidence": "E-DEV-025",
+   "status": "DONE",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",
