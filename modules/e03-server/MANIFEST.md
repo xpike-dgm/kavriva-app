@@ -11,6 +11,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 ## Public contract surface
 
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
+- API enforcement needs (`vault/PROFILES/api-enforcement-needs.md`) specify sensitive-read/effect and alternate-path
+  requirements; document completion does not provision services or prove live enforcement.
 - Browser transport profile of the authorization tuple (`vault/PROFILES/authorization-tuple-browser.md`): E3 serves and verifies;
   browser storage, origin, CSRF/PKCE, step-up and lookup rules do not grant product authority.
 - Consumer maintenance API verifies a bearer login, calls E5's public current-authority surface,
