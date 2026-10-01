@@ -37,7 +37,7 @@ evidence:
   - "E-DEV-031"
 supersedes: []
 superseded_by: []
-status: "REVIEW"
+status: "ACTIVE"
 last_verified: "2026-10-02"
 metadata_verified_at: "2026-10-02"
 ---
@@ -149,3 +149,5 @@ Template v1's complete form maps to canonical seven-field anatomy and accepted i
 Current record last_verified records actual T004 template verification; earlier stub/origin/product proof dates remain exact in their preserved payloads. Origin snapshot/body prefix stays untouched; new body extension is an explicit governed template task, not historical re-authoring. Full-registry impact: template and actual documentary consumers/task/evidence links plus generated views only; no existing module identity, relation reclassification or product manifest migration. Later template/schema change requires version/impact/preservation/independent review and applicable CI; rollback preserves original stub and approved template payloads, never erases history. No new owned runtime contract, so this template record's public_contracts is empty; no identity replacement, so its lineage is empty.
 
 Task: `vault/REGISTRY/T-E10-004.md`; pack: `vault/PACKS/P-E10-004.md`; actual validation/review proof: `vault/EVIDENCE/E-DEV-031.md`.
+
+Independent acceptance2026-10-02: /root/pr33_independent_review, gpt-6-luna max, PASS at 4afa9d2aea3c45c982ce6b6d2e873d04ac2917ba after canonical seven-field/16key/form/preservation/consumer review, usability clarification verification, required checks and exact-head applicable CI. No open findings. Owner standing mandate accepts reusable template scope only. Final metadata/status/evidence/index audit and exact new-head CI required before normal PR33 merge; immutable final receipt belongs to PR33. No instantiated capsule/product/semantic graph/production completion.
