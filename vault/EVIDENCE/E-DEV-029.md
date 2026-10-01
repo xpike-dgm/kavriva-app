@@ -1,7 +1,8 @@
 ---
 test_id: E-DEV-029
 contract_id_version: "ADR-015 Decision3; structural specification v1"
-subject_file: modules/e10-graph/STRUCTURAL_DETECTOR_SPEC.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-029-STRUCTURAL_DETECTOR_SPEC.md.snapshot
+subject_original_path: modules/e10-graph/STRUCTURAL_DETECTOR_SPEC.md
 subject_digest: bb25ca833f93b0a7bf9c4a09cd38df0b115eeafce7f298455efcebf99610e753
 result: "PASS: independent review accepted four structural detector specifications"
 evidence_links:
@@ -21,12 +22,12 @@ owner: E10
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: structural-detector-specification
-tasks: [T-E10-003a]
+tasks: [T-E10-003a, T-E10-003b]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_edges.py, modules/e10-graph/checks/check_orphans.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E10-STRUCT-001]
-used_by: [V-E10-STRUCT-001, P-E10-003a, T-E10-003a]
+used_by: [V-E10-STRUCT-001, P-E10-003a, T-E10-003a, P-E10-003b, E-DEV-030]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -51,3 +52,5 @@ Independent acceptance: /root/pr31_independent_review, separate bounded context/
 Source-head exact CI allSUCCESS: PR architecture36939081433/E336939081255/E536939081251/Auth36939081351; push architecture36939076640/E336939076627/E536939076706/Auth36939076631. Both T3 jobs label-gated SKIPPED: no t3-privileged label, documentary E10 T2 task (installed command/CI tier mapping), no privileged runtime/schema mutation. Independent review still required and obtained.
 
 Accepted task now DONE/spec ACTIVE/evidence PASS for specified rules only. Final metadata/status/receipt/digest/index audit plus new-head applicable CI required before normal merge; exact immutable final head/verdict/CI retained in PR31 to avoid recursive proof commits. T-E3-001-R1 REVIEW and T-E5-003 IN_PROGRESS; semantic detector coverage/T003b/production/release gates unchanged and unproved.
+
+T-E10-003b custody maintenance: primary subject points to exact PR31-approved final f577276 payload from merge92c6a28; subject_original_path retains current specification address. Original bb25ca digest, reviewer/head/verdict/timestamp unchanged. Actual P-E10-003b proof consumer and maintenance-task provenance added; old proof does not approve this metadata update.
