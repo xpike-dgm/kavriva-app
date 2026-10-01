@@ -6,7 +6,7 @@ module: e10-graph
 owner: E10
 depends_on: []
 used_by: []
-implements: [ADR-015-Decision-3, C10.1, F10.1.1]
+implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
 tasks: [T-E10-001]

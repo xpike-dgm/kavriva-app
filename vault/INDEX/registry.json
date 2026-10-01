@@ -16,7 +16,7 @@
    "depends_on": [],
    "used_by": [],
    "implements": [
-    "ADR-015-Decision-3",
+    "ADR-015",
     "C10.1",
     "F10.1.1"
    ],
