@@ -78,6 +78,8 @@ AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack o
 
 ## Change / rollback rules
 
+- Runtime transition gate package (`vault/PROFILES/runtime-transition-gates.md`) requires equal real evidence;
+  document completion keeps all candidate/transition gates HELD and performs no migration.
 - Backend readiness/exit prerequisites follow `vault/PROFILES/backend-reversibility.md`: document-level checklist
   completion never selects/provisions a platform or proves operational recovery/activation.
 - Provider/dependency changes follow `vault/PROFILES/compatibility-hold.md` and the dated
