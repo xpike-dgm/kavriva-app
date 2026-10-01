@@ -5,6 +5,40 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-001 Decisions 2 and 6; T-E3-010; C3.2
 supersedes: ~
+record_id: D-APP-DOC-019
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/history-provenance.md.snapshot"
+metadata_origin_digest: "129e56685c70f8e95db3bec1257c1838b47dce00bc2a530037e1e6f2fa2913de"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "`[[vault/PROFILES/domain-authority-registry.md]]` names logical authorities. This profile defines the distinct meanings of current state, domain history, protected audit and convenience copies. Their identities and version links may connect them; their meanings cannot be substituted."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-018"
+  - "D-APP-DOC-021"
+  - "E-DEV-014"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E3-001"
+  - "P-E3-010"
+  - "T-E3-010"
+implements:
+  - "ADR-001 Decisions 2 and 6; T-E3-010; C3.2"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # History, provenance and convenience-copy separation
@@ -40,3 +74,9 @@ Python dataclass type checks prevent accidental representation substitution; the
 ## Evidence and future boundaries
 
 `[[vault/EVIDENCE/E-DEV-014.md]]` records representation negatives and real PostgreSQL maintenance read/history tests in CI. `[[vault/PACKS/P-E3-010.md]]` bounds the changes; `[[vault/REGISTRY/T-E3-010.md]]` records review. Cross-domain production stores, independent audit custody, source authenticity, classification propagation, bounded history pagination and client cache/rebuild services are not proved here. All logical registry physical activations remain HELD; T-E3-001-R1 remains REVIEW.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

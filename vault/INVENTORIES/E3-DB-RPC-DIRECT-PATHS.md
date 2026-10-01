@@ -1,3 +1,49 @@
+---
+record_id: D-APP-DOC-006
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/INVENTORIES/E3-DB-RPC-DIRECT-PATHS.md.snapshot"
+metadata_origin_digest: "a58c187c80c9ef440073998be59ba65c66e46516ba4189b645bddc69e16c778e"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Verified against the three committed Supabase migrations and the isolated PostgreSQL catalog on 2026-10-01. Scope is repository-owned database objects and the maintenance server's database paths. This is the database/RPC part of ADR-006 Decision 9; Storage, signed URLs, and Studio belong to T-E3-006b, browser rules to T-E3-006c, and bypass negative tests to T-E3-007."
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-007"
+  - "D-APP-DOC-008"
+  - "D-APP-DOC-010"
+  - "E-DEV-006"
+  - "E-DEV-008"
+  - "E-DEV-009"
+  - "E-DEV-010"
+  - "E-DEV-011"
+  - "E-DEV-012"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-006a"
+  - "P-E3-006b"
+  - "T-E3-006a"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+supersedes: []
+superseded_by: []
+status: "RECORDED"
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
+---
+
 # T-E3-006a — Database and RPC direct-path inventory
 
 Verified against the three committed Supabase migrations and the isolated PostgreSQL catalog on 2026-10-01. Scope is repository-owned database objects and the maintenance server's database paths. This is the database/RPC part of ADR-006 Decision 9; Storage, signed URLs, and Studio belong to T-E3-006b, browser rules to T-E3-006c, and bypass negative tests to T-E3-007.
@@ -43,3 +89,9 @@ The only repository-defined HTTP product entrypoint is `modules/e03-server/publi
 The `test_migrated_database_surface_matches_direct_path_inventory` test in `modules/e03-server/tests/test_live_maintenance.py` applies all three migrations to isolated PostgreSQL, enumerates `pg_class` and `pg_proc` in both configured exposed schemas (`public`, `graphql_public`) and the three Kavriva private schemas, checks the exact 14/0/5 set, and checks effective schema/table/function privileges for `anon` and `authenticated`. A newly migrated table, view or routine, or a client grant makes that test fail until this inventory and its expected set are reviewed together. Supabase's Data API has two separate controls: schema exposure plus SQL grants, with RLS governing rows once access exists. Its defaults have changed, so this inventory relies on explicit committed grants and tested catalog state rather than a presumed platform default.
 
 Sources: `supabase/config.toml`, `supabase/migrations/*.sql`, `modules/e03-server/public/maintenance_api.py`, E3/E5 internal adapters, and [Supabase's API security guide](https://supabase.com/docs/guides/api/securing-your-api) and [2026 Data API default-grants change](https://supabase.com/changelog/45329-breaking-change-tables-not-exposed-to-data-and-graphql-api-automatically).
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

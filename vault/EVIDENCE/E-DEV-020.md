@@ -14,6 +14,42 @@ reviewer: "independent gpt-6-luna max subagent, PR #22 implementation head 1705f
 timestamp: 2026-10-01
 status: RECORDED
 last_verified: 2026-10-01
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-020.md.snapshot"
+metadata_origin_digest: "06f91e64ac024c25057dc76e7b9bf5c5cdf10e678772016f55ff55a6bda55ed9"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Preserve scoped conformance and verification evidence for supabase/migrations/20261001170755_e3_rls_storage_defense.sql"
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-023"
+  - "E3-COMPATIBILITY-CHANGELOG"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-016"
+  - "T-E3-016"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence: []
+supersedes: []
+superseded_by: []
+metadata_verified_at: "2026-10-01"
+historical_source_payloads:
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e03-server/MANIFEST.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PACKS/P-E3-016.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/rls-storage-defense.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-016.md.snapshot"
 ---
 
 # E-DEV-020 — Additional RLS/Storage defenses
@@ -36,3 +72,9 @@ Baseline and final local all 11 E10 checks passed, generated indexes were rebuil
 Initial local Supabase CI at adb3dc40 failed during startup/migration before any HTTP probe. The original runner withheld detailed startup logs, so a specific SQL error was not captured. Official Storage schema guidance and the CLI ownership issue motivated replacing provider-table ALTER with a provider-enabled RLS prerequisite check; no ownership bypass is introduced. Startup diagnostics now emit only closed SQLSTATE/known-error tokens, never the credential-bearing log. Corrected-head actual Storage CI passed as recorded above.
 
 Independent delegated gpt-6-luna max reviewer /root/pr22_independent_review returned T3 PASS with no findings for exact implementation head 1705fcdf8b2a712d7a7a946be4356fb5b79aa428. The reviewer independently verified 107 local E3 tests, all 11 E10 checks, diff --check, raw-byte normalized digests, frozen probe integrity and exact-head green CI with actual local Auth/Storage HTTP probes under accidental permissive policies. It confirmed bounded existing server permissions, current API authority, provider-RLS prerequisite, defense-only scope and explicit privileged/hosted limits. It performed no edits or GitHub review/approval/merge. The same reviewer returned PASS for metadata head 030bad6e2f1e4c074ec3efad2fe0f88b31ff4262 and its applicable exact-head green CI, including isolated Supabase runs 36899528820 and 36899534606. On 2026-10-01 the owner explicitly accepted this identified independent verdict under DEC-0069. T-E3-016 is DONE for the tested isolated defense implementation only; hosted deployment, production inventory and privileged paths remain HELD. All four subject digests are unchanged by this acceptance record.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

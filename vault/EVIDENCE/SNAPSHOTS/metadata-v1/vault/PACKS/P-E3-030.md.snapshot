@@ -1,0 +1,26 @@
+---
+pack_id: P-E3-030
+task_ref: T-E3-030
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-030 — Classified cost BOM skeleton
+
+1. objective: Classify safe-cost obligations and reference controlled cost hold/drain duties.
+2. outcome-link: FL3.7.1/F3.7.1/C3.7 — required assurance cannot be weakened to fit budget.
+3. preconditions + completed dependencies: Canonical task has no dependencies. T-E3-015 DONE supplies input fields; T-E3-001-R1 REVIEW and physical activation HELD. T-E3-019 is not eligible: T-E3-003/004 are incomplete and the product authorization dependency is not the frozen proof-only T-E3-001 DONE.
+4. mandatory reads: TASK_INDEX/DEPENDENCY_GRAPH; ADR-006 Decisions 3–11; ADR-002 cost constraints; ADR-007 release gates by reference; TASK_EXECUTION_PROTOCOL/DEC-0068/0069; MODULE_BOUNDARIES; platform cost inputs, reversibility and E3 manifest.
+5. allowed paths: classified-cost-bom profile, this pack, T-E3-030 registry, E-DEV-023 evidence, E3 manifest and generated indexes.
+6. forbidden areas: Runtime/tests/schema/workflow, current prices/amounts/thresholds, provider services/accounts/credentials, purchases/invoices/metering/automation/deployment, prior records and new seams/approval authority.
+7. expected artifact changes: Classified family skeleton with scenario/evidence slots and non-runtime queue/rollout cost-stop references; task/evidence and indexes.
+8. acceptance + negative cases: Slots classified; thresholds HELD; drain-vs-hold edge to queue/rollout tasks. Mandatory baseline cannot become optional; conditional extras and disabled scope explicit; preserve accepted work, current authority/audit/floors, uncertain outcomes and technical resolver. No zero-cost or live readiness inference.
+9. validation / architecture / integration checks: Manual task/ADR/classification/boundary coverage; all 11 E10 checks, indexes and diff --check; exact-head applicable CI and independent gpt-6-luna max T3 review. No tests added for documentary scope.
+10. migration / rollback needs: None; versioned document amendments, no lower floors or discarded backlog.
+11. responsive / accessibility rules: No UI. Owner-readable affected feature, retained work/risk/cost and approve/hold/stop/support outcomes; no owner debugging.
+12. evidence + handoff format: E-DEV-023 normalized profile digest, scope/limits, validation/CI, identified reviewer/head/model/verdict/findings and owner standing authorization; regression tests are not financial proof.
+13. graph-update records: T-E3-030 REVIEW and evidence plus generated indexes; preserve all operational HELD and T-E3-001-R1 REVIEW. No queue/rollout task closure.
+14. escalation rules: Unknown/unsupported mandatory cost holds affected activation/effects; controlled funded authorized drain only, otherwise safe stop and reconciliation. Required assurance never weakened; no purchases under document acceptance.
+
+Profile: `[[vault/PROFILES/classified-cost-bom.md]]`; task: `[[vault/REGISTRY/T-E3-030.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-023.md]]`.

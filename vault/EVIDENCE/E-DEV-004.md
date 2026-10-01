@@ -22,6 +22,41 @@ reviewer: "Codex separate-chat context 01a0e8c9-7f86-7a43-9ab4-bd7978e0da26, own
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-30
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-004.md.snapshot"
+metadata_origin_digest: "2a2063f7374cd36d069165ff12ee926055152292d61cd61a28e7fba1778634c9"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Preserve scoped conformance and verification evidence for vault/EVIDENCE/SNAPSHOTS/E-DEV-004-maintenance_store.py"
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-001-R2"
+  - "P-E3-001-R3"
+  - "T-E3-001-R1"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence: []
+supersedes: []
+superseded_by: []
+metadata_verified_at: "2026-10-01"
+historical_source_payloads:
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-002.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-005.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PACKS/P-E3-001-R2.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-001-R1.md.snapshot"
 ---
 
 # E-DEV-004 — Maintenance integration slice
@@ -47,3 +82,9 @@ The owner confirmed on 2026-09-28 that they are the project's only human. GitHub
 Historical closure: PR #6 merged on 2026-09-30 as `310994165909b1208b8607a4349b208cd8ef8fdf`. Its limited proof and independent scoped review are unchanged. The later consumer login and authority integration is recorded together in `[[vault/EVIDENCE/E-DEV-005.md]]`, not retroactively attributed to PR #6.
 
 The original PR #6 maintenance writer is preserved byte-for-byte at `vault/EVIDENCE/SNAPSHOTS/E-DEV-004-maintenance_store.py` so this evidence's subject digest continues to identify the reviewed code after later task-level changes to the live writer.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

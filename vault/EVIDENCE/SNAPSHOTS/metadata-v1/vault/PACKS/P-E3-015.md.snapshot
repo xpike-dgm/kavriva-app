@@ -1,0 +1,26 @@
+---
+pack_id: P-E3-015
+task_ref: T-E3-015
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-015 — Platform BOM inputs template
+
+1. objective: Provide platform cost input slots with classification slots, no numbers.
+2. outcome-link: FL3.3.1/F3.3.1/C3.3 — safe reversible platform cost inputs before paid decisions.
+3. preconditions + completed dependencies: T-E3-013 DONE with owner-accepted PR #19. T-E3-001-R1 REVIEW; physical activation HELD.
+4. mandatory reads: ADR-002 cost paragraph and reversal triggers; ADR-006 Decision 11; TASK_INDEX and DEPENDENCY_GRAPH; TASK_EXECUTION_PROTOCOL/DEC-0068/0069; MODULE_BOUNDARIES; backend-reversibility profile and E3 manifest.
+5. allowed paths: vault/PROFILES/platform-bom-inputs.md, this pack, vault/REGISTRY/T-E3-015.md, vault/EVIDENCE/E-DEV-019.md, E3 MANIFEST.md reference and generated registry/routing indexes.
+6. forbidden areas: Runtime/tests/schemas/workflows, hosted services/accounts/credentials, provider/runtime/region/plan selection, provisioning, purchases, current price estimates, numeric amounts/limits, actual classification decisions, metering and runtime drain/hold implementation.
+7. expected artifact changes: Empty scenario headers and repeated cost rows, full family coverage and classification/evidence/owner authorization slots; scope/hold rules; task/evidence records and manifest/index references.
+8. acceptance + negative cases: Classification slots, no numbers. All ADR-002 scenarios and cost inputs plus ADR-006 Decision 11 families covered. Unknown is not zero/free; DB backup is not cross-plane recovery; mandatory assurance cannot be deferred to fit cost; no owner debugging, spend approval or production-ready claim. T-E3-030/031 remain separate future tasks.
+9. validation / architecture / integration checks: Manual ADR/template coverage; all 11 E10 checks; regenerate indexes; git diff --check; exact-head applicable green CI; independent gpt-6-luna max task review. No new executable tests for document-only changes.
+10. migration / rollback needs: None; no data/service changes. Template amendments use reviewed PRs and preserve operational holds.
+11. responsive / accessibility rules: N/A; no UI. Owner summary uses plain-language outcomes.
+12. evidence + handoff format: E-DEV-019 records normalized document digest, coverage, actual checks/CI, exact reviewed head/model/verdict, findings and owner acceptance; unchanged runtime tests are regression evidence only.
+13. graph-update records: T-E3-015/E-DEV-019, registry/routing indexes; preserve T-E3-001-R1 REVIEW and physical HELD; no completion of classified-cost/hold follow-ups.
+14. escalation rules: Missing evidence holds readiness. Paid or privileged activation requires scoped work, explicit owner authorization and review. Technical collection/diagnosis remains with implementer.
+
+Template: `[[vault/PROFILES/platform-bom-inputs.md]]`; state: `[[vault/REGISTRY/T-E3-015.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-019.md]]`.

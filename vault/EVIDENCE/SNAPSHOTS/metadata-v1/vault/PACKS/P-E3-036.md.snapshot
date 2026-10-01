@@ -1,0 +1,26 @@
+---
+pack_id: P-E3-036
+task_ref: T-E3-036
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-036 — Evidence-gated runtime transition package
+
+1. objective: Define equal-evidence candidate gates with operational transition HELD.
+2. outcome-link: FL3.3.1/F3.3.1/C3.3 — failed candidate never auto-promotes an unproved replacement.
+3. preconditions + completed dependencies: T-E3-013 documentary reversibility DONE via reviewed/accepted PR19. Actual candidate/transition, physical activation and T-E3-001-R1 remain HELD/REVIEW. T-E3-035 remains unavailable until T-E3-003; T-E3-036 is independently eligible.
+4. mandatory reads: TASK_INDEX/DEPENDENCY_GRAPH; ADR006Decision10 and all runtime invariants; DEBATE011JUDGE_SYNTHESIS sections6/10 (16 gates), requirementsAPI-AC001..024 and failureTCO18classes by reference; ADR002direction/ADR007release; TASK_EXECUTION_PROTOCOL/DEC0068/69/ownerstandingmandate; MODULE_BOUNDARIES; reversibility/cost/compatibility profiles; Supabase skill and dated current docs/changelog.
+5. allowed paths: runtime-transition-gates profile, this pack, T-E3-036 registry, E-DEV-026 evidence, E3 manifest and generated indexes.
+6. forbidden areas: Runtime/tests/schema/workflow, candidate/provider/language/queue/region/plan selection, numeric thresholds/prices, accounts/credentials/hosted actions/spend/deployment/migration, prior evidence rewrites and new seams/approval authority.
+7. expected artifact changes: Frozen equal-comparison/evidence fields, all16gate rows A/BHELD, criteria/failure mapping and controlled transition/recovery requirements; task/evidence/indexes.
+8. acceptance + negative cases: Evidence-gated; no migration. A fails mandatory realfixture and B passes same full applicablepackage before proposal; neitherpasses→HELD; no automaticfallback, unequalassurance, health/queueCIproof, weakenedgates or source/negative rollback.
+9. validation / architecture / integration checks: Manual16row/source/category/boundary completeness; all11E10/indexes/diffcheck; exact-head greenCI and independent gpt-6-luna max T3 review. No executable test for held gate-package documentation.
+10. migration / rollback needs: None executed; later transition needs exact compatible manifests, authorized gates, quarantined target, currentfloor/epoch preservation and forward reconciliation; source intact until verifiedacceptance.
+11. responsive / accessibility rules: No UI; owner receives feature/failure/candidateproof, retained/uncertainwork, risk/cost/reversibility and approve/hold/stop/support choices; no ownerdebugging.
+12. evidence + handoff format: E-DEV026 normalizeddigest, gatecoverage/sourcechecks/actualvalidationCI, independentreviewer/context/model/head/verdict/findingclosure plus standingowneracceptance; regressionCInevercandidateproof.
+13. graph-update records: T-E3-036 REVIEW/evidence/indexes; all16operationalA/BgatesHELD, no winner/activation/T-E3-001-R1 completion.
+14. escalation rules: Missing unequal or failedproof retains/rejects affected capability until mitigated, re-reviewfixes; urgentcontainment cannot positivepromote unproved alternate. Financial/privilegedtargetaction retains its own evidence/authority.
+
+Profile: `[[vault/PROFILES/runtime-transition-gates.md]]`; task: `[[vault/REGISTRY/T-E3-036.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-026.md]]`.

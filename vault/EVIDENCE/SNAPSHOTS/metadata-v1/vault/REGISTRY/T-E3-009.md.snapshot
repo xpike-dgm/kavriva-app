@@ -1,0 +1,18 @@
+---
+task_id: T-E3-009
+flow_feature: FL3.2.1/F3.2.1
+objective: Domain authority registry and versioning
+depends_on: []
+context_pack: P-E3-009
+acceptance: One authority per domain; stable identity and snapshot versioning
+evidence: E-DEV-013
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-009
+
+`[[vault/PROFILES/domain-authority-registry.md]]` describes the logical registry and public validation contract. An independent gpt-5.6-luna max subagent returned PASS for logical registry scope at PR #15 head 0b9a459bb32a43cbc7ec028d71beaa1d2d20100b. The same reviewer returned PASS for the final metadata head 83fc67812b6d46af64cdbbabce002ce9b2a4997d. On 2026-10-01 the owner explicitly accepted that identified verdict under DEC-0069. T-E3-009 is DONE for the logical registry implementation scope only. Tests prove metadata parsing, unique stable authorities, held/stale/copy rejection and fixture-based successor validation. The historical predecessor gate is wired for future versions; initial v1 has no predecessor. Product database authority or runtime integration is not proved. T-E3-001-R1 remains REVIEW.

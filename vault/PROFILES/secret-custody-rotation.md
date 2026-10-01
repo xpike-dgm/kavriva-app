@@ -5,6 +5,40 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-002 Option A and Decisions 1 and 6; T-E3-017; ADR-006 Decision 11
 supersedes: ~
+record_id: D-APP-DOC-025
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/secret-custody-rotation.md.snapshot"
+metadata_origin_digest: "8e3105ab3bddc98cb14512b1d8c49f5b8963b3cabddcf06d8e410cb244c8e8be"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "T-E3-017 defines server-only secret custody and a rotation procedure. It issues no credential, selects no secrets product/account, changes no provider key/password/role/session, and deploys no broker or runtime. Document acceptance cannot prove live custody, successful rotation or emergency recovery. Every operational closure below is currently HELD. T-E3-001-R1 remains REVIEW and physical activation remains HELD; T-E3-018 owns the separate compatibility/changelog procedure."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-015"
+  - "E-DEV-021"
+  - "E3-COMPATIBILITY-CHANGELOG"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E3-001"
+  - "P-E3-017"
+  - "T-E3-017"
+implements:
+  - "ADR-002 Option A and Decisions 1 and 6; T-E3-017; ADR-006 Decision 11"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # Secret custody and rotation rules
@@ -76,3 +110,9 @@ Document acceptance checks the class/custody rules and actionable planned/emerge
 Official Supabase [API keys](https://supabase.com/docs/guides/getting-started/api-keys) and [JWT signing keys](https://supabase.com/docs/guides/auth/signing-keys), plus the [changelog index](https://supabase.com/changelog.md), were checked on 2026-10-01. These support the key-class/legacy-retirement and signer/trust/cache distinctions; current behavior must be checked again for actual execution. No provider version, account, secrets product or numeric rotation schedule is selected here.
 
 Existing defense: `[[vault/PROFILES/rls-storage-defense.md]]`; reversibility: `[[vault/PROFILES/backend-reversibility.md]]`; pack: `[[vault/PACKS/P-E3-017.md]]`; state: `[[vault/REGISTRY/T-E3-017.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-021.md]]`.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

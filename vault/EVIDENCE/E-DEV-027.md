@@ -2,7 +2,7 @@
 test_id: E-DEV-027
 contract_id_version: "ADR-015 Decision3; graph node registration rule v1"
 subject_file: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
-subject_digest: 082701170a75e381a2386048d3b2b341413f87c62ccc82e0ed897243e7ed4aa9
+subject_digest: 8258e4320342971194474e752c42c7ea84653a8489b4aceac6a369b4e0b4635b
 result: "FAIL: independent review found extant-corpus registration acceptance unmet"
 evidence_links:
   - "[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]"
@@ -28,6 +28,9 @@ supersedes: []
 superseded_by: []
 status: RECORDED
 last_verified: 2026-10-01
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+metadata_verified_at: "2026-10-01"
 ---
 
 # E-DEV-027 — Graph registration rule
@@ -57,3 +60,17 @@ Remediation preserves the universal criterion and original corpus baseline. Begi
 First scoped remediation adds all16 minimum metadata fields to M-E10-001 from its actual manifest/source declarations and real anatomy/identity checks. Same ID and existing body/history preserved; document verification never proves future runtime behaviors. Remaining historical corpus conformance is unresolved, no task closure.
 
 All ten module manifests now serialize all16 metadata fields under packv2. Remaining nine additions copy purpose/internal_scope verbatim from their existing approved sections, reference their exact public-surface heading, preserve identity/body/semantics, and encode only declared epic DAG dependencies (E2/E8 output and E9/E1 proposal qualifiers preserved). Source bodies and canonical EPIC_CATALOG/DEPENDENCY_GRAPH were read before authoring. Actual anatomy/identity checks are distinguished from future product tests. Existing-corpus acceptance still unmet; no independent re-review requested prematurely.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## Remediation for full registration acceptance (2026-10-02)
+
+Packv3 explicitly expands allowed scope for universal corpus registration without changing the criterion. Current131 Markdown records each have full16fields and a single stored identity;126 original baseline Git blobs archived exactly, pinned catalogdigest ba29017ed274f67ffd1314fc42551d6967a04bebdb5ddf979121aac61550283f. All old subject digests, verdicts and verification data remain. Digest targets for historic Markdown sources now point to exact preserved originals; old source path stays explicit. Frozen proof pack remains bound to its originally pinned digest/address choices. New checks reject altered historic bodies/metadata, duplicate keys/identity claims and missing/tampered/rehashed origins. E10 assigned documentary custody never implies product authority; registration does not claim complete semantic/runtime proof.
+
+Thirteen preservation/identity tests passed locally2026-10-02. Full run_all and exact-headCI/re-review results will be recorded after final validation. Initial failed registration run caught unresolved open-label refs, backticks from transcript-purpose extraction, annotated legacy date shape and the new subject digest requiring update; corrected without altering archived historic bytes or semantic bodies. Initial rejection and its scope remain authoritative until independent corrected-head review closes the finding. No merge/DONE yet.
+
+Local validation2026-10-02: all12 architecture/registration commands and13 preservation/identity tests passed through run_all; generated registry/routing regenerated; git diff --check passed. .snapshot files are -text to preserve raw Git-blob bytes across Windows/Linux. Corrected-head independent re-review and CI remain outstanding; initial rejection not yet closed.

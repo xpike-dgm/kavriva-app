@@ -5,6 +5,41 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-002 Option A and Decision 1; T-E3-016
 supersedes: ~
+record_id: D-APP-DOC-023
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/rls-storage-defense.md.snapshot"
+metadata_origin_digest: "4d841238721e98ea635488e02e05fa1901f440e4ddd2a8c10e623db359b6f4ea"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "The Kavriva API remains the authority boundary for sensitive reads and consequential writes. E3 serves/verifies using E5's public current decision interface. Database grants, row-level security (RLS), a valid login/JWT, Storage policy and provider administration never establish product ALLOW. The server must still verify current actor/session/scope, policy/generations, negative floor, operation intent, protected audit and runtime before the guarded effect. T-E3-001-R1 remains REVIEW; physical activation remains HELD."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-015"
+  - "D-APP-DOC-025"
+  - "E-DEV-020"
+  - "E3-COMPATIBILITY-CHANGELOG"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E3-001"
+  - "P-E3-016"
+  - "T-E3-016"
+implements:
+  - "ADR-002 Option A and Decision 1; T-E3-016"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # RLS and Storage defense
@@ -41,3 +76,9 @@ Apply the new migration through the reviewed deployment process only after envir
 Checked official Supabase guidance on 2026-10-01: [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Storage access](https://supabase.com/docs/guides/storage/security/access-control), [Storage schema protection](https://supabase.com/docs/guides/storage/schema/design), and [public/private buckets](https://supabase.com/docs/guides/storage/buckets/fundamentals). The [changelog index](https://supabase.com/changelog.md) was fetched; the [PostgreSQL minor-release notice](https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes) was examined. This change creates no ltree/btree_gist indexes, legacy-cipher pgcrypto data or custom operators. That scope comparison is not a hosted-project upgrade audit. CI retains pinned CLI and dependencies; no provider version upgrade is performed by this task.
 
 Pack: `[[vault/PACKS/P-E3-016.md]]`; task: `[[vault/REGISTRY/T-E3-016.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-020.md]]`; broader enforcement needs: `[[vault/PROFILES/api-enforcement-needs.md]]`.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

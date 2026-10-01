@@ -1,0 +1,18 @@
+---
+task_id: T-E3-031
+flow_feature: FL3.7.1/F3.7.1
+objective: Hold-not-weaken and owner-readable HELD specification
+depends_on: [T-E3-030]
+context_pack: P-E3-031
+acceptance: No numerics; no live metering; drain-vs-hold edge to queue/rollout tasks
+evidence: E-DEV-024
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-031
+
+`[[vault/PROFILES/cost-hold-behavior.md]]` specifies protected mandatory assurance, retained accepted/uncertain work, safe funded authorized drain versus hold and owner-readable outcomes/resolver choices. No metering, prices, UI or runtime/billing control is installed; financial/operational readiness HELD and T-E3-001-R1 REVIEW. Independent gpt-6-luna max reviewer /root/pr26_independent_review returned PASS with no findings at document head 0c517a25a88798f3a2535eaa73a426b5131a4aa9; applicable exact-head CI green. DONE is limited to the specification; standing owner authorization until revoked applies after independent PASS and green CI. Evidence: `[[vault/EVIDENCE/E-DEV-024.md]]`.

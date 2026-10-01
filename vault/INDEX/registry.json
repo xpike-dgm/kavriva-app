@@ -36,7 +36,10 @@
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-001",
    "superseded_by": [],
    "status": "CHANGES_REQUESTED",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-001-R1",
@@ -51,7 +54,116 @@
    "claimed_at": "2026-09-24",
    "supersedes": "vault/REGISTRY/T-E3-001.md (DONE covers bootstrap migration only)",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-001-R1.md.snapshot",
+   "metadata_origin_digest": "ce0aa95cdeb51f9828077953298028a1285ccc6b8059e63d0e95ba464a0282f0",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Enforce commit-time tuple decision point in product code",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-007",
+    "D-APP-DOC-008",
+    "D-APP-DOC-009",
+    "D-APP-DOC-011",
+    "D-APP-DOC-013",
+    "D-APP-DOC-014",
+    "D-APP-DOC-015",
+    "D-APP-DOC-016",
+    "D-APP-DOC-018",
+    "D-APP-DOC-019",
+    "D-APP-DOC-020",
+    "D-APP-DOC-021",
+    "D-APP-DOC-022",
+    "D-APP-DOC-023",
+    "D-APP-DOC-024",
+    "D-APP-DOC-025",
+    "E-DEV-001",
+    "E-DEV-002",
+    "E-DEV-004",
+    "E-DEV-005",
+    "E-DEV-007",
+    "E-DEV-009",
+    "E-DEV-010",
+    "E-DEV-011",
+    "E-DEV-012",
+    "E-DEV-013",
+    "E-DEV-014",
+    "E-DEV-015",
+    "E-DEV-016",
+    "E-DEV-017",
+    "E-DEV-018",
+    "E-DEV-019",
+    "E-DEV-020",
+    "E-DEV-021",
+    "E-DEV-022",
+    "E-DEV-023",
+    "E-DEV-024",
+    "E-DEV-025",
+    "E-DEV-026",
+    "E-DEV-027",
+    "E3-COMPATIBILITY-CHANGELOG",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E10-001",
+    "P-E3-001-R1",
+    "P-E3-001-R2",
+    "P-E3-001-R3",
+    "P-E3-006a",
+    "P-E3-006b",
+    "P-E3-007",
+    "P-E3-008",
+    "P-E3-009",
+    "P-E3-010",
+    "P-E3-011",
+    "P-E3-012",
+    "P-E3-013",
+    "P-E3-014",
+    "P-E3-015",
+    "P-E3-016",
+    "P-E3-017",
+    "P-E3-018",
+    "P-E3-030",
+    "P-E3-031",
+    "P-E3-034",
+    "P-E3-036",
+    "P-E5-003",
+    "T-E3-006a",
+    "T-E3-006b",
+    "T-E3-007",
+    "T-E3-008",
+    "T-E3-009",
+    "T-E3-010",
+    "T-E3-011",
+    "T-E3-012",
+    "T-E3-013",
+    "T-E3-014",
+    "T-E3-015",
+    "T-E3-016",
+    "T-E3-017",
+    "T-E3-018",
+    "T-E3-030",
+    "T-E3-031",
+    "T-E3-034",
+    "T-E3-036",
+    "T-E5-003"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-001",
@@ -66,7 +178,43 @@
    "claimed_at": "2026-09-22",
    "supersedes": "planning-repo(Kavriva-plan working copy / motobakim-plan remote)@06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-001 (frozen; never edited)",
    "owner": "E3",
-   "last_verified": "2026-09-23 (proof migration P-PROOF-001; advanced READY→DONE per protocol after VERIFIED evidence, OUT-3 B-14)"
+   "last_verified": "2026-09-23",
+   "metadata_previous_last_verified": "2026-09-23 (proof migration P-PROOF-001; advanced READY→DONE per protocol after VERIFIED evidence, OUT-3 B-14)",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-001.md.snapshot",
+   "metadata_origin_digest": "dada45f0c04209de474dc785a61b3aacdadf7ff768c98a4ee10e6de5f502a7c1",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Enforce commit-time tuple decision point",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "E-DEV-002",
+    "E-DEV-003",
+    "E-DEV-004",
+    "E-PR-001",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-001-R1",
+    "P-E3-030",
+    "P-PROOF-001",
+    "T-E3-001-R1",
+    "V-REG-001"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-006a",
@@ -80,7 +228,49 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-006a.md.snapshot",
+   "metadata_origin_digest": "ea2807be1beb67240c72db288b60188df738ae3eea6b09995b9ec5e7e1b8484e",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Inventory DB/RPC direct paths",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-006",
+    "D-APP-DOC-007",
+    "D-APP-DOC-008",
+    "D-APP-DOC-011",
+    "E-DEV-006",
+    "E-DEV-007",
+    "E-DEV-008",
+    "E-DEV-009",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-006a",
+    "P-E3-006b",
+    "P-E3-006c",
+    "P-E3-007",
+    "P-E3-008",
+    "T-E3-007",
+    "T-E3-008"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-006a",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-006b",
@@ -94,7 +284,45 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-006b.md.snapshot",
+   "metadata_origin_digest": "cd8b3951c46bd1f3a2b5249f9b1480c0d0cb847a1e314991b66848d309e26c0c",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Inventory Storage, URLs and Studio direct paths",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-006",
+    "D-APP-DOC-009",
+    "D-APP-DOC-012",
+    "E-DEV-006",
+    "E-DEV-007",
+    "E-DEV-010",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-006b",
+    "P-E3-006c",
+    "P-E3-007",
+    "P-E3-008",
+    "T-E3-007"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-006b",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-006c",
@@ -108,7 +336,43 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-006c.md.snapshot",
+   "metadata_origin_digest": "1fc3769464ca35e135ebed0adb64e4a6f5b05cfd68603519db16c993e8efdf3f",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Specify browser contract rules",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-006",
+    "D-APP-DOC-012",
+    "E-DEV-006",
+    "E-DEV-007",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-006b",
+    "P-E3-006c",
+    "P-E3-007",
+    "P-E3-008",
+    "T-E3-007"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-006c",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-007",
@@ -126,7 +390,46 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-007.md.snapshot",
+   "metadata_origin_digest": "2c0e2cc70e8e217e8ef19a8ca99e811cea5882d0d8dba1da1fac72945a6a19c7",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Bypass negative-test suite",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-006",
+    "D-APP-DOC-009",
+    "D-APP-DOC-012",
+    "E-DEV-006",
+    "E-DEV-007",
+    "E-DEV-010",
+    "E-DEV-011",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-006b",
+    "P-E3-006c",
+    "P-E3-007",
+    "P-E3-008",
+    "T-E3-006b"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-007",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-008",
@@ -142,7 +445,38 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-008.md.snapshot",
+   "metadata_origin_digest": "9d8476310e2504389d2d8e8278e03fbfa1f01c15a68c8575281a8e147ac46989",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "AI task-scope rules",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-010",
+    "E-DEV-012",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-008",
+    "P-E3-009"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-008",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-009",
@@ -156,7 +490,42 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-009.md.snapshot",
+   "metadata_origin_digest": "8c8927eecd3256b0ba48d54bec8cd77040579247069ab49116c7c87ba255823f",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Domain authority registry and versioning",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-017",
+    "D-APP-DOC-018",
+    "E-DEV-013",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-009",
+    "P-E3-010",
+    "P-E3-011",
+    "T-E3-010",
+    "T-E3-011"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-009",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-010",
@@ -172,7 +541,40 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-010.md.snapshot",
+   "metadata_origin_digest": "bf8381fff934ceef1065c64b4dd1532a521e0cd391a43e7a22815f7949f73a08",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "History/provenance separation and convenience-copy rule",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-017",
+    "D-APP-DOC-019",
+    "E-DEV-014",
+    "I-E10-REGISTRATION-BASELINE",
+    "M-E3-001",
+    "P-E3-010",
+    "P-E3-011"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-010",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-011",
@@ -188,7 +590,45 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-011.md.snapshot",
+   "metadata_origin_digest": "ccda65a68215f26753b6e6b7e3e3fa2d3b0497c39ad220d131f7dd138a50f541",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Object boundary and classification propagation",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-017",
+    "D-APP-DOC-018",
+    "D-APP-DOC-019",
+    "D-APP-DOC-021",
+    "E-DEV-015",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-010",
+    "P-E3-011",
+    "P-E3-012",
+    "P-E3-013",
+    "T-E3-012"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-011",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-012",
@@ -204,7 +644,42 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-012.md.snapshot",
+   "metadata_origin_digest": "db3cac81891296ceca62c99e0a86f11f27fb6953d61f942290858ffc4350f081",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Quarantine activation gate",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-020",
+    "D-APP-DOC-021",
+    "E-DEV-015",
+    "E-DEV-016",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-011",
+    "P-E3-012",
+    "P-E3-013"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-012",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-013",
@@ -218,7 +693,44 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-013.md.snapshot",
+   "metadata_origin_digest": "8c1cf5901003f3d9748a7434095cdb876fd6f719902f75d68d3a71e9bd28d94b",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Reversibility preconditions checklist",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "E-DEV-017",
+    "E-DEV-026",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-013",
+    "P-E3-014",
+    "P-E3-015",
+    "P-E3-036",
+    "T-E3-014",
+    "T-E3-015",
+    "T-E3-036"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-013",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-014",
@@ -234,7 +746,40 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-014.md.snapshot",
+   "metadata_origin_digest": "a38797279cb448e136db8349be40610bddb904096370ff25b87a05b62addc0c3",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "API-boundary enforcement needs",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-011",
+    "D-APP-DOC-013",
+    "E-DEV-017",
+    "E-DEV-018",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-013",
+    "P-E3-014"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-014",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-015",
@@ -250,7 +795,43 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-015.md.snapshot",
+   "metadata_origin_digest": "fa9a4276973634fb8233ed1a611775b379b1688a99403fa8b6d2bd10387b178f",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Platform BOM inputs template",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-014",
+    "D-APP-DOC-016",
+    "D-APP-DOC-022",
+    "E-DEV-019",
+    "E-DEV-023",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-015",
+    "P-E3-030",
+    "P-E3-031"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-015",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-016",
@@ -264,7 +845,43 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-016.md.snapshot",
+   "metadata_origin_digest": "0eed43f10a3344149dfc4a75f0cf5b0496eb832a641911bd98e5696e8b90264e",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "RLS/storage defense policies",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-011",
+    "D-APP-DOC-013",
+    "D-APP-DOC-023",
+    "E-DEV-020",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-016",
+    "P-E3-017",
+    "P-E3-018",
+    "T-E3-017",
+    "T-E3-018"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-016",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-017",
@@ -280,7 +897,42 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-017.md.snapshot",
+   "metadata_origin_digest": "ce60edf5e2002f7431c96a7e94390a3ae8c4bb0900fa8fbcaffe9fe636575da9",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Secret custody and rotation rules",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-011",
+    "D-APP-DOC-013",
+    "D-APP-DOC-025",
+    "E-DEV-020",
+    "E-DEV-021",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-016",
+    "P-E3-017",
+    "P-E3-018"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-017",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-018",
@@ -296,7 +948,42 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-018.md.snapshot",
+   "metadata_origin_digest": "bfe67b3c40f49a10b2e16cc6c8dbe12c4862657de2319542211460e1ffa21837",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Changelog/compat-hold procedure",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-011",
+    "D-APP-DOC-013",
+    "D-APP-DOC-015",
+    "D-APP-DOC-025",
+    "E-DEV-021",
+    "E-DEV-022",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-017",
+    "P-E3-018"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-018",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-030",
@@ -310,7 +997,46 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-030.md.snapshot",
+   "metadata_origin_digest": "32590d00cd039d9fd4539d6f5b1ad3f9351d4b67901e500edab9ef2ff3b5bd51",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Cost BOM skeleton with classification",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-014",
+    "D-APP-DOC-016",
+    "D-APP-DOC-022",
+    "E-DEV-019",
+    "E-DEV-023",
+    "E-DEV-024",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-015",
+    "P-E3-030",
+    "P-E3-031",
+    "T-E3-015",
+    "T-E3-031"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-030",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-031",
@@ -326,7 +1052,40 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-031.md.snapshot",
+   "metadata_origin_digest": "bb5b0837d2f16a0402f10d3e1e7a3c1081bbf61cdda6c6c4dfa9d7fff261f697",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Hold-not-weaken and owner-readable HELD specification",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-014",
+    "D-APP-DOC-016",
+    "D-APP-DOC-022",
+    "E-DEV-024",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-031"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-031",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-034",
@@ -340,7 +1099,37 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-034.md.snapshot",
+   "metadata_origin_digest": "e2098fe0f5dfbeb16740889fbef6ba2931c8e5d86da567dc0acea5089c0b9263",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Durable-state category list",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-018",
+    "E-DEV-025",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-034"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-034",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E3-036",
@@ -356,7 +1145,38 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
-   "last_verified": "2026-10-01"
+   "last_verified": "2026-10-01",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-036.md.snapshot",
+   "metadata_origin_digest": "571c335fccf44df8b5f029f668eaef3df1c531bba95f9d5723d4a8138cb5f6e9",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Transition-gate package (HELD)",
+   "domain": "project-records",
+   "module": "e03-server",
+   "used_by": [
+    "D-APP-DOC-013",
+    "D-APP-DOC-024",
+    "E-DEV-026",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-036"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E3-036",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   },
   {
    "task_id": "T-E5-003",
@@ -370,7 +1190,40 @@
    "claimed_by": "Codex development run",
    "claimed_at": "2026-09-24",
    "owner": "E5",
-   "last_verified": "2026-09-30"
+   "last_verified": "2026-09-30",
+   "metadata_origin_file": "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E5-003.md.snapshot",
+   "metadata_origin_digest": "3a1a8886157e1dfe59e94305387b16e4e60b6463d63f84854726b9caab2a9db0",
+   "metadata_origin_commit": "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b",
+   "metadata_version": "1",
+   "metadata_scope": "record registration; original product/verification scope unchanged",
+   "purpose": "Derive a current-context E5 authorization decision",
+   "domain": "project-records",
+   "module": "e05-identity",
+   "used_by": [
+    "E-DEV-003",
+    "E-DEV-004",
+    "E-DEV-005",
+    "I-E10-REGISTRATION-BASELINE",
+    "P-E3-001-R2",
+    "P-E3-001-R3",
+    "P-E5-003"
+   ],
+   "implements": [
+    "ADR-015 Decision3 record registration"
+   ],
+   "public_contracts": [],
+   "internal_scope": "Original document declarations and record custody; no new runtime authority",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_identity.py",
+    "modules/e10-graph/checks/check_conformance.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E5-003",
+   "superseded_by": [],
+   "metadata_verified_at": "2026-10-01"
   }
  ]
 }

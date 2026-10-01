@@ -11,12 +11,15 @@ implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
 tasks: [T-E10-001]
-tests: []
+tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
 status: REVIEW
 last_verified: 2026-10-01
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+metadata_verified_at: "2026-10-01"
 ---
 
 # Graph node registration rule v1
@@ -77,3 +80,19 @@ For this documentary rule: no public runtime contracts, no executable behavior/t
 - Copied cached/old approval, all-tasks-DONE argument or green legacy check standing in for full metadata: refuse completion claim; independent exact evidence remains necessary.
 
 Inventory: `[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]`; task: `[[vault/REGISTRY/T-E10-001.md]]`; pack: `[[vault/PACKS/P-E10-001.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-027.md]]`.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## Corrective whole-corpus registration implementation (2026-10-02)
+
+The initial rule-only submission was rejected at0213a1a; that decision remains in E-DEV-027. All131 current Markdown documents now carry stable stored identity and each minimum metadata field. Existing identities, declared owners, product status, verification timestamps and semantic bodies remain; previously unidentified governed documents receive explicit first claims. E10 is the newly declared custodian of otherwise ownerless document records, not the owner or authorizer of product data. Unknown operational/semantic coverage remains UNVERIFIED, rather than fabricated proof. Original forward semantics remain in immutable source bodies; no new runtime relation convention is claimed.
+
+The126 original baseline Git blobs are preserved exactly under vault/EVIDENCE/SNAPSHOTS/metadata-v1 as non-Markdown immutable .snapshot payloads. metadata_origin_file/digest/commit reference those originals. A pinned count/raw-content catalog digest and per-record normalized digest protect them. Current frames retain original metadata values and begin with the original body; the preservation guardian rejects historic verdict/identity/content changes. Old evidence Markdown subject paths now resolve to their exact original bytes, with subject_original_path retained and original subject_digest unchanged. E-PR-001 pack_file is the exact preserved proof pack; the guardian accepts only the original/preserved addresses and the originally pinned digest, so wrapping the record cannot authorize rewriting old proof. Secondary historical sources are listed as preserved payload references. Archived payloads are historical data, not active duplicate graph nodes.
+
+check_registration v1 enforces131-record field presence, nonempty declared purpose/domain/module/owner/scope/status/date, real dates/module ownership, exactly one owned identity, same/cross-type collisions, matching body identity, duplicate-key rejection and preserved-origin integrity. This is registration/serialization and historical-preservation coverage, not completed T-E10-002 relation conventions or the seven T-E10-003 semantic detectors. Thirteen meaningful tests cover proof tampering, rehashing, missing/redirected payloads, historic verdict/body rewrites and conflicting identities. run_all executes these guards/tests in CI. No production runtime/schema/deployment/account/credential action.
+
+Whole-corpus registration is proposed for independent re-review; no DONE until actual acceptance review and exact-headCI pass. Semantic reference completeness, tested critical product behavior, ten-layer closure and production authority remain separately unproved. The original126-row gap inventory remains a frozen before-state, not a claim that corrected records still lack fields or a current conformance index.

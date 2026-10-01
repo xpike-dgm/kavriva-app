@@ -7,7 +7,7 @@ HERE = Path(__file__).resolve().parent
 CHECKS = ["check_manifests.py", "check_contracts.py", "check_packs.py",
           "check_identity.py", "check_orphans.py", "check_links.py",
           "check_edges.py", "check_conformance.py", "check_trace.py",
-          "check_design.py", "check_presence.py"]
+          "check_design.py", "check_presence.py", "check_registration.py"]
 worst = 0
 for c in CHECKS:
     r = subprocess.run([sys.executable, str(HERE / c)] + sys.argv[1:],
@@ -17,5 +17,10 @@ for c in CHECKS:
     if out:
         print(out)
     worst = max(worst, r.returncode)
+tests = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s",
+                        str(HERE.parent / "tests"), "-v"], capture_output=True, text=True)
+print(f"### record preservation/identity tests -> exit {tests.returncode}")
+print((tests.stdout + tests.stderr).strip())
+worst = max(worst, tests.returncode)
 print(f"run-all: worst exit = {worst}")
 sys.exit(worst)

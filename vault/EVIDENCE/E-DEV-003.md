@@ -18,6 +18,38 @@ reviewer: "owner-supplied independent T3 review of PR #4 head a85a353c55e043773d
 timestamp: 2026-09-24
 status: RECORDED
 last_verified: 2026-09-24
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-003.md.snapshot"
+metadata_origin_digest: "0ebbe23c35853d33144168250b5d67e1da06df1501c1b72b7d23124248dfbc55"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Preserve scoped conformance and verification evidence for modules/e05-identity/internal/postgres_decision.py"
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E5-003"
+  - "T-E5-003"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence: []
+supersedes: []
+superseded_by: []
+metadata_verified_at: "2026-10-01"
+historical_source_payloads:
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PACKS/P-E5-003.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E5-003.md.snapshot"
 ---
 
 # E-DEV-003 — E5 current authority source
@@ -31,3 +63,9 @@ For PR #4 code head `04968cf17956bbf5305e330a3d1df61fe5134434`, [E5 native Postg
 On 2026-09-24 the owner supplied an independent T3 second-eye verdict for PR #4 head `a85a353c55e043773d98dcddef2bc9e46402ecd0`: **approved for the E5 current decision source only**. The review confirmed locked current rows, reason-coded ALLOW/DENY/HELD, nine native PostgreSQL tests, green CI, and matching code/schema digests. It explicitly kept T-E5-003 IN_PROGRESS and T-E3-001 not DONE because live identity writers and the E3 integration are absent. This verdict was supplied in the task conversation; it is not a submitted GitHub PR review. The reviewed E5 code and migration were unchanged when PR #3's merged branch was integrated into PR #4; the generated task indexes were refreshed from the registry. CI passed again on PR #4 head `10f0884401eba6e372464de9cca926ca05d0fdfe`.
 
 The current session/grant/epoch/policy writers and identity provider adapter do not yet exist. E3 has not bound this public decision to a trusted current resource read and a real product-domain write in the same transaction. Protected audit, negative floors, privileged activation and a deployed runtime role also remain separate gates. Therefore this evidence proves a PostgreSQL-backed decision mechanism, not production-current authority or T-E3-001 DONE. The task remains IN_PROGRESS pending the missing bindings.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

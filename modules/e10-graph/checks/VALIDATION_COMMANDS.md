@@ -1,3 +1,37 @@
+---
+record_id: V-CMD-001
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e10-graph/checks/VALIDATION_COMMANDS.md.snapshot"
+metadata_origin_digest: "0da097afcafbd521a8a5ae3c454b57c543bf0a8ca7da8567f38285ac8fc1c3db"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/VALIDATION_STRATEGY.md` (check classes + consequence tiers + run/verify/enforce ownership); `planning 07_AI_ARCHITECTURE/ARCHITECTURE_TESTS.md` (detection families + conformance shape fields); `planning 07_AI_ARCHITECTURE/RULES/README.md` (R-001..R-014 + rule→gate mapping, invoked never duplicated); `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md` (lifecycle); `DEC-0051` (free = templates + GitHub automation; no API actuation); `DEC-0052`/`DEC-0056` (different-chat verify, loop-until-PASS). Install addresses: `modules/e10-graph/checks/` (specs) + `vault/EVIDENCE/` (records)."
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "I-E10-REGISTRATION-BASELINE"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+supersedes: []
+superseded_by: []
+status: "INSTALLED"
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
+---
+
 # VALIDATION COMMANDS (INSTALLED — Phase-8 Step 3 REVIEWED PASS + B-07 rows; OUT-3 B-19 header fix 2026-09-23)
 
 Status: INSTALLED (round 1: independent review PASS, no open findings, 2026-09-22; installed to `modules/e10-graph/checks/VALIDATION_COMMANDS.md`)
@@ -47,3 +81,9 @@ shape fields); `planning 07_AI_ARCHITECTURE/RULES/README.md` (R-001..R-014 + rul
 2. Tiers cover all 10 epics' task classes with no epic unassigned (manual check vs `planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md`).
 3. No vendor/number/implementation selection smuggled (manual check vs guardrails above).
 4. Reviewer verdict PASS, zero open findings, different context (R-007).
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

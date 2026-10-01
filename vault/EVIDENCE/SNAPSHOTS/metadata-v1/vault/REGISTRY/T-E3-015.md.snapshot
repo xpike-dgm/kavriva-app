@@ -1,0 +1,18 @@
+---
+task_id: T-E3-015
+flow_feature: FL3.3.1/F3.3.1
+objective: Platform BOM inputs template
+depends_on: [T-E3-013]
+context_pack: P-E3-015
+acceptance: Classification slots, no numbers
+evidence: E-DEV-019
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-015
+
+`[[vault/PROFILES/platform-bom-inputs.md]]` supplies empty scenario, cost-family and classification/evidence/authorization slots. Independent gpt-6-luna max review returned PASS with no acceptance findings for PR #21 document head 022e1ca25e3c5c3305ea2bd4f8f903089ae8fe89; applicable exact-head CI passed. The same reviewer returned PASS for metadata head 1ad554d4bdfb5d581fb91c42c4446bb7d09f534b and its green CI. On 2026-10-01 the owner explicitly accepted the identified independent verdict. DONE covers the empty input template only. No prices, budget, selection, provisioning or operational proof; readiness remains HELD. T-E3-030/031 remain separate tasks and T-E3-001-R1 remains REVIEW. `[[vault/EVIDENCE/E-DEV-019.md]]` records verification and scope.

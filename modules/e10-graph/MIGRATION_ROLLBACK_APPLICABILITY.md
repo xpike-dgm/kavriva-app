@@ -1,3 +1,37 @@
+---
+record_id: V-MIG-001
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e10-graph/MIGRATION_ROLLBACK_APPLICABILITY.md.snapshot"
+metadata_origin_digest: "8359a2ca86228b591bf88930cc45498e721b90d9b79aa041a127aae820321979"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Binding sources (single truth, not copied): `planning 07_AI_ARCHITECTURE/MIGRATION_POLICY.md` (migration rules by reference to ADR-007/ADR-003); `planning 07_AI_ARCHITECTURE/ROLLBACK_STRATEGY.md` (rollback-as-new-event, quarantine, floors, task-level safe return); `planning 07_AI_ARCHITECTURE/DESIGN_CONSISTENCY_AND_CHANGE.md` + `planning 07_AI_ARCHITECTURE/CHANGE_CONTROL.md` (change-invoked re-validation); `DEC-0030` (destructive-change owner approval); Step-2 manifests (per-module change/rollback sections, which this file makes applicable — it writes no new module rule). Install address: `kavriva-app/modules/e10-graph/` (applicability matrix; procedures live with owning modules)."
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "I-E10-REGISTRATION-BASELINE"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+supersedes: []
+superseded_by: []
+status: "INSTALLED"
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
+---
+
 # MIGRATION AND ROLLBACK APPLICABILITY (INSTALLED — Step-6 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
 Status: INSTALLED (Step-6 matrix REVIEWED PASS + installed 2026-09-22; coverage mapping added 2026-09-23, OUT-3 B-21)
@@ -50,3 +84,9 @@ they test — recorded here, not hidden. Checklist item 8 is therefore declarati
 1. Every module owns exactly one matrix row pointing at its manifest + a policy (manual check — no orphan module).
 2. No rule redefined or contradicted (manual check vs the three Group-5 sources + DEC-0030).
 3. Reviewer verdict PASS, zero open findings, different context (R-007).
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

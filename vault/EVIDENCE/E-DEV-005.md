@@ -31,6 +31,39 @@ reviewer: "gpt-6-luna max sub-agent /root/pr7_independent_review; owner explicit
 timestamp: 2026-09-30
 status: RECORDED
 last_verified: 2026-10-01
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-005.md.snapshot"
+metadata_origin_digest: "09ddd3d78d88adf13b83a984a9bf71e6a5c3f260e20318e1ec4c6637c6fed976"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Preserve scoped conformance and verification evidence for modules/e03-server/internal/maintenance_command.py"
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "E-DEV-004"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-001-R3"
+  - "T-E3-001-R1"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence: []
+supersedes: []
+superseded_by: []
+metadata_verified_at: "2026-10-01"
+historical_source_payloads:
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PACKS/P-E3-001-R3.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-001-R1.md.snapshot"
 ---
 
 # E-DEV-005 — Consumer maintenance login and authority binding
@@ -50,3 +83,9 @@ The same read-only sub-agent re-reviewed corrected code head `687246ee3f6a865f86
 On 2026-10-01 the sole project owner explicitly accepted this named sub-agent verdict as the T3 second eye for PR #7. [Plan PR #2](https://github.com/xpike-dgm/motobakim-plan/pull/2), merged as `7338818`, records DEC-0069 and the reviewer context. This owner instruction supersedes the earlier DEC-0064 sub-agent exclusion for an owner-accepted, recorded independent review; it does not turn the review into a GitHub account approval. The review is PASS for the PR's tested consumer maintenance scope. The task and production limits below remain.
 
 This is a runnable consumer maintenance boundary, not a hosted production activation. No hosted Supabase project, production database login, deployment, live customer or paid resource was created or changed. The runtime's future login and DB role binding, real deployment configuration, external audit/floor custody, and all privileged Internal Operations paths need separate activation and review. These local tests do not prove production-current authority. T-E3-001-R1 remains REVIEW and T-E5-003 remains IN_PROGRESS. Neither is DONE from this evidence alone.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

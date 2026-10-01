@@ -1,7 +1,7 @@
 ---
 test_id: E-DEV-010
 contract_id_version: "ADR-006 Decision 9; T-E3-006b Storage/URLs/Studio inventory"
-subject_file: vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md
+subject_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md.snapshot"
 subject_digest: 486BEEF0E6B1316A5A88482D70C9CF4C7841992BF3DFBC4A70AB3ED3D9993F38
 result: "RECORDED (hosted ordinary file Storage and URL paths observed; zero file bucket metadata; vector/analytics state unverified)"
 evidence_links:
@@ -16,6 +16,42 @@ reviewer: "independent gpt-5.6-luna max sub-agent /root/pr12_independent_review;
 timestamp: 2026-10-01
 status: RECORDED
 last_verified: 2026-10-01
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/EVIDENCE/E-DEV-010.md.snapshot"
+metadata_origin_digest: "69db54c715e312891239a80cc4c08e3b56461410f7c3ac6dab05b9158c7c5cff"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Preserve scoped conformance and verification evidence for vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md"
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-006b"
+  - "T-E3-006b"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence: []
+supersedes: []
+superseded_by: []
+metadata_verified_at: "2026-10-01"
+subject_original_path: "vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md"
+historical_source_payloads:
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/INVENTORIES/E3-DB-RPC-DIRECT-PATHS.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PACKS/P-E3-006b.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/authorization-tuple-browser.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/REGISTRY/T-E3-006b.md.snapshot"
 ---
 
 # E-DEV-010 — Hosted Storage, URL and Studio paths
@@ -33,3 +69,9 @@ The independent Luna Max reviewer `/root/pr12_independent_review` returned **CHA
 The same reviewer returned **CHANGES_REQUESTED** on corrected head `f8fd149d5d8e2396e61b4a944d78095c39e4416f` for two remaining record defects: the reproduction text still counted three instead of four GET probes, and summary fields implied no bucket of any Storage type despite unverified vector/analytics counts. The second correction fixed those exact statements. That earlier head's architecture, E3, E5, local Auth and labeled T3 CI checks passed; automation did not replace the independent verdict.
 
 On PR #12 head `dc0841f5d8af73d64cd92626828f57129be6e417`, the independent Luna Max reviewer returned **PASS for T-E3-006b's inventory scope**, with no remaining acceptance finding. It verified the four-probe count, the ordinary-file-only summaries, subject digest, read-only hosted catalog and role checks, empty Edge Function list, and green [architecture/T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36845991820), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36845991019), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36845991187) and [local Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36845990948) checks. The reviewer did not prove vector/analytics bucket contents, hosted S3, external hosting, actual Studio membership/MFA or a real-bucket bypass case. It rechecked evidence-only head `5d440cd6d3e5fe53b07cd09728cd35eeff88869f` and returned PASS with no additional finding. On 2026-10-01 the owner explicitly accepted this identified independent T3 verdict and authorized PR #12's merger. T-E3-006b is DONE only for inventory scope; T-E3-001-R1 remains REVIEW.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

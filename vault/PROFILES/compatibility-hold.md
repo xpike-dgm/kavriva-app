@@ -5,6 +5,41 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-002 Decision 7; ADR-006 runtime compatibility rules; T-E3-018
 supersedes: ~
+record_id: D-APP-DOC-015
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/compatibility-hold.md.snapshot"
+metadata_origin_digest: "2026af03133163820875b3a85e81896174cdcd170d05434099c78a6cca6d1421"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "T-E3-018 defines how E3 records changes and holds affected capabilities before changed defaults reach production. It provides a dated journal and a review/closure procedure; it implements no watcher, automated runtime fence, upgrade, migration, deployment or production monitoring. All operational compatibility closure is currently HELD. T-E3-001-R1 remains REVIEW and physical activation remains HELD."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-016"
+  - "D-APP-DOC-024"
+  - "E-DEV-022"
+  - "E3-COMPATIBILITY-CHANGELOG"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E3-001"
+  - "P-E3-018"
+  - "T-E3-018"
+implements:
+  - "ADR-002 Decision 7; ADR-006 runtime compatibility rules; T-E3-018"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # Dated changelog and compatibility hold procedure
@@ -56,3 +91,9 @@ Later operational closure requires all of: current dated source and measured tar
 Reject an assessment that calls a provider announcement deployed truth, calls 'latest' compatible, infers hosted minor versions from local config, ignores excluded services, promotes on green CI alone, silently treats a security hold as permission to use vulnerable software, rolls back negatives or asks the owner to debug. Document acceptance requires dated records and the hold-on-change procedure; no new executable tests are added for this document-only task.
 
 Related rules: `[[vault/PROFILES/backend-reversibility.md]]`, `[[vault/PROFILES/rls-storage-defense.md]]`, `[[vault/PROFILES/secret-custody-rotation.md]]`. Pack: `[[vault/PACKS/P-E3-018.md]]`; task: `[[vault/REGISTRY/T-E3-018.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-022.md]]`.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

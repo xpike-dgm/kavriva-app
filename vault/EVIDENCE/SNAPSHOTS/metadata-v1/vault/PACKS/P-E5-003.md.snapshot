@@ -1,0 +1,24 @@
+---
+pack_id: P-E5-003
+task_ref: T-E5-003
+status: ACTIVE
+owner: E5
+last_verified: 2026-10-01
+---
+
+# T-E5-003 — Current-context E5 decision point
+
+1. objective: Derive one allow/deny/hold decision from locked, current E5 session, grant, actor-epoch and policy rows in PostgreSQL.
+2. outcome-link: C5.2/F5.2.1/FL5.2.1 — a server action cannot use a cached role or policy verdict as its authority.
+3. preconditions + completed dependencies: The planning task has no product-task dependency. The owner approved this separate prerequisite on 2026-09-24 while T-E3-001-R1 remains blocked.
+4. mandatory reads: ADR-004 Decision 1, ADR-006 Decision 2, DEC-0035; C5.2/F5.2.1/FL5.2.1; `[[modules/e05-identity/MANIFEST.md]]`, `[[modules/e03-server/MANIFEST.md]]`, `[[vault/CONTRACTS/authorization-tuple.md]]`, `[[modules/e10-graph/TASK_REGISTRY.md]]`; planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md and 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md.
+5. allowed paths: `modules/e05-identity/public/decision.py`, `modules/e05-identity/internal/postgres_decision.py`, `modules/e05-identity/tests/test_postgres_decision.py`, `modules/e05-identity/tests/requirements.txt`, `supabase/migrations/20260924102337_e5_current_authority.sql`, `.github/workflows/e5-tests.yml`, this pack, `vault/REGISTRY/T-E5-003.md`, `vault/EVIDENCE/E-DEV-003.md`, generated `vault/INDEX/registry.json` and `vault/INDEX/routing.json`.
+6. forbidden areas: Planning truth, E3 runtime implementation, production database and provider accounts, credentials, deployment, privileged activation, provider-specific identity selection, and unrelated modules.
+7. expected artifact changes: Add a private-schema migration with separate current rows, a locked PostgreSQL reader and fail-closed decision function; add native PostgreSQL negative/concurrency tests and CI; record evidence and regenerate indexes.
+8. acceptance + negative cases: Current actor, session, epoch, exact grant and active policy rule produce ALLOW only together; absent/revoked/expired/mismatched inputs, no policy rule, stale epoch, insufficient assurance/competence/independence/step-up and unavailable source yield reason-coded DENY or HELD. A precomputed ALLOW is never stored or accepted as authority.
+9. validation / architecture / integration checks to run: Native PostgreSQL migration and decision suite with concurrent revocation lock tests; E10 run_all.py in strict plan-root mode; index reproducibility and GitHub PR checks. E3 same-transaction product mutation remains a separate integration gate.
+10. migration / rollback needs: One additive, private PostgreSQL schema migration; no remote apply in this task. Before deployment, revert this PR to roll back. After any deployment, a reviewed data-preserving down/forward migration is required; no destructive automatic rollback.
+11. responsive / accessibility rules: N/A; this task has no user-visible surface.
+12. evidence + handoff format: `[[vault/EVIDENCE/E-DEV-003.md]]` records code/schema digests, migration/test/CI results and limitations; independent different-chat high-impact review is required before REVIEW/DONE.
+13. graph-update records: `[[vault/REGISTRY/T-E5-003.md]]` represents this task; regenerate registry/routing indexes. T-E3-001-R1 consumes only the reviewed E5 public decision contract in a later integration PR.
+14. escalation rules: If E3 cannot provide a trusted current resource, the identity provider cannot supply current sessions, an audit/floor source is missing, or deployment requires account access, keep production activation BLOCKED and present an owner option card before expanding scope.
