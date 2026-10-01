@@ -13,12 +13,15 @@ depends_on:
   - "ADR-015"
 used_by:
   - "I-E10-REGISTRATION-BASELINE"
+  - "V-E10-STRUCT-001"
+  - "P-E10-003a"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
 internal_scope: "Original document declarations and record custody; no new runtime authority"
 tasks:
   - "T-E10-001"
+  - "T-E10-003a"
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
@@ -29,7 +32,7 @@ supersedes: []
 superseded_by: []
 status: "INSTALLED"
 last_verified: "2026-10-01"
-metadata_verified_at: "2026-10-01"
+metadata_verified_at: "2026-10-02"
 ---
 
 # ARCHITECTURE TEST SUITE (INSTALLED — Phase-8 Step 3 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
@@ -84,3 +87,5 @@ Companion: `VALIDATION_COMMANDS.md` (this step; command addresses + tiers). Inst
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+T-E10-003a custody-only maintenance adds actual specification/mandatory-pack consumers V-E10-STRUCT-001 and P-E10-003a, plus maintenance-task provenance. Original installed body, origin payload, last_verified and product/evidence scope remain unchanged; no detector implementation or historical proof refresh.

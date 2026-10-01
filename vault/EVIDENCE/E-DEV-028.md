@@ -1,7 +1,8 @@
 ---
 test_id: E-DEV-028
 contract_id_version: "ADR-015 Decision3; addendum section3; relation convention v1"
-subject_file: modules/e10-graph/GRAPH_RELATION_CONVENTION.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-028-GRAPH_RELATION_CONVENTION.md.snapshot
+subject_original_path: modules/e10-graph/GRAPH_RELATION_CONVENTION.md
 subject_digest: fbdce4e967de3d6ee10f9651b11c8351de45e9829fa3deaa180b34e16a9915b5
 result: "PASS: independent review accepted the exact canonical eight-group relation convention"
 evidence_links:
@@ -19,11 +20,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [V-E10-REL-001, E-DEV-027]
-used_by: [V-E10-REL-001, P-E10-002, T-E10-002, M-E10-001]
+used_by: [V-E10-REL-001, P-E10-002, T-E10-002, M-E10-001, P-E10-003a]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-relation-convention-evidence
-tasks: [T-E10-002]
+tasks: [T-E10-002, T-E10-003a]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_identity.py]
 evidence: []
 supersedes: []
@@ -55,3 +56,5 @@ Independent current-consumer audit identified P-E10-002's mandatory read of EDEV
 Separate /root/pr30_independent_review context, explicitly requested gpt-6-luna max. Actual verdict PASS at a31ad8e3a218b2956bdd13653c10c02364fce606/base4fb620c44ac1f3b9ad5d20239053f41d0afbb590. Reviewer independently extracted canonical §3 exactly8 bullet lines and matched convention text/order, audited actual consumers and change provenance, verified the preserved T001 subject byte-identical to approved6a1c004 blob and its unchanged39ea7021 digest/verdict, and confirmed the then-current convention digest4fdc912a8318c7a1a2fcd384269dc8c6aba5ace5880dc126e119ee36e99db7bb. All findings closed: historical/current manifest consumer/date distinction, actual T002 maintenance trace, generated registry after changed tasks, and P2's actual EDEV027 consumption. No remaining actionable source/lineage/boundary finding.
 
 Direct exact-head PR CI: architecture36934302811 (suite/secret scan/index rebuild), E3 36934302887, E5 36934302759, isolatedAuth36934302839 SUCCESS; push architecture36934299582/E3 36934299468/E5 36934299592/Auth36934299496 SUCCESS. PR T3 PASS, push T3 skipped by event. Existing12 checks/20 regression tests are serialization/preservation/freshness coverage, not new semantic detector evidence. T002 accepted under owner's direct standing mandate and DONE for eight-group convention only; T003/semantic corpus/production closure remain unproved, E3R1 REVIEW/operational authorityHELD. Earlier finding/failure/outstanding paragraphs are chronological history. Final status/evidence/index-only audit and green exact-headCI are required before merge; their immutable receipt is recorded in PR30 rather than recursive proof commits.
+
+T-E10-003a proof-address custody: primary subject redirected to the byte-exact PR30-approved relation convention from final head4c48d41659d91315fd26eede4cc50f59a72c92a0 (merge f81ddfd). Original digest, verdict, reviewer and timestamp remain unchanged. Added actual P-E10-003a proof consumer and maintenance-task trace; this does not refresh historical acceptance.
