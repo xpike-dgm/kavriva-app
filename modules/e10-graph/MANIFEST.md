@@ -6,9 +6,9 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
-public_contracts: [task-pack, design-token, V-E10-NODE-001]
+public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
 tasks: [T-E10-001]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
@@ -90,3 +90,9 @@ Metadata adds no new runtime edge or public product capability. Purpose, ownersh
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## Accepted registration and relation convention follow-up
+
+T-E10-001 registration/preservation was independently accepted at6a1c004 and merged viaPR29 as4fb620c; earlier CHANGES_REQUESTED paragraphs are stage history. Its approved rule bytes remain the EDEV027 subject. Current consumer metadata changes belong to T-E10-002, not old acceptance. Relation convention v1: `[[modules/e10-graph/GRAPH_RELATION_CONVENTION.md]]`; task: `[[vault/REGISTRY/T-E10-002.md]]`; pack: `[[vault/PACKS/P-E10-002.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-028.md]]`. New convention is REVIEW; no detector/runtime/production completion. Added public tooling policy reference grants no runtime authority.
+
+Governed relation convention address: `modules/e10-graph/GRAPH_RELATION_CONVENTION.md`.

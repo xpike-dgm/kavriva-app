@@ -6,7 +6,7 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028]
+used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
