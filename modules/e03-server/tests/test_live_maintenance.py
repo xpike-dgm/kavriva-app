@@ -309,7 +309,7 @@ class LiveMaintenanceTests(unittest.TestCase):
         ).effect_result.record_id, committed.effect_result.record_id)
 
     def test_direct_client_sql_cannot_read_or_mutate_private_product_rows(self):
-        """A Studio-like SQL session using a client role cannot cross the API gate."""
+        """Client-role SQL sessions cannot cross the API gate."""
         for role in ("anon", "authenticated"):
             for statement in (
                 "select * from kavriva_e3.maintenance_records",

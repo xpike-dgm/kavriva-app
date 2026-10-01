@@ -114,8 +114,8 @@ def main(status_path):
         listed = request(storage + "/object/list/" + bucket, key, "POST",
                          {"prefix": "", "limit": 100}, token)
         if 200 <= listed[0] < 300:
-            if object_path.encode() in listed[1] or new_path.encode() in listed[1]:
-                raise AssertionError(label + " listed a private object")
+            if json.loads(listed[1]) != []:
+                raise AssertionError(label + " listed private object metadata")
         elif listed[0] < 400:
             raise AssertionError(label + " list returned an unexpected response")
         assert_blocked(request(storage + "/object/sign/" + bucket + "/" +
