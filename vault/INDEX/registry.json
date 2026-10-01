@@ -53,7 +53,7 @@
    "context_pack": "P-E3-006b",
    "acceptance": "Storage, URLs and Studio surfaces inventoried with observed exposure and explicit limits",
    "evidence": "E-DEV-010",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
