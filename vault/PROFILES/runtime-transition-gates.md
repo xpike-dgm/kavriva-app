@@ -48,6 +48,60 @@ These rows preserve the sixteen-item acceptance package in the [planning judge s
 
 No row is a live PASS or executable test result. Actual fixtures for two-issuer/privileged paths, offline clients, workers/queues, independent custody/restore and actual target environments are not supplied by this document. Existing CI exclusions and isolated local test boundaries must not be hidden when filling later rows.
 
+## Explicit criterion and failure crosswalk (documentary, not proof)
+
+The identifiers below are the canonical IDs in the [API requirements synthesis](https://github.com/xpike-dgm/motobakim-plan/blob/main/04_TECH_STRATEGY/DEBATES/DEBATE-011__API_RUNTIME_REQUIREMENTS_SYNTHESIS.md) and [failure/TCO research](https://github.com/xpike-dgm/motobakim-plan/blob/main/04_TECH_STRATEGY/DEBATES/DEBATE-011__API_RUNTIME_FAILURE_TCO_RESEARCH.md). Gate numbers refer to the sixteen rows above. The crosswalk maps obligations, not tests that ran or passing results. Every gate remains independently mandatory and every A/B operational cell remains HELD. Later fixtures need evidence for each listed obligation and its exact consumer scope; this crosswalk cannot merge away, downgrade or silently exclude a gate.
+
+| Criterion | Gates | Scope to preserve in later matched fixtures |
+|---|---|---|
+| API-AC-001 | 1, 2, 8 | Sensitive read/export/mutation and private-object paths require current API mediation, not direct clients or provider console. |
+| API-AC-002 | 4, 6, 8, 11, 16 | Canonical owner/identity/version/classification/history/provenance and audit links survive partial effects, restore and exit. |
+| API-AC-003 | 8, 9, 10, 13 | Motorcycle/task package closure, safety/recovery contents, generation/digest and client compatibility; incomplete/mixed packages stay unusable. |
+| API-AC-004 | 3, 4, 5, 9 | Local writes, HTTP/Realtime/push, DB transaction and queue status are not canonical acceptance/freshness/recall; reconcile explicitly. |
+| API-AC-005 | 1, 2, 6, 7, 12, 14 | Browser Internal Operations remains online-authoritative for approval/publication/role/policy/recovery/audit; Studio and offline state do not authorize. |
+| API-AC-006 | 2, 7, 10, 13 | Full current tuple immediately before effect, including actor/issuer/assurance/action/scope/policy/independence/competence and dependency generations. |
+| API-AC-007 | 1, 2, 14 | Self-approval, hidden admin bypass, unavailable competence and cached claims cannot produce consequential effects. |
+| API-AC-008 | 3, 4, 5 | Stable operation/fingerprint and expected version; same semantic retry reads result, different payload never mutates the old operation. |
+| API-AC-009 | 3, 4, 6, 12, 14 | Authorized canonical lookup returns effect/audit/generation/reason/resolver meaning while timeout or unavailable provider can leave uncertainty. |
+| API-AC-010 | 3, 4, 5, 9, 12, 14 | Accepted/current/delivered/reconciled and incomplete/held/uncertain outcomes stay distinct; preserve canonical state semantics, no false success. |
+| API-AC-011 | 4, 6, 11 | Protected audit-before-effect or equivalent transaction assurance, independent custody/fallback and recovery continuity; unavailable assurance holds positives. |
+| API-AC-012 | 1, 4, 8, 10 | Quarantine-first bytes/lineage/classification/digest/version and scoped handle; scan/render/OCR/AI or upload completion grants no activation. |
+| API-AC-013 | 3, 9, 10, 11, 16 | Durable offline ledger identity/fingerprint/version/status/conflict/hold/tombstone/resolver across process death, restore, migration and export. |
+| API-AC-014 | 2, 9, 11, 16 | Local-to-profile preview, verified possession/reauth, immutable mapping, conflict hold and safe split/rollback; no silent loss/overwrite. |
+| API-AC-015 | 7, 9, 10, 13 | Exact approved release meaning and closed dependencies, client/API/schema/config/migration/package compatibility and current suspension generation. |
+| API-AC-016 | 2, 7, 10, 11, 13 | Newer recall/suspension fences older/in-flight publication; rollback is a newly guarded valid compatible event, not negative erasure. |
+| API-AC-017 | 2, 3, 8, 9, 10, 13 | Revoke current sessions/grants/policy/competence, pending work, handles/browser caches/packages/key consumers and retries/status lookup end to end. |
+| API-AC-018 | 2, 7, 10, 12, 14 | Privileged recovery and emergency-negative state machines remain distinct; recovery never grants approval/publication/role authority. |
+| API-AC-019 | 3, 5, 12, 14, 15 | Understandable held/unavailable/uncertain/recovery outcome and named technical support/resolver; no owner SQL/SSH/log/queue debugging. |
+| API-AC-020 | 2, 4, 14, 15 | Minimum bounded AI context/allowed-forbidden scope, scoped credentials, independent evidence review and partial-task reconciliation. |
+| API-AC-021 | 5, 12, 14, 15, 16 | Equal safe BOM for normal/incident/restore/exit, authorized caps/stops, hidden-cost coverage and funded controlled drain or hold. |
+| API-AC-022 | 4, 8, 9, 10, 11, 13, 16 | Clean-room migration preserves current/history/audit/object/package/ledger/identity/floor meaning and compatibility, not just code/image portability. |
+| API-AC-023 | 3, 7, 9, 10, 11, 13, 16 | Old restore/failover/migration cannot revive revoke/recall/delete/suspension/accepted operation or silently lose newer valid data. |
+| API-AC-024 | 1, 2, 13, 14, 16 | API contract independent of provider adapter/presentation, versioned replacement and no provider secrets in client or AI context. |
+
+| Failure class | Gates | Scope to preserve in later matched injection and recovery |
+|---|---|---|
+| F01 | 3, 4, 6, 11 | Commit succeeded but response lost: canonical operation/audit/queue/object reconciliation, no false failure or duplicate replay. |
+| F02 | 3, 4, 5, 11 | Duplicate retry retains immutable operation/fingerprint result across workers and recovery; different payload conflicts. |
+| F03 | 2, 7, 10, 11 | Approval races revoke/recall/suspension: current transaction fence and ordered audit, newer/equal negative wins. |
+| F04 | 2, 10, 13 | Stale JWT/role/grant, session/issuer/epoch/competence/policy and key/consumer rotation; gateway claims never substitute. |
+| F05 | 3, 4, 6, 11 | Atomic narrow DB core versus partial external effects and audit/object/queue mismatch, same identity and coherent forward reconcile. |
+| F06 | 4, 6, 11, 12 | Audit sink/fallback loss, gap/fork/replay, integrity and independent recovery; no positive effect without assurance. |
+| F07 | 4, 8, 11, 16 | Incomplete/orphan/wrong-digest upload, classification/lineage/quarantine and controlled cleanup, DB/object generation coherence. |
+| F08 | 3, 6, 11, 12, 14, 15 | Provider/region/DNS partial outage, independent negative/audit availability, safe history/lookup/support and cost-aware recovery. |
+| F09 | 5, 12, 14, 15 | Billing/quota/throttle/account restriction: funded safe stop/drain, retained accepted/history/pending work and explicit support. |
+| F10 | 1, 2, 8, 10, 13, 14 | Leaked credential contained, scoped retirement/rotation and current epoch/session/handle/in-flight checks, no secrets in evidence. |
+| F11 | 5, 7, 11, 13 | Deployment rollback/schema/message/config mismatch, pinned artifacts, old-consumer drain and data-preserving forward recovery. |
+| F12 | 3, 5, 13, 15 | Cold start/long-job kill/restart, durable queued versus effect status, same operation, lease/checkpoint and bounded runtime/cost. |
+| F13 | 5, 12, 14, 15 | Queue/backpressure/retry storm: bounded concurrency/retry/DLQ/quarantine/poison, readable backlog and safe funded drain/hold. |
+| F14 | 3, 6, 11, 12, 14 | Log/sampling/retention/correlation gaps: protected audit distinct from logs, retained incident digests and uncertainty until reconciliation. |
+| F15 | 1, 2, 3, 8 | Cross-tenant direct call/BOLA/IDOR across DB/functions/status/private objects; client IDs are request data, not current authority. |
+| F16 | 2, 4, 14, 15 | AI overprivilege/half-finished work: exact scope/credential/audience/dry-run/hard-stop/review and retained PARTIAL/RECONCILING. |
+| F17 | 3, 7, 9, 10, 11, 13 | Quarantined cross-plane restore/failover with current security/release/delete/operation/migration floors and no premature positive cutover. |
+| F18 | 8, 9, 10, 11, 13, 14, 15, 16 | Partial logical export, independent clean-room import and secret reissue; complete meaning/custody/support/cost, source unchanged until acceptance. |
+
+A future narrow capability may document why a consumer-specific fixture is not yet enabled; this never turns that gate into operational PASS or supports a whole-runtime winner. Full transition still needs the complete applicable evidence package and all shared mandatory invariants on both candidates.
+
 ## Failure disposition and transition/recovery gates
 
 Missing/stale/conflicting evidence preserves HELD. An actual violated mandatory invariant is rejected until mitigated; record attempted/actual scope and retained work rather than broadening a narrow failure to the whole provider or treating an untested alternate as passing. Remediate the exact candidate and independently re-review the same gates. A convenience callback or `waitUntil` cannot replace durable long-job execution; container uptime or queue “exactly once” cannot prove product effect.
