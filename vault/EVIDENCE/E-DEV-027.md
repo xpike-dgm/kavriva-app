@@ -1,7 +1,8 @@
 ---
 test_id: E-DEV-027
 contract_id_version: "ADR-015 Decision3; graph node registration rule v1"
-subject_file: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-027-GRAPH_NODE_REGISTRATION.md.snapshot
+subject_original_path: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
 subject_digest: 39ea70214197c9c7293d9ff2f7581719a5f6bae49ef3ac4f1d3a88845e4308bb
 result: "PASS: independent review accepted full current-corpus registration and original proof preservation"
 evidence_links:
@@ -17,11 +18,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E10-001]
+used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E10-001, E-DEV-028, P-E10-002]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: whole-corpus-registration-and-historical-proof-preservation
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-002]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: []
 supersedes: []
@@ -88,3 +89,9 @@ Independent source review at c3788916c18d304ca4473a929efc51cc11e89150 verified a
 Reviewer /root/pr29_independent_review, separate delegated gpt-6-luna max context, exact2656cc623aeb11766830f0e6f9cddc9fa3f14f3b/base28b3734027d72b8f592b60290c8bf5f8fc0dfe2b. Actual verdict PASS, no remaining actionable T001 finding. The initial universal-coverage rejection is closed by all131 current records having a single stable typed identity and all16 required fields, with independently reproduced126/126 baseline Git blob pairs and no lost baseline paths. Exactly25 D-APP-DOC first claims are unique and absent from canonical plan origin/main. Existing contract-field namespaces preserve immutable slugs without invented renames. The omitted actual test links and stale16-vs20 prose findings are corrected. Twenty preservation/identity/freshness tests and12 checks passed; source/historical verdict/body/digest preservation and custody-only meaning accepted.
 
 Reviewer directly queried exact-head CI head_sha/status/conclusion: PR architecture36930165715, E3 commit-auth36930165764, isolatedAuth36930165798 and E5 36930165735 SUCCESS; push architecture36930161621, E3 36930161786, isolatedAuth36930161734 and E5 36930161754 also SUCCESS. PR T3 PASS; push T3 skipped by event condition. Accepted under direct owner's standing mandate; no separate owner re-prompt or planPR4 bypass. T001 DONE is restricted to actual registration/preservation acceptance, not T002/T003 semantic closure or product activation. T-E3-001-R1 REVIEW and operational authority/recovery HELD. Earlier FAIL/interim receipts remain chronological history. Final status/evidence/index-only audit and exact-headCI are required before merge and recorded against the final head in PR29 to avoid recursive proof commits.
+
+## Approved subject custody for later documentary consumers
+
+T-E10-002 adds consumer references to the current registration-rule frame. The PR29-approved6a1c004 rule blob is preserved byte-identically in vault/EVIDENCE/SNAPSHOTS/E-DEV-027-GRAPH_NODE_REGISTRATION.md.snapshot; subject_file now points to that exact payload, subject_original_path retains the governed live address. Original39ea7021 digest, accepted verdict, head and scope remain unchanged. This receipt preserves old acceptance; it does not approve the new T002 convention or consumer metadata, which require their own independent review/CI.
+
+Task trace note: T-E10-002 maintains this current record's documentary metadata/consumer references. Its tasks entry records that actual maintenance provenance; it does not re-author or refresh the original T-E10-001 product/acceptance evidence. Exact approved subject payloads and original verdict/head/digests remain authoritative for their earlier scope.

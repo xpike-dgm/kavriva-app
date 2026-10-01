@@ -19,7 +19,11 @@
     "V-E10-NODE-001",
     "E-DEV-027",
     "I-E10-REGISTRATION-BASELINE",
-    "M-E10-001"
+    "M-E10-001",
+    "V-E10-REL-001",
+    "P-E10-002",
+    "T-E10-002",
+    "E-DEV-028"
    ],
    "implements": [
     "ADR-015",
@@ -29,7 +33,8 @@
    "public_contracts": [],
    "internal_scope": "whole-corpus-registration-and-historical-proof-preservation",
    "tasks": [
-    "T-E10-001"
+    "T-E10-001",
+    "T-E10-002"
    ],
    "tests": [
     "modules/e10-graph/checks/check_registration.py",
@@ -46,6 +51,48 @@
    "metadata_version": "1",
    "metadata_scope": "record registration; original product/verification scope unchanged",
    "metadata_verified_at": "2026-10-02"
+  },
+  {
+   "task_id": "T-E10-002",
+   "flow_feature": "FL10.1.1/F10.1.1",
+   "objective": "Identity/metadata convention (§3 relations only)",
+   "context_pack": "P-E10-002",
+   "acceptance": "8-relation verbatim list",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-02",
+   "purpose": "Execute the canonical eight-group metadata relation convention task",
+   "domain": "project-execution",
+   "module": "e10-graph",
+   "owner": "E10",
+   "depends_on": [
+    "T-E10-001"
+   ],
+   "used_by": [
+    "V-E10-REL-001",
+    "P-E10-002",
+    "E-DEV-028",
+    "M-E10-001"
+   ],
+   "implements": [
+    "ADR-015",
+    "C10.1",
+    "F10.1.1"
+   ],
+   "public_contracts": [],
+   "internal_scope": "documentary-relation-convention",
+   "tasks": [
+    "T-E10-002"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py",
+    "modules/e10-graph/checks/check_identity.py"
+   ],
+   "evidence": "E-DEV-028",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-002",
+   "superseded_by": [],
+   "status": "DONE",
+   "last_verified": "2026-10-02"
   },
   {
    "task_id": "T-E3-001-R1",
