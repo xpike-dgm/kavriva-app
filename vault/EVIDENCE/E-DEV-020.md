@@ -9,7 +9,7 @@ evidence_links:
   - "[[vault/PACKS/P-E3-016.md]]"
   - "[[vault/REGISTRY/T-E3-016.md]]"
   - "[[modules/e03-server/MANIFEST.md]]"
-gate_verdict: "PASS (isolated defense scope only; owner acceptance pending)"
+gate_verdict: "PASS (isolated defense scope only; owner accepted identified independent verdict)"
 reviewer: "independent gpt-6-luna max subagent, PR #22 implementation head 1705fcdf8b2a712d7a7a946be4356fb5b79aa428"
 timestamp: 2026-10-01
 status: RECORDED
@@ -35,4 +35,4 @@ Baseline and final local all 11 E10 checks passed, generated indexes were rebuil
 
 Initial local Supabase CI at adb3dc40 failed during startup/migration before any HTTP probe. The original runner withheld detailed startup logs, so a specific SQL error was not captured. Official Storage schema guidance and the CLI ownership issue motivated replacing provider-table ALTER with a provider-enabled RLS prerequisite check; no ownership bypass is introduced. Startup diagnostics now emit only closed SQLSTATE/known-error tokens, never the credential-bearing log. Corrected-head actual Storage CI passed as recorded above.
 
-Independent delegated gpt-6-luna max reviewer /root/pr22_independent_review returned T3 PASS with no findings for exact implementation head 1705fcdf8b2a712d7a7a946be4356fb5b79aa428. The reviewer independently verified 107 local E3 tests, all 11 E10 checks, diff --check, raw-byte normalized digests, frozen probe integrity and exact-head green CI with actual local Auth/Storage HTTP probes under accidental permissive policies. It confirmed bounded existing server permissions, current API authority, provider-RLS prerequisite, defense-only scope and explicit privileged/hosted limits. It performed no edits or GitHub review/approval/merge. Owner acceptance of this identified verdict remains pending; T-E3-016 remains REVIEW.
+Independent delegated gpt-6-luna max reviewer /root/pr22_independent_review returned T3 PASS with no findings for exact implementation head 1705fcdf8b2a712d7a7a946be4356fb5b79aa428. The reviewer independently verified 107 local E3 tests, all 11 E10 checks, diff --check, raw-byte normalized digests, frozen probe integrity and exact-head green CI with actual local Auth/Storage HTTP probes under accidental permissive policies. It confirmed bounded existing server permissions, current API authority, provider-RLS prerequisite, defense-only scope and explicit privileged/hosted limits. It performed no edits or GitHub review/approval/merge. The same reviewer returned PASS for metadata head 030bad6e2f1e4c074ec3efad2fe0f88b31ff4262 and its applicable exact-head green CI, including isolated Supabase runs 36899528820 and 36899534606. On 2026-10-01 the owner explicitly accepted this identified independent verdict under DEC-0069. T-E3-016 is DONE for the tested isolated defense implementation only; hosted deployment, production inventory and privileged paths remain HELD. All four subject digests are unchanged by this acceptance record.
