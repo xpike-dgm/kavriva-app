@@ -115,7 +115,7 @@
    "context_pack": "P-E3-009",
    "acceptance": "One authority per domain; stable identity and snapshot versioning",
    "evidence": "E-DEV-013",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
