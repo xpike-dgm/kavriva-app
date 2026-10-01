@@ -24,6 +24,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
   (`vault/PROFILES/domain-authority-registry.md`); metadata is never product authorization or physical activation.
 - `public/maintenance_provenance.py` defines immutable history/copy representations
   (`vault/PROFILES/history-provenance.md`); copies and history rows never substitute for current snapshots or audit.
+- `public/object_boundary.py` verifies object bytes, direct-parent/transitive lineage and exact classification
+  propagation (`vault/PROFILES/object-boundary.md`); all factory outputs quarantine and grant no access or activation.
 - Queue/worker job families (lease/pulse/checkpoint/DLQ/backpressure/cancel/evacuate); backup/restore
   drills + clean-room exit; cost-BOM skeleton; environment separation + promotion plumbing.
 
