@@ -41,7 +41,7 @@ npx --yes supabase@2.117.0 db push --project-ref tmcitwyzoahtvysxblty --skip-vau
 npx --yes supabase@2.117.0 db push --project-ref tmcitwyzoahtvysxblty --skip-vault
 ```
 
-These are reviewed future commands, not a report that they ran. The first is read-only; the second changes the hosted database. The migrations are additive but create private authority, maintenance and audit tables plus a `NOLOGIN` server role. Neither command creates the separate application login, deploys the E3 API, creates a Storage bucket, or makes the product ready for users.
+These commands define the reviewed sequence; their execution status is recorded in `[[vault/EVIDENCE/E-DEV-008.md]]`. The first is read-only; the second changes the hosted database. The migrations are additive but create private authority, maintenance and audit tables plus a `NOLOGIN` server role. Neither command creates the separate application login, deploys the E3 API, creates a Storage bucket, or makes the product ready for users.
 
 ## Required post-install checks
 
