@@ -10,6 +10,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 
 ## Public contract surface
 
+- Durable-state categories (`vault/PROFILES/durable-state-categories.md`) list required canonical state;
+  no physical store, independent custody or recovery implementation is established by the list.
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
 - RLS/Storage defense profile (`vault/PROFILES/rls-storage-defense.md`) records restrictive client defenses
   for migrated private tables and Storage; policies never grant product authority or prove hosted activation.
