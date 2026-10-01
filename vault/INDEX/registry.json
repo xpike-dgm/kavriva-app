@@ -18,7 +18,8 @@
     "P-E10-001",
     "V-E10-NODE-001",
     "E-DEV-027",
-    "I-E10-REGISTRATION-BASELINE"
+    "I-E10-REGISTRATION-BASELINE",
+    "M-E10-001"
    ],
    "implements": [
     "ADR-015",

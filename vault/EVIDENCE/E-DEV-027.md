@@ -45,3 +45,5 @@ Author self-inspection corrected implements from an ADR section label to the act
 Author self-inspection also replaced empty used_by lists with actual current documentary record consumers; absence of runtime consumers is not absence of graph references. No future task consumer was invented. All five new artifacts have all16 individually named metadata fields; presence alone is not whole-corpus conformance.
 
 Independent reviewer identified the self-reference in this evidence record's evidence field. It is now empty: there is no separate supporting evidence record for E-DEV-027; subject/supporting artifacts remain in evidence_links. This is an explicit absence, not self-proving approval. Independent review receipt and actual checks are recorded in the body, never fabricated as another evidence node.
+
+Independent reviewer also found the E10 manifest's explicit T-E10-001 reference absent from that task's used_by list; M-E10-001 is now declared. Both review findings await exact corrected-head re-review.
