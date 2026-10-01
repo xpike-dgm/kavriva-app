@@ -10,7 +10,7 @@ evidence_links:
   - "[[vault/REGISTRY/T-E3-010.md]]"
   - "[[modules/e03-server/MANIFEST.md]]"
   - "[[vault/CONTRACTS/audit-event.md]]"
-gate_verdict: "RECORDED (independent PASS at fc3639b for separation/private-reader scope; owner acceptance pending under DEC-0069)"
+gate_verdict: "PASS (separation/private-reader scope only; owner accepted identified independent verdict under DEC-0069)"
 reviewer: "independent gpt-5.6-luna max subagent, PR #16 head fc3639b20966226c3ee6bbf4a1eac9cf0f0b2b21"
 timestamp: 2026-10-01
 status: RECORDED
@@ -21,6 +21,6 @@ last_verified: 2026-10-01
 
 Nine local unit tests verify head/history separation, all six copy kinds, no history/audit/copy substitution, missing/mixed generation rejection, required correction/operation/actor/time provenance, truthful USER_REPORTED evidence and immutable copies. Four new native PostgreSQL cases in the existing E3 suite verify real current/prior revision provenance, tenant scope/transaction requirement, stale-copy rejection after correction and parent locking against a mixed head. Existing tests prove append-only UPDATE/DELETE rejection. PR #16 head fc3639b20966226c3ee6bbf4a1eac9cf0f0b2b21 passed all 68 E3 tests in GitHub CI, including these native database cases, and all applicable E5, live-auth, architecture and T3 checks. All 11 local E10 checks and git diff --check pass.
 
-An independent gpt-5.6-luna max subagent reviewed that exact head and returned PASS with no blocking or substantive findings. It independently ran all 68 E3 tests, including native PostgreSQL cases, in a temporary pinned-dependency environment and confirmed E10 and PR checks. Its bookkeeping request to replace the initial pending-results/reviewer-none text is closed by this record update. Owner acceptance of the identified verdict is still pending under DEC-0069; T-E3-010 remains REVIEW.
+An independent gpt-5.6-luna max subagent reviewed that exact head and returned PASS with no blocking or substantive findings. It independently ran all 68 E3 tests, including native PostgreSQL cases, in a temporary pinned-dependency environment and confirmed E10 and PR checks. Its bookkeeping request to replace the initial pending-results/reviewer-none text is closed by this record update. The same reviewer returned PASS for final metadata head 4da64e456ff5b6704bda19ed52466e166d202b83. On 2026-10-01 the owner explicitly accepted that identified verdict under DEC-0069. T-E3-010 is DONE for the separation contract and private maintenance reader scope only.
 
 The profile covers all domain meanings; executable data-store coverage is maintenance only. The private reader requires already authorized trusted tenant context and is not exposed as an HTTP route. It does not authorize the caller, implement history pagination, authenticate a client-supplied snapshot, prove independent E5 audit custody, implement cross-domain source/dispute stores or activate hosted sources. Dataclass checks do not prevent trusted code from constructing new instances; future API consumers must obtain history through the canonical reader after current authorization. Registry physical activations remain HELD and T-E3-001-R1 remains REVIEW.
