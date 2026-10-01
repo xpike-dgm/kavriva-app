@@ -2,8 +2,8 @@
 test_id: E-DEV-010
 contract_id_version: "ADR-006 Decision 9; T-E3-006b Storage/URLs/Studio inventory"
 subject_file: vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md
-subject_digest: D5752C68238918735CB05925D6CA0920D72A5693334246897A95C91030513880
-result: "RECORDED (hosted Storage and URL inventory observed; no bucket or product file path; production isolation unproved)"
+subject_digest: 486BEEF0E6B1316A5A88482D70C9CF4C7841992BF3DFBC4A70AB3ED3D9993F38
+result: "RECORDED (hosted ordinary file Storage and URL paths observed; zero file bucket metadata; vector/analytics state unverified)"
 evidence_links:
   - "[[vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md]]"
   - "[[vault/PACKS/P-E3-006b.md]]"
@@ -12,7 +12,7 @@ evidence_links:
   - "[[vault/PROFILES/authorization-tuple-browser.md]]"
   - "supabase/config.toml"
 gate_verdict: "RECORDED (independent task-level review and owner acceptance outstanding; no activation)"
-reviewer: "independent gpt-5.6-luna max sub-agent /root/pr12_independent_review; initial head f4db966 CHANGES_REQUESTED; correction re-review awaited"
+reviewer: "independent gpt-5.6-luna max sub-agent /root/pr12_independent_review; heads f4db966 and f8fd149 CHANGES_REQUESTED; second correction re-review awaited"
 timestamp: 2026-10-01
 status: RECORDED
 last_verified: 2026-10-01
@@ -29,3 +29,5 @@ The CLI retrieved the **publishable** key into process memory solely for four re
 The inventory additionally names the provider Dashboard/SQL editor path and its ability to bypass the application API boundary, based on current official Supabase documentation. Individual Dashboard members, MFA and sessions were not available from these checks and are left unverified. Hosted S3 compatibility was also not confirmed by the available connector. The task remains REVIEW pending independent review, PR checks and owner acceptance; T-E3-007's live-bucket bypass tests and T-E3-001-R1's production authorization proof are separate.
 
 The independent Luna Max reviewer `/root/pr12_independent_review` returned **CHANGES_REQUESTED** on PR #12 head `f4db96690b7f9a5be200930daf13fecbd6e13bce`: the first record failed to distinguish `service_role` RLS bypass, omitted vector/analytics and image-transformation surfaces, and inferred absent application deployment and provider bytes from narrower observations. The correction adds the independently confirmed bypass-role query, CLI flags and image route probe, and narrows those claims. It needs re-review on the corrected PR head; this paragraph is not a PASS or owner acceptance.
+
+The same reviewer returned **CHANGES_REQUESTED** on corrected head `f8fd149d5d8e2396e61b4a944d78095c39e4416f` for two remaining record defects: the reproduction text still counted three instead of four GET probes, and summary fields implied no bucket of any Storage type despite unverified vector/analytics counts. The second correction fixes those exact statements and requires another re-review. The corrected head's architecture, E3, E5, local Auth and labeled T3 CI checks passed; automation does not replace the independent verdict.
