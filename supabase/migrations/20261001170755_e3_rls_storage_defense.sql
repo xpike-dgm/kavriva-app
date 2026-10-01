@@ -45,7 +45,13 @@ declare
 begin
     foreach storage_table in array array['objects', 'buckets'] loop
         if to_regclass(format('storage.%I', storage_table)) is not null then
-            execute format('alter table storage.%I enable row level security', storage_table);
+            -- Supabase owns these tables and already enables RLS. Its managed
+            -- schema protection forbids ALTER TABLE by application migrations.
+            -- Never bypass that protection: verify the provider prerequisite.
+            if not (select relrowsecurity from pg_class
+                    where oid = to_regclass(format('storage.%I', storage_table))) then
+                raise exception 'Storage defense requires provider-enabled RLS';
+            end if;
             execute format('create policy kavriva_client_block on storage.%I as restrictive '
                 'for all to anon, authenticated using (false) with check (false)', storage_table);
         end if;

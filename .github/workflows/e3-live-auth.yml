@@ -19,6 +19,14 @@ jobs:
             -x realtime,mailpit,postgres-meta,studio,edge-runtime,logflare,vector,supavisor \
             > "$RUNNER_TEMP/supabase-start.log" 2>&1; then
             echo "Local Supabase startup or migration failed; no credentials printed."
+            # Emit only closed diagnostic tokens; never dump credentials/logs.
+            grep -oE 'SQLSTATE [A-Z0-9]{5}' "$RUNNER_TEMP/supabase-start.log" | sort -u || true
+            if grep -q 'must be owner of table' "$RUNNER_TEMP/supabase-start.log"; then
+              echo "Provider table ownership blocked the migration operation."
+            fi
+            if grep -q 'Storage defense requires provider-enabled RLS' "$RUNNER_TEMP/supabase-start.log"; then
+              echo "Storage provider RLS prerequisite is missing."
+            fi
             exit 1
           fi
           npx --yes supabase@2.117.0 status -o json > "$RUNNER_TEMP/supabase-status.json"
