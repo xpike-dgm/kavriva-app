@@ -3,7 +3,7 @@ test_id: E-DEV-007
 contract_id_version: "ADR-006 Decision 9; T-E3-006c browser boundary v1"
 subject_file: vault/CONTRACTS/browser-boundary.md
 subject_digest: B26C740C402431B2B3BEA10490736E04E2356A958EA8DA37340CEF523E634A44
-result: "RECORDED (contract drafted; E10 validation passed; PR CI and review not yet recorded)"
+result: "RECORDED (E10 and PR #9 CI passed on code head 05dc052; independent review not yet recorded)"
 evidence_links:
   - "[[vault/CONTRACTS/browser-boundary.md]]"
   - "[[vault/PACKS/P-E3-006c.md]]"
@@ -21,4 +21,6 @@ last_verified: 2026-10-01
 
 This is a specification task. The proposed contract states how a future browser must handle private storage and signed URLs, exact origins and cookie CSRF, PKCE callback binding, high-consequence step-up, operation lookup disclosure, lost responses and browser cache revocation. Its negative examples are future implementation fixtures. No browser runtime or hosted Supabase behavior is proven by this record.
 
-E10 validation passed locally on 2026-10-01. PR CI and independent review are not yet recorded. T-E3-006b hosted Storage/URL/Studio inventory and T-E3-007 bypass tests remain separate. T-E3-001-R1 and T-E3-006a remain REVIEW; this contract does not promote either to DONE.
+E10 `run_all.py` and strict planning-link validation passed locally on 2026-10-01; `git diff --check` was clean. On PR #9 code head `05dc052`, [architecture checks](https://github.com/xpike-dgm/kavriva-app/actions/runs/36795973886/job/110159378611), [E3 tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36795973869/job/110159378182), [E5 tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36795974047/job/110159378852) and [local Supabase Auth proof](https://github.com/xpike-dgm/kavriva-app/actions/runs/36795973918/job/110159378350) succeeded. The automatic T3 gate was skipped; it is not a separate review. Independent review is not yet recorded.
+
+T-E3-006b hosted Storage/URL/Studio inventory and T-E3-007 bypass tests remain separate. T-E3-001-R1 and T-E3-006a remain REVIEW; this contract does not promote either to DONE.
