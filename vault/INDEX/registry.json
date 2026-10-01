@@ -276,6 +276,22 @@
    "last_verified": "2026-10-01"
   },
   {
+   "task_id": "T-E3-031",
+   "flow_feature": "FL3.7.1/F3.7.1",
+   "objective": "Hold-not-weaken and owner-readable HELD specification",
+   "depends_on": [
+    "T-E3-030"
+   ],
+   "context_pack": "P-E3-031",
+   "acceptance": "No numerics; no live metering; drain-vs-hold edge to queue/rollout tasks",
+   "evidence": "E-DEV-024",
+   "status": "REVIEW",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",

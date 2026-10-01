@@ -13,6 +13,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
 - RLS/Storage defense profile (`vault/PROFILES/rls-storage-defense.md`) records restrictive client defenses
   for migrated private tables and Storage; policies never grant product authority or prove hosted activation.
+- Cost hold behavior (`vault/PROFILES/cost-hold-behavior.md`) specifies retained work, safe hold/drain and
+  plain-language owner outcomes; no live metering, billing control or shipped UI is established.
 - Classified cost skeleton (`vault/PROFILES/classified-cost-bom.md`) defines mandatory baseline and conditional extras,
   with queue/rollout hold-versus-drain references; financial readiness and runtime cost controls remain HELD.
 - Platform cost input template (`vault/PROFILES/platform-bom-inputs.md`) supplies empty scenario and classification
