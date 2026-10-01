@@ -91,4 +91,4 @@ This metadata frame preserves the original identity and document scope. Where no
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
 
-T-E10-003a custody-only maintenance adds actual specification consumer/task provenance. Original installed body, origin payload, last_verified and product/evidence scope remain unchanged; no detector implementation or historical proof refresh.
+T-E10-003a custody-only maintenance adds actual specification/mandatory-pack consumers V-E10-STRUCT-001 and P-E10-003a, plus maintenance-task provenance. Original installed body, origin payload, last_verified and product/evidence scope remain unchanged; no detector implementation or historical proof refresh.
