@@ -10,7 +10,7 @@ used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E1
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-002]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -98,3 +98,5 @@ T-E10-001 registration/preservation was independently accepted at6a1c004 and mer
 Governed relation convention address: `modules/e10-graph/GRAPH_RELATION_CONVENTION.md`.
 
 Current documentary consumer set for this T-E10-002 update: P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002 and E-DEV-028, matching used_by. Custody metadata verified2026-10-02; last_verified and the original installed/product proof remain their prior scope, not refreshed by this documentary change.
+
+Task trace note: T-E10-002 maintains this current record's documentary metadata/consumer references. Its tasks entry records that actual maintenance provenance; it does not re-author or refresh the original T-E10-001 product/acceptance evidence. Exact approved subject payloads and original verdict/head/digests remain authoritative for their earlier scope.

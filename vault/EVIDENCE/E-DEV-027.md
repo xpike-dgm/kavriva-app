@@ -22,7 +22,7 @@ used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: whole-corpus-registration-and-historical-proof-preservation
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-002]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: []
 supersedes: []
@@ -93,3 +93,5 @@ Reviewer directly queried exact-head CI head_sha/status/conclusion: PR architect
 ## Approved subject custody for later documentary consumers
 
 T-E10-002 adds consumer references to the current registration-rule frame. The PR29-approved6a1c004 rule blob is preserved byte-identically in vault/EVIDENCE/SNAPSHOTS/E-DEV-027-GRAPH_NODE_REGISTRATION.md.snapshot; subject_file now points to that exact payload, subject_original_path retains the governed live address. Original39ea7021 digest, accepted verdict, head and scope remain unchanged. This receipt preserves old acceptance; it does not approve the new T002 convention or consumer metadata, which require their own independent review/CI.
+
+Task trace note: T-E10-002 maintains this current record's documentary metadata/consumer references. Its tasks entry records that actual maintenance provenance; it does not re-author or refresh the original T-E10-001 product/acceptance evidence. Exact approved subject payloads and original verdict/head/digests remain authoritative for their earlier scope.
