@@ -64,6 +64,8 @@ AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack o
 
 ## Change / rollback rules
 
+- Backend readiness/exit prerequisites follow `vault/PROFILES/backend-reversibility.md`: document-level checklist
+  completion never selects/provisions a platform or proves operational recovery/activation.
 - Contract changes version + `supersedes` (R-011); floors/epochs change only with full-edge review.
 - Rollback: epoch + quarantine rules by reference (`planning 07_AI_ARCHITECTURE/ROLLBACK_STRATEGY.md`); restored systems land in
   quarantine; forbidden-state resurrection rejected.
