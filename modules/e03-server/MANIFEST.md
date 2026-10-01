@@ -11,6 +11,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 ## Public contract surface
 
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
+- Platform cost input template (`vault/PROFILES/platform-bom-inputs.md`) supplies empty scenario and classification
+  slots; no price, spend authorization, provisioning or operational readiness is established.
 - API enforcement needs (`vault/PROFILES/api-enforcement-needs.md`) specify sensitive-read/effect and alternate-path
   requirements; document completion does not provision services or prove live enforcement.
 - Browser transport profile of the authorization tuple (`vault/PROFILES/authorization-tuple-browser.md`): E3 serves and verifies;
