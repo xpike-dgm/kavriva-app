@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 evidence: [E-DEV-028]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 
@@ -81,3 +81,5 @@ T-E10-003a separately specifies the four structural detectors; T-E10-003b separa
 Convention v1 is sourced from the unchanged canonical eight groups and the accepted registration rule. Full-registry impact: existing identities and historical payloads remain; no bulk relation reclassification or runtime dependency change. New task/rule/pack/evidence references are declared explicitly. A later convention/schema change requires its version, scoped impact, preserved history, source comparison, independent review and applicable exact-head CI; rollback cannot rewrite past decisions.
 
 The existing registration/link/identity checks validate new artifact serialization and target existence. The exact eight-group text and source meanings require actual source comparison and independent review in `[[vault/EVIDENCE/E-DEV-028.md]]`; unrelated runtime tests do not prove this convention. No public runtime contract is introduced; there is no new executable behavior needing a mirrored unit test. Task: `[[vault/REGISTRY/T-E10-002.md]]`; pack: `[[vault/PACKS/P-E10-002.md]]`.
+
+Independent acceptance2026-10-02: /root/pr30_independent_review, gpt-6-luna max, returned PASS at a31ad8e3a218b2956bdd13653c10c02364fce606, including exact eight-group source comparison, current consumer/provenance closure, preserved T001 proof and green exact-headCI. Convention ACTIVE; T002 accepted under direct standing owner mandate. Final status/evidence/index-only audit and exact-headCI must pass before merge and are recorded in PR30. Semantic detectors and production closure remain separately unproved.

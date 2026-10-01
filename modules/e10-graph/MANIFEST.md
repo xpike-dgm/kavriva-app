@@ -93,7 +93,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 
 ## Accepted registration and relation convention follow-up
 
-T-E10-001 registration/preservation was independently accepted at6a1c004 and merged viaPR29 as4fb620c; earlier CHANGES_REQUESTED paragraphs are stage history. Its approved rule bytes remain the EDEV027 subject. Current consumer metadata changes belong to T-E10-002, not old acceptance. Relation convention v1: `[[modules/e10-graph/GRAPH_RELATION_CONVENTION.md]]`; task: `[[vault/REGISTRY/T-E10-002.md]]`; pack: `[[vault/PACKS/P-E10-002.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-028.md]]`. New convention is REVIEW; no detector/runtime/production completion. Added public tooling policy reference grants no runtime authority.
+T-E10-001 registration/preservation was independently accepted at6a1c004 and merged viaPR29 as4fb620c; earlier CHANGES_REQUESTED paragraphs are stage history. Its approved rule bytes remain the EDEV027 subject. Current consumer metadata changes belong to T-E10-002, not old acceptance. Relation convention v1: `[[modules/e10-graph/GRAPH_RELATION_CONVENTION.md]]`; task: `[[vault/REGISTRY/T-E10-002.md]]`; pack: `[[vault/PACKS/P-E10-002.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-028.md]]`. Convention accepted by independent gpt-6-luna max at a31ad8e; final metadata audit/CI before PR30 merge required. No detector/runtime/production completion. Added public tooling policy reference grants no runtime authority.
 
 Governed relation convention address: `modules/e10-graph/GRAPH_RELATION_CONVENTION.md`.
 
