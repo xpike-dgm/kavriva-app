@@ -2,16 +2,16 @@
 test_id: E-DEV-027
 contract_id_version: "ADR-015 Decision3; graph node registration rule v1"
 subject_file: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
-subject_digest: c7d568775077591b50334922875e5caa6aaf214b76ad89349798fc864b4fe0bf
-result: "FAIL: independent review found extant-corpus registration acceptance unmet"
+subject_digest: 39ea70214197c9c7293d9ff2f7581719a5f6bae49ef3ac4f1d3a88845e4308bb
+result: "PASS: independent review accepted full current-corpus registration and original proof preservation"
 evidence_links:
   - "[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]"
   - "[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]"
   - "[[vault/PACKS/P-E10-001.md]]"
   - "[[vault/REGISTRY/T-E10-001.md]]"
-gate_verdict: "FAIL (extant-corpus metadata acceptance unmet; no merge or DONE)"
+gate_verdict: "PASS (registration/preservation only; semantic/production closure unproved)"
 reviewer: "independent gpt-6-luna max; /root/pr29_independent_review"
-timestamp: 2026-10-01
+timestamp: 2026-10-02
 purpose: Record registration rule and truthful coverage evidence
 domain: project-execution
 module: e10-graph
@@ -82,3 +82,9 @@ Independent re-review additionally found stale tests:[] in the active task/pack/
 Accurate2026-10-02 metadata dates exposed a pre-existing pack-checker defect: the newest unrelated task date plus any IN_PROGRESS task falsely expired all historical packs. Corrective scope now includes linked-task freshness comparison and4 regression tests: unrelated newer task passes; truly stale own active context fails; completed history warns; missing task remains explicitly unverified. No historic date was refreshed or product completion granted. Current validation comprises12 checks and20 tests; independent verdict pending.
 
 Independent source review at c3788916c18d304ca4473a929efc51cc11e89150 verified all126 baseline/current-origin blob pairs, all131 current metadata frames, local relation target existence and unique25 D-APP-DOC first claims. It accepted preserved contract:<immutable-slug> as typed identity under existing contract-field semantics and canonical contract sources; no retroactive rename or type-prefix waiver. Reviewer reported no further actionable blocker besides stale16-vs20 prose, now corrected. This is an interim factual receipt, not final PASS. Exact c3788916 CI completed green, including both isolatedAuth runs36928593288/36928597166. Final corrected-head review and CI still required.
+
+## Independent final acceptance — PASS (2026-10-02)
+
+Reviewer /root/pr29_independent_review, separate delegated gpt-6-luna max context, exact2656cc623aeb11766830f0e6f9cddc9fa3f14f3b/base28b3734027d72b8f592b60290c8bf5f8fc0dfe2b. Actual verdict PASS, no remaining actionable T001 finding. The initial universal-coverage rejection is closed by all131 current records having a single stable typed identity and all16 required fields, with independently reproduced126/126 baseline Git blob pairs and no lost baseline paths. Exactly25 D-APP-DOC first claims are unique and absent from canonical plan origin/main. Existing contract-field namespaces preserve immutable slugs without invented renames. The omitted actual test links and stale16-vs20 prose findings are corrected. Twenty preservation/identity/freshness tests and12 checks passed; source/historical verdict/body/digest preservation and custody-only meaning accepted.
+
+Reviewer directly queried exact-head CI head_sha/status/conclusion: PR architecture36930165715, E3 commit-auth36930165764, isolatedAuth36930165798 and E5 36930165735 SUCCESS; push architecture36930161621, E3 36930161786, isolatedAuth36930161734 and E5 36930161754 also SUCCESS. PR T3 PASS; push T3 skipped by event condition. Accepted under direct owner's standing mandate; no separate owner re-prompt or planPR4 bypass. T001 DONE is restricted to actual registration/preservation acceptance, not T002/T003 semantic closure or product activation. T-E3-001-R1 REVIEW and operational authority/recovery HELD. Earlier FAIL/interim receipts remain chronological history. Final status/evidence/index-only audit and exact-headCI are required before merge and recorded against the final head in PR29 to avoid recursive proof commits.

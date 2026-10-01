@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 metadata_version: 1
 metadata_scope: "record registration; original product/verification scope unchanged"
@@ -96,3 +96,5 @@ The126 original baseline Git blobs are preserved exactly under vault/EVIDENCE/SN
 check_registration v1 enforces131-record field presence, nonempty declared purpose/domain/module/owner/scope/status/date, real dates/module ownership, exactly one owned identity, same/cross-type collisions, matching body identity, duplicate-key rejection and preserved-origin integrity. Exact same-address origin links and continued presence of every baseline record are required; new nodes cannot borrow old origins. This is registration/serialization and historical-preservation coverage, not completed T-E10-002 relation conventions or the seven T-E10-003 semantic detectors. Twenty meaningful tests cover proof tampering, rehashing, missing/redirected/borrowed payloads, removed custody links/nodes, historic verdict/body rewrites conflicting identities and actual linked-task freshness. The pre-existing pack checker now compares only its own task, avoiding unrelated date changes without refreshing old proof or waiving actual stale active work. run_all executes these guards/tests in CI. No production runtime/schema/deployment/account/credential action.
 
 Whole-corpus registration is proposed for independent re-review; no DONE until actual acceptance review and exact-headCI pass. Semantic reference completeness, tested critical product behavior, ten-layer closure and production authority remain separately unproved. The original126-row gap inventory remains a frozen before-state, not a claim that corrected records still lack fields or a current conformance index.
+
+Independent acceptance receipt2026-10-02: /root/pr29_independent_review (gpt-6-luna max) returned PASS at2656cc623aeb11766830f0e6f9cddc9fa3f14f3b, closing universal-coverage and current test-link/count findings. This rule is ACTIVE for bounded registration/preservation. The proposed re-review paragraph above is its earlier stage history; semantic graph/production closure remains separately unproved. Final metadata-only audit and exact-headCI are recorded in PR29 before merge.
