@@ -124,9 +124,16 @@ def main(status_path):
         assert_blocked(request(storage + "/object/" + bucket + "/" + new_path,
                                key, "POST", b"unauthorized", token,
                                "image/png"), label + " direct upload")
-        assert_blocked(request(storage + "/object/" + bucket, key, "DELETE",
-                               {"prefixes": [object_path]}, token),
-                       label + " delete")
+        deleted = request(storage + "/object/" + bucket, key, "DELETE",
+                          {"prefixes": [object_path]}, token)
+        if 200 <= deleted[0] < 300:
+            # Storage may report 200 with [] when RLS hides the target row.
+            if json.loads(deleted[1] or b"[]") != []:
+                raise AssertionError(label + " deleted a private object")
+        elif deleted[0] < 400:
+            raise AssertionError(label + " delete returned an unexpected response")
+        if request(authenticated_url, service, token=service)[1] != secret:
+            raise AssertionError(label + " changed the private object")
 
     assert_blocked(request(storage + "/object/public/" + bucket + "/" +
                            object_path, anon), "public URL", secret)
