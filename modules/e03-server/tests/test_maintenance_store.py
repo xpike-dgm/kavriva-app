@@ -32,6 +32,8 @@ from decision import AuthorityRequest, Verdict as IdentityVerdict, decide_curren
 from maintenance_store import (  # noqa: E402
     CREATE, EDIT, MaintenanceEntry, read_target_locked, write_maintenance_entry,
 )
+from maintenance_history import read_maintenance_history
+from maintenance_provenance import ProvenanceError, current_revision, make_convenience_copy
 from postgres_commit_authorization import postgres_transaction  # noqa: E402
 from postgres_decision import PostgresCurrentAuthority  # noqa: E402
 from test_commit_authorization import CURRENT, REQUEST  # noqa: E402
@@ -390,6 +392,64 @@ class MaintenanceStoreTests(unittest.TestCase):
             self.assertEqual(conn.execute(
                 "select outcome from kavriva_e3.maintenance_revisions"
             ).fetchone(), (ENTRY.outcome,))
+
+    def test_canonical_history_reader_preserves_current_and_prior_provenance(self):
+        self.create()
+        edit = replace(CREATE_REQUEST, action=EDIT, object_id=ENTRY.record_id,
+                       operation_id="edit-history", expected_object_generation="1")
+        with psycopg.connect(self.dsn) as conn:
+            target = read_target_locked(conn, edit)
+            write_maintenance_entry(conn, edit, replace(ENTRY, outcome="Filter changed",
+                                    correction_reason="Corrected omission"), target)
+        with psycopg.connect(self.dsn) as conn:
+            history = read_maintenance_history(conn, tenant_id=REQUEST.tenant_id,
+                                               record_id=ENTRY.record_id)
+            self.assertEqual(history.current_generation, 2)
+            self.assertEqual([r.operation_id for r in history.revisions], ["create-1", "edit-history"])
+            self.assertEqual([r.outcome for r in history.revisions], ["Oil changed", "Filter changed"])
+            self.assertEqual(current_revision(history).correction_reason, "Corrected omission")
+            self.assertTrue(all(r.actor_id == REQUEST.actor_id and r.evidence_level == "USER_REPORTED"
+                                for r in history.revisions))
+
+    def test_history_reader_is_tenant_scoped_and_requires_transaction(self):
+        self.create()
+        with psycopg.connect(self.dsn) as conn:
+            self.assertIsNone(read_maintenance_history(conn, tenant_id="other",
+                                                      record_id=ENTRY.record_id))
+        with psycopg.connect(self.dsn, autocommit=True) as conn:
+            with self.assertRaises(RuntimeError):
+                read_maintenance_history(conn, tenant_id=REQUEST.tenant_id, record_id=ENTRY.record_id)
+
+    def test_stale_copy_does_not_replace_canonical_correction(self):
+        self.create()
+        with psycopg.connect(self.dsn) as conn:
+            cached = make_convenience_copy(read_maintenance_history(conn,
+                tenant_id=REQUEST.tenant_id, record_id=ENTRY.record_id), kind="cache")
+        edit = replace(CREATE_REQUEST, action=EDIT, object_id=ENTRY.record_id,
+                       operation_id="edit-after-copy", expected_object_generation="1")
+        with psycopg.connect(self.dsn) as conn:
+            write_maintenance_entry(conn, edit, replace(ENTRY, outcome="Corrected work",
+                correction_reason="Correction after cache"), read_target_locked(conn, edit))
+        with psycopg.connect(self.dsn) as conn:
+            canonical = read_maintenance_history(conn, tenant_id=REQUEST.tenant_id,
+                                                 record_id=ENTRY.record_id)
+            self.assertEqual(current_revision(canonical).outcome, "Corrected work")
+            self.assertEqual(cached.source_generation, 1)
+            self.assertEqual(cached.revisions[0].outcome, "Oil changed")
+            with self.assertRaises(ProvenanceError):
+                current_revision(cached)
+
+    def test_history_parent_lock_prevents_mixed_head_during_correction(self):
+        self.create()
+        with psycopg.connect(self.dsn) as reader:
+            history = read_maintenance_history(reader, tenant_id=REQUEST.tenant_id,
+                                               record_id=ENTRY.record_id)
+            with psycopg.connect(self.dsn) as writer:
+                writer.execute("set lock_timeout = '100ms'")
+                with self.assertRaises(psycopg.errors.LockNotAvailable):
+                    writer.execute("update kavriva_e3.maintenance_records set generation = 2")
+            self.assertEqual(history.current_generation, 1)
+            self.assertEqual(current_revision(history).generation, 1)
 
     def test_private_tables_are_not_available_to_client_roles(self):
         for role in ("anon", "authenticated"):
