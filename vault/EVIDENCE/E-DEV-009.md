@@ -1,0 +1,34 @@
+---
+test_id: E-DEV-009
+contract_id_version: "ADR-006 Decision 9; T-E3-006a hosted database installation and direct-path verification"
+subject_file: vault/INVENTORIES/E3-HOSTED-SUPABASE-RESULT.md
+subject_digest: D7DC8A9690E0E888F40EA26734240655D42AA1FD818FE7FF44018C7A041E688B
+result: "RECORDED (three migrations installed on Kavriva; hosted catalog and client-denial checks passed; runtime activation unproved)"
+evidence_links:
+  - "[[vault/INVENTORIES/E3-HOSTED-SUPABASE-RESULT.md]]"
+  - "[[vault/INVENTORIES/E3-HOSTED-SUPABASE-PREFLIGHT.md]]"
+  - "[[vault/INVENTORIES/E3-DB-RPC-DIRECT-PATHS.md]]"
+  - "[[vault/EVIDENCE/E-DEV-008.md]]"
+  - "[[vault/PACKS/P-E3-006a.md]]"
+  - "[[vault/REGISTRY/T-E3-006a.md]]"
+  - "supabase/migrations/20260924102337_e5_current_authority.sql"
+  - "supabase/migrations/20260924131747_e3_maintenance_records.sql"
+  - "supabase/migrations/20260930151252_e3_live_authorization.sql"
+gate_verdict: "RECORDED (hosted installation verified; independent T3 task review and owner acceptance awaited; no production activation)"
+reviewer: "none for this post-install result; independent Luna Max task review requested"
+timestamp: 2026-10-01
+status: RECORDED
+last_verified: 2026-10-01
+---
+
+# E-DEV-009 — Hosted Kavriva database installation
+
+On 2026-10-01, after the owner accepted PR #10's separate T3 preflight verdict and exact hosted target, [PR #10](https://github.com/xpike-dgm/kavriva-app/pull/10) merged as `df95e8a3386f415e8927c93f4f697d62641c19cf`. Its [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804223681), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804223687), [architecture](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804223592), and [local Supabase Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804223586) post-merge checks passed. Git blobs of the three migrations still matched the reviewed preflight hashes. A fresh remote `db push --dry-run --skip-vault` listed exactly the three migrations in their committed order and `list_migrations` was empty.
+
+Supabase CLI 2.117.0 then applied those three files once to the active `Kavriva` project `tmcitwyzoahtvysxblty` with `db push --project-ref ... --skip-vault`; exit code was zero. Afterward the hosted migration list contained those three exact versions, and a second dry run reported the remote database up to date. No migration repair, MCP `apply_migration`, seed, API key, database password or customer data was written to the repository.
+
+Read-only post-install catalog checks found three Kavriva schemas, 14 private tables, no Kavriva views/foreign tables, five private functions, zero relations in `public` or `graphql_public`, a `NOLOGIN` private server role, and one `maintenance` runtime seed. `anon`, `authenticated`, and `service_role` had zero schema usage, table DML and function execution privileges on the three private schemas. The private provider-session function was callable by the server role but not the two client roles; that server role could not directly read the Auth tables. The only server-role membership was the `postgres` administrator, not an application login. Zero maintenance records, audit events or Storage buckets existed.
+
+Read-only Data API requests using the publishable key and each private schema profile all returned HTTP 406 / `PGRST106`. Supabase's security advisor returned zero lints. The table-listing tool warned generically about 14 tables without RLS; the private schema privilege and HTTP checks contradict its claim that an anon key alone reaches those tables. No RLS toggle was applied because it would block the restricted server role without suitable policies. The performance advisor reported four informational missing-foreign-key-index findings, recorded for later work without an unreviewed schema change. The exact catalog scope, caveats and reproduction steps are in the subject file.
+
+This proves hosted installation and the tested client-denial boundary at one point in time, not a deployed E3 server or live maintenance effect. T-E3-006a remains REVIEW until independent task-level examination of this new evidence and owner acceptance. T-E3-001-R1 also remains REVIEW because product runtime login, deployed service, external audit/floor custody and live protected mutation are unproved.

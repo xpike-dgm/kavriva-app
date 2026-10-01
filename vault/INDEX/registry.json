@@ -38,7 +38,7 @@
    "depends_on": [],
    "context_pack": "P-E3-006a",
    "acceptance": "Tables, views, functions and RPC inventoried with client exposure and reproducible local catalog check",
-   "evidence": "E-DEV-006",
+   "evidence": "E-DEV-009",
    "status": "REVIEW",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
