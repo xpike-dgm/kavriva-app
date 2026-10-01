@@ -48,3 +48,9 @@ migration source only — never edited from here.
 - Architecture: `planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md`, `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md`, `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`,
   `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md`, `planning 07_AI_ARCHITECTURE/RULES/README.md`; `R-001`..`R-014` as applicable.
 - Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E10 rows (Step 5 builds).
+
+## Registration rule task (T-E10-001, REVIEW)
+
+Rule v1: `[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]`; literal historical baseline: `[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-027.md]]`. Every record requires stable identity/full metadata; this publication does not claim existing-corpus conformance or completed detectors. No runtime inbound, auto execution, planning change or historical rewrite.
+
+Governed paths: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`, `vault/INVENTORIES/E10-REGISTRATION-BASELINE.md`.

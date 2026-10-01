@@ -2,6 +2,37 @@
  "generated_by": "build-index (proof tooling, e10)",
  "rows": [
   {
+   "task_id": "T-E10-001",
+   "flow_feature": "FL10.1.1/F10.1.1",
+   "objective": "Graph node registration rule",
+   "context_pack": "P-E10-001",
+   "acceptance": "Stable identity + metadata on every record",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "purpose": "Execute canonical graph registration rule task",
+   "domain": "project-execution",
+   "module": "e10-graph",
+   "owner": "E10",
+   "depends_on": [],
+   "used_by": [],
+   "implements": [
+    "ADR-015-Decision-3",
+    "C10.1",
+    "F10.1.1"
+   ],
+   "public_contracts": [],
+   "internal_scope": "documentary-registration-rule",
+   "tasks": [
+    "T-E10-001"
+   ],
+   "tests": [],
+   "evidence": "E-DEV-027",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-001",
+   "superseded_by": [],
+   "status": "REVIEW",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E3-001-R1",
    "flow_feature": "FL3.1.1/F3.1.1",
    "objective": "Enforce commit-time tuple decision point in product code",
