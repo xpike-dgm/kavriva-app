@@ -46,6 +46,20 @@
    "last_verified": "2026-10-01"
   },
   {
+   "task_id": "T-E3-006c",
+   "flow_feature": "FL3.1.4/F3.1.4",
+   "objective": "Specify browser contract rules",
+   "depends_on": [],
+   "context_pack": "P-E3-006c",
+   "acceptance": "Storage, origin, CSRF/PKCE, step-up and lookup disclosure limits specified",
+   "evidence": "E-DEV-007",
+   "status": "REVIEW",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-01",
+   "owner": "E3",
+   "last_verified": "2026-10-01"
+  },
+  {
    "task_id": "T-E5-003",
    "flow_feature": "FL5.2.1/F5.2.1",
    "objective": "Derive a current-context E5 authorization decision",
