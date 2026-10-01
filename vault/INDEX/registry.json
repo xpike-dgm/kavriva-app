@@ -85,7 +85,7 @@
    "context_pack": "P-E3-007",
    "acceptance": "Cross-tenant and console bypass tests fail closed",
    "evidence": "E-DEV-011",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
