@@ -43,6 +43,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves),
 Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody.
 Helpers, storage layout, in-flight job state invisible outside.
+Secret custody/rotation follows `vault/PROFILES/secret-custody-rotation.md`: server-only privileged material,
+separate planned/emergency retirement proof; document completion does not execute rotation or prove live custody.
 The private maintenance history reader uses a coherent tenant-scoped database transaction;
 callers must authorize the read first. No history HTTP endpoint is introduced by T-E3-010.
 AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority.
