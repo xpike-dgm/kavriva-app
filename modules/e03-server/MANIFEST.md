@@ -28,6 +28,7 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves),
 Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody.
 Helpers, storage layout, in-flight job state invisible outside.
+AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority.
 
 ## Allowed / forbidden dependencies
 
@@ -47,6 +48,8 @@ Helpers, storage layout, in-flight job state invisible outside.
 - Authorization negatives: bypass/direct-path inventory tests; cached-claim substitution negatives.
 - Idempotency + state-word tests; epoch-propagation tests; quarantine-restore + clean-room drills.
 - Cross-cutting: every sensitive action re-authorized at API (consumed by E1/E2/E5 tests).
+- AI task grants: deny owner/billing/service-role/unrestricted paths; later broker tests must prove scope, expiry,
+  revocation and hard-stop behavior before privileged AI execution.
 
 ## Change / rollback rules
 
