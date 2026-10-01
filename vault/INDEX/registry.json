@@ -163,7 +163,7 @@
    "context_pack": "P-E3-012",
    "acceptance": "Activation only after validation",
    "evidence": "E-DEV-016",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
