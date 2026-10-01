@@ -14,6 +14,7 @@ depends_on:
 used_by:
   - "I-E10-REGISTRATION-BASELINE"
   - "V-E10-STRUCT-001"
+  - "P-E10-003a"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []

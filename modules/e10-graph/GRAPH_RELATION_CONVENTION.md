@@ -6,7 +6,7 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [V-E10-NODE-001]
-used_by: [P-E10-002, T-E10-002, E-DEV-028, M-E10-001, V-E10-STRUCT-001]
+used_by: [P-E10-002, T-E10-002, E-DEV-028, M-E10-001, V-E10-STRUCT-001, P-E10-003a]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: graph-relation-serialization-and-meaning
