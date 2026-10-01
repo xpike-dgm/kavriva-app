@@ -3,7 +3,7 @@ test_id: E-DEV-009
 contract_id_version: "ADR-006 Decision 9; T-E3-006a hosted database installation and direct-path verification"
 subject_file: vault/INVENTORIES/E3-HOSTED-SUPABASE-RESULT.md
 subject_digest: D7DC8A9690E0E888F40EA26734240655D42AA1FD818FE7FF44018C7A041E688B
-result: "RECORDED (three migrations installed on Kavriva; hosted catalog and client-denial checks passed; runtime activation unproved)"
+result: "RECORDED (three migrations installed; hosted catalog and client-denial checks passed; independent review PASS; runtime activation unproved)"
 evidence_links:
   - "[[vault/INVENTORIES/E3-HOSTED-SUPABASE-RESULT.md]]"
   - "[[vault/INVENTORIES/E3-HOSTED-SUPABASE-PREFLIGHT.md]]"
@@ -14,8 +14,8 @@ evidence_links:
   - "supabase/migrations/20260924102337_e5_current_authority.sql"
   - "supabase/migrations/20260924131747_e3_maintenance_records.sql"
   - "supabase/migrations/20260930151252_e3_live_authorization.sql"
-gate_verdict: "RECORDED (hosted installation verified; independent T3 task review and owner acceptance awaited; no production activation)"
-reviewer: "none for this post-install result; independent Luna Max task review requested"
+gate_verdict: "RECORDED (independent T3 review PASS; owner acceptance awaited; no production activation)"
+reviewer: "independent gpt-6-luna max sub-agent /root/pr11_independent_review; reviewed head a0ec6ae PASS; owner acceptance awaited"
 timestamp: 2026-10-01
 status: RECORDED
 last_verified: 2026-10-01
@@ -31,4 +31,6 @@ Read-only post-install catalog checks found three Kavriva schemas, 14 private ta
 
 Read-only Data API requests using the publishable key and each private schema profile all returned HTTP 406 / `PGRST106`. Supabase's security advisor returned zero lints. The table-listing tool warned generically about 14 tables without RLS; the private schema privilege and HTTP checks contradict its claim that an anon key alone reaches those tables. No RLS toggle was applied because it would block the restricted server role without suitable policies. The performance advisor reported four informational missing-foreign-key-index findings, recorded for later work without an unreviewed schema change. The exact catalog scope, caveats and reproduction steps are in the subject file.
 
-This proves hosted installation and the tested client-denial boundary at one point in time, not a deployed E3 server or live maintenance effect. T-E3-006a remains REVIEW until independent task-level examination of this new evidence and owner acceptance. T-E3-001-R1 also remains REVIEW because product runtime login, deployed service, external audit/floor custody and live protected mutation are unproved.
+This proves hosted installation and the tested client-denial boundary at one point in time, not a deployed E3 server or live maintenance effect. T-E3-006a remains REVIEW until the owner accepts the independent task-level verdict recorded below. T-E3-001-R1 also remains REVIEW because product runtime login, deployed service, external audit/floor custody and live protected mutation are unproved.
+
+The independent Luna Max sub-agent `/root/pr11_independent_review` reviewed [PR #11](https://github.com/xpike-dgm/kavriva-app/pull/11) head `a0ec6aeb6ecbeaa286d762a228a0337f5e82ff70` and returned **PASS for the T-E3-006a inventory and hosted installation scope** with no open finding. It recalculated this record's subject digest, repeated the read-only migration, catalog, privilege, restricted-role and advisor checks, and confirmed the provider GraphQL routine's separate scope. It did not independently repeat the three HTTP 406/PGRST106 calls; those are implementer-run direct client tests documented in the subject file. On the reviewed head [architecture/T3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804923235), [E3](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804912017), [E5](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804912044), and [local Supabase Auth](https://github.com/xpike-dgm/kavriva-app/actions/runs/36804912082) checks all passed. This evidence-only update does not change the installed schema or reviewed result. The owner has not yet accepted this specific delegated task verdict. T-E3-006a remains REVIEW, and T-E3-001-R1 remains REVIEW for separate runtime/authority proof.
