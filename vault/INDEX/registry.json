@@ -239,7 +239,7 @@
    "context_pack": "P-E3-017",
    "acceptance": "Server-only secrets; rotation procedure",
    "evidence": "E-DEV-021",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
