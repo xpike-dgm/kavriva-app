@@ -295,6 +295,34 @@ class LiveMaintenanceTests(unittest.TestCase):
             "verified-token", self.command()
         ).reason_code, "RESOURCE_MISSING")
 
+        create = self.command()
+        committed = self.commands.execute("verified-token", create)
+        self.assertEqual(committed.reason_code, "COMMITTED")
+        foreign_operation = create.operation_id
+        foreign = other_commands.lookup("verified-token", foreign_operation)
+        unknown = other_commands.lookup("verified-token", str(uuid4()))
+        self.assertEqual((foreign.verdict, foreign.reason_code, foreign.effect_result),
+                         (unknown.verdict, unknown.reason_code, unknown.effect_result))
+        self.assertEqual(foreign.reason_code, "OPERATION_UNKNOWN")
+        self.assertEqual(self.commands.lookup(
+            "verified-token", foreign_operation
+        ).effect_result.record_id, committed.effect_result.record_id)
+
+    def test_direct_client_sql_cannot_read_or_mutate_private_product_rows(self):
+        """A Studio-like SQL session using a client role cannot cross the API gate."""
+        for role in ("anon", "authenticated"):
+            for statement in (
+                "select * from kavriva_e3.maintenance_records",
+                "select * from kavriva_e5.current_grants",
+                "select * from kavriva_audit.events",
+                "insert into kavriva_e3.maintenance_records default values",
+            ):
+                with self.subTest(role=role, statement=statement):
+                    with self.assertRaises(psycopg.errors.InsufficientPrivilege):
+                        with psycopg.connect(self.dsn) as conn:
+                            conn.execute(f"set role {role}")
+                            conn.execute(statement)
+
     def test_missing_session_row_blocks_even_with_e5_allow(self):
         with psycopg.connect(self.dsn) as conn:
             conn.execute("delete from auth.sessions where id = %s", (SESSION,))
