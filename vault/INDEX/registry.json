@@ -255,7 +255,7 @@
    "context_pack": "P-E3-018",
    "acceptance": "Dated changelog; hold on change",
    "evidence": "E-DEV-022",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
