@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [V-E10-NODE-001]
-used_by: [P-E10-002, T-E10-002, E-DEV-028, M-E10-001, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030]
+used_by: [P-E10-002, T-E10-002, E-DEV-028, M-E10-001, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: graph-relation-serialization-and-meaning
-tasks: [T-E10-002, T-E10-003a, T-E10-003b]
+tasks: [T-E10-002, T-E10-003a, T-E10-003b, T-E10-004]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-028]
 supersedes: []
@@ -89,3 +89,5 @@ T-E10-003a documentary maintenance: added actual structural-specification and ma
 T-E10-003b custody-only maintenance adds actual V-E10-GOV-001 and P-E10-003b documentary consumers plus maintenance-task provenance. Original source meaning/version/acceptance remains; approved subject payloads/digests are preserved and do not approve these new metadata changes. No implementation/product freshness claim.
 
 E-DEV-030 is also an actual documentary source-reference consumer for this task; used_by records that evidence-source use, not runtime consumption.
+
+T-E10-004 documentary maintenance adds actual D-APP-DOC-003/P-E10-004/E-DEV-031 template/mandatory-pack/evidence consumers and T004 maintenance-task trace. Meaning/version unchanged; original accepted primary subjects/verdicts/digests remain preserved at their existing evidence snapshots, not refreshed by this new metadata.
