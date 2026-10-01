@@ -15,6 +15,9 @@ used_by:
   - "I-E10-REGISTRATION-BASELINE"
   - "V-E10-STRUCT-001"
   - "P-E10-003a"
+  - "V-E10-GOV-001"
+  - "P-E10-003b"
+  - "E-DEV-030"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -22,6 +25,7 @@ internal_scope: "Original document declarations and record custody; no new runti
 tasks:
   - "T-E10-001"
   - "T-E10-003a"
+  - "T-E10-003b"
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
@@ -89,3 +93,7 @@ This metadata frame preserves the original identity and document scope. Where no
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
 
 T-E10-003a custody-only maintenance adds actual specification/mandatory-pack consumers V-E10-STRUCT-001 and P-E10-003a, plus maintenance-task provenance. Original installed body, origin payload, last_verified and product/evidence scope remain unchanged; no detector implementation or historical proof refresh.
+
+T-E10-003b custody-only maintenance adds actual V-E10-GOV-001/P-E10-003b consumers and T003b maintenance-task trace. Original installed body/origin/last_verified and product proof remain unchanged; current consumers include the previously declared sets plus these new uses.
+
+E-DEV-030 records actual source-reference use of this specification; this added documentary consumer grants no runtime/proof authority.

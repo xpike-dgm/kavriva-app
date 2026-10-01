@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001, T-E10-002, T-E10-003a]
+tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -104,3 +104,9 @@ Task trace note: T-E10-002 maintains this current record's documentary metadata/
 ## Structural specification follow-up (T-E10-003a)
 
 Governed address: `modules/e10-graph/STRUCTURAL_DETECTOR_SPEC.md`. Actual new documentary consumers V-E10-STRUCT-001 and P-E10-003a are added to the earlier T002 consumer set above; that earlier set is the historical PR30 set. Current used_by equals that set plus V-E10-STRUCT-001 and P-E10-003a. The pack actually reads this manifest and is therefore a documentary consumer. Task provenance T003a records this metadata/path maintenance. Original installed/product verification date remains unchanged; no runtime edge or implementation completion follows. PR30 acceptance/final audit and exact-headCI were completed before merge f81ddfd.
+
+## Governance specification follow-up (T-E10-003b)
+
+Governed address: `modules/e10-graph/GOVERNANCE_DETECTOR_SPEC.md`. Earlier T002/T003a consumer sets above are their authoring-stage sets. Current consumers are P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b and E-DEV-030, matching used_by. Actual new specification/mandatory-pack consumers and T003b documentary maintenance provenance are recorded; original product last_verified is unchanged. PR31 was accepted/finally audited/CI green before merge92c6a28; governance detector implementation/production closure remains unproved.
+
+E-DEV-030 is also an actual documentary source-reference consumer for this task; used_by records that evidence-source use, not runtime consumption.
