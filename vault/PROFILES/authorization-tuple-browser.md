@@ -1,5 +1,5 @@
 ---
-contract: browser-boundary
+profile_of: authorization-tuple
 owner: E3
 version: 1
 status: PROPOSED
@@ -7,11 +7,11 @@ content_defined_by: ADR-006 Decision 9; ADR-004 Rules 1/3/4/7/8; ADR-010 Decisio
 supersedes: ~
 ---
 
-# Browser boundary — T-E3-006c
+# Browser transport profile of authorization-tuple — T-E3-006c
 
-This is the framework-independent contract for the future E2 Internal Operations browser and any browser consumer of E3. It specifies the acceptance rules; it does **not** select a web framework, enable a privileged browser, create a Storage bucket, or claim that these rules are implemented. The current E3 maintenance API accepts a verified bearer, rejects cookie authentication, and has no E2 browser client. The hosted Supabase project is not part of this proof.
+This is the framework-independent browser transport profile of the existing authorization-tuple contract for the future E2 Internal Operations browser and any browser consumer of E3. It is not a new catalog contract or cross-epic seam. It specifies the acceptance rules; it does **not** select a web framework, enable a privileged browser, create a Storage bucket, or claim that these rules are implemented. The current E3 maintenance API accepts a verified bearer, rejects cookie authentication, and has no E2 browser client. The hosted Supabase project is not part of this proof.
 
-The API authority remains the existing `[[vault/CONTRACTS/authorization-tuple.md]]`; this browser contract only narrows how a client can reach that boundary.
+The API authority remains the existing `[[vault/CONTRACTS/authorization-tuple.md]]`; this profile only narrows how a browser can reach that boundary.
 
 ## Authority and storage
 

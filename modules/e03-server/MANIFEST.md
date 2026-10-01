@@ -11,7 +11,7 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
 ## Public contract surface
 
 - API authorization tuple contract (commit-time ALLOW/DENY/HELD; cached claims never substitute).
-- Browser boundary contract (`[[vault/CONTRACTS/browser-boundary.md]]`): E3 serves and verifies;
+- Browser transport profile of the authorization tuple (`vault/PROFILES/authorization-tuple-browser.md`): E3 serves and verifies;
   browser storage, origin, CSRF/PKCE, step-up and lookup rules do not grant product authority.
 - Consumer maintenance API verifies a bearer login, calls E5's public current-authority surface,
   and commits the allowed maintenance revision on the same guarded E3 transaction.
