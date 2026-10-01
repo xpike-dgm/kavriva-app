@@ -269,7 +269,7 @@
    "context_pack": "P-E3-030",
    "acceptance": "Slots classified; thresholds HELD; drain-vs-hold edge to queue/rollout tasks",
    "evidence": "E-DEV-023",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
