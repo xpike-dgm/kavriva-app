@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_contracts.py, modules/e10-graph/checks/ch
 evidence: [E-DEV-030]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 
@@ -106,3 +106,5 @@ These missing semantic coverage areas stay UNVERIFIED. T003b specifies stronger 
 Specification v1 introduces no renamed ID, new gate owner, runtime seam, privilege or task status. Explicit current consumer/maintenance links and a task/pack/evidence/specification are added, with rebuilt generated views. Prior accepted source payloads and verdicts/digests are preserved before consumer maintenance; no historical corpus ownership/test/freshness rewrite. Empty public_contracts means no newly owned runtime surface; empty supersede lineage means no identity replacement. Later rule/schema changes require a version, scoped registry impact, independent review and applicable exact-head CI; rollback preserves identity/proof history.
 
 Task: `vault/REGISTRY/T-E10-003b.md`; pack: `vault/PACKS/P-E10-003b.md`; proof: `vault/EVIDENCE/E-DEV-030.md`. Production E3/E5 authority and release/activation completion remain unproved. No all-tasks-DONE inference of product completion.
+
+Independent acceptance2026-10-02: /root/pr32_independent_review, gpt-6-luna max, PASS at d1097e3c739f2d22a5f2f08b559c06817c5e2b3c after actual pinned-source/oracle/coverage/consumer/preservation comparison and required checks/exact-head applicable CI. No findings. Owner standing mandate accepts this three-specification scope. Final metadata/status/evidence/index audit plus exact new-head CI required before normal PR32 merge; immutable final receipt belongs in PR32. No implemented semantic detectors, corpus/product or production completion.
