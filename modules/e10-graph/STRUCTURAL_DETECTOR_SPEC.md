@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 evidence: [E-DEV-029]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 
@@ -122,3 +122,5 @@ These are explicit UNVERIFIED implementation/coverage boundaries, not waived vio
 Specification v1 adds no identity rename, lifecycle state, new rule/gate ownership, numeric threshold, vendor, simulation or runtime seam. Current records may declare new documentary consumers/maintenance tasks; earlier approved primary subject bytes and verdicts remain preserved. Full-registry impact is limited to these explicit links, new task/pack/evidence/specification and rebuilt views; no semantic corpus rewrite. Empty public_contracts means no new owned runtime contract, and empty lineage means no identity replacement. Later specification/schema changes require version/impact/review; rollback preserves identities and earlier proof/history.
 
 Task: `vault/REGISTRY/T-E10-003a.md`; pack: `vault/PACKS/P-E10-003a.md`; actual validation and independent exact-head review: `vault/EVIDENCE/E-DEV-029.md`. Task completion proves only that these four detectors are specified, never product/release completion or automatic task actuation.
+
+Independent acceptance2026-10-02: /root/pr31_independent_review, gpt-6-luna max, PASS at 920928038df5eafd6a473db6f05960e5bba18cd6 after actual source comparison, consumer-finding correction/re-review, preservation/regression checks and exact-head applicable CI. Direct standing owner mandate accepts this bounded four-detector specification. This does not certify implementations, semantic corpus, T003b or production. Final status/evidence/index-only audit and exact new-head CI remain required before PR31 merge; immutable final receipt belongs to PR31.
