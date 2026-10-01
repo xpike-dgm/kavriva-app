@@ -11,6 +11,7 @@ from _lib import APP_ROOT, read, frontmatter_yaml, parse_simple
 from _record_preservation import (
     ARCHIVED_PACK, LEGACY_PACK, FROZEN_PACK_DIGEST, ORIGIN_ROOT,
     verify_frozen_pack, verify_origin, verify_origin_catalog,
+    verify_origin_binding, verify_origin_coverage,
 )
 
 
@@ -84,6 +85,23 @@ class PreservationTests(unittest.TestCase):
         marker = "# E-DEV-001"
         self.assertIn(marker, text)
         self.assertTrue(verify_origin(APP_ROOT, data, text.replace(marker, "# Altered proof", 1)))
+
+    def test_baseline_custody_link_cannot_be_removed_or_replaced(self):
+        path = APP_ROOT / "vault/EVIDENCE/E-DEV-001.md"
+        data = parse_simple(frontmatter_yaml(read(path)))
+        self.assertEqual([], verify_origin_binding(APP_ROOT, path, data))
+        self.assertTrue(verify_origin_binding(APP_ROOT, path, {}))
+        self.assertTrue(verify_origin_binding(APP_ROOT, path,
+                        dict(data, metadata_origin_file=ARCHIVED_PACK)))
+
+    def test_new_node_cannot_borrow_another_nodes_original_payload(self):
+        self.assertTrue(verify_origin_binding(APP_ROOT, APP_ROOT / "new-node.md",
+                        {"metadata_origin_file": ARCHIVED_PACK}))
+
+    def test_baseline_record_cannot_disappear_from_current_corpus(self):
+        self.write(ARCHIVED_PACK, self.original)
+        self.assertEqual([], verify_origin_coverage(self.root, [self.root / LEGACY_PACK]))
+        self.assertTrue(verify_origin_coverage(self.root, []))
 
 
 if __name__ == "__main__":

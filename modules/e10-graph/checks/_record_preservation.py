@@ -34,6 +34,28 @@ def verify_origin_catalog(root):
     return []
 
 
+def verify_origin_binding(root, current_path, data):
+    """A baseline record cannot discard or borrow another record's custody link."""
+    relative = Path(current_path).relative_to(Path(root)).as_posix()
+    expected = ORIGIN_ROOT + "/" + relative + ".snapshot"
+    if (Path(root) / expected).is_file():
+        if data.get("metadata_origin_file") != expected:
+            return ["baseline record lost or replaced its exact origin link"]
+    elif data.get("metadata_origin_file"):
+        return ["new record cannot borrow a baseline record's origin"]
+    return []
+
+
+def verify_origin_coverage(root, paths):
+    """Every preserved baseline node must retain its current governed address."""
+    current = {Path(p).relative_to(Path(root)).as_posix() for p in paths}
+    folder = Path(root) / ORIGIN_ROOT
+    baseline = {p.relative_to(folder).as_posix()[:-len(".snapshot")]
+                for p in folder.rglob("*.snapshot")}
+    missing = sorted(baseline - current)
+    return ["baseline record missing from current corpus: " + p for p in missing]
+
+
 def verify_origin(root, data, current_text=None):
     path = data.get("metadata_origin_file")
     if not path:

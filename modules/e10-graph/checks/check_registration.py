@@ -11,7 +11,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _lib import APP_ROOT, repo_files, read, frontmatter_yaml, parse_simple, fail, reject
-from _record_preservation import verify_origin, verify_origin_catalog
+from _record_preservation import (
+    verify_origin, verify_origin_catalog, verify_origin_binding, verify_origin_coverage,
+)
 
 FIELDS = ("purpose", "domain", "module", "owner", "depends_on", "used_by", "implements",
           "public_contracts", "internal_scope", "tasks", "tests", "evidence",
@@ -59,7 +61,7 @@ def inspect_records(root, paths):
             declaration = re.search(r"^Record:\s*`([^`]+)`", text, re.M)
             if declaration and declaration.group(1) != identity:
                 findings.append((2, path, "body/frontmatter identity disagree"))
-        for issue in verify_origin(root, data, text):
+        for issue in verify_origin_binding(root, path, data) + verify_origin(root, data, text):
             findings.append((1, path, issue))
     return findings
 
@@ -67,7 +69,7 @@ def inspect_records(root, paths):
 if __name__ == "__main__":
     paths = repo_files()
     code = 0
-    for issue in verify_origin_catalog(APP_ROOT):
+    for issue in verify_origin_catalog(APP_ROOT) + verify_origin_coverage(APP_ROOT, paths):
         code = max(code, fail(issue))
     for level, path, issue in inspect_records(APP_ROOT, paths):
         report = reject if level == 2 else fail
