@@ -193,7 +193,7 @@
    "context_pack": "P-E3-014",
    "acceptance": "Needs specified, no provisioning",
    "evidence": "E-DEV-018",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
