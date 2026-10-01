@@ -209,7 +209,7 @@
    "context_pack": "P-E3-015",
    "acceptance": "Classification slots, no numbers",
    "evidence": "E-DEV-019",
-   "status": "REVIEW",
+   "status": "DONE",
    "claimed_by": "Codex development run",
    "claimed_at": "2026-10-01",
    "owner": "E3",
