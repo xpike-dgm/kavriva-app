@@ -18,7 +18,7 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E10-001, E-DEV-028]
+used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E10-001, E-DEV-028, P-E10-002]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: whole-corpus-registration-and-historical-proof-preservation
