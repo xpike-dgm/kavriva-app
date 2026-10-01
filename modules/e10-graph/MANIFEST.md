@@ -21,7 +21,7 @@ metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e10-graph/MA
 metadata_origin_digest: "0f56345fc22827a1f3850930ec2a14428dce3c1b5c4ec30019d8b26b4a9dd307"
 metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
 metadata_scope: "record registration; original product/verification scope unchanged"
-metadata_verified_at: "2026-10-01"
+metadata_verified_at: "2026-10-02"
 ---
 
 # MODULE MANIFEST — e10-graph (E10 Proje grafiği + görev altyapısı)
@@ -81,9 +81,9 @@ Rule v1: `[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]`; literal historical 
 
 Governed paths: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`, `vault/INVENTORIES/E10-REGISTRATION-BASELINE.md`.
 
-## Metadata verification boundary (T-E10-001 remediation)
+## Historical metadata verification boundary (T-E10-001 remediation stage)
 
-Metadata adds no new runtime edge or public product capability. Purpose, ownership, foundation DAG and public tooling surfaces are sourced from the unchanged sections above; V-E10-NODE-001 is the proposed registration rule, not proof of corpus conformance. Current documentary consumers P-E10-001 and I-E10-REGISTRATION-BASELINE refer to this manifest; declared tooling service to all epics remains in the seam/source sections and does not assert live runtime use. Listed tests actually check installed manifest anatomy and identity, not every declared future behavior. E-DEV-027 records actual checks and the outstanding independent rejection. No predecessor/successor record exists for this same-ID metadata addition; supersedes/superseded_by stay empty, original body/history preserved. Corpus acceptance remains unmet.
+The following is the preserved T-E10-001 authoring-stage statement, before its later acceptance and the T-E10-002 consumer additions. Metadata adds no new runtime edge or public product capability. Purpose, ownership, foundation DAG and public tooling surfaces are sourced from the unchanged sections above; V-E10-NODE-001 is the proposed registration rule, not proof of corpus conformance. Current documentary consumers P-E10-001 and I-E10-REGISTRATION-BASELINE refer to this manifest; declared tooling service to all epics remains in the seam/source sections and does not assert live runtime use. Listed tests actually check installed manifest anatomy and identity, not every declared future behavior. E-DEV-027 records actual checks and the outstanding independent rejection. No predecessor/successor record exists for this same-ID metadata addition; supersedes/superseded_by stay empty, original body/history preserved. Corpus acceptance remains unmet.
 
 ## Record metadata custody v1 (T-E10-001)
 
@@ -96,3 +96,5 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 T-E10-001 registration/preservation was independently accepted at6a1c004 and merged viaPR29 as4fb620c; earlier CHANGES_REQUESTED paragraphs are stage history. Its approved rule bytes remain the EDEV027 subject. Current consumer metadata changes belong to T-E10-002, not old acceptance. Relation convention v1: `[[modules/e10-graph/GRAPH_RELATION_CONVENTION.md]]`; task: `[[vault/REGISTRY/T-E10-002.md]]`; pack: `[[vault/PACKS/P-E10-002.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-028.md]]`. New convention is REVIEW; no detector/runtime/production completion. Added public tooling policy reference grants no runtime authority.
 
 Governed relation convention address: `modules/e10-graph/GRAPH_RELATION_CONVENTION.md`.
+
+Current documentary consumer set for this T-E10-002 update: P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002 and E-DEV-028, matching used_by. Custody metadata verified2026-10-02; last_verified and the original installed/product proof remain their prior scope, not refreshed by this documentary change.
