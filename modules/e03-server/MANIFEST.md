@@ -20,6 +20,8 @@ owner of runtime edges. Foundation capsule (no inbound epic dependencies).
   reaches all edges — downloaded copies honestly unrestorable).
 - Domain authority CRUD + versioning; history/provenance + protected audit planes (convenience copies
   never authoritative); object/media boundary + quarantine-first intake.
+- `public/domain_authority.py` validates and resolves the reviewed logical domain registry
+  (`vault/PROFILES/domain-authority-registry.md`); metadata is never product authorization or physical activation.
 - Queue/worker job families (lease/pulse/checkpoint/DLQ/backpressure/cancel/evacuate); backup/restore
   drills + clean-room exit; cost-BOM skeleton; environment separation + promotion plumbing.
 

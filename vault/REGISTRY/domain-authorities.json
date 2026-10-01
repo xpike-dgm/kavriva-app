@@ -1,0 +1,71 @@
+{
+  "registry_id": "kavriva.domain-authority",
+  "version": 1,
+  "supersedes_digest": null,
+  "authorities": [
+    {
+      "domain_id": "approved_facts",
+      "authority_id": "kavriva.authority.approved_facts",
+      "revision": 1,
+      "owner": "E3",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "user_records",
+      "authority_id": "kavriva.authority.user_records",
+      "revision": 1,
+      "owner": "E3",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "permissions",
+      "authority_id": "kavriva.authority.permissions",
+      "revision": 1,
+      "owner": "E5",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "domain_history",
+      "authority_id": "kavriva.authority.domain_history",
+      "revision": 1,
+      "owner": "E3",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "protected_audit",
+      "authority_id": "kavriva.authority.protected_audit",
+      "revision": 1,
+      "owner": "E5",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "publishing_control",
+      "authority_id": "kavriva.authority.publishing_control",
+      "revision": 1,
+      "owner": "E6",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "objects",
+      "authority_id": "kavriva.authority.objects",
+      "revision": 1,
+      "owner": "E3",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    },
+    {
+      "domain_id": "phone_packages",
+      "authority_id": "kavriva.authority.phone_packages",
+      "revision": 1,
+      "owner": "E3",
+      "state": "ACTIVE",
+      "physical_activation": "HELD"
+    }
+  ]
+}
