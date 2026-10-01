@@ -33,7 +33,8 @@
    "public_contracts": [],
    "internal_scope": "whole-corpus-registration-and-historical-proof-preservation",
    "tasks": [
-    "T-E10-001"
+    "T-E10-001",
+    "T-E10-002"
    ],
    "tests": [
     "modules/e10-graph/checks/check_registration.py",
