@@ -10,7 +10,7 @@ evidence_links:
   - "[[vault/REGISTRY/T-E3-008.md]]"
   - "[[modules/e03-server/MANIFEST.md]]"
   - "[[vault/INVENTORIES/E3-DB-RPC-DIRECT-PATHS.md]]"
-gate_verdict: "INDEPENDENT PASS for T-E3-008 rule-only scope at efdce08; owner acceptance pending under DEC-0069"
+gate_verdict: "RECORDED (independent PASS for rule-only scope at efdce08; owner acceptance pending under DEC-0069)"
 reviewer: "independent gpt-5.6-luna max subagent, PR #14 head efdce08ce8854767b41189e938b66ba10f2551a7"
 timestamp: 2026-10-01
 status: RECORDED
