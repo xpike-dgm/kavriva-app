@@ -5,6 +5,42 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-001 Decision 1; T-E3-009; C3.2
 supersedes: ~
+record_id: D-APP-DOC-017
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/domain-authority-registry.md.snapshot"
+metadata_origin_digest: "4df526865cf615d4db66f2d8e4c809f736f8b65bed1d6b82daa8a8b9107264c0"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "`vault/REGISTRY/domain-authorities.json` is the reviewed, versioned logical assignment of one authority per domain. `modules/e03-server/public/domain_authority.py` validates and resolves this metadata; it does not query canonical product state, grant access, or activate a physical database. Product reads and mutations still use the current E3/E5 authorization boundary. A returned binding is metadata, never an ALLOW decision."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-013"
+  - "D-APP-DOC-018"
+  - "D-APP-DOC-019"
+  - "D-APP-DOC-021"
+  - "E-DEV-013"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E3-001"
+  - "P-E3-009"
+  - "T-E3-009"
+implements:
+  - "ADR-001 Decision 1; T-E3-009; C3.2"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # Logical domain authority registry
@@ -42,3 +78,9 @@ Search, analytics, caches, notifications, package builders and client copies hav
 ## Evidence
 
 `[[vault/EVIDENCE/E-DEV-013.md]]` records the registry digest and executable validation. `[[vault/PACKS/P-E3-009.md]]` bounds this task. `[[vault/REGISTRY/T-E3-009.md]]` carries its review state. The E3 public contract is listed in `[[modules/e03-server/MANIFEST.md]]`; E5/E6 decide within existing seams and E4 consumes E3 package sources.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

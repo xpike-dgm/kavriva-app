@@ -5,6 +5,44 @@ version: 1
 status: PROPOSED
 content_defined_by: ADR-006 Decision 9; ADR-004 Rules 1/3/4/7/8; ADR-010 Decision 3; T-E3-006c
 supersedes: ~
+record_id: D-APP-DOC-012
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/authorization-tuple-browser.md.snapshot"
+metadata_origin_digest: "48cef1bbf03316d4b27b3f7c0164d571972b4c90124c106c38e6ea00bb73b578"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "This is the framework-independent browser transport profile of the existing authorization-tuple contract for the future E2 Internal Operations browser and any browser consumer of E3. It is not a new catalog contract or cross-epic seam. It specifies the acceptance rules; it does **not** select a web framework, enable a privileged browser, create a Storage bucket, or claim that these rules are implemented. The current E3 maintenance API accepts a verified bearer, rejects cookie authentication, and has no E2 browser client. The hosted Supabase project is not part of this proof."
+domain: "project-records"
+module: "e03-server"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-009"
+  - "D-APP-DOC-011"
+  - "E-DEV-007"
+  - "E-DEV-010"
+  - "E-DEV-011"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "M-E2-001"
+  - "M-E3-001"
+  - "P-E3-006b"
+  - "P-E3-006c"
+  - "T-E3-006c"
+implements:
+  - "ADR-006 Decision 9; ADR-004 Rules 1/3/4/7/8; ADR-010 Decision 3; T-E3-006c"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+superseded_by: []
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
 ---
 
 # Browser transport profile of authorization-tuple — T-E3-006c
@@ -46,3 +84,9 @@ The API authority remains the existing `[[vault/CONTRACTS/authorization-tuple.md
 Implementation and adversarial browser tests belong to future E2/E3 activation work and T-E3-007. T-E3-006b separately inventories real Storage, URL and Studio surfaces. Those tasks must not infer deployment safety from this document.
 
 Sources: [Supabase private Storage and signed URL behavior](https://supabase.com/docs/guides/storage/serving/downloads), [Supabase PKCE flow](https://supabase.com/docs/guides/auth/sessions/pkce-flow), [Supabase redirect allowlist](https://supabase.com/docs/guides/auth/redirect-urls), [OWASP CSRF guidance](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html).
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

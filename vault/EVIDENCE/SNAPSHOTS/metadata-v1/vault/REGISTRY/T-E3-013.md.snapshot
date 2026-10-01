@@ -1,0 +1,18 @@
+---
+task_id: T-E3-013
+flow_feature: FL3.3.1/F3.3.1
+objective: Reversibility preconditions checklist
+depends_on: []
+context_pack: P-E3-013
+acceptance: No selection; preconditions listed
+evidence: E-DEV-017
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-013
+
+`[[vault/PROFILES/backend-reversibility.md]]` lists evidence and technical resolver requirements for safe backend reversal with all ADR-002 triggers mapped. Independent gpt-5.6-luna max review returned PASS with no changes requested for PR #19 document head 14348d8ddc43ad9965d42aaadf07eeffd24bbfba and metadata head d8e252e6b109312293af880e8aaa3beb2fd5473d. On 2026-10-01 the owner accepted the identified independent verdict. DONE applies only to the document checklist: no selection, provisioning, migration, live drills or operational readiness is claimed. All operational checklist rows and physical domain activations remain HELD; T-E3-001-R1 remains REVIEW. `[[vault/EVIDENCE/E-DEV-017.md]]` records document coverage, green CI, review and owner acceptance.

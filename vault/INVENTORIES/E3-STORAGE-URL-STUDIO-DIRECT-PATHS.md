@@ -1,3 +1,42 @@
+---
+record_id: D-APP-DOC-009
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/INVENTORIES/E3-STORAGE-URL-STUDIO-DIRECT-PATHS.md.snapshot"
+metadata_origin_digest: "486beef0e6b1316a5a88482d70c9cf4c7841992bf3dfbc4a70ab3ed3d9993f38"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Observed on 2026-10-01 for the active hosted `Kavriva` Supabase project `tmcitwyzoahtvysxblty`. This is a point-in-time inventory of present paths and their authority. It does not activate file handling, prove future-bucket isolation or replace the bypass tests in T-E3-007. No external application-hosting environment was inspected."
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "D-APP-DOC-010"
+  - "E-DEV-010"
+  - "E-DEV-011"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-006b"
+  - "T-E3-006b"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+supersedes: []
+superseded_by: []
+status: "RECORDED"
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
+---
+
 # T-E3-006b — Storage, URL and Studio direct-path inventory
 
 Observed on 2026-10-01 for the active hosted `Kavriva` Supabase project `tmcitwyzoahtvysxblty`. This is a point-in-time inventory of present paths and their authority. It does not activate file handling, prove future-bucket isolation or replace the bypass tests in T-E3-007. No external application-hosting environment was inspected.
@@ -41,3 +80,9 @@ Use the active project ID above. In read-only SQL, count `storage.buckets` and `
 Before a file feature or privileged browser is activated, T-E3-007 must test a real private bucket and adversarial client/Studio paths, including cross-tenant reads, list/upload/download, transformed images, signed-URL lifetime and privileged bypass. Vector/analytics bucket state and hosted S3 settings require separate provider-scope verification before those capabilities are used. Production redirect and administrator access settings also need explicit verification. Until then, this inventory supports route awareness only; it does not prove product authorization or T-E3-001-R1 completion.
 
 Provider behavior references: [Storage bucket access models](https://supabase.com/docs/guides/storage/buckets/fundamentals), [Storage access control and service-key bypass](https://supabase.com/docs/guides/storage/security/access-control), [signed URL behavior](https://supabase.com/docs/guides/storage/serving/downloads), [image transformation routes](https://supabase.com/docs/guides/storage/serving/image-transformations), [vector buckets](https://supabase.com/docs/guides/storage/vector/introduction), [Dashboard access roles](https://supabase.com/docs/guides/platform/access-control), and [Dashboard SQL editor execution role](https://supabase.com/docs/guides/troubleshooting/tracking-postgres-role-activity-to-specific-dashboard-users-8d3715). The Supabase changelog was checked on 2026-10-01; no listed Storage breaking change altered this read-only inventory.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

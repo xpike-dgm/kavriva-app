@@ -1,3 +1,29 @@
+---
+record_id: M-E10-001
+metadata_version: 1
+purpose: Own project graph, task packs, registry, checks and closure tooling
+domain: project-execution
+module: e10-graph
+owner: E10
+depends_on: []
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE]
+implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
+public_contracts: [task-pack, design-token, V-E10-NODE-001]
+internal_scope: Registry and router tooling, generated indexes, checks and simulations
+tasks: [T-E10-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+evidence: [E-DEV-027]
+supersedes: []
+superseded_by: []
+status: INSTALLED
+last_verified: 2026-10-01
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e10-graph/MANIFEST.md.snapshot"
+metadata_origin_digest: "0f56345fc22827a1f3850930ec2a14428dce3c1b5c4ec30019d8b26b4a9dd307"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_scope: "record registration; original product/verification scope unchanged"
+metadata_verified_at: "2026-10-01"
+---
+
 # MODULE MANIFEST — e10-graph (E10 Proje grafiği + görev altyapısı)
 
 Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e10-graph/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
@@ -48,3 +74,19 @@ migration source only — never edited from here.
 - Architecture: `planning 07_AI_ARCHITECTURE/CONTEXT_PACKS/PACK_STANDARD.md`, `planning 07_AI_ARCHITECTURE/CONTEXT_ROUTING.md`, `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md`,
   `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md`, `planning 07_AI_ARCHITECTURE/RULES/README.md`; `R-001`..`R-014` as applicable.
 - Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E10 rows (Step 5 builds).
+
+## Registration rule task (T-E10-001, CHANGES_REQUESTED)
+
+Rule v1: `[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]`; literal historical baseline: `[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-027.md]]`. Every record requires stable identity/full metadata; this publication does not claim existing-corpus conformance or completed detectors. No runtime inbound, auto execution, planning change or historical rewrite.
+
+Governed paths: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`, `vault/INVENTORIES/E10-REGISTRATION-BASELINE.md`.
+
+## Metadata verification boundary (T-E10-001 remediation)
+
+Metadata adds no new runtime edge or public product capability. Purpose, ownership, foundation DAG and public tooling surfaces are sourced from the unchanged sections above; V-E10-NODE-001 is the proposed registration rule, not proof of corpus conformance. Current documentary consumers P-E10-001 and I-E10-REGISTRATION-BASELINE refer to this manifest; declared tooling service to all epics remains in the seam/source sections and does not assert live runtime use. Listed tests actually check installed manifest anatomy and identity, not every declared future behavior. E-DEV-027 records actual checks and the outstanding independent rejection. No predecessor/successor record exists for this same-ID metadata addition; supersedes/superseded_by stay empty, original body/history preserved. Corpus acceptance remains unmet.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

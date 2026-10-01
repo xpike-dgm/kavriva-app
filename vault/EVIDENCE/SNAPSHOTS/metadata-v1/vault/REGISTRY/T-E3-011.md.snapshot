@@ -1,0 +1,18 @@
+---
+task_id: T-E3-011
+flow_feature: FL3.2.3/F3.2.3
+objective: Object boundary and classification propagation
+depends_on: [T-E3-009]
+context_pack: P-E3-011
+acceptance: Lineage, digest and classification on derivatives
+evidence: E-DEV-015
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-011
+
+`[[vault/PROFILES/object-boundary.md]]` defines executable in-memory object envelope/derivative verification. Independent gpt-5.6-luna max review returned PASS for PR #17 code head b9697b94c7c193bdf5f13cd1169858f9bd985eae with no substantive findings and for metadata head 19da72ec0115b99438ac8333e5981c122659bbc0; `[[vault/EVIDENCE/E-DEV-015.md]]` records the verified checks and limits. On 2026-10-01 the owner accepted the identified independent verdict under DEC-0069. DONE applies only to the in-memory object boundary and propagation contract. All outputs quarantine; no physical object store, current-source authority, authorized disclosure, retention-policy resolution or production activation is proved. T-E3-001-R1 remains REVIEW.

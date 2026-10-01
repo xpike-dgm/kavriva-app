@@ -1,0 +1,26 @@
+---
+pack_id: P-E3-014
+task_ref: T-E3-014
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-014 — API-boundary enforcement needs
+
+1. objective: Specify API-boundary enforcement needs without provisioning services.
+2. outcome-link: FL3.3.1/F3.3.1/C3.3 — sensitive reads and consequential effects remain behind current server authorization.
+3. preconditions + completed dependencies: T-E3-013 DONE for preconditions document via owner-accepted PR #19. T-E3-001-R1 REVIEW; physical activation HELD.
+4. mandatory reads: ADR-002 Decisions 1/2; ADR-001 authority/object/copy rules; ADR-006 Decisions 2 through 9; TASK_EXECUTION_PROTOCOL/DEC-0068/0069 and MODULE_BOUNDARIES; authorization-tuple/operation-identity/state-epoch contracts; backend-reversibility, browser and object-activation profiles; E3 manifest.
+5. allowed paths: vault/PROFILES/api-enforcement-needs.md, this pack, vault/REGISTRY/T-E3-014.md, vault/EVIDENCE/E-DEV-018.md, E3 MANIFEST.md reference and generated registry/routing indexes.
+6. forbidden areas: Runtime/tests/schemas/migrations/workflows, hosted APIs/roles/keys/accounts/deployments, provider/runtime/framework/region/plan/purchase choices, numeric limits, detailed defense/worker/recovery implementation and new runtime seams.
+7. expected artifact changes: Document ten path classes with enforcement needs, negative proof and technical ownership/limits; capability closure fields; task/evidence records and manifest/index references.
+8. acceptance + negative cases: Needs specified, no provisioning. Sensitive read and mutation mediation, exact current tuple, operation/lookup, quarantine/derivative/disclosure and alternate paths covered. Cached/client/RLS/provider positives, stale authority, cross-tenant IDs, scanner success and old receipts cannot authorize. No new document claims live security or delegates owner debugging.
+9. validation / architecture / integration checks: Manual ADR/contract/path coverage; all 11 E10 checks; regenerate indexes; git diff --check; exact-head green CI and independent gpt-6-luna max task review. No new executable tests for document-only changes.
+10. migration / rollback needs: None; no service/data change. Amend through reviewed PR, preserve existing approved contracts/profiles and operational holds.
+11. responsive / accessibility rules: N/A; no UI change. Owner summary uses plain-language outcomes.
+12. evidence + handoff format: E-DEV-018 records normalized document digest, ten path classes, actual E10/CI, exact reviewed head/model/verdict, findings/closure and owner acceptance; unchanged runtime tests are regression evidence only.
+13. graph-update records: T-E3-014/E-DEV-018 and registry/routing indexes; preserve T-E3-001-R1 REVIEW and physical HELD; no completion of follow-up tasks.
+14. escalation rules: Missing authority/evidence holds capability. Provisioning/paid/privileged activation requires separately scoped work and owner-readable risk/cost/reversibility decisions; technical diagnosis stays with implementer.
+
+Scope: `[[vault/PROFILES/api-enforcement-needs.md]]`; state: `[[vault/REGISTRY/T-E3-014.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-018.md]]`.

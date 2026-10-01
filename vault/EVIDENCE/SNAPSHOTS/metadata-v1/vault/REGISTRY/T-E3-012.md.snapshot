@@ -1,0 +1,18 @@
+---
+task_id: T-E3-012
+flow_feature: FL3.2.3/F3.2.3
+objective: Quarantine activation gate
+depends_on: [T-E3-011]
+context_pack: P-E3-012
+acceptance: Activation only after validation
+evidence: E-DEV-016
+status: DONE
+claimed_by: Codex development run
+claimed_at: 2026-10-01
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-012
+
+`[[vault/PROFILES/object-activation.md]]` defines the exact-version activation gate and real PostgreSQL adapter. Independent gpt-5.6-luna max review returned PASS with no findings for PR #18 code head e135c62b03fa913f5fc5bbb9ee9374d582fd9cf2 and metadata head 62b558fa15879d873d37334c8a022836dbc03466. `[[vault/EVIDENCE/E-DEV-016.md]]` records transactional tests, green CI and fixture/production limits. On 2026-10-01 the owner accepted the identified independent verdict under DEC-0069. DONE applies only to the executable validation gate and real transactional adapter proof. No live activation, scanner/provenance/validation-policy producers, protected audit custody or publication is proved; physical domains remain HELD and T-E3-001-R1 remains REVIEW.

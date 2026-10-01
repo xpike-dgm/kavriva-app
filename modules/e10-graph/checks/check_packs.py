@@ -1,8 +1,8 @@
 """check-packs (R-005): every vault pack carries the 14 numbered fields + freshness.
 
-Stale rule: a pack carrying `last_verified:` older than the newest registry
-record's `last_verified:` is WARN; if any IN_PROGRESS task exists while a pack
-is stale, FAIL (active work on stale context). Missing last_verified: WARN.
+Freshness is relative to the pack's own task_ref, never an unrelated task's
+date. An older pack for its own IN_PROGRESS task is FAIL; otherwise WARN.
+Missing dates or task_ref remain explicit warnings, not guessed freshness.
 """
 import re
 import sys
@@ -10,32 +10,38 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _lib import APP_ROOT, read, meta_yaml, parse_simple, fail, warn
 
-pdir = APP_ROOT / "vault" / "PACKS"
-packs = sorted(pdir.glob("*.md")) if pdir.exists() else []
-code = 0
-for p in packs:
-    nums = set(re.findall(r"^(\d+)\.\s", read(p), re.M))
-    missing = [str(i) for i in range(1, 15) if str(i) not in nums]
-    if missing:
-        code = fail(f"{p.name}: pack fields missing: {','.join(missing)}") or 1
-dates = []
-active = False
-for p in sorted((APP_ROOT / "vault" / "REGISTRY").glob("*.md")):
-    d = parse_simple(meta_yaml(read(p)))
-    if d.get("last_verified"):
-        dates.append(d["last_verified"])
-    if d.get("status") == "IN_PROGRESS":
-        active = True
-newest = max(dates) if dates else ""
-for p in packs:
-    d = parse_simple(meta_yaml(read(p)))
-    lv = d.get("last_verified", "")
+def freshness_findings(pack, tasks):
+    lv = pack.get("last_verified", "")
     if not lv:
-        warn(f"{p.name}: no last_verified field")
-    elif newest and lv < newest:
-        if active:
-            code = fail(f"{p.name}: stale pack with active task present") or 1
-        else:
-            warn(f"{p.name}: stale vs registry {newest}")
-print(f"check-packs: {len(packs)} packs scanned")
-sys.exit(code)
+        return [(0, "no last_verified field")]
+    task = tasks.get(pack.get("task_ref"))
+    if task is None:
+        return [(0, "no resolvable task_ref for freshness comparison")]
+    verified = task.get("last_verified", "")
+    if not verified:
+        return [(0, "linked task has no verification date")]
+    if lv < verified:
+        return [(1 if task.get("status") == "IN_PROGRESS" else 0,
+                 "stale vs linked task " + str(pack["task_ref"]) + " " + verified)]
+    return []
+
+
+if __name__ == "__main__":
+    pdir = APP_ROOT / "vault" / "PACKS"
+    packs = sorted(pdir.glob("*.md")) if pdir.exists() else []
+    tasks = {}
+    for p in sorted((APP_ROOT / "vault" / "REGISTRY").glob("*.md")):
+        data = parse_simple(meta_yaml(read(p)))
+        if data.get("task_id"):
+            tasks[data["task_id"]] = data
+    code = 0
+    for p in packs:
+        text = read(p)
+        nums = set(re.findall(r"^(\d+)\.\s", text, re.M))
+        missing = [str(i) for i in range(1, 15) if str(i) not in nums]
+        if missing:
+            code = max(code, fail(f"{p.name}: pack fields missing: {','.join(missing)}"))
+        for level, message in freshness_findings(parse_simple(meta_yaml(text)), tasks):
+            code = max(code, fail(f"{p.name}: {message}") if level else warn(f"{p.name}: {message}"))
+    print(f"check-packs: {len(packs)} packs scanned")
+    sys.exit(code)

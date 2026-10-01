@@ -1,0 +1,19 @@
+---
+test_id: E-PR-002
+contract_id_version: CI_PLAN.md merge gates (V-CI-001)
+subject_digest: 6DBD1D60E445F490A1523B42614070F758954205763B754D14B6255825E446CA (sha256 over LF-normalized bytes of vault/EVIDENCE/E-PR-002-TRANSCRIPT.md 2026-09-23)
+subject_file: vault/EVIDENCE/E-PR-002-TRANSCRIPT.md
+result: PASS (probe rejected GH013; gates active on both repos; owner bypass logged per push)
+evidence_links:
+  - "[[vault/EVIDENCE/E-PR-002-TRANSCRIPT.md]]"
+gate_verdict: "RECORDED (manager-run evidence)"
+reviewer: "manager-run 2026-09-23 (implementer; corroborated scope: ruleset exists and active per OUT-3 server-side read; non-owner direct push rejected per OUT-1 GH013 probe. NOT corroborated: effective blocking under owner bypass, all observed pushes bypassed; owner governance decision pending)"
+timestamp: 2026-09-23
+status: RECORDED
+last_verified: 2026-09-23
+---
+
+# E-PR-002 — Branch-protection enforcement record (B-01 closure)
+
+Closes B-01 (OUT-1): written review gate for main is now enforceable on Pro; rejection proven, not assumed.
+Planning repo protected identically minus status checks (no CI there); mechanism proven on app.

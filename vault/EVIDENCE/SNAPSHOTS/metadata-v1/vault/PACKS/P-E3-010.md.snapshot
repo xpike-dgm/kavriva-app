@@ -1,0 +1,24 @@
+---
+pack_id: P-E3-010
+task_ref: T-E3-010
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-010 — History/provenance separation and convenience-copy rule
+
+1. objective: Separate current data, revision history and convenience copies without promoting copies into authority.
+2. outcome-link: FL3.2.2/F3.2.2/C3.2 — a corrected maintenance record preserves prior assertions and source meaning.
+3. preconditions + completed dependencies: T-E3-009 DONE for reviewed logical authority registry; T-E3-001-R1 remains REVIEW.
+4. mandatory reads: ADR-001 Decisions 2 and 6, task index T-E3-010, MODULE_BOUNDARIES, DEC-0068/0069, E3/E5 manifests, domain-authority profile, maintenance schema/writer/tests and audit contract.
+5. allowed paths: `modules/e03-server/public/maintenance_provenance.py`, `modules/e03-server/internal/maintenance_history.py`, `modules/e03-server/tests/test_maintenance_provenance.py`, `modules/e03-server/tests/test_maintenance_store.py`, `modules/e03-server/MANIFEST.md`, `vault/PROFILES/history-provenance.md`, this pack, `vault/REGISTRY/T-E3-010.md`, `vault/EVIDENCE/E-DEV-014.md`, generated indexes.
+6. forbidden areas: Hosted writes, schemas/migrations/privileges, new HTTP endpoints, E5 authorization/audit logic, release decisions, client cache systems and T-E3-011 derivative-classification implementation.
+7. expected artifact changes: Add history/copy representation and strict head/provenance validation; private canonical transaction reader; unit and real database negatives; separation profile; manifest and evidence/task records.
+8. acceptance + negative cases: Copies never authority. Cache/search/analytics/notification/package-builder/client copies, raw history rows and audit dictionaries cannot replace a current snapshot. Revisions preserve actor/operation/time/correction/evidence meaning. Cross-tenant lookup, incomplete/mixed history and concurrent correction cannot return a guessed/mixed head. Dataclass validation is not source authentication or product authorization.
+9. validation / architecture / integration checks: Nine representation unit tests; four new native PostgreSQL tests in existing E3 suite/CI; existing append-only revision tests; E10 run_all.py; indexes; git diff --check; independent review.
+10. migration / rollback needs: No schema or hosted migration; existing append-only trigger unchanged. Revert module/profile through reviewed PR; no history rows are changed or deleted.
+11. responsive / accessibility rules: N/A; no UI or HTTP response changes.
+12. evidence + handoff format: E-DEV-014 records normalized public-module digest, tests, exact reviewed head/model/verdict and live-service limits.
+13. graph-update records: Create T-E3-010 and evidence; regenerate registry/routing. T-E3-001-R1 remains REVIEW; no physical activation or other task promotion.
+14. escalation rules: Missing source/current authorization or contradictory revision lineage holds the sensitive read/action; canonical reconciliation stays with the implementer, with owner-readable outcome/risk/cost/reversibility choices.

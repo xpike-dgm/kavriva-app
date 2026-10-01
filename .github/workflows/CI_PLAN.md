@@ -1,3 +1,40 @@
+---
+record_id: V-CI-001
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/.github/workflows/CI_PLAN.md.snapshot"
+metadata_origin_digest: "2306c23234ad720be61b3a90b7bb58b3f40e03b14c98b2f9cdf536cf70bde4fd"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_version: 1
+metadata_scope: "record registration; original product/verification scope unchanged"
+purpose: "Binding sources (single truth, not copied): `DEC-0051` (free = templates + GitHub automation; no API actuation); Step-3 `planning 08_REPOSITORY_BOOTSTRAP/VALIDATION_DRAFT/VALIDATION_COMMANDS.md` (8 commands × T1/T2/T3) + `ARCHITECTURE_TEST_SUITE.md` (gate signals FAIL / WARN-then-FAIL / REJECT); `planning 07_AI_ARCHITECTURE/RULES/README.md` (rule→gate mapping: per-task review / release gate / bootstrap gate); `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md` (lifecycle + different-chat review); Step-1 blueprint (`.github/workflows/` address reservation). Install addresses: `kavriva-app/.github/workflows/` (workflow files) — this draft is the spec; YAML wiring is installation after PASS + owner approval."
+domain: "project-records"
+owner: "E10"
+module: "e10-graph"
+depends_on:
+  - "ADR-015"
+used_by:
+  - "E-PR-002"
+  - "E-PR-003"
+  - "I-E10-REGISTRATION-BASELINE"
+  - "P-E3-001-R3"
+implements:
+  - "ADR-015 Decision3 record registration"
+public_contracts: []
+internal_scope: "Original document declarations and record custody; no new runtime authority"
+tasks:
+  - "T-E10-001"
+tests:
+  - "modules/e10-graph/checks/check_identity.py"
+  - "modules/e10-graph/checks/check_conformance.py"
+  - "modules/e10-graph/checks/check_links.py"
+evidence:
+  - "E-DEV-027"
+supersedes: []
+superseded_by: []
+status: "INSTALLED"
+last_verified: "2026-10-01"
+metadata_verified_at: "2026-10-01"
+---
+
 # CI PLAN (INSTALLED — Phase-8 Step 4 REVIEWED PASS; OUT-3 B-19 header fix 2026-09-23)
 
 Status: INSTALLED (round 1: CHANGES_REQUESTED 2 findings → narrow remediation; round 2: independent re-review PASS, no open findings, 2026-09-22; installed to `.github/workflows/CI_PLAN.md`)
@@ -59,3 +96,9 @@ is installation after PASS + owner approval.
 2. Every T1/T2/T3 class has a blocking gate (manual check — no tier merges on lights alone where review required).
 3. No vendor-beyond-GitHub / numeric / implementation selection (manual check vs guardrails).
 4. Reviewer verdict PASS, zero open findings, different context (R-007).
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.

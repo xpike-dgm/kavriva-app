@@ -3,11 +3,11 @@
 Field presence alone is insufficient (empty-value forgery): every field must have
 a non-empty value. gate_verdict is drawn from a closed set {PASS, FAIL, VERIFIED,
 RECORDED, BLOCKED}. subject_digest must be 64 hex AND must equal the recomputed sha256
-of subject_file (OUT-1 B-12 — format without recomputation is decoration). timestamp
+of subject_file (current or exact preserved original payload, OUT-1 B-12 — format without recomputation is decoration). timestamp
 must be YYYY-MM-DD. PENDING is forbidden everywhere. Frontmatter must be standard-YAML
 strict (no unquoted ': ', no backticks — OUT-3 B-06). Files in EVIDENCE without test_id
 are supporting notes: each must be referenced from some record's evidence_links, else FAIL.
-The frozen pack's integrity is guarded by E-PR-001.pack_digest recomputation (OUT-1 B-11).
+The frozen pack's integrity is guarded by E-PR-001.pack_digest recomputation against its pinned original/preserved payload (OUT-1 B-11).
 Registry rows with status IN_PROGRESS/REVIEW/DONE and no resolvable evidence record FAIL.
 Metadata source: YAML frontmatter preferred, legacy ```yaml fence accepted.
 """
@@ -17,6 +17,7 @@ import re
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _lib import APP_ROOT, read, meta_yaml, frontmatter_yaml, parse_simple, fail
+from _record_preservation import verify_frozen_pack
 
 FIELDS = ["test_id", "contract_id_version", "subject_digest", "result",
           "evidence_links", "gate_verdict", "reviewer", "timestamp"]
@@ -66,11 +67,8 @@ for r in recs:
         except (ValueError, OSError):
             code = fail(f"{r.name}: subject_file unresolvable: {subj}") or 1
     if r.name == "E-PR-001.md":
-        pack = APP_ROOT / "vault" / "PACKS" / "P-PROOF-001.md"
-        pd = str(data.get("pack_digest", ""))
-        if not re.match(r"^[0-9a-fA-F]{64}\b", pd) \
-                or hashlib.sha256(pack.read_bytes().replace(b"\r\n", b"\n")).hexdigest().upper() != pd[:64].upper():
-            code = fail(f"{r.name}: pack_digest does not match frozen P-PROOF-001.md") or 1
+        for issue in verify_frozen_pack(APP_ROOT, data):
+            code = fail(f"{r.name}: {issue}") or 1
     ts = str(data.get("timestamp", ""))
     if not re.match(r"^20\d\d-\d\d-\d\d$", ts):
         code = fail(f"{r.name}: timestamp is not YYYY-MM-DD: {ts[:40]}") or 1

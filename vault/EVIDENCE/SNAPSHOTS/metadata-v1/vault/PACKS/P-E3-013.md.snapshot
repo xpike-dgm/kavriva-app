@@ -1,0 +1,26 @@
+---
+pack_id: P-E3-013
+task_ref: T-E3-013
+status: ACTIVE
+owner: E3
+last_verified: 2026-10-01
+---
+
+# T-E3-013 — Reversibility preconditions checklist
+
+1. objective: List closable backend reversibility preconditions without making a platform selection.
+2. outcome-link: FL3.3.1/F3.3.1/C3.3 — preserve a safe provider exit and no-owner-debug recovery path.
+3. preconditions + completed dependencies: No task dependencies in TASK_INDEX. Existing T-E3-011/T-E3-012 DONE only for bounded contracts; T-E3-001-R1 REVIEW and physical domain activation HELD.
+4. mandatory reads: ADR-002 Decisions 1/2 plus mandatory safeguards and all eight revisit triggers; ADR-001 recovery/authority planes; ADR-006 Decision 10; TASK_EXECUTION_PROTOCOL/DEC-0068/0069; MODULE_BOUNDARIES; E3 manifest; relevant T-E3-014/015/023/026/027/028/030/036 rows.
+5. allowed paths: vault/PROFILES/backend-reversibility.md, this pack, vault/REGISTRY/T-E3-013.md, vault/EVIDENCE/E-DEV-017.md, E3 MANIFEST.md readiness reference and generated registry/routing indexes.
+6. forbidden areas: Runtime/test code, database schemas/migrations, hosted services/accounts/roles/keys, provider/runtime/region/plan purchases or selections, production costs/limits, detailed T-E3-014/015/026/036 implementation and new runtime seams.
+7. expected artifact changes: Write evidence/resolver/status checklist for authority/quarantine, separate planes, stable export/clean-room import, floors/identity, custody/bypass, outage/operability, compatibility/cost and fallback evidence; map all eight reversal triggers; record bounded task/evidence.
+8. acceptance + negative cases: No selection; preconditions listed. Each item has evidence needed, a technical resolver and explicitly unproven operational status. Missing/partial/contradictory evidence stays held; source failure does not select fallback; DB backup alone, scanner success or fixture CI never proves full recovery/live activation; owner is never delegated SQL/SSH debugging.
+9. validation / architecture / integration checks: Manual ADR-002 Decision/trigger coverage; all 11 E10 checks via run_all.py; generated indexes; git diff --check; green exact-head CI and independent gpt-5.6-luna max document review. No new executable tests for a document-only task.
+10. migration / rollback needs: None; no data/service mutation. Amend document through reviewed PR without rewriting approved ADRs; no provider switch or rollback command.
+11. responsive / accessibility rules: N/A; no screen or user flow. Owner summary uses plain language and separate task completion/operational readiness.
+12. evidence + handoff format: E-DEV-017 normalized checklist digest, 13 checklist items/eight trigger coverage, actual E10/CI results, exact reviewed head/model/verdict and owner acceptance; document evidence does not claim operational drills.
+13. graph-update records: T-E3-013, E-DEV-017; regenerate indexes. Preserve physical HELD and T-E3-001-R1 REVIEW; other plan task rows are references, not newly completed nodes.
+14. escalation rules: Selection/provisioning/paid/production action outside this scope requires a controlled later task and owner-readable outcome/risk/cost/reversibility choices. Do not request technical diagnosis from owner.
+
+Scope: `[[vault/PROFILES/backend-reversibility.md]]`; state: `[[vault/REGISTRY/T-E3-013.md]]`; proof: `[[vault/EVIDENCE/E-DEV-017.md]]`.

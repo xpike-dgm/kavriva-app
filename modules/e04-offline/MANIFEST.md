@@ -1,3 +1,31 @@
+---
+record_id: M-E4-001
+metadata_version: 1
+purpose: "Seçili görev paketi indirilir; kullanıcı işleri defterle gider; CON-005 uyumlu (onaysız hücresel/roaming başlatma, ağ-türü/MB eşiği diyaloğu yok). E4 ← E3, consumed by E1 (never the reverse)."
+domain: "module-contract"
+module: "e04-offline"
+owner: "E4"
+depends_on: [M-E3-001]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE]
+implements:
+  - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
+public_contracts:
+  - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
+internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
+tasks: [T-E10-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+evidence: [E-DEV-027]
+supersedes: []
+superseded_by: []
+status: INSTALLED
+last_verified: 2026-10-01
+metadata_origin_file: "vault/EVIDENCE/SNAPSHOTS/metadata-v1/modules/e04-offline/MANIFEST.md.snapshot"
+metadata_origin_digest: "4bcc6ec58313806b72536ad7cc2e242ae16d4afb8ca6b5243bea2917e7890038"
+metadata_origin_commit: "28b3734027d72b8f592b60290c8bf5f8fc0dfe2b"
+metadata_scope: "record registration; original product/verification scope unchanged"
+metadata_verified_at: "2026-10-01"
+---
+
 # MODULE MANIFEST — e04-offline (E4 Çevrimdışı paket + senkron)
 
 Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e04-offline/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
@@ -46,3 +74,13 @@ custody split decided separately (encryption); no plaintext backups.
 - Requirements/design: `C4.1`..`C4.9`, `F4.*`; `ADR-009`; `CON-005`.
 - Architecture: seam rows (E4 ← E3, consumed by E1); `R-001`, `R-003`, `R-004`, `R-008`, `R-011`, `R-013`.
 - Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E4 rows (Step 5 builds).
+
+## Metadata verification boundary (T-E10-001 remediation)
+
+Same stable manifest identity and original semantic body preserved. Purpose/internal scope are serialized verbatim from the existing sections; public surface is defined by an exact same-record section reference, not a new contract or runtime seam. depends_on/used_by encode the declared epic foundation DAG from the canonical epic/dependency catalog, with E2 consumption of E8 outputs and E9 propose-flow to E1 retaining their existing qualifiers; they are not an assertion of deployed calls. The baseline inventory is an actual documentary consumer. No predecessor/successor record exists for this same-ID addition. Listed tests verify installed anatomy/identity, not all future declared product behavior; E-DEV-027 records scoped metadata validation and outstanding corpus acceptance. Product activation/release/identity gates remain unresolved.
+
+## Record metadata custody v1 (T-E10-001)
+
+This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
+
+Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
