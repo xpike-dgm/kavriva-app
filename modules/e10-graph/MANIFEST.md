@@ -1,3 +1,24 @@
+---
+record_id: M-E10-001
+metadata_version: 1
+purpose: Own project graph, task packs, registry, checks and closure tooling
+domain: project-execution
+module: e10-graph
+owner: E10
+depends_on: []
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE]
+implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
+public_contracts: [task-pack, design-token, V-E10-NODE-001]
+internal_scope: Registry and router tooling, generated indexes, checks and simulations
+tasks: [T-E10-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+evidence: [E-DEV-027]
+supersedes: []
+superseded_by: []
+status: INSTALLED
+last_verified: 2026-10-01
+---
+
 # MODULE MANIFEST — e10-graph (E10 Proje grafiği + görev altyapısı)
 
 Status: INSTALLED (Step-2 REVIEWED PASS 2026-09-22 + installed to `modules/e10-graph/MANIFEST.md`; OUT-3 B-19 header fix 2026-09-23)
@@ -49,8 +70,12 @@ migration source only — never edited from here.
   `planning 07_AI_ARCHITECTURE/COMPLETION_EVIDENCE_AND_CLOSURE_MATRIX.md`, `planning 07_AI_ARCHITECTURE/RULES/README.md`; `R-001`..`R-014` as applicable.
 - Tasks/tests: physical registry rows `supersedes` planning `planning 06_DELIVERY_PLANNING/TASK_INDEX.md` E10 rows (Step 5 builds).
 
-## Registration rule task (T-E10-001, REVIEW)
+## Registration rule task (T-E10-001, CHANGES_REQUESTED)
 
 Rule v1: `[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]`; literal historical baseline: `[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]`; evidence: `[[vault/EVIDENCE/E-DEV-027.md]]`. Every record requires stable identity/full metadata; this publication does not claim existing-corpus conformance or completed detectors. No runtime inbound, auto execution, planning change or historical rewrite.
 
 Governed paths: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`, `vault/INVENTORIES/E10-REGISTRATION-BASELINE.md`.
+
+## Metadata verification boundary (T-E10-001 remediation)
+
+Metadata adds no new runtime edge or public product capability. Purpose, ownership, foundation DAG and public tooling surfaces are sourced from the unchanged sections above; V-E10-NODE-001 is the proposed registration rule, not proof of corpus conformance. Current documentary consumers P-E10-001 and I-E10-REGISTRATION-BASELINE refer to this manifest; declared tooling service to all epics remains in the seam/source sections and does not assert live runtime use. Listed tests actually check installed manifest anatomy and identity, not every declared future behavior. E-DEV-027 records actual checks and the outstanding independent rejection. No predecessor/successor record exists for this same-ID metadata addition; supersedes/superseded_by stay empty, original body/history preserved. Corpus acceptance remains unmet.

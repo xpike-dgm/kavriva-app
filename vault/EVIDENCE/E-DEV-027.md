@@ -3,14 +3,14 @@ test_id: E-DEV-027
 contract_id_version: "ADR-015 Decision3; graph node registration rule v1"
 subject_file: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
 subject_digest: 082701170a75e381a2386048d3b2b341413f87c62ccc82e0ed897243e7ed4aa9
-result: "RECORDED: rule proposed; full corpus conformance unproved; independent acceptance review pending"
+result: "FAIL: independent review found extant-corpus registration acceptance unmet"
 evidence_links:
   - "[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]"
   - "[[vault/INVENTORIES/E10-REGISTRATION-BASELINE.md]]"
   - "[[vault/PACKS/P-E10-001.md]]"
   - "[[vault/REGISTRY/T-E10-001.md]]"
-gate_verdict: "RECORDED (no DONE or whole-corpus registration claim)"
-reviewer: none
+gate_verdict: "FAIL (extant-corpus metadata acceptance unmet; no merge or DONE)"
+reviewer: "independent gpt-6-luna max; /root/pr29_independent_review"
 timestamp: 2026-10-01
 purpose: Record registration rule and truthful coverage evidence
 domain: project-execution
@@ -47,3 +47,11 @@ Author self-inspection also replaced empty used_by lists with actual current doc
 Independent reviewer identified the self-reference in this evidence record's evidence field. It is now empty: there is no separate supporting evidence record for E-DEV-027; subject/supporting artifacts remain in evidence_links. This is an explicit absence, not self-proving approval. Independent review receipt and actual checks are recorded in the body, never fabricated as another evidence node.
 
 Independent reviewer also found the E10 manifest's explicit T-E10-001 reference absent from that task's used_by list; M-E10-001 is now declared. Both review findings await exact corrected-head re-review.
+
+## Independent acceptance verdict — CHANGES_REQUESTED
+
+Reviewer /root/pr29_independent_review, gpt-6-luna max, exact head0213a1a31fcd0ef85fdefcd191ccf693fccfbf14/base28b3734027d72b8f592b60290c8bf5f8fc0dfe2b. Rule publication and truthful baseline do not satisfy universal frozen T001 acceptance. Existing corpus needs scoped migration or authoritative clarification; the author pack cannot narrow the criterion. Earlier canonical ADR identity, consumer and evidence-self-reference findings are closed. Reviewer independently reproduced126 rows and verified both normalized digests; all five new records have all16 fields. Direct exact-head applicable CI passed: architecture36917777266/36917783288; E3 36917777436/36917783334 (107 existing tests); E5 36917777270/36917783394; isolated Auth/Storage36917777269/36917783312. PR-event T3 passed, push-event skipped. Green tests do not cure unmet acceptance. Task CHANGES_REQUESTED, PR draft, no merge.
+
+Remediation preserves the universal criterion and original corpus baseline. Begin with sourced manifest metadata; future work must protect historical proof bytes/digests and respect approved source changes. No metadata gap is waived by the owner standing mandate.
+
+First scoped remediation adds all16 minimum metadata fields to M-E10-001 from its actual manifest/source declarations and real anatomy/identity checks. Same ID and existing body/history preserved; document verification never proves future runtime behaviors. Remaining historical corpus conformance is unresolved, no task closure.
