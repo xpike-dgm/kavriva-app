@@ -2,7 +2,7 @@
 test_id: E-DEV-008
 contract_id_version: "ADR-006 Decision 9; T-E3-006a hosted Supabase baseline and installation preflight"
 subject_file: vault/INVENTORIES/E3-HOSTED-SUPABASE-PREFLIGHT.md
-subject_digest: C6D872CBD07B6E209F9FD689BB1B37670E77E06191151F46B0E71E471EFB409D
+subject_digest: 0CE8942A50F394AE79FC2122E2F2D09A8015D5FE8DBF75EA77DDB0E3E8495C75
 result: "RECORDED (read-only hosted baseline; installation and post-install proof outstanding)"
 evidence_links:
   - "[[vault/INVENTORIES/E3-HOSTED-SUPABASE-PREFLIGHT.md]]"
@@ -26,3 +26,5 @@ The parameterized Supabase project tools returned `Kavriva` (`tmcitwyzoahtvysxbl
 On the target, `list_migrations` returned `[]`; `list_tables` for `public` and `storage` returned only provider Storage tables, with `storage.buckets` row count zero. A direct catalog count returned zero Kavriva schemas, zero relations in `public`, `graphql_public` or Kavriva private schemas, zero `kavriva_consumer_api` roles, and both provider Auth tables. `list_edge_functions` returned `[]`. One provider-owned `graphql_public.graphql` routine has effective `EXECUTE` for `anon` and `authenticated`; the preflight names it explicitly and does not count it as a Kavriva function.
 
 The pinned CLI `2.117.0` reported `db push` support for `--project-ref`, `--dry-run` and `--skip-vault`. The three committed migration hashes and the review-before-write sequence are in the subject file. The dry run and actual push were not run because CLI deployment authentication and the independent T3 gate have not been completed. No hosted schema, role, user or data was changed. Local migration tests and PR #8's review remain historical proof only; this baseline must be repeated before deployment and followed by a fresh hosted catalog/grant check.
+
+The independent PR #10 reviewer found that the first two initially reported SHA-256 values were Windows working-tree CRLF hashes, not Git's committed bytes. The table was corrected to Git blob/LF hashes on the same PR; this finding requires re-review on the corrected head. It did not change migration SQL or the hosted project.

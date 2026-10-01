@@ -26,12 +26,12 @@ Observed result: `kavriva_schemas=0`, `checked_relations=0`, `server_roles=0`, `
 
 ## Installation candidate and order
 
-The existing, reviewed files on `main` are the complete candidate. No new schema SQL is proposed in this preflight PR. SHA-256 values below are for the committed file bytes on 2026-10-01; verify again against the exact merge head before deployment.
+The existing, reviewed files on `main` are the complete candidate. No new schema SQL is proposed in this preflight PR. SHA-256 values below are for Git's committed file bytes (the exact bytes CI receives) on 2026-10-01; verify again against the exact merge head before deployment. A Windows checkout may use CRLF line endings and therefore have different working-tree hashes.
 
 | Order | Committed migration | SHA-256 |
 | --- | --- | --- |
-| 1 | `supabase/migrations/20260924102337_e5_current_authority.sql` | `C1630F2ED941310BFDCA451AC53BDF88AA54011B0F8C5C88278A95FD17515829` |
-| 2 | `supabase/migrations/20260924131747_e3_maintenance_records.sql` | `D71E143D853DB299B1430D10A8AD810E9EC3431BE7D41CA567A9833E3274F6C3` |
+| 1 | `supabase/migrations/20260924102337_e5_current_authority.sql` | `26E1602F2702B66C65DFC7943D528399978D301F97D2A6C8EA06CE6B2A49518E` |
+| 2 | `supabase/migrations/20260924131747_e3_maintenance_records.sql` | `66BFAA43A7322FD24E906AAEEA1355A956910C6FC931A3D93190512898EBA509` |
 | 3 | `supabase/migrations/20260930151252_e3_live_authorization.sql` | `FF693F9B6B216BD930175EF25726ADD7B128B7C47CD539155F177A968878CD52` |
 
 Use the pinned Supabase CLI `2.117.0` from the repository's local Auth CI. Its `db push --help` confirms `--project-ref`, `--dry-run`, and `--skip-vault`. After this PR's independent T3 review and explicit owner acceptance of the target and write, authenticate the CLI without putting a token or password in the repository or chat. Run a dry run against the exact project, with `--skip-vault`; it must list exactly these three filenames in this order. Stop if the baseline, target, hashes or dry-run list differs. Only then run the same `db push` without `--dry-run` once, serially, with no seed import. Supabase records the local filenames in migration history. Do not use MCP `apply_migration` for these existing files: its server-generated versions may diverge from the committed migration timestamps.
