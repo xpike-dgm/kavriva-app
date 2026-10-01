@@ -11,15 +11,15 @@ implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
 tasks: [T-E10-001]
-tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py]
+tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
 status: REVIEW
-last_verified: 2026-10-01
+last_verified: 2026-10-02
 metadata_version: 1
 metadata_scope: "record registration; original product/verification scope unchanged"
-metadata_verified_at: "2026-10-01"
+metadata_verified_at: "2026-10-02"
 ---
 
 # Graph node registration rule v1
@@ -93,6 +93,6 @@ The initial rule-only submission was rejected at0213a1a; that decision remains i
 
 The126 original baseline Git blobs are preserved exactly under vault/EVIDENCE/SNAPSHOTS/metadata-v1 as non-Markdown immutable .snapshot payloads. metadata_origin_file/digest/commit reference those originals. A pinned count/raw-content catalog digest and per-record normalized digest protect them. Current frames retain original metadata values and begin with the original body; the preservation guardian rejects historic verdict/identity/content changes. Old evidence Markdown subject paths now resolve to their exact original bytes, with subject_original_path retained and original subject_digest unchanged. E-PR-001 pack_file is the exact preserved proof pack; the guardian accepts only the original/preserved addresses and the originally pinned digest, so wrapping the record cannot authorize rewriting old proof. Secondary historical sources are listed as preserved payload references. Archived payloads are historical data, not active duplicate graph nodes.
 
-check_registration v1 enforces131-record field presence, nonempty declared purpose/domain/module/owner/scope/status/date, real dates/module ownership, exactly one owned identity, same/cross-type collisions, matching body identity, duplicate-key rejection and preserved-origin integrity. This is registration/serialization and historical-preservation coverage, not completed T-E10-002 relation conventions or the seven T-E10-003 semantic detectors. Thirteen meaningful tests cover proof tampering, rehashing, missing/redirected payloads, historic verdict/body rewrites and conflicting identities. run_all executes these guards/tests in CI. No production runtime/schema/deployment/account/credential action.
+check_registration v1 enforces131-record field presence, nonempty declared purpose/domain/module/owner/scope/status/date, real dates/module ownership, exactly one owned identity, same/cross-type collisions, matching body identity, duplicate-key rejection and preserved-origin integrity. Exact same-address origin links and continued presence of every baseline record are required; new nodes cannot borrow old origins. This is registration/serialization and historical-preservation coverage, not completed T-E10-002 relation conventions or the seven T-E10-003 semantic detectors. Twenty meaningful tests cover proof tampering, rehashing, missing/redirected/borrowed payloads, removed custody links/nodes, historic verdict/body rewrites conflicting identities and actual linked-task freshness. The pre-existing pack checker now compares only its own task, avoiding unrelated date changes without refreshing old proof or waiving actual stale active work. run_all executes these guards/tests in CI. No production runtime/schema/deployment/account/credential action.
 
 Whole-corpus registration is proposed for independent re-review; no DONE until actual acceptance review and exact-headCI pass. Semantic reference completeness, tested critical product behavior, ten-layer closure and production authority remain separately unproved. The original126-row gap inventory remains a frozen before-state, not a claim that corrected records still lack fields or a current conformance index.

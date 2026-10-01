@@ -2,7 +2,7 @@
 test_id: E-DEV-027
 contract_id_version: "ADR-015 Decision3; graph node registration rule v1"
 subject_file: modules/e10-graph/GRAPH_NODE_REGISTRATION.md
-subject_digest: 8258e4320342971194474e752c42c7ea84653a8489b4aceac6a369b4e0b4635b
+subject_digest: c7d568775077591b50334922875e5caa6aaf214b76ad89349798fc864b4fe0bf
 result: "FAIL: independent review found extant-corpus registration acceptance unmet"
 evidence_links:
   - "[[modules/e10-graph/GRAPH_NODE_REGISTRATION.md]]"
@@ -20,17 +20,17 @@ depends_on: []
 used_by: [V-E10-NODE-001, I-E10-REGISTRATION-BASELINE, P-E10-001, T-E10-001, M-E10-001]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
-internal_scope: documentary-registration-rule
+internal_scope: whole-corpus-registration-and-historical-proof-preservation
 tasks: [T-E10-001]
-tests: []
+tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: []
 supersedes: []
 superseded_by: []
 status: RECORDED
-last_verified: 2026-10-01
+last_verified: 2026-10-02
 metadata_version: 1
 metadata_scope: "record registration; original product/verification scope unchanged"
-metadata_verified_at: "2026-10-01"
+metadata_verified_at: "2026-10-02"
 ---
 
 # E-DEV-027 — Graph registration rule
@@ -41,7 +41,7 @@ Literal baseline:126 tracked Markdown files at28b3734027d72b8f592b60290c8bf5f8fc
 
 Actual local validation: all11 E10 checks passed, both indexes regenerated, git diff --check clean. Frozen baseline independently reproduced from git ls-tree/git show for every126row:101frontmatter/25none and exact missing-field lists match. Initial authoring checks found two missing governed-path references, incompatible list form for installed task evidence parser and verdict punctuation; fixed within bounded authoring before review, existing checks unchanged. Exact-headCI pending. Independent gpt-6-luna max reviewer/context/head/findings/verdict pending; task REVIEW. Direct owner2026-10-01 standing mandate applies only after required independentPASS and greenCI; planDEC0070PR4 reviewedgreen but GitHubapprovalpending, no bypass. T-E3-001-R1 REVIEW; physical activation/operational authority/recovery HELD.
 
-No executable tests/public runtime surface for this documentary evidence record; actual documentary consumers are declared in used_by; tests is empty because no behavior was changed, not a claim of tested runtime. This record is not its own independent approval.
+At the initial rule-only stage, tests was empty because no executable behavior was changed. The current remediation changes registration/preservation behavior and links its actual guards and16 tests in frontmatter; this does not prove product runtime. This record is not its own independent approval.
 
 Author self-inspection corrected implements from an ADR section label to the actual canonical ADR-015 ID; Decision3 remains addressed by the source link/body. This does not substitute for independent review.
 
@@ -76,3 +76,7 @@ Thirteen preservation/identity tests passed locally2026-10-02. Full run_all and 
 Local validation2026-10-02: all12 architecture/registration commands and13 preservation/identity tests passed through run_all; generated registry/routing regenerated; git diff --check passed. .snapshot files are -text to preserve raw Git-blob bytes across Windows/Linux. Corrected-head independent re-review and CI remain outstanding; initial rejection not yet closed.
 
 Follow-up self-inspection2026-10-02 found optional per-record origin links could evade preservation despite the pinned archive catalog. Registration now requires each baseline record's exact same-address origin link, rejects a new node borrowing another original, and rejects a baseline node disappearing from the current corpus. Three negative tests added; all12 checks and16 tests passed locally. The prior13-test receipt remains history. Independent acceptance is still pending; no DONE or merge.
+
+Independent re-review additionally found stale tests:[] in the active task/pack/evidence metadata from the earlier rule-only stage. These now link actual registration/preservation guards and tests. Packv4 replaces superseded active scope wording with the already explicit whole-corpus amendment and accurate12-check/16-test validation; old rejection/amendment receipts remain. Current task/evidence/rule verification dates cover this metadata correction, not a new product verification. Independent final verdict remains pending.
+
+Accurate2026-10-02 metadata dates exposed a pre-existing pack-checker defect: the newest unrelated task date plus any IN_PROGRESS task falsely expired all historical packs. Corrective scope now includes linked-task freshness comparison and4 regression tests: unrelated newer task passes; truly stale own active context fails; completed history warns; missing task remains explicitly unverified. No historic date was refreshed or product completion granted. Current validation comprises12 checks and20 tests; independent verdict pending.
