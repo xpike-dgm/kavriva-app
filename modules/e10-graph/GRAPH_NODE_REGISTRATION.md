@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028]
+used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, D-APP-DOC-003, P-E10-004, E-DEV-031]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
-tasks: [T-E10-001, T-E10-002]
+tasks: [T-E10-001, T-E10-002, T-E10-004]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -100,3 +100,5 @@ Whole-corpus registration is proposed for independent re-review; no DONE until a
 Independent acceptance receipt2026-10-02: /root/pr29_independent_review (gpt-6-luna max) returned PASS at2656cc623aeb11766830f0e6f9cddc9fa3f14f3b, closing universal-coverage and current test-link/count findings. This rule is ACTIVE for bounded registration/preservation. The proposed re-review paragraph above is its earlier stage history; semantic graph/production closure remains separately unproved. Final metadata-only audit and exact-headCI are recorded in PR29 before merge.
 
 Task trace note: T-E10-002 maintains this current record's documentary metadata/consumer references. Its tasks entry records that actual maintenance provenance; it does not re-author or refresh the original T-E10-001 product/acceptance evidence. Exact approved subject payloads and original verdict/head/digests remain authoritative for their earlier scope.
+
+T-E10-004 documentary maintenance adds actual D-APP-DOC-003/P-E10-004/E-DEV-031 template/mandatory-pack/evidence consumers and T004 maintenance-task trace. Meaning/version unchanged; original accepted primary subjects/verdicts/digests remain preserved at their existing evidence snapshots, not refreshed by this new metadata.
