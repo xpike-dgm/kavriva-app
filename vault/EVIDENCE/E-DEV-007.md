@@ -3,15 +3,15 @@ test_id: E-DEV-007
 contract_id_version: "ADR-006 Decision 9; T-E3-006c authorization-tuple browser profile v1"
 subject_file: vault/PROFILES/authorization-tuple-browser.md
 subject_digest: 48CEF1BBF03316D4B27B3F7C0164D571972B4C90124C106C38E6EA00BB73B578
-result: "RECORDED (PR #9 final code head 07d84b7 CI green; independent browser-profile review PASS; owner acceptance pending)"
+result: "VERIFIED (T-E3-006c browser-rules specification; corrected code head 07d84b7 CI green; owner accepted independent review)"
 evidence_links:
   - "[[vault/PROFILES/authorization-tuple-browser.md]]"
   - "[[vault/PACKS/P-E3-006c.md]]"
   - "[[vault/REGISTRY/T-E3-006c.md]]"
   - "modules/e02-panel/MANIFEST.md"
   - "modules/e03-server/MANIFEST.md"
-gate_verdict: "RECORDED (independent scope PASS; owner acceptance pending; no browser runtime or hosted proof)"
-reviewer: "independent gpt-6-luna max sub-agent /root/pr9_independent_review; corrected code head 07d84b7304f7599b83078ad33056ddd4290bf48e; owner acceptance pending under DEC-0069"
+gate_verdict: "PASS (T-E3-006c specification only; owner accepted independent second eye; browser runtime and hosted proof excluded)"
+reviewer: "independent gpt-6-luna max sub-agent /root/pr9_independent_review; corrected code head 07d84b7304f7599b83078ad33056ddd4290bf48e; owner accepted on 2026-10-01 under DEC-0069"
 timestamp: 2026-10-01
 status: RECORDED
 last_verified: 2026-10-01
@@ -23,6 +23,6 @@ This is a specification task. The proposed browser profile of the existing autho
 
 E10 `run_all.py` and strict planning-link validation passed locally on 2026-10-01; `git diff --check` was clean. On PR #9's corrected code head `07d84b7`, [architecture checks](https://github.com/xpike-dgm/kavriva-app/actions/runs/36796887535/job/110162264088), [E3 tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36796887507/job/110162264069), [E5 tests](https://github.com/xpike-dgm/kavriva-app/actions/runs/36796887566/job/110162264114) and [local Supabase Auth proof](https://github.com/xpike-dgm/kavriva-app/actions/runs/36796887556/job/110162263987) succeeded. The unlabelled automatic T3 job initially skipped; after PR #9 received `t3-privileged`, the [T3 conformance/identity job](https://github.com/xpike-dgm/kavriva-app/actions/runs/36797349800/job/110163720736) passed on an evidence-only head. Automation is not the independent review. Subsequent commits changed only task/evidence records, not the reviewed browser profile or E2/E3 manifests.
 
-The independent Luna Max sub-agent `/root/pr9_independent_review` found one architecture issue in the initial formal tenth-contract presentation. The corrected head `07d84b7` moves the rules into a profile of the existing authorization-tuple contract and updates E2/E3 manifests, pack and registry. The reviewer rechecked the corrected profile SHA-256, required storage/origin/CSRF/PKCE/step-up/lookup rules, Supabase signed-URL limits, and final code-head CI, then returned **PASS for T-E3-006c's specification scope** with no open finding. Under DEC-0069, this identified sub-agent verdict can count as the T3 second eye only if the owner explicitly accepts it. That acceptance has not been given for PR #9. No DONE or merge approval is claimed.
+The independent Luna Max sub-agent `/root/pr9_independent_review` found one architecture issue in the initial formal tenth-contract presentation. The corrected head `07d84b7` moves the rules into a profile of the existing authorization-tuple contract and updates E2/E3 manifests, pack and registry. The reviewer rechecked the corrected profile SHA-256, required storage/origin/CSRF/PKCE/step-up/lookup rules, Supabase signed-URL limits, and corrected code-head CI, then returned **PASS for T-E3-006c's specification scope** with no open finding. The owner explicitly replied “onaylıyorum” on 2026-10-01 to the question identifying PR #9 and this independent verdict, and authorized its merge. Under DEC-0069 that accepts this identified sub-agent as the T3 second eye. Later commits changed only task/evidence/index records, not the reviewed profile or E2/E3 manifests.
 
-T-E3-006b hosted Storage/URL/Studio inventory and T-E3-007 bypass tests remain separate. T-E3-001-R1 and T-E3-006a remain REVIEW; this contract does not promote either to DONE.
+T-E3-006b hosted Storage/URL/Studio inventory and T-E3-007 bypass tests remain separate. T-E3-001-R1 and T-E3-006a remain REVIEW; this specification verdict does not promote either to DONE or activate a browser runtime.
