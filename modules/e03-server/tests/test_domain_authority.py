@@ -21,7 +21,15 @@ class DomainAuthorityTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.path = Path(self.temp.name) / "registry.json"
         self.data = json.loads(SUBJECT.read_text())
-        self.registry = load_registry(SUBJECT)
+        self.committed = load_registry(SUBJECT)
+        # Negative contract tests use a v1 fixture independently of the current
+        # reviewed snapshot, which may later validly advance or hold a domain.
+        self.data["version"] = 1
+        self.data["supersedes_digest"] = None
+        for row in self.data["authorities"]:
+            row["revision"] = 1
+            row["state"] = "ACTIVE"
+        self.registry = self.load(self.data)
 
     def load(self, data):
         self.path.write_text(json.dumps(data), encoding="utf-8")
@@ -33,10 +41,14 @@ class DomainAuthorityTests(unittest.TestCase):
         self.assertEqual(context.exception.reason, reason)
 
     def test_committed_registry_has_one_stable_authority_per_domain(self):
-        self.assertEqual(len(self.registry.authorities), 8)
-        for a in self.registry.authorities:
-            self.assertEqual(self.registry.resolve(a.domain_id, expected_version=1,
-                                                  expected_revision=1), a)
+        self.assertEqual(len(self.committed.authorities), 8)
+        for a in self.committed.authorities:
+            if a.state == "ACTIVE":
+                self.assertEqual(self.committed.resolve(a.domain_id,
+                    expected_version=self.committed.version, expected_revision=a.revision), a)
+            else:
+                self.assert_reason("DOMAIN_HELD", lambda: self.committed.resolve(a.domain_id,
+                    expected_version=self.committed.version, expected_revision=a.revision))
             self.assertEqual(a.physical_activation, "HELD")
 
     def test_snapshot_succession_against_preserved_git_history(self):
@@ -44,12 +56,12 @@ class DomainAuthorityTests(unittest.TestCase):
         commits = subprocess.run(["git", "log", "-2", "--format=%H", "--", relative],
                                  cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
         if len(commits) < 2:
-            self.assertEqual(self.registry.version, 1)
+            self.assertEqual(self.committed.version, 1)
             return
         predecessor = subprocess.run(["git", "show", commits[1] + ":" + relative],
                                      cwd=ROOT, check=True, capture_output=True).stdout
         self.path.write_bytes(predecessor)
-        validate_successor(load_registry(self.path), self.registry)
+        validate_successor(load_registry(self.path), self.committed)
 
     def test_duplicate_authority_is_rejected(self):
         self.data["authorities"].append(copy.deepcopy(self.data["authorities"][0]))
