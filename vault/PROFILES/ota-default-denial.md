@@ -16,7 +16,7 @@ depends_on: [M-E6-001, V-E6-AUTHORITY-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E6-017, T-E6-017, E-DEV-059]
 evidence: [E-DEV-059]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # OTA default denial
@@ -59,3 +59,5 @@ ADR007R10 -> C6.8 -> F6.8.1 -> FL6.8.1 -> T-E6-017 -> M-E6-001 internal denial -
 | gap-audit | Mobile consumer/attempt audit/actual trust/custody/compatibility/floor/platform path not proved |
 
 Code `modules/e06-release/internal/ota_denial.py`; tests `modules/e06-release/tests/test_ota_denial.py`; pack `vault/PACKS/P-E6-017.md`; task `vault/REGISTRY/T-E6-017.md`; evidence `vault/EVIDENCE/E-DEV-059.md`; accepted logical categories `vault/REGISTRY/release-authorities.json`; capsule `modules/e06-release/MANIFEST.md`.
+
+Bounded Development closure: separate /root/pr58_snapshot_binding_review gpt-6-luna/max PASS/no findings at frozen961640b30ed54c27767e6e88f50e69072d842a30. Source all10 applicable CI green/actual T3 SUCCESS. Direct owner standing DEC0069/0070 acceptance, pending planPR4 unmerged. Task completion covers internal unconditional denial and prospective catalog only; actual OTA channel still NOT_APPROVED/physicalHELD and client/device/runtime coverage/attempt audit/custody/platform/positive activation remains unproved. Final metadata audit/latest-head CI required before merge.

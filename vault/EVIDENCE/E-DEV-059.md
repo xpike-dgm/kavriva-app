@@ -2,8 +2,8 @@
 test_id: E-DEV-059
 contract_id_version: "ADR007 R10; default OTA denial v1"
 subject_file: vault/PROFILES/ota-default-denial.md
-subject_digest: 5e9cea97c461b8b57dab11e4a803672925cb76d473b63c6554776d640fca57c2
-result: "RECORDED: pure denial/prospective catalog; independent review/current CI pending"
+subject_digest: ddb887e83190eb480d6214b52553f566d252b4bee30b0823abb1d06ef16bf6d0
+result: "PASS: bounded internal unconditional denial/prospective catalog; no approved OTA channel"
 evidence_links:
   - "[[vault/PROFILES/ota-default-denial.md]]"
   - "[[vault/PACKS/P-E6-017.md]]"
@@ -11,8 +11,8 @@ evidence_links:
   - "[[vault/EVIDENCE/SNAPSHOTS/E-DEV-058-E10-GOVERNED-PATHS.md.snapshot]]"
   - modules/e06-release/internal/ota_denial.py
   - modules/e06-release/tests/test_ota_denial.py
-gate_verdict: "BLOCKED (independent default-denial review/current CI pending; OTA still NOT_APPROVED)"
-reviewer: "none; separate gpt-6-luna/max required"
+gate_verdict: "PASS (bounded denial guard only; OTA still NOT_APPROVED)"
+reviewer: "/root/pr58_snapshot_binding_review; gpt-6-luna/max; source961640b30ed54c27767e6e88f50e69072d842a30 bounded PASS"
 timestamp: 2026-10-02
 purpose: Deny unapproved runtime code updates and record separate future approval requirements
 domain: release-governance
@@ -49,3 +49,14 @@ NormalizedSHA256:
 
 Accepted inventoryv26 archived byte-equal; successorv27 preserves original catalog/all accepted admissions and pendingPR47v13/PR57v23/PR59v25. PriorEDEV058 primary/core/reviewer/digests/source/consequence assessment/no-rejection/currenthead receipts untouched except documentary consumer/custody append. Actual future native/channel/permission/custody/revocation/attempt audit/consumer/platform/live security proof remains MISSING/HELD. Source freeze/currentCI/independent review/graph/views/diff pending.
 Root preparation: run_all12checks+42regressionsPASS0.444s/worstexit0, build_index52/routingeligible[]/T017REVIEW, E3R1REVIEW/E5-003IN_PROGRESS unchanged; diffPASS/exact13paths/archiveGitbyte-equal/hashes. Historical P-PROOF001warning unchanged. Frozen-source CI/separate reviewer still required.
+
+## Bounded internal completion receipt
+
+Separate read-only reviewer /root/pr58_snapshot_binding_review, user-selected gpt-6-luna/max, actual bounded PASS/no actionable findings at 961640b30ed54c27767e6e88f50e69072d842a30 against accepted 7e014b7ecf7063fe27f8619ba7249056c1986132. No source review rejection or source fix. Code-level unconditional denial and immutable prospective catalog checked against canonical gate/ADR007R10/ADR013/context; eight hostile-input probes support denial only, no runtime/device coverage. No tests/CI/network/provider/writes by reviewer; root receipts separate.
+
+Exact source all10CI green: PR architecture37021419430 actualT3SUCCESS (earlier duplicate37021415511green), E6 37021416643 actual50PASS0.045s, E3commit37021415662, E5 37021416197, live37021416032; push architecture37021313290, E6 37021313335, E3commit37021313241, E5 37021312851, live37021313266. Root corrected full50PASS0.180s/compile, graph12+42PASS0.444s/index52/routingeligible[]/diff/archive. Initial root test API error and corrected raw-byte test history preserved; descriptive catalog clarification checked by exact-source hosted CI. No loader/checker weakened.
+
+Direct owner DEC0069/0070 standing bounded source verdict acceptance, pending planPR4 remains unmerged. Profile/pack ACTIVE/task DONE only internal default denial plus prospective future envelope, no future channel enabled/approved. Logical future_ota NOT_APPROVED/physicalHELD, no holders/credentials/audit introduced. Actual mobile/client/provider/native path/runtime coverage/attempt audit/physical custody/compatibility/revocation/anti-rollback/rollout/platform/store and production remain unproved. E3R1 REVIEW/E5-003 IN_PROGRESS/PR47/57/59 drafts unchanged. No fake product-wide security claim or effect. Final six metadata/view paths only; implementation/tests/workflow/archive/priorproof/inventory/manifest unchanged. Independent final metadata audit/latest-head CI/immutable PRbody still separate required gates.
+
+Current ACTIVE primary ddb887e83190eb480d6214b52553f566d252b4bee30b0823abb1d06ef16bf6d0; original reviewed primary5e9cea97c461b8b57dab11e4a803672925cb76d473b63c6554776d640fca57c2 preserved as historical source proof.
+Final root metadata preparation: build_index52/routingeligible[]/T017boundedDONE, run_all12checks+42regressionsPASS0.455s/worstexit0/diffPASS; exact six closeout paths. Historical P-PROOF001warning unchanged. Independent final metadata audit/currentfinalheadCI still required.
