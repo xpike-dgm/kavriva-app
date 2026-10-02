@@ -12,10 +12,10 @@ public_contracts: []
 internal_scope: repository-topology-and-record-custody
 tasks: [T-E10-006, T-E10-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_orphans.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
-evidence: [E-DEV-033]
+evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
 superseded_by: []
-status: ACTIVE
+status: REVIEW
 last_verified: 2026-10-02
 ---
 
