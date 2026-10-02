@@ -27,9 +27,9 @@ def fixture():
         (renderer,), policy, now + timedelta(hours=2), "fixture-high-consequence",
     )
     review = Review(snapshot.snapshot_id, snapshot.revision, snapshot_fingerprint(snapshot),
-                    "fixture-reviewer", "domain_reviewer", "fixture-review-scope",
+                    "fixture-reviewer", "domain_reviewer", Reference("fixture-review-scope", 1, "f" * 64),
                     now - timedelta(seconds=1), now + timedelta(hours=1), policy,
-                    "fixture-rationale-ref")
+                    Reference("fixture-rationale", 1, "0" * 64))
     return snapshot, review, now
 
 
@@ -117,7 +117,8 @@ class SnapshotBindingTests(unittest.TestCase):
         snapshot, review, now = fixture()
         binding = bind_review(snapshot, review, server_time=now)
         for delta in ({"reviewer_ref": "other-reviewer"}, {"reviewer_role": "safety_approver"},
-                      {"reviewer_scope_ref": "other-scope"}, {"rationale_ref": "other-rationale"},
+                      {"reviewer_scope": replace(review.reviewer_scope, ref_id="other-scope")},
+                      {"rationale": replace(review.rationale, ref_id="other-rationale")},
                       {"reviewed_at": review.reviewed_at - timedelta(seconds=1)},
                       {"expires_at": review.expires_at + timedelta(seconds=1)}):
             with self.assertRaisesRegex(BindingError, "REVIEW_BINDING_CHANGED"):
@@ -125,6 +126,22 @@ class SnapshotBindingTests(unittest.TestCase):
                                       server_time=now)
         with self.assertRaisesRegex(BindingError, "REVIEW_SNAPSHOT_MISMATCH"):
             bind_review(snapshot, replace(review, policy=replace(review.policy, revision=2)), server_time=now)
+
+    def test_same_id_scope_and_rationale_referent_changes_invalidate_binding(self):
+        snapshot, review, now = fixture()
+        binding = bind_review(snapshot, review, server_time=now)
+        for field in ("reviewer_scope", "rationale"):
+            original = getattr(review, field)
+            for delta in ({"revision": 2}, {"digest": "1" * 64}):
+                with self.subTest(field=field, delta=delta):
+                    changed = replace(review, **{field: replace(original, **delta)})
+                    with self.assertRaisesRegex(BindingError, "REVIEW_BINDING_CHANGED"):
+                        require_exact_binding(replace(binding, review=changed), snapshot,
+                                              server_time=now)
+            for invalid in (original.ref_id, replace(original, revision=True),
+                            replace(original, digest="invalid")):
+                with self.assertRaisesRegex(BindingError, "REFERENCE_INVALID"):
+                    bind_review(snapshot, replace(review, **{field: invalid}), server_time=now)
 
     def test_expired_snapshot_review_or_future_review_rejected(self):
         snapshot, review, now = fixture()

@@ -65,11 +65,11 @@ class Review:
     snapshot_fingerprint: str
     reviewer_ref: str
     reviewer_role: str
-    reviewer_scope_ref: str
+    reviewer_scope: Reference
     reviewed_at: datetime
     expires_at: datetime
     policy: Reference
-    rationale_ref: str
+    rationale: Reference
 
 
 @dataclass(frozen=True)
@@ -177,11 +177,12 @@ def bind_review(snapshot: Snapshot, review: Review, *, server_time: datetime) ->
     if (type(review) is not Review or not _time(server_time)
             or any(not _ref(value) for value in (
                 review.snapshot_id, review.reviewer_ref, review.reviewer_role,
-                review.reviewer_scope_ref, review.rationale_ref,
             )) or not _revision(review.revision) or not _digest(review.snapshot_fingerprint)
             or not _time(review.reviewed_at) or not _time(review.expires_at)):
         raise BindingError("REVIEW_CONTEXT_INVALID")
     policy = _reference(review.policy)
+    scope = _reference(review.reviewer_scope)
+    rationale = _reference(review.rationale)
     if review.reviewer_role not in {"domain_reviewer", "safety_approver"}:
         raise BindingError("REVIEW_ROLE_INVALID")
     if (review.snapshot_id != snapshot.snapshot_id or review.revision != snapshot.revision
@@ -192,9 +193,9 @@ def bind_review(snapshot: Snapshot, review: Review, *, server_time: datetime) ->
         raise BindingError("REVIEW_OR_SNAPSHOT_STALE")
     binding_fingerprint = _fingerprint({
         "snapshot": fingerprint, "reviewer": review.reviewer_ref,
-        "role": review.reviewer_role, "scope": review.reviewer_scope_ref,
+        "role": review.reviewer_role, "scope": scope,
         "reviewed_at": review.reviewed_at.isoformat(), "expires_at": review.expires_at.isoformat(),
-        "policy": policy, "rationale": review.rationale_ref,
+        "policy": policy, "rationale": rationale,
     })
     return ReviewBinding(snapshot, review, binding_fingerprint)
 

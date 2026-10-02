@@ -35,7 +35,7 @@ snapshot_fingerprint hashes a deterministic internal envelope of every supplied 
 
 ## Review linkage
 
-Review carries exact snapshot ID/revision/fingerprint, reviewer identity, domain_reviewer or safety_approver role, scope and rationale references, review/expiry instants and policy context. bind_review validates both structures before comparison, requires exact policy/snapshot linkage and rejects future review, expired review or expired snapshot at supplied server time. No duration policy is invented. Binding fingerprint covers exact snapshot and every review field, and the returned frozen record has intrinsic authority NONE.
+Review carries exact snapshot ID/revision/fingerprint, reviewer identity, domain_reviewer or safety_approver role, immutable scope and rationale identity/revision/digest references, review/expiry instants and policy context. bind_review validates both structures before comparison, requires exact policy/snapshot linkage and rejects future review, expired review or expired snapshot at supplied server time. No duration policy is invented. Binding fingerprint covers exact snapshot and every review field, and the returned frozen record has intrinsic authority NONE.
 
 require_exact_binding revalidates the original bound snapshot/review and fingerprint, then compares the candidate's complete fingerprint. Changing any packet section, source/dependency/evidence, media/derived bytes/transformation input, scope/condition/expiry/consequence, ID/revision/policy or bound review metadata invalidates the old binding. Editing creates a new candidate; the original immutable object and review remain unchanged. A new attributed fixture review can bind the new candidate, but the old review cannot be reused. There is no method to mutate or erase past review history.
 
@@ -43,7 +43,7 @@ Every source/reference/reviewer/role/scope/rationale/condition/policy and comple
 
 ## Performed checks and integration limits
 
-Fifteen meaningful new local snapshot tests plus fourteen accepted registry tests: full E6 29 PASS0.034s/compile PASS. Tests cover all six section mutations, exact whitespace bytes, source/dependency/evidence/transformation changes, media/rendered input changes, ID/revision/policy/expiry/consequence, immutability and preserving old/new candidates, every reviewer context field, expiry/future review, missing/duplicate/unknown sections/sources, duplicate reference/artifact revisions, explicit multiple evidence revisions, omitted derivation inputs, mutable/boolean/type/timezone inputs, bare ALLOW and malicious comparison callbacks. No actual product content/human/credential/provider/release operation.
+Original source: fifteen new snapshot tests plus fourteen registry tests, 29 PASS0.034s. Corrected source adds same-ID scope/rationale revision/digest changes and malformed reference negatives; full corrected E6 30 PASS0.036s/compile PASS. Tests cover all six section mutations, exact whitespace bytes, source/dependency/evidence/transformation changes, media/rendered input changes, ID/revision/policy/expiry/consequence, immutability and preserving old/new candidates, every reviewer context field, expiry/future review, missing/duplicate/unknown sections/sources, duplicate reference/artifact revisions, explicit multiple evidence revisions, omitted derivation inputs, mutable/boolean/type/timezone inputs, bare ALLOW and malicious comparison callbacks. No actual product content/human/credential/provider/release operation.
 
 The E6 test workflow is installed independently in this task from accepted main, using existing reviewed immutable checkout pin, read-only content and no persisted checkout credential/dependency installation. It runs the actual accepted registry and new snapshot suites. Unmerged PR57 publication checker is absent and is not claimed as tested or merged. This generic E6 family will need normal reconciliation with that draft's pending workflow/CI-plan/inventory changes when the role task is actually ready. Current-head CI and independent source review remain separate gates.
 
@@ -51,7 +51,7 @@ E3 canonical source completeness, authenticated E5 reviewer competence/independe
 
 ## Ten-layer trace
 
-ADR003R1 / ADR001 canonical authority → C6.2 → F6.2.1 → FL6.2.1 → T-E6-003 → M-E6-001 internal snapshot binding → E-DEV-056.
+ADR003R1 / ADR001 canonical authority Ã¢â€ â€™ C6.2 Ã¢â€ â€™ F6.2.1 Ã¢â€ â€™ FL6.2.1 Ã¢â€ â€™ T-E6-003 Ã¢â€ â€™ M-E6-001 internal snapshot binding Ã¢â€ â€™ E-DEV-056.
 
 | Layer | Actual boundary |
 |---|---|
@@ -63,7 +63,7 @@ ADR003R1 / ADR001 canonical authority → C6.2 → F6.2.1 → FL6.2.1 → T-E6-0
 | architecture | E6 internal policy, existing E3/E5/E7 split, no new seam |
 | data/migration | Immutable fixtures and deterministic fingerprints, no durable canonical history or migration |
 | release | Shared publishing-control gate and actual release execution/floors missing |
-| product-scenario | 29 actual local structural tests, no physical publication/consumer experiment |
+| product-scenario | Structural fixture tests, no physical publication/consumer experiment |
 | gap-audit | Canonical completeness/authenticated review/current authority/audit/transaction/floors attributed E3/E5/E6/E7, no owner debugging |
 
 Code `modules/e06-release/internal/snapshot_binding.py`; tests `modules/e06-release/tests/test_snapshot_binding.py`; pack `vault/PACKS/P-E6-003.md`; task `vault/REGISTRY/T-E6-003.md`; proof `vault/EVIDENCE/E-DEV-056.md`; capsule `modules/e06-release/MANIFEST.md`; address inventory `vault/INVENTORIES/E10-GOVERNED-PATHS.md`. Sources: [ADR003](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/05_ADR/RECORDS/ADR-003__APPROVAL_PUBLICATION_EMERGENCY_SUSPENSION.md), [canonical task](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/TASK_INDEX.md), [acceptance matrix](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md).
