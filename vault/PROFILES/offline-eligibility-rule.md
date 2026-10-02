@@ -16,10 +16,12 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-013, T-E4-013, E-DEV-072]
 evidence: [E-DEV-072]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Offline eligibility rule
+
+Historical pre-code/source-freeze sections below preserved; current FULL task acceptance and separate physical/product holds are in completion receipt.
 
 Canonical T013/ADR009R6/ADR001/ADR003/C4.6/F4.6.1/FL4.6.1 review matrix140/144 and narrow taxonomy/windows gate145. T013 no hard task dependencies. Acceptedmain1f28a290d65eee9fb3944b5da9ff6a09785099c1 after PR73 merged2026-10-02T21:22:21Z with independent FULL source/final metadata PASS and all exact12CI/actualT3. T011a internal enumeration DONE only; T011b/T012 remain pending actual E3 operation identity/submit/result/lookup source, E3-003/004/productR1 not DONE. Next independent eligible T013 selected per canonical index/dependency graph; no bootstrap-product dependency substitution. E4 consumes E3 and E1 renders unchanged, no E6 private import/new public seam. Accepted planmainfa914f/localstale7d705/localpendinge3c2/planPR4unmerged remain distinct; direct owner mandate applies, pending DEC0070 text not governing accepted main. E3R1 REVIEW/E5-003 IN_PROGRESS/unmergedPR47/57/59 unchanged.
 
@@ -35,4 +37,14 @@ Actual attributable canonical taxonomy/windows/classification and complete depen
 
 ## Trace
 
-ADR009R6 -> C4.6 -> F4.6.1 -> FL4.6.1 -> T-E4-013 -> M-E4-001 -> E-DEV-072. Narrow taxonomy/windows gate remains HELD independently of rule acceptance; internal client logic E1screenHELD. Source `modules/e04-offline/internal/offline_eligibility.py`; tests `modules/e04-offline/tests/test_offline_eligibility.py`; pack `vault/PACKS/P-E4-013.md`; task `vault/REGISTRY/T-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL canonical task review/exact-head CI required before internal rule DONE, no selfPASS.
+ADR009R6 -> C4.6 -> F4.6.1 -> FL4.6.1 -> T-E4-013 -> M-E4-001 -> E-DEV-072. Narrow taxonomy/windows gate remains HELD independently of rule acceptance; internal client logic E1screenHELD. Source `modules/e04-offline/internal/offline_eligibility.py`; tests `modules/e04-offline/tests/test_offline_eligibility.py`; pack `vault/PACKS/P-E4-013.md`; task `vault/REGISTRY/T-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. At historical source freeze FULL canonical task review/exact-head CI were required before internal rule DONE, no selfPASS. Current acceptance below.
+
+## Independent full task completion receipt
+
+Separate owner-selected gpt-6-luna/max /root/pr58_snapshot_binding_review returned FULL T-E4-013 task PASS, no actionable findings, atacc77bdea437b5c19a318ca5dcc2815709959a59 over acceptedbase1f28a290d65eee9fb3944b5da9ff6a09785099c1. All13 paths and canonical acceptance reviewed. Implementation inherits highest supplied consequence, holds unknown/uncertain dependencies, preserves cached negative floors/flags monotonically, and keeps Internal Operations online-only while requiring current E3 authorization. Even coherent inputs never enable physical progression. Matrix145 taxonomy/windows, T014 recovery closure and canonical source/encryption/device/runtime proofs remain separately HELD; the FULL PASS completes the internal rule task only. Reviewer ran no tests/CI or edits/provider/writes; root's CI was not treated as semantic acceptance. No current unit failure or independent rejection; actual prior histories remain preserved.
+
+Exact-source all12 applicable CI SUCCESS: PRarchitecture37067175306 actual checks+t3-gateSUCCESS (otherduplicate37067175266), E4 37067175220 actual148PASS0.210s, E3commit37067175260/E5 37067175120/E6 37067175165/live37067175201; pusharchitecture37067158532/E4 37067158292/E3commit37067158302/E5 37067159125/E6 37067158405/live37067158354. Root11new+137accepted full148PASS0.421s/compile; build_index65/routingT013REVIEW/eligible[]; run_all12checks+42regressionsPASS0.849s/worstexit0; diffcheck/exact13paths/rawacceptedv39archiveequal/v40original401/79/alladmissions/pendingv13/v23/v25 retained. Original P-PROOF001 freshness warning unchanged.
+
+Owner direct standing mandate accepts independent delegated FULL PASS + applicable exact-head green CI + normal matched merge until revoked, acceptedDEC0069 delegation; pendinglocalplanPR4/DEC0070text is unmerged and not governing accepted main. Profile/pack ACTIVE/task DONE cover the complete internal negative-only rule acceptance, not positive physical eligibility. All decisions NONE/physical_progressionFalse; supplied risk order/flags/clock/restore/current pins are model inputs only. Actual attributable risk taxonomy/windows/classification, complete source dependencies, canonical authenticated eligibility/recall/suspension/floors/clear protocol, independently reviewed safe-stop/recovery closure, durable encrypted monotonic cache/process death/OS/device/runtime/E1 rendering remain MISSING/HELD. No TTL/production ranking/encryption/provider/source migration selected. T014 separate; T011b/T012/productE3R1 unclosed. E3R1 REVIEW/E5-003 IN_PROGRESS/unmergedPR47/57/59 unchanged.
+
+Closeout changes exactly six documentary/view paths. Source/tests/workflow/archive/inventory/manifest/CI-plan/prior proof unchanged. Separate final metadata audit and exact-final-head12CI/actualT3 are still merge gates at closeout; actual completion will be recorded in immutable final PR receipt.
