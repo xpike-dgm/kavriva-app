@@ -1,7 +1,8 @@
 """Exercise real local GoTrue signup, Auth verification and E3/E5 commit.
 
-Run only after `supabase start` has applied the repository migrations. The
-status JSON is written in a temporary CI directory and never committed.
+Run only in the disposable GitHub CI fixture after `supabase start` has applied
+the repository migrations. The status JSON must be in RUNNER_TEMP. This script
+narrows fixture PUBLIC database grants and is not a hosted or manual operator.
 """
 
 import base64
@@ -46,9 +47,26 @@ def _post(url, key, body, bearer=None):
 
 
 def main(status_path):
+    # Fence the privileged fixture setup before reading credentials or issuing
+    # HTTP/SQL. Standalone invocations and arbitrary targets fail closed.
+    try:
+        fixture_path = Path(status_path).resolve(strict=True)
+        runner_temp = Path(os.environ["RUNNER_TEMP"]).resolve(strict=True)
+        if (os.environ.get("GITHUB_ACTIONS") != "true"
+                or not fixture_path.is_relative_to(runner_temp)):
+            raise ValueError
+    except (KeyError, OSError, ValueError):
+        raise AssertionError("disposable local CI fixture required") from None
     status = json.loads(Path(status_path).read_text(encoding="utf-8"))
     api_url = status["API_URL"].rstrip("/")
     db_url = status["DB_URL"]
+    parsed = urlsplit(db_url)
+    if (api_url != "http://127.0.0.1:54321"
+            or parsed.scheme not in ("postgres", "postgresql")
+            or parsed.hostname != "127.0.0.1" or parsed.port != 54322
+            or parsed.username != "postgres" or parsed.path != "/postgres"
+            or parsed.query or parsed.fragment):
+        raise AssertionError("disposable local CI target required")
     anon_key = status["ANON_KEY"]
     email = "kavriva-" + uuid4().hex + "@example.test"
     signup = _post(api_url + "/auth/v1/signup", anon_key, {
