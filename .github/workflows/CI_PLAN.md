@@ -46,6 +46,8 @@ used_by:
   - "E-DEV-070"
   - "P-E4-011a"
   - "E-DEV-071"
+  - "P-E4-013"
+  - "E-DEV-072"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -194,3 +196,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers129units(accepted11
 ## E4 local ledger-state coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted129+8states). `modules/e04-offline/tests/test_ledger_states.py` probesexacteight/stateboundaries/noncanonicalobservations/unknownmalformed/subclasshostile/immutability/coherentacceptedforgery/constantheld. Fixtures not actual identified-operation persistence, canonical E3 acceptance/lookup, encrypted-store or device proof; T011b/T012separate. Context `vault/PACKS/P-E4-011a.md`; proof `vault/EVIDENCE/E-DEV-071.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.
+
+## E4 offline eligibility coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
