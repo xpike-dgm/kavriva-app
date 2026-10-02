@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_
 evidence: [E-DEV-035]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 

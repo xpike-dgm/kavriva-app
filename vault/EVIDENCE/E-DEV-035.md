@@ -2,14 +2,14 @@
 test_id: E-DEV-035
 contract_id_version: "ADR-015 Decision5; manual task lifecycle v1"
 subject_file: modules/e10-graph/TASK_REGISTRY_LIFECYCLE.md
-subject_digest: 3326e6fa8630734748174592d4cde4436a4a5620dd832a1d712bf270eac83e3e
-result: "BLOCKED: independent task-end assessment outstanding"
+subject_digest: 464c81521f6df24465929336ecd924025c782d2ba4ed4b8bdb6b14f69023b8ff
+result: "PASS: independent task-end review accepted canonical manual lifecycle and scope-blocking rules"
 evidence_links:
   - "[[modules/e10-graph/TASK_REGISTRY_LIFECYCLE.md]]"
   - "[[vault/PACKS/P-E10-008.md]]"
   - "[[vault/REGISTRY/T-E10-008.md]]"
-gate_verdict: "BLOCKED (review/CI outstanding; no automated lifecycle/product claim)"
-reviewer: none
+gate_verdict: "PASS (manual lifecycle/source receipts only; no automated engine/product/production closure)"
+reviewer: "independent gpt-6-luna max; /root/pr37_independent_review"
 timestamp: 2026-10-02
 purpose: Define source-bound manual task lifecycle and scope-blocking transitions
 domain: project-execution
@@ -59,3 +59,8 @@ These are documentary input/rule/result comparisons, not runtime/transition-engi
 | Edit generated index eligibility while authoritative task is REVIEW | Metadata registry/source views/current router | Nonpassing fabricated view; rebuild from actual records |
 
 Actual local validation2026-10-02: run_all exit0/all12checks/20unittest regressions;162Markdown records/135indexedIDs/33packs/31row registry and routing views generated. Ten capsule manifests/12runtime+8provision declared edges checked; all conformance/links/origin/trace/design/presence checks passed. Frozen P-PROOF-001 own-task freshness WARN retains historical scope. git diff --check clean. Existing checks remain narrower than manual lifecycle/source/actor acceptance; these source cases require independent assessment. No new test/check/workflow/operator or provider operation.
+
+
+Actual independent acceptance2026-10-02: /root/pr37_independent_review, gpt-6-luna max/forknone/separate bounded context, PASS at 9676615ed889a3ac47913d6f3d76e04b9d2d5d37 against base4c4a2c49c090601dda7d892295f275b061205ec3; no actionable findings. Reviewer compared canonical manual state/entryexit/scope/block/cancellation/CHANGES_REQUESTED/VALIDATING/source-tool limits, mapped task/actualPR36receipt, exact18changedfiles/packscope and all3old accepted snapshot blob equality. Reviewer ran no tests/checks; manual cases are not executed engine tests. Implementer actual12checks20regressions/diff/index and exact-headCI are separate gates. Accepted rule digest 3326e6fa8630734748174592d4cde4436a4a5620dd832a1d712bf270eac83e3e; accepted inventoryv3 f4b1456abd3124d8b8ddc58e681ee83d6ce2b23356afe4bd698cf4d57c0fc3f0; final status-only rule digest 464c81521f6df24465929336ecd924025c782d2ba4ed4b8bdb6b14f69023b8ff; final status-only inventory 6d888a6e60ca68a77916bdfd33f1478cf5df84aa2de6eb8eff26fbf7dc217d55. Oldproof/core/subjects/digests/heads/dates/catalog unchanged.
+
+All8exact-source-head workflowsSUCCESS: pull_request e5-current-authority-tests 36952533010, pull_request architecture-checks 36952532564, pull_request e3-commit-authorization-tests 36952532628, pull_request e3-live-auth-tests 36952532836, push architecture-checks 36952528315, push e5-current-authority-tests 36952528317, push e3-commit-authorization-tests 36952528299, push e3-live-auth-tests 36952528349. ExpectedlabelgatedT3skips for documentaryE10T2; actualindependentreviewobtained. Direct standingowner mandate accepts boundedPASS+greenCI, taskDONE/ruleACTIVE/inventoryv3RECORDED/packACTIVE for manual lifecycle/source-bound scope-blocking receipts only. Final7filemetadata/evidence/indexaudit and exactnewheadCI required before normal PR37merge; immutablefinalauditreceipt recorded inPRbodywithout recursiveproofcommits. No lifecycleengine/automaticstate/operator/publicauthority/productclosure; E3R1REVIEW/E5IN_PROGRESS/productionactivationreleaseholds remain.
