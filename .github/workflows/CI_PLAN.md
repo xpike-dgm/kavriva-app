@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E4-014"
+  - "E-DEV-073"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 recovery-closure coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers160units(accepted148+12closure). `modules/e04-offline/tests/test_recovery_closure.py` probes branches/terminal/cycle reachability, missing either recovery role, unreachable malformed graph/mappings, exact compact bytes/roles/dependency graph pin/capability/expiry/scope, strict types/extreme encoding/coherent omissions/immutability/constant HELD. Fixtures do not prove actual reviewed physical corpus/instructions/canonical eligibility/encrypted device/runtime. Context `vault/PACKS/P-E4-014.md`; proof `vault/EVIDENCE/E-DEV-073.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
