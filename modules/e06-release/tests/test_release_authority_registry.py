@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "internal"))
 from release_authority_registry import (DOMAINS, RegistryError, load_registry,
@@ -91,6 +92,19 @@ class ReleaseAuthorityRegistryTests(unittest.TestCase):
                 load(raw)
         with self.assertRaises(RegistryError):
             load(changed(lambda data: data.update(allow=True)))
+
+    def test_excessive_json_nesting_returns_bounded_parser_reason(self):
+        raw = b"[" * 10000 + b"]" * 10000
+        # Runtime parsers vary: an iterative parser may parse this invalid root
+        # array, while a recursive parser raises before schema validation.
+        with self.assertRaisesRegex(RegistryError,
+                                    "^REGISTRY_(FORMAT|VERSION_OR_SHAPE)_INVALID$"):
+            load(raw)
+
+    def test_parser_recursion_failure_translates_to_stable_registry_error(self):
+        with patch("release_authority_registry.json.loads", side_effect=RecursionError()):
+            with self.assertRaisesRegex(RegistryError, "^REGISTRY_FORMAT_INVALID$"):
+                load(snapshot())
 
     def test_unknown_domain_has_no_shared_fallback(self):
         registry = load(snapshot())

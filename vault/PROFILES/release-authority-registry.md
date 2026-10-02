@@ -44,7 +44,7 @@ Changing this reviewed taxonomy or introducing successor snapshots needs a separ
 
 ## Performed checks and actual gaps
 
-Twelve meaningful local testsPASS0.014s/compilePASS: eight distinct categories/noauthority, everyactivationHELD/OTAdenied, byte substitution, stale/wrong/bool versions, missing/additional/duplicated/unknown domains, sharedidentity/action/audit/credential/consequence, invented actualholder/key/auditproof, duplicatekeys/invalidJSON/types, nofallback, immutability/constructedtampering, equalitycallbacks and reorderedentries. There is currently no E6-specific CI job; these are performed **local E6** tests, not green E3/E5 jobs re-labelled as E6 tests. Applicable current-head CI checks remain separate.
+Fourteen meaningful updated local testsPASS (Python3.14.3:0.026s, bundledPython3.12.14:0.028s)/compilePASS: eight distinct categories/noauthority, everyactivationHELD/OTAdenied, byte substitution, stale/wrong/bool versions, missing/additional/duplicated/unknown domains, sharedidentity/action/audit/credential/consequence, invented actualholder/key/auditproof, duplicatekeys/invalidJSON/types, nofallback, immutability/constructedtampering, equalitycallbacks and reorderedentries, actual excessive nesting and controlled parser RecursionError translation. Malformed excessive nesting remains a bounded registry error on both recursive and iterative runtime parsers. There is currently no E6-specific CI job; these are performed **local E6** tests, not green E3/E5 jobs re-labelled as E6 tests. Applicable current-head CI checks remain separate.
 
 T-E6-002 per-change author/reviewer/verifier/signer/promoter alias/service collapse rules remain unimplemented; T-E6-003 exact sealed snapshot binding and later lane/trustroot/credential/audit/artifact/provenance/suspension/floor/rollback/incident controls remain MISSING/HELD. Existing logical publishing_control E3 domain metadata is not this release registry's physical backing. No source/fact/content or permission truth is inferred from this file. Registry review cannot substitute activation evidence or enable any of the eight real release actions.
 
@@ -62,7 +62,7 @@ ADR007R1/R10 and ADR003 separation → C6.1 → F6.1.1 → FL6.1.1 → T-E6-001 
 | architecture | E6 policy/E7 execution split, no new seam |
 | data/migration | Immutable metadata snapshot; no credentials/audit/runtime store/current floor |
 | release | Actual verification/signing/promotion/deploy/migration/content/config/suspension/OTA unopened |
-| product-scenario | Twelve local structural negatives; physical custody/lane proof MISSING |
+| product-scenario | Fourteen local structural negatives, including parser-depth/runtime boundary; physical custody/lane proof MISSING |
 | gap-audit | Staffing/identity/alias independence/auth/audit/provenance/generations attributed E6/E5/E3/E7; no owner debugging |
 
 Data `vault/REGISTRY/release-authorities.json`; code `modules/e06-release/internal/release_authority_registry.py`; tests `modules/e06-release/tests/test_release_authority_registry.py`; pack `vault/PACKS/P-E6-001.md`; task `vault/REGISTRY/T-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`; manifest `modules/e06-release/MANIFEST.md`; addresses `vault/INVENTORIES/E10-GOVERNED-PATHS.md`.

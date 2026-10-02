@@ -2,7 +2,7 @@
 test_id: E-DEV-054
 contract_id_version: "ADR007 R1/R10; internal logical release registry v1"
 subject_file: vault/PROFILES/release-authority-registry.md
-subject_digest: df1ca75691870d4e67e898242bb709b09b87d35a95f569b5294a150721b86bcd
+subject_digest: 1516891b209f47d0cecee1c7e393848536e7d75b032eb71491edc687b22f9d51
 result: "RECORDED: logical registry; independent review/currentCI pending"
 evidence_links:
   - "[[vault/PROFILES/release-authority-registry.md]]"
@@ -46,3 +46,15 @@ Normalized SHA256 primarydf1ca75691870d4e67e898242bb709b09b87d35a95f569b5294a150
 Ten-layer source/gap audit in profile; actual staffed separate credentials/current E5authorization/protected audit/immutable verified artifacts/E7execution/E2UI/current suspension and rollback/incident/floor/OTA activation remain MISSING/HELD. E3R1REVIEW/E5-003IN_PROGRESS/physicalprovisioning/privilegedproductionHELD unchanged. Logical registration cannot open any real release.
 
 Performed architecture preparation: run_all.py12checks/42regressionsPASS0.577s/worstexit0; buildindex49rows/routingeligibleempty/T-E6-001REVIEW/E3R1REVIEW/E5-003IN_PROGRESS; historical P-PROOF-001 warning unchanged. gitdiffcheckPASS, thirteen-path source scope. Source review/exactheadCI remain required.
+
+## Actual initial independent rejection and narrow remediation
+
+Separate /root/pr53_proposal_tag_review gpt-6-luna/max actual CHANGES_REQUESTED P2 at exact9dd5ed55a0b553b69849fa8bac594227e4540b30 over acceptedbasee7c8af8997debb493c55061fcfacec9deb5b7f5c: json.loads excessive nesting may raise RecursionError outside the UnicodeError/ValueError handler, escaping promised bounded malformed-input reason. Otherwise taxonomy/holds/digest/schema align with bounded ADR scope. Reviewer read-only, no tests/CI/provider/edits. This finding does not grant permission or imply release opening; no source PASS claimed.
+
+All eight initial exact9dd source workflows SUCCESS: PRarchitecture37007534949 actualT3SUCCESS (duplicate37007532363 green), E537007532254,E3commit37007532284,liveAuth37007532232; pusharchitecture37007476639,E537007476722,E3commit37007476667,liveAuth37007476705. Green initialCI never overrides the independent rejection. Local12tests/sourcehashes above belong to original reviewed head.
+
+Root changed only parser boundary to catch RecursionError and added actual excessive-nesting and controlled parser-failure regressions. First thirteen-test attempt failed because Python3.14.3 parsed the deeply nested root array and rejected schema with REGISTRY_VERSION_OR_SHAPE_INVALID rather than the assumed parser FORMAT error. Root corrected the test's cross-runtime expectation without weakening schema or parser rejection, and added explicit RecursionError fault injection for the translation path. Fourteen updated testsPASS0.026s on Python3.14.3 and PASS0.028s on existing bundledPython3.12.14; compilePASS. No installation/provider/actual lane operation; deep fixture size is a test probe, not an invented production size limit.
+
+Current normalized primary1516891b209f47d0cecee1c7e393848536e7d75b032eb71491edc687b22f9d51; code81c90df121d2069096c5acdad052a57a96ac05827a74b02e748843667fc236b3; unitb3ce5e89811dcd97290345577e30ed694afd114db1818a29c25a08ded8a4c7f4. Data/archive/priorproof/inventory/manifest/pack remain unchanged by this five-path correction. Task moved CHANGES_REQUESTED→narrowremediation→REVIEW; actual updated exacthead independent re-review and CI required, original rejection retained, no authorPASS/DONE or physical activation.
+
+Updated source preparation architecture12checks/42regressionsPASS0.594s/diffcheck; unchanged49-row views/taskREVIEW. Exactly five correction paths, no actual source/prior custody/registry data/inventory/manifest/pack change. Updated source must be frozen/re-reviewed and all applicable updatedheadCI green.

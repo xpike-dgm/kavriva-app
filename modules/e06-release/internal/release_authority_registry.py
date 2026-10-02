@@ -91,7 +91,7 @@ def load_registry(raw: bytes, *, expected_digest: str, expected_version: int) ->
     try:
         document = json.loads(raw.decode("utf-8"), object_pairs_hook=_pairs,
                               parse_constant=_invalid_constant)
-    except (UnicodeError, ValueError) as error:
+    except (UnicodeError, ValueError, RecursionError) as error:
         if isinstance(error, RegistryError):
             raise
         raise RegistryError("REGISTRY_FORMAT_INVALID") from None
