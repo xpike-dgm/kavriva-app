@@ -51,7 +51,7 @@ E3 canonical source completeness, authenticated E5 reviewer competence/independe
 
 ## Ten-layer trace
 
-ADR003R1 / ADR001 canonical authority Ã¢â€ â€™ C6.2 Ã¢â€ â€™ F6.2.1 Ã¢â€ â€™ FL6.2.1 Ã¢â€ â€™ T-E6-003 Ã¢â€ â€™ M-E6-001 internal snapshot binding Ã¢â€ â€™ E-DEV-056.
+ADR003R1 / ADR001 canonical authority → C6.2 → F6.2.1 → FL6.2.1 → T-E6-003 → M-E6-001 internal snapshot binding → E-DEV-056.
 
 | Layer | Actual boundary |
 |---|---|

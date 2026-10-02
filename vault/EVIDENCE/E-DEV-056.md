@@ -2,7 +2,7 @@
 test_id: E-DEV-056
 contract_id_version: "ADR003 R1; internal exact snapshot/review binding v1"
 subject_file: vault/PROFILES/immutable-snapshot-binding.md
-subject_digest: 233ab577d3191f7efa72856b42075a3c142211cfae47a8b6b9d9977bd78a9fb1
+subject_digest: e2adb2c09abf96b7bfe78ee80897d141466bd1e970547fc68d25b490847f6915
 result: "RECORDED: internal exact binding; independent review/current CI pending"
 evidence_links:
   - "[[vault/PROFILES/immutable-snapshot-binding.md]]"
@@ -41,7 +41,7 @@ Pure internal immutable packet/review binding hashes every exact supplied byte/i
 
 Fifteen new meaningful snapshot tests plus fourteen accepted registry/parser regressions, full local E6 29 PASS0.034s/compile PASS. New E6 workflow independently installed with existing reviewed pin/read-only content/no persisted checkout token/no dependency/provider installation, generic E6 policy step. It tests registry plus snapshot, not absent unmerged role code; current-head hosted CI pending. No actual identity/customer/provider/artifact generation/release operation.
 
-Normalized SHA256 primary 233ab577d3191f7efa72856b42075a3c142211cfae47a8b6b9d9977bd78a9fb1; code ff2bf2ef148ea4dbda06182385e75ed92009319398b66f480ec821e19e119552; unit 148e059bd2e3d62dd9c95047fc69a488b386c90bdfdb1ff23aa2d92d92c2dab6; workflow 5be387f673caff706efad626b72e7bbdc19ccc4e3ecd09d21819029071991c3c. Exact accepted PR56 inventory v22 raw snapshot byte-equal, normalized e18e2d6d8749475544145610d61db8a92cf72329600588adbeb566d9fd037386. Accepted EDEV054 primary/core/digests/reviewer/verdict/rejection/fix/head/check history unchanged except actual consumer/secondary custody append. Inventory successor v24 preserves accepted catalog/admissions and explicitly reserves unmerged PR57v23/E055 plus PR47v13/E045, without treating either as accepted proof. Architecture/graph/diff/freeze/current CI/separate review outstanding.
+Normalized SHA256 primary e2adb2c09abf96b7bfe78ee80897d141466bd1e970547fc68d25b490847f6915; code ff2bf2ef148ea4dbda06182385e75ed92009319398b66f480ec821e19e119552; unit 148e059bd2e3d62dd9c95047fc69a488b386c90bdfdb1ff23aa2d92d92c2dab6; workflow 5be387f673caff706efad626b72e7bbdc19ccc4e3ecd09d21819029071991c3c. Exact accepted PR56 inventory v22 raw snapshot byte-equal, normalized e18e2d6d8749475544145610d61db8a92cf72329600588adbeb566d9fd037386. Accepted EDEV054 primary/core/digests/reviewer/verdict/rejection/fix/head/check history unchanged except actual consumer/secondary custody append. Inventory successor v24 preserves accepted catalog/admissions and explicitly reserves unmerged PR57v23/E055 plus PR47v13/E045, without treating either as accepted proof. Architecture/graph/diff/freeze/current CI/separate review outstanding.
 
 Ten-layer source/gap audit in profile. Actual canonical completeness/classification/reviewer authentication/competence/current policy/session/authorization/role independence/protected audit/durable history/transaction/currentness/floors/guarded publication/E7 lane/E2UI/consumer/production remain MISSING/HELD. E3R1 REVIEW/E5-003 IN_PROGRESS/PR57 role task incomplete/PR47 provisioning/privileged activation unchanged. No author PASS or production activation.
 
@@ -53,3 +53,5 @@ Frozen original source a6938675fbe64ed92fef9d35f3c7e1c6f558b83a: independent rev
 Corrected preparation: run_all twelve checks and 42 regressions PASS0.423s/worst exit0; git diff --check PASS. Historical P-PROOF-001 warning unchanged.
 
 Corrected source ae968724578fb5036dcb9fa2777294f5720152e7 independent re-review closed the logic finding but finalized CHANGES_REQUESTED P3 for UTF-8 documentation corruption (scope/rationale code/tests unaffected). Restored exact original trace arrows and heading em dash using strict UTF-8 reads, preserving original wording; updated primary digest. Only profile/evidence change; new frozen source re-review/current-head CI still required.
+
+The first restoration aef65ef1fbc9944b23e86fd94adfdbedc0330d0a restored the heading only: trace arrows had been encoded twice and did not match the single-encoding replacement. Replaced the complete trace line with its exact original Git UTF-8 bytes; strict decoded comparison confirms the repair. No code/tests change.
