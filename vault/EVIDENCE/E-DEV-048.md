@@ -2,7 +2,7 @@
 test_id: E-DEV-048
 contract_id_version: "ADR-004 Decision3; C5.3/F5.3.1/FL5.3.1; method specification v1"
 subject_file: vault/PROFILES/privileged-login-method.md
-subject_digest: e0e8c4b81224cb12e4fab6f826364c959ce6b822f0368fa0ea209152f557ae55
+subject_digest: c4608a892d511f520f8612b388c8137523e338d4ab3027d64c9165f27166bfeb
 result: "RECORDED: source specification comparison; independent review and current CI outstanding"
 evidence_links:
   - "[[vault/PROFILES/privileged-login-method.md]]"
@@ -40,3 +40,6 @@ Main plan pinfa914f013fdcd032faed876689092da245989459; local standing-mandate re
 ## Performed preparation checks
 
 Root run_all12 architecture checks/42 existing record-preservation/identity/trace regressions PASS0.996s, exit0; regenerated43 actual task rows, T007aREVIEW/E3R1REVIEW/E5-003IN_PROGRESS, no eligible state invented. Exact acceptedPR49 inventoryv15 archive matches raw git show0a901089:inventory byte-for-byte. Source walkthroughs compare method/class/authority/lifecycle/heldcomposition/stepup-session-recoveryhandoff; no authenticator/browser/IdP/session/credential experiment. Official W3C/NIST URLs in primary were checked2026-10-02; only primary technical sources used. Independent source review and latestCI pending; no authorPASS/productactivation.
+
+
+Root pre-review scope clarification: require an authenticated protected channel and controlled secure origins, reject client-selected verifier/insecure transport downgrade. Dated NIST verifier-name-binding source explicitly requires protected channel; no concrete TLS/domain/provider/configuration or numeric policy selected. Sourcecfd5a88 all8 workflows SUCCESS includinglabelledT3, but narrower new-head CI and actual independent review required. Current primary normalized digest c4608a892d511f520f8612b388c8137523e338d4ab3027d64c9165f27166bfeb. No previous independent verdict is claimed; taskREVIEW and operationalholds remain.
