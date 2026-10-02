@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E5-LOCAL-001]
-used_by: [V-E5-LOCAL-001, P-E5-001, T-E5-001]
+used_by: [V-E5-LOCAL-001, P-E5-001, T-E5-001, P-E5-007a, E-DEV-048]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -47,3 +47,8 @@ Root run_all.py passed all12 architecture checks and42 existing preservation/ide
 Actual independent /root/pr49_account_light_review gpt-6-luna/max T3 bounded source PASS frozen ca136d697317a28f61a4eab3bc2ba9bdfd343d38 over3f016aa6cca70ff48cb2837e1da242264a0a073d, no source findings. Reviewer inspected all10paths/all14packfields, pinned ADR004/capability/feature/flow/acceptance-review rows, AC-ID14/17/19, profile design constraints, module boundaries/tenclosurelayers/existingpublicprincipal. No forcedaccount/anonymoussignup, optionalprofile/migrationhandoff/sourcepreservation/quarantine and missinglocalcryptomechanism align; public/internalcode unchanged. Recomputed primary source digest 361494fb2f346434f41a8f9ef46a5c55e24d2378e567b34ba789f6da2cc05565; exact archivedv14 inventory Gitblob matchesbase8accd454 prefix and recordednormalizeddigest, originalEDEV046proofcore/catalog/prioradmissions/PR47reservation retained. Reviewer ran no tests/CI/app/device/provider/account operations; root checks distinct. Earlier reviewer-none/BLOCKED is the source-head provisional receipt, retained in Git history and not erased evidence of selfapproval.
 
 All8 actual ca136 source workflows SUCCESS: PRarchitecture36989010616 (labelledT3 PASS; earlierunlabelledarchitecture36988927948 alsoSUCCESS), E336988928029, E536988928006, Auth36988928011; pusharchitecture36988879084, E336988879129, E536988879112, Auth36988879122. Standing DEC0070 accepts this identified boundedT3verdict aftergreenCI. Primary/packACTIVE/T001DONE/views42rows; no product/device/provider/activationproof. Final status-only subject normalizedSHA256 77763d255e53a9991f5d39ac4ffdd08e66d5162977348a56dac0ed849ff42c07. Final six-path metadata/evidence/views independentaudit and all8 latest-headCI required before normalmerge; final immutable receipt in PRbody. E3R1REVIEW/E5-003IN_PROGRESS/productionrelease/liveprovisioningHELD remain.
+
+
+## T-E5-007a secondary inventory custody
+
+Exact accepted PR49 merge 0a90108921be46319fc20fc4992e999964491677 inventoryv15 raw payload preserved before admissionv16 at `vault/EVIDENCE/SNAPSHOTS/E-DEV-047-E10-GOVERNED-PATHS.md.snapshot`, normalizedSHA256 287f1d17820f4990a4094fe08fbb0dfa556fd4f3f29cc933d2e3c169c3d80d52. Original primary subject/digest/verdict/reviewer/heads/date/core unchanged. Documentary consumer metadata and secondary custody only, not currentinventory or privilegedlogin approval. Context `vault/PACKS/P-E5-007a.md`; proof `vault/EVIDENCE/E-DEV-048.md`.
