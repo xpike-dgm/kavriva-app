@@ -16,7 +16,7 @@ depends_on: [M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-017, T-E5-017, E-DEV-050]
 evidence: [E-DEV-050]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Quarantine processing policy v1
