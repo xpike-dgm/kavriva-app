@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_hold_transfer.py, modules/e10-graph/check
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-HOLD-001]
-used_by: [V-E4-HOLD-001, P-E4-010, T-E4-010]
+used_by: [V-E4-HOLD-001, P-E4-010, T-E4-010, P-E4-011a, E-DEV-071]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -76,3 +76,7 @@ DirectstandingownerDEC0069/0070 mandate accepts independentFULLdelegatedtaskPASS
 Historicalreviewedprimary 5dc1c487bf3e5ed35ddefbd818dd6e91dadd5c67ed3fc72478120d207aa07148 preserved; currentACTIVEprimary fdbe0787cca08359f84cb967e1ded30e2b8119136ef4d943dbd9af13d02a50a1. No sourcefailure/rejection/currentunitfailure; no actualcapacity/cleanup/transfer/deviceproof inferred.
 
 Final six-file metadata verification: build_index63/routingT010DONE/eligible[]; run_all12checksPASS+42regressionsPASS0.783s/worstexit0; diffcheckPASS/exactsixpaths. OriginalP-PROOF001warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-011a consumption
+
+PR72finald567372f82a6f952bde7fdaa469435a2a0a4f9ec separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37063882507/E4CI129PASS0.184s. Normalmatchedmerge1060c9b7ed1f6cd246da36cf4e6cc9cf0995b16a verified2026-10-02T21:00:53Z. Source4dbeac9/FULLtaskPASS/primary/digests/reviewer/history retained. Inventoryv38rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-070-E10-GOVERNED-PATHS.md.snapshot`; consumers `vault/PACKS/P-E4-011a.md` / `vault/EVIDENCE/E-DEV-071.md`. InternalheldtransferDONE/actualcapacitycleanuptransfer/deviceHELD.
