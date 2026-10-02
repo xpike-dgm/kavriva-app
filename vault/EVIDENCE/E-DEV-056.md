@@ -33,7 +33,7 @@ supersedes: []
 status: RECORDED
 ---
 
-# E-DEV-056 â€” immutable snapshot binding
+# E-DEV-056 — immutable snapshot binding
 
 Root compared canonical task/review and shared fenced-control gate matrix/dependency graph, ADR003R1/R2/R4/R8/ADR001 authority boundary, installed E6/E3/E5 manifests/release-promotion/registry, pack/protocol/rules/boundaries/validation/closure/owner-status/CI plan and existing immutable checkout pin. Fourteen-path/fourteen-field pack before code; accepted app base a9cb2060f57ab3456c0ce6f226c163380025154e, plan main fa914f013fdcd032faed876689092da245989459/direct standing mandate; pending plan PR4 unmerged. PR57 role task is an incomplete independent draft, not a prerequisite or accepted source; its code is not included.
 
@@ -51,3 +51,5 @@ Performed architecture preparation: run_all twelve checks and 42 regressions PAS
 
 Frozen original source a6938675fbe64ed92fef9d35f3c7e1c6f558b83a: independent reviewer first messaged bounded PASS, then finalized CHANGES_REQUESTED after examining same-ID mutable scope/rationale referents. This final verdict supersedes that initial message. One finding: plain reference labels bound no revision/digest. Root corrected both contexts to immutable Reference values, validated exact types before comparisons and hashed ID/revision/digest. Added same-ID revision/digest mutations plus malformed string/boolean/digest negative cases. Corrected full E6 30 PASS0.036s/compile PASS. Previous 29-test result belongs to original source only. No live identities, authenticated producer, actual approval or publication effect; structural fixture scope unchanged. Five-file correction; new frozen source/current CI/re-review outstanding.
 Corrected preparation: run_all twelve checks and 42 regressions PASS0.423s/worst exit0; git diff --check PASS. Historical P-PROOF-001 warning unchanged.
+
+Corrected source ae968724578fb5036dcb9fa2777294f5720152e7 independent re-review closed the logic finding but finalized CHANGES_REQUESTED P3 for UTF-8 documentation corruption (scope/rationale code/tests unaffected). Restored exact original trace arrows and heading em dash using strict UTF-8 reads, preserving original wording; updated primary digest. Only profile/evidence change; new frozen source re-review/current-head CI still required.
