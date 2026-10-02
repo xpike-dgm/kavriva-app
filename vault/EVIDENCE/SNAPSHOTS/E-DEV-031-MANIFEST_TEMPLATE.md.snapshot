@@ -19,9 +19,6 @@ used_by:
   - "P-E10-004"
   - "T-E10-004"
   - "E-DEV-031"
-  - "V-E10-DIR-001"
-  - "P-E10-005"
-  - "E-DEV-032"
 implements:
   - "ADR-015 Decision3 record registration"
   - "ADR-015 Decisions1-2; C10.2; F10.2.1"
@@ -30,7 +27,6 @@ internal_scope: "Capsule declaration authoring template; original reservation/cu
 tasks:
   - "T-E10-001"
   - "T-E10-004"
-  - "T-E10-005"
 tests:
   - "modules/e10-graph/checks/check_manifests.py"
   - "modules/e10-graph/checks/check_identity.py"
@@ -155,5 +151,3 @@ Current record last_verified records actual T004 template verification; earlier 
 Task: `vault/REGISTRY/T-E10-004.md`; pack: `vault/PACKS/P-E10-004.md`; actual validation/review proof: `vault/EVIDENCE/E-DEV-031.md`.
 
 Independent acceptance2026-10-02: /root/pr33_independent_review, gpt-6-luna max, PASS at 4afa9d2aea3c45c982ce6b6d2e873d04ac2917ba after canonical seven-field/16key/form/preservation/consumer review, usability clarification verification, required checks and exact-head applicable CI. No open findings. Owner standing mandate accepts reusable template scope only. Final metadata/status/evidence/index audit and exact new-head CI required before normal PR33 merge; immutable final receipt belongs to PR33. No instantiated capsule/product/semantic graph/production completion.
-
-T-E10-005 documentary maintenance adds actual V-E10-DIR-001/P-E10-005/E-DEV-032 policy/mandatory-pack/evidence consumers and T005 task trace. Meaning/version/original proof unchanged; prior approved primary subjects and verdicts/digests retained at exact archives. No broadened runtime permission or historical freshness claim.

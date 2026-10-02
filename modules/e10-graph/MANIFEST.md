@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004]
+tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -114,3 +114,7 @@ E-DEV-030 is also an actual documentary source-reference consumer for this task;
 ## Capsule template follow-up (T-E10-004)
 
 Governed template: `templates/MANIFEST_TEMPLATE.md`, stable D-APP-DOC-003, explicit current full form after preserved bootstrap stub. Earlier consumer sets above are task-stage history. Current used_by is the prior T003b set plus actual D-APP-DOC-003/P-E10-004/E-DEV-031 documentary consumers. T004 tasks entry records actual custody/path maintenance. Original installed/product last_verified remains unchanged; no live module or runtime boundary change. PR32 accepted/finally audited/CI green before merge d9dc9441620b3255f5ecc6963d9b5c0cb791b23b; detectors remain specified-only.
+
+## Dependency policy follow-up (T-E10-005)
+
+Governed address: `modules/e10-graph/DEPENDENCY_DIRECTION_RULES.md`. Previous task-stage consumer sets above are preserved history. Current used_by is that prior T004 set plus actual V-E10-DIR-001/P-E10-005/E-DEV-032 policy/mandatory-pack/evidence consumers. T005 maintenance-task provenance is explicit; original installed/product last_verified remains unchanged. PR33 final audit/green CI completed before merge422235b; policy changes no runtime seam or complete gate-coverage claim.
