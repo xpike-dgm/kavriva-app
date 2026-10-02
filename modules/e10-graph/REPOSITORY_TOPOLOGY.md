@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [D-APP-DOC-003, V-E10-REL-001, V-E10-STRUCT-001, I-E10-PATHS-001, D-APP-DOC-017]
-used_by: [P-E10-006, T-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036]
+used_by: [P-E10-006, T-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037]
 implements: [ADR-015, C10.2, F10.2.1, R-001, R-002, R-004, R-010]
 public_contracts: []
 internal_scope: repository-topology-and-record-custody
-tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009]
+tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_orphans.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []

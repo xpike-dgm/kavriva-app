@@ -1,16 +1,16 @@
 ---
 inventory_id: I-E10-PATHS-001
-version: 5
+version: 4
 purpose: Inventory governed tracked repository addresses and their documentary custody anchors
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [M-E1-001, M-E2-001, M-E3-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, M-E10-001, D-APP-DOC-017]
-used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037]
+used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036]
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: tracked-path-custody-receipt
-tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010]
+tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
@@ -570,22 +570,3 @@ Earlier immutable401file/79folder/rawcatalog and v1-v3 admission/history retain 
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-035-E10-GOVERNED-PATHS.md.snapshot` | E-DEV-035 exact accepted subject payload custody, no new active identity |
 
 Task: `vault/REGISTRY/T-E10-009.md`; pack: `vault/PACKS/P-E10-009.md`; proof: `vault/EVIDENCE/E-DEV-036.md`. No new folder/source movement/product owner/authority or runtime change.
-
-
-## Admission delta v5 (T-E10-010)
-
-Original immutable401files/79folders/rawcatalog and all previous admission history retain their scope. Seven new audit/method/report/task/tool/test records or capsule-anchored files plus two exact accepted payloads occupy existing folders; no move/new folder/product owner or authority. Accepted v4 payload: `vault/EVIDENCE/SNAPSHOTS/E-DEV-036-E10-GOVERNED-PATHS.md.snapshot`. Current-byte/product proof not inferred from old base hashes.
-
-| New path | Actual anchor/purpose |
-|---|---|
-| `modules/e10-graph/TRACEABILITY_AUDIT.md` | create bounded actual traceability-audit method and source limitations; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/INVENTORIES/E10-CLOSURE-AUDIT.md` | create immutable-source audit observation and executed removal/all-DONE document drill results; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/PACKS/P-E10-010.md` | create explicit minimum sufficient fourteen-field task context; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/REGISTRY/T-E10-010.md` | create exact mapped task/claim/history/evidence status; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/EVIDENCE/E-DEV-037.md` | create exact current subject-bound review/check evidence without author PASS; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `modules/e10-graph/internal/traceability_audit.py` | implement pure declared-document trace/gap analysis and read-only pinned-Git audit CLI; no provider/runtime/automatic gate; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `modules/e10-graph/tests/test_traceability_audit.py` | add meaningful task-removal/orphan/chain/owner/all-DONE/missing-layer regression tests to existing discovery; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-036-CLOSURE_MATRIX_TEMPLATE.md.snapshot` | preserve exact accepted PR38raw Git subject payload without new active identity; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-036-E10-GOVERNED-PATHS.md.snapshot` | preserve exact accepted PR38raw Git subject payload without new active identity; governed by actual T-E10-010/E10capsule or exact old EDEV036subject custody |
-
-Pack: `vault/PACKS/P-E10-010.md`; task: `vault/REGISTRY/T-E10-010.md`; proof: `vault/EVIDENCE/E-DEV-037.md`. Address admission does not close actual product gaps.

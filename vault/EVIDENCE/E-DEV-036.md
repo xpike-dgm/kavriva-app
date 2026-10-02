@@ -1,7 +1,7 @@
 ---
 test_id: E-DEV-036
 contract_id_version: "ADR-015 Decision6; ten-layer closure authoring shape v1"
-subject_file: templates/CLOSURE_MATRIX_TEMPLATE.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-036-CLOSURE_MATRIX_TEMPLATE.md.snapshot
 subject_digest: 26048ecb2ef4aa284127635f944cae43ea95db412473cd1a68b9a58e13f1eed9
 result: "PASS: independent task-end review accepted ten-layer and bidirectional authoring scaffold"
 evidence_links:
@@ -20,12 +20,12 @@ owner: E10
 implements: [ADR-015, C10.4, F10.4.1, R-013, R-014]
 public_contracts: []
 internal_scope: closure-matrix-authoring-shape
-tasks: [T-E10-009]
+tasks: [T-E10-009, T-E10-010]
 tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E10-CLOSE-001]
-used_by: [V-E10-CLOSE-001, P-E10-009, T-E10-009]
+used_by: [V-E10-CLOSE-001, P-E10-009, T-E10-009, P-E10-010, E-DEV-037]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -52,3 +52,6 @@ All8exact-source-head workflowsSUCCESS: pull_request architecture-checks 3695483
 
 
 Final metadata review2026-10-02 at b77869e81fc2a91a02041a94573fdbc8cda80e90: independent /root/pr38_independent_review CHANGES_REQUESTED single inaccurate reviewer-action sentence. Corrected to explicitly record reviewer ran no checks/tests and performed manual source/plan/diff/blob/digest inspection only; implementer checks/CI separate. No other metadata findings; exact corrected-final-head narrow audit and green CI required before merge. Source PASS at eefebab unchanged, template digest/status and oldproof/snapshots/inventory unchanged.
+
+
+T010custody continuation2026-10-02: exact accepted PR38finala97a71f568466a3a8e54233a39bdb25576ba277f primary at `vault/EVIDENCE/SNAPSHOTS/E-DEV-036-CLOSURE_MATRIX_TEMPLATE.md.snapshot` digest26048ecb2ef4aa284127635f944cae43ea95db412473cd1a68b9a58e13f1eed9, secondary inventoryv4 at `vault/EVIDENCE/SNAPSHOTS/E-DEV-036-E10-GOVERNED-PATHS.md.snapshot` digest298ad60290bd8d55f8c3c9276c13a13aaee8beb26721e7dc8cdf792718997c06. Exact raw Git blobs archived before actual documentary consumer/admission edits. Old core/result/verdict/reviewer/date/head/digests/scope retained, no borrowing earlier approval of new bytes.

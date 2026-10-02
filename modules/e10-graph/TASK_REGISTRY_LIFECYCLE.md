@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [D-APP-DOC-004, V-E10-NODE-001, V-E10-REL-001, M-E10-001, V-E10-TOPO-001, I-E10-PATHS-001, task-pack]
-used_by: [P-E10-008, T-E10-008, E-DEV-035, P-E10-009, E-DEV-036]
+used_by: [P-E10-008, T-E10-008, E-DEV-035, P-E10-009, E-DEV-036, P-E10-010, E-DEV-037]
 implements: [ADR-015, C10.3, F10.3.1, R-006, R-007, R-009, R-010]
 public_contracts: []
 internal_scope: manual-registry-lifecycle
-tasks: [T-E10-008, T-E10-009]
+tasks: [T-E10-008, T-E10-009, T-E10-010]
 tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_conformance.py]
 evidence: [E-DEV-035]
 supersedes: []
