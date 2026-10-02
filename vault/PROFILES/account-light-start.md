@@ -16,7 +16,7 @@ depends_on: [M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-001, T-E5-001, E-DEV-047]
 evidence: [E-DEV-047]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Account-light start procedure v1
