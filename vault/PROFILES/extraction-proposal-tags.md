@@ -16,7 +16,7 @@ depends_on: [V-E5-INGEST-001, M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-020, T-E5-020, E-DEV-051]
 evidence: [E-DEV-051]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # AI/OCR proposal-only tagging v1

@@ -2,8 +2,8 @@
 test_id: E-DEV-051
 contract_id_version: "ADR004 R9; ADR014 assistance boundary; internal tags v1"
 subject_file: vault/PROFILES/extraction-proposal-tags.md
-subject_digest: 360fceb6db9f4b77d658e513a3d944a934948bfd597ad1fe2ac7b77c04a87059
-result: "RECORDED: P2 changes requested at1f8c832; corrected source awaiting independent re-review/current CI"
+subject_digest: 3b4698f2858f84b4b8222651e9085d8c5a6ab06bf621f5edc58b2a33698a2658
+result: "PASS: independent corrected proposal-tagging review; actual product extraction missing"
 evidence_links:
   - "[[vault/PROFILES/extraction-proposal-tags.md]]"
   - "[[vault/PACKS/P-E5-020.md]]"
@@ -11,8 +11,8 @@ evidence_links:
   - "[[vault/EVIDENCE/SNAPSHOTS/E-DEV-050-E10-GOVERNED-PATHS.md.snapshot]]"
   - modules/e05-identity/internal/proposal_tags.py
   - modules/e05-identity/tests/test_proposal_tags.py
-gate_verdict: "BLOCKED (independent review/current CI missing; real product extraction HELD)"
-reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial CHANGES_REQUESTED, re-review pending)
+gate_verdict: "PASS (bounded internal tagging; final audit/latestCI required; actual extraction/activation HELD)"
+reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial CHANGES_REQUESTED, corrected re-review PASS)
 timestamp: 2026-10-02
 purpose: Tag AI and OCR extraction results as provenance-linked proposals only
 domain: project-execution
@@ -51,3 +51,13 @@ Actual independent /root/pr53_proposal_tag_review gpt-6-luna/max CHANGES_REQUEST
 Root replaced free-text reason with finite typed outcome-matched codes and no diagnostic field, reject raw strings/payload/reason-outcome mismatch. Added two meaningful smuggling/mismatch/outage regressions. Current13proposal testsPASS0.057s/compilePASS; corrected profile normalizedSHA256 360fceb6db9f4b77d658e513a3d944a934948bfd597ad1fe2ac7b77c04a87059, code 024d4946a1df904702aaad24c4571cee85cdaf65ac0c4e4726802585782b777b, tests bac0184f25a00d6620a993c32df6b5ed82383b464a2f89df26f07ff1b02f4a93. Prior acceptedEDEV050/inventory/archive/manifest/sourcepolicy remain unchanged by remediation. Architecture/graph/diff/frozen correctedhead and actualindependentre-review/latestCI required before any bounded acceptance. No authorPASS/currentCIclaim or actualmodel/production proof.
 
 Corrected preparation architecture12checks42regressionsPASS0.505s/generated46rows/diffcheck; statusREVIEW and operationalholds retained. Rejected1f8c832source all8 workflowsSUCCESS: labelledPRarchitecture36996493037 (earlierunlabelled36996470404SUCCESS), E3live36996470323,E536996470457,Auth36996470157; pusharchitecture36996461477,E3live36996461442,E536996461598,Auth36996461465. Those green checks did not close independentP2 and do not substitute corrected-head CI or re-review.
+
+## Actual corrected-source independent acceptance
+
+Independent /root/pr53_proposal_tag_review gpt-6-luna/max re-review PASS at exact39ff485becaa4c20f7a50b8bc5b2a5a1f6b52e5f over accepted50aade7f5c606c30dd56068d93cd9edf49d32706. The P2 is closed: finite typed Reason, raw-string/payload rejection, outcome compatibility before construction, meaningful failure smuggling/safe repr/mismatch/provider-outage regressions. Reviewer checked corrected source/code/test/profile hashes, cumulative twelve authorized paths, six-path remediation and preserved initial rejection. Read-only review, no tests/CI/provider operations/edits; external untracked vault/.obsidian/ untouched. All fixture/producer/product/isolation/authority limitations remain explicit. Initial CHANGES_REQUESTED remains above and in Git history, never retroactively PASS.
+
+All eight actual exact39ff workflows SUCCESS: PR architecture36997782659 (T3 gate SUCCESS), E3live36997782567, E536997782642, Auth36997782636; push architecture36997776438, E3live36997776463, E536997776530, Auth36997776369. Root fetched exact-source E5 CI log:38testsPASS1.345s including13proposal tests. Root's corrected13unitPASS0.057s/compile and architecture12+42PASS0.505s are recorded above. Source profile digest360fceb6db9f4b77d658e513a3d944a934948bfd597ad1fe2ac7b77c04a87059; source code/test hashes above unchanged by closeout.
+
+Direct standing owner DEC0070 accepts bounded independent PASS after green CI; pending planPR4 is not merged. Primary status-only ACTIVE, pack ACTIVE, T020 DONE internal proposal tagging only; current profile normalizedSHA256 3b4698f2858f84b4b8222651e9085d8c5a6ab06bf621f5edc58b2a33698a2658. Generated views retain46actualrows and predecessor/product holds. Final six-path metadata audit/latest-head CI remain separate gates; immutable final receipt in PR body. Actual AI/OCR extraction, authenticated canonical source/producer/run, data boundary/privacy/isolation/human review/current-effect authorization remain MISSING/HELD. E3R1 REVIEW/E5-003 IN_PROGRESS/provisioning/privileged production unchanged. No model/provider/account/billing/deployment/production operation or automatic approval.
+
+Performed closeout root architecture12checks/42regressionsPASS0.449s, generated46rows/T020boundedDONE, diffcheckPASS; historical P-PROOF-001 warning unchanged. Exactly six metadata/view paths changed after independently accepted39ff; code/tests/prior evidence custody/inventory/manifest unchanged. Final reviewer audit and exact latest-head eight CI runs remain outstanding here and will be recorded immutably in the PR body before normal merge.
