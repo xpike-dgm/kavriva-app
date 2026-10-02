@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_eviction_order.py, modules/e10-graph/chec
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-EVICTION-001]
-used_by: [V-E4-EVICTION-001, P-E4-009a, T-E4-009a]
+used_by: [V-E4-EVICTION-001, P-E4-009a, T-E4-009a, P-E4-009b, E-DEV-069]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -72,3 +72,7 @@ DirectstandingownerDEC0069/0070 mandate accepts independentFULLdelegatedtaskPASS
 Historicalreviewedprimary 3c2486cb3d52ba84812b8e64f64c7b1f4c152e75cddb4a73cd3e1bcd55c4c480 preserved; currentACTIVEprimary 03b82292b99cd08370f16a4b9eb69905164506c44cf5c7ae0d999e298ad2478b. ActualinitialtestFAIL/fix/PASS retained; no independentsource rejection or actualcleanup/deviceproof inferred.
 
 Final six-file metadata verification: build_index61/routingT009aDONE/eligible[]; run_all12checksPASS+42regressionsPASS0.435s/worstexit0; diffcheckPASS/exactsixpaths. OriginalP-PROOF001warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-009b consumption
+
+PR70final6f10ae3c7c88f0f8a83d5b2946f266dc22ca0406 separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37045542209/E4CI107PASS0.161s. Normalmatchedmergeacf2809df8e0c1a41caada3fe55388e212ec3181 verified2026-10-02T18:12:35Z. Sourced193ab1/FULLtaskPASS/primary/digests/reviewer/history retained. Inventoryv36rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-068-E10-GOVERNED-PATHS.md.snapshot`; consumers `vault/PACKS/P-E4-009b.md` / `vault/EVIDENCE/E-DEV-069.md`. InternalorderingruleDONE/actualclassificationstoragecleanup/deviceHELD.
