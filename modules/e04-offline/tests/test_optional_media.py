@@ -142,6 +142,11 @@ class OptionalMediaTests(unittest.TestCase):
             self.assertEqual(production_gate(request).reason, "HELD_CANONICAL_OPTIONAL_SOURCE_AND_RUNTIME_MISSING")
         self.assertEqual(touched, [])
 
+    def test_unrepresentable_declared_size_has_finite_error(self):
+        # Serializer stress fixture, never a production byte-size policy limit.
+        with self.assertRaisesRegex(InvalidComposition, "^OPTIONAL_SPEC_ENCODING_FAILED$"):
+            self.prepare(size=10 ** 5000)
+
 
 if __name__ == "__main__":
     unittest.main()

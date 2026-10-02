@@ -63,7 +63,11 @@ def spec_digest(spec):
     fields = ((scope.motorcycle_id, scope.task_id, scope.release_id, scope.generation),
               spec.core_digest, (ref.object_id, ref.revision, ref.digest),
               spec.declared_bytes, spec.classification)
-    return sha256(json.dumps(fields, separators=(",", ":"), ensure_ascii=True).encode("ascii")).hexdigest()
+    try:
+        encoded = json.dumps(fields, separators=(",", ":"), ensure_ascii=True).encode("ascii")
+    except (ValueError, TypeError, OverflowError, RecursionError):
+        raise InvalidComposition("OPTIONAL_SPEC_ENCODING_FAILED") from None
+    return sha256(encoded).hexdigest()
 
 
 def _request(request, spec):
