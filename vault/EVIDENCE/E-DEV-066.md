@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_required_auto_transfer.py, modules/e10-gr
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-AUTO-001]
-used_by: [V-E4-AUTO-001, P-E4-007, T-E4-007]
+used_by: [V-E4-AUTO-001, P-E4-007, T-E4-007, P-E4-008, E-DEV-067]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -65,3 +65,7 @@ OwnerdirectstandingDEC0069/0070 accepts FULLdelegatedtaskPASS/normalmatchedheadm
 Reviewed source primary 3b3caefdb9092743b6c9b56f4f59ece3c7f248c6a4cf8abb9f52c1c426045c30 preserved as historicalreview digest; current ACTIVE primary 35781478deb9149b8b5ffd9341e8304fa1d7a90be657a0b0b4a58693ddcfa36e. No prior sourcefailure/rejection; no actualauto-transfer or runtime proof inferred.
 
 Final six-file metadata verification: build_index59/routingT007DONE/eligible[]; run_all12checks+42regressionsPASS1.107s/worstexit0; gitdiffcheckPASS/exactsixpaths. OriginalP-PROOF001warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-008 consumption
+
+PR68final1e920289ad2512bbd6606ea2135e9531bfc77759 separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37042281962/E4CI84PASS0.053s. Normal matchedheadmerge05e739a5276a30a5d128338b8d03211026fd63cd verified2026-10-02T17:43:04Z. Source4a8a41f/fulltaskPASS/primary/digests/reviewer/no-rejection/history retained. Inventoryv34rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-066-E10-GOVERNED-PATHS.md.snapshot`; consumers `vault/PACKS/P-E4-008.md` / `vault/EVIDENCE/E-DEV-067.md`. InternalschedulingruleDONE, actualsource/OS/transfer/store/runtime/deviceHELD.
