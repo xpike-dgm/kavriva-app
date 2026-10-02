@@ -2,8 +2,8 @@
 test_id: E-DEV-032
 contract_id_version: "ADR-015 Decision4; dependency direction policy v1"
 subject_file: modules/e10-graph/DEPENDENCY_DIRECTION_RULES.md
-subject_digest: d4d2d7a183c996960aecfbad5dabee63fcb600fd19389d4dd03eaca716cb5846
-result: "UNVERIFIED: independent task review and exact-head CI outstanding"
+subject_digest: 9f161aab14fb79f7de6f1930cad1322939b27ea51a679b08885d02c9b2c381b2
+result: "PASS: independent review accepted toward-stability and no-silent-import rules"
 evidence_links:
   - "[[modules/e10-graph/DEPENDENCY_DIRECTION_RULES.md]]"
   - "[[vault/PACKS/P-E10-005.md]]"
@@ -13,8 +13,8 @@ evidence_links:
   - "[[modules/e10-graph/STRUCTURAL_DETECTOR_SPEC.md]]"
   - "[[modules/e10-graph/MANIFEST.md]]"
   - "[[vault/EVIDENCE/E-DEV-031.md]]"
-gate_verdict: "BLOCKED (independent review and exact-head CI outstanding)"
-reviewer: none
+gate_verdict: "PASS (dependency policy only; exhaustive source and production coverage unproved)"
+reviewer: "independent gpt-6-luna max; /root/pr34_independent_review"
 timestamp: 2026-10-02
 purpose: Record bounded dependency-direction source and boundary verification
 domain: project-execution
@@ -47,3 +47,9 @@ Actual validation and independent context/model/head/findings/CI will follow. Ta
 Initial run:11checks/20regressions passed, check_links failed because CI planning allowlist lacks DEPENDENCY_GRAPH.md. Corrected navigation address to qualified canonical GitHub link; no allowlist/check-code change or automatic external-source verification claimed. Pinned source manually compared; external semantic coverage remains explicit.
 
 Actual local validation2026-10-02: run_all exit0, all12checks/20unittest regressions;150Markdown records/124indexedIDs/1043resolveddocument links/35evidence/30packs,10manifests with12runtime+8provision edges. Existing frozen P-PROOF-001 own-task freshness WARN retained. Index28rows/routing rebuilt, T005 REVIEW/E3R1 REVIEW/E5 IN_PROGRESS. Newpolicy/pack/evidence IDs zero canonical collisions, exact approved template rawblob/normalizeddigest asserted. git diff --check clean. Existing checks establish serialization/preservation/declared graph subset only, not exhaustive source imports/authority.
+
+Independent acceptance: /root/pr34_independent_review, separate bounded context/forknone, gpt-6-luna max, PASS at 79a33a88ff21f49cdfde6972fef74685a556047d againstbase422235b, no actionable findings. Actual pinned sources ADR015D4/dependency rules/module seams/graph/contracts/ADR001/004 support roles/directions/planes/classification-authority; no manufactured edge IDs/seams/permissions, unresolved source/dynamic coverage nonpassing. Exact template snapshot equals baseblob/digest, old proof core unchanged. Required12checks/20regressions/diff and exact-head applicableCI passed. Accepted source policy digest d4d2d7a183c996960aecfbad5dabee63fcb600fd19389d4dd03eaca716cb5846; final status/receipt digest 9f161aab14fb79f7de6f1930cad1322939b27ea51a679b08885d02c9b2c381b2. No author self-PASS or unperformed exhaustive source audit.
+
+Actual source-head CI allSUCCESS: PR architecture36945849623/E336945849798/E536945849694/Auth36945849734; push architecture36945844409/E336945844481/E536945844463/Auth36945844501. Expected T3 label-gated skips for documentary E10 T2/no privileged runtime; real independent review separately obtained. Direct standing owner mandate2026-10-01 accepts actual bounded independent PASS/greenCI before normal exact-head merge.
+
+Policy ACTIVE/task DONE/evidence PASS for rules only. Final metadata/status/evidence/index audit and new-head applicableCI required before merge; immutable exactfinalhead/verdict/runs recorded in PR34 without recursive source proof commits. T-E3-001-R1 REVIEW/T-E5-003 IN_PROGRESS/production-release-activation holds unchanged; no implementation/semanticcorpus/product completion.

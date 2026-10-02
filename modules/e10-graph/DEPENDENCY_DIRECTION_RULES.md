@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_edges.py, modules/e10-graph/checks/check_
 evidence: [E-DEV-032]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 
@@ -99,3 +99,5 @@ Apply the existing rule-to-gate mapping by reference: implementer runs, independ
 Policy v1 translates frozen authority/direction/no-silent-import rules into task-usable checks; it does not relax them. It creates one new policy identity and explicit source/pack/task/evidence references plus generated views. Current consumer/maintenance metadata is updated without altering historical approved source bodies/verdicts/digests; exact approved template payload is preserved before its consumer update. No bulk corpus semantic audit, AST checker, source mutation, new seam or automatic task actuation. No newly owned runtime public contract or identity replacement, hence empty public_contracts/lineage. Future policy/schema changes require version, source/registry/consumer impact, preserved history, independent review and applicable exact-head CI; rollback cannot delete past proof or resurrect authority.
 
 Task: `vault/REGISTRY/T-E10-005.md`; pack: `vault/PACKS/P-E10-005.md`; actual proof: `vault/EVIDENCE/E-DEV-032.md`. Completion proves these dependency rules, not full implemented gate coverage or product/release/activation closure. E3R1 REVIEW and E5 IN_PROGRESS/production holds remain unchanged.
+
+Independent acceptance2026-10-02: /root/pr34_independent_review, separate bounded context, gpt-6-luna max, PASS at 79a33a88ff21f49cdfde6972fef74685a556047d after actual pinned-source/direction/plane/authority/countercase/preservation audit, required checks and exact-head applicable CI. No actionable findings. Direct standing owner mandate accepts this dependency-rule scope only. Final metadata/status/evidence/index audit and exact new-head CI required before normal PR34 merge; final immutable receipt belongs in PR34. No exhaustive import/authority audit, implemented gate or product/production completion.
