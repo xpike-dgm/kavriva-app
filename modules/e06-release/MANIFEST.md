@@ -6,14 +6,14 @@ domain: "module-contract"
 module: "e06-release"
 owner: "E6"
 depends_on: [M-E3-001, M-E5-001]
-used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054]
+used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054, V-E6-SNAPSHOT-001, P-E6-003, E-DEV-056]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E6"
 public_contracts:
   - "[[modules/e06-release/MANIFEST.md#Public contract surface]]"
 internal_scope: "Authority roster, seal/verify tooling, suspension-strap state, incident runbooks, custody policy docs. Lane execution machinery lives in E7; this capsule holds the rules E7 must obey."
-tasks: [T-E10-001, T-E10-006, T-E6-001]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e06-release/tests/test_release_authority_registry.py]
+tasks: [T-E10-001, T-E10-006, T-E6-001, T-E6-003]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e06-release/tests/test_release_authority_registry.py, modules/e06-release/tests/test_snapshot_binding.py]
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
@@ -93,3 +93,9 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 `vault/REGISTRY/release-authorities.json` and `internal/release_authority_registry.py` register/validate eight distinct release categories under ADR007R1; physical activation HELD, OTA NOT_APPROVED, actual holders/credentials/audit references absent. Intrinsic authority NONE; no actual release/lane/current-authorization or cross-capsule public call. Role/alias per-change independence T-E6-002 and physical custody remain unimplemented. Categories are not real keys or audit receipts. Original anatomy/policy/public contracts/origin custody unchanged.
 
 Rule `vault/PROFILES/release-authority-registry.md`; context `vault/PACKS/P-E6-001.md`; task `vault/REGISTRY/T-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`; localtests `tests/test_release_authority_registry.py`. Independent review/exact currentCI still required before bounded completion; no E6-specific CI job currently exists.
+
+## T-E6-003 internal snapshot binding
+
+`internal/snapshot_binding.py` binds an exact immutable supplied packet and attributed review metadata under ADR003R1. Every declared byte/context/reference/time is hashed, later edits cannot reuse the old review, and records have intrinsic authority NONE. Actual E3 source completeness, authenticated E5 review/competence/current permission, protected audit, guarded publishing/floors and E7 lanes remain missing. This internal rule creates no public seam or physical eligibility. Incomplete unmerged PR57 role source is not included or claimed DONE.
+
+Rule `vault/PROFILES/immutable-snapshot-binding.md`; pack `vault/PACKS/P-E6-003.md`; task `vault/REGISTRY/T-E6-003.md`; evidence `vault/EVIDENCE/E-DEV-056.md`; tests `tests/test_snapshot_binding.py`. `.github/workflows/e6-tests.yml` independently installs the full currently present E6 test family. Original purpose/anatomy/public authority/source custody preserved; independent source review/current CI required.
