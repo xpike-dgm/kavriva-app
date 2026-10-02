@@ -26,7 +26,7 @@ tests: [modules/e05-identity/tests/test_proposal_tags.py, modules/e10-graph/chec
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E5-PROPOSAL-001]
-used_by: [V-E5-PROPOSAL-001, P-E5-020, T-E5-020]
+used_by: [V-E5-PROPOSAL-001, P-E5-020, T-E5-020, P-E5-018, E-DEV-052]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -61,3 +61,7 @@ All eight actual exact39ff workflows SUCCESS: PR architecture36997782659 (T3 gat
 Direct standing owner DEC0070 accepts bounded independent PASS after green CI; pending planPR4 is not merged. Primary status-only ACTIVE, pack ACTIVE, T020 DONE internal proposal tagging only; current profile normalizedSHA256 3b4698f2858f84b4b8222651e9085d8c5a6ab06bf621f5edc58b2a33698a2658. Generated views retain46actualrows and predecessor/product holds. Final six-path metadata audit/latest-head CI remain separate gates; immutable final receipt in PR body. Actual AI/OCR extraction, authenticated canonical source/producer/run, data boundary/privacy/isolation/human review/current-effect authorization remain MISSING/HELD. E3R1 REVIEW/E5-003 IN_PROGRESS/provisioning/privileged production unchanged. No model/provider/account/billing/deployment/production operation or automatic approval.
 
 Performed closeout root architecture12checks/42regressionsPASS0.449s, generated46rows/T020boundedDONE, diffcheckPASS; historical P-PROOF-001 warning unchanged. Exactly six metadata/view paths changed after independently accepted39ff; code/tests/prior evidence custody/inventory/manifest unchanged. Final reviewer audit and exact latest-head eight CI runs remain outstanding here and will be recorded immutably in the PR body before normal merge.
+
+## T-E5-018 secondary inventory custody
+
+AcceptedPR53mergead623eac59086ac54aac597fee59cf43b9bc0d80 inventoryv19 exact raw snapshot `vault/EVIDENCE/SNAPSHOTS/E-DEV-051-E10-GOVERNED-PATHS.md.snapshot`, normalizedSHA256357a6bd06df5a3e2bfc55aae24af23a23927741c9f2e09244385b9f0f7fdf724. Original subject/digest/reviewer/verdict/date/heads/rejection/core/code/tests remain unchanged; documentary consumer and secondary custody only. Context `vault/PACKS/P-E5-018.md`; proof `vault/EVIDENCE/E-DEV-052.md`.
