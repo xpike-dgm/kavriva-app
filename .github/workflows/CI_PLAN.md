@@ -28,6 +28,8 @@ used_by:
   - "E-DEV-061"
   - "P-E4-003"
   - "E-DEV-062"
+  - "P-E4-004"
+  - "E-DEV-063"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -140,3 +142,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged, current discovery covers22u
 ## E4 optional lifecycle rule coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged Historical e1fcde4 discovery covered34units (accepted22 +12optional). Current new source covers35units (accepted22 +13optional), including finite serializer-error stress after root correction; workflow unchanged. `modules/e04-offline/tests/test_optional_media.py` tests synthetic explicit requests/cancelled and replayed attempts/eviction/refetch/core invariance/type and byte corruption; never actual human intent/network/storage/canonical acceptance. Context `vault/PACKS/P-E4-003.md`; proof `vault/EVIDENCE/E-DEV-062.md`. Exact-source twelve CI/independent task review remain separate gates; no gate-policy changes.
+
+## E4 size presentation rule coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged; current discovery47units (accepted35 +12size-rule). `modules/e04-offline/tests/test_size_shown.py` probes missing/fake/edited/stale receipts, exact text/current size/spec/request identity, retry/refetch/terminal replay, type/finite encoding failure/core invariance/NONE/runtimeHELD. Memory fixtures are not actual screen visibility/user authentication/transfer/device proof. Context `vault/PACKS/P-E4-004.md`; proof `vault/EVIDENCE/E-DEV-063.md`. Exacthead12CI/actualPRT3/full independent task/final metadata review separate gates; no gate policy/workflow/custody change.
