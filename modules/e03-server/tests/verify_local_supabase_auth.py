@@ -66,6 +66,16 @@ def main(status_path):
     principal = auth.verify(token)
     local_password = uuid4().hex + uuid4().hex
     with psycopg.connect(db_url) as conn:
+        # This disposable local Supabase image also creates provider databases
+        # with PUBLIC CONNECT/TEMPORARY. The product login must not inherit
+        # those capabilities. Tighten the fixture, never relax the preflight;
+        # this does not apply an equivalent change to a hosted project.
+        for database in ("_supabase", "storage_vectors"):
+            if conn.execute("select 1 from pg_database where datname=%s",
+                            (database,)).fetchone():
+                conn.execute(sql.SQL(
+                    "revoke connect, temporary on database {} from public"
+                ).format(sql.Identifier(database)))
         conn.execute(sql.SQL("create role kavriva_ci_api login password {}").format(
             sql.Literal(local_password)
         ))
