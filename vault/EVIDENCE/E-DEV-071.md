@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_ledger_states.py, modules/e10-graph/check
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-LEDGER-001]
-used_by: [V-E4-LEDGER-001, P-E4-011a, T-E4-011a]
+used_by: [V-E4-LEDGER-001, P-E4-011a, T-E4-011a, P-E4-013, E-DEV-072]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -75,3 +75,7 @@ Closeout changes only six documentary/view paths; source/tests/workflow/archive/
 Historical reviewed primary a02bdc3060786440ef7c23b415d417904e80579e9e92774bdbad3f84f64e8ab4 preserved; current ACTIVE primary a04162501a73638f7eec5a5c6d2e4fb4c5c7c35d75dac7b3db0176f4ad15ec2a. No source failure/rejection/current unit failure; no actual persistence or E3 operation acceptance/lookup inferred.
 
 Final six-file metadata verification: build_index64/routingT011aDONE/eligible[]; run_all12checksPASS +42 regressions PASS0.596s/worstexit0; diffcheckPASS/exact six paths. Original P-PROOF001 warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-013 consumption
+
+PR73 finalfeb4816a47ab9bf6452c96ec1e4484b379578101 separate configuredgpt-6-luna/max finalmetadata PASS/no findings, actual final all12CI SUCCESS/PRT3SUCCESS37066122023/E4CI137PASS0.176s; normal matched merge1f28a290d65eee9fb3944b5da9ff6a09785099c1 verified2026-10-02T21:22:21Z. Source30da680 FULL internal state-enumeration task PASS retained. Original primary/hashes/source verdict/reviewer/history unchanged, this consumer/secondary receipt not new prior approval. Physical durable ledger/E3 operation acceptance/lookup/encryption/device/runtime HELD.
