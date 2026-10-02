@@ -21,6 +21,24 @@ class Outcome(str, Enum):
     UNKNOWN = "UNKNOWN"
 
 
+class Reason(str, Enum):
+    REVIEW_REQUIRED = "REVIEW_REQUIRED"
+    EXTRACTION_FAILED = "EXTRACTION_FAILED"
+    SOURCE_UNSUPPORTED = "SOURCE_UNSUPPORTED"
+    EXTRACTION_UNKNOWN = "EXTRACTION_UNKNOWN"
+    PROVIDER_UNAVAILABLE = "PROVIDER_UNAVAILABLE"
+    INPUT_PROCESSING_HELD = "INPUT_PROCESSING_HELD"
+
+
+REASONS = {
+    Outcome.CANDIDATE: frozenset({Reason.REVIEW_REQUIRED}),
+    Outcome.FAILED: frozenset({Reason.EXTRACTION_FAILED}),
+    Outcome.UNSUPPORTED: frozenset({Reason.SOURCE_UNSUPPORTED}),
+    Outcome.UNKNOWN: frozenset({Reason.EXTRACTION_UNKNOWN, Reason.PROVIDER_UNAVAILABLE,
+                                Reason.INPUT_PROCESSING_HELD}),
+}
+
+
 class ProposalError(ValueError):
     def __init__(self, reason: str):
         self.reason = reason
@@ -46,7 +64,7 @@ class TaggedProposal:
     input_record: Record = field(repr=False)
     transformation: Transformation
     outcome: Outcome
-    reason: str
+    reason: Reason
     output_digest: str | None
     candidate_text: str | None = field(repr=False)
 
@@ -72,7 +90,7 @@ def _text(value: object) -> bool:
 
 
 def tag_proposal(input_record: Record, transformation: Transformation,
-                 outcome: Outcome, reason: str,
+                 outcome: Outcome, reason: Reason,
                  candidate_text: str | None = None) -> TaggedProposal:
     """Bind an extraction result as proposal data, never approval or permission.
 
@@ -105,8 +123,10 @@ def tag_proposal(input_record: Record, transformation: Transformation,
         raise ProposalError("CONFIGURATION_FINGERPRINT_INVALID")
     if type(outcome) is not Outcome:
         raise ProposalError("OUTCOME_UNKNOWN")
-    if not _text(reason):
-        raise ProposalError("OUTCOME_REASON_REQUIRED")
+    if type(reason) is not Reason:
+        raise ProposalError("OUTCOME_REASON_INVALID")
+    if reason not in REASONS[outcome]:
+        raise ProposalError("OUTCOME_REASON_MISMATCH")
     if outcome == Outcome.CANDIDATE:
         if input_record.state not in {
             State.SCANNED, State.RENDERED_UNTRUSTED_PREVIEW,

@@ -2,8 +2,8 @@
 test_id: E-DEV-051
 contract_id_version: "ADR004 R9; ADR014 assistance boundary; internal tags v1"
 subject_file: vault/PROFILES/extraction-proposal-tags.md
-subject_digest: 95b5cbb4424d6ebc8c43eb00a720d861edb48e2ffee3c64235391a91cfdc3c2e
-result: "RECORDED: deterministic tagging/unit evidence; independent review/current CI missing"
+subject_digest: 360fceb6db9f4b77d658e513a3d944a934948bfd597ad1fe2ac7b77c04a87059
+result: "RECORDED: P2 changes requested at1f8c832; corrected source awaiting independent re-review/current CI"
 evidence_links:
   - "[[vault/PROFILES/extraction-proposal-tags.md]]"
   - "[[vault/PACKS/P-E5-020.md]]"
@@ -12,7 +12,7 @@ evidence_links:
   - modules/e05-identity/internal/proposal_tags.py
   - modules/e05-identity/tests/test_proposal_tags.py
 gate_verdict: "BLOCKED (independent review/current CI missing; real product extraction HELD)"
-reviewer: none
+reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial CHANGES_REQUESTED, re-review pending)
 timestamp: 2026-10-02
 purpose: Tag AI and OCR extraction results as provenance-linked proposals only
 domain: project-execution
@@ -43,3 +43,11 @@ No actual model/OCR/request/file/provider/tool/network/humanreview/render/storag
 ## Performed source preparation checks
 
 Root existingE5suite36testsPASS12.307s (nine isolatednativePostgreSQL + five fakeAuth + eleven acceptedquarantine + eleven newproposal), existingpinnedpsycopgvenv, no hostedprovider. New11tagging testsPASS0.071s/compilePASS. Root architecture12checks/42preservationidentitytrace regressionsPASS0.794s; generated46actualrows T020REVIEW/soledependencyT017DONE/E3R1REVIEW/E5-003IN_PROGRESS retained, eligibleempty. DiffcheckPASS, rawacceptedv18snapshotbyteequalverified; historicalP-PROOF-001warning unchanged. Hostiletexttool/networksentinels saw no calls; tagsclassification/authority/status remain source-inherited/non-authoritative. Source/code/test hashes above match; actualindependentreview/currentCI stillpending, no authorPASS.
+
+## Independent rejection and narrow remediation
+
+Actual independent /root/pr53_proposal_tag_review gpt-6-luna/max CHANGES_REQUESTED/P2 at1f8c832f4736af0b494c822a017e2c571b734d0f overaccepted50aade7f5c606c30dd56068d93cd9edf49d32706. Reviewer inspected exact12paths/code/profile/tests/pack/task/evidence/custody, ran no tests/CI or external operations, made no edits. Free-form reason was repr-visible and could carry candidate/payload onFAILED/UNKNOWN/UNSUPPORTED despite empty candidate_text/digest. Earlier profile/code/test hashes/11unit+36fullsuite/preparationchecks above belong to that rejected source and remain historical, not this correction acceptance.
+
+Root replaced free-text reason with finite typed outcome-matched codes and no diagnostic field, reject raw strings/payload/reason-outcome mismatch. Added two meaningful smuggling/mismatch/outage regressions. Current13proposal testsPASS0.057s/compilePASS; corrected profile normalizedSHA256 360fceb6db9f4b77d658e513a3d944a934948bfd597ad1fe2ac7b77c04a87059, code 024d4946a1df904702aaad24c4571cee85cdaf65ac0c4e4726802585782b777b, tests bac0184f25a00d6620a993c32df6b5ed82383b464a2f89df26f07ff1b02f4a93. Prior acceptedEDEV050/inventory/archive/manifest/sourcepolicy remain unchanged by remediation. Architecture/graph/diff/frozen correctedhead and actualindependentre-review/latestCI required before any bounded acceptance. No authorPASS/currentCIclaim or actualmodel/production proof.
+
+Corrected preparation architecture12checks42regressionsPASS0.505s/generated46rows/diffcheck; statusREVIEW and operationalholds retained. Rejected1f8c832source all8 workflowsSUCCESS: labelledPRarchitecture36996493037 (earlierunlabelled36996470404SUCCESS), E3live36996470323,E536996470457,Auth36996470157; pusharchitecture36996461477,E3live36996461442,E536996461598,Auth36996461465. Those green checks did not close independentP2 and do not substitute corrected-head CI or re-review.

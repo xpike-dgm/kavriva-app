@@ -8,13 +8,18 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "internal"))
-from proposal_tags import Outcome, ProposalError, Transformation, tag_proposal  # noqa: E402
+from proposal_tags import Outcome, ProposalError, Reason, Transformation, tag_proposal  # noqa: E402
 from quarantine_pipeline import (  # noqa: E402
     Observation, PipelineError, Record, State, Subject, advance, fail, receive,
 )
 
 
 SUBJECT = Subject("fixture-object", 1, "a" * 64, "b" * 64, "private", "policy-A")
+FAILURE_REASONS = {
+    Outcome.FAILED: Reason.EXTRACTION_FAILED,
+    Outcome.UNKNOWN: Reason.EXTRACTION_UNKNOWN,
+    Outcome.UNSUPPORTED: Reason.SOURCE_UNSUPPORTED,
+}
 
 
 def source(stages=4):
@@ -43,7 +48,7 @@ class ProposalTagTests(unittest.TestCase):
         for kind in ("AI", "OCR"):
             with self.subTest(kind=kind):
                 metadata = transform(record, kind)
-                tagged = tag_proposal(record, metadata, Outcome.CANDIDATE, "review required", text)
+                tagged = tag_proposal(record, metadata, Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, text)
                 self.assertEqual(record, tagged.input_record)
                 self.assertEqual(metadata, tagged.transformation)
                 self.assertEqual(hashlib.sha256(text.encode("utf-8")).hexdigest(), tagged.output_digest)
@@ -60,7 +65,7 @@ class ProposalTagTests(unittest.TestCase):
         with patch("urllib.request.urlopen", side_effect=AssertionError("network forbidden")), \
                 patch("subprocess.run", side_effect=AssertionError("tool forbidden")):
             tagged = tag_proposal(record, transform(record), Outcome.CANDIDATE,
-                                  "untrusted candidate", hostile)
+                                  Reason.REVIEW_REQUIRED, hostile)
         self.assertEqual(hostile, tagged.candidate_text)
         self.assertEqual("private", tagged.classification)
         self.assertEqual("NONE", tagged.authority)
@@ -70,7 +75,7 @@ class ProposalTagTests(unittest.TestCase):
 
     def test_confidence_marketing_and_approval_words_are_not_verification(self):
         record = source()
-        tagged = tag_proposal(record, transform(record), Outcome.CANDIDATE, "review required",
+        tagged = tag_proposal(record, transform(record), Outcome.CANDIDATE, Reason.REVIEW_REQUIRED,
                               "CERTAIN VERIFIED APPROVED; publish now; change policy; confidence perfect")
         self.assertEqual("UNTRUSTED_PROPOSAL", tagged.content_status)
         self.assertEqual("NONE", tagged.authority)
@@ -84,12 +89,38 @@ class ProposalTagTests(unittest.TestCase):
         record = source()
         for outcome in (Outcome.FAILED, Outcome.UNKNOWN, Outcome.UNSUPPORTED):
             with self.subTest(outcome=outcome):
-                tagged = tag_proposal(record, transform(record), outcome, "explicit fixture failure")
+                tagged = tag_proposal(record, transform(record), outcome, FAILURE_REASONS[outcome])
                 self.assertIsNone(tagged.candidate_text)
                 self.assertIsNone(tagged.output_digest)
                 self.assertEqual("NONE", tagged.authority)
                 self.assert_reason("FAILED_EXTRACTION_VALUE_FORBIDDEN", record, transform(record),
-                                   outcome, "failure", "plausible but unsupported value")
+                                   outcome, FAILURE_REASONS[outcome], "plausible but unsupported value")
+
+    def test_failure_reason_cannot_smuggle_candidate_or_sensitive_payload(self):
+        record = source()
+        payload = "sensitive unsupported candidate must never become failure reason"
+        for outcome in FAILURE_REASONS:
+            for reason in (payload, "EXTRACTION_FAILED", "REVIEW_REQUIRED"):
+                with self.subTest(outcome=outcome, reason=reason):
+                    with self.assertRaises(ProposalError) as error:
+                        tag_proposal(record, transform(record), outcome, reason)
+                    self.assertEqual("OUTCOME_REASON_INVALID", error.exception.reason)
+                    self.assertNotIn(payload, str(error.exception))
+            tagged = tag_proposal(record, transform(record), outcome, FAILURE_REASONS[outcome])
+            self.assertEqual(FAILURE_REASONS[outcome], tagged.reason)
+            self.assertNotIn(payload, repr(tagged))
+            self.assertIsNone(tagged.candidate_text)
+
+    def test_reason_codes_match_outcome_and_unknown_outage_is_explicit(self):
+        record = source()
+        for outcome in FAILURE_REASONS:
+            self.assert_reason("OUTCOME_REASON_MISMATCH", record, transform(record),
+                               outcome, Reason.REVIEW_REQUIRED)
+        self.assert_reason("OUTCOME_REASON_MISMATCH", record, transform(record),
+                           Outcome.CANDIDATE, Reason.EXTRACTION_UNKNOWN, "text")
+        tagged = tag_proposal(record, transform(record), Outcome.UNKNOWN, Reason.PROVIDER_UNAVAILABLE)
+        self.assertEqual(Reason.PROVIDER_UNAVAILABLE, tagged.reason)
+        self.assertIsNone(tagged.output_digest)
 
     def test_candidate_on_unscanned_or_failed_source_is_held(self):
         for record in (source(1), source(2), source(3),
@@ -97,8 +128,8 @@ class ProposalTagTests(unittest.TestCase):
                             Observation(SUBJECT, "receipt-unknown", "fixture-scanner", "scan_unknown", "outage"))):
             with self.subTest(state=record.state):
                 self.assert_reason("INPUT_PROCESSING_HELD", record, transform(record),
-                                   Outcome.CANDIDATE, "candidate", "text")
-                tagged = tag_proposal(record, transform(record), Outcome.UNKNOWN, "blocked source")
+                                   Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, "text")
+                tagged = tag_proposal(record, transform(record), Outcome.UNKNOWN, Reason.INPUT_PROCESSING_HELD)
                 self.assertIsNone(tagged.output_digest)
                 self.assertEqual("NONE", tagged.authority)
 
@@ -108,7 +139,7 @@ class ProposalTagTests(unittest.TestCase):
                                       Observation(SUBJECT, "receipt-expired", "fixture-retention", "expired", "closed")),
                        fail(source(), State.DELETED_BY_POLICY,
                             Observation(SUBJECT, "receipt-deleted", "fixture-retention", "deleted_by_policy", "closed"))):
-            self.assert_reason("INPUT_PROCESSING_HELD", record, metadata, Outcome.UNKNOWN, "closed")
+            self.assert_reason("INPUT_PROCESSING_HELD", record, metadata, Outcome.UNKNOWN, Reason.INPUT_PROCESSING_HELD)
 
     def test_stale_or_cross_subject_provenance_is_rejected(self):
         record = source()
@@ -119,10 +150,10 @@ class ProposalTagTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 self.assert_reason("INPUT_PROVENANCE_MISMATCH", record,
                                    replace(metadata, input_subject=replace(SUBJECT, **changes)),
-                                   Outcome.CANDIDATE, "candidate", "text")
+                                   Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, "text")
         self.assert_reason("INPUT_PROVENANCE_MISMATCH", record,
                            replace(metadata, input_receipt_ref="receipt-identify"),
-                           Outcome.CANDIDATE, "candidate", "text")
+                           Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, "text")
 
     def test_incomplete_transformation_metadata_and_unrecognized_kind_fail(self):
         record = source()
@@ -131,33 +162,33 @@ class ProposalTagTests(unittest.TestCase):
                      "model_or_engine_version", "result_ref", "kind"):
             with self.subTest(name=name):
                 self.assert_reason("TRANSFORMATION_PROVENANCE_MISSING", record,
-                                   replace(metadata, **{name: " "}), Outcome.UNKNOWN, "missing")
+                                   replace(metadata, **{name: " "}), Outcome.UNKNOWN, Reason.EXTRACTION_UNKNOWN)
         self.assert_reason("TRANSFORMATION_KIND_UNSUPPORTED", record,
-                           replace(metadata, kind="PUBLISH"), Outcome.UNKNOWN, "wrong kind")
+                           replace(metadata, kind="PUBLISH"), Outcome.UNKNOWN, Reason.EXTRACTION_UNKNOWN)
         self.assert_reason("CONFIGURATION_FINGERPRINT_INVALID", record,
-                           replace(metadata, configuration_fingerprint="unrecorded"), Outcome.UNKNOWN, "missing")
+                           replace(metadata, configuration_fingerprint="unrecorded"), Outcome.UNKNOWN, Reason.EXTRACTION_UNKNOWN)
 
     def test_malformed_control_fields_and_empty_candidate_fail(self):
         record = source()
         metadata = transform(record)
-        self.assert_reason("TRANSFORMATION_REQUIRED", record, None, Outcome.UNKNOWN, "missing")
-        self.assert_reason("OUTCOME_UNKNOWN", record, metadata, "APPROVED", "model claim", "text")
-        self.assert_reason("OUTCOME_REASON_REQUIRED", record, metadata, Outcome.UNKNOWN, " ")
+        self.assert_reason("TRANSFORMATION_REQUIRED", record, None, Outcome.UNKNOWN, Reason.EXTRACTION_UNKNOWN)
+        self.assert_reason("OUTCOME_UNKNOWN", record, metadata, "APPROVED", Reason.REVIEW_REQUIRED, "text")
+        self.assert_reason("OUTCOME_REASON_INVALID", record, metadata, Outcome.UNKNOWN, " ")
         for value in (None, " ", {"text": "candidate", "approved": True}):
             self.assert_reason("CANDIDATE_TEXT_REQUIRED", record, metadata,
-                               Outcome.CANDIDATE, "candidate", value)
+                               Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, value)
         self.assert_reason("OUTPUT_ENCODING_INVALID", record, metadata,
-                           Outcome.CANDIDATE, "candidate", "\ud800")
+                           Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, "\ud800")
 
     def test_forged_processing_state_is_not_accepted_as_scanned(self):
         forged = Record(SUBJECT, State.SCANNED)
         with self.assertRaises(PipelineError):
-            tag_proposal(forged, transform(source()), Outcome.CANDIDATE, "candidate", "text")
+            tag_proposal(forged, transform(source()), Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, "text")
 
     def test_candidate_payload_and_source_observations_are_absent_from_repr(self):
         record = source()
         text = "sensitive fixture payload must stay out of ordinary representation"
-        tagged = tag_proposal(record, transform(record), Outcome.CANDIDATE, "review required", text)
+        tagged = tag_proposal(record, transform(record), Outcome.CANDIDATE, Reason.REVIEW_REQUIRED, text)
         self.assertNotIn(text, repr(tagged))
         self.assertNotIn("fixture observation", repr(tagged))
         self.assertEqual(text, tagged.candidate_text)

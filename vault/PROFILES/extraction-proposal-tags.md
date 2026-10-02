@@ -29,7 +29,7 @@ T-E5-020 acceptance is **Provenance-linked; never approval; hostile inert**, can
 
 The transformation binds exact full input Subject (object identity/generation/byte digest/manifest fingerprint/classification/processing policy) and latest processing receipt, attributable run and producer, AI versus OCR kind, provider-or-local-engine reference, model/engine and version, configuration fingerprint, and distinct result reference. A stale or different subject/receipt is rejected. Required references are nonempty and the fingerprint is a SHA256-shaped value; this structural shape is not authenticated actual run/provider/configuration evidence.
 
-For CANDIDATE, exact UTF-8 text is stored unchanged and its digest computed, never borrowed from model output. Invalid UTF-8/surrogate data, blank/nontext candidate, unsupported transformation kind or missing reason/context fails. No whitespace normalization, JSON parsing, classification inference, confidence score, command decoding, rendering, network or callback occurs. The raw text and full input record are omitted from ordinary dataclass representation; this is not proof of runtime log/export/storage confidentiality. Future writers and renderers must satisfy separate classification/privacy/isolation requirements.
+For CANDIDATE, exact UTF-8 text is stored unchanged and its digest computed, never borrowed from model output. Invalid UTF-8/surrogate data, blank/nontext candidate, unsupported transformation kind or invalid outcome-matched reason code or missing context fails. No whitespace normalization, JSON parsing, classification inference, confidence score, command decoding, rendering, network or callback occurs. The raw text and full input record are omitted from ordinary dataclass representation; this is not proof of runtime log/export/storage confidentiality. Future writers and renderers must satisfy separate classification/privacy/isolation requirements.
 
 ## Tags never gain authority
 
@@ -42,11 +42,11 @@ Human domain/safety review remains distinct, attributable, competent and indepen
 | Outcome | Record meaning |
 |---|---|
 | CANDIDATE | Opaque proposed text only, with derived digest and explicit human-review boundary |
-| FAILED | Attributed failed transformation, nonempty reason, no candidate value/digest |
-| UNSUPPORTED | Explicit unsupported extraction/source family, no fabricated candidate value/digest |
-| UNKNOWN | Uncertain/outage/inconclusive result, nonempty reason, no candidate value/digest |
+| FAILED | Attributed failed transformation, bounded EXTRACTION_FAILED reason code, no candidate value/digest |
+| UNSUPPORTED | Explicit unsupported extraction/source family, bounded SOURCE_UNSUPPORTED reason code, no fabricated candidate value/digest |
+| UNKNOWN | Uncertain/outage/inconclusive result, bounded EXTRACTION_UNKNOWN/PROVIDER_UNAVAILABLE/INPUT_PROCESSING_HELD reason code, no candidate value/digest |
 
-No failed/unsupported/unknown result may carry candidate text, even a plausible placeholder. No received/unquarantined, expired or deleted source may create a new tag. CANDIDATE requires structurally SCANNED or a later processing stage; rejected/scanunknown/scanfailed/parsefailed/malicious/suspicious/unscanned sources remain blocked for candidates. FAILED/UNSUPPORTED/UNKNOWN may record a blocked quarantined source without producing a value or starting extraction. These checks do not prove that real scanning or observation occurred; markers remain trusted-input fixtures.
+No failed/unsupported/unknown result may carry candidate text, even a plausible placeholder. The reason field accepts only a typed finite Reason code matching the outcome; free-form text, raw code strings and candidate/payload-as-reason are rejected. CANDIDATE requires REVIEW_REQUIRED; there is no diagnostic text field in the tag. Reason codes do not indicate actual provider failure proof or permit embedding a value elsewhere. No received/unquarantined, expired or deleted source may create a new tag. CANDIDATE requires structurally SCANNED or a later processing stage; rejected/scanunknown/scanfailed/parsefailed/malicious/suspicious/unscanned sources remain blocked for candidates. FAILED/UNSUPPORTED/UNKNOWN may record a blocked quarantined source without producing a value or starting extraction. These checks do not prove that real scanning or observation occurred; markers remain trusted-input fixtures.
 
 Changes in model/engine/version/configuration or source context create distinct attributable transformation context and must trigger future re-evaluation where meaning changes. This module has no run de-duplication, idempotency store, revocation, retention or current-head lookup; old tags are historical data, never permission to reuse stale private sources or accepted facts.
 
@@ -70,7 +70,7 @@ ADR004 R9 and ADR014 R4/R6 → C5.6 → F5.6.3 → FL5.6.3 → T-E5-020 (T017 pr
 | architecture | Same E5 internal capsule reuse; E9 proposes/E3 verifies unchanged, no new seam |
 | data/migration | Immutable fixture tag and exact outputdigest; no canonical persistence or schema/migration |
 | release | No provider/key/account/cost/deployment/activation selected; HELD |
-| product-scenario | Eleven deterministic tests; no actual model/OCR/file/device/human/sandbox experiment |
+| product-scenario | Thirteen deterministic tests; no actual model/OCR/file/device/human/sandbox experiment |
 | gap-audit | Authenticated source/producer/persistence/privacy/isolation/humanreview gaps attributed E3/E5/E2, never owner debugging |
 
 Context `vault/PACKS/P-E5-020.md`; task `vault/REGISTRY/T-E5-020.md`; proof `vault/EVIDENCE/E-DEV-051.md`; tests `modules/e05-identity/tests/test_proposal_tags.py`; prior policy `vault/PROFILES/quarantine-processing-policy.md`; capsule `modules/e05-identity/MANIFEST.md`; addresses `vault/INVENTORIES/E10-GOVERNED-PATHS.md`.
