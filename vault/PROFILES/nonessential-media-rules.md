@@ -16,7 +16,7 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-003, T-E4-003, E-DEV-062]
 evidence: [E-DEV-062]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Nonessential on-demand rules
@@ -46,3 +46,11 @@ ADR009R1b -> C4.1 -> F4.1.2 -> FL4.1.2 -> T-E4-003 -> M-E4-001 -> E-DEV-062. Tas
 Separate configured gpt-6-luna/max reviewer gave full T-E4-003 task-level PASS/no actionable findings at e1fcde49a429b126149742155c06e0a21ba029f4. That accepted review remains historical, not approval of new source. Root then identified an unbounded declared-size integer that passed plain type guards but json serialization raised a non-finite ValueError. A new focused stress regression first ran1 ERROR0.009s, actual failure preserved. The local spec serializer now converts its ValueError/TypeError/OverflowError/RecursionError into finite OPTIONAL_SPEC_ENCODING_FAILED, without echoing input or changing interpreter limits, selected byte policy or accepted checkers. Fixture10**5000 is a serializer stress probe only, never a product/candidate size boundary.
 
 Current13new+accepted22full35PASS0.100s/compile. No independent source rejection: this was implementer-discovered concrete risk after old source PASS. Per-use core protection, lifecycle, source/classification and intrinsicNONE/constant productionHELD unchanged. Current new source requires independent full re-review and exact latest12CI; old green/old PASS not substituted.
+
+## Independent full task completion receipt
+
+Separate configured user-selected gpt-6-luna/max /root/pr58_snapshot_binding_review full bounded T-E4-003 task-level PASS/no actionable findings at current bcdd72a242a27b1c6a95848b0224ed7bcd78f217 over accepted8e310199768844ae8667c3f53182e57334c7ceb1. Initial e1fcde49a429b126149742155c06e0a21ba029f4 was actually PASS/no findings, not an independent rejection. Root identified subsequent concrete serializer failure; new1ERROR0.009s before finite catch, full35PASS0.100s/compile afterward. Current independent re-review PASS closes that implementer-discovered risk, no invented CHANGES_REQUESTED/source rejection. Reviewer inspected five-path fix; finite OPTIONAL_SPEC_ENCODING_FAILED/no input echo/source lifecycle/held production unchanged, old review/hashes/history preserved. Reviewer did not run tests/CI/network/provider/writes.
+
+Exact current source all12CI SUCCESS: PRarchitecture37031288894 actualT3SUCCESS/E4 37031289197 actual35PASS0.025s/E3commit37031288909/E5 37031289048/E6 37031288939/live37031289153; pusharchitecture37031281830/E4 37031281699/E3commit37031281745/E5 37031281628/E6 37031281803/live37031281758. Earlier source34CI and PASS remain historical. Rootcurrent35PASS0.100s/compile, graph12+42PASS0.890/index55/routing/diff/archive; firstpreparation graph0.477 preserved. Original P-PROOF001warning unchanged.
+
+Owner direct standing DEC0069/0070 delegated full-task verdict acceptance, pendingplanPR4 remainsunmerged. Profile/packACTIVE/taskDONE only internal nonessential lifecycle rules. Separate/explicit/cancelable/evictable/refetchable model passes full review; actual E3/E6 classification/semantic completeness/current source/context, real E1 human gesture/controls/size rendering, physical transfer/cancellation/eviction/durable storage/encryption/mobile/device/runtime remain MISSING/HELD. Coherent supplied state/intent/source can be false; intrinsicNONE and constant productionHELD unchanged. No real transfer/user/authentication or approved package/productreadiness claim. Size-before-download rule T004 separate. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view paths only; code/tests/acceptedcheckers/workflow/archive/priorproof/inventory/manifest/CIplan unchanged. Independent final metadata audit/latest-head twelve green CI required before normal matchedheadmerge.

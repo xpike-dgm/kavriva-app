@@ -2,8 +2,8 @@
 test_id: E-DEV-062
 contract_id_version: "ADR009 R1; nonessential media rules v1"
 subject_file: vault/PROFILES/nonessential-media-rules.md
-subject_digest: 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea
-result: "RECORDED pure optional lifecycle fixtures; independent full task review required"
+subject_digest: e16193bfa37e5ead9b541d0a67940cc14e301401865615bed66f68ab4471194b
+result: "PASS full T-E4-003 internal lifecycle rules; actual source and runtime HELD"
 evidence_links:
   - "vault/PROFILES/nonessential-media-rules.md"
   - "vault/PACKS/P-E4-003.md"
@@ -12,8 +12,8 @@ evidence_links:
   - "modules/e04-offline/internal/optional_media.py"
   - "modules/e04-offline/tests/test_optional_media.py"
   - ".github/workflows/e4-tests.yml"
-gate_verdict: RECORDED
-reviewer: none
+gate_verdict: "PASS bounded optional lifecycle task only; production HELD"
+reviewer: "/root/pr58_snapshot_binding_review; gpt-6-luna/max; full current task PASS at bcdd72a242a27b1c6a95848b0224ed7bcd78f217"
 timestamp: 2026-10-02
 purpose: Model separate optional media requests with explicit intent cancellation eviction and refetch
 domain: offline-package
@@ -64,3 +64,15 @@ Current normalizedSHA256:
 - modules/e04-offline/tests/test_optional_media.py: 5b42aeb999187af3afd99843d39a9ed49cead48111b6d9d2b09db55fb143478f
 
 Old reviewed primary 648cc4c3825e283aa4145ffd020be1a6d6f4cda54b8152cda53f1aa5ce2fbae2 preserved as historical source proof; current REVIEW primary 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea. Task notDONE; no current independent verdict, production remainsHELD.
+
+## Independent full task completion receipt
+
+Separate configured user-selected gpt-6-luna/max /root/pr58_snapshot_binding_review full bounded T-E4-003 task-level PASS/no actionable findings at current bcdd72a242a27b1c6a95848b0224ed7bcd78f217 over accepted8e310199768844ae8667c3f53182e57334c7ceb1. Initial e1fcde49a429b126149742155c06e0a21ba029f4 was actually PASS/no findings, not an independent rejection. Root identified subsequent concrete serializer failure; new1ERROR0.009s before finite catch, full35PASS0.100s/compile afterward. Current independent re-review PASS closes that implementer-discovered risk, no invented CHANGES_REQUESTED/source rejection. Reviewer inspected five-path fix; finite OPTIONAL_SPEC_ENCODING_FAILED/no input echo/source lifecycle/held production unchanged, old review/hashes/history preserved. Reviewer did not run tests/CI/network/provider/writes.
+
+Exact current source all12CI SUCCESS: PRarchitecture37031288894 actualT3SUCCESS/E4 37031289197 actual35PASS0.025s/E3commit37031288909/E5 37031289048/E6 37031288939/live37031289153; pusharchitecture37031281830/E4 37031281699/E3commit37031281745/E5 37031281628/E6 37031281803/live37031281758. Earlier source34CI and PASS remain historical. Rootcurrent35PASS0.100s/compile, graph12+42PASS0.890/index55/routing/diff/archive; firstpreparation graph0.477 preserved. Original P-PROOF001warning unchanged.
+
+Owner direct standing DEC0069/0070 delegated full-task verdict acceptance, pendingplanPR4 remainsunmerged. Profile/packACTIVE/taskDONE only internal nonessential lifecycle rules. Separate/explicit/cancelable/evictable/refetchable model passes full review; actual E3/E6 classification/semantic completeness/current source/context, real E1 human gesture/controls/size rendering, physical transfer/cancellation/eviction/durable storage/encryption/mobile/device/runtime remain MISSING/HELD. Coherent supplied state/intent/source can be false; intrinsicNONE and constant productionHELD unchanged. No real transfer/user/authentication or approved package/productreadiness claim. Size-before-download rule T004 separate. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view paths only; code/tests/acceptedcheckers/workflow/archive/priorproof/inventory/manifest/CIplan unchanged. Independent final metadata audit/latest-head twelve green CI required before normal matchedheadmerge.
+
+Reviewed corrected primary 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea preserved as historical source digest; current ACTIVE primary e16193bfa37e5ead9b541d0a67940cc14e301401865615bed66f68ab4471194b. Earlier initial e1 primary/hash/PASS/test success, root new regressionERROR/finitefix/current35PASS/currentre-review remain exact history, no source rejection invented.
+
+Final root metadata preparation graph12checks+42regressionsPASS0.434s/worstexit0/build_index55/routingT003DONE/eligible[]/diff, exact six closeout paths. Original P-PROOF001warning unchanged. Independent final audit/latest final12CI still required.
