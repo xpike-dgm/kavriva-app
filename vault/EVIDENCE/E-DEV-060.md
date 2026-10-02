@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_core_composition.py, modules/e10-graph/ch
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-CORE-001]
-used_by: [V-E4-CORE-001, P-E4-001, T-E4-001]
+used_by: [V-E4-CORE-001, P-E4-001, T-E4-001, P-E4-002, E-DEV-061]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -63,3 +63,7 @@ Owner standing DEC0069/0070 full task-level verdict acceptance; plan PR4 unmerge
 Original reviewed primary a369e5dc00af8e0b12994d21ab27669aab1fa6263a76a31c331526b502d7edf1 preserved as historical frozen source digest. Current ACTIVE primary 2bf9609e182d2aea6041f8078ce1bf9bad6ff83495e809ce2a0825f00a6b67f4. Historical preparatory reviewer-none/BLOCKED source hypothesis and initial graph failure above are superseded only as stated here; no real runtime source proof invented.
 
 Final root metadata validation run_all12checks+42regressionsPASS0.571s/worstexit0/views53/routingDONE/eligible[]/diff. Manifest lifecycle note adds seventh metadata path; source code/tests/workflow/archive/priorproof/inventory unchanged. Profile updated digest 2bf9609e182d2aea6041f8078ce1bf9bad6ff83495e809ce2a0825f00a6b67f4. Independent final audit/latest head CI required.
+
+## Secondary accepted custody receipt / T-E4-002 consumption
+
+PR62 finalcfbbd1e53a3ca5973cbabe6323e19d3369a584e9 separate gpt-6-luna/max final metadata PASS/no findings, all12exactCIgreen/actualPRT3SUCCESS37026223113/E4CI12PASS0.006s, normal matchedheadmerge6af8dbf323d2e688b7a6b2d4634e00971672af14 verified2026-10-02T15:23:41Z. Earlier source acceptance/digests/superseded conservative scope hypothesis/core/history preserved. Inventoryv28 raw archive `vault/EVIDENCE/SNAPSHOTS/E-DEV-060-E10-GOVERNED-PATHS.md.snapshot`; documentary consumers `vault/PACKS/P-E4-002.md` / `vault/EVIDENCE/E-DEV-061.md`, no real package or product readiness from custody.
