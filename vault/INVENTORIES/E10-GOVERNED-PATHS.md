@@ -718,3 +718,4 @@ Original401/79 catalog and prior admissions retained. E3-owned environment confi
 
 | `supabase/migrations/20261002054900_e3_environment_role.sql` | CLI-generated reserved NOLOGIN staging role; bounded membership only; T-E3-032 controlled scope amendment v2 |
 | `modules/e03-server/internal/staging_credential.py` | Source-reviewed nonproduction Credential Manager operator, no model-visible secret or public API effect; T-E3-032 v2 |
+| `supabase/certs/prod-ca-2021.crt` | Public provider CA, authenticated official HTTPS/source provenance and pinned raw digest; T-E3-032 amendment v3, no trust-store mutation or credential |

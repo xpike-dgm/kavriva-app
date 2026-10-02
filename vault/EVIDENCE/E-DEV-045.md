@@ -2,8 +2,8 @@
 test_id: E-DEV-045
 contract_id_version: ADR-007 environment control; T-E3-032
 subject_file: vault/PROFILES/environment-separation.md
-subject_digest: 048c4c54f0ace41d74516e6958edbad19bfdf5bae0e630a9da57afb8b1abb7b6
-result: "RECORDED native E3 120 tests and E10 12 checks/42 tests passed; hosted physical separation unverified"
+subject_digest: 9efa0ee049ad2e713d00a5ef5313c9f8928e902dad09237a34a8c590fcf73263
+result: "RECORDED independent CHANGES_REQUESTED remediation; current targeted26 tests pass; hosted issuance and task acceptance HELD"
 evidence_links:
   - "vault/PACKS/P-E3-032.md"
   - "vault/REGISTRY/T-E3-032.md"
@@ -86,3 +86,31 @@ Prior corrected full-scope native E3 run passed125 tests in54.680s with the rese
 ## Resume and completed local verification — 2026-10-02
 
 Owner resumed work after safe stop. The outstanding native E3 suite finished normally before shutdown: 129 tests passed in69.796s, exit0. Targeted environment/operator suite:22 tests passed in10.665s; E10 run_all.py:12 checks and42 tests passed. No provider operation, credential issuance, deployment or merge occurred during shutdown or resume. These local checks do not establish hosted acceptance. Source/operation re-review and applicable latest-head CI remain required under `vault/PACKS/P-E3-032.md`; task `vault/REGISTRY/T-E3-032.md` stays IN_PROGRESS and staging/production HELD.
+
+## Independent finding closure in prepared source (no operational acceptance)
+
+Actual independent /root/pr47_environment_rereview, gpt-6-luna max, frozen source c9bde015ac3173bc66e8780de7976c3cef12a76a against f75f6cb2297a78be9c1722eca5af368050828936, verdict CHANGES_REQUESTED. Reviewer inspected source diff and official provider migration-history schema, existing RLS migration scope, proof digests/raw snapshots/reciprocity; ran no tests/CI, provider operations or secret access. Root confirmed all8 source workflows green at c9 plus labelled T3 gate; CI did not close the findings.
+
+Findings retained: persisted SCRAM verifier in provider migration history; exact effective parent grants unproved; interruption/concurrent issuance/orphan store outcomes; unsupported system CA and ambient SSL overrides; global default-privilege scope in existing RLS migration; missing function/procedure ownership; stale evidence summary. Remediation source, not self-PASS: remove every issuance/credential write/delete/account activation/admin API path; `issue` holds before secret/network and inspector is read only. Exact effective non-system usable schema/table/column/sequence/function ACLs, PUBLIC/inherited grants and grant options must match canonical consumer surface; missing/extra privilege holds. pg_shdepend ownership check covers function/procedure and other owned objects. Real isolated PG tests exercise excess table/column/schema/sequence/function/grant-option access, missing grant and hidden function ownership. Public CA bundled with official provenance and exact raw hash; verified hostname/chain with TLS-only diagnostic and no auth/startup/SQL; arbitrary/mutated root and ambient OpenSSL/key-log overrides hold. Task still IN_PROGRESS, operational issuance/deployment/production HELD; context `vault/PACKS/P-E3-032.md` governs v3/v4 withdrawal and re-review.
+
+Existing RLS migration's all-row policy for the bounded consumer and its global ALTER DEFAULT PRIVILEGES revoke on future functions are broader administrative effects than a narrow denial label. It has not been applied remotely. Any future execution review must assess these exact effects and parent grants before applying either schema-defense or NOLOGIN-role migration. No remote operations inherit acceptance from old T016/source CI.
+
+Most recent targeted remediation suite before final scenario-restoration assertions:26 tests passed in14.430s. Full native verification is running; re-review/current-head CI pending. Historical intermediate custody/mutex/SCRAM tests describe superseded unexecuted source only. No hosted role/key/password/provisioning/deployment, publication or merge has occurred.
+
+
+## Current prepared subjects for independent re-review
+
+- `modules/e03-server/internal/environment_binding.py`: b2b1d9a31d2e5c399836f5fdee61e46f307afbc15893bd42f16773eb7b17def1
+- `modules/e03-server/internal/staging_credential.py`: a54b3a971ca1a04cb5b90bf57cf324292d2878ec85e20eba47d9c6f9b705a791
+- `modules/e03-server/public/maintenance_api.py`: ae92ddfc4656ee925098ab3a5ebca210c6ed85324bc69fb49c0cec32febf4e1c
+- `modules/e03-server/tests/test_environment_binding.py`: 6b82711665ef07480cf7f99614dc60d09bbf27a0db8fdac576775c05898670ec
+- `modules/e03-server/tests/verify_local_supabase_auth.py`: a2f35395b00bd25e6f88a5d788676a364b5c6043fd20ba1b9cc409540599f402
+- `supabase/environment-bindings.json`: f62b64c90b5154aeda22444ed749fda749096844c4d59f7f79a61208b6a1cb49
+- `supabase/migrations/20261002054900_e3_environment_role.sql`: 357203cc72f5971cfaac872877973cab2cb9e21be18700fa3a6023920c94d928
+- `supabase/certs/prod-ca-2021.crt`: 700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7
+
+Provider CA comparison permits CRLF/LF serialization equivalence only; all other public payload changes hold. Download raw SHA/provenance remains recorded above. Full diff23 paths, per `vault/PACKS/P-E3-032.md`; role/password issuance remains disabled, not fixed by substituting a secret-bearing query endpoint.
+
+## Verification before source re-review
+
+Native E3 suite:133 tests passed in74.767s, exit0, before the final per-negative-case restoration assertions/CA newline guard. Current E10 suite:12 checks and42 tests passed in0.705s. No external execution. Final source targeted cases and exact-head CI are checked separately; no physical/task PASS implied. `vault/REGISTRY/T-E3-032.md` remains IN_PROGRESS.

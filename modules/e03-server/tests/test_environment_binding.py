@@ -3,8 +3,8 @@
 import base64
 import copy
 import json
+import re
 import sys
-import secrets
 import subprocess
 import unittest
 from dataclasses import replace
@@ -17,12 +17,11 @@ for path in (APP / "modules/e03-server/public", APP / "modules/e03-server/intern
              APP / "modules/e05-identity/public", APP / "modules/e05-identity/internal"):
     sys.path.insert(0, str(path))
 from environment_binding import (CATALOG, EnvironmentBinding, bind_environment,
-                                 validate_database_identity)
+                                 validate_database_identity, provider_ca_file)
 import maintenance_api
 import psycopg
 from psycopg import sql
 from psycopg.conninfo import make_conninfo
-from staging_credential import scram_verifier
 import staging_credential as operator
 import test_live_maintenance as pgfixture
 
@@ -106,7 +105,8 @@ class EnvironmentBindingTests(unittest.TestCase):
             with self.subTest(extra=extra), self.assertRaises(ValueError):
                 bind_environment({**self.local, "KAVRIVA_DEVELOPMENT_DATABASE_DSN":
                                   self.local["KAVRIVA_DEVELOPMENT_DATABASE_DSN"] + " " + extra}, self.catalog)
-        for variable in ("PGHOSTADDR", "PGSERVICE", "PGOPTIONS", "PGSSLMODE", "PGPASSWORD"):
+        for variable in ("PGHOSTADDR", "PGSERVICE", "PGOPTIONS", "PGSSLMODE", "PGPASSWORD",
+                         "SSL_CERT_FILE", "SSL_CERT_DIR", "OPENSSL_CONF", "SSLKEYLOGFILE"):
             with self.subTest(variable=variable), self.assertRaises(ValueError):
                 bind_environment({**self.local, variable: "other-realm"}, self.catalog)
 
@@ -123,6 +123,7 @@ class EnvironmentBindingTests(unittest.TestCase):
         dsn = ("host=aws-1-eu-west-1.pooler.supabase.com port=5432 dbname=postgres "
                "user=kavriva_staging_api.tmcitwyzoahtvysxblty password=staging-only "
                "sslmode=verify-full sslrootcert=system connect_timeout=10")
+        dsn = make_conninfo(dsn, sslrootcert=provider_ca_file())
         env = {"KAVRIVA_ENVIRONMENT":"staging", "KAVRIVA_STAGING_DATABASE_DSN":dsn,
                "KAVRIVA_STAGING_SUPABASE_PUBLISHABLE_KEY":"sb_publishable_fixture_only"}
         self.assertFalse(bind_environment(env, self.catalog).allow_local_http)
@@ -131,10 +132,15 @@ class EnvironmentBindingTests(unittest.TestCase):
             with self.subTest(after=after), self.assertRaises(ValueError):
                 bind_environment({**env,"KAVRIVA_STAGING_DATABASE_DSN":dsn.replace(before,after)},self.catalog)
         for before,after in ((".tmcitwyzoahtvysxblty", ""), ("port=5432", "port=6543"),
-                             ("sslrootcert=system", "sslrootcert=untrusted.pem"),
                              ("aws-1-eu-west-1", "aws-0-eu-west-1")):
             with self.subTest(after=after),self.assertRaises(ValueError):
                 bind_environment({**env,"KAVRIVA_STAGING_DATABASE_DSN":dsn.replace(before,after)},self.catalog)
+        for root in ("system", "untrusted.pem"):
+            with self.subTest(root=root), self.assertRaises(ValueError):
+                bind_environment({**env,"KAVRIVA_STAGING_DATABASE_DSN":
+                    make_conninfo(dsn, sslrootcert=root)},self.catalog)
+        with patch.object(Path,"read_bytes",return_value=b"replaced-ca"), self.assertRaises(ValueError):
+            bind_environment(env,self.catalog)
 
     def test_duplicate_json_field_and_corrupt_file_hold(self):
         for text in ('{"version":1,"version":1,"environments":{}}', "not json"):
@@ -191,6 +197,11 @@ class ActualDatabaseRoleTests(unittest.TestCase):
             "http://127.0.0.1:54321/auth/v1", True,
             f"host=127.0.0.1 port={cls.port} dbname=postgres user=kavriva_ci_api "
             "password=fixture-only sslmode=disable connect_timeout=10",local_key())
+        cls.canonical_grants = re.findall(r"(?im)^grant[\s\S]*?to kavriva_consumer_api;",
+            (APP / "supabase/migrations/20260930151252_e3_live_authorization.sql").read_text(encoding="utf-8"))
+        with psycopg.connect(cls.dsn) as conn:
+            for migration in pgfixture.MIGRATIONS:
+                conn.execute(migration.read_text(encoding="utf-8"))
 
     @classmethod
     def tearDownClass(cls):
@@ -206,20 +217,11 @@ class ActualDatabaseRoleTests(unittest.TestCase):
             conn.execute("revoke unexpected_owner from kavriva_consumer_api")
             conn.execute("grant kavriva_consumer_api to kavriva_ci_api")
             conn.execute("drop schema if exists unbounded_owner cascade")
+            for grant in self.canonical_grants:
+                conn.execute(grant)
 
     def test_actual_bounded_login_passes_readonly_inspection(self):
         validate_database_identity(self.binding)
-
-    def test_operator_scram_only_authenticates_issued_secret(self):
-        password=secrets.token_urlsafe(48)
-        with psycopg.connect(self.dsn) as conn:
-            conn.execute(sql.SQL("alter role kavriva_ci_api password {}").format(
-                sql.Literal(scram_verifier(password))))
-        dsn=make_conninfo(self.binding.database_dsn,password=password)
-        validate_database_identity(replace(self.binding,database_dsn=dsn))
-        with self.assertRaises(ValueError):
-            validate_database_identity(replace(self.binding,database_dsn=make_conninfo(
-                dsn,password="wrong-fixture-secret")))
 
     def test_correctly_named_but_privileged_login_holds(self):
         for privilege in ("superuser","createrole","createdb","replication","bypassrls"):
@@ -262,71 +264,124 @@ class ActualDatabaseRoleTests(unittest.TestCase):
             self.assertEqual(json.loads(body)["verdict"],"HELD")
             auth.assert_not_called();commands.assert_not_called()
 
+    def test_parent_unexpected_table_and_column_grants_hold(self):
+        grants=("update on kavriva_e5.current_grants", "update (blocked) on kavriva_e3.negative_floors",
+                "select on auth.users", "select on auth.sessions")
+        for grant in grants:
+            with self.subTest(grant=grant):
+                validate_database_identity(self.binding)
+                with psycopg.connect(self.dsn) as conn:
+                    conn.execute("grant " + grant + " to kavriva_consumer_api")
+                try:
+                    with self.assertRaises(ValueError):
+                        validate_database_identity(self.binding)
+                finally:
+                    with psycopg.connect(self.dsn) as conn:
+                        conn.execute("revoke " + grant + " from kavriva_consumer_api")
+                        for canonical in self.canonical_grants:
+                            conn.execute(canonical)
+                validate_database_identity(self.binding)
 
-class StagingIssuanceFailureTests(unittest.TestCase):
-    """Operator failure fencing; no provider or OS credential store is touched."""
-    def setUp(self):
-        self.store = unittest.mock.Mock()
-        self.created = False
-        self.deleted = False
-        self.secret = None
-        def read(target):
-            return "sbp_fixture_only" if target == "Supabase CLI:supabase" else self.secret
-        def create(value):
-            self.created = True; self.secret = value
-        def delete():
-            self.deleted = True; self.secret = None
-        self.store.read.side_effect=read
-        self.store.create.side_effect=create
-        self.store.delete.side_effect=delete
-        self.actions=[]
-        self.defense=True
-        self.cleanup_confirmed=True
+    def test_parent_unexpected_schema_function_sequence_and_grant_option_hold(self):
+        with psycopg.connect(self.dsn) as conn:
+            conn.execute("create sequence kavriva_e3.unexpected_sequence")
+            conn.execute("create function kavriva_e3.unexpected_function() returns boolean language sql as 'select true'")
+        grants=("create on schema kavriva_e3", "usage on sequence kavriva_e3.unexpected_sequence",
+                "execute on function kavriva_e3.unexpected_function()",
+                "select on kavriva_e5.current_grants with grant option")
+        try:
+            for grant in grants:
+                with self.subTest(grant=grant):
+                    validate_database_identity(self.binding)
+                    with psycopg.connect(self.dsn) as conn:
+                        conn.execute("grant " + grant.replace(" with grant option", "") +
+                            " to kavriva_consumer_api" + (" with grant option" if "with grant option" in grant else ""))
+                    try:
+                        with self.assertRaises(ValueError):
+                            validate_database_identity(self.binding)
+                    finally:
+                        with psycopg.connect(self.dsn) as conn:
+                            if "with grant option" in grant:
+                                conn.execute("revoke grant option for select on kavriva_e5.current_grants from kavriva_consumer_api")
+                            else:
+                                conn.execute("revoke " + grant + " from kavriva_consumer_api")
+                    validate_database_identity(self.binding)
+        finally:
+            with psycopg.connect(self.dsn) as conn:
+                conn.execute("drop function kavriva_e3.unexpected_function()")
+                conn.execute("drop sequence kavriva_e3.unexpected_sequence")
 
-    def api(self,token,method,path,body):
-        if path == "/database/migrations":
-            self.actions.append(body["name"])
-            return None
-        if "defense_ready" in body["query"]:
-            return [{"defense_ready":self.defense}]
-        if "pg_has_role" in body["query"]:
-            return [{"rolname":name,"rolcanlogin":False,"rolinherit":True,
-                     "rolsuper":False,"rolcreaterole":False,"rolcreatedb":False,
-                     "rolreplication":False,"rolbypassrls":False}
-                    for name in (operator.ROLE,"kavriva_consumer_api")]
-        return [{"rolcanlogin":not self.cleanup_confirmed}]
+    def test_missing_canonical_privilege_holds(self):
+        with psycopg.connect(self.dsn) as conn:
+            conn.execute("revoke insert on kavriva_e3.maintenance_records from kavriva_consumer_api")
+        try:
+            with self.assertRaises(ValueError):
+                validate_database_identity(self.binding)
+        finally:
+            with psycopg.connect(self.dsn) as conn:
+                conn.execute("grant insert on kavriva_e3.maintenance_records to kavriva_consumer_api")
 
-    def test_missing_defense_cannot_issue_or_store_credential(self):
-        self.defense=False
-        with patch.dict(operator.os.environ,{},clear=True), \
-                patch.object(operator,"_Store",return_value=self.store), \
-                patch.object(operator,"_api",side_effect=self.api):
-            with self.assertRaisesRegex(ValueError,"RESERVED_ROLE_UNBOUNDED"):
+    def test_function_ownership_holds_even_without_schema_usage(self):
+        with psycopg.connect(self.dsn) as conn:
+            conn.execute("create schema hidden_owner")
+            conn.execute("create function hidden_owner.unexpected() returns boolean language sql as 'select true'")
+            conn.execute("alter function hidden_owner.unexpected() owner to kavriva_ci_api")
+        try:
+            with self.assertRaises(ValueError):
+                validate_database_identity(self.binding)
+        finally:
+            with psycopg.connect(self.dsn) as conn:
+                conn.execute("drop schema hidden_owner cascade")
+
+
+class StagingInspectionTests(unittest.TestCase):
+    """No administrative channel or credential mutation exists in this operator."""
+    def test_issuance_is_held_before_store_or_network(self):
+        with patch.object(operator,"_Store") as store:
+            with self.assertRaisesRegex(ValueError,"SECURE_ISSUANCE_CHANNEL_HELD"):
                 operator.issue("sb_publishable_fixture_only")
-        self.assertFalse(self.created)
-        self.assertEqual(self.actions,[])
+            store.assert_not_called()
+        self.assertFalse(hasattr(operator._Store,"create"))
+        self.assertFalse(hasattr(operator._Store,"delete"))
+        self.assertFalse(hasattr(operator,"_api"))
 
-    def test_failed_role_proof_disables_and_confirms_before_store_cleanup(self):
+    def test_missing_provisioned_custody_holds_before_connection(self):
         with patch.dict(operator.os.environ,{},clear=True), \
-                patch.object(operator,"_Store",return_value=self.store), \
-                patch.object(operator,"_api",side_effect=self.api), \
-                patch.object(operator,"_http",return_value={}), \
-                patch.object(operator,"validate_database_identity",side_effect=ValueError("unbounded")):
-            with self.assertRaisesRegex(ValueError,"ISSUANCE_HELD_CLEANUP_VERIFIED"):
-                operator.issue("sb_publishable_fixture_only")
-        self.assertEqual(self.actions,["e3_staging_runtime_credential_v1","e3_staging_runtime_credential_v1_hold"])
-        self.assertTrue(self.created);self.assertTrue(self.deleted)
+                patch.object(operator,"_Store") as store, \
+                patch.object(operator,"validate_database_identity") as validate:
+            store.return_value.read.return_value=None
+            with self.assertRaisesRegex(ValueError,"CUSTODY_TARGET_UNAVAILABLE"):
+                operator.inspect("sb_publishable_fixture_only")
+            validate.assert_not_called()
+            store.return_value.read.assert_called_once_with(operator.TARGET)
 
-    def test_uncertain_disable_retains_custody_and_reports_unconfirmed_hold(self):
-        self.cleanup_confirmed=False
+    def test_ambient_override_holds_before_custody_read(self):
+        for variable in ("PGHOSTADDR","SSL_CERT_FILE","OPENSSL_CONF","SSLKEYLOGFILE"):
+            with self.subTest(variable=variable), \
+                    patch.dict(operator.os.environ,{variable:"untrusted"},clear=True), \
+                    patch.object(operator,"_Store") as store:
+                with self.assertRaisesRegex(ValueError,"ENV_OVERRIDE_HELD"):
+                    operator.inspect("sb_publishable_fixture_only")
+                store.assert_not_called()
+
+    def test_candidate_inspection_never_changes_checked_catalog_or_accepts_custody(self):
+        before=CATALOG.read_bytes()
+        catalog=json.loads(before)
+        item=catalog["environments"]["staging"]
+        dsn=make_conninfo(host=item["database_host"],port="5432",dbname="postgres",
+            user=operator.ROLE+"."+operator.PROJECT,password="fixture-only",
+            sslmode="verify-full",sslrootcert=provider_ca_file(),connect_timeout="10")
         with patch.dict(operator.os.environ,{},clear=True), \
-                patch.object(operator,"_Store",return_value=self.store), \
-                patch.object(operator,"_api",side_effect=self.api), \
-                patch.object(operator,"_http",return_value={}), \
-                patch.object(operator,"validate_database_identity",side_effect=ValueError("unbounded")):
-            with self.assertRaisesRegex(ValueError,"ISSUANCE_CLEANUP_UNCONFIRMED"):
-                operator.issue("sb_publishable_fixture_only")
-        self.assertTrue(self.created);self.assertFalse(self.deleted)
+                patch.object(operator,"_Store") as store, \
+                patch.object(operator,"validate_database_identity") as validate:
+            store.return_value.read.return_value=dsn
+            result=operator.inspect("sb_publishable_fixture_only")
+        validate.assert_called_once()
+        self.assertEqual(result["physical_custody"],"UNVERIFIED")
+        self.assertEqual(result["complete_effective_acl"],"UNVERIFIED")
+        self.assertEqual(result["deployment"],"HELD")
+        self.assertEqual(CATALOG.read_bytes(),before)
+        self.assertEqual(json.loads(before)["environments"]["staging"]["state"],"HELD")
 
 
 if __name__ == "__main__":

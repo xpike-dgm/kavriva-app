@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import re
 from dataclasses import dataclass, field
@@ -14,12 +15,88 @@ from psycopg.conninfo import conninfo_to_dict
 
 
 CATALOG = Path(__file__).resolve().parents[3] / "supabase/environment-bindings.json"
+CA_FILE = CATALOG.parent / "certs/prod-ca-2021.crt"
+CA_DIGEST = "700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7"
 _REALMS = {"development", "staging", "production"}
 _FIELDS = {"state", "project_id", "api_url", "issuer", "database_host",
            "database_port", "database_name", "database_role", "dsn_ref", "key_ref",
            "database_connection"}
 _DSN_FIELDS = {"host", "port", "dbname", "user", "password", "sslmode",
                "connect_timeout", "sslrootcert"}
+
+
+def _expected_access():
+    """Canonical consumer grants from the reviewed live-authorization migration."""
+    result = {("schema", name, "", "", "USAGE") for name in
+              ("public", "kavriva_e3", "kavriva_e5", "kavriva_audit")}
+    tables = {
+        "kavriva_e5": ("consumer_enrollments", "actor_epochs", "current_grants",
+                       "policy_heads", "policy_rules", "current_sessions"),
+        "kavriva_e3": ("motorcycles", "maintenance_records", "maintenance_revisions",
+                       "negative_floors", "operation_records"),
+        "kavriva_audit": ("heads", "events"),
+    }
+    for schema, names in tables.items():
+        result.update(("table", schema, name, "", grant)
+                      for name in names for grant in ("SELECT", "INSERT"))
+    result.add(("table", "kavriva_e3", "runtime_versions", "", "SELECT"))
+    columns = {
+        ("kavriva_e5", "current_sessions"): ("expires_at",),
+        ("kavriva_e3", "motorcycles"): ("generation",),
+        ("kavriva_e3", "maintenance_records"): ("generation",),
+        ("kavriva_e3", "operation_records"): ("status", "record_id", "result_generation"),
+        ("kavriva_audit", "heads"): ("last_sequence", "last_digest"),
+    }
+    for schema, names in (("kavriva_e5", ("consumer_enrollments", "actor_epochs",
+                          "current_grants", "policy_heads", "policy_rules")),
+                         ("kavriva_e3", ("negative_floors", "runtime_versions"))):
+        for name in names:
+            columns[(schema, name)] = (*columns.get((schema, name), ()), "lock_marker")
+    for (schema, name), names in columns.items():
+        result.update(("column", schema, name, column, "UPDATE") for column in names)
+    result.add(("function", "kavriva_e5", "provider_session_current(uuid, uuid)", "", "EXECUTE"))
+    return result
+
+
+def _validate_access(conn):
+    # Include PUBLIC and inherited grants, not just the two role labels. System
+    # catalogs/builtins are provider machinery; every non-system usable schema
+    # and callable relation/function must match the canonical consumer surface.
+    rows = conn.execute("""
+        with roles as (
+            select oid from pg_roles where pg_has_role(current_user, oid, 'MEMBER')
+            union all select 0::oid
+        ), namespaces as (
+            select * from pg_namespace where nspname not like 'pg\\_%' escape '\\'
+                and nspname <> 'information_schema'
+        )
+        select 'schema', n.nspname, '', '', case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
+        from namespaces n, lateral aclexplode(coalesce(n.nspacl, acldefault('n',n.nspowner))) a
+        where a.grantee in (select oid from roles)
+        union
+        select 'table', n.nspname, c.relname, '', case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
+        from pg_class c join namespaces n on n.oid=c.relnamespace,
+             lateral aclexplode(coalesce(c.relacl, acldefault(
+                 case when c.relkind='S' then 's'::"char" else 'r'::"char" end,c.relowner))) a
+        where c.relkind in ('r','p','v','m','S','f') and a.grantee in (select oid from roles)
+              and (a.grantee <> 0 or has_schema_privilege(current_user,n.oid,'USAGE'))
+        union
+        select 'column', n.nspname, c.relname, att.attname, case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
+        from pg_attribute att join pg_class c on c.oid=att.attrelid
+             join namespaces n on n.oid=c.relnamespace, lateral aclexplode(att.attacl) a
+        where not att.attisdropped and a.grantee in (select oid from roles)
+              and (a.grantee <> 0 or has_schema_privilege(current_user,n.oid,'USAGE'))
+        union
+        select 'function', n.nspname,
+               p.proname || '(' || oidvectortypes(p.proargtypes) || ')', '', case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
+        from pg_proc p join namespaces n on n.oid=p.pronamespace,
+             lateral aclexplode(coalesce(p.proacl,acldefault('f',p.proowner))) a
+        where a.grantee in (select oid from roles)
+              and (a.grantee <> 0 or has_schema_privilege(current_user,n.oid,'USAGE'))
+    """).fetchall()
+    actual = {tuple(row) for row in rows}
+    if actual != _expected_access():
+        raise _invalid()
 
 
 @dataclass(frozen=True)
@@ -58,19 +135,13 @@ def validate_database_identity(binding: EnvironmentBinding):
                 if any(privileged) or not inherit or login != (name == expected):
                     raise _invalid()
             owned = conn.execute("""
-                select exists (
-                    select 1 from pg_class where relowner in
-                        (select oid from pg_roles where rolname in (%s, %s))
-                    union all
-                    select 1 from pg_namespace where nspowner in
-                        (select oid from pg_roles where rolname in (%s, %s))
-                    union all
-                    select 1 from pg_database where datdba in
-                        (select oid from pg_roles where rolname in (%s, %s))
-                )
-            """, (expected, "kavriva_consumer_api") * 3).fetchone()[0]
+                select exists (select 1 from pg_shdepend
+                    where refclassid='pg_authid'::regclass and deptype='o'
+                    and refobjid in (select oid from pg_roles where rolname in (%s,%s)))
+            """, (expected, "kavriva_consumer_api")).fetchone()[0]
             if owned:
                 raise _invalid()
+            _validate_access(conn)
             conn.rollback()
     except Exception:
         raise _invalid() from None
@@ -79,6 +150,13 @@ def validate_database_identity(binding: EnvironmentBinding):
 def _invalid():
     # Do not include parser exceptions, URLs, DSNs or key material in errors.
     return ValueError("server environment binding unavailable")
+
+
+def provider_ca_file():
+    """Only the independently reviewed public provider CA, never a DSN override."""
+    if hashlib.sha256(CA_FILE.read_bytes().replace(b"\r\n", b"\n")).hexdigest() != CA_DIGEST:
+        raise _invalid()
+    return str(CA_FILE.resolve())
 
 
 def _unique(pairs):
@@ -159,7 +237,9 @@ def bind_environment(environ: Mapping[str, str], catalog=None) -> EnvironmentBin
             catalog = json.loads(CATALOG.read_text(encoding="utf-8"),
                                  object_pairs_hook=_unique)
         realms = _validate_catalog(catalog)
-        if any(name.startswith("PG") for name in environ):
+        if any(name.startswith("PG") or name in
+               {"SSL_CERT_FILE", "SSL_CERT_DIR", "OPENSSL_CONF", "SSLKEYLOGFILE"}
+               for name in environ):
             # libpq PGHOSTADDR/PGSERVICE/PGOPTIONS/PGSSLMODE defaults can
             # override a checked DSN or inject session configuration.
             raise _invalid()
@@ -182,7 +262,7 @@ def bind_environment(environ: Mapping[str, str], catalog=None) -> EnvironmentBin
         local = realm == "development"
         if params.get("sslmode") != ("disable" if local else "verify-full"):
             raise _invalid()
-        if (local and "sslrootcert" in params) or (not local and params.get("sslrootcert") != "system"):
+        if (local and "sslrootcert" in params) or (not local and params.get("sslrootcert") != provider_ca_file()):
             raise _invalid()
         # Explicit timeout prevents inheriting a libpq process default.
         if params.get("connect_timeout") != "10":
