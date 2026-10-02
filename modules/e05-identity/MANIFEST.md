@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e05-identity"
 owner: "E5"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050]
+used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050, V-E5-PROPOSAL-001, P-E5-020, E-DEV-051]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E5"
 public_contracts:
   - "[[modules/e05-identity/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase Auth direction, session handling, policy evaluation, audit vault storage, quarantine line, recovery ceremonies. Vault contents never exposed except through investigation chain with authorization."
-tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021, T-E5-017]
+tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021, T-E5-017, T-E5-020]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -104,3 +104,7 @@ Evaluation-only checklist `vault/PROFILES/privileged-activation-checklist.md`; t
 ## Internal quarantine processing policy (T-E5-017)
 
 Policy `modules/e05-identity/internal/quarantine_pipeline.py`; regressions `modules/e05-identity/tests/test_quarantine_pipeline.py`; specification `vault/PROFILES/quarantine-processing-policy.md`; task `vault/REGISTRY/T-E5-017.md`; context `vault/PACKS/P-E5-017.md`; proof `vault/EVIDENCE/E-DEV-050.md`. Pure internal state policy, no public product caller/new runtime seam. Future E3 enforcement/producers and E2 rendering separate; trusted producer/persistence/audit/isolation/producttests missing. Original public authority/anatomy/metadataorigin/holds preserved.
+
+## Internal proposal-only tagging (T-E5-020)
+
+Tags `modules/e05-identity/internal/proposal_tags.py`; tests `modules/e05-identity/tests/test_proposal_tags.py`; specification `vault/PROFILES/extraction-proposal-tags.md`; task `vault/REGISTRY/T-E5-020.md`; context `vault/PACKS/P-E5-020.md`; proof `vault/EVIDENCE/E-DEV-051.md`. Internal same-capsule processing record consumption, no E9/E3privateimport/newruntime seam. Always untrusted proposal/noauthority, fixture provenance only; actual extraction/canonical producer/currenteffectauthorization/isolatedpreview missing. Original anatomy/publicauthority/metadataorigin and holds unchanged.
