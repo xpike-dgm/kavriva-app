@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_never_evict.py, modules/e10-graph/checks/
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-PROTECTED-001]
-used_by: [V-E4-PROTECTED-001, P-E4-009b, T-E4-009b]
+used_by: [V-E4-PROTECTED-001, P-E4-009b, T-E4-009b, P-E4-010, E-DEV-070]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -75,3 +75,7 @@ DirectstandingownerDEC0069/0070 mandate accepts independentFULLdelegatedtaskPASS
 Historicalreviewedprimary 0df8ba7a09d4fc2af12b25c585225f503942bf9e7010e2f0510cb7b0be5bc730 preserved; currentACTIVEprimary 339a2d923c2ae3ef2c91cc24e2d0f47d88117c85447403ac7bb248cd93eeb4a9. Earlierc24PASS/rootdocfix/d273FULLPASS retained, no source rejection/currenttestfailure or actualprotectedstorageproof inferred.
 
 Final six-file metadata verification: build_index62/routingT009bDONE/eligible[]; run_all12checksPASS+42regressionsPASS0.440s/worstexit0; diffcheckPASS/exactsixpaths. OriginalP-PROOF001warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-010 consumption
+
+PR71finalc4471d6f86353c3e751e48e16402447ec9fc9793 separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37047446913/E4CI118PASS0.115s. Normalmatchedmerge21bee83c347294fbee76b7906f5c204be1d63bd2 verified2026-10-02T18:30:26Z. Sourced273bae/FULLtaskPASS/primary/digests/reviewer/history retained. Inventoryv37rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-069-E10-GOVERNED-PATHS.md.snapshot`; consumers `vault/PACKS/P-E4-010.md` / `vault/EVIDENCE/E-DEV-070.md`. InternalprotectionpolicyDONE/actualclassificationstoragecleanup/deviceHELD.
