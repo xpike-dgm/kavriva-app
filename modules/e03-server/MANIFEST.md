@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e03-server"
 owner: "E3"
 depends_on: []
-used_by: [M-E1-001, M-E2-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
+used_by: [M-E1-001, M-E2-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, P-E3-032, V-E3-ENV-001, E-DEV-045]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E3"
 public_contracts:
   - "[[modules/e03-server/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves), Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody. Helpers, storage layout, in-flight job state invisible outside. Secret custody/rotation follows `vault/PROFILES/secret-custody-rotation.md`: server-only privileged material, separate planned/emergency retirement proof; document completion does not execute rotation or prove live custody. The private maintenance history reader uses a coherent tenant-scoped database transaction; callers must authorize the read first. No history HTTP endpoint is introduced by T-E3-010. AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority."
-tasks: [T-E10-001, T-E10-006]
+tasks: [T-E10-001, T-E10-006, T-E3-032]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -131,3 +131,8 @@ Same stable manifest identity and original semantic body preserved. Purpose/inte
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+
+## Environment separation (T-E3-032)
+
+`vault/PROFILES/environment-separation.md` owns the trusted server binding; `supabase/environment-bindings.json` selects no client authority. Missing or cross-environment configuration holds before Auth/DB effects. Production release/custody remains HELD. Public E5 facade remains the only cross-capsule Auth seam.

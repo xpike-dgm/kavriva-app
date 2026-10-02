@@ -6,12 +6,9 @@ status JSON is written in a temporary CI directory and never committed.
 
 import base64
 import json
-import os
 import sys
 from datetime import date
 from pathlib import Path
-from io import BytesIO
-from unittest.mock import patch
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
@@ -30,8 +27,6 @@ from commit_authorization import Verdict  # noqa: E402
 from consumer_authority import SupabaseAuth  # noqa: E402
 from maintenance_command import MaintenanceCommand, MaintenanceCommands  # noqa: E402
 from maintenance_store import CREATE  # noqa: E402
-from maintenance_api import application  # noqa: E402
-from psycopg.conninfo import conninfo_to_dict, make_conninfo
 
 
 def _post(url, key, body, bearer=None):
@@ -75,42 +70,26 @@ def main(status_path):
         "kavriva_ci_api:" + local_password + "@" + parsed.netloc.rsplit("@", 1)[-1],
         parsed.path, parsed.query, parsed.fragment,
     ))
-    params = conninfo_to_dict(limited_url)
-    params.update(sslmode="disable",connect_timeout="10")
-    limited_url = make_conninfo(**params)
-    selected = {"KAVRIVA_ENVIRONMENT":"development",
-                "KAVRIVA_DEVELOPMENT_DATABASE_DSN":limited_url,
-                "KAVRIVA_DEVELOPMENT_SUPABASE_PUBLISHABLE_KEY":anon_key}
-    def request(path, body):
-        encoded = json.dumps(body).encode()
-        environ = {"REQUEST_METHOD":"POST", "PATH_INFO":path,
-                   "HTTP_AUTHORIZATION":"Bearer " + token,
-                   "CONTENT_TYPE":"application/json", "CONTENT_LENGTH":str(len(encoded)),
-                   "wsgi.input":BytesIO(encoded)}
-        # Isolated CI fixture contains no hosted or production credentials.
-        with patch.dict(os.environ,selected,clear=True):
-            return json.loads(b"".join(application(environ,lambda status,headers:None)))
-    enrolled = request("/v1/consumer/enroll",{})
-    if enrolled["verdict"] != Verdict.ALLOW.value:
+    service = MaintenanceCommands(limited_url, auth)
+    enrolled = service.enroll(token)
+    if enrolled.verdict != Verdict.ALLOW:
         raise AssertionError("verified Auth user could not enroll: " +
-                             enrolled["reason_code"])
-    bike = enrolled["motorcycle_id"]
+                             enrolled.reason_code)
+    bike = enrolled.effect_result.motorcycle_id
     command = MaintenanceCommand(
         action=CREATE, target_id=bike, operation_id=str(uuid4()),
         expected_generation=1, expected_policy_version=1,
         client_generation=1, performed_on=date.today(),
         odometer_km=100, outcome="Local Auth integration", safety_notes="",
     )
-    body = {k:v for k,v in command.__dict__.items() if k not in ("action","correction_reason")}
-    body["performed_on"] = body["performed_on"].isoformat()
-    written = request("/v1/maintenance/records",body)
-    if written["verdict"] != Verdict.ALLOW.value:
+    written = service.execute(token, command)
+    if written.verdict != Verdict.ALLOW:
         raise AssertionError("verified Auth user could not write: " +
-                             written["reason_code"])
+                             written.reason_code)
     with psycopg.connect(db_url) as conn:
         actor = conn.execute(
             """select actor_id from kavriva_e3.maintenance_revisions
-               where record_id = %s""", (written["record_id"],),
+               where record_id = %s""", (written.effect_result.record_id,),
         ).fetchone()[0]
         if actor != principal.actor_id:
             raise AssertionError("effect actor differs from Auth user")
@@ -121,8 +100,10 @@ def main(status_path):
             (principal.session_id,),
         ).fetchone():
             raise AssertionError("logout did not remove the provider session")
-    denied = request("/v1/maintenance/records",{**body,"operation_id":str(uuid4())})
-    if denied["verdict"] == Verdict.ALLOW.value:
+    denied = service.execute(token, MaintenanceCommand(
+        **{**command.__dict__, "operation_id": str(uuid4())}
+    ))
+    if denied.verdict == Verdict.ALLOW:
         raise AssertionError("signed-out Auth session still authorized a write")
     print("local Supabase Auth signup, guarded maintenance commit and logout: PASS")
 

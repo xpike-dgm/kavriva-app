@@ -10,13 +10,13 @@ from __future__ import annotations
 import json
 import os
 from datetime import date
+from functools import lru_cache
 from io import BytesIO
 
 from commit_authorization import CommitResult, Verdict
 from consumer_authority import SupabaseAuth
 from maintenance_command import MaintenanceCommand, MaintenanceCommands
 from maintenance_store import CREATE, EDIT
-from environment_binding import bind_environment
 
 
 _MAX_BODY = 16384
@@ -147,15 +147,14 @@ def create_app(commands: MaintenanceCommands):
     return app
 
 
+@lru_cache(maxsize=1)
 def _configured_app():
-    binding = bind_environment(os.environ)
     return create_app(MaintenanceCommands(
-        binding.database_dsn,
+        os.environ["KAVRIVA_DATABASE_DSN"],
         SupabaseAuth(
-            binding.api_url,
-            binding.publishable_key,
-            binding.issuer,
-            allow_local_http=binding.allow_local_http,
+            os.environ["SUPABASE_URL"],
+            os.environ["SUPABASE_PUBLISHABLE_KEY"],
+            os.environ["SUPABASE_ISSUER"],
         ),
     ))
 
