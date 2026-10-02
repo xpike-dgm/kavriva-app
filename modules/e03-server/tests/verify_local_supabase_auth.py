@@ -98,16 +98,19 @@ def main(status_path):
     except ValueError:
         # Local disposable fixture metadata only: no DSN, password, token,
         # provider user or raw exception. Keep a failing preflight failing.
-        with psycopg.connect(limited_url) as conn:
-            rows = conn.execute("""
+        try:
+            with psycopg.connect(limited_url) as conn:
+                rows = conn.execute("""
                 select d.datname, a.privilege_type, a.is_grantable
                 from pg_database d,
                      lateral aclexplode(coalesce(d.datacl,acldefault('d',d.datdba))) a
                 where a.grantee=0 or a.grantee in
                     (select oid from pg_roles where pg_has_role(current_user,oid,'MEMBER'))
                 order by 1,2,3
-            """).fetchall()
-        print("isolated fixture database ACL metadata: " + json.dumps(rows))
+                """).fetchall()
+            print("isolated fixture database ACL metadata: " + json.dumps(rows))
+        except Exception:
+            print("isolated fixture database ACL metadata: UNAVAILABLE")
         raise AssertionError("isolated fixture role preflight failed") from None
     def request(path, body):
         encoded = json.dumps(body).encode()
