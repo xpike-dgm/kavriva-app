@@ -16,7 +16,7 @@ depends_on: [V-E10-REVIEW-001, V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V
 used_by: [P-E10-016, T-E10-016, E-DEV-044]
 evidence: [E-DEV-044]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Parallel independent-output guards v1
