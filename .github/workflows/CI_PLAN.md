@@ -26,6 +26,8 @@ used_by:
   - "E-DEV-060"
   - "P-E4-002"
   - "E-DEV-061"
+  - "P-E4-003"
+  - "E-DEV-062"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -134,3 +136,7 @@ Existing E6 family includes actual registry/snapshot/config/denial units, `vault
 ## E4 safety nesting coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged, current discovery covers22units (accepted12composition +10nesting). `modules/e04-offline/tests/test_safety_media_nesting.py` verifies required safety is nested and not additive/on-demand-for-size in exact supplied declarations; NONE/real source/classification/runtimeHELD retained. Context `vault/PACKS/P-E4-002.md`; evidence `vault/EVIDENCE/E-DEV-061.md`. No CI policy or privilege/authentication gate changed.
+
+## E4 optional lifecycle rule coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged Historical e1fcde4 discovery covered34units (accepted22 +12optional). Current new source covers35units (accepted22 +13optional), including finite serializer-error stress after root correction; workflow unchanged. `modules/e04-offline/tests/test_optional_media.py` tests synthetic explicit requests/cancelled and replayed attempts/eviction/refetch/core invariance/type and byte corruption; never actual human intent/network/storage/canonical acceptance. Context `vault/PACKS/P-E4-003.md`; proof `vault/EVIDENCE/E-DEV-062.md`. Exact-source twelve CI/independent task review remain separate gates; no gate-policy changes.
