@@ -66,3 +66,5 @@ Direct owner DEC0069/0070 standing bounded subagent acceptance and normal matchi
 
 Current ACTIVE primary normalized SHA256 af9895459076521dffd64317848425cdfbae1bc30115ed894536bfbd98fa3b97; reviewed source primary e2adb2c09abf96b7bfe78ee80897d141466bd1e970547fc68d25b490847f6915 retained as historical source proof.
 Final root metadata preparation: build_index50rows, task bounded DONE/profile-pack ACTIVE, run_all12checks+42regressionsPASS0.484s/worst exit0, diffPASS. Routing eligibility empty; no live prerequisite promoted.
+
+Final metadata head dd146a5f3848ae3b22d3a48f624de45f96f71bda architecture CI FAILED (PR37015625412/push37015620185): root regenerated registry but omitted routing_run. Earlier unchanged-routing statement was incorrect: eligibility stayed empty but excluded T-E6-003 still said REVIEW. Ran actual routing_run to regenerate excluded status DONE; six final metadata/view files now changed against accepted source. No checker weakened; all production holds preserved. New final audit/latest-head CI required; failed heads not accepted.
