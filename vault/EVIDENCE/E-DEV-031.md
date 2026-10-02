@@ -1,7 +1,8 @@
 ---
 test_id: E-DEV-031
 contract_id_version: "ADR-015 Decisions1-2; capsule declaration template v1"
-subject_file: templates/MANIFEST_TEMPLATE.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-031-MANIFEST_TEMPLATE.md.snapshot
+subject_original_path: templates/MANIFEST_TEMPLATE.md
 subject_digest: 9bee1f4bd936f266f40a158e5b337db0c9193dd8c1bda7be3e7c0eb93652fb47
 result: "PASS: independent review accepted the reusable capsule declaration template"
 evidence_links:
@@ -23,12 +24,12 @@ owner: E10
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: capsule-declaration-template
-tasks: [T-E10-004]
+tasks: [T-E10-004, T-E10-005]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [D-APP-DOC-003]
-used_by: [D-APP-DOC-003, P-E10-004, T-E10-004]
+used_by: [D-APP-DOC-003, P-E10-004, T-E10-004, P-E10-005, E-DEV-032]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -51,3 +52,5 @@ Independent acceptance: /root/pr33_independent_review, separate bounded context/
 Actual source-head CI allSUCCESS: PR architecture36942261137/E336942261075/E536942261096/Auth36942261087; push architecture36942257700/E336942257716/E536942257733/Auth36942257712. Expected T3 label-gated skips verified for no-label documentary E10 T2; actual mandatory independent review separately obtained. Owner direct standing mandate2026-10-01 accepts actual bounded PASS and normal merge after exact-head greenCI.
 
 Template ACTIVE/task DONE/evidence PASS for reusable capsule form only. Final metadata/status/evidence/index audit and new-head applicableCI required before merge; immutable exact finalhead/verdict/runs recorded in PR33 without recursive proof commits. E3R1 REVIEW/E5 IN_PROGRESS/production/release/activation unchanged, no semantic graph or instantiated product capability acceptance.
+
+T-E10-005 custody: subject_file addresses exact PR33-approved final6369f40 template payload from merge422235b; subject_original_path retains current address. Original9bee1f4 digest/verdict/reviewer/head/date unchanged. P-E10-005/E-DEV-032 actual proof consumers and maintenance-task trace added; earlier acceptance does not approve these new metadata changes.
