@@ -14,13 +14,13 @@ depends_on:
   - "ADR-015"
   - "V-E10-NODE-001"
   - "V-E10-REL-001"
-used_by: [I-E10-REGISTRATION-BASELINE, P-E10-004, T-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, V-E10-TOPO-001, P-E10-006, E-DEV-033]
+used_by: [I-E10-REGISTRATION-BASELINE, P-E10-004, T-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034]
 implements:
   - "ADR-015 Decision3 record registration"
   - "ADR-015 Decisions1-2; C10.2; F10.2.1"
 public_contracts: []
 internal_scope: "Capsule declaration authoring template; original reservation/custody history preserved"
-tasks: [T-E10-001, T-E10-004, T-E10-005, T-E10-006]
+tasks: [T-E10-001, T-E10-004, T-E10-005, T-E10-006, T-E10-007]
 tests:
   - "modules/e10-graph/checks/check_manifests.py"
   - "modules/e10-graph/checks/check_identity.py"

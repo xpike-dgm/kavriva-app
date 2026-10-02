@@ -1,16 +1,16 @@
 ---
 record_id: V-E10-TOPO-001
-version: 2
+version: 1
 purpose: Define governed implementation addresses, record linkage and capsule path coverage
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [D-APP-DOC-003, V-E10-REL-001, V-E10-STRUCT-001, I-E10-PATHS-001, D-APP-DOC-017]
-used_by: [P-E10-006, T-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034]
+used_by: [P-E10-006, T-E10-006, E-DEV-033]
 implements: [ADR-015, C10.2, F10.2.1, R-001, R-002, R-004, R-010]
 public_contracts: []
 internal_scope: repository-topology-and-record-custody
-tasks: [T-E10-006, T-E10-007]
+tasks: [T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_orphans.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033]
 supersedes: []
@@ -19,7 +19,7 @@ status: ACTIVE
 last_verified: 2026-10-02
 ---
 
-# Repository topology and governed addresses v2
+# Repository topology and governed addresses v1
 
 Record: `V-E10-TOPO-001`
 
@@ -36,7 +36,7 @@ One planning repository owns decisions/design/requirements. One application repo
 | root README, .gitignore, .gitattributes | E10 repository landing/source-handling policy; root controls are implementation tooling, not product authority |
 | .github/workflows | Installed CI definitions/specification, E10 delivery tooling; workflows do not replace independent review |
 | modules/e01-app through modules/e10-graph | Exactly one governed capsule per epic, each actual MANIFEST and public/internal/tests addresses; empty reserved directories prove existence only |
-| templates | Reusable authoring sources; manifest template is current complete form after preserved stub, contract stub retains its actual scope; pack template now publishes the canonical fourteen-field schema after its preserved reservation (T-E10-007) |
+| templates | Reusable authoring sources; manifest template is current complete form after preserved stub, contract/pack stubs retain their own actual scope |
 | vault/REGISTRY | Physical task IDs explicitly supersede their frozen planning row; execution state is here, planning PROPOSED rows stay frozen. Existing domain-authorities.json is a reviewed versioned logical authority assignment, defined by vault/PROFILES/domain-authority-registry.md; E3/E5/E6 domain ownership remains, every physical_activation is HELD. It is not a generated index, task record or runtime permission |
 | vault/PACKS | Versioned fourteen-field task context, mandatory sources/allowed paths/negative cases; a pack grants no runtime authority |
 | vault/CONTRACTS | Stable typed contract records and provider/source/version references; consumed surface does not transfer ownership |
@@ -83,8 +83,3 @@ Evidence must still bind exact originally accepted bytes. Preserve the reviewed 
 Topology/inventory v1: full registry impact is explicit new records and actual documentary consumers/task traces plus regenerated views. No source movement, bulk ownership rewrite, runtime/seam change or auto execution. Later topology changes need version/source/consumer impact, actual path/anchor verification, preserved history, independent review and applicable exact-head CI. Rollback preserves identities and earlier path/subject receipts, not discard history. No new owned runtime contract/ID replacement, hence empty public/lineage collections.
 
 Task: `vault/REGISTRY/T-E10-006.md`; pack: `vault/PACKS/P-E10-006.md`; proof: `vault/EVIDENCE/E-DEV-033.md`. E3R1 REVIEW/E5 IN_PROGRESS/production-release-activation gates unchanged. Completion is bounded linkage/address/no-orphan/manifest coverage, not semantic product readiness.
-
-
-## Documentary source revision v2 (T-E10-007)
-
-Current reusable pack schema: `templates/PACK_TEMPLATE.md`; its task/pack/proof are `vault/REGISTRY/T-E10-007.md`, `vault/PACKS/P-E10-007.md`, `vault/EVIDENCE/E-DEV-034.md`. Existing governed addresses/owners/boundaries remain; v2 qualifies current template publication and actual source consumers, while path-inventory v2 records new3records/2preservedpayloads. Exact old rule/inventory subjects are archived for EDEV033, not rehashed or promoted to new acceptance. No move/newfolder/runtime/authority change.

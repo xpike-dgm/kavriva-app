@@ -24,12 +24,12 @@ owner: E10
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: capsule-declaration-template
-tasks: [T-E10-004, T-E10-005, T-E10-006]
+tasks: [T-E10-004, T-E10-005, T-E10-006, T-E10-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [D-APP-DOC-003]
-used_by: [D-APP-DOC-003, P-E10-004, T-E10-004, P-E10-005, E-DEV-032, P-E10-006, E-DEV-033]
+used_by: [D-APP-DOC-003, P-E10-004, T-E10-004, P-E10-005, E-DEV-032, P-E10-006, E-DEV-033, P-E10-007, E-DEV-034]
 evidence: []
 supersedes: []
 status: RECORDED

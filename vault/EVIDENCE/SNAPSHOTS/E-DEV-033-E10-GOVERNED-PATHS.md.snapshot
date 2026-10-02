@@ -1,16 +1,16 @@
 ---
 inventory_id: I-E10-PATHS-001
-version: 2
+version: 1
 purpose: Inventory governed tracked repository addresses and their documentary custody anchors
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [M-E1-001, M-E2-001, M-E3-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, M-E10-001, D-APP-DOC-017]
-used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034]
+used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033]
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: tracked-path-custody-receipt
-tasks: [T-E10-006, T-E10-007]
+tasks: [T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033]
 supersedes: []
@@ -522,18 +522,3 @@ Each folder has actual constituent files in the table; anchors below resolve the
 Five new governed records: `modules/e10-graph/REPOSITORY_TOPOLOGY.md`, this inventory, `vault/PACKS/P-E10-006.md`, `vault/REGISTRY/T-E10-006.md`, `vault/EVIDENCE/E-DEV-033.md`. Their actual purpose/module/task metadata supplies the admission anchor. Existing documentary source consumer/task traces and generated indexes may change within the pack; no new physical folder, source movement or product owner rewrite. Independent review must compare the actual final diff with this declared delta. This base table does not hash later current files.
 
 Rule: `modules/e10-graph/REPOSITORY_TOPOLOGY.md`; pack: `vault/PACKS/P-E10-006.md`; task: `vault/REGISTRY/T-E10-006.md`; proof: `vault/EVIDENCE/E-DEV-033.md`. Future introduced paths/folders need a reviewed inventory revision and meaningful anchors, not automatic admission by directory prefix.
-
-
-## Admission delta v2 (T-E10-007)
-
-Immutable v1 base401files/79folders/rawcatalog and all hashes above remain its historical observation. T006new5records already admitted by v1. This revision admits the following5new paths in existing folders; actual record purpose/module/task and preserved payload custody supply the anchors. Current source metadata, pack-template publication, topology v2 qualification and generated views are changed under P-E10-007; no source movement/new folder/product ownership change. No current-byte hashes are inferred from the older base table.
-
-| Newly admitted path | Meaningful anchor and purpose |
-|---|---|
-| `vault/PACKS/P-E10-007.md` | Actual P-E10-007 scoped schema-task context and T-E10-007 |
-| `vault/REGISTRY/T-E10-007.md` | Actual T-E10-007 physical task maps exact frozen planning row |
-| `vault/EVIDENCE/E-DEV-034.md` | Actual E-DEV-034 exact template-subject proof, independent review outstanding |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-033-REPOSITORY_TOPOLOGY.md.snapshot` | E-DEV-033 original accepted topology bytes/digest, payload custody only |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-033-E10-GOVERNED-PATHS.md.snapshot` | E-DEV-033 original accepted inventory bytes/digest, payload custody only |
-
-Task: `vault/REGISTRY/T-E10-007.md`; pack: `vault/PACKS/P-E10-007.md`; current proof: `vault/EVIDENCE/E-DEV-034.md`. Old accepted v1 inventory retained at `vault/EVIDENCE/SNAPSHOTS/E-DEV-033-E10-GOVERNED-PATHS.md.snapshot`; old catalog/count/verdict scope unchanged.
