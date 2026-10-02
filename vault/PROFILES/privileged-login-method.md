@@ -16,7 +16,7 @@ depends_on: [M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-007a, T-E5-007a, E-DEV-048]
 evidence: [E-DEV-048]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Privileged login method specification v1
