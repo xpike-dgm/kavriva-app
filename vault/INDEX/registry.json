@@ -2234,6 +2234,54 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E5-020",
+   "flow_feature": "FL5.6.3/F5.6.3",
+   "objective": "AI proposal-only tagging",
+   "context_pack": "P-E5-020",
+   "acceptance": "Provenance-linked; never approval; hostile inert",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-02",
+   "purpose": "Tag AI and OCR extraction results as provenance-linked proposals only",
+   "domain": "project-execution",
+   "module": "e05-identity",
+   "owner": "E5",
+   "implements": [
+    "ADR-004",
+    "ADR-014",
+    "C5.6",
+    "F5.6.3",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "untrusted-extraction-proposal-tags",
+   "tasks": [
+    "T-E5-020"
+   ],
+   "tests": [
+    "modules/e05-identity/tests/test_proposal_tags.py",
+    "modules/e10-graph/checks/check_registration.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-02",
+   "depends_on": [
+    "T-E5-017"
+   ],
+   "used_by": [
+    "V-E5-PROPOSAL-001",
+    "P-E5-020",
+    "E-DEV-051"
+   ],
+   "evidence": "E-DEV-051",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E5-020",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E5-021",
    "flow_feature": "FL5.7.1/F5.7.1",
    "objective": "Activation gate checklist (skeleton only)",
