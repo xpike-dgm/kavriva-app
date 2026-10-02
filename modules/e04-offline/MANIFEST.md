@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e04-offline"
 owner: "E4"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061, V-E4-OPTIONAL-001, P-E4-003, E-DEV-062, V-E4-SIZE-001, P-E4-004, E-DEV-063, V-E4-TRANSITION-001, P-E4-005, E-DEV-064, V-E4-FALLBACK-001, P-E4-006, E-DEV-065]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061, V-E4-OPTIONAL-001, P-E4-003, E-DEV-062, V-E4-SIZE-001, P-E4-004, E-DEV-063, V-E4-TRANSITION-001, P-E4-005, E-DEV-064, V-E4-FALLBACK-001, P-E4-006, E-DEV-065, V-E4-AUTO-001, P-E4-007, E-DEV-066]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
 public_contracts:
   - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
 internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
-tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002, T-E4-003, T-E4-004, T-E4-005, T-E4-006]
+tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002, T-E4-003, T-E4-004, T-E4-005, T-E4-006, T-E4-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -108,3 +108,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E4-006 actual complete-package fallback rule
 
 `modules/e04-offline/internal/full_package_fallback.py` / `modules/e04-offline/tests/test_full_package_fallback.py` choose complete selectedtarget closure for absent/stale/malformed/unusable delta/base hints; exacthint stillfullbecause deltaoptimizationdeferred. Knownstale/foreigntargetrejects. Plan is not bytes/permission/actualfetch, T005verification/peak/atomicity gates unchanged. IntrinsicNONE/constantproductionHELD; public/anatomy/scope/edgesunchanged. Lifecycle `vault/REGISTRY/T-E4-006.md`; pack `vault/PACKS/P-E4-006.md`; profile `vault/PROFILES/full-package-fallback.md`; proof `vault/EVIDENCE/E-DEV-065.md`.
+
+## T-E4-007 actual internal automatic scheduling policy
+
+`modules/e04-offline/internal/required_auto_transfer.py` / `modules/e04-offline/tests/test_required_auto_transfer.py` schedule declaredneededrequiredcore first/only existingexplicitoptional/no network or byteconfirmation; completionmeans suppliedoutcomeonly/NONE. No actualE1need/size/gesture/networkOS/download/byteproof/encryptedstorage/runtimeauthority, productionconstantHELD. Originalpublic/anatomy/scope/edgesunchanged. Lifecycle `vault/REGISTRY/T-E4-007.md`; pack `vault/PACKS/P-E4-007.md`; profile `vault/PROFILES/required-auto-transfer.md`; proof `vault/EVIDENCE/E-DEV-066.md`.
