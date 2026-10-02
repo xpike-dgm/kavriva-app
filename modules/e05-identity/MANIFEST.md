@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e05-identity"
 owner: "E5"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050, V-E5-PROPOSAL-001, P-E5-020, E-DEV-051, V-E5-PREVIEW-001, P-E5-018, E-DEV-052]
+used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050, V-E5-PROPOSAL-001, P-E5-020, E-DEV-051, V-E5-PREVIEW-001, P-E5-018, E-DEV-052, V-E5-EXPORT-001, P-E5-019, E-DEV-053]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E5"
 public_contracts:
   - "[[modules/e05-identity/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase Auth direction, session handling, policy evaluation, audit vault storage, quarantine line, recovery ceremonies. Vault contents never exposed except through investigation chain with authorization."
-tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021, T-E5-017, T-E5-020, T-E5-018]
+tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021, T-E5-017, T-E5-020, T-E5-018, T-E5-019]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -112,3 +112,7 @@ Tags `modules/e05-identity/internal/proposal_tags.py`; tests `modules/e05-identi
 ## Internal isolated preview rules (T-E5-018)
 
 Rules `modules/e05-identity/internal/preview_isolation.py`; unit `modules/e05-identity/tests/test_preview_isolation.py`; synthetic browser fixture `modules/e05-identity/tests/preview_browser_fixture.cjs`; profile `vault/PROFILES/isolated-preview-rules.md`; pack `vault/PACKS/P-E5-018.md`; task `vault/REGISTRY/T-E5-018.md`; proof `vault/EVIDENCE/E-DEV-052.md`. Same-capsule requirements only, no product renderer/current authorization/new runtime seam. E2 renderer/E3 serving/authenticated isolation/HTTPS/native containment/mobile/composite proof missing; actual preview/production HELD. Original anatomy/public authority/metadata origin retained.
+
+## Internal export disclosure policy (T-E5-019)
+
+Policy `modules/e05-identity/internal/export_disclosure.py`; tests `modules/e05-identity/tests/test_export_disclosure.py`; profile `vault/PROFILES/export-disclosure-records.md`; pack `vault/PACKS/P-E5-019.md`; task `vault/REGISTRY/T-E5-019.md`; proof `vault/EVIDENCE/E-DEV-053.md`. Internal minimized field manifest/disclosure record/warning only, no public runtime seam or E3 private import. Actual complete field/classification/permission/audit/event/format/UI/link producers MISSING, real export/production HELD. Original anatomy/public authority/metadata origin and holds retained.
