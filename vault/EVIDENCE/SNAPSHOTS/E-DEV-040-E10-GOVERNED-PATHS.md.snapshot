@@ -1,16 +1,16 @@
 ---
 inventory_id: I-E10-PATHS-001
-version: 9
+version: 8
 purpose: Inventory governed tracked repository addresses and their documentary custody anchors
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [M-E1-001, M-E2-001, M-E3-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, M-E10-001, D-APP-DOC-017]
-used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041]
+used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040]
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: tracked-path-custody-receipt
-tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013]
+tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
@@ -635,18 +635,3 @@ Original401file79folder immutablecatalog/base and every earlieradmission retaine
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-039-E10-GOVERNED-PATHS.md.snapshot` | preserve exact accepted PR41 raw Git payload of vault/INVENTORIES/E10-GOVERNED-PATHS.md with no new active identity; actual T-E10-012/documentary custody |
 
 Pack `vault/PACKS/P-E10-012.md`; task `vault/REGISTRY/T-E10-012.md`; proof `vault/EVIDENCE/E-DEV-040.md`. Admission/metadatafreshness does not prove futureproductsimulation.
-
-
-## Admission delta v9 (T-E10-013)
-
-Original401file79folder immutablecatalog/base and every earlieradmission retained. Fournew rule/pack/task/proof records plus one exact accepted PR42secondary archivedpayload use existingfolders. No move/newfolder/runtimeowner/authority.
-
-| New path | Actual anchor/purpose |
-|---|---|
-| `modules/e10-graph/DESIGN_GATE_CHECKLIST.md` | create full addendum7 design checklist and controlled new-pattern change entry only; actual T-E10-013/documentary custody |
-| `vault/PACKS/P-E10-013.md` | create explicit fourteen-field minimum sufficient scoped context before work; actual T-E10-013/documentary custody |
-| `vault/REGISTRY/T-E10-013.md` | create exact canonical task/dependency/claim/history/acceptance record; actual T-E10-013/documentary custody |
-| `vault/EVIDENCE/E-DEV-041.md` | create bounded exact-subject source comparison/check/review receipt without self-PASS; actual T-E10-013/documentary custody |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-040-E10-GOVERNED-PATHS.md.snapshot` | preserve exact accepted PR42 raw Git payload of vault/INVENTORIES/E10-GOVERNED-PATHS.md with no new active identity; actual T-E10-013/documentary custody |
-
-Pack `vault/PACKS/P-E10-013.md`; task `vault/REGISTRY/T-E10-013.md`; proof `vault/EVIDENCE/E-DEV-041.md`. Admission/metadatafreshness does not prove futureproductsimulation.

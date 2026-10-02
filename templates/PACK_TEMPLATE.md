@@ -10,13 +10,13 @@ domain: "project-records"
 owner: "E10"
 module: "e10-graph"
 depends_on: [ADR-015, V-E10-NODE-001, V-E10-REL-001, D-APP-DOC-003, V-E10-TOPO-001, I-E10-PATHS-001, task-pack]
-used_by: [I-E10-REGISTRATION-BASELINE, P-E10-007, T-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, V-E10-CLOSE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040]
+used_by: [I-E10-REGISTRATION-BASELINE, P-E10-007, T-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, V-E10-CLOSE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041]
 implements:
   - "ADR-015 Decision3 record registration"
   - "ADR-015 Decision5; C10.3; F10.3.1"
 public_contracts: []
 internal_scope: "Task-pack schema authoring; original reservation/custody history preserved"
-tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012]
+tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013]
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"

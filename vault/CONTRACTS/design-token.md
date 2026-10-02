@@ -19,6 +19,9 @@ used_by:
   - "I-E10-REGISTRATION-BASELINE"
   - "M-E10-001"
   - "V-CMD-001"
+  - "V-E10-DESIGN-001"
+  - "P-E10-013"
+  - "E-DEV-041"
 implements:
   - "planning CONTRACT_CATALOG.md row 9 (DESIGN_CONSISTENCY_AND_CHANGE.md + V10/REF-VISUAL-001, single truth — not copied here; tokens finalized per design gate)"
 public_contracts:
@@ -26,6 +29,7 @@ public_contracts:
 internal_scope: "Original document declarations and record custody; no new runtime authority"
 tasks:
   - "T-E10-001"
+  - "T-E10-013"
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
