@@ -44,6 +44,8 @@ used_by:
   - "E-DEV-069"
   - "P-E4-010"
   - "E-DEV-070"
+  - "P-E4-011a"
+  - "E-DEV-071"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -188,3 +190,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers118units(accepted10
 ## E4 held staging coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers129units(accepted118+11hold). `modules/e04-offline/tests/test_hold_transfer.py` probesinsufficientstage/verificationextra/exactfit/retainold/orderedneededcleanup/protectedIDsandfacts/partialcorruptstale/pin/type/immutability/coherentforgery/constantheld. Fixtures not actualclassification/OSspace/deletion/encryptedstore/device proof; acceptedT009a/bguards unchanged. Context `vault/PACKS/P-E4-010.md`; proof `vault/EVIDENCE/E-DEV-070.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.
+
+## E4 local ledger-state coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted129+8states). `modules/e04-offline/tests/test_ledger_states.py` probesexacteight/stateboundaries/noncanonicalobservations/unknownmalformed/subclasshostile/immutability/coherentacceptedforgery/constantheld. Fixtures not actual identified-operation persistence, canonical E3 acceptance/lookup, encrypted-store or device proof; T011b/T012separate. Context `vault/PACKS/P-E4-011a.md`; proof `vault/EVIDENCE/E-DEV-071.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.
