@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_optional_media.py, modules/e10-graph/chec
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-OPTIONAL-001]
-used_by: [V-E4-OPTIONAL-001, P-E4-003, T-E4-003]
+used_by: [V-E4-OPTIONAL-001, P-E4-003, T-E4-003, P-E4-004, E-DEV-063]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -80,3 +80,7 @@ Final root metadata preparation graph12checks+42regressionsPASS0.434s/worstexit0
 ## Final metadata review correction
 
 Separate configured gpt-6-luna/max /root/pr58_snapshot_binding_review actual final metadata CHANGES_REQUESTED at94f949739f956e2730d0cb729cc052b787297bb3: prior bcdd-review digest/status and pre-review requirement were still labeled current, inconsistent with later sourcePASS/DONE/ACTIVE. This is an actual metadata rejection, not a source-code rejection. Root relabeled both prior source states explicitly historical; original values and failure/PASS history retained. Profile primary recomputed after label-only correction: 6628e1f9b229822268f1a6439d89be9d8206aa2a93739238b318b246ef2cc58f. Exactly profile/evidence changed relative94f9497; six closeout paths relative acceptedbcdd. Code/tests/workflow/archive/inventory/manifest/CIplan/views/pack/task unchanged. Full current source acceptance bcdd remains valid, productionNONE/HELD unchanged; new independent final audit/latest-head12CI required before merge. No admin/selfPASS/bypass.
+
+## Secondary accepted custody receipt / T-E4-004 consumption
+
+PR64final24fedab71318367bf8aa0607fecc000f2c91c9e5 separate configured gpt-6-luna/max final metadata PASS/no findings after actual metadataCHANGES_REQUESTED94f9497 and historical-label-only correction. Exactfinalall12CIgreen/actualPRT3SUCCESS37032334194/E4CI35PASS0.020s. Normal matchedheadmerge d0b5b06778b8a2789c96f1454607e5de8140c6fc verified2026-10-02T16:16:37Z. Earlier sourcePASS/rootactualserializerERROR/fix/re-reviewPASS/metadatarejection/correction/originalprimary/digests/reviewer/history retained. Inventoryv30 rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-062-E10-GOVERNED-PATHS.md.snapshot`; documentary consumers `vault/PACKS/P-E4-004.md` / `vault/EVIDENCE/E-DEV-063.md`; no actual optional transfer or live user/production approval.
