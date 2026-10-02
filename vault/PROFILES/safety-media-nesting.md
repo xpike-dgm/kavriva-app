@@ -16,7 +16,7 @@ depends_on: [M-E4-001, T-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-002, T-E4-002, E-DEV-061]
 evidence: [E-DEV-061]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Safety media is a subset of required core
@@ -40,3 +40,11 @@ Task-specific composition/nesting check requires independent full review before 
 ADR009R1 -> C4.1 -> F4.1.1 -> FL4.1.1 -> T-E4-002 -> M-E4-001 -> E-DEV-061. Task/feature/flow/requirement supplied-core membership only; design no screen; architecture internal E4 checker uses accepted same-capsule checker; data pure immutable counts no format/schema/storage; release no authority; product scenarios fixture-negative only; gap audit above.
 
 Code `modules/e04-offline/internal/safety_media_nesting.py`; tests `modules/e04-offline/tests/test_safety_media_nesting.py`; accepted checker `modules/e04-offline/internal/core_composition.py`; unchanged CI `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-002.md`; task `vault/REGISTRY/T-E4-002.md`; evidence `vault/EVIDENCE/E-DEV-061.md`; capsule `modules/e04-offline/MANIFEST.md`.
+
+## Independent bounded task completion
+
+Separate /root/pr58_snapshot_binding_review, configured user-selected gpt-6-luna/max, full T-E4-002 task-level PASS/no actionable findings at ff5ff4fae4cbcade3962be910aab45749d9de613 over accepted6af8dbf323d2e688b7a6b2d4634e00971672af14. All13paths reviewed, clean checkout/profiledigest matched/v28archivebyteequal. No source rejection/fix. Delegated accepted T001 exact verification, missing/split/on-demand required IDs rejected, safety subset counted only in complete core total, no budget/trim path, intrinsicNONE. Empty declared media not canonical necessity proof; E3/E6 source/semantic completeness/classification and mobile/render/device/storage/promotion/actionability stillHELD. Reviewer ran no tests/CI/network/provider/writes.
+
+Root exact source all12CI SUCCESS: PRarchitecture37028475629 actualT3SUCCESS (earlierduplicate37028471176green), E4 37028471615 actual22PASS0.010s, E3commit37028471830, E5 37028471683, E6 37028471524, live37028472435; pusharchitecture37028463651/E4 37028463165/E3commit37028463143/E5 37028463351/E6 37028463176/live37028463166. Rootfull22PASS0.019s/compile/graph12+42PASS0.492/index54/routing/diff/archive. No initial unit/graph failure or source review rejection.
+
+Direct owner standing DEC0069/0070 acceptance applies, planPR4 unmerged. Profile/pack ACTIVE/task DONE only independently accepted internal nesting rule, never actual approved package/producer/semantic classification/current trust/recovery/device/encrypted storage/promotion/production readiness. Result NONE/productionHELD unchanged. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view paths only, code/tests/accepted checker/workflow/archive/priorproof/inventory/manifest/CIplan unchanged. Independent final metadata audit and latest exact-head twelve green runs required before normal matched-head merge.

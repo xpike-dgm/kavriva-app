@@ -2,8 +2,8 @@
 test_id: E-DEV-061
 contract_id_version: "ADR009 R1; safety-media nesting v1"
 subject_file: vault/PROFILES/safety-media-nesting.md
-subject_digest: ca4d39a60e6a0c242d034cec40dd5d08be292ab88a0e3931bac776c6331b57db
-result: "RECORDED nesting fixture tests; independent full task review required"
+subject_digest: 7c174398d0216a842e64089cf456ffa31f720eaedc2a83506d8d85d660d35cfa
+result: "PASS full T-E4-002 internal nesting-check review; actual source/runtime HELD"
 evidence_links:
   - "vault/PROFILES/safety-media-nesting.md"
   - "vault/PACKS/P-E4-002.md"
@@ -12,8 +12,8 @@ evidence_links:
   - "modules/e04-offline/internal/safety_media_nesting.py"
   - "modules/e04-offline/tests/test_safety_media_nesting.py"
   - ".github/workflows/e4-tests.yml"
-gate_verdict: RECORDED
-reviewer: none
+gate_verdict: "PASS internal nesting rule task only; product runtime HELD"
+reviewer: "/root/pr58_snapshot_binding_review; gpt-6-luna/max; full task-level PASS at ff5ff4fae4cbcade3962be910aab45749d9de613"
 timestamp: 2026-10-02
 purpose: Keep declared required safety media nested in one required core without additive budgeting
 domain: offline-package
@@ -50,3 +50,15 @@ NormalizedSHA256:
 Acceptedinventoryv28 raw byte-equal archive/successorv29 preserves original catalog/alladmissions/pendingv13/v23/v25. PriorEDEV060 core/profile/source/actualreview/supersededhypothesis/digests/history untouched except documentary consumer/secondary final receipt. Actual source/classification/currentcompatibility/floors/recovery/mobile/render/encryptedstorage/staging/promotion/actionability remain MISSING/HELD; gap anchors `vault/PROFILES/safety-media-nesting.md` / `vault/PACKS/P-E4-002.md` / `vault/REGISTRY/T-E4-002.md`. No author approval/DONE/provider/credential/deploy/migration/device effect.
 
 Root graph12checks+42regressionsPASS0.492s/worstexit0, build_index54/routingT002REVIEW/eligible[], diffPASS/archive rawbyteequal/exact13paths/digests. Original P-PROOF001 warning unchanged. Frozen-source independent full task review and twelve exact-head hostedCI/actualPRT3 still required; no authorDONE.
+
+## Independent bounded task completion
+
+Separate /root/pr58_snapshot_binding_review, configured user-selected gpt-6-luna/max, full T-E4-002 task-level PASS/no actionable findings at ff5ff4fae4cbcade3962be910aab45749d9de613 over accepted6af8dbf323d2e688b7a6b2d4634e00971672af14. All13paths reviewed, clean checkout/profiledigest matched/v28archivebyteequal. No source rejection/fix. Delegated accepted T001 exact verification, missing/split/on-demand required IDs rejected, safety subset counted only in complete core total, no budget/trim path, intrinsicNONE. Empty declared media not canonical necessity proof; E3/E6 source/semantic completeness/classification and mobile/render/device/storage/promotion/actionability stillHELD. Reviewer ran no tests/CI/network/provider/writes.
+
+Root exact source all12CI SUCCESS: PRarchitecture37028475629 actualT3SUCCESS (earlierduplicate37028471176green), E4 37028471615 actual22PASS0.010s, E3commit37028471830, E5 37028471683, E6 37028471524, live37028472435; pusharchitecture37028463651/E4 37028463165/E3commit37028463143/E5 37028463351/E6 37028463176/live37028463166. Rootfull22PASS0.019s/compile/graph12+42PASS0.492/index54/routing/diff/archive. No initial unit/graph failure or source review rejection.
+
+Direct owner standing DEC0069/0070 acceptance applies, planPR4 unmerged. Profile/pack ACTIVE/task DONE only independently accepted internal nesting rule, never actual approved package/producer/semantic classification/current trust/recovery/device/encrypted storage/promotion/production readiness. Result NONE/productionHELD unchanged. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view paths only, code/tests/accepted checker/workflow/archive/priorproof/inventory/manifest/CIplan unchanged. Independent final metadata audit and latest exact-head twelve green runs required before normal matched-head merge.
+
+Original reviewed primary ca4d39a60e6a0c242d034cec40dd5d08be292ab88a0e3931bac776c6331b57db retained as source digest; current ACTIVE primary 7c174398d0216a842e64089cf456ffa31f720eaedc2a83506d8d85d660d35cfa. Historical pre-review reviewer-none/REVIEW receipts remain preparatory history, not active gate verdict.
+
+Final root metadata preparation run_all12checks+42regressionsPASS0.448s/worstexit0/build_index54/routingT002DONE/eligible[]/diff, exact six closeout paths. Original warning unchanged. Independent final metadata audit/latest finalheadCI still required.
