@@ -2,7 +2,7 @@
 test_id: E-DEV-041
 contract_id_version: "ADR-015 Decision8; full design checklist and controlled entry v1"
 subject_file: modules/e10-graph/DESIGN_GATE_CHECKLIST.md
-subject_digest: 4f07961f0b10a8e64661d54b0c7d6a41bef43614e86c4e062afd163dc4f85e66
+subject_digest: d3ad82fa9b6452a751ed8cefc16acd3a9b3cb172e2807e61aa6fa81be7847de3
 result: "BLOCKED: independent task-end review and exact-head CI outstanding"
 evidence_links:
   - "[[modules/e10-graph/DESIGN_GATE_CHECKLIST.md]]"
@@ -38,3 +38,6 @@ Specified countercases manually sourcecompared: unlistedpattern/localstyle, work
 
 
 Actual local validation2026-10-02: all12existingchecks42existingunittestregressions PASS;187Markdownrecords156IDs39packs44evidence37registryrows2438declaredlinks. Views rebuilt, gitdiffcheckclean, exact19changedpaths/perfileverbs match P013. design-token originalbody/PROPOSEDnonfinalsource/custody retained, onlyactualnormativeconsumer/taskmetadata; acceptedPR42secondaryexactblob preserved, EDEV040oldprimary/core/digest/verdict/reviewer/heads/date and original126body/catalog preserved. No UItest/image/visualregression/a11y execution or newcode/check/workflow. HistoricalP-PROOF-001own-taskfreshnessWARN unchanged; independentreview/exactsourceCI outstanding.
+
+
+Source review2026-10-02 at68d615fa1de57c81826b8779cee46216d45cd522: /root/pr43_independent_review/gpt-6-luna max CHANGES_REQUESTED P2: sourceaddendum7 requires pre-implementation packselection of actualapproved designelements to use and explicit unchangedconstraints; sourceaddresses/fileverbs and reviewtimecomparisons alone insufficient. Reviewer manually compared nine sourcecategories/entry/reference/state/navigation, checked exact19paths/rawacceptedinventoryGitblob/LFsubjectdigest/cleandiff; no tests/edits, rootCI separate. Narrow correction inserts exact requirement inside existing designreference+allow/forbid fields and clarifies ownP013documentarypreservation, no secondlist or sourceUIchange. Priorfinding/rejectedhead retained. Corrected-head independent acceptance outstanding, no selfPASS.
