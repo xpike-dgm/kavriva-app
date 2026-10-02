@@ -16,7 +16,7 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-001, T-E4-001, E-DEV-060]
 evidence: [E-DEV-060]
 supersedes: []
-status: IN_PROGRESS
+status: ACTIVE
 ---
 
 # Selected-task core composition
@@ -31,12 +31,20 @@ A local deterministic manifest fingerprint binds all supplied context and entrie
 
 Successful check returns only STRUCTURE_MATCH / intrinsic NONE. Caller-supplied references/pins are not authenticated authority. A coherent forged declaration, empty dependency tuple or missing semantically-required media not declared upstream cannot be detected as canonical falsehood here. Role labels do not prove correct warning text, applicability, recovery for reachable physical states or actual compatibility; no renderer/device evidence. Pure production_gate always returns HELD_CANONICAL_PACKAGE_SOURCE_MISSING / NONE without inspecting input or invoking callbacks. No approval/encryption/readiness marker opens it.
 
-## Incomplete acceptance
+## Separate upstream and runtime gates
 
-T-E4-001 stays IN_PROGRESS: current E3 canonical approved package producer, independently authenticated expected manifest, semantic safety classification/completeness, current generation/compatibility/dependency/floor and recovery proofs are missing. E3 public quarantined object byte verification is insufficient; no substitution with a fixture or logical approval. Runtime actionability, mobile rendering, atomic promotion, encrypted custody and plaintext-fallback gate are separate unproved obligations. Partial units cannot support full task DONE or production readiness.
+Current E3 canonical approved package producer, independently authenticated expected manifest, semantic safety classification/completeness, current generation/compatibility/dependency/floor and recovery proofs are missing for validation of a real product package. They do not prevent the independently accepted composition-check rule from completing its specific review task. E3 public quarantined object byte verification is insufficient; no substitution with a fixture or logical approval. Runtime actionability, mobile rendering, atomic promotion, encrypted custody and plaintext-fallback gate are separate unproved obligations. Units alone cannot support full task DONE; independent full task review is required. Task-level acceptance never proves production readiness.
 
 ## Trace and checks
 
 ADR-009 R1 -> C4.1 -> F4.1.1 -> FL4.1.1 -> T-E4-001 -> M-E4-001 -> E-DEV-060. Task/feature/flow/requirement are bound by supplied fixture bytes only. Design/mobile accessibility unproved; architecture E4 consumes E3 only; data pure immutable declarations without persistence; release/current authority absent; scenarios fixture-negative only; gap audit above preserves remaining acceptance.
 
-Code `modules/e04-offline/internal/core_composition.py`; tests `modules/e04-offline/tests/test_core_composition.py`; CI `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-001.md`; task `vault/REGISTRY/T-E4-001.md`; evidence `vault/EVIDENCE/E-DEV-060.md`; capsule `modules/e04-offline/MANIFEST.md`. Full-task independent review follows actual completion, no partial author PASS.
+Code `modules/e04-offline/internal/core_composition.py`; tests `modules/e04-offline/tests/test_core_composition.py`; CI `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-001.md`; task `vault/REGISTRY/T-E4-001.md`; evidence `vault/EVIDENCE/E-DEV-060.md`; capsule `modules/e04-offline/MANIFEST.md`. Full-task independent review has now accepted this check; no author self-PASS.
+
+## Independent task-level completion receipt
+
+Separate read-only /root/pr58_snapshot_binding_review, configured user-selected gpt-6-luna/max, actual full T-E4-001 task-level PASS/no actionable findings at 3c2c55d96a2130936ae8b8003e8d12bcbe8f79f9 over accepted e5c9aeef3f024fb2ed0e2035fe86d852591a3d43. All fourteen changed paths inspected; accepted v27 archive byte-equal, profile digest matched. No source review rejection or code correction. Reviewer ran no tests/CI/provider/write operations. Canonical task is a review gate/no harddeps; E3/E6 generation/classification and real mobile/runtime source evidence are distinct obligations. The earlier cautious claim that their absence blocks this specific check task was not a canonical prerequisite; retained here as an explicitly superseded scope hypothesis, never historical proof of an actual source failure.
+
+Exact source twelve CI SUCCESS: PR architecture37024980210 actualT3SUCCESS (earlier duplicate37024954595green), E4 37024954497 actual12PASS0.007s, E3commit37024954439, E5 37024954779, E6 37024954647, live-auth37024955023; push architecture37024883327, E4 37024883977, E3commit37024883548, E5 37024884146, E6 37024883635, live-auth37024883776. Root12PASS0.015s/compile; corrected graph12checks+42regressionsPASS0.448s/views53/diff/archive. Initial document-link failure/actual correction retained; checker unchanged.
+
+Owner standing DEC0069/0070 full task-level verdict acceptance; plan PR4 unmerged/direct mandate applies. Task DONE only for internal composition check review acceptance. E3 canonical generation, independent trusted pin, semantic necessity/completeness/classification/current compatibility/recovery/floor, real package validation, encrypted persistence/staging/promotion, E1 warning rendering and actual mobile/device/actionability remain unproved/HELD. No approved canonical package, producer, production or whole offline feature readiness claimed. Production gate remains constant HELD/NONE. Unresolved E3R1/E5-003/PR47/57/59 unchanged. Final seven metadata/view paths only; code/tests/workflow/archive/priorproof/inventory untouched. Manifest lifecycle note aligned, original anatomy and scope unchanged. Separate final metadata audit and latest exact-head twelve green CI before normal matched-head merge.

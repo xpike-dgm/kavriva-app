@@ -2,8 +2,8 @@
 test_id: E-DEV-060
 contract_id_version: "ADR009 R1; core composition v1"
 subject_file: vault/PROFILES/core-composition-check.md
-subject_digest: a369e5dc00af8e0b12994d21ab27669aab1fa6263a76a31c331526b502d7edf1
-result: "RECORDED internal composition fixture tests; canonical acceptance incomplete"
+subject_digest: 2bf9609e182d2aea6041f8078ce1bf9bad6ff83495e809ce2a0825f00a6b67f4
+result: "PASS full T-E4-001 composition-check review acceptance; real product package/runtime unproved"
 evidence_links:
   - "vault/PROFILES/core-composition-check.md"
   - "vault/PACKS/P-E4-001.md"
@@ -12,8 +12,8 @@ evidence_links:
   - "modules/e04-offline/internal/core_composition.py"
   - "modules/e04-offline/tests/test_core_composition.py"
   - ".github/workflows/e4-tests.yml"
-gate_verdict: "BLOCKED full task acceptance lacks canonical package source"
-reviewer: none
+gate_verdict: "PASS bounded composition check task only; real package/production HELD"
+reviewer: "/root/pr58_snapshot_binding_review; gpt-6-luna/max; source3c2c55d96a2130936ae8b8003e8d12bcbe8f79f9 full task-level PASS"
 timestamp: 2026-10-02
 purpose: Check complete selected-task core composition without inventing canonical package authority
 domain: offline-package
@@ -51,3 +51,15 @@ Archive accepted inventory v27 exact raw Git bytes; successor v28 preserves orig
 Gap anchors: `vault/PROFILES/core-composition-check.md` / `vault/REGISTRY/T-E4-001.md` / `vault/PACKS/P-E4-001.md` preserve the BLOCKED/HELD source obligations. Initial graph run failed check_links because these gap labels had no backticked body anchor; corrected document references only, checker unchanged. Initial graph regressions42 passed0.528s; no overall graph PASS claimed for that run.
 
 Root corrected graph12 checks+42 regressions PASS0.448s/worstexit0; generated index53/routingeligible[]/T-E4-001 IN_PROGRESS, E3R1 REVIEW/E5-003 IN_PROGRESS unchanged. Initial document-link failure preserved above; no rule weakening. Full task acceptance feasibility referred to separate configured gpt-6-luna/max reviewer; no independent verdict or DONE yet. Exact-head hosted CI still required.
+
+## Independent task-level completion receipt
+
+Separate read-only /root/pr58_snapshot_binding_review, configured user-selected gpt-6-luna/max, actual full T-E4-001 task-level PASS/no actionable findings at 3c2c55d96a2130936ae8b8003e8d12bcbe8f79f9 over accepted e5c9aeef3f024fb2ed0e2035fe86d852591a3d43. All fourteen changed paths inspected; accepted v27 archive byte-equal, profile digest matched. No source review rejection or code correction. Reviewer ran no tests/CI/provider/write operations. Canonical task is a review gate/no harddeps; E3/E6 generation/classification and real mobile/runtime source evidence are distinct obligations. The earlier cautious claim that their absence blocks this specific check task was not a canonical prerequisite; retained here as an explicitly superseded scope hypothesis, never historical proof of an actual source failure.
+
+Exact source twelve CI SUCCESS: PR architecture37024980210 actualT3SUCCESS (earlier duplicate37024954595green), E4 37024954497 actual12PASS0.007s, E3commit37024954439, E5 37024954779, E6 37024954647, live-auth37024955023; push architecture37024883327, E4 37024883977, E3commit37024883548, E5 37024884146, E6 37024883635, live-auth37024883776. Root12PASS0.015s/compile; corrected graph12checks+42regressionsPASS0.448s/views53/diff/archive. Initial document-link failure/actual correction retained; checker unchanged.
+
+Owner standing DEC0069/0070 full task-level verdict acceptance; plan PR4 unmerged/direct mandate applies. Task DONE only for internal composition check review acceptance. E3 canonical generation, independent trusted pin, semantic necessity/completeness/classification/current compatibility/recovery/floor, real package validation, encrypted persistence/staging/promotion, E1 warning rendering and actual mobile/device/actionability remain unproved/HELD. No approved canonical package, producer, production or whole offline feature readiness claimed. Production gate remains constant HELD/NONE. Unresolved E3R1/E5-003/PR47/57/59 unchanged. Final seven metadata/view paths only; code/tests/workflow/archive/priorproof/inventory untouched. Manifest lifecycle note aligned, original anatomy and scope unchanged. Separate final metadata audit and latest exact-head twelve green CI before normal matched-head merge.
+
+Original reviewed primary a369e5dc00af8e0b12994d21ab27669aab1fa6263a76a31c331526b502d7edf1 preserved as historical frozen source digest. Current ACTIVE primary 2bf9609e182d2aea6041f8078ce1bf9bad6ff83495e809ce2a0825f00a6b67f4. Historical preparatory reviewer-none/BLOCKED source hypothesis and initial graph failure above are superseded only as stated here; no real runtime source proof invented.
+
+Final root metadata validation run_all12checks+42regressionsPASS0.571s/worstexit0/views53/routingDONE/eligible[]/diff. Manifest lifecycle note adds seventh metadata path; source code/tests/workflow/archive/priorproof/inventory unchanged. Profile updated digest 2bf9609e182d2aea6041f8078ce1bf9bad6ff83495e809ce2a0825f00a6b67f4. Independent final audit/latest head CI required.
