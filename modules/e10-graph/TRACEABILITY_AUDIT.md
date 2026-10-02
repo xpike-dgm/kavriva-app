@@ -16,7 +16,7 @@ depends_on: [V-E10-CLOSE-001, V-E10-NODE-001, V-E10-REL-001, M-E10-001, V-E10-TO
 used_by: [I-E10-CLOSURE-001, P-E10-010, T-E10-010, E-DEV-037]
 evidence: [E-DEV-037]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Bounded declared traceability audit v1
