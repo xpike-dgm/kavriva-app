@@ -26,7 +26,7 @@ tests: [modules/e05-identity/tests/test_export_disclosure.py, modules/e10-graph/
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E5-EXPORT-001]
-used_by: [V-E5-EXPORT-001, P-E5-019, T-E5-019]
+used_by: [V-E5-EXPORT-001, P-E5-019, T-E5-019, P-E6-001, E-DEV-054]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -57,3 +57,7 @@ All eight applicable exact963632 source workflow families/events SUCCESS: PRarch
 Direct standing ownerDEC0070 accepts bounded internal policy DONE after this independent sourcePASS/currentCI; pendingplanPR4notmerged. Primary status-only ACTIVE/packACTIVE/taskDONE/views48; reviewedsourceprimary36464a3d657ff23d4feb67f3262bac014c81fed56b82c81441fea5be4282754f/currentprimarye81ecf8ea4fc351880179aa153e061d1e4e7c63a22ca0ed9779756213e6e05c9. Code6183dc9a0d20d38e8fd3b79a92c1e19c2758ecf3d07d095f71490c84711d2d5f/unitaa37dd7dbb77d1a0022958e8e39ccee4aa2d2d33ede66a23a1489641183edb64/archivef1565ab09ca21ff3c4703b85681a16657380366ba1e9c494d4ed7f50dfc5570c/priorEDEV052/inventoryv21/manifest unchanged by closeout. Exactly six metadata/view paths; actual product export/canonical producer/current capability/inclusion/authenticated disclosure/E2/E3/audit/format/link enforcement remains MISSING/HELD. Existing E3R1REVIEW/E5-003IN_PROGRESS/provisioning/privilegedproductionHELD unchanged. Final metadata audit/latestheadCI are separate merge gates, immutable final receipt in PRbody. No author PASS or production activation.
 
 Performed final metadata preparation: graph12checks/42regressionsPASS0.505s/generated48rows/T019boundedDONE/diffcheck. Exactly six metadata/view files changed after independently accepted963632; code/tests/archive/priorproof/inventory/manifest unchanged. Final separate audit and exact new-head CI remain required in immutable PR receipt.
+
+## T-E6-001 secondary inventory custody
+
+AcceptedPR55mergee7c8af8997debb493c55061fcfacec9deb5b7f5c inventoryv21 exactraw archive `vault/EVIDENCE/SNAPSHOTS/E-DEV-053-E10-GOVERNED-PATHS.md.snapshot`, normalizedSHA256ffbbf0f33b4605192434248ccda2ddfb9e5f0c197b288fabd30c7029e71452e6. Original subject/digest/reviewer/verdict/heads/date/reviewhistory/core/code/tests unchanged; documentary consumer/secondary custody only. Context `vault/PACKS/P-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`.

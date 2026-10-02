@@ -6,14 +6,14 @@ domain: "module-contract"
 module: "e06-release"
 owner: "E6"
 depends_on: [M-E3-001, M-E5-001]
-used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
+used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E6"
 public_contracts:
   - "[[modules/e06-release/MANIFEST.md#Public contract surface]]"
 internal_scope: "Authority roster, seal/verify tooling, suspension-strap state, incident runbooks, custody policy docs. Lane execution machinery lives in E7; this capsule holds the rules E7 must obey."
-tasks: [T-E10-001, T-E10-006]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+tasks: [T-E10-001, T-E10-006, T-E6-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e06-release/tests/test_release_authority_registry.py]
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
@@ -87,3 +87,9 @@ Same stable manifest identity and original semantic body preserved. Purpose/inte
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## T-E6-001 internal logical authority registration
+
+`vault/REGISTRY/release-authorities.json` and `internal/release_authority_registry.py` register/validate eight distinct release categories under ADR007R1; physical activation HELD, OTA NOT_APPROVED, actual holders/credentials/audit references absent. Intrinsic authority NONE; no actual release/lane/current-authorization or cross-capsule public call. Role/alias per-change independence T-E6-002 and physical custody remain unimplemented. Categories are not real keys or audit receipts. Original anatomy/policy/public contracts/origin custody unchanged.
+
+Rule `vault/PROFILES/release-authority-registry.md`; context `vault/PACKS/P-E6-001.md`; task `vault/REGISTRY/T-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`; localtests `tests/test_release_authority_registry.py`. Independent review/exact currentCI still required before bounded completion; no E6-specific CI job currently exists.

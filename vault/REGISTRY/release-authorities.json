@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "registry_version": 1,
+  "authorities": [
+    {
+      "domain": "consumer_binary",
+      "authority_id": "kavriva.release.consumer_binary",
+      "action_kind": "release_action.consumer_binary",
+      "credential_domain": "release_credential_domain.consumer_binary",
+      "audit_event_kind": "release_audit_event.consumer_binary",
+      "consequence_check": "release_consequence.consumer_binary",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "internal_web",
+      "authority_id": "kavriva.release.internal_web",
+      "action_kind": "release_action.internal_web",
+      "credential_domain": "release_credential_domain.internal_web",
+      "audit_event_kind": "release_audit_event.internal_web",
+      "consequence_check": "release_consequence.internal_web",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "backend_service",
+      "authority_id": "kavriva.release.backend_service",
+      "action_kind": "release_action.backend_service",
+      "credential_domain": "release_credential_domain.backend_service",
+      "audit_event_kind": "release_audit_event.backend_service",
+      "consequence_check": "release_consequence.backend_service",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "database_migration",
+      "authority_id": "kavriva.release.database_migration",
+      "action_kind": "release_action.database_migration",
+      "credential_domain": "release_credential_domain.database_migration",
+      "audit_event_kind": "release_audit_event.database_migration",
+      "consequence_check": "release_consequence.database_migration",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "technical_content",
+      "authority_id": "kavriva.release.technical_content",
+      "action_kind": "release_action.technical_content",
+      "credential_domain": "release_credential_domain.technical_content",
+      "audit_event_kind": "release_audit_event.technical_content",
+      "consequence_check": "release_consequence.technical_content",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "configuration_policy",
+      "authority_id": "kavriva.release.configuration_policy",
+      "action_kind": "release_action.configuration_policy",
+      "credential_domain": "release_credential_domain.configuration_policy",
+      "audit_event_kind": "release_audit_event.configuration_policy",
+      "consequence_check": "release_consequence.configuration_policy",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "emergency_suspension",
+      "authority_id": "kavriva.release.emergency_suspension",
+      "action_kind": "release_action.emergency_suspension",
+      "credential_domain": "release_credential_domain.emergency_suspension",
+      "audit_event_kind": "release_audit_event.emergency_suspension",
+      "consequence_check": "release_consequence.emergency_suspension",
+      "policy_status": "REGISTERED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    },
+    {
+      "domain": "future_ota",
+      "authority_id": "kavriva.release.future_ota",
+      "action_kind": "release_action.future_ota",
+      "credential_domain": "release_credential_domain.future_ota",
+      "audit_event_kind": "release_audit_event.future_ota",
+      "consequence_check": "release_consequence.future_ota",
+      "policy_status": "NOT_APPROVED",
+      "physical_activation": "HELD",
+      "custodian_ref": null,
+      "credential_ref": null,
+      "audit_custody_ref": null
+    }
+  ]
+}
