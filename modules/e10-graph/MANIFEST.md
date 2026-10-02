@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001, D-APP-DOC-004, P-E10-007, E-DEV-034]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006]
+tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006, T-E10-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -123,3 +123,8 @@ Governed address: `modules/e10-graph/DEPENDENCY_DIRECTION_RULES.md`. Previous ta
 ## Governed address topology v1 (T-E10-006)
 
 Rule: `modules/e10-graph/REPOSITORY_TOPOLOGY.md`; exact pinned file/folder receipt: `vault/INVENTORIES/E10-GOVERNED-PATHS.md`; pack: `vault/PACKS/P-E10-006.md`; proof: `vault/EVIDENCE/E-DEV-033.md`. All ten existing capsules retain actual ownership and scope. Platform configuration retains E3 internal/E5 subject boundaries; no public use/deployment permission follows from an address. This adds repository admission linkage, not production authority or exhaustive semantic detectors.
+
+
+## Current fourteen-field pack schema (T-E10-007)
+
+Current reusable same-ID schema: `templates/PACK_TEMPLATE.md`; actual task `vault/REGISTRY/T-E10-007.md`, pack `vault/PACKS/P-E10-007.md`, proof `vault/EVIDENCE/E-DEV-034.md`. Earlier stub/registration scope is retained as history; current field names and accepted validity guidance are enumerated, not a new semantic validator or completed corpus/product claim.
