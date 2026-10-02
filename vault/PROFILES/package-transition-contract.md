@@ -16,10 +16,12 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-005, T-E4-005, E-DEV-064]
 evidence: [E-DEV-064]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Stage-verify-promote internal contract
+
+The following sections preserve historical source-freeze state at1c87933. Current full task acceptance and separate product holds are recorded in the completion receipt below.
 
 Canonical T-E4-005 review gate/harddepsnone: Verified; atomic; peak-space by eviction, never by deleting truth. ADR009R2/C4.2/F4.2.1/FL4.2.1. Acceptedmain d862e2f0cfb7a8b8e02ab0e2df7f4c17fef082b7; canonical accepted remote planmainfa914f013fdcd032faed876689092da245989459, local staleplanmain7d705a69 and pendingplanPR4/directstandingmandate distinguished. No fabricated harddeps; same-capsule accepted composition verifier reused. Actual generation/semantic classification E3/E6pipeline, E4consumesE3; no new public seam or private cross-capsule import.
 
@@ -39,8 +41,16 @@ Classification, object IDs and space counts are caller declarations: coherent mi
 
 Fourteen new + accepted47 E4 full61PASS0.114s/compile. Cases: partial staged but not verified, whole replacement/retained old/peak sums, firstinstall, corrupt/mixed/duplicate/missing parts, wrong compatibility/applicability/dependencies, changed manifest oldpin, old/same generation/wrong selection/changed-current pin, inadequate space, ordered disposable stop, each protectedclass and relabelled essential ID, unknown/duplicate/mutable/hostile/plain types, finite extreme context encoding, immutable proposal/coherent forgery/runtimeHELD. Synthetic memory declarations only; no unit failure or independent verdict before source freeze.
 
-Actual trusted source/current generation/negativefloor/authenticated compatibility and dependency readers, real active store/CAS/encrypted durable storage/actual disposable classification/free-space/verification overhead/cleanup/physical atomic replace/crash recovery/mobile runtime/device evidence remain MISSING/HELD. No plaintext fallback, runtime transfer/promotion or product-ready claim. Full task independent review/current CI required, no authorPASS/DONE.
+Actual trusted source/current generation/negativefloor/authenticated compatibility and dependency readers, real active store/CAS/encrypted durable storage/actual disposable classification/free-space/verification overhead/cleanup/physical atomic replace/crash recovery/mobile runtime/device evidence remain MISSING/HELD. No plaintext fallback, runtime transfer/promotion or product-ready claim. At historical source freeze full task independent review/current CI were required, no authorPASS/DONE. Current acceptance recorded below.
 
 ## Trace
 
 ADR009R2 -> C4.2 -> F4.2.1 -> FL4.2.1 -> T-E4-005 -> M-E4-001 -> E-DEV-064. Requirement/task/feature/flow internal contract, design no new screen, architecture E4-only/no new seam, data no actual persistence/migration/CAS, release NONE/held, scenarios fixture negatives, gap audit above. Source `modules/e04-offline/internal/stage_verify_promote.py`; tests `modules/e04-offline/tests/test_stage_verify_promote.py`; accepted checker `modules/e04-offline/internal/core_composition.py`; unchanged workflow `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-005.md`; task `vault/REGISTRY/T-E4-005.md`; evidence `vault/EVIDENCE/E-DEV-064.md`.
+
+## Independent full task completion receipt
+
+Separate configured owner-selected gpt-6-luna/max /root/pr58_snapshot_binding_review FULL T-E4-005 stage/verify/promote contract task PASS/no actionable findings at1c879339d876cbff1e273b096761937fdf582c74 against acceptedbase d862e2f0cfb7a8b8e02ab0e2df7f4c17fef082b7. Canonical task review-level contract/harddepsnone inspected. Actual candidate/current revalidation/exact declaration/reference/full bytes/digests/currentpin/same selection/newgeneration, one immutable whole replacement preserving previous, old+new+verification peak/disposable-only ordered cleanup/protectedIDandclass rejection/insufficienthold accepted. No mutation or deletion. All13paths/digests/rawbyteequalarchive/views inspected; no edits/tests/CI/provider/writes by reviewer. No source failure or rejection in this task.
+
+Exact source all12CI SUCCESS: PRarchitecture37036621365 actualT3SUCCESS (earlier unlabeled duplicate37036590231), E4 37036590214 actual61PASS0.061s, E3commit37036590154/E5 37036590106/E6 37036590203/live37036590258; pusharchitecture37036528181/E4 37036527879/E3commit37036528123/E5 37036528080/E6 37036527921/live37036527881. Root61PASS0.114s/compile, graph12checks+42regressionsPASS0.465s/worstexit0/index57/routing/diff/exact13paths/rawarchive. Original P-PROOF001warning unchanged.
+
+Owner direct standing DEC0069/0070 accepts full delegated task PASS/normal matchedheadmerge after current applicable greenCI until revoked; pendingplanPR4 remainsunmerged, not claimed governing main. Profile/packACTIVE/taskDONE only internal stage/verify/promote contract. Actual source/currentgeneration/negativefloors/compatibility and dependency readers, real active store/CAS/encrypted durable storage/space measurements/verification overhead/disposable classification/physical cleanup/atomic commit/crash recovery/device runtime remain MISSING/HELD. Coherent false caller refs/snapshots/classifications/space can pass model but all outputsNONE/productionconstantHELD. Proposal is not proof of physical atomicity/permission/compatibility/actionability/real promotion or product readiness. No plaintext fallback/core confirmation/limit selection. Deltafallback T006/general janitor T009a/T009b/T010 separate. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view files only; source/tests/acceptedchecker/workflow/archive/inventory/manifest/CIplan/priorproof unchanged. Final independent metadata audit/latesthead12CI required before normal merge.
