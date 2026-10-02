@@ -11,18 +11,12 @@ owner: "E10"
 module: "e10-graph"
 depends_on:
   - "ADR-015"
-used_by:
-  - "I-E10-REGISTRATION-BASELINE"
-  - "M-E10-001"
-  - "V-CI-001"
-  - "V-CMD-001"
-  - "V-TST-001"
+used_by: [I-E10-REGISTRATION-BASELINE, M-E10-001, V-CI-001, V-CMD-001, V-TST-001, V-E10-TOPO-001, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
 internal_scope: "Original document declarations and record custody; no new runtime authority"
-tasks:
-  - "T-E10-001"
+tasks: [T-E10-001, T-E10-006]
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
@@ -64,3 +58,8 @@ in planning repo `planning 07_AI_ARCHITECTURE/MODULE_BOUNDARIES.md`.
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+
+## Current governed repository addresses (T-E10-006)
+
+Current address policy: `modules/e10-graph/REPOSITORY_TOPOLOGY.md`; immutable tracked-base receipt: `vault/INVENTORIES/E10-GOVERNED-PATHS.md`. Earlier bootstrap/reservation statements retain their historical scope; actual installed addresses and individual evidence govern current scope. One planning repository and one application vault remain; existing configuration/profile/inventory/archive addresses are explicitly mapped, with no product authority or production-readiness claim.

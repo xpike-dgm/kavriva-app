@@ -210,7 +210,8 @@
    "internal_scope": "capsule-declaration-template",
    "tasks": [
     "T-E10-004",
-    "T-E10-005"
+    "T-E10-005",
+    "T-E10-006"
    ],
    "tests": [
     "modules/e10-graph/checks/check_manifests.py",
@@ -228,7 +229,9 @@
     "P-E10-004",
     "E-DEV-031",
     "T-E10-005",
-    "P-E10-005"
+    "P-E10-005",
+    "T-E10-006",
+    "P-E10-006"
    ],
    "evidence": "E-DEV-031",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-004",
@@ -274,6 +277,49 @@
    ],
    "evidence": "E-DEV-032",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-005",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E10-006",
+   "flow_feature": "FL10.2.1/F10.2.1",
+   "objective": "Repo topology + governed addresses",
+   "context_pack": "P-E10-006",
+   "acceptance": "Linkage, addresses, no-orphan rule, manifest coverage",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-02",
+   "purpose": "Establish governed repository addresses and capsule linkage coverage",
+   "domain": "project-execution",
+   "module": "e10-graph",
+   "owner": "E10",
+   "implements": [
+    "ADR-015",
+    "C10.2",
+    "F10.2.1"
+   ],
+   "public_contracts": [],
+   "internal_scope": "repository-topology-and-record-custody",
+   "tasks": [
+    "T-E10-006"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_manifests.py",
+    "modules/e10-graph/checks/check_orphans.py",
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-02",
+   "depends_on": [
+    "T-E10-004"
+   ],
+   "used_by": [
+    "V-E10-TOPO-001",
+    "I-E10-PATHS-001",
+    "P-E10-006",
+    "E-DEV-033"
+   ],
+   "evidence": "E-DEV-033",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-006",
    "status": "DONE"
   },
   {

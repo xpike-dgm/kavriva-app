@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e03-server"
 owner: "E3"
 depends_on: []
-used_by: [M-E1-001, M-E2-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, I-E10-REGISTRATION-BASELINE]
+used_by: [M-E1-001, M-E2-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E3"
 public_contracts:
   - "[[modules/e03-server/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase config (migrations, RLS/Storage policies, service_role server-side only — never leaves), Edge Functions or equivalently bounded replaceable runtime (`ADR-002`), caches, workers, secrets custody. Helpers, storage layout, in-flight job state invisible outside. Secret custody/rotation follows `vault/PROFILES/secret-custody-rotation.md`: server-only privileged material, separate planned/emergency retirement proof; document completion does not execute rotation or prove live custody. The private maintenance history reader uses a coherent tenant-scoped database transaction; callers must authorize the read first. No history HTTP endpoint is introduced by T-E3-010. AI workload/tool access follows `vault/PROFILES/ai-task-scope.md`; a task pack or model output never mints authority."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
