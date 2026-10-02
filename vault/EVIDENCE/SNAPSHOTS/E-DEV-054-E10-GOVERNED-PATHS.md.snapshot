@@ -1,16 +1,16 @@
 ---
 inventory_id: I-E10-PATHS-001
-version: 23
+version: 22
 purpose: Inventory governed tracked repository addresses and their documentary custody anchors
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [M-E1-001, M-E2-001, M-E3-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, M-E10-001, D-APP-DOC-017]
-used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044, V-E10-MEASURE-001, P-E10-017, E-DEV-046, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050, V-E5-PROPOSAL-001, P-E5-020, E-DEV-051, V-E5-PREVIEW-001, P-E5-018, E-DEV-052, V-E5-EXPORT-001, P-E5-019, E-DEV-053, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054, V-E6-INDEPENDENCE-001, P-E6-002, E-DEV-055]
+used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044, V-E10-MEASURE-001, P-E10-017, E-DEV-046, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050, V-E5-PROPOSAL-001, P-E5-020, E-DEV-051, V-E5-PREVIEW-001, P-E5-018, E-DEV-052, V-E5-EXPORT-001, P-E5-019, E-DEV-053, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054]
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: tracked-path-custody-receipt
-tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016, T-E10-017, T-E5-001, T-E5-007a, T-E5-021, T-E5-017, T-E5-020, T-E5-018, T-E5-019, T-E6-001, T-E6-002]
+tasks: [T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016, T-E10-017, T-E5-001, T-E5-007a, T-E5-021, T-E5-017, T-E5-020, T-E5-018, T-E5-019, T-E6-001]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
@@ -838,20 +838,3 @@ Original401/79catalog/every prior admission/unmergedPR47v13/E045reservation reta
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-053-E10-GOVERNED-PATHS.md.snapshot` | AcceptedPR55 inventoryv21 exact raw archive, no active identity; T-E6-001 |
 
 Pack `vault/PACKS/P-E6-001.md`; task `vault/REGISTRY/T-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`. Registration and path custody do not activate any real release or credential.
-
-## Admission delta v23 (T-E6-002, in progress)
-
-Original 401/79 catalog, all prior admissions and unmerged PR47v13/E045 reservation retained; existing folders only.
-
-| New path | Actual anchor/purpose |
-|---|---|
-| `modules/e06-release/internal/publication_independence.py` | Partial fixture publication separation, actual gate HELD; T-E6-002/M-E6-001 |
-| `modules/e06-release/tests/test_publication_independence.py` | Alias/service/packet/stale/type negative cases; T-E6-002/M-E6-001 |
-| `.github/workflows/e6-tests.yml` | Actual E6 structural unit test family, no release effect; V-CI-001/T-E6-002 |
-| `vault/PROFILES/publication-independence.md` | Partial behavior and missing canonical gate; T-E6-002 |
-| `vault/PACKS/P-E6-002.md` | Fourteen-path/fourteen-field pre-code context; T-E6-002 |
-| `vault/REGISTRY/T-E6-002.md` | IN_PROGRESS gate with actual incomplete scope; T-E6-002 |
-| `vault/EVIDENCE/E-DEV-055.md` | Performed fixture checks and missing full acceptance; T-E6-002 |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-054-E10-GOVERNED-PATHS.md.snapshot` | Accepted PR56 inventory v22 raw archive, no active identity; T-E6-002 |
-
-Pack `vault/PACKS/P-E6-002.md`; task `vault/REGISTRY/T-E6-002.md`; evidence `vault/EVIDENCE/E-DEV-055.md`. Path custody proves no identity, staffing, release authority or task completion.

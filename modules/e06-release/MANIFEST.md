@@ -6,14 +6,14 @@ domain: "module-contract"
 module: "e06-release"
 owner: "E6"
 depends_on: [M-E3-001, M-E5-001]
-used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054]
+used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E6-AUTHORITY-001, P-E6-001, E-DEV-054, V-E6-INDEPENDENCE-001, P-E6-002, E-DEV-055]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E6"
 public_contracts:
   - "[[modules/e06-release/MANIFEST.md#Public contract surface]]"
 internal_scope: "Authority roster, seal/verify tooling, suspension-strap state, incident runbooks, custody policy docs. Lane execution machinery lives in E7; this capsule holds the rules E7 must obey."
-tasks: [T-E10-001, T-E10-006, T-E6-001]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e06-release/tests/test_release_authority_registry.py]
+tasks: [T-E10-001, T-E10-006, T-E6-001, T-E6-002]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e06-release/tests/test_release_authority_registry.py, modules/e06-release/tests/test_publication_independence.py]
 evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
@@ -93,3 +93,9 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 `vault/REGISTRY/release-authorities.json` and `internal/release_authority_registry.py` register/validate eight distinct release categories under ADR007R1; physical activation HELD, OTA NOT_APPROVED, actual holders/credentials/audit references absent. Intrinsic authority NONE; no actual release/lane/current-authorization or cross-capsule public call. Role/alias per-change independence T-E6-002 and physical custody remain unimplemented. Categories are not real keys or audit receipts. Original anatomy/policy/public contracts/origin custody unchanged.
 
 Rule `vault/PROFILES/release-authority-registry.md`; context `vault/PACKS/P-E6-001.md`; task `vault/REGISTRY/T-E6-001.md`; proof `vault/EVIDENCE/E-DEV-054.md`; localtests `tests/test_release_authority_registry.py`. Independent review/exact currentCI still required before bounded completion; no E6-specific CI job currently exists.
+
+## T-E6-002 partial publication independence
+
+`internal/publication_independence.py` checks four ADR003R8 technical-content publication roles against supplied fixture controller/packet/session/assignment/expiry context. Structural match has no authority; actual publication gate stays HELD without canonical privileged E5 identity and E3 protected effect linkage. Other domain matrices and emergency negative-action rules are not implemented. Task remains IN_PROGRESS, one task PR draft; independent review at task completion, no partial DONE.
+
+Rule `vault/PROFILES/publication-independence.md`; pack `vault/PACKS/P-E6-002.md`; task `vault/REGISTRY/T-E6-002.md`; evidence `vault/EVIDENCE/E-DEV-055.md`; tests `tests/test_publication_independence.py`. `.github/workflows/e6-tests.yml` now runs the full E6 structural unit suite; green tests do not grant actual release permission. Existing policy/public surface/anatomy/origin custody unchanged.
