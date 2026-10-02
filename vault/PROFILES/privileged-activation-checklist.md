@@ -16,7 +16,7 @@ depends_on: [M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-021, T-E5-021, E-DEV-049]
 evidence: [E-DEV-049]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Privileged activation evaluation skeleton
