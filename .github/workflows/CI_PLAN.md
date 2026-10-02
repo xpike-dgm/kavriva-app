@@ -42,6 +42,8 @@ used_by:
   - "E-DEV-068"
   - "P-E4-009b"
   - "E-DEV-069"
+  - "P-E4-010"
+  - "E-DEV-070"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -182,3 +184,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers107units(accepted96
 ## E4 six-class never-evict coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers118units(accepted107+11protection). `modules/e04-offline/tests/test_never_evict.py` probessixclasses/mixedprotectiondominance/unknownconflictmissingmismatch/duplicate/type/hostile/immutability/preservedorder/coherentforgery/constantheld. Fixtures not actualclassification/OSspace/deletion/encryptedstore/device proof; T010separate. Context `vault/PACKS/P-E4-009b.md`; proof `vault/EVIDENCE/E-DEV-069.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.
+
+## E4 held staging coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers129units(accepted118+11hold). `modules/e04-offline/tests/test_hold_transfer.py` probesinsufficientstage/verificationextra/exactfit/retainold/orderedneededcleanup/protectedIDsandfacts/partialcorruptstale/pin/type/immutability/coherentforgery/constantheld. Fixtures not actualclassification/OSspace/deletion/encryptedstore/device proof; acceptedT009a/bguards unchanged. Context `vault/PACKS/P-E4-010.md`; proof `vault/EVIDENCE/E-DEV-070.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.
