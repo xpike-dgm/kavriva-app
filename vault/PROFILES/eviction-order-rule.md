@@ -16,10 +16,12 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-009a, T-E4-009a, E-DEV-068]
 evidence: [E-DEV-068]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Ordered disposable eviction rule
+
+Historical pre-code/source-freeze sections below preserved; current FULLtask acceptance and separate product holds recorded in completion receipt.
 
 Canonical T009a/ADR009R4/C4.4/F4.4.1/FL4.4.1 reviewgate/harddepsnone. Acceptedmain ec97780020c183a9f5bced3fa2a6302dd435bf41 includes PR69 merged2026-10-02T17:58:58Z and independentlyreviewed T005space validator/constants reused inside E4; no fakeharddep/new publicseam/privatecrossmoduleimports. E4consumesE3/E1renders unchanged. Acceptedremoteplanmainfa914f013fdcd032faed876689092da245989459/localstaleplanmain7d705a69/localpendingbranch e3c2e3f/pendingplanPR4unmerged/directstandingmandate distinguished. E3R1REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59unchanged.
 
@@ -33,4 +35,12 @@ Eleven new+accepted96 full107PASS0.169s/compile. Initial full107FAIL one test0.1
 
 ## Trace
 
-ADR009R4 -> C4.4 -> F4.4.1 -> FL4.4.1 -> T-E4-009a -> M-E4-001 -> E-DEV-068. Clientlogic/E1screenHELD/no renderer/data no persistence/releaseNONE/internalreviewtask/product physicalgates above. Source `modules/e04-offline/internal/eviction_order.py`; tests `modules/e04-offline/tests/test_eviction_order.py`; acceptedvalidator `modules/e04-offline/internal/stage_verify_promote.py`; workflow `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-009a.md`; task `vault/REGISTRY/T-E4-009a.md`; proof `vault/EVIDENCE/E-DEV-068.md`. FULLcanonicaltask review/exactheadCI required before internalruleDONE; no selfPASS.
+ADR009R4 -> C4.4 -> F4.4.1 -> FL4.4.1 -> T-E4-009a -> M-E4-001 -> E-DEV-068. Clientlogic/E1screenHELD/no renderer/data no persistence/releaseNONE/internalreviewtask/product physicalgates above. Source `modules/e04-offline/internal/eviction_order.py`; tests `modules/e04-offline/tests/test_eviction_order.py`; acceptedvalidator `modules/e04-offline/internal/stage_verify_promote.py`; workflow `.github/workflows/e4-tests.yml`; pack `vault/PACKS/P-E4-009a.md`; task `vault/REGISTRY/T-E4-009a.md`; proof `vault/EVIDENCE/E-DEV-068.md`. At historical source freeze FULLcanonicaltask review/exactheadCI were required before internalruleDONE; no selfPASS. Current acceptance below.
+
+## Independent full task completion receipt
+
+Separate configured owner-selected gpt-6-luna/max /root/pr58_snapshot_binding_review FULL T-E4-009a internal ordering-rule task PASS/no actionable findings atd193ab1b3baab3f1bc5acd37dba578ef28ddfd42 over acceptedbaseec97780020c183a9f5bced3fa2a6302dd435bf41. Canonical reviewgate/harddepsnone/all13paths reviewed; fullcandidates validatedusingacceptedT005, allitems returned canonicalfourclassorder/stableties, no deletioncount/freedspace/deletion. Initial107testFAIL expectedtuple conflict with stableinputties; expectationonly corrected/not implementation/no reviewerrejection. Recordedhashes/rawacceptedarchive verified; no edits/tests/CI/provider/writes by reviewer.
+
+Exactsourceall12CI SUCCESS: PRarchitecture37045048899 actualT3SUCCESS (earlierunlabeledduplicate37045020789), E4 37045020692 actual107PASS0.138s, E3commit37045020671/E5 37045020854/E6 37045020838/live37045020663; pusharchitecture37045003381/E4 37045003112/E3commit37045003211/E5 37045003359/E6 37045003317/live37045003285. Root11new+accepted96full107PASS0.169s/compile/run_all12checks+42PASS0.457s/worstexit0/build_index61/routingREVIEW/eligible[]/diff/exact13paths/rawarchiveequal. Actualinitialfull107FAILone0.183s and expectationonlyfix/PASS retained distinctly. OriginalP-PROOF001warning unchanged.
+
+DirectstandingownerDEC0069/0070 mandate accepts independentFULLdelegatedtaskPASS/normalmatchedmerge after applicablecurrentgreenCIuntilrevoked; pendingplanPR4unmerged/not governingmain distinguished. Profile/packACTIVE/taskDONE only internalorderingrule, not actualcleanup. Suppliedclassification/protectedIDs notcanonicalproof/alloutputsNONE/constantproductionHELD. Actualclassification/protectedmembership/storagecapacity/encryptedcleanup/atomictransactions/crashrecovery/E1/device/runtime MISSING/HELD. Coherent protecteddatarelabel not actualdeletionpermission; no actualfreedbytes/storageeffect/productreadyclaim. ExistingT005safety/coreverification/peak/atomicstore unchanged; T009bneverevictpolicy/T010hold-transfer remainseparate notDONEhere. E3R1REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59unchanged. Six finaldocumentary/viewpaths only; source/tests/workflow/archive/inventory/manifest/CIplan/priorproof unchanged. Independentfinalmetadataaudit/latesthead12CI remain premergegates.
