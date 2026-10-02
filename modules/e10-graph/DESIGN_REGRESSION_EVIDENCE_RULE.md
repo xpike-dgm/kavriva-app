@@ -16,7 +16,7 @@ depends_on: [V-E10-DESIGN-001, design-token, V-E10-CLOSE-001, V-E10-LIFE-001, D-
 used_by: [P-E10-014, T-E10-014, E-DEV-042]
 evidence: [E-DEV-042]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Design regression evidence rule v1
