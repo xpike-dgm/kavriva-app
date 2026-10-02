@@ -368,7 +368,8 @@
     "P-E10-008",
     "E-DEV-035",
     "P-E10-009",
-    "E-DEV-036"
+    "E-DEV-036",
+    "T-E10-009"
    ],
    "evidence": "E-DEV-034",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-007",

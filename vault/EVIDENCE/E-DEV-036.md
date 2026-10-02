@@ -41,3 +41,6 @@ Actual accepted T007dependency and PR37manual lifecycle source/merge read; T008 
 
 
 Actual local validation2026-10-02: run_all exit0/all12checks and20unittest regressions passed;166Markdownrecords/139indexedIDs/34packs/32registry rows/2150declared document links. Both generated views rebuilt; git diff --check clean. Existing structural metadata/declared-edge/digest gates are narrower than semantic product closure. Frozen P-PROOF-001 historical own-task freshness warning remains; no new code/test/workflow/provider operations. Independent review and exact-head CI outstanding.
+
+
+Independent source review2026-10-02 at df745c5259eb93be6bde9ebdbcb03f9735129cab: /root/pr38_independent_review/gpt-6-luna max CHANGES_REQUESTED, missing reciprocal current used_by entries for V-E10-CLOSE-001 -> D-APP-DOC-004 and T-E10-009 -> T-E10-007, and missing T009authoring/P009consumer provenance on touched EDEV035 under V-E10-REL-001. Task entered CHANGES_REQUESTED; narrow correction adds actual metadata entries only within already declared P009paths and explicitly records EDEV035 metadata/custody verb, no new path/product scope/old proof promotion. Returned REVIEW for exact corrected-head independent re-review/new-headCI; initial finding history retained. Reviewer ran no tests/checks.

@@ -10,7 +10,7 @@ domain: "project-records"
 owner: "E10"
 module: "e10-graph"
 depends_on: [ADR-015, V-E10-NODE-001, V-E10-REL-001, D-APP-DOC-003, V-E10-TOPO-001, I-E10-PATHS-001, task-pack]
-used_by: [I-E10-REGISTRATION-BASELINE, P-E10-007, T-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036]
+used_by: [I-E10-REGISTRATION-BASELINE, P-E10-007, T-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, V-E10-CLOSE-001]
 implements:
   - "ADR-015 Decision3 record registration"
   - "ADR-015 Decision5; C10.3; F10.3.1"

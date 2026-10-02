@@ -18,12 +18,12 @@ owner: E10
 implements: [ADR-015, C10.3, F10.3.1, R-006, R-007, R-009, R-010]
 public_contracts: []
 internal_scope: manual-registry-lifecycle
-tasks: [T-E10-008]
+tasks: [T-E10-008, T-E10-009]
 tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E10-LIFE-001]
-used_by: [V-E10-LIFE-001, P-E10-008, T-E10-008]
+used_by: [V-E10-LIFE-001, P-E10-008, T-E10-008, P-E10-009, E-DEV-036]
 evidence: []
 supersedes: []
 status: RECORDED
