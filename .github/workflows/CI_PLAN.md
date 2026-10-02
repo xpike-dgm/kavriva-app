@@ -36,6 +36,8 @@ used_by:
   - "E-DEV-065"
   - "P-E4-007"
   - "E-DEV-066"
+  - "P-E4-008"
+  - "E-DEV-067"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -164,3 +166,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers72units (accepted61
 ## E4 required-only automatic scheduling coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers84units (accepted72 +12scheduling). `modules/e04-offline/tests/test_required_auto_transfer.py` probes requiredonly/nointent/priority/alltransports/arbitraryfixturelength/no dialog/notneedednoauto/unknownclassification/wrongscope/optionalexplicitcontext/hostiletypes/completionNONE/unknown or forgedqueue/immutability/productionHELD. Memory declarations not actualE1needs/visiblegesture/size/physicalnetwork/start/completion/encryptedstore/authority/device proof. Context `vault/PACKS/P-E4-007.md`; proof `vault/EVIDENCE/E-DEV-066.md`. Exacthead12CI/actualPRT3/fulltask/finalmetadatareview remain separate; no workflow/gatepolicy/custodychange.
+
+## E4 retry-saver policy coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers96units (accepted84+12retry-saver). `modules/e04-offline/tests/test_retry_saver.py` probes constraintdelay/noconfirmation/unknownhold/supportedinterruptionboundedvaluesheld/unsupportedunknown/priorityalltransports/noimplicitintent/forgedproposal/types/immutability/coherentforgery/constantHELD. Fixtures not actualOS/capability/download/resume/background/encryptedstore/authority/device proof. Context `vault/PACKS/P-E4-008.md`; proof `vault/EVIDENCE/E-DEV-067.md`. Exacthead12CI/actualPRT3/FULLtask/finalmetadatareview required; no workflow/gatepolicy/custody change.
