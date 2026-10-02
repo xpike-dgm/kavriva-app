@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, D-APP-DOC-003, P-E10-004, E-DEV-031, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040]
+used_by: [P-E10-001, T-E10-001, E-DEV-027, I-E10-REGISTRATION-BASELINE, M-E10-001, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, D-APP-DOC-003, P-E10-004, E-DEV-031, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041]
 implements: [ADR-015, C10.1, F10.1.1]
 public_contracts: []
 internal_scope: documentary-registration-rule
-tasks: [T-E10-001, T-E10-002, T-E10-004, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012]
+tasks: [T-E10-001, T-E10-002, T-E10-004, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/tests/test_record_preservation.py, modules/e10-graph/tests/test_registration_identity.py, modules/e10-graph/checks/check_packs.py, modules/e10-graph/tests/test_pack_freshness.py]
 evidence: [E-DEV-027]
 supersedes: []
