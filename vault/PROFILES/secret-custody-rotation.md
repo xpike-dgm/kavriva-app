@@ -24,12 +24,16 @@ used_by:
   - "M-E3-001"
   - "P-E3-017"
   - "T-E3-017"
+  - "P-E3-032"
+  - "V-E3-ENV-001"
+  - "E-DEV-045"
 implements:
   - "ADR-002 Option A and Decisions 1 and 6; T-E3-017; ADR-006 Decision 11"
 public_contracts: []
 internal_scope: "Original document declarations and record custody; no new runtime authority"
 tasks:
   - "T-E10-001"
+  - "T-E3-032"
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
@@ -116,3 +120,8 @@ Existing defense: `[[vault/PROFILES/rls-storage-defense.md]]`; reversibility: `[
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+
+## Implementation currency note — T-E3-032 (2026-10-02)
+
+The unchanged original v1 paragraphs above describe the earlier generic KAVRIVA_DATABASE_DSN input and cached configured app. T032 under review introduces explicit realm-scoped credential references, an uncached environment factory and read-only actual-role inspection; see `vault/PROFILES/environment-separation.md` and `vault/PACKS/P-E3-032.md`. This note does not accept that implementation, issue any credential or refresh old custody/rotation proof. All deployed workload/custody and production holds remain. EDEV021 original subject/digest/verdict binds its immutable archived original payload.

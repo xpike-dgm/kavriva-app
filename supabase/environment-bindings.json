@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "environments": {
+    "development": {
+      "state": "BOUND",
+      "project_id": "local-kavriva-app",
+      "api_url": "http://127.0.0.1:54321",
+      "issuer": "http://127.0.0.1:54321/auth/v1",
+      "database_host": "127.0.0.1",
+      "database_port": "54322",
+      "database_name": "postgres",
+      "database_role": "kavriva_ci_api",
+      "database_connection": "direct",
+      "dsn_ref": "KAVRIVA_DEVELOPMENT_DATABASE_DSN",
+      "key_ref": "KAVRIVA_DEVELOPMENT_SUPABASE_PUBLISHABLE_KEY"
+    },
+    "staging": {
+      "state": "HELD",
+      "project_id": "tmcitwyzoahtvysxblty",
+      "api_url": "https://tmcitwyzoahtvysxblty.supabase.co",
+      "issuer": "https://tmcitwyzoahtvysxblty.supabase.co/auth/v1",
+      "database_host": "aws-1-eu-west-1.pooler.supabase.com",
+      "database_port": "5432",
+      "database_name": "postgres",
+      "database_role": "kavriva_staging_api",
+      "database_connection": "session",
+      "dsn_ref": "KAVRIVA_STAGING_DATABASE_DSN",
+      "key_ref": "KAVRIVA_STAGING_SUPABASE_PUBLISHABLE_KEY"
+    },
+    "production": {
+      "state": "HELD",
+      "project_id": null,
+      "api_url": null,
+      "issuer": null,
+      "database_host": null,
+      "database_port": null,
+      "database_name": null,
+      "database_role": null,
+      "database_connection": "direct",
+      "dsn_ref": "KAVRIVA_PRODUCTION_DATABASE_DSN",
+      "key_ref": "KAVRIVA_PRODUCTION_SUPABASE_PUBLISHABLE_KEY"
+    }
+  }
+}

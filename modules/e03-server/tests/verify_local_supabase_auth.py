@@ -1,14 +1,18 @@
 """Exercise real local GoTrue signup, Auth verification and E3/E5 commit.
 
-Run only after `supabase start` has applied the repository migrations. The
-status JSON is written in a temporary CI directory and never committed.
+Run only in the disposable GitHub CI fixture after `supabase start` has applied
+the repository migrations. The status JSON must be in RUNNER_TEMP. This script
+narrows fixture PUBLIC database grants and is not a hosted or manual operator.
 """
 
 import base64
 import json
+import os
 import sys
 from datetime import date
 from pathlib import Path
+from io import BytesIO
+from unittest.mock import patch
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 from uuid import uuid4
@@ -27,6 +31,9 @@ from commit_authorization import Verdict  # noqa: E402
 from consumer_authority import SupabaseAuth  # noqa: E402
 from maintenance_command import MaintenanceCommand, MaintenanceCommands  # noqa: E402
 from maintenance_store import CREATE  # noqa: E402
+from maintenance_api import application  # noqa: E402
+from psycopg.conninfo import conninfo_to_dict, make_conninfo
+from environment_binding import bind_environment, validate_database_identity
 
 
 def _post(url, key, body, bearer=None):
@@ -40,9 +47,26 @@ def _post(url, key, body, bearer=None):
 
 
 def main(status_path):
+    # Fence the privileged fixture setup before reading credentials or issuing
+    # HTTP/SQL. Standalone invocations and arbitrary targets fail closed.
+    try:
+        fixture_path = Path(status_path).resolve(strict=True)
+        runner_temp = Path(os.environ["RUNNER_TEMP"]).resolve(strict=True)
+        if (os.environ.get("GITHUB_ACTIONS") != "true"
+                or not fixture_path.is_relative_to(runner_temp)):
+            raise ValueError
+    except (KeyError, OSError, ValueError):
+        raise AssertionError("disposable local CI fixture required") from None
     status = json.loads(Path(status_path).read_text(encoding="utf-8"))
     api_url = status["API_URL"].rstrip("/")
     db_url = status["DB_URL"]
+    parsed = urlsplit(db_url)
+    if (api_url != "http://127.0.0.1:54321"
+            or parsed.scheme not in ("postgres", "postgresql")
+            or parsed.hostname != "127.0.0.1" or parsed.port != 54322
+            or parsed.username != "postgres" or parsed.path != "/postgres"
+            or parsed.query or parsed.fragment):
+        raise AssertionError("disposable local CI target required")
     anon_key = status["ANON_KEY"]
     email = "kavriva-" + uuid4().hex + "@example.test"
     signup = _post(api_url + "/auth/v1/signup", anon_key, {
@@ -60,6 +84,16 @@ def main(status_path):
     principal = auth.verify(token)
     local_password = uuid4().hex + uuid4().hex
     with psycopg.connect(db_url) as conn:
+        # This disposable local Supabase image also creates provider databases
+        # with PUBLIC CONNECT/TEMPORARY. The product login must not inherit
+        # those capabilities. Tighten the fixture, never relax the preflight;
+        # this does not apply an equivalent change to a hosted project.
+        for database in ("_supabase", "storage_vectors"):
+            if conn.execute("select 1 from pg_database where datname=%s",
+                            (database,)).fetchone():
+                conn.execute(sql.SQL(
+                    "revoke connect, temporary on database {} from public"
+                ).format(sql.Identifier(database)))
         conn.execute(sql.SQL("create role kavriva_ci_api login password {}").format(
             sql.Literal(local_password)
         ))
@@ -70,26 +104,62 @@ def main(status_path):
         "kavriva_ci_api:" + local_password + "@" + parsed.netloc.rsplit("@", 1)[-1],
         parsed.path, parsed.query, parsed.fragment,
     ))
-    service = MaintenanceCommands(limited_url, auth)
-    enrolled = service.enroll(token)
-    if enrolled.verdict != Verdict.ALLOW:
+    params = conninfo_to_dict(limited_url)
+    params.update(sslmode="disable",connect_timeout="10")
+    limited_url = make_conninfo(**params)
+    selected = {"KAVRIVA_ENVIRONMENT":"development",
+                "KAVRIVA_DEVELOPMENT_DATABASE_DSN":limited_url,
+                "KAVRIVA_DEVELOPMENT_SUPABASE_PUBLISHABLE_KEY":anon_key}
+    try:
+        with patch.dict(os.environ,selected,clear=True):
+            validate_database_identity(bind_environment(os.environ))
+    except ValueError:
+        # Local disposable fixture metadata only: no DSN, password, token,
+        # provider user or raw exception. Keep a failing preflight failing.
+        try:
+            with psycopg.connect(limited_url) as conn:
+                rows = conn.execute("""
+                select d.datname, a.privilege_type, a.is_grantable
+                from pg_database d,
+                     lateral aclexplode(coalesce(d.datacl,acldefault('d',d.datdba))) a
+                where a.grantee=0 or a.grantee in
+                    (select oid from pg_roles where pg_has_role(current_user,oid,'MEMBER'))
+                order by 1,2,3
+                """).fetchall()
+            print("isolated fixture database ACL metadata: " + json.dumps(rows))
+        except Exception:
+            print("isolated fixture database ACL metadata: UNAVAILABLE")
+        raise AssertionError("isolated fixture role preflight failed") from None
+    def request(path, body):
+        encoded = json.dumps(body).encode()
+        environ = {"REQUEST_METHOD":"POST", "PATH_INFO":path,
+                   "HTTP_AUTHORIZATION":"Bearer " + token,
+                   "CONTENT_TYPE":"application/json", "CONTENT_LENGTH":str(len(encoded)),
+                   "wsgi.input":BytesIO(encoded)}
+        # Isolated CI fixture contains no hosted or production credentials.
+        with patch.dict(os.environ,selected,clear=True):
+            return json.loads(b"".join(application(environ,lambda status,headers:None)))
+    enrolled = request("/v1/consumer/enroll",{})
+    if enrolled["verdict"] != Verdict.ALLOW.value:
         raise AssertionError("verified Auth user could not enroll: " +
-                             enrolled.reason_code)
-    bike = enrolled.effect_result.motorcycle_id
+                             enrolled["reason_code"])
+    bike = enrolled["motorcycle_id"]
     command = MaintenanceCommand(
         action=CREATE, target_id=bike, operation_id=str(uuid4()),
         expected_generation=1, expected_policy_version=1,
         client_generation=1, performed_on=date.today(),
         odometer_km=100, outcome="Local Auth integration", safety_notes="",
     )
-    written = service.execute(token, command)
-    if written.verdict != Verdict.ALLOW:
+    body = {k:v for k,v in command.__dict__.items() if k not in ("action","correction_reason")}
+    body["performed_on"] = body["performed_on"].isoformat()
+    written = request("/v1/maintenance/records",body)
+    if written["verdict"] != Verdict.ALLOW.value:
         raise AssertionError("verified Auth user could not write: " +
-                             written.reason_code)
+                             written["reason_code"])
     with psycopg.connect(db_url) as conn:
         actor = conn.execute(
             """select actor_id from kavriva_e3.maintenance_revisions
-               where record_id = %s""", (written.effect_result.record_id,),
+               where record_id = %s""", (written["record_id"],),
         ).fetchone()[0]
         if actor != principal.actor_id:
             raise AssertionError("effect actor differs from Auth user")
@@ -100,10 +170,8 @@ def main(status_path):
             (principal.session_id,),
         ).fetchone():
             raise AssertionError("logout did not remove the provider session")
-    denied = service.execute(token, MaintenanceCommand(
-        **{**command.__dict__, "operation_id": str(uuid4())}
-    ))
-    if denied.verdict == Verdict.ALLOW:
+    denied = request("/v1/maintenance/records",{**body,"operation_id":str(uuid4())})
+    if denied["verdict"] == Verdict.ALLOW.value:
         raise AssertionError("signed-out Auth session still authorized a write")
     print("local Supabase Auth signup, guarded maintenance commit and logout: PASS")
 
