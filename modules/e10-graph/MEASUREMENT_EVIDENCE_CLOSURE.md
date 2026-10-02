@@ -16,7 +16,7 @@ depends_on: [V-E10-REVIEW-001, V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V
 used_by: [P-E10-017, T-E10-017, E-DEV-046]
 evidence: [E-DEV-046]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Measurement evidence in ten-layer closure v1
