@@ -16,7 +16,7 @@ depends_on: [M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-019, T-E5-019, E-DEV-053]
 evidence: [E-DEV-053]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Export disclosure records v1
