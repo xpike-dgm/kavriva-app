@@ -30,6 +30,8 @@ used_by:
   - "E-DEV-062"
   - "P-E4-004"
   - "E-DEV-063"
+  - "P-E4-005"
+  - "E-DEV-064"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -146,3 +148,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged Historical e1fcde4 discovery
 ## E4 size presentation rule coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged; current discovery47units (accepted35 +12size-rule). `modules/e04-offline/tests/test_size_shown.py` probes missing/fake/edited/stale receipts, exact text/current size/spec/request identity, retry/refetch/terminal replay, type/finite encoding failure/core invariance/NONE/runtimeHELD. Memory fixtures are not actual screen visibility/user authentication/transfer/device proof. Context `vault/PACKS/P-E4-004.md`; proof `vault/EVIDENCE/E-DEV-063.md`. Exacthead12CI/actualPRT3/full independent task/final metadata review separate gates; no gate policy/workflow/custody change.
+
+## E4 transition contract coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers61units (accepted47 +14transition). `modules/e04-offline/tests/test_stage_verify_promote.py` probes incomplete/corrupt/mixed/old/incompatible declaration bindings/current-pin conflict/reverification/retained old/peak sums/disposable order/protected classes/insufficient space/type/immutable forgedproposal/runtimeHELD. Memory declaration tests are not actual encrypted disk/CAS/atomic commit/crash recovery/canonical source/compatibility/device evidence. Context `vault/PACKS/P-E4-005.md`; proof `vault/EVIDENCE/E-DEV-064.md`. Exacthead12CI/actualPRT3/full independent task/final metadata review remain gates; no workflow/gatepolicy/custody changes.

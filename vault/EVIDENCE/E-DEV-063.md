@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_size_shown.py, modules/e10-graph/checks/c
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-SIZE-001]
-used_by: [V-E4-SIZE-001, P-E4-004, T-E4-004]
+used_by: [V-E4-SIZE-001, P-E4-004, T-E4-004, P-E4-005, E-DEV-064]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -66,3 +66,7 @@ Owner direct standing DEC0069/0070 accepts full delegated task PASS/normal match
 Reviewed source primary 76abdb715c298a51c86f6a395cff09b2820a48a47246945481eb099fe27b3dc4 preserved as historical review digest; current ACTIVE primary f0d8bc6b124f515f878c52e64f9891ff198e0f9f72c329fc6fcb6e258432074b. No previous source rejection or unit failure in this task; no actual screen or runtime proof inferred.
 
 Final root metadata preparation graph12checks+42regressionsPASS0.607s/worstexit0/build_index56/routingT004DONE/eligible[]/diff, exact six closeout paths. Original P-PROOF001warning unchanged. Independent final metadata audit and latest-head12CI remain required before normal merge.
+
+## Secondary accepted custody receipt / T-E4-005 consumption
+
+PR65finalde2672989df2af9dee93b76119b7ef2af19cc883 separate configured gpt-6-luna/max final metadata PASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37035231920/E4CI47PASS0.027s. Normal matchedheadmerge d862e2f0cfb7a8b8e02ab0e2df7f4c17fef082b7 verified2026-10-02T16:41:08Z. Original reviewedsource9360a92/primary/digests/reviewer/no-rejection/history retained. Inventoryv31 rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-063-E10-GOVERNED-PATHS.md.snapshot`; documentary consumers `vault/PACKS/P-E4-005.md` / `vault/EVIDENCE/E-DEV-064.md`. Internal size rule DONE, actual E1 displayed/user/transfer/runtime proof stillHELD.
