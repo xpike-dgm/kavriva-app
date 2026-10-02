@@ -16,7 +16,7 @@ depends_on: [V-E10-SIM-001, V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V-E1
 used_by: [P-E10-012, T-E10-012, E-DEV-040]
 evidence: [E-DEV-040]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Excess-work scan specification v1
