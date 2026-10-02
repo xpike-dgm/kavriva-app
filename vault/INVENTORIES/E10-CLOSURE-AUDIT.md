@@ -25,7 +25,7 @@ Record: I-E10-CLOSURE-001. Actual document audit executed2026-10-02 by implement
 
 ## Inputs and declared coverage
 
-206 unique planned task rows; 172 need/matrix rows; 106 feature, 115 flow, 83 capability and10epic rows. All206tasks have at least one reverse need/matrix row and each declared need task resolves; task flow/feature/capability/epic links resolve consistently. Zero detected missing/conflicting declared catalog links in this bounded run. Compound/range need labels are kept verbatim; this does not independently resolve every individual requirement/rule/screen/state definition or prove semantic completeness. Older planning SIMULATION_REPORT199tasks and manager101features/110flows are historical inputs, not these current pinned counts.
+206 unique planned task rows; 175 need/matrix data rows (172 task-bearing and3canonical source-held rows); 106 feature, 115 flow, 83 capability and10epic rows. All206tasks have at least one reverse task-bearing need/matrix row and each declared task reference resolves; task flow/feature/capability/epic links resolve consistently. Zero detected missing/conflicting resolved catalog links, separately from3known BLOCKED source-held needs. The latter are retained below with original NONE/HELD cells and pinned source addresses, not omitted or passed. Compound/range need labels are kept verbatim; this does not independently resolve every individual requirement/rule/screen/state definition or prove semantic completeness. Older planning SIMULATION_REPORT199tasks and manager101features/110flows are historical inputs, not these current pinned counts.
 
 | Exact pinned source | Raw Git blob SHA256 |
 |---|---|
@@ -253,12 +253,12 @@ Need addresses above are line numbers in pinned06_DELIVERY_PLANNING/ACCEPTANCE_M
 
 ## Forward need-to-work declaration and actual proof limitation
 
-| Pinned matrix line | Actual need label, verbatim source | Feature / flow declarations | Planned tasks | Assigned method / actual result |
+| Pinned matrix line | Actual need label, verbatim source | Feature / flow declarations, verbatim | Declared task cell, verbatim | Assigned method / actual result |
 |---|---|---|---|---|
 | 17 | BR-105/Q-0041/SCR-001+002: first value before account, add bike | F1.1.1 / FL1.1.1 | T-E1-003 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 18 | BR-106/107/Q-0038/0045/SCR-005-shell: TR units, contrast/captions, no profile prerequisite | F1.0.1 / FL1.0.1,FL1.0.2 | T-E1-001,T-E1-002 | NONE assigned; UNVERIFIED actual full outcome proof |
+| 18 | BR-106/107/Q-0038/0045/SCR-005-shell: TR units, contrast/captions, no profile prerequisite | F1.0.1 / FL1.0.1, FL1.0.2 | T-E1-001, T-E1-002 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 19 | BR-001/002/003/050/051/Q-0002/SCR-003+004: variant distinction, unresolved fit blocks | F1.1.2 / FL1.1.2 | T-E1-004 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 20 | BR-009/010/036/081/082/083/Q-0006/0018/0030/SCR-009..012: fit/readiness gate + recheck | F1.2.1 / FL1.2.1 | T-E1-005a,T-E1-005b | NONE assigned; UNVERIFIED actual full outcome proof |
+| 20 | BR-009/010/036/081/082/083/Q-0006/0018/0030/SCR-009..012: fit/readiness gate + recheck | F1.2.1 / FL1.2.1 | T-E1-005a, T-E1-005b | NONE assigned; UNVERIFIED actual full outcome proof |
 | 21 | SCR-013/BR-084: teaching-only labeled, never active instruction | F1.2.1 / FL1.2.1 | T-E1-005c | NONE assigned; UNVERIFIED actual full outcome proof |
 | 22 | BR-011/012/013/019/SCR-014+015: single objective, safety first, no ignore-and-continue | F1.3.1 / FL1.3.1 | T-E1-006 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 23 | BR-149/Q-0054/0059/SCR-016: resume needs revalidation, saved≠proof | F1.3.1 / FL1.3.2 | T-E1-007 | NONE assigned; UNVERIFIED actual full outcome proof |
@@ -276,12 +276,12 @@ Need addresses above are line numbers in pinned06_DELIVERY_PLANNING/ACCEPTANCE_M
 | 35 | BR-101/141/142/143/147/Q-0037/0052/0063/SCR-006+007+034: no-coercion, no silent loss, revoke keeps history | F1.8.1 / FL1.8.1 | T-E1-015 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 36 | BR-065..067/069/089..092/Q-0021/0032/SCR-035+036+038: opt-in community, status/appeal paths | F1.9.1 / FL1.9.1 | T-E1-016 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 37 | DEC-0018/A1: 1 context + 1 prompt + 2 paths only | F1.10.1 / FL1.10.1 | T-E1-017 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 38 | SCR-005 narrowing: Garaj = context only, no dashboard hub | F1.0.1 / FL1.0.1,FL1.0.2 | T-E1-001,T-E1-002 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 39 | BR-124/125/104/Q-0040/0044: stale-critical blocks app, teaching/history stay | F1.3.1,F1.5.1 / FL1.3.1,FL1.5.1 | T-E1-006,T-E1-010 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 40 | BR-134/135/045/Q-0047: per-bike isolation | F1.0.1,F1.7.1 / FL1.0.2,FL1.7.1 | T-E1-002,T-E1-014a | NONE assigned; UNVERIFIED actual full outcome proof |
-| 41 | BR-126/127/Q-0045: active-repair a11y never drops safety | F1.0.1,F1.3.1 / FL1.0.1,FL1.3.1 | T-E1-001,T-E1-006 | NONE assigned; UNVERIFIED actual full outcome proof |
+| 38 | SCR-005 narrowing: Garaj = context only, no dashboard hub | F1.0.1 / FL1.0.1, FL1.0.2 | T-E1-001, T-E1-002 | NONE assigned; UNVERIFIED actual full outcome proof |
+| 39 | BR-124/125/104/Q-0040/0044: stale-critical blocks app, teaching/history stay | F1.3.1, F1.5.1 / FL1.3.1, FL1.5.1 | T-E1-006, T-E1-010 | NONE assigned; UNVERIFIED actual full outcome proof |
+| 40 | BR-134/135/045/Q-0047: per-bike isolation | F1.0.1, F1.7.1 / FL1.0.2, FL1.7.1 | T-E1-002, T-E1-014a | NONE assigned; UNVERIFIED actual full outcome proof |
+| 41 | BR-126/127/Q-0045: active-repair a11y never drops safety | F1.0.1, F1.3.1 / FL1.0.1, FL1.3.1 | T-E1-001, T-E1-006 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 50 | IDCO-RQ-063/064: dense workspace, a11y, no entitlement hiding | F2.1.1 / FL2.1.1 | T-E2-001 | NONE assigned; UNVERIFIED actual full outcome proof |
-| 51 | IDCO-RQ-025..031: review queues, partial approval, independence | F2.2.1 / FL2.2.1,FL2.2.2 | T-E2-002,T-E2-003 | NONE assigned; UNVERIFIED actual full outcome proof |
+| 51 | IDCO-RQ-025..031: review queues, partial approval, independence | F2.2.1 / FL2.2.1, FL2.2.2 | T-E2-002, T-E2-003 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 52 | IDCO-RQ-032..037: approval snapshot + fenced publish, failed shown failed | F2.3.1 / FL2.3.1 | T-E2-004 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 53 | IDCO-RQ-040..044: recall/suspension scope/reason/re-entry, history preserved | F2.3.1 / FL2.3.2 | T-E2-005 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 54 | IDCO-RQ-009..016: source/evidence separate, withdrawal re-evals | F2.4.1 / FL2.4.1 | T-E2-006 | NONE assigned; UNVERIFIED actual full outcome proof |
@@ -295,94 +295,95 @@ Need addresses above are line numbers in pinned06_DELIVERY_PLANNING/ACCEPTANCE_M
 | 62 | IDCO-RQ-045..047: audit-trail view fields | F2.11.1 / FL2.11.1 | T-E2-013 | NONE assigned; UNVERIFIED actual full outcome proof |
 | 68 | ADR-001 R1: one authority per domain | F3.2.1 / FL3.2.1 | T-E3-009 | review assigned; UNVERIFIED actual full outcome proof |
 | 69 | ADR-001 R2: history never overwritten | F3.2.2 / FL3.2.2 | T-E3-010 | review assigned; UNVERIFIED actual full outcome proof |
-| 70 | ADR-001 R3: fenced publishing control | F6.2.1 / FL6.2.1 | T-E6-003,T-E6-004,T-E6-005 | gate assigned; UNVERIFIED actual full outcome proof |
-| 71 | ADR-001 R4: quarantine-first object boundary | F3.2.3,F5.6.1 / FL3.2.3,FL5.6.1 | T-E3-011,T-E3-012,T-E5-017,T-E5-018 | test assigned; UNVERIFIED actual full outcome proof |
+| 70 | ADR-001 R3: fenced publishing control | F6.2.1 / FL6.2.1 | T-E6-003, T-E6-004, T-E6-005 | gate assigned; UNVERIFIED actual full outcome proof |
+| 71 | ADR-001 R4: quarantine-first object boundary | F3.2.3, F5.6.1 / FL3.2.3, FL5.6.1 | T-E3-011, T-E3-012, T-E5-017, T-E5-018 | test assigned; UNVERIFIED actual full outcome proof |
+| 72 | ADR-001 R5: integrity-bound phone package | NONE (E4 materializes) / NONE | NONE | HELD-acceptance source hold; BLOCKED, no task or acceptance inferred |
 | 73 | ADR-001 R6: convenience copies never authority | F3.2.2 / FL3.2.2 | T-E3-010 | review assigned; UNVERIFIED actual full outcome proof |
-| 74 | ADR-002 R1: API mediation, no client authority | F3.1.1,F3.3.1 / FL3.1.1,FL3.3.1 | T-E3-001,T-E3-013,T-E3-014,T-E3-016 | test assigned; UNVERIFIED actual full outcome proof |
-| 75 | ADR-002 R2: private quarantine before activation | F3.2.3 / FL3.2.3 | T-E3-011,T-E3-012 | test assigned; UNVERIFIED actual full outcome proof |
-| 76 | ADR-002 R3: separate DB/object/audit/floor custody | F3.6.1 / FL3.6.1 | T-E3-026,T-E3-027 | gate assigned; UNVERIFIED actual full outcome proof |
-| 77 | ADR-002 R4: stable IDs + clean-room export | F3.6.2 / FL3.6.2 | T-E3-028,T-E3-029 | review assigned; UNVERIFIED actual full outcome proof |
-| 78 | ADR-002 R5: outage as held/unknown/unavailable | F3.1.3 / FL3.1.3 | T-E3-005,T-E3-005b | gate assigned; UNVERIFIED actual full outcome proof |
+| 74 | ADR-002 R1: API mediation, no client authority | F3.1.1, F3.3.1 / FL3.1.1, FL3.3.1 | T-E3-001, T-E3-013, T-E3-014, T-E3-016 | test assigned; UNVERIFIED actual full outcome proof |
+| 75 | ADR-002 R2: private quarantine before activation | F3.2.3 / FL3.2.3 | T-E3-011, T-E3-012 | test assigned; UNVERIFIED actual full outcome proof |
+| 76 | ADR-002 R3: separate DB/object/audit/floor custody | F3.6.1 / FL3.6.1 | T-E3-026, T-E3-027 | gate assigned; UNVERIFIED actual full outcome proof |
+| 77 | ADR-002 R4: stable IDs + clean-room export | F3.6.2 / FL3.6.2 | T-E3-028, T-E3-029 | review assigned; UNVERIFIED actual full outcome proof |
+| 78 | ADR-002 R5: outage as held/unknown/unavailable | F3.1.3 / FL3.1.3 | T-E3-005, T-E3-005b | gate assigned; UNVERIFIED actual full outcome proof |
 | 79 | ADR-002 R6: task-scoped AI, no secrets | F3.1.4 / FL3.1.4 | T-E3-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 80 | ADR-002 R7: dated changelog + compat hold | F3.1.4,F3.3.2 / FL3.1.4 | T-E3-018 | review assigned; UNVERIFIED actual full outcome proof |
+| 80 | ADR-002 R7: dated changelog + compat hold | F3.3.2, F3.1.4 / FL3.1.4 | T-E3-018 | review assigned; UNVERIFIED actual full outcome proof |
 | 81 | ADR-003 R1: approval binds exact snapshot | F6.2.1 / FL6.2.1 | T-E6-003 | review assigned; UNVERIFIED actual full outcome proof |
 | 82 | ADR-003 R2: single guarded publish transition | F6.2.1 / FL6.2.1 | T-E6-004 | test assigned; UNVERIFIED actual full outcome proof |
-| 83 | ADR-003 R3: explicit state model + branches | F3.1.3,F6.2.1 / FL3.1.3,FL6.2.1 | T-E3-005,T-E3-005b,T-E6-005 | review assigned; UNVERIFIED actual full outcome proof |
-| 84 | ADR-003 R4: fenced precedence, no backward gen | F3.5.1,F6.2.1 / FL3.5.1,FL6.2.1 | T-E3-023,T-E6-004 | test assigned; UNVERIFIED actual full outcome proof |
-| 85 | ADR-003 R5: independent negative-only emergency plane | F6.3.1 / FL6.3.1 | T-E6-007a,T-E6-007b,T-E6-008 | simulation assigned; UNVERIFIED actual full outcome proof |
+| 83 | ADR-003 R3: explicit state model + branches | F6.2.1, F3.1.3 / FL6.2.1, FL3.1.3 | T-E6-005, T-E3-005, T-E3-005b | review assigned; UNVERIFIED actual full outcome proof |
+| 84 | ADR-003 R4: fenced precedence, no backward gen | F3.5.1, F6.2.1 / FL3.5.1, FL6.2.1 | T-E3-023, T-E6-004 | test assigned; UNVERIFIED actual full outcome proof |
+| 85 | ADR-003 R5: independent negative-only emergency plane | F6.3.1 / FL6.3.1 | T-E6-007a, T-E6-007b, T-E6-008 | simulation assigned; UNVERIFIED actual full outcome proof |
 | 86 | ADR-003 R6: rollback as new event only | F6.6.1 / FL6.6.1 | T-E6-014 | gate assigned; UNVERIFIED actual full outcome proof |
-| 87 | ADR-003 R7: restore quarantine, no positive serve | F3.6.1,F6.6.1 / FL3.6.1,FL6.6.1 | T-E3-026,T-E3-027,T-E6-014 | gate assigned; UNVERIFIED actual full outcome proof |
-| 88 | ADR-003 R8: SoD author/reviewer/approver/publisher | F5.2.2,F6.1.1 / FL5.2.2,FL6.1.1 | T-E5-005,T-E5-006,T-E6-002 | gate assigned; UNVERIFIED actual full outcome proof |
+| 87 | ADR-003 R7: restore quarantine, no positive serve | F3.6.1, F6.6.1 / FL3.6.1, FL6.6.1 | T-E3-026, T-E3-027, T-E6-014 | gate assigned; UNVERIFIED actual full outcome proof |
+| 88 | ADR-003 R8: SoD author/reviewer/approver/publisher | F5.2.2, F6.1.1 / FL5.2.2, FL6.1.1 | T-E5-005, T-E5-006, T-E6-002 | gate assigned; UNVERIFIED actual full outcome proof |
 | 89 | ADR-003 R9: evaluable consumer contract | F6.2.2 / FL6.2.2 | T-E6-006 | test assigned; UNVERIFIED actual full outcome proof |
-| 90 | ADR-004 R1: server tuple allow/deny/hold | F3.1.1,F5.2.1 / FL3.1.1,FL5.2.1 | T-E3-001,T-E3-002,T-E5-003,T-E5-004 | test assigned; UNVERIFIED actual full outcome proof |
-| 91 | ADR-004 R2: pairwise SoD per packet | F5.2.2 / FL5.2.2 | T-E5-005,T-E5-006 | gate assigned; UNVERIFIED actual full outcome proof |
-| 92 | ADR-004 R3: phishing-resistant + step-up + bounded session | F5.3.1 / FL5.3.1 | T-E5-007a,T-E5-007b,T-E5-008 | test assigned; UNVERIFIED actual full outcome proof |
-| 93 | ADR-004 R4: epoch revokes end-to-end | F3.5.2,F5.3.2 / FL3.5.2,FL5.3.2 | T-E3-024a,T-E3-024b,T-E3-025,T-E5-009,T-E5-010 | test assigned; UNVERIFIED actual full outcome proof |
-| 94 | ADR-004 R5: recovery never approves/publishes/grants | F5.4.1 / FL5.4.1 | T-E5-011,T-E5-012 | gate assigned; UNVERIFIED actual full outcome proof |
-| 95 | ADR-004 R6: protected audit before effect else AUDIT_HELD | F5.5.1 / FL5.5.1 | T-E5-013,T-E5-014 | gate assigned; UNVERIFIED actual full outcome proof |
-| 96 | ADR-004 R7: quarantine ingestion chain | F3.2.3,F5.6.1 / FL3.2.3,FL5.6.1 | T-E3-011,T-E3-012,T-E5-017,T-E5-018 | test assigned; UNVERIFIED actual full outcome proof |
+| 90 | ADR-004 R1: server tuple allow/deny/hold | F5.2.1, F3.1.1 / FL5.2.1, FL3.1.1 | T-E5-003, T-E5-004, T-E3-001, T-E3-002 | test assigned; UNVERIFIED actual full outcome proof |
+| 91 | ADR-004 R2: pairwise SoD per packet | F5.2.2 / FL5.2.2 | T-E5-005, T-E5-006 | gate assigned; UNVERIFIED actual full outcome proof |
+| 92 | ADR-004 R3: phishing-resistant + step-up + bounded session | F5.3.1 / FL5.3.1 | T-E5-007a, T-E5-007b, T-E5-008 | test assigned; UNVERIFIED actual full outcome proof |
+| 93 | ADR-004 R4: epoch revokes end-to-end | F5.3.2, F3.5.2 / FL5.3.2, FL3.5.2 | T-E5-009, T-E5-010, T-E3-024a, T-E3-024b, T-E3-025 | test assigned; UNVERIFIED actual full outcome proof |
+| 94 | ADR-004 R5: recovery never approves/publishes/grants | F5.4.1 / FL5.4.1 | T-E5-011, T-E5-012 | gate assigned; UNVERIFIED actual full outcome proof |
+| 95 | ADR-004 R6: protected audit before effect else AUDIT_HELD | F5.5.1 / FL5.5.1 | T-E5-013, T-E5-014 | gate assigned; UNVERIFIED actual full outcome proof |
+| 96 | ADR-004 R7: quarantine ingestion chain | F5.6.1, F3.2.3 / FL5.6.1, FL3.2.3 | T-E5-017, T-E5-018, T-E3-011, T-E3-012 | test assigned; UNVERIFIED actual full outcome proof |
 | 97 | ADR-004 R8: export as non-retractable disclosure | F5.6.2 / FL5.6.2 | T-E5-019 | review assigned; UNVERIFIED actual full outcome proof |
 | 98 | ADR-004 R9: AI/OCR proposal-only | F5.6.3 / FL5.6.3 | T-E5-020 | review assigned; UNVERIFIED actual full outcome proof |
 | 99 | ADR-004 R10: 11-item activation gate, second-human HELD | F5.7.1 / FL5.7.1 | T-E5-021 | HELD-acceptance assigned; UNVERIFIED actual full outcome proof |
-| 100 | ADR-005 R1: full event coverage list | F5.5.1 / FL5.5.1,FL5.5.3 | T-E5-016a | review assigned; UNVERIFIED actual full outcome proof |
+| 100 | ADR-005 R1: full event coverage list | F5.5.1 / FL5.5.1, FL5.5.3 | T-E5-016a | review assigned; UNVERIFIED actual full outcome proof |
 | 101 | ADR-005 R2: minimum event meaning | F5.5.1 / FL5.5.3 | T-E5-016a | review assigned; UNVERIFIED actual full outcome proof |
 | 102 | ADR-005 R3: receipt bound before effect | F5.5.1 / FL5.5.1 | T-E5-014 | test assigned; UNVERIFIED actual full outcome proof |
-| 103 | ADR-005 R4: fallback buffer, else HELD/quarantined | F5.5.1 / FL5.5.1 | T-E5-013,T-E5-014 | gate assigned; UNVERIFIED actual full outcome proof |
+| 103 | ADR-005 R4: fallback buffer, else HELD/quarantined | F5.5.1 / FL5.5.1 | T-E5-013, T-E5-014 | gate assigned; UNVERIFIED actual full outcome proof |
 | 104 | ADR-005 R5: append-only + gap/fork/replay + alerts | F5.5.1 / FL5.5.1 | T-E5-014 | test assigned; UNVERIFIED actual full outcome proof |
 | 105 | ADR-005 R6: explicit retention/legal-hold/redaction | F5.5.3 / FL5.5.3 | T-E5-016b | HELD-acceptance assigned; UNVERIFIED actual full outcome proof |
-| 106 | ADR-005 R7: object-centered investigation chain | F5.5.2 / FL3.2.2,FL5.5.2 | T-E5-015 | review assigned; UNVERIFIED actual full outcome proof |
-| 107 | ADR-005 R8: audit admin separated from publisher | F5.5.1,F5.5.3 / FL5.5.3 | T-E5-016b | review assigned; UNVERIFIED actual full outcome proof |
+| 106 | ADR-005 R7: object-centered investigation chain | F5.5.2 / FL5.5.2, FL3.2.2 | T-E5-015 | review assigned; UNVERIFIED actual full outcome proof |
+| 107 | ADR-005 R8: audit admin separated from publisher | F5.5.1, F5.5.3 / FL5.5.3 | T-E5-016b | review assigned; UNVERIFIED actual full outcome proof |
 | 108 | ADR-006 R1: ephemeral runtime, listed durable state | F3.1.1 / FL3.1.1 | T-E3-034 | review assigned; UNVERIFIED actual full outcome proof |
-| 109 | ADR-006 R2: full commit-time auth tuple | F3.1.1 / FL3.1.1 | T-E3-001,T-E3-002 | test assigned; UNVERIFIED actual full outcome proof |
+| 109 | ADR-006 R2: full commit-time auth tuple | F3.1.1 / FL3.1.1 | T-E3-001, T-E3-002 | test assigned; UNVERIFIED actual full outcome proof |
 | 110 | ADR-006 R3: DB core binds intent, effects separate | F3.1.2 / FL3.1.2 | T-E3-035 | review assigned; UNVERIFIED actual full outcome proof |
-| 111 | ADR-006 R4: idempotency CONFLICT/HELD/DENIED | F3.1.2 / FL3.1.2 | T-E3-003,T-E3-004 | test assigned; UNVERIFIED actual full outcome proof |
-| 112 | ADR-006 R5: durable long-job gate, no sync jobs | F3.4.1 / FL3.4.1 | T-E3-019,T-E3-020,T-E3-020b,T-E3-021,T-E3-022 | test assigned; UNVERIFIED actual full outcome proof |
+| 111 | ADR-006 R4: idempotency CONFLICT/HELD/DENIED | F3.1.2 / FL3.1.2 | T-E3-003, T-E3-004 | test assigned; UNVERIFIED actual full outcome proof |
+| 112 | ADR-006 R5: durable long-job gate, no sync jobs | F3.4.1 / FL3.4.1 | T-E3-019, T-E3-020, T-E3-020b, T-E3-021, T-E3-022 | test assigned; UNVERIFIED actual full outcome proof |
 | 113 | ADR-006 R6: monotonic negatives, ties hold | F3.5.1 / FL3.5.1 | T-E3-023 | test assigned; UNVERIFIED actual full outcome proof |
-| 114 | ADR-006 R7: end-to-end epoch to all edges | F3.5.2 / FL3.5.2 | T-E3-024a,T-E3-024b,T-E3-025 | test assigned; UNVERIFIED actual full outcome proof |
-| 115 | ADR-006 R8: shared state dictionary verbatim | F3.1.3 / FL3.1.3 | T-E3-005,T-E3-005b | review assigned; UNVERIFIED actual full outcome proof |
-| 116 | ADR-006 R9: direct-path inventory + negative tests | F3.1.4 / FL3.1.4 | T-E3-006a,T-E3-006b,T-E3-006c,T-E3-007 | test assigned; UNVERIFIED actual full outcome proof |
+| 114 | ADR-006 R7: end-to-end epoch to all edges | F3.5.2 / FL3.5.2 | T-E3-024a, T-E3-024b, T-E3-025 | test assigned; UNVERIFIED actual full outcome proof |
+| 115 | ADR-006 R8: shared state dictionary verbatim | F3.1.3 / FL3.1.3 | T-E3-005, T-E3-005b | review assigned; UNVERIFIED actual full outcome proof |
+| 116 | ADR-006 R9: direct-path inventory + negative tests | F3.1.4 / FL3.1.4 | T-E3-006a, T-E3-006b, T-E3-006c, T-E3-007 | test assigned; UNVERIFIED actual full outcome proof |
 | 117 | ADR-006 R10: equal-evidence A/B transition only | F3.3.1 / FL3.3.1 | T-E3-036 | HELD-acceptance assigned; UNVERIFIED actual full outcome proof |
-| 118 | ADR-006 R11: owner/support/AI bounds + classified BOM | F3.7.1 / FL3.7.1 | T-E3-030,T-E3-031 | HELD-acceptance assigned; UNVERIFIED actual full outcome proof |
-| 119 | ADR-007 R1: 8 distinct release authorities | F3.8.1,F6.1.1 / FL3.8.1,FL6.1.1 | T-E3-032,T-E3-033,T-E6-001,T-E6-002 | review assigned; UNVERIFIED actual full outcome proof |
+| 118 | ADR-006 R11: owner/support/AI bounds + classified BOM | F3.7.1 / FL3.7.1 | T-E3-030, T-E3-031 | HELD-acceptance assigned; UNVERIFIED actual full outcome proof |
+| 119 | ADR-007 R1: 8 distinct release authorities | F6.1.1, F3.8.1 / FL6.1.1, FL3.8.1 | T-E6-001, T-E6-002, T-E3-032, T-E3-033 | review assigned; UNVERIFIED actual full outcome proof |
 | 120 | ADR-007 R2: immutable artifact + digest-bound provenance | F6.4.1 / FL6.4.1 | T-E6-009 | review assigned; UNVERIFIED actual full outcome proof |
-| 121 | ADR-007 R3: promote exact artifact, no rebuild | F3.8.1,F6.4.1 / FL3.8.1,FL6.4.1 | T-E3-033,T-E6-009 | gate assigned; UNVERIFIED actual full outcome proof |
-| 122 | ADR-007 R4: independent verifier + trust-root | F6.4.1 / FL6.4.1 | T-E6-009,T-E6-010 | review assigned; UNVERIFIED actual full outcome proof |
+| 121 | ADR-007 R3: promote exact artifact, no rebuild | F6.4.1, F3.8.1 / FL6.4.1, FL3.8.1 | T-E6-009, T-E3-033 | gate assigned; UNVERIFIED actual full outcome proof |
+| 122 | ADR-007 R4: independent verifier + trust-root | F6.4.1 / FL6.4.1 | T-E6-009, T-E6-010 | review assigned; UNVERIFIED actual full outcome proof |
 | 123 | ADR-007 R5: scoped dual-controlled key custody | F6.4.1 / FL6.4.1 | T-E6-010 | gate assigned; UNVERIFIED actual full outcome proof |
 | 124 | ADR-007 R6: no role collapse, missing staff holds | F6.1.1 / FL6.1.1 | T-E6-002 | gate assigned; UNVERIFIED actual full outcome proof |
-| 125 | ADR-007 R7: config/flag/migration as release | F6.5.1 / FL6.5.1 | T-E6-011,T-E6-012 | review assigned; UNVERIFIED actual full outcome proof |
-| 126 | ADR-007 R8: staged rollout, rollback new event | F6.6.1 / FL6.6.1 | T-E6-013,T-E6-014 | gate assigned; UNVERIFIED actual full outcome proof |
-| 127 | ADR-007 R9: incident impact graph + protected copy | F6.7.1 / FL6.7.1 | T-E6-015,T-E6-016 | review assigned; UNVERIFIED actual full outcome proof |
+| 125 | ADR-007 R7: config/flag/migration as release | F6.5.1 / FL6.5.1 | T-E6-011, T-E6-012 | review assigned; UNVERIFIED actual full outcome proof |
+| 126 | ADR-007 R8: staged rollout, rollback new event | F6.6.1 / FL6.6.1 | T-E6-013, T-E6-014 | gate assigned; UNVERIFIED actual full outcome proof |
+| 127 | ADR-007 R9: incident impact graph + protected copy | F6.7.1 / FL6.7.1 | T-E6-015, T-E6-016 | review assigned; UNVERIFIED actual full outcome proof |
 | 128 | ADR-007 R10: OTA denied by default | F6.8.1 / FL6.8.1 | T-E6-017 | gate assigned; UNVERIFIED actual full outcome proof |
-| 134 | ADR-009 R1: verified compact core, safety media nested never additive | F4.1.1 / FL4.1.1 | T-E4-001,T-E4-002 | review assigned; UNVERIFIED actual full outcome proof |
-| 135 | ADR-009 R1b: nonessential media separate/explicit/cancelable/evictable, size shown | F4.1.1,F4.1.2 / FL4.1.1,FL4.1.2 | T-E4-003,T-E4-004 | review assigned; UNVERIFIED actual full outcome proof |
-| 136 | ADR-009 R2: stage-verify-promote atomic; delta falls back | F4.2.1 / FL4.2.1 | T-E4-005,T-E4-006 | review assigned; UNVERIFIED actual full outcome proof |
-| 137 | ADR-009 R3 + CON-005: required-core auto-transfer, no dialog, priority, completion≠authority | F4.3.1 / FL4.3.1 | T-E4-007,T-E4-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 138 | ADR-009 R4: ordered eviction + 6-class never-evict + hold-transfer | F4.4.1 / FL4.4.1 | T-E4-009a,T-E4-009b,T-E4-010 | review assigned; UNVERIFIED actual full outcome proof |
-| 139 | ADR-009 R5: durable ledger, E3 submit/lookup, anti-resurrection + quarantine | F4.5.1 / FL4.5.1 | T-E4-011a,T-E4-011b,T-E4-012 | review assigned; UNVERIFIED actual full outcome proof |
-| 140 | ADR-009 R6: fail-closed inherited, recovery closure, Internal-Ops online-only | F4.6.1 / FL4.6.1 | T-E4-013,T-E4-014 | review assigned; UNVERIFIED actual full outcome proof |
+| 134 | ADR-009 R1: verified compact core, safety media nested never additive | F4.1.1 / FL4.1.1 | T-E4-001, T-E4-002 | review assigned; UNVERIFIED actual full outcome proof |
+| 135 | ADR-009 R1b: nonessential media separate/explicit/cancelable/evictable, size shown | F4.1.1, F4.1.2 / FL4.1.1, FL4.1.2 | T-E4-003, T-E4-004 | review assigned; UNVERIFIED actual full outcome proof |
+| 136 | ADR-009 R2: stage-verify-promote atomic; delta falls back | F4.2.1 / FL4.2.1 | T-E4-005, T-E4-006 | review assigned; UNVERIFIED actual full outcome proof |
+| 137 | ADR-009 R3 + CON-005: required-core auto-transfer, no dialog, priority, completion≠authority | F4.3.1 / FL4.3.1 | T-E4-007, T-E4-008 | review assigned; UNVERIFIED actual full outcome proof |
+| 138 | ADR-009 R4: ordered eviction + 6-class never-evict + hold-transfer | F4.4.1 / FL4.4.1 | T-E4-009a, T-E4-009b, T-E4-010 | review assigned; UNVERIFIED actual full outcome proof |
+| 139 | ADR-009 R5: durable ledger, E3 submit/lookup, anti-resurrection + quarantine | F4.5.1 / FL4.5.1 | T-E4-011a, T-E4-011b, T-E4-012 | review assigned; UNVERIFIED actual full outcome proof |
+| 140 | ADR-009 R6: fail-closed inherited, recovery closure, Internal-Ops online-only | F4.6.1 / FL4.6.1 | T-E4-013, T-E4-014 | review assigned; UNVERIFIED actual full outcome proof |
 | 141 | ADR-009 R7: encryption HELD, plaintext prohibited at gate | F4.7.1 / FL4.7.1 | T-E4-015 | gate assigned; UNVERIFIED actual full outcome proof |
 | 142 | ADR-009 R8 + TSQ-009-HELD: points stay HELD TEST POINTS | F4.8.1 / FL4.8.1 | T-E4-016 | gate assigned; UNVERIFIED actual full outcome proof |
-| 143 | CON-005: confirmation-free required transfer | F4.3.1 / FL4.3.1 | T-E4-007,T-E4-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 144 | Q-0029/0039/0040/0044: offline baseline, selective transfer, stale re-check | F4.1.2,F4.6.1 / FL4.1.2,FL4.6.1 | T-E4-003,T-E4-013 | review assigned; UNVERIFIED actual full outcome proof |
-| 145 | TSQ-003-narrow: exact taxonomy/windows | F4.6.1 / FL4.6.1 | T-E4-013,T-E4-014 | gate assigned; UNVERIFIED actual full outcome proof |
-| 146 | TSQ-012-narrow: exact encryption/key/versions/device proof | F4.7.1,F4.8.1 / FL4.7.1,FL4.8.1 | T-E4-015,T-E4-016 | gate assigned; UNVERIFIED actual full outcome proof |
-| 147 | ADR-014 R1: 5-option proposal + 6-dimension verify (E9 proposes, E3 verifies, E1 renders) | F9.1.1 / FL9.1.1 | T-E9-001,T-E9-002 | review assigned; UNVERIFIED actual full outcome proof |
+| 143 | CON-005: confirmation-free required transfer | F4.3.1 / FL4.3.1 | T-E4-007, T-E4-008 | review assigned; UNVERIFIED actual full outcome proof |
+| 144 | Q-0029/0039/0040/0044: offline baseline, selective transfer, stale re-check | F4.6.1, F4.1.2 / FL4.6.1, FL4.1.2 | T-E4-013, T-E4-003 | review assigned; UNVERIFIED actual full outcome proof |
+| 145 | TSQ-003-narrow: exact taxonomy/windows | F4.6.1 / FL4.6.1 | T-E4-013, T-E4-014 | gate assigned; UNVERIFIED actual full outcome proof |
+| 146 | TSQ-012-narrow: exact encryption/key/versions/device proof | F4.7.1, F4.8.1 / FL4.7.1, FL4.8.1 | T-E4-015, T-E4-016 | gate assigned; UNVERIFIED actual full outcome proof |
+| 147 | ADR-014 R1: 5-option proposal + 6-dimension verify (E9 proposes, E3 verifies, E1 renders) | F9.1.1 / FL9.1.1 | T-E9-001, T-E9-002 | review assigned; UNVERIFIED actual full outcome proof |
 | 148 | ADR-014 R2 + TSQ-018-narrow: economy skeleton; provider/model HELD | F9.2.1 / FL9.2.1 | T-E9-003 | gate assigned; UNVERIFIED actual full outcome proof |
-| 149 | ADR-014 R3: adapters; change triggers re-evaluation | F9.3.1 / FL9.3.1 | T-E9-004,T-E9-005 | review assigned; UNVERIFIED actual full outcome proof |
-| 150 | ADR-014 R4: least-privilege tools + cost visibility + non-AI continuation | F9.4.1 / FL9.4.1 | T-E9-006,T-E9-007 | review assigned; UNVERIFIED actual full outcome proof |
+| 149 | ADR-014 R3: adapters; change triggers re-evaluation | F9.3.1 / FL9.3.1 | T-E9-004, T-E9-005 | review assigned; UNVERIFIED actual full outcome proof |
+| 150 | ADR-014 R4: least-privilege tools + cost visibility + non-AI continuation | F9.4.1 / FL9.4.1 | T-E9-006, T-E9-007 | review assigned; UNVERIFIED actual full outcome proof |
 | 151 | ADR-014 R5: allowed-10 verbatim | F9.5.1 / FL9.5.1 | T-E9-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 152 | ADR-014 R6: never-15 verbatim + HOLD-on-ambiguity | F9.6.1 / FL9.6.1 | T-E9-009,T-E9-010 | review assigned; UNVERIFIED actual full outcome proof |
+| 152 | ADR-014 R6: never-15 verbatim + HOLD-on-ambiguity | F9.6.1 / FL9.6.1 | T-E9-009, T-E9-010 | review assigned; UNVERIFIED actual full outcome proof |
 | 153 | ADR-014 R7: project AI discipline + externals notice (ref F10.7.1) | F9.7.1 / FL9.7.1 | T-E9-011 | review assigned; UNVERIFIED actual full outcome proof |
-| 154 | CON-001: fit-specific info, generic never bike-specific | F1.1.2,F1.2.1,F9.1.1 / FL1.1.2,FL1.2.1,FL9.1.1 | T-E1-004,T-E1-005b,T-E9-002 | review assigned; UNVERIFIED actual full outcome proof |
-| 155 | CON-002: no fabricated values | F1.2.2,F8.3.1,F9.6.1 / FL1.2.2,FL8.3.1,FL9.6.1 | T-E1-019a,T-E8-006,T-E9-009,T-E9-010 | test assigned; UNVERIFIED actual full outcome proof |
-| 156 | CON-003: risk/safety warnings never hidden | F1.3.2,F4.1.1,F9.6.1 / FL1.3.4,FL4.1.1,FL9.6.1 | T-E1-022b,T-E4-001,T-E9-009 | review assigned; UNVERIFIED actual full outcome proof |
-| 157 | ADR-013 R1: Android continuity checklist, execution-only | F7.1.1 / FL7.1.1 | T-E7-001,T-E7-002 | review assigned; UNVERIFIED actual full outcome proof |
-| 158 | ADR-013 R2 + TSQ-008-narrow: iOS 5-proof gate, no commitment | F7.2.1 / FL7.2.1 | T-E7-003a,T-E7-003b,T-E7-003c | gate assigned; UNVERIFIED actual full outcome proof |
-| 159 | ADR-013 R3: separation of powers; provider never owns | F7.3.1 / FL7.3.1 | T-E7-004,T-E7-005 | review assigned; UNVERIFIED actual full outcome proof |
+| 154 | CON-001: fit-specific info, generic never bike-specific | F9.1.1, F1.1.2, F1.2.1 / FL9.1.1, FL1.1.2, FL1.2.1 | T-E9-002, T-E1-004, T-E1-005b | review assigned; UNVERIFIED actual full outcome proof |
+| 155 | CON-002: no fabricated values | F9.6.1, F1.2.2, F8.3.1 / FL9.6.1, FL1.2.2, FL8.3.1 | T-E9-009, T-E9-010, T-E1-019a, T-E8-006 | test assigned; UNVERIFIED actual full outcome proof |
+| 156 | CON-003: risk/safety warnings never hidden | F4.1.1, F9.6.1, F1.3.2 / FL4.1.1, FL9.6.1, FL1.3.4 | T-E4-001, T-E9-009, T-E1-022b | review assigned; UNVERIFIED actual full outcome proof |
+| 157 | ADR-013 R1: Android continuity checklist, execution-only | F7.1.1 / FL7.1.1 | T-E7-001, T-E7-002 | review assigned; UNVERIFIED actual full outcome proof |
+| 158 | ADR-013 R2 + TSQ-008-narrow: iOS 5-proof gate, no commitment | F7.2.1 / FL7.2.1 | T-E7-003a, T-E7-003b, T-E7-003c | gate assigned; UNVERIFIED actual full outcome proof |
+| 159 | ADR-013 R3: separation of powers; provider never owns | F7.3.1 / FL7.3.1 | T-E7-004, T-E7-005 | review assigned; UNVERIFIED actual full outcome proof |
 | 160 | ADR-013 R4: classification lists kept current | F7.4.1 / FL7.4.1 | T-E7-006 | review assigned; UNVERIFIED actual full outcome proof |
 | 161 | ADR-013 R5: spend read-only vs TRY context, fees separate | F7.5.1 / FL7.5.1 | T-E7-007 | gate assigned; UNVERIFIED actual full outcome proof |
 | 162 | ADR-008 R3: Android-first rebuild on owner hardware | F7.1.1 / FL7.1.1 | T-E7-001 | gate assigned; UNVERIFIED actual full outcome proof |
-| 163 | ADR-008 R5: no-owner-debug build recovery | F7.2.1,F7.3.1 / FL7.2.1,FL7.3.1 | T-E7-003b,T-E7-004 | gate assigned; UNVERIFIED actual full outcome proof |
+| 163 | ADR-008 R5: no-owner-debug build recovery | F7.2.1, F7.3.1 / FL7.2.1, FL7.3.1 | T-E7-003b, T-E7-004 | gate assigned; UNVERIFIED actual full outcome proof |
 | 164 | ADR-011 R1: Kavriva owns 8-noun authority (reference-only) | F8.1.1 / FL8.1.1 | T-E8-001 | review assigned; UNVERIFIED actual full outcome proof |
 | 165 | ADR-011 R3: 6-vector bypass blocked | F8.1.1 / FL8.1.1 | T-E8-002 | review assigned; UNVERIFIED actual full outcome proof |
 | 166 | ADR-011 R4: projections rebuildable non-authoritative | F8.1.1 / FL8.1.1 | T-E8-003 | review assigned; UNVERIFIED actual full outcome proof |
@@ -390,29 +391,31 @@ Need addresses above are line numbers in pinned06_DELIVERY_PLANNING/ACCEPTANCE_M
 | 168 | ADR-011 R5 + TSQ-016-narrow: removability proofs; no first-release CMS | F8.2.1 / FL8.2.1 | T-E8-005a | gate assigned; UNVERIFIED actual full outcome proof |
 | 169 | ADR-011 R6: reconsideration only on measured burden | F8.2.1 / FL8.2.1 | T-E8-005b | gate assigned; UNVERIFIED actual full outcome proof |
 | 170 | ADR-012 R1: plane split, metrics from records | F8.3.1 / FL8.3.1 | T-E8-006 | review assigned; UNVERIFIED actual full outcome proof |
-| 171 | ADR-012 R2+R3: exclusion verbatim + purpose/retention; outage independence | F8.4.1 / FL8.4.1 | T-E8-007,T-E8-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 172 | ADR-012 R4: capability bands + outage-independence pass | F8.5.1 / FL8.5.1 | T-E8-009,T-E8-010 | review assigned; UNVERIFIED actual full outcome proof |
+| 171 | ADR-012 R2+R3: exclusion verbatim + purpose/retention; outage independence | F8.4.1 / FL8.4.1 | T-E8-007, T-E8-008 | review assigned; UNVERIFIED actual full outcome proof |
+| 172 | ADR-012 R4: capability bands + outage-independence pass | F8.5.1 / FL8.5.1 | T-E8-009, T-E8-010 | review assigned; UNVERIFIED actual full outcome proof |
 | 173 | ADR-012 R5 + TSQ-017-narrow: 5-gate fallback without weakening | F8.6.1 / FL8.6.1 | T-E8-011 | gate assigned; UNVERIFIED actual full outcome proof |
 | 174 | ADR-012 R6: exit honesty, export≠proof, portability HELD | F8.6.1 / FL8.6.1 | T-E8-012 | gate assigned; UNVERIFIED actual full outcome proof |
 | 175 | ADR-015 R1: capsule rule, minimum change surface | F10.2.1 / FL10.2.1 | T-E10-004 | review assigned; UNVERIFIED actual full outcome proof |
 | 176 | ADR-015 R2: repo topology, governed addresses, no orphans | F10.2.1 / FL10.2.1 | T-E10-006 | review assigned; UNVERIFIED actual full outcome proof |
-| 177 | ADR-015 R3: graph identity/metadata + 7 detectors | F10.1.1 / FL10.1.1 | T-E10-001,T-E10-002,T-E10-003a,T-E10-003b | review assigned; UNVERIFIED actual full outcome proof |
+| 177 | ADR-015 R3: graph identity/metadata + 7 detectors | F10.1.1 / FL10.1.1 | T-E10-001, T-E10-002, T-E10-003a, T-E10-003b | review assigned; UNVERIFIED actual full outcome proof |
 | 178 | ADR-015 R4: toward-stability direction, no silent imports | F10.2.1 / FL10.2.1 | T-E10-005 | review assigned; UNVERIFIED actual full outcome proof |
-| 179 | ADR-015 R5: 14-field pack minimum + registry states | F10.3.1 / FL10.3.1,FL10.3.2 | T-E10-007,T-E10-008 | review assigned; UNVERIFIED actual full outcome proof |
-| 180 | ADR-015 R6: 10 closure layers + audits | F10.4.1 / FL10.4.1 | T-E10-009,T-E10-010 | review assigned; UNVERIFIED actual full outcome proof |
-| 181 | ADR-015 R7: simulation scenarios + excess-work scan | F10.5.1 / FL10.5.1 | T-E10-011a,T-E10-011b,T-E10-012 | simulation assigned; UNVERIFIED actual full outcome proof |
-| 182 | ADR-015 R8: design gate + regression evidence | F10.6.1 / FL10.6.1 | T-E10-013,T-E10-014 | review assigned; UNVERIFIED actual full outcome proof |
-| 183 | ADR-015 R9: role separation + parallel-output guards | F10.7.1 / FL10.7.1 | T-E10-015,T-E10-016 | review assigned; UNVERIFIED actual full outcome proof |
+| 179 | ADR-015 R5: 14-field pack minimum + registry states | F10.3.1 / FL10.3.1, FL10.3.2 | T-E10-007, T-E10-008 | review assigned; UNVERIFIED actual full outcome proof |
+| 180 | ADR-015 R6: 10 closure layers + audits | F10.4.1 / FL10.4.1 | T-E10-009, T-E10-010 | review assigned; UNVERIFIED actual full outcome proof |
+| 181 | ADR-015 R7: simulation scenarios + excess-work scan | F10.5.1 / FL10.5.1 | T-E10-011a, T-E10-011b, T-E10-012 | simulation assigned; UNVERIFIED actual full outcome proof |
+| 182 | ADR-015 R8: design gate + regression evidence | F10.6.1 / FL10.6.1 | T-E10-013, T-E10-014 | review assigned; UNVERIFIED actual full outcome proof |
+| 183 | ADR-015 R9: role separation + parallel-output guards | F10.7.1 / FL10.7.1 | T-E10-015, T-E10-016 | review assigned; UNVERIFIED actual full outcome proof |
 | 184 | ADR-015 R9b + ADR-010 R3: owner never repairs technical systems | F10.7.1 / FL10.7.1 | T-E10-015 | review assigned; UNVERIFIED actual full outcome proof |
-| 185 | Q-0038/Q-0045 + ADR-010 R3/R4: Turkish/units/a11y baseline | F10.6.1 / FL10.6.1 | T-E10-013,T-E10-014 | review assigned; UNVERIFIED actual full outcome proof |
-| 191 | CON-004: beginner-comprehensible guide copy, verified at F10.6.1 design gate | F1.2.1,F1.3.1,F1.4.1,F1.5.1 / FL1.2.1,FL1.3.1,FL1.4.1,FL1.5.1 | T-E1-005a,T-E1-006 | review assigned; UNVERIFIED actual full outcome proof |
+| 185 | Q-0038/Q-0045 + ADR-010 R3/R4: Turkish/units/a11y baseline | F10.6.1 / FL10.6.1 | T-E10-013, T-E10-014 | review assigned; UNVERIFIED actual full outcome proof |
+| 191 | CON-004: beginner-comprehensible guide copy, verified at F10.6.1 design gate | F1.2.1/F1.3.1/F1.4.1/F1.5.1 / FL1.2.1/FL1.3.1/FL1.4.1/FL1.5.1 | T-E1-005a/b/c, T-E1-006/007/008/009/010 | review assigned; UNVERIFIED actual full outcome proof |
 | 192 | Q-0046/BR-131..133: necessity-to-understand/prove test + inviolability (Q156 core, Q157 expanded) | F4.9.1 / FL4.9.1 | T-E4-017 | review assigned; UNVERIFIED actual full outcome proof |
 | 193 | IDCO-RQ-060/061/062: failed states inspectable + recoverable + resolver; unsaved/partial distinguished; four-part explanation | F2.12.1 / FL2.12.1 | T-E2-016 | review assigned; UNVERIFIED actual full outcome proof |
-| 195 | ENTITLEMENT SET Q-0020/0026/0046/0047/0065–0069 + DEC-0053: 1 bike free, paid slots, subscription → 3, full guide for 1 selected bike (moves, never stacks); prices/packages/switch-rules HELD | F1.7.1 / FL1.7.1 | T-E1-014a,T-E1-014b | gate assigned; UNVERIFIED actual full outcome proof |
-| 215 | BR-063/064: duration-as-range + cost-split with exclusions/date/assumptions, no fabrication | F1.2.2 / FL1.2.2 | T-E1-018,T-E1-019a,T-E1-019b | review assigned; UNVERIFIED actual full outcome proof |
-| 216 | BR-070/071/073: sponsored marked, listing never substitutes guide, no sales-target manipulation, fit-first | F1.9.2 / FL1.9.2 | T-E1-020,T-E1-021 | review assigned; UNVERIFIED actual full outcome proof |
-| 217 | BR-074: user-invoked roadside mode, condensed steps, uncertainty persistent | F1.3.2 / FL1.3.4 | T-E1-022a,T-E1-022b | review assigned; UNVERIFIED actual full outcome proof |
-| 218 | OPEN safe-closure criteria: per-category content (expert + second review), E3-verified, E1-rendered | F1.3.3 / FL1.3.5 | T-E1-023,T-E1-024 | gate assigned; UNVERIFIED actual full outcome proof |
+| 194 | ADR-008 R6: real-device proof (simulators never substitute) | NONE (HELD by design; authority: ADR-008 R6 + DEC-0054 no-device-proof rule) / NONE | NONE | HELD source hold; BLOCKED, no task or acceptance inferred |
+| 195 | ENTITLEMENT SET Q-0020/0026/0046/0047/0065–0069 + DEC-0053: 1 bike free, paid slots, subscription → 3, full guide for 1 selected bike (moves, never stacks); prices/packages/switch-rules HELD | F1.7.1 / FL1.7.1 | T-E1-014a, T-E1-014b (+ server checks E3/E5) | gate assigned; UNVERIFIED actual full outcome proof |
+| 196 | TSQ-001-narrow: Flutter/Dart channels, plugin allowlist, device/OS matrix | NONE (HELD by design; authority: DEC-0054 + ADR-008 revisit triggers) / NONE | NONE | HELD source hold; BLOCKED, no task or acceptance inferred |
+| 215 | BR-063/064: duration-as-range + cost-split with exclusions/date/assumptions, no fabrication | F1.2.2 / FL1.2.2 | T-E1-018, T-E1-019a, T-E1-019b | review assigned; UNVERIFIED actual full outcome proof |
+| 216 | BR-070/071/073: sponsored marked, listing never substitutes guide, no sales-target manipulation, fit-first | F1.9.2 / FL1.9.2 | T-E1-020, T-E1-021 | review assigned; UNVERIFIED actual full outcome proof |
+| 217 | BR-074: user-invoked roadside mode, condensed steps, uncertainty persistent | F1.3.2 / FL1.3.4 | T-E1-022a, T-E1-022b | review assigned; UNVERIFIED actual full outcome proof |
+| 218 | OPEN safe-closure criteria: per-category content (expert + second review), E3-verified, E1-rendered | F1.3.3 / FL1.3.5 | T-E1-023, T-E1-024 | gate assigned; UNVERIFIED actual full outcome proof |
 | 219 | Q-0066/Q222/Q227: pre-step correction + MAY-open renewal per server decision, window HELD | F1.7.1 / FL1.7.2 | T-E1-025 | gate assigned; UNVERIFIED actual full outcome proof |
 | 227 | SCR-036/C2.7: contributor status surfacing + repair paths | F2.7.1 / FL2.7.1 | T-E2-014 | simulation assigned; UNVERIFIED actual full outcome proof |
 | 228 | Q-0049/0050: withdrawal re-review owner trigger | F2.7.1 / FL2.7.1 | T-E2-015 | simulation assigned; UNVERIFIED actual full outcome proof |
@@ -467,6 +470,12 @@ This is actual immutable metadata/digest inspection, not semantic acceptance. A 
 | vault/REGISTRY/T-E3-036.md | c24c6a807ef01be7fbbee9d6015d7bb2f774f6d5137e996fbeb9c96c03ea4ee6 | True | 07f2043b06dcac3ad48552c11b677017f27691790179914503a5b2c6e121a6db | vault/EVIDENCE/SNAPSHOTS/metadata-v1/vault/PROFILES/runtime-transition-gates.md.snapshot / True / PASS (package document only; all operational candidate gates HELD) |
 | vault/REGISTRY/T-E5-003.md | 8c322ec925370518a01fcb6e1e543e06b2fab6d3a95a7ea70fbaaed08f73c05e | True | b80ffd023ca298352a76c8b7b48a40fb0efa8b8662b23dcb7be454d52855e163 | modules/e05-identity/internal/postgres_decision.py / True / BLOCKED (PR #4 scoped T3 review approved; production source writers/E3 binding not yet proved) |
 
+## Known source-held taskless needs
+
+- ACCEPTANCE_MATRIX.md:72 BLOCKED: canonical source NONE/HELD-acceptance remains visible: ADR-001 R5: integrity-bound phone package; no task/acceptance inferred
+- ACCEPTANCE_MATRIX.md:194 BLOCKED: canonical source NONE/HELD remains visible: ADR-008 R6: real-device proof (simulators never substitute); no task/acceptance inferred
+- ACCEPTANCE_MATRIX.md:196 BLOCKED: canonical source NONE/HELD remains visible: TSQ-001-narrow: Flutter/Dart channels, plugin allowlist, device/OS matrix; no task/acceptance inferred
+
 ## All ten actual product layers remain nonpassing
 
 These are current audit limitations, not a copied all-UNVERIFIED template pretending a full product audit occurred. Each reason names the actual missing source/proof or bounded observation. E10 owns this documentary audit; accountable product/source owners must supply their real scoped acceptance. No operational owner is inferred from a layer label.
@@ -476,7 +485,7 @@ These are current audit limitations, not a copied all-UNVERIFIED template preten
 | task | MISSING / BLOCKED | 175canonical physical records absent at appbase; E3R1REVIEW/E5IN_PROGRESS; current task acceptance receipts do not close all206product needs |
 | feature | UNVERIFIED | 106catalog addresses resolve but full behavior/failure/a11y/data-state execution proof not audited or supplied |
 | flow | UNVERIFIED | 115declared flows resolve; no real full-product cross-module E2E execution established by this document run |
-| requirement | UNVERIFIED | 172compound/range need rows declare tasks; individual approved requirement/rule/screen/state source definitions/content validation not independently completed |
+| requirement | UNVERIFIED | 175compound/range need rows including3canonicalheld declare tasks; individual approved requirement/rule/screen/state source definitions/content validation not independently completed |
 | design | UNVERIFIED | No actual product screen/state/canonical reference/responsive/a11y proof supplied or executed in this audit |
 | architecture | UNVERIFIED | Declared catalog/owner/serialized subject segments inspected, not AST/private-import/semantic orphan/public-contract full corpus audit |
 | data/migration | UNVERIFIED | No actual whole-product migration/rollback/offline/restore execution proof in this audit |
@@ -488,10 +497,10 @@ These are current audit limitations, not a copied all-UNVERIFIED template preten
 
 Actual commands ran the pinned-model audit and in-memory mutation/assessment functions2026-10-02. No canonical/app record was removed or set DONE by these drills; this is documentary testing, not real runtime/product scenario execution.
 
-- remove T-E10-010 in copied planned task model: 1 actual detected findings: MISSING T-E10-010 (ACCEPTANCE_MATRIX.md:180 forward need-to-task reference missing).
-- remove T-E10-006 in copied planned task model: 2 actual detected findings: MISSING T-E10-006 (ACCEPTANCE_MATRIX.md:176 forward need-to-task reference missing); MISSING ACCEPTANCE_MATRIX.md:176 (approved-need row has no remaining declared task).
+- remove T-E10-010 in copied planned task model: 4 actual detected findings: BLOCKED ACCEPTANCE_MATRIX.md:72 (canonical source NONE/HELD-acceptance remains visible: ADR-001 R5: integrity-bound phone package; no task/acceptance inferred); MISSING T-E10-010 (ACCEPTANCE_MATRIX.md:180 forward need-to-task reference missing); BLOCKED ACCEPTANCE_MATRIX.md:194 (canonical source NONE/HELD remains visible: ADR-008 R6: real-device proof (simulators never substitute); no task/acceptance inferred); BLOCKED ACCEPTANCE_MATRIX.md:196 (canonical source NONE/HELD remains visible: TSQ-001-narrow: Flutter/Dart channels, plugin allowlist, device/OS matrix; no task/acceptance inferred).
+- remove T-E10-006 in copied planned task model: 5 actual detected findings: BLOCKED ACCEPTANCE_MATRIX.md:72 (canonical source NONE/HELD-acceptance remains visible: ADR-001 R5: integrity-bound phone package; no task/acceptance inferred); MISSING T-E10-006 (ACCEPTANCE_MATRIX.md:176 forward need-to-task reference missing); MISSING ACCEPTANCE_MATRIX.md:176 (approved-need row has no remaining declared task); BLOCKED ACCEPTANCE_MATRIX.md:194 (canonical source NONE/HELD remains visible: ADR-008 R6: real-device proof (simulators never substitute); no task/acceptance inferred); BLOCKED ACCEPTANCE_MATRIX.md:196 (canonical source NONE/HELD remains visible: TSQ-001-narrow: Flutter/Dart channels, plugin allowlist, device/OS matrix; no task/acceptance inferred).
 - all206canonical task states set DONE in a copied assumption map; all ten missing actual owner/evidence/verdict receipts remain nonpassing: 30 findings, declared_shape_complete=False. Manual semantic acceptance remains UNVERIFIED even if receipt shape were complete.
 
-Additional19unittest regressions execute reverse orphan/wrongchain/missing source/dependency/duplicate ID/missing layer/owner/proof and bootstrapR1cases; actual full run_all result recorded in EDEV037 separately. Conditional green tests prove these documented detection behaviors, not product readiness. All-DONE does not change gap labels/current authority.
+Additional22unittest regressions execute reverse orphan/wrongchain/missing source/dependency/duplicate ID/missing layer/owner/proof and bootstrapR1cases; actual full run_all result recorded in EDEV037 separately. Conditional green tests prove these documented detection behaviors, not product readiness. All-DONE does not change gap labels/current authority.
 
 Method: `modules/e10-graph/TRACEABILITY_AUDIT.md`; tool: `modules/e10-graph/internal/traceability_audit.py`; tests: `modules/e10-graph/tests/test_traceability_audit.py`; pack: `vault/PACKS/P-E10-010.md`; task: `vault/REGISTRY/T-E10-010.md`; current proof: `vault/EVIDENCE/E-DEV-037.md`.

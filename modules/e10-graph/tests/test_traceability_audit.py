@@ -7,7 +7,17 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "internal"))
 from traceability_audit import (LAYERS, assess_closure_shape, audit_declared,
                                 catalog, effective_product_state,
-                                re_evaluate_task_and_layer_states, subject_digest_matches)
+                                re_evaluate_task_and_layer_states, subject_digest_matches,
+                                model_from_sources)
+
+
+def source_fixture(matrix):
+    return {"TASK_INDEX":"| T-E10-010 | FL10.4.1/F10.4.1 | Audit | | ADR-015 | gaps | PROPOSED |",
+            "FEATURE_CATALOG":"| F10.4.1 | C10.4 |",
+            "USER_FLOW_CATALOG":"| FL10.4.1 | F10.4.1 |",
+            "CAPABILITY_CATALOG":"| C10.4 | E10 |",
+            "EPIC_CATALOG":"| E10 |",
+            "ACCEPTANCE_MATRIX":matrix}
 
 
 def fixture():
@@ -23,6 +33,27 @@ def fixture():
 
 
 class TraceabilityAuditTests(unittest.TestCase):
+    def test_parser_preserves_taskless_need_instead_of_dropping_it(self):
+        m=model_from_sources(source_fixture("| ADR-015 R6 | F10.4.1 | FL10.4.1 | NONE | review |"))
+        self.assertEqual(len(m["needs"]),1)
+        self.assertTrue(any(f["subject"]=="ACCEPTANCE_MATRIX.md:1" and f["label"]=="MISSING"
+                            for f in audit_declared(m)))
+
+    def test_parser_preserves_held_none_cells_and_source_address(self):
+        row="| ADR-008 R6: device proof | NONE (held by design) | NONE | NONE | HELD |"
+        m=model_from_sources(source_fixture(row))
+        self.assertEqual(m["needs"][0]["source_cells"][1:],["NONE (held by design)","NONE","NONE","HELD"])
+        finding=next(f for f in audit_declared(m) if f["subject"]=="ACCEPTANCE_MATRIX.md:1")
+        self.assertEqual(finding["label"],"BLOCKED")
+        self.assertIn("ADR-008 R6",finding["reason"])
+
+    def test_parser_excludes_table_headers_but_retains_taskless_data(self):
+        source="| Requirement / Rule | Feature | Flow | Task | Validation |\n|---|---|---|---|---|\n| Real need | NONE | NONE | NONE | NONE |"
+        m=model_from_sources(source_fixture(source))
+        self.assertEqual(len(m["needs"]),1)
+        self.assertEqual(m["needs"][0]["line"],3)
+        self.assertEqual(m["needs"][0]["label"],"Real need")
+
     def test_declared_chain_is_separate_from_semantic_completion(self):
         self.assertEqual(audit_declared(fixture()), [])
         self.assertEqual(len(assess_closure_shape({})["findings"]), 10)

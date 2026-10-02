@@ -49,9 +49,10 @@ def model_from_sources(sources):
         "epics": catalog(sources["EPIC_CATALOG"], r"E\d+"),
         "needs": [{"line": line, "label": c[0], "features": refs(FEATURE, c[1]),
                    "flows": refs(FLOW, c[2]), "tasks": refs(TASK, c[3]),
-                   "validation_assignment": c[4]}
+                   "validation_assignment": c[4], "source_cells": list(c)}
                   for line, c in table_rows(sources["ACCEPTANCE_MATRIX"])
-                  if len(c) == 5 and refs(TASK, c[3])],
+                  if len(c) == 5 and c[0] != "Requirement / Rule"
+                  and any(c) and not all(re.fullmatch(r"[-: ]+", cell) for cell in c)],
     }
 
 
@@ -70,7 +71,11 @@ def audit_declared(model):
         for tid in sorted(need["tasks"] - tasks.keys()):
             gap("MISSING", tid, addr + " forward need-to-task reference missing")
         if not need["tasks"] & tasks.keys():
-            gap("MISSING", addr, "approved-need row has no remaining declared task")
+            held = not need["tasks"] and need["validation_assignment"].startswith("HELD")
+            gap("BLOCKED" if held else "MISSING", addr,
+                ("canonical source NONE/" + need["validation_assignment"] +
+                 " remains visible: " + need["label"] + "; no task/acceptance inferred")
+                if held else "approved-need row has no remaining declared task")
         for kind in ("features", "flows"):
             for identity in sorted(need[kind] - model[kind].keys()):
                 gap("MISSING", identity, addr + " declared " + kind + " source absent")
