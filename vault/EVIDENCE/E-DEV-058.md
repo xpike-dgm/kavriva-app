@@ -26,7 +26,7 @@ tests: [modules/e06-release/tests/test_config_release.py, modules/e10-graph/chec
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E6-CONFIG-001]
-used_by: [V-E6-CONFIG-001, P-E6-011, T-E6-011]
+used_by: [V-E6-CONFIG-001, P-E6-011, T-E6-011, P-E6-017, E-DEV-059]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -58,3 +58,7 @@ Direct human owner DEC0069/0070 standing bounded reviewer acceptance and normal 
 
 Current ACTIVE primary 955c14fae3a79e5c9e1dce1383fc8e60980a0e80bdf1d2506110c514e5de5a19; original reviewed source primaryfcac913236d643dde49b85eb53d05de8855f18a06b7ac6bd4f65f64175c98413 retained in source history.
 Final root metadata preparation: build_index51/routingeligible[]/T011internalDONE, run_all12checks+42regressionsPASS0.476s/worstexit0/diffPASS; exact six changed metadata/view paths. Historical P-PROOF001warning unchanged. Final independent audit/currentheadCI pending.
+
+## Secondary custody for T-E6-017
+
+Original primary/core/digests/reviewer/source-PASS/no-rejection/consequence assessment/head/check receipts above preserved. Final metadata7b0ebd received independent gpt-6-luna/max PASS/all10green/actualT3SUCCESS under immutable PR60 receipt, normal merged7e014b7ecf7063fe27f8619ba7249056c1986132. T017 archive acceptedinventoryv26byte-equal at `vault/EVIDENCE/SNAPSHOTS/E-DEV-058-E10-GOVERNED-PATHS.md.snapshot`, normalized 0a2cfbdad85dab35276fe7274c7d075bbe89c82d2e569e837e471837306d9d54; actual documentary consumer P-E6-017/EDEV059 only. No configuration or OTA permission follows from secondary custody.

@@ -20,6 +20,8 @@ used_by:
   - "E-DEV-056"
   - "P-E6-011"
   - "E-DEV-058"
+  - "P-E6-017"
+  - "E-DEV-059"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -116,3 +118,7 @@ Context `vault/PACKS/P-E6-003.md`; evidence `vault/EVIDENCE/E-DEV-056.md`. Draft
 ## Development T-E6-011 coverage
 
 Existing E6 family runs accepted registry/snapshot plus current config-typing fixtures. `vault/PACKS/P-E6-011.md` / `vault/EVIDENCE/E-DEV-058.md`: review-level internal rules only; no unmerged PR59 guarded/PR57 independence units counted. No workflow/install/provider change. Current exactheadCI/actualT3 and independent source/finalmetadata review separate from effective config/migration/publishing/production gates.
+
+## Development default OTA denial coverage
+
+Existing E6 family includes actual registry/snapshot/config/denial units, `vault/PACKS/P-E6-017.md` / `vault/EVIDENCE/E-DEV-059.md`. No workflow/dependency/provider installation; no unmerged PR59/PR57 tests counted. Default-denial security probes/currentexactheadCI and independent source/final metadata acceptance never approve an OTA channel or prove missing client/device/provider/audit/physical integration.
