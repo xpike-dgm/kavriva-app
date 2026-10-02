@@ -2280,7 +2280,7 @@
    ],
    "evidence": "E-DEV-052",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E5-018",
-   "status": "REVIEW"
+   "status": "DONE"
   },
   {
    "task_id": "T-E5-020",

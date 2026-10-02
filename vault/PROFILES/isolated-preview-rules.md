@@ -16,7 +16,7 @@ depends_on: [V-E5-INGEST-001, M-E5-001, I-E10-PATHS-001]
 used_by: [P-E5-018, T-E5-018, E-DEV-052]
 evidence: [E-DEV-052]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Isolated preview rules v1

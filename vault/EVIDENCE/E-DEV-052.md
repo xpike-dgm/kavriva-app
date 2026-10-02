@@ -2,8 +2,8 @@
 test_id: E-DEV-052
 contract_id_version: "ADR004 R7; ADR001 R4; preview requirements v1"
 subject_file: vault/PROFILES/isolated-preview-rules.md
-subject_digest: 8c4340852e65f6b1045c5ec36d2b0626d6ba55ff98f2279e0cb2993ec59e0dcb
-result: "RECORDED: initial bounded source PASS; stricter derivative types awaiting re-review/currentCI"
+subject_digest: 9b3c7e76d44a98b46c0c8d05fa2770abd66fffeb36408b33f76a1d001805f766
+result: "PASS: independently reviewed internal preview rules/local fixture; actual product preview missing"
 evidence_links:
   - "[[vault/PROFILES/isolated-preview-rules.md]]"
   - "[[vault/PACKS/P-E5-018.md]]"
@@ -12,8 +12,8 @@ evidence_links:
   - modules/e05-identity/internal/preview_isolation.py
   - modules/e05-identity/tests/test_preview_isolation.py
   - modules/e05-identity/tests/preview_browser_fixture.cjs
-gate_verdict: "BLOCKED (independent review/currentCI missing; real preview/production HELD)"
-reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial PASS, updated re-review pending)
+gate_verdict: "PASS (bounded rules/fixture; final audit/latestCI required; actual preview/production HELD)"
+reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial and updated bounded PASS)
 timestamp: 2026-10-02
 purpose: Define and validate credential-free isolated preview rules
 domain: project-execution
@@ -60,3 +60,13 @@ All eight applicable actual exactc0c source workflows SUCCESS: labelledPRarchite
 Root now requires embedded derivative source to be exact Subject with validated fields, source receipt/classification nonempty plain strings before equality. Added a meaningful equality-callback trap and invalid-field-type regression; caller-defined equality cannot spoof context or execute during the comparison. Eleven updated unit testsPASS0.023s/compilePASS; unchanged synthetic browser fixture rerun with updated policyPASS, same Chrome154.0.8037.93/three deliveries/probes/limits. Current normalized profile8c4340852e65f6b1045c5ec36d2b0626d6ba55ff98f2279e0cb2993ec59e0dcb, codeb41a6e20f953671f406129b3a50913f0e1c40b96073d47b43808c04ec285497a, unitfcb6a1d266e125a2d9521bd15b5766af233ab5509ae4fe459e21399b0d9e774f. Browser/archive/prior proof/inventory/manifest unchanged by this correction. Task remains REVIEW until actual updated independent verdict/currentCI; no production/current authority proof added.
 
 Updated preparation architecture12checks/42regressionsPASS0.468s/diffcheck, existing47-row views remain correct and taskREVIEW. Frozen updated head and exact applicableCI/independent re-review still required. No new paths or runtime/product operation.
+
+## Actual updated independent source acceptance
+
+Independent /root/pr53_proposal_tag_review gpt-6-luna/max actual updated bounded PASS at exactb31056821b9bb48baf402e7602b4d1197e14e2bb versus earlier reviewedc0c, acceptedbasead623eac59086ac54aac597fee59cf43b9bc0d80. Five-file delta scoped, exact Subject validation/plain-string receipt/classification before equality, EqualityTrap/malformed-type coverage and updated profile/code/unit hashes verified. No blocking findings. Read-only review, no tests/CI/provider operations or edits; reported checks remain separate from this verdict. Initial source PASS remains historical, never used as acceptance of b310.
+
+All eight actual exactb310 source workflows SUCCESS: PRarchitecture37003293610 (T3 job SUCCESS), E3commit37003293581,E537003293744,liveAuth37003293553; pusharchitecture37003289536,E3commit37003289535,E537003289542,liveAuth37003289699. Root fetched source E5CI49testsPASS1.453s. Eleven unit/compile/current-policy browser/architecture12+42/diff receipts above are actual preparation checks, not hosted preview proof.
+
+Direct standing ownerDEC0070 accepts bounded internal rules/fixture DONE after independent updated PASS/currentCI. PendingplanPR4notmerged. Primary status-only ACTIVE, packACTIVE/taskDONE/views47actualrows; source profile8c4340852e65f6b1045c5ec36d2b0626d6ba55ff98f2279e0cb2993ec59e0dcb, current normalized profile9b3c7e76d44a98b46c0c8d05fa2770abd66fffeb36408b33f76a1d001805f766. Current codeb41a6e20f953671f406129b3a50913f0e1c40b96073d47b43808c04ec285497a/unitfcb6a1d266e125a2d9521bd15b5766af233ab5509ae4fe459e21399b0d9e774f/browserc4614f11f80f00acfe81fe62e9087abd26c8d11812443d679cc9fe7e2698f9cd unchanged. Prior proof/archive/inventory/manifest untouched by closeout. Final six-path metadata audit/latestheadCI remain separate merge gates; immutable final receipt in PR body. Product rendering/serving/authenticated observation/current effect authorization/HTTPS/cookie/network/privilegedAPI/native/mobile/composite tests remain MISSING/HELD, E3R1REVIEW/E5-003IN_PROGRESS/physicalprovisioning/privilegedproductionHELD preserved. No production activation or preview/original access granted.
+
+Performed final metadata preparation: root architecture12checks/42regressionsPASS0.459s, generated47actualrows/T018boundedDONE/diffcheck. Exactly six metadata/view paths changed after independently acceptedb310; source code/unit/browser/archive/prior proof/inventory/manifest unchanged. Final independent metadata audit/latesthead eightCI must be recorded in immutable PR receipt before normal matched-head merge.
