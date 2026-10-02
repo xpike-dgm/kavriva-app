@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_stage_verify_promote.py, modules/e10-grap
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-TRANSITION-001]
-used_by: [V-E4-TRANSITION-001, P-E4-005, T-E4-005]
+used_by: [V-E4-TRANSITION-001, P-E4-005, T-E4-005, P-E4-006, E-DEV-065]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -64,3 +64,7 @@ Owner direct standing DEC0069/0070 accepts full delegated task PASS/normal match
 Reviewed source primary 7bede0eb15af4574f829e2d7d530946e043f311e34cddbdb1d9aaec306b29c97 preserved as historical review digest; current ACTIVE primary 89a9c9b6876dfd454b645d72f64266691c4a4299d7d4f1e84e1185f83c64de14. No previous source rejection or unit failure in this task; no physical atomicity/storage/runtime proof inferred.
 
 Final root metadata preparation graph12checks+42regressionsPASS0.461s/worstexit0/build_index57/routingT005DONE/eligible[]/diff, exact six closeout paths. Original P-PROOF001warning unchanged. Independent final audit/latest-head12CI remain required before normalmerge.
+
+## Secondary accepted custody receipt / T-E4-006 consumption
+
+PR66final63647d7dafb8b5cf380fdceb317ebc31f677fc12 separate configured gpt-6-luna/max finalmetadataPASS/no findings; exactfinalall12CIgreen/actualPRT3SUCCESS37037577842/E4CI61PASS0.061s. Normal matchedheadmerge e135aa57612f2178090ee6545d0d9ddb379e7b92 verified2026-10-02T17:01:54Z. Source1c87933/fulltaskPASS/primary/digests/reviewer/no-rejection/history retained. Inventoryv32rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-064-E10-GOVERNED-PATHS.md.snapshot`; documentaryconsumers `vault/PACKS/P-E4-006.md` / `vault/EVIDENCE/E-DEV-065.md`. InternalcontractDONE, physicalatomicpromotion/encryption/device proof remainsHELD.
