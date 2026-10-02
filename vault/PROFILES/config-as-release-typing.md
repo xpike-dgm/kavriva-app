@@ -16,7 +16,7 @@ depends_on: [M-E6-001, V-E6-SNAPSHOT-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E6-011, T-E6-011, E-DEV-058]
 evidence: [E-DEV-058]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Config-as-release typing v1
@@ -57,3 +57,5 @@ ADR007R7 -> C6.5 -> F6.5.1 -> FL6.5.1 -> T-E6-011 -> M-E6-001 internal config ty
 | gap-audit | Actual semantic extraction/authentication/current graph/capability/permission/floors/audit/transaction absent |
 
 Code `modules/e06-release/internal/config_release.py`; tests `modules/e06-release/tests/test_config_release.py`; profile `vault/PROFILES/config-as-release-typing.md`; pack `vault/PACKS/P-E6-011.md`; task `vault/REGISTRY/T-E6-011.md`; proof `vault/EVIDENCE/E-DEV-058.md`; capsule `modules/e06-release/MANIFEST.md`. E3R1 REVIEW/E5-003 IN_PROGRESS and all unmerged physical/role/transition drafts unchanged.
+
+Bounded internal typing closure: separate /root/pr58_snapshot_binding_review gpt-6-luna/max PASS/no actionable findings at source821d4d3d42a286fe3c848df49408b5d4f75560e4, actual sourceall10CIgreen/actualT3SUCCESS. Inner config and outer packet consequence labels both bound; no equality/classification ranking invented by ADR007R7. Direct owner standing DEC0069/0070 scoped acceptance, pendingplanPR4unmerged. Internal declarations only; actual semantic extraction/canonical/current graph/capability/authenticated author-review/current E3/E5 permission/audit/floors/T004/T012/config deployment and production remain MISSING/HELD. Final metadata audit/latest-head CI required before merge.
