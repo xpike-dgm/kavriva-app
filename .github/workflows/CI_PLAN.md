@@ -32,6 +32,8 @@ used_by:
   - "E-DEV-063"
   - "P-E4-005"
   - "E-DEV-064"
+  - "P-E4-006"
+  - "E-DEV-065"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -152,3 +154,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged; current discovery47units (a
 ## E4 transition contract coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers61units (accepted47 +14transition). `modules/e04-offline/tests/test_stage_verify_promote.py` probes incomplete/corrupt/mixed/old/incompatible declaration bindings/current-pin conflict/reverification/retained old/peak sums/disposable order/protected classes/insufficient space/type/immutable forgedproposal/runtimeHELD. Memory declaration tests are not actual encrypted disk/CAS/atomic commit/crash recovery/canonical source/compatibility/device evidence. Context `vault/PACKS/P-E4-005.md`; proof `vault/EVIDENCE/E-DEV-064.md`. Exacthead12CI/actualPRT3/full independent task/final metadata review remain gates; no workflow/gatepolicy/custody changes.
+
+## E4 complete-package fallback coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers72units (accepted61 +11fallback). `modules/e04-offline/tests/test_full_package_fallback.py` probes missing/stale/mixed/malformed/hostile delta or base, exacthintdeferred, targetfreshness/selection, completeIDs, partial/corrupt T005integrationfailures, immutability/no callback/finiteerrors/NONE/productionHELD. Memory fixtures are not actualdelta/fullfetch/encryptedatomicstore/canonicalacceptance/device evidence. Context `vault/PACKS/P-E4-006.md`; proof `vault/EVIDENCE/E-DEV-065.md`. Exacthead12CI/actualPRT3/fulltask/finalmetadatareview remain separate; no workflow/gatepolicy/custodychange.
