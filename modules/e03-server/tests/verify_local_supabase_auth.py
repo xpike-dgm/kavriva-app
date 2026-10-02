@@ -32,6 +32,7 @@ from maintenance_command import MaintenanceCommand, MaintenanceCommands  # noqa:
 from maintenance_store import CREATE  # noqa: E402
 from maintenance_api import application  # noqa: E402
 from psycopg.conninfo import conninfo_to_dict, make_conninfo
+from environment_binding import bind_environment, validate_database_identity
 
 
 def _post(url, key, body, bearer=None):
@@ -81,6 +82,23 @@ def main(status_path):
     selected = {"KAVRIVA_ENVIRONMENT":"development",
                 "KAVRIVA_DEVELOPMENT_DATABASE_DSN":limited_url,
                 "KAVRIVA_DEVELOPMENT_SUPABASE_PUBLISHABLE_KEY":anon_key}
+    try:
+        with patch.dict(os.environ,selected,clear=True):
+            validate_database_identity(bind_environment(os.environ))
+    except ValueError:
+        # Local disposable fixture metadata only: no DSN, password, token,
+        # provider user or raw exception. Keep a failing preflight failing.
+        with psycopg.connect(limited_url) as conn:
+            rows = conn.execute("""
+                select d.datname, a.privilege_type, a.is_grantable
+                from pg_database d,
+                     lateral aclexplode(coalesce(d.datacl,acldefault('d',d.datdba))) a
+                where a.grantee=0 or a.grantee in
+                    (select oid from pg_roles where pg_has_role(current_user,oid,'MEMBER'))
+                order by 1,2,3
+            """).fetchall()
+        print("isolated fixture database ACL metadata: " + json.dumps(rows))
+        raise AssertionError("isolated fixture role preflight failed") from None
     def request(path, body):
         encoded = json.dumps(body).encode()
         environ = {"REQUEST_METHOD":"POST", "PATH_INFO":path,

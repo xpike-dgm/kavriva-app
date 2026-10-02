@@ -126,3 +126,10 @@ Current changed subject digests:
 - `modules/e03-server/internal/environment_binding.py`: 8c8eff69042d4c7994861b12cc31aca37765983f933d18c58c43a4e2bedff274
 - `modules/e03-server/tests/test_environment_binding.py`: 988d67ba1584faf4a8b6661b69331f6adfd1959cb5fca3ccacac2ca6cb620d57
 - `vault/PROFILES/environment-separation.md`: ed7b442cf0f0c304a2f7348515fdad95adda0c46a23481c0dd86e874282b0fee
+
+
+## Latest CI failure retained — 2026-10-02
+
+At 6e4ec789911d1afebd2641884e78b5915adffb58, E3/E5/architecture and labelled T3 checks passed, but both real local Supabase Auth workflows failed before enrollment with CURRENT_AUTHORITY_UNAVAILABLE (PR run36984557313; push36984553379). No green-all-CI claim or task acceptance. The existing local verifier now calls the unchanged preflight explicitly and prints only disposable local database ACL names/privilege/grant-option metadata on failure; no credentials, DSN, token, provider user, raw exception or hosted operation. This prepares an actual fixture-difference diagnosis, not a relaxed authorization rule. Independent source review remains pending; physical staging/production HELD.
+
+Current verifier SHA256: 185964b413eb683849c38964c9a9e0aa99f530231a81dc3b30a02be47e058fb2.
