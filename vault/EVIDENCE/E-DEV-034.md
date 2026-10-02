@@ -47,3 +47,6 @@ Actual local final author validation2026-10-02: all12checks/20regressions exit0,
 
 
 After actual task-pack contract consumer trace update: run_all all12checks/20regressions passed, final2004resolvedlinks;158records/131IDs/37evidence/32packs unchanged. Current topology/inventory v2 remain REVIEW with EDEV034 as new scoped proof, preserving v1 accepted snapshots/EDEV033 and T006v1DONE. No new revision self-acceptance.
+
+
+Independent first-round finding atff160ae363ae199442d606a2b27bd02c674a7e74: /root/pr36_independent_review, gpt-6-luna max/separate bounded context, identified own-pack fields5/7 generic paths/artifacts as violating cited explicit-scope/change-verb rules. Narrow fix enumerates all18actual allowed changed repo-relative paths and all expected per-file verbs/custody/metadata/view boundaries. No application/runtime/check/source-policy expansion. Final initial verdict and exact corrected-head re-review outstanding; no source acceptance yet.
