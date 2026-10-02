@@ -15,13 +15,13 @@ domain: "project-records"
 module: "e10-graph"
 depends_on:
   - "ADR-015"
-used_by: [I-E10-REGISTRATION-BASELINE, M-E10-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044]
+used_by: [I-E10-REGISTRATION-BASELINE, M-E10-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044, V-E10-MEASURE-001, P-E10-017, E-DEV-046]
 implements:
   - "planning CONTRACT_CATALOG.md row 8 (PACK_STANDARD.md 14 fields + F10.3.1, single truth — not copied here)"
 public_contracts:
   - "task-pack"
 internal_scope: "Original document declarations and record custody; no new runtime authority"
-tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016]
+tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016, T-E10-017]
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
