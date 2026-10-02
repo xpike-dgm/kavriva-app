@@ -715,3 +715,6 @@ Original401/79 catalog and prior admissions retained. E3-owned environment confi
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-044-E10-GOVERNED-PATHS.md.snapshot` | preserve exact accepted raw Git payload of vault/INVENTORIES/E10-GOVERNED-PATHS.md; T-E3-032 |
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-005-maintenance_api.py.snapshot` | preserve exact accepted raw Git payload of modules/e03-server/public/maintenance_api.py; T-E3-032 |
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-005-verify_local_supabase_auth.py.snapshot` | preserve exact accepted raw Git payload of modules/e03-server/tests/verify_local_supabase_auth.py; T-E3-032 |
+
+| `supabase/migrations/20261002054900_e3_environment_role.sql` | CLI-generated reserved NOLOGIN staging role; bounded membership only; T-E3-032 controlled scope amendment v2 |
+| `modules/e03-server/internal/staging_credential.py` | Source-reviewed nonproduction Credential Manager operator, no model-visible secret or public API effect; T-E3-032 v2 |

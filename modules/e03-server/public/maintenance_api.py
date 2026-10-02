@@ -16,7 +16,7 @@ from commit_authorization import CommitResult, Verdict
 from consumer_authority import SupabaseAuth
 from maintenance_command import MaintenanceCommand, MaintenanceCommands
 from maintenance_store import CREATE, EDIT
-from environment_binding import bind_environment
+from environment_binding import bind_environment, validate_database_identity
 
 
 _MAX_BODY = 16384
@@ -149,6 +149,7 @@ def create_app(commands: MaintenanceCommands):
 
 def _configured_app():
     binding = bind_environment(os.environ)
+    validate_database_identity(binding)
     return create_app(MaintenanceCommands(
         binding.database_dsn,
         SupabaseAuth(

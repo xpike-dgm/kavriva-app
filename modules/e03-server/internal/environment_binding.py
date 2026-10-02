@@ -9,15 +9,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Mapping
 
+import psycopg
 from psycopg.conninfo import conninfo_to_dict
 
 
 CATALOG = Path(__file__).resolve().parents[3] / "supabase/environment-bindings.json"
 _REALMS = {"development", "staging", "production"}
 _FIELDS = {"state", "project_id", "api_url", "issuer", "database_host",
-           "database_port", "database_name", "database_role", "dsn_ref", "key_ref"}
+           "database_port", "database_name", "database_role", "dsn_ref", "key_ref",
+           "database_connection"}
 _DSN_FIELDS = {"host", "port", "dbname", "user", "password", "sslmode",
-               "connect_timeout"}
+               "connect_timeout", "sslrootcert"}
 
 
 @dataclass(frozen=True)
@@ -28,6 +30,50 @@ class EnvironmentBinding:
     allow_local_http: bool
     database_dsn: str = field(repr=False)
     publishable_key: str = field(repr=False)
+
+
+def validate_database_identity(binding: EnvironmentBinding):
+    """Read-only preflight; a matching login label is not bounded custody proof.
+
+    This checks current role configuration before constructing Auth/command
+    clients. It does not authorize a product effect or replace commit-time E5
+    and E3 checks, and no credential/version attestation is cached.
+    """
+    expected = ("kavriva_ci_api" if binding.realm == "development"
+                else "kavriva_" + binding.realm + "_api")
+    try:
+        with psycopg.connect(binding.database_dsn) as conn:
+            conn.execute("set transaction read only")
+            actual = conn.execute("select current_user, current_database()").fetchone()
+            if actual != (expected, "postgres"):
+                raise _invalid()
+            roles = conn.execute("""
+                select rolname, rolcanlogin, rolinherit, rolsuper, rolcreaterole,
+                       rolcreatedb, rolreplication, rolbypassrls
+                from pg_roles where pg_has_role(current_user, oid, 'MEMBER')
+            """).fetchall()
+            if {r[0] for r in roles} != {expected, "kavriva_consumer_api"}:
+                raise _invalid()
+            for name, login, inherit, *privileged in roles:
+                if any(privileged) or not inherit or login != (name == expected):
+                    raise _invalid()
+            owned = conn.execute("""
+                select exists (
+                    select 1 from pg_class where relowner in
+                        (select oid from pg_roles where rolname in (%s, %s))
+                    union all
+                    select 1 from pg_namespace where nspowner in
+                        (select oid from pg_roles where rolname in (%s, %s))
+                    union all
+                    select 1 from pg_database where datdba in
+                        (select oid from pg_roles where rolname in (%s, %s))
+                )
+            """, (expected, "kavriva_consumer_api") * 3).fetchone()[0]
+            if owned:
+                raise _invalid()
+            conn.rollback()
+    except Exception:
+        raise _invalid() from None
 
 
 def _invalid():
@@ -61,6 +107,8 @@ def _validate_catalog(catalog):
             raise _invalid()
         if item["state"] not in ("BOUND", "HELD"):
             raise _invalid()
+        if item["database_connection"] not in ("direct", "session"):
+            raise _invalid()
         for key in seen:
             value = item[key]
             if value is not None:
@@ -78,6 +126,7 @@ def _validate_catalog(catalog):
             if (item["project_id"] != "local-kavriva-app"
                     or item["api_url"] != "http://127.0.0.1:54321"
                     or item["database_host"] != "127.0.0.1"
+                    or item["database_connection"] != "direct"
                     or item["database_port"] != "54322"
                     or item["database_role"] != "kavriva_ci_api"):
                 raise _invalid()
@@ -85,9 +134,14 @@ def _validate_catalog(catalog):
             ref = item["project_id"]
             if (not re.fullmatch(r"[a-z]{20}", ref)
                     or item["api_url"] != "https://" + ref + ".supabase.co"
-                    or item["database_host"] != "db." + ref + ".supabase.co"
                     or item["database_port"] != "5432"
                     or item["database_role"] != "kavriva_" + realm + "_api"):
+                raise _invalid()
+            if item["database_connection"] == "direct":
+                if item["database_host"] != "db." + ref + ".supabase.co":
+                    raise _invalid()
+            elif not re.fullmatch(r"aws-[0-9]+-[a-z0-9-]+\.pooler\.supabase\.com",
+                                  item["database_host"]):
                 raise _invalid()
         if item["issuer"] != item["api_url"] + "/auth/v1":
             raise _invalid()
@@ -117,13 +171,18 @@ def bind_environment(environ: Mapping[str, str], catalog=None) -> EnvironmentBin
         if not isinstance(dsn, str) or not isinstance(key, str) or not key:
             raise _invalid()
         params = conninfo_to_dict(dsn)
+        expected_user = item["database_role"]
+        if item["database_connection"] == "session":
+            expected_user += "." + item["project_id"]
         if (set(params) - _DSN_FIELDS or not params.get("password")
+                or params.get("user") != expected_user
                 or any(params.get(k) != item["database_" + v] for k, v in
-                       (("host", "host"), ("port", "port"), ("dbname", "name"),
-                        ("user", "role")))):
+                       (("host", "host"), ("port", "port"), ("dbname", "name")))):
             raise _invalid()
         local = realm == "development"
         if params.get("sslmode") != ("disable" if local else "verify-full"):
+            raise _invalid()
+        if (local and "sslrootcert" in params) or (not local and params.get("sslrootcert") != "system"):
             raise _invalid()
         # Explicit timeout prevents inheriting a libpq process default.
         if params.get("connect_timeout") != "10":
