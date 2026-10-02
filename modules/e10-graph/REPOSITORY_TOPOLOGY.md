@@ -15,7 +15,7 @@ tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/ch
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 ---
 

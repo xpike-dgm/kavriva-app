@@ -2,16 +2,16 @@
 test_id: E-DEV-034
 contract_id_version: "ADR-015 Decision5; fourteen-field task pack schema v1"
 subject_file: templates/PACK_TEMPLATE.md
-subject_digest: 4139af7f1da7e965eacce56e49b069ba09fd0e7b1c3800b0523563151abe3f12
-result: "BLOCKED: independent task-end assessment outstanding"
+subject_digest: 2fb7056d879df28ed3b942a54ec8c38ab71f9dc9eb25017d33e20e17a4ffc2e8
+result: "PASS: independent task-end review accepted fourteen canonical task-pack fields"
 evidence_links:
   - "[[templates/PACK_TEMPLATE.md]]"
   - "[[vault/PACKS/P-E10-007.md]]"
   - "[[vault/REGISTRY/T-E10-007.md]]"
   - "[[vault/EVIDENCE/SNAPSHOTS/E-DEV-033-REPOSITORY_TOPOLOGY.md.snapshot]]"
   - "[[vault/EVIDENCE/SNAPSHOTS/E-DEV-033-E10-GOVERNED-PATHS.md.snapshot]]"
-gate_verdict: "BLOCKED (independent review and CI outstanding; product/semantic corpus unproved)"
-reviewer: none
+gate_verdict: "PASS (schema enumeration/current documentary admission only; semantic corpus/product/production unproved)"
+reviewer: "independent gpt-6-luna max; /root/pr36_independent_review"
 timestamp: 2026-10-02
 purpose: Enumerate the canonical fourteen task context fields
 domain: project-execution
@@ -50,3 +50,10 @@ After actual task-pack contract consumer trace update: run_all all12checks/20reg
 
 
 Independent first-round finding atff160ae363ae199442d606a2b27bd02c674a7e74: /root/pr36_independent_review, gpt-6-luna max/separate bounded context, identified own-pack fields5/7 generic paths/artifacts as violating cited explicit-scope/change-verb rules. Narrow fix enumerates all18actual allowed changed repo-relative paths and all expected per-file verbs/custody/metadata/view boundaries. No application/runtime/check/source-policy expansion. Final initial verdict and exact corrected-head re-review outstanding; no source acceptance yet.
+
+
+Actual independent acceptance2026-10-02: /root/pr36_independent_review, gpt-6-luna max/forknone/separate bounded context, PASS at 4c7578e2b3511f7d9887323575e6ed614e3b9003 against based6a9e0c2f26794f2e33dc021e6b422f2fd35b2f9. Initialff160 CHANGES_REQUESTED own-pack fields5/7 generic scope/artifacts corrected; independent exact18path/set and per-fileverb comparison/re-review at4c7578 closes the finding, no additional actionable findings. Reviewer confirmed canonical14names/order/acceptedvalidityguidance, originaltemplateID/bodyprefix, exact oldT006snapshotblob equality/401file79folderrawcatalog and truthful oldproof/currentv2admission boundary. Reviewer ran no tests; actual required checks/tests ran by implementer and exact-head CI, separate gates not reviewer test claims.
+
+Accepted source digests: templates/PACK_TEMPLATE.md 4139af7f1da7e965eacce56e49b069ba09fd0e7b1c3800b0523563151abe3f12, modules/e10-graph/REPOSITORY_TOPOLOGY.md 9a244466f0279b0b6e45fa2c4390a98ccbbf89bf505521db49921ce65b32bb75, vault/INVENTORIES/E10-GOVERNED-PATHS.md b0de09596f7517c9b28e0883b78d421bccc24de4726692f5fb7e95b68acacaed. Final status-only digests: templates/PACK_TEMPLATE.md 2fb7056d879df28ed3b942a54ec8c38ab71f9dc9eb25017d33e20e17a4ffc2e8, modules/e10-graph/REPOSITORY_TOPOLOGY.md 36e6e4d65057bec2c23a540623e87b528b8eecbc7589781b1303c4e158866958, vault/INVENTORIES/E10-GOVERNED-PATHS.md 8d17a49391d3f980c697ac42a55524a551f7ce986b76088bfa01048b2d180cc0. OldEDEV033andEDEV031 verdict/core/subjects/digests/acceptedheads/dates and frozen126catalog preserved.
+
+All8exact-source-head workflows SUCCESS: pull_request architecture-checks 36951436933, pull_request e5-current-authority-tests 36951436951, pull_request e3-commit-authorization-tests 36951436947, pull_request e3-live-auth-tests 36951436911, push architecture-checks 36951434350, push e5-current-authority-tests 36951434343, push e3-commit-authorization-tests 36951434359, push e3-live-auth-tests 36951434333. ExpectedT3labelskips for documentaryE10T2; actual independentreview obtained. Direct standing owner mandate accepts boundedPASS/greenCI; D004schemaACTIVE/T007DONE/sourcev2ACTIVE/inventoryv2RECORDED/packACTIVE for actual enumeration/source admission only. Final8filemetadata/evidence/index audit and exact new-headCI required before normal PR36merge; immutablefinalheadreceipt recorded in PRbody without recursiveproofcommits. No new semanticvalidator/generalhandoffprotocol/corpus/product/production completion; E3R1REVIEW/E5IN_PROGRESS/activationreleaseholds remain.

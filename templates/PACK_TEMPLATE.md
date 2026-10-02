@@ -25,7 +25,7 @@ tests:
 evidence: [E-DEV-027, E-DEV-034]
 supersedes: []
 superseded_by: []
-status: REVIEW
+status: ACTIVE
 last_verified: 2026-10-02
 metadata_verified_at: "2026-10-02"
 version: 1
