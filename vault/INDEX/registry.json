@@ -461,7 +461,7 @@
    ],
    "evidence": "E-DEV-036",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E10-009",
-   "status": "REVIEW"
+   "status": "DONE"
   },
   {
    "task_id": "T-E3-001-R1",

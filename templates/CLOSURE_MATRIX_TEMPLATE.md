@@ -16,7 +16,7 @@ depends_on: [D-APP-DOC-004, V-E10-NODE-001, V-E10-REL-001, M-E10-001, V-E10-TOPO
 used_by: [P-E10-009, T-E10-009, E-DEV-036]
 evidence: [E-DEV-036]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Closure matrix template v1
