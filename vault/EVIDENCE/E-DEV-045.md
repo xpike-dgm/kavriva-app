@@ -2,8 +2,8 @@
 test_id: E-DEV-045
 contract_id_version: ADR-007 environment control; T-E3-032
 subject_file: vault/PROFILES/environment-separation.md
-subject_digest: 9efa0ee049ad2e713d00a5ef5313c9f8928e902dad09237a34a8c590fcf73263
-result: "RECORDED independent CHANGES_REQUESTED remediation; current targeted26 tests pass; hosted issuance and task acceptance HELD"
+subject_digest: ed7b442cf0f0c304a2f7348515fdad95adda0c46a23481c0dd86e874282b0fee
+result: "RECORDED source remediation targeted28 tests pass; current independent review pending; hosted issuance and task acceptance HELD"
 evidence_links:
   - "vault/PACKS/P-E3-032.md"
   - "vault/REGISTRY/T-E3-032.md"
@@ -114,3 +114,15 @@ Provider CA comparison permits CRLF/LF serialization equivalence only; all other
 ## Verification before source re-review
 
 Native E3 suite:133 tests passed in74.767s, exit0, before the final per-negative-case restoration assertions/CA newline guard. Current E10 suite:12 checks and42 tests passed in0.705s. No external execution. Final source targeted cases and exact-head CI are checked separately; no physical/task PASS implied. `vault/REGISTRY/T-E3-032.md` remains IN_PROGRESS.
+
+
+## Exact 7b8 review findings and narrow closure preparation
+
+Independent /root/pr47_environment_rereview (gpt-6-luna max) reviewed frozen7b8e7d7f47e2089234c15c94a966648520c284f4: CHANGES_REQUESTED. Actual manual source/digest/snapshot/CA inspection, no tests/CI/provider/secret calls. Prior issuance findings closed for removed activation/write paths, not operational acceptance. Remaining findings: database CREATE/ACL rights and membership ADMIN OPTION omitted; conflicting profile description; latest targeted/CI receipt pending. All8 actual7b8 sourceCI succeeded (PR architecture36982681633/E336982681594/E536982681624/Auth36982681626; push architecture36982674995/E336982674764/E536982674773/Auth36982674768). E3 CI at7b8 ran133 tests in15.526s; final targeted26passed11.149s. No hosted effects.
+
+Root added database ACL allowlist and membership admin/inherit option rejection. Baseline diagnostic on a temporary isolated PostgreSQL showed templates grant CONNECT only, not TEMPORARY; the first28-case run failed due the incorrect template TEMP expectation and is preserved here. Corrected expected baseline:postgres CONNECT/TEMPORARY, templatesCONNECT, noCREATE/delegation. Corrected28 meaningful tests passed in20.004s, including CREATE via login/parent/PUBLIC and admin-option negative/restored-positive. Existing object/schema/sequence/function/column/grant-option and hidden ownership cases pass. Profile inconsistency corrected; root does not self-PASS. Scope remains the same23paths in `vault/PACKS/P-E3-032.md`; task `vault/REGISTRY/T-E3-032.md` stays IN_PROGRESS and issuer/operator HELD. New exact-head re-review/CI required.
+
+Current changed subject digests:
+- `modules/e03-server/internal/environment_binding.py`: 8c8eff69042d4c7994861b12cc31aca37765983f933d18c58c43a4e2bedff274
+- `modules/e03-server/tests/test_environment_binding.py`: 988d67ba1584faf4a8b6661b69331f6adfd1959cb5fca3ccacac2ca6cb620d57
+- `vault/PROFILES/environment-separation.md`: ed7b442cf0f0c304a2f7348515fdad95adda0c46a23481c0dd86e874282b0fee

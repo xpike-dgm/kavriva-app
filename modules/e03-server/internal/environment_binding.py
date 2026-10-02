@@ -29,6 +29,11 @@ def _expected_access():
     """Canonical consumer grants from the reviewed live-authorization migration."""
     result = {("schema", name, "", "", "USAGE") for name in
               ("public", "kavriva_e3", "kavriva_e5", "kavriva_audit")}
+    # Standard PostgreSQL PUBLIC connect/temporary privileges are not CREATE.
+    # A new database or delegation/CREATE grant requires a reviewed new scope.
+    result.update(("database", name, "", "", "CONNECT")
+                  for name in ("postgres", "template0", "template1"))
+    result.add(("database", "postgres", "", "", "TEMPORARY"))
     tables = {
         "kavriva_e5": ("consumer_enrollments", "actor_epochs", "current_grants",
                        "policy_heads", "policy_rules", "current_sessions"),
@@ -72,6 +77,11 @@ def _validate_access(conn):
         )
         select 'schema', n.nspname, '', '', case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
         from namespaces n, lateral aclexplode(coalesce(n.nspacl, acldefault('n',n.nspowner))) a
+        where a.grantee in (select oid from roles)
+        union
+        select 'database', d.datname, '', '',
+               case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
+        from pg_database d, lateral aclexplode(coalesce(d.datacl,acldefault('d',d.datdba))) a
         where a.grantee in (select oid from roles)
         union
         select 'table', n.nspname, c.relname, '', case when a.is_grantable then a.privilege_type || '/GRANT' else a.privilege_type end
@@ -134,6 +144,14 @@ def validate_database_identity(binding: EnvironmentBinding):
             for name, login, inherit, *privileged in roles:
                 if any(privileged) or not inherit or login != (name == expected):
                     raise _invalid()
+            delegation = conn.execute("""
+                select exists (select 1 from pg_auth_members m
+                    where pg_has_role(current_user,m.member,'MEMBER')
+                    and (m.admin_option or
+                         coalesce((to_jsonb(m)->>'inherit_option')::boolean,true) = false))
+            """).fetchone()[0]
+            if delegation:
+                raise _invalid()
             owned = conn.execute("""
                 select exists (select 1 from pg_shdepend
                     where refclassid='pg_authid'::regclass and deptype='o'

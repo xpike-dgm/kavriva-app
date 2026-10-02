@@ -321,6 +321,32 @@ class ActualDatabaseRoleTests(unittest.TestCase):
             with psycopg.connect(self.dsn) as conn:
                 conn.execute("grant insert on kavriva_e3.maintenance_records to kavriva_consumer_api")
 
+    def test_database_create_privilege_via_login_parent_or_public_holds(self):
+        for grantee in ("kavriva_ci_api", "kavriva_consumer_api", "public"):
+            with self.subTest(grantee=grantee):
+                validate_database_identity(self.binding)
+                with psycopg.connect(self.dsn) as conn:
+                    conn.execute("grant create on database postgres to " + grantee)
+                try:
+                    with self.assertRaises(ValueError):
+                        validate_database_identity(self.binding)
+                finally:
+                    with psycopg.connect(self.dsn) as conn:
+                        conn.execute("revoke create on database postgres from " + grantee)
+                validate_database_identity(self.binding)
+
+    def test_membership_admin_delegation_holds_and_restoration_passes(self):
+        validate_database_identity(self.binding)
+        with psycopg.connect(self.dsn) as conn:
+            conn.execute("grant kavriva_consumer_api to kavriva_ci_api with admin option")
+        try:
+            with self.assertRaises(ValueError):
+                validate_database_identity(self.binding)
+        finally:
+            with psycopg.connect(self.dsn) as conn:
+                conn.execute("revoke admin option for kavriva_consumer_api from kavriva_ci_api")
+        validate_database_identity(self.binding)
+
     def test_function_ownership_holds_even_without_schema_usage(self):
         with psycopg.connect(self.dsn) as conn:
             conn.execute("create schema hidden_owner")
