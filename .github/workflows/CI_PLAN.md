@@ -24,6 +24,8 @@ used_by:
   - "E-DEV-059"
   - "P-E4-001"
   - "E-DEV-060"
+  - "P-E4-002"
+  - "E-DEV-061"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -128,3 +130,7 @@ Existing E6 family includes actual registry/snapshot/config/denial units, `vault
 ## E4 actual internal composition unit family
 
 `.github/workflows/e4-tests.yml` runs current `modules/e04-offline/tests/test_core_composition.py` on push/PR using the existing pinned checkout, read-only permissions and no persisted credentials. Local 12 fixture tests check exact declared composition with default production HELD; no canonical source/device/package promotion proof. Existing five families and gate rules unchanged. Current twelve runs required at exact source head; no partial-task independent acceptance from CI. Context `vault/PACKS/P-E4-001.md`; proof `vault/EVIDENCE/E-DEV-060.md`.
+
+## E4 safety nesting coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged, current discovery covers22units (accepted12composition +10nesting). `modules/e04-offline/tests/test_safety_media_nesting.py` verifies required safety is nested and not additive/on-demand-for-size in exact supplied declarations; NONE/real source/classification/runtimeHELD retained. Context `vault/PACKS/P-E4-002.md`; evidence `vault/EVIDENCE/E-DEV-061.md`. No CI policy or privilege/authentication gate changed.

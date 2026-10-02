@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e04-offline"
 owner: "E4"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
 public_contracts:
   - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
 internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
-tasks: [T-E10-001, T-E10-006, T-E4-001]
+tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -88,3 +88,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E4-001 actual internal composition coverage
 
 `modules/e04-offline/internal/core_composition.py` and `modules/e04-offline/tests/test_core_composition.py` check supplied selected-task declared complete membership/byte digests/context only, intrinsic NONE. Pure production gate HELD until E3 canonical approved package source is bound. No generator/classification authority/new public seam/private cross-import/persistence/mobile actionability. Original anatomy/scope/allowed E3 dependency unchanged. Context `vault/PACKS/P-E4-001.md`; profile `vault/PROFILES/core-composition-check.md`; evidence `vault/EVIDENCE/E-DEV-060.md`. New CI `.github/workflows/e4-tests.yml`. At pre-review source freeze task remained IN_PROGRESS. Independent full task-level PASS at 3c2c55d96a2130936ae8b8003e8d12bcbe8f79f9 now completes only this composition-check task; actual source/generation/classification/device/runtime still HELD. Final receipt in `vault/EVIDENCE/E-DEV-060.md`.
+
+## T-E4-002 actual internal nesting check
+
+`modules/e04-offline/internal/safety_media_nesting.py` delegates accepted core verification, rejects essential ID on-demand and counts safety bytes only as subset of actual required core total, no additional budget/size trim. Tests `modules/e04-offline/tests/test_safety_media_nesting.py`; unchanged E4 workflow discovers current22tests. No classification/generator/newseam/E6import/runtime permission/persistence. Authoritative lifecycle `vault/REGISTRY/T-E4-002.md`; context `vault/PACKS/P-E4-002.md`; profile `vault/PROFILES/safety-media-nesting.md`; evidence `vault/EVIDENCE/E-DEV-061.md`.
