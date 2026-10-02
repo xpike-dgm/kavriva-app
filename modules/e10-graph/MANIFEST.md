@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006, T-E10-007, T-E10-008, T-E10-009]
+tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -138,3 +138,8 @@ Source-bound R006 states/transitions/scope receipts: `modules/e10-graph/TASK_REG
 ## Ten-layer closure authoring scaffold (T-E10-009)
 
 Governed template: `templates/CLOSURE_MATRIX_TEMPLATE.md`; pack: `vault/PACKS/P-E10-009.md`; task: `vault/REGISTRY/T-E10-009.md`; proof: `vault/EVIDENCE/E-DEV-036.md`. Exactly ten canonical layers and both trace directions are enumerated; unresolved cells default nonpassing. This is template acceptance, not instantiated product audit or gap/removal/all-DONE execution (T-E10-010). Actual owners/authority/product holds remain distinct from E10 documentary custody.
+
+
+## Bounded declared trace audit (T-E10-010)
+
+Method `modules/e10-graph/TRACEABILITY_AUDIT.md`; immutable-source current observation `vault/INVENTORIES/E10-CLOSURE-AUDIT.md`; read-only pinned-Git CLI `modules/e10-graph/internal/traceability_audit.py`; meaningful gap/removal/all-DONE regressions `modules/e10-graph/tests/test_traceability_audit.py`. Pack `vault/PACKS/P-E10-010.md`; task `vault/REGISTRY/T-E10-010.md`; proof `vault/EVIDENCE/E-DEV-037.md`. Pure documentary trace checks do not verify full source semantics, product authority or release proof and do not change manual R014 ownership/gates or task actuation.

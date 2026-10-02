@@ -15,13 +15,13 @@ domain: "project-records"
 module: "e10-graph"
 depends_on:
   - "ADR-015"
-used_by: [I-E10-REGISTRATION-BASELINE, M-E10-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036]
+used_by: [I-E10-REGISTRATION-BASELINE, M-E10-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036, P-E10-010, E-DEV-037]
 implements:
   - "planning CONTRACT_CATALOG.md row 8 (PACK_STANDARD.md 14 fields + F10.3.1, single truth — not copied here)"
 public_contracts:
   - "task-pack"
 internal_scope: "Original document declarations and record custody; no new runtime authority"
-tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009]
+tasks: [T-E10-001, T-E10-007, T-E10-008, T-E10-009, T-E10-010]
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
