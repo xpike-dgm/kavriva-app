@@ -20,12 +20,12 @@ owner: E10
 implements: [ADR-015, C10.3, F10.3.1]
 public_contracts: []
 internal_scope: task-pack-schema
-tasks: [T-E10-007, T-E10-008]
+tasks: [T-E10-007, T-E10-008, T-E10-009]
 tests: [modules/e10-graph/checks/check_packs.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [D-APP-DOC-004]
-used_by: [D-APP-DOC-004, P-E10-007, T-E10-007, P-E10-008, E-DEV-035]
+used_by: [D-APP-DOC-004, P-E10-007, T-E10-007, P-E10-008, E-DEV-035, P-E10-009, E-DEV-036]
 evidence: []
 supersedes: []
 status: RECORDED
