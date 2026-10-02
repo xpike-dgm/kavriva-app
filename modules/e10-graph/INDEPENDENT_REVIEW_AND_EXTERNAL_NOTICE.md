@@ -16,7 +16,7 @@ depends_on: [V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V-E10-NODE-001, V-E
 used_by: [P-E10-015, T-E10-015, E-DEV-043]
 evidence: [E-DEV-043]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Independent review protocol and external-action notice v1
