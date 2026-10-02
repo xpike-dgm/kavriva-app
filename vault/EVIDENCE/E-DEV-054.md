@@ -27,7 +27,7 @@ tests: [modules/e06-release/tests/test_release_authority_registry.py, modules/e1
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E6-AUTHORITY-001]
-used_by: [V-E6-AUTHORITY-001, P-E6-001, T-E6-001]
+used_by: [V-E6-AUTHORITY-001, P-E6-001, T-E6-001, P-E6-003, E-DEV-056]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -68,3 +68,7 @@ All eight applicable exact2476 source workflows SUCCESS: PRarchitecture370087759
 Direct standing ownerDEC0070 accepts bounded logical registry DONE after actual updatedPASS/currentCI, pendingplanPR4notmerged. Primary status-onlyACTIVE/packACTIVE/taskDONE/views49. Reviewedsourceprimary1516891b209f47d0cecee1c7e393848536e7d75b032eb71491edc687b22f9d51/currentprimary348f7f5670c2eec285b453e10b7cd4b001220e42d5b01f1fd10ba5904830c7b6. Code81c90df121d2069096c5acdad052a57a96ac05827a74b02e748843667fc236b3/unitb3ce5e89811dcd97290345577e30ed694afd114db1818a29c25a08ded8a4c7f4/datade8f94578919cf22661af393aa476a5122fe7129412d6c8504eaa4966043bd66/archiveffbbf0f33b4605192434248ccda2ddfb9e5f0c197b288fabd30c7029e71452e6/priorEDEV053/inventoryv22/manifest unchanged by closeout. Exactly six metadata/view paths. Actual physical registration/custody/staffing/currentauthorization/protected audit/artifacts/E7 lanes/independence/suspension/floors/production MISSING/HELD, OTA NOT_APPROVED; E3R1REVIEW/E5-003IN_PROGRESS/provisioning/privilegedproductionHELD preserved. Final metadata audit/latestheadCI separate merge gates, immutable PRbodyreceipt required; no authorPASS or productionactivation.
 
 Performed final metadata preparation: graph12checks/42regressionsPASS0.503s/generated49rows/T001boundedDONE/diffcheck; exactly six metadata/view paths after independently accepted2476. Sourcecode/unit/data/archive/priorproof/inventory/manifest unchanged. Final separate audit and latestheadCI required in immutable PRreceipt before matched normal merge.
+
+## T-E6-003 secondary inventory custody
+
+Accepted PR56 merge a9cb2060f57ab3456c0ce6f226c163380025154e inventory v22 exact raw snapshot `vault/EVIDENCE/SNAPSHOTS/E-DEV-054-E10-GOVERNED-PATHS.md.snapshot`, normalized SHA256 e18e2d6d8749475544145610d61db8a92cf72329600588adbeb566d9fd037386. Original primary subject/digest/reviewer/verdict/heads/date/rejection/remediation/check history/core/code/tests/data remain unchanged. Documentary consumer and secondary custody only; independent unmerged PR57 has its own pending consumer/custody changes, not accepted here. Context `vault/PACKS/P-E6-003.md`; evidence `vault/EVIDENCE/E-DEV-056.md`.

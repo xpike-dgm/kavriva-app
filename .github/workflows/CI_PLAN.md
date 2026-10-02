@@ -16,6 +16,8 @@ used_by:
   - "E-PR-003"
   - "I-E10-REGISTRATION-BASELINE"
   - "P-E3-001-R3"
+  - "P-E6-003"
+  - "E-DEV-056"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -102,3 +104,9 @@ is installation after PASS + owner approval.
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## Development E6 test family (T-E6-003)
+
+`.github/workflows/e6-tests.yml` independently installs `python3 -m unittest discover -s modules/e06-release/tests -v` on push and pull_request, using the existing reviewed immutable checkout pin, contents: read and persist-credentials: false. No dependency installation, product credential or deployment. It runs accepted registry and new snapshot-binding tests present in this branch; absent draft PR57 role code is not claimed covered or merged. Current-head gates include this family alongside existing workflows, with independent review/T3/main-protection unchanged. Green structural tests grant no authenticated approval or publication permission.
+
+Context `vault/PACKS/P-E6-003.md`; evidence `vault/EVIDENCE/E-DEV-056.md`. Draft PR57's parallel pending E6-family/CI-plan additions need normal source/evidence reconciliation when its full task is ready. Original CI plan and metadata custody above remain unchanged.
