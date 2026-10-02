@@ -16,7 +16,7 @@ depends_on: [M-E6-001, I-E10-PATHS-001]
 used_by: [P-E6-001, T-E6-001, E-DEV-054]
 evidence: [E-DEV-054]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Release authority registry v1
