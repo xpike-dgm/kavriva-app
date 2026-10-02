@@ -1,7 +1,7 @@
 ---
 test_id: E-DEV-034
 contract_id_version: "ADR-015 Decision5; fourteen-field task pack schema v1"
-subject_file: templates/PACK_TEMPLATE.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-034-PACK_TEMPLATE.md.snapshot
 subject_digest: 2fb7056d879df28ed3b942a54ec8c38ab71f9dc9eb25017d33e20e17a4ffc2e8
 result: "PASS: independent task-end review accepted fourteen canonical task-pack fields"
 evidence_links:
@@ -20,12 +20,12 @@ owner: E10
 implements: [ADR-015, C10.3, F10.3.1]
 public_contracts: []
 internal_scope: task-pack-schema
-tasks: [T-E10-007]
+tasks: [T-E10-007, T-E10-008]
 tests: [modules/e10-graph/checks/check_packs.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [D-APP-DOC-004]
-used_by: [D-APP-DOC-004, P-E10-007, T-E10-007]
+used_by: [D-APP-DOC-004, P-E10-007, T-E10-007, P-E10-008, E-DEV-035]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -57,3 +57,6 @@ Actual independent acceptance2026-10-02: /root/pr36_independent_review, gpt-6-lu
 Accepted source digests: templates/PACK_TEMPLATE.md 4139af7f1da7e965eacce56e49b069ba09fd0e7b1c3800b0523563151abe3f12, modules/e10-graph/REPOSITORY_TOPOLOGY.md 9a244466f0279b0b6e45fa2c4390a98ccbbf89bf505521db49921ce65b32bb75, vault/INVENTORIES/E10-GOVERNED-PATHS.md b0de09596f7517c9b28e0883b78d421bccc24de4726692f5fb7e95b68acacaed. Final status-only digests: templates/PACK_TEMPLATE.md 2fb7056d879df28ed3b942a54ec8c38ab71f9dc9eb25017d33e20e17a4ffc2e8, modules/e10-graph/REPOSITORY_TOPOLOGY.md 36e6e4d65057bec2c23a540623e87b528b8eecbc7589781b1303c4e158866958, vault/INVENTORIES/E10-GOVERNED-PATHS.md 8d17a49391d3f980c697ac42a55524a551f7ce986b76088bfa01048b2d180cc0. OldEDEV033andEDEV031 verdict/core/subjects/digests/acceptedheads/dates and frozen126catalog preserved.
 
 All8exact-source-head workflows SUCCESS: pull_request architecture-checks 36951436933, pull_request e5-current-authority-tests 36951436951, pull_request e3-commit-authorization-tests 36951436947, pull_request e3-live-auth-tests 36951436911, push architecture-checks 36951434350, push e5-current-authority-tests 36951434343, push e3-commit-authorization-tests 36951434359, push e3-live-auth-tests 36951434333. ExpectedT3labelskips for documentaryE10T2; actual independentreview obtained. Direct standing owner mandate accepts boundedPASS/greenCI; D004schemaACTIVE/T007DONE/sourcev2ACTIVE/inventoryv2RECORDED/packACTIVE for actual enumeration/source admission only. Final8filemetadata/evidence/index audit and exact new-headCI required before normal PR36merge; immutablefinalheadreceipt recorded in PRbody without recursiveproofcommits. No new semanticvalidator/generalhandoffprotocol/corpus/product/production completion; E3R1REVIEW/E5IN_PROGRESS/activationreleaseholds remain.
+
+
+T-E10-008 custody receipt: exact accepted PR36raw subjects preserved before current consumers/admission: `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-PACK_TEMPLATE.md.snapshot` (unchanged normalized digest 2fb7056d879df28ed3b942a54ec8c38ab71f9dc9eb25017d33e20e17a4ffc2e8), `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-REPOSITORY_TOPOLOGY.md.snapshot` (unchanged normalized digest 36e6e4d65057bec2c23a540623e87b528b8eecbc7589781b1303c4e158866958), `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-E10-GOVERNED-PATHS.md.snapshot` (unchanged normalized digest 8d17a49391d3f980c697ac42a55524a551f7ce986b76088bfa01048b2d180cc0). Old acceptance dates/heads/reviewer/verdicts/digests remain; current later source metadata/admission is not accepted by this old proof.

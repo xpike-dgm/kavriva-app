@@ -1,16 +1,16 @@
 ---
 inventory_id: I-E10-PATHS-001
-version: 3
+version: 2
 purpose: Inventory governed tracked repository addresses and their documentary custody anchors
 domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [M-E1-001, M-E2-001, M-E3-001, M-E4-001, M-E5-001, M-E6-001, M-E7-001, M-E8-001, M-E9-001, M-E10-001, D-APP-DOC-017]
-used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035]
+used_by: [V-E10-TOPO-001, P-E10-006, E-DEV-033, D-APP-DOC-004, P-E10-007, E-DEV-034]
 implements: [ADR-015, C10.2, F10.2.1]
 public_contracts: []
 internal_scope: tracked-path-custody-receipt
-tasks: [T-E10-006, T-E10-007, T-E10-008]
+tasks: [T-E10-006, T-E10-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 evidence: [E-DEV-033, E-DEV-034]
 supersedes: []
@@ -537,20 +537,3 @@ Immutable v1 base401files/79folders/rawcatalog and all hashes above remain its h
 | `vault/EVIDENCE/SNAPSHOTS/E-DEV-033-E10-GOVERNED-PATHS.md.snapshot` | E-DEV-033 original accepted inventory bytes/digest, payload custody only |
 
 Task: `vault/REGISTRY/T-E10-007.md`; pack: `vault/PACKS/P-E10-007.md`; current proof: `vault/EVIDENCE/E-DEV-034.md`. Old accepted v1 inventory retained at `vault/EVIDENCE/SNAPSHOTS/E-DEV-033-E10-GOVERNED-PATHS.md.snapshot`; old catalog/count/verdict scope unchanged.
-
-
-## Admission delta v3 (T-E10-008)
-
-All earlier immutable base/admission history retains its recorded scope. New4records/3acceptedsubjectpayloads below occupy existing folders and have actual record/task/subject-custody anchors; sourceconsumer metadata/old proof subject custody pointers and generated views change in the bounded pack. No new folder/move/product ownership or authority. v2accepted bytes retained at `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-E10-GOVERNED-PATHS.md.snapshot`; not rehashed into old proof.
-
-| New path | Meaningful anchor/purpose |
-|---|---|
-| `modules/e10-graph/TASK_REGISTRY_LIFECYCLE.md` | V-E10-LIFE-001 manual source-bound lifecycle/scope receipts and T-E10-008 |
-| `vault/PACKS/P-E10-008.md` | P-E10-008 scoped manual lifecycle task context |
-| `vault/REGISTRY/T-E10-008.md` | T-E10-008 physical task maps exact frozen row |
-| `vault/EVIDENCE/E-DEV-035.md` | E-DEV-035 exact lifecycle subject proof, independent review outstanding |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-PACK_TEMPLATE.md.snapshot` | E-DEV-034 accepted raw subject payload custody, original verification/scope retained |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-REPOSITORY_TOPOLOGY.md.snapshot` | E-DEV-034 accepted raw subject payload custody, original verification/scope retained |
-| `vault/EVIDENCE/SNAPSHOTS/E-DEV-034-E10-GOVERNED-PATHS.md.snapshot` | E-DEV-034 accepted raw subject payload custody, original verification/scope retained |
-
-Task: `vault/REGISTRY/T-E10-008.md`; pack: `vault/PACKS/P-E10-008.md`; proof: `vault/EVIDENCE/E-DEV-035.md`. No currentbyte/fullcorpus/production acceptance follows from this address admission.
