@@ -22,6 +22,8 @@ used_by:
   - "E-DEV-058"
   - "P-E6-017"
   - "E-DEV-059"
+  - "P-E4-001"
+  - "E-DEV-060"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -122,3 +124,7 @@ Existing E6 family runs accepted registry/snapshot plus current config-typing fi
 ## Development default OTA denial coverage
 
 Existing E6 family includes actual registry/snapshot/config/denial units, `vault/PACKS/P-E6-017.md` / `vault/EVIDENCE/E-DEV-059.md`. No workflow/dependency/provider installation; no unmerged PR59/PR57 tests counted. Default-denial security probes/currentexactheadCI and independent source/final metadata acceptance never approve an OTA channel or prove missing client/device/provider/audit/physical integration.
+
+## E4 actual internal composition unit family
+
+`.github/workflows/e4-tests.yml` runs current `modules/e04-offline/tests/test_core_composition.py` on push/PR using the existing pinned checkout, read-only permissions and no persisted credentials. Local 12 fixture tests check exact declared composition with default production HELD; no canonical source/device/package promotion proof. Existing five families and gate rules unchanged. Current twelve runs required at exact source head; no partial-task independent acceptance from CI. Context `vault/PACKS/P-E4-001.md`; proof `vault/EVIDENCE/E-DEV-060.md`.
