@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E10-MEASURE-001]
-used_by: [V-E10-MEASURE-001, P-E10-017, T-E10-017]
+used_by: [V-E10-MEASURE-001, P-E10-017, T-E10-017, P-E5-001, E-DEV-047]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -51,3 +51,8 @@ All8 actual source workflows SUCCESS: pull_request live-auth36984245951, archite
 
 
 Final metadata local first run failed check-links because the new task-body HELD label lacked a physical Markdown reference; all other checks and42 tests passed. Root added the actual primary/pack/proof addresses within the already allowed task path. Local ccdb639 was not pushed: native worktree inherited origin/main upstream; no main push attempted. Publication uses explicit task branch only. Corrected local graph and independent final audit still required; original source and earlier CI receipts retained.
+
+
+## T-E5-001 secondary inventory custody
+
+Exact accepted PR48 merge 3f016aa6cca70ff48cb2837e1da242264a0a073d raw inventoryv14 preserved before current admission at `vault/EVIDENCE/SNAPSHOTS/E-DEV-046-E10-GOVERNED-PATHS.md.snapshot`, normalized SHA256 bb95afd27295c726527e2464afb27b2786734458aff81866aa8a3a932fa9da6c. Original primary subject/digest/verdict/reviewer/date/source/final core unchanged; documentary consumer metadata and secondary custody only. This is not acceptance of current inventory or E5 product proof. Context `vault/PACKS/P-E5-001.md`; proof `vault/EVIDENCE/E-DEV-047.md`.
