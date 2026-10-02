@@ -30,7 +30,7 @@ supersedes: []
 status: RECORDED
 ---
 
-# E-DEV-033 â€” repository topology and governed addresses
+# E-DEV-033 - repository topology and governed addresses
 
 Pinned planfa914f013fdcd032faed876689092da245989459/appbasef382812b32497f145076072b928202d031c82e56. Canonical T006 acceptance is linkage/addresses/no-orphan rule/manifest coverage after T004. Source comparison retains one plan/one app/one vault/one capsule per epic, small-file manifesto anchors, exact existing E3 internal platform scope/E5 authority subject, frozen planning-vs-physical task distinction and seven actual capsule anatomy headings.
 
@@ -43,3 +43,6 @@ Actual local validation2026-10-02: run_all exit0, all12checks/20unittest regress
 
 
 Independent first-round verdict at8f35a75e1acfbeab8460126c9d709038451a704a: /root/pr35_independent_review, gpt-6-luna max/separate bounded context, CHANGES_REQUESTED: domain-authorities.json was wrongly grouped as generated/tooling and omitted in REGISTRY address map. Reviewer independently recomputed all401files/79folders/catalog/anchors/tencapsule anatomy, no other actionable issues. Narrow remediation binds existing D-APP-DOC-017 profile, preserves E3/E5/E6 logical owners/all physical_activation HELD, states not generated/task-record/runtime permission in both placements, and adds real source consumer/task traces. No JSON/runtime/product semantics changed. Corrected inventory normalized digest 32d1fb3ffa3fd7b79a67dade87e1b52c3fb03f96fe8269352e2fb0f87a38589a; immutable base file/hash/catalog unchanged. Exact new-head independent re-review required; no source acceptance yet.
+
+
+Second narrow-review finding at3879a678c9f3b8acf48357ffbe2a37c82c26535a: reviewer confirmed logical-registry correction, found unintended mojibake in pack escalation arrow. Restored ASCII direction marker and initial proof-title punctuation using explicit UTF8 IO; no semantic/status/digest change. Exact corrected-head re-review required.
