@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e04-offline"
 owner: "E4"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061, V-E4-OPTIONAL-001, P-E4-003, E-DEV-062]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
 public_contracts:
   - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
 internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
-tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002]
+tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002, T-E4-003]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -92,3 +92,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E4-002 actual internal nesting check
 
 `modules/e04-offline/internal/safety_media_nesting.py` delegates accepted core verification, rejects essential ID on-demand and counts safety bytes only as subset of actual required core total, no additional budget/size trim. Tests `modules/e04-offline/tests/test_safety_media_nesting.py`; unchanged E4 workflow discovers current22tests. No classification/generator/newseam/E6import/runtime permission/persistence. Authoritative lifecycle `vault/REGISTRY/T-E4-002.md`; context `vault/PACKS/P-E4-002.md`; profile `vault/PROFILES/safety-media-nesting.md`; evidence `vault/EVIDENCE/E-DEV-061.md`.
+
+## T-E4-003 actual optional lifecycle rules
+
+`modules/e04-offline/internal/optional_media.py` / `modules/e04-offline/tests/test_optional_media.py` implement internal separate optional states, exact explicit intent, cancellation/late-receipt rejection/eviction/fresh refetch with required-core protection on each state use. No actual network/disk/source/user identity/classification/device/encrypted custody proof, intrinsicNONE/productionHELD. Authoritative lifecycle `vault/REGISTRY/T-E4-003.md`; context `vault/PACKS/P-E4-003.md`; profile `vault/PROFILES/nonessential-media-rules.md`; evidence `vault/EVIDENCE/E-DEV-062.md`. Public/anatomy/edge scope unchanged, core never enters optional intent gate.

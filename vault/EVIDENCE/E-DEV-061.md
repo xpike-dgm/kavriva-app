@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_safety_media_nesting.py, modules/e10-grap
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-SAFETY-001]
-used_by: [V-E4-SAFETY-001, P-E4-002, T-E4-002]
+used_by: [V-E4-SAFETY-001, P-E4-002, T-E4-002, P-E4-003, E-DEV-062]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -62,3 +62,7 @@ Direct owner standing DEC0069/0070 acceptance applies, planPR4 unmerged. Profile
 Original reviewed primary ca4d39a60e6a0c242d034cec40dd5d08be292ab88a0e3931bac776c6331b57db retained as source digest; current ACTIVE primary 7c174398d0216a842e64089cf456ffa31f720eaedc2a83506d8d85d660d35cfa. Historical pre-review reviewer-none/REVIEW receipts remain preparatory history, not active gate verdict.
 
 Final root metadata preparation run_all12checks+42regressionsPASS0.448s/worstexit0/build_index54/routingT002DONE/eligible[]/diff, exact six closeout paths. Original warning unchanged. Independent final metadata audit/latest finalheadCI still required.
+
+## Secondary accepted custody receipt / T-E4-003 consumption
+
+PR63final05144275acc8c84d027b6444774c88f399b80469 separate gpt-6-luna/max final metadata PASS/no findings, exactall12CIgreen/actualPRT3SUCCESS37028952601/E4CI22PASS0.012s. Normal matchedheadmerge8e310199768844ae8667c3f53182e57334c7ceb1 verified2026-10-02T15:47:08Z. Earlier source/primary/digests/reviewer/no-rejection/history retained. Inventoryv29 raw archive `vault/EVIDENCE/SNAPSHOTS/E-DEV-061-E10-GOVERNED-PATHS.md.snapshot`; documentary consumers `vault/PACKS/P-E4-003.md` / `vault/EVIDENCE/E-DEV-062.md`, no real package or production approval.
