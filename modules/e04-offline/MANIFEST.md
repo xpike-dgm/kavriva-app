@@ -121,6 +121,6 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 
 `modules/e04-offline/internal/eviction_order.py` / `modules/e04-offline/tests/test_eviction_order.py` order allvalidateddisposablecandidates in acceptedfourclassorder/stableties, preserve acceptedT005protectionchecks, no actualcleanup/freedbytes/sourceclassification/storageauthority. ProductionconstantHELD/NONE. Originalscope/anatomy/publicedges unchanged. Profile `vault/PROFILES/eviction-order-rule.md`; pack `vault/PACKS/P-E4-009a.md`; task `vault/REGISTRY/T-E4-009a.md`; proof `vault/EVIDENCE/E-DEV-068.md`.
 
-## T-E4-009b actual internal eviction order
+## T-E4-009b actual internal protection policy
 
 `modules/e04-offline/internal/never_evict.py` / `modules/e04-offline/tests/test_never_evict.py` protectsixclasses/unknownconflictheld/separatesameIDfactguard before returnedacceptedT009aorder, no actualcleanup/freedbytes/sourceclassification/storageauthority. ProductionconstantHELD/NONE. Originalscope/anatomy/publicedges unchanged. Profile `vault/PROFILES/never-evict-policy.md`; pack `vault/PACKS/P-E4-009b.md`; task `vault/REGISTRY/T-E4-009b.md`; proof `vault/EVIDENCE/E-DEV-069.md`.

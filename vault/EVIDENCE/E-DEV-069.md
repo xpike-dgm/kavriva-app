@@ -55,7 +55,9 @@ Source-review normalizedSHA256:
 - .github/workflows/e4-tests.yml: 1bc5e117dcba3d37d1620bf789890d95034b1699049b51da26b98abaa0174f62
 - vault/EVIDENCE/SNAPSHOTS/E-DEV-068-E10-GOVERNED-PATHS.md.snapshot: a82edc70dce2f9d63a8b35a12987dd872b622b54616535e297c271ce8b4a1068
 
-Acceptedv36rawarchiveequal; successorv37original401/79/alladmissions/pendingv13/v23/v25 retained. PriorEDEV067 onlyconsumer/secondaryPR70receipt, oldsourcePASS/primary/digests/reviewer/failurehistory preserved. Actual cleanup/source/classification/device/runtimeHELD; gap anchors `vault/PROFILES/never-evict-policy.md` / `vault/PACKS/P-E4-009b.md` / `vault/REGISTRY/T-E4-009b.md`.
+Acceptedv36rawarchiveequal; successorv37original401/79/alladmissions/pendingv13/v23/v25 retained. PriorEDEV068 onlyconsumer/secondaryPR70receipt, oldsourcePASS/primary/digests/reviewer/failurehistory preserved. Actual cleanup/source/classification/device/runtimeHELD; gap anchors `vault/PROFILES/never-evict-policy.md` / `vault/PACKS/P-E4-009b.md` / `vault/REGISTRY/T-E4-009b.md`.
 
 Accepted ordering helper normalizedSHA256: modules/e04-offline/internal/eviction_order.py: cc7924377f2c8db94147a74e584c63cb4e8118cc01babc63acffb368bac218b8
 Root build_index62/routingT009bREVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.541s/worstexit0; diffcheckPASS/exact13paths/rawarchiveequal. OriginalP-PROOF001warning unchanged.
+
+Root post-review documentary correction: prior-proof prose name EDEV067 corrected to actual preserved EDEV068; manifest protection-policy heading clarified. Source/tests/digests unchanged; FULLtask re-review at corrected exacthead required. Earlier c24faf5 FULLtaskPASS preserved, no independent rejection or testfailure inferred.
