@@ -38,6 +38,8 @@ used_by:
   - "E-DEV-066"
   - "P-E4-008"
   - "E-DEV-067"
+  - "P-E4-009a"
+  - "E-DEV-068"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -170,3 +172,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers84units (accepted72
 ## E4 retry-saver policy coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers96units (accepted84+12retry-saver). `modules/e04-offline/tests/test_retry_saver.py` probes constraintdelay/noconfirmation/unknownhold/supportedinterruptionboundedvaluesheld/unsupportedunknown/priorityalltransports/noimplicitintent/forgedproposal/types/immutability/coherentforgery/constantHELD. Fixtures not actualOS/capability/download/resume/background/encryptedstore/authority/device proof. Context `vault/PACKS/P-E4-008.md`; proof `vault/EVIDENCE/E-DEV-067.md`. Exacthead12CI/actualPRT3/FULLtask/finalmetadatareview required; no workflow/gatepolicy/custody change.
+
+## E4 ordered eviction coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers107units(accepted96+11order). `modules/e04-offline/tests/test_eviction_order.py` probesfourclassorder/stableties/allitems/empty/acceptedprotectedchecks/unknownduplicateinvalid/mutablehostile/immutability/no effect/coherentforgery/constantheld. Fixtures not actualclassification/OSspace/deletion/encryptedstore/device proof; T009b/T010separate. Context `vault/PACKS/P-E4-009a.md`; proof `vault/EVIDENCE/E-DEV-068.md`. FULLtask/current12CI/actualPRT3/finalmetadatareview required; no workflow/gatepolicy change.

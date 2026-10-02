@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_retry_saver.py, modules/e10-graph/checks/
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-RETRY-001]
-used_by: [V-E4-RETRY-001, P-E4-008, T-E4-008]
+used_by: [V-E4-RETRY-001, P-E4-008, T-E4-008, P-E4-009a, E-DEV-068]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -74,3 +74,7 @@ DirectstandingownerDEC0069/0070 mandate accepts independentFULLdelegatedtaskPASS
 Reviewed primary b8ff6088e2fff8b22a683520ab16308f09e320a81ac84e5c1c48f7ddc852d8b9 historicalsource digest preserved; currentACTIVEprimary d6732f88f3663b2e1537f9d88f805f62546fe3dc25273885cf27d071bd599b1a. No sourcefailure/rejection; actualOS/resume/device proof not inferred.
 
 Final six-file metadata verification: build_index60/routingT008DONE/eligible[]; run_all12checksPASS+42regressionsPASS0.446s/worstexit0; diffcheckPASS/exactsixpaths. OriginalP-PROOF001warning unchanged.
+
+## Secondary accepted custody receipt / T-E4-009a consumption
+
+PR69final8badb990f84a84628a23cc42da525cf51deec14f separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37044016705/E4CI96PASS0.175s. Normalmatchedmergeec97780020c183a9f5bced3fa2a6302dd435bf41 verified2026-10-02T17:58:58Z. Source9a96ceb/FULLtaskPASS/primary/digests/reviewer/history retained. Inventoryv35rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-067-E10-GOVERNED-PATHS.md.snapshot`; consumers `vault/PACKS/P-E4-009a.md` / `vault/EVIDENCE/E-DEV-068.md`. InternalretrysaverDONE/actualOStransferstorage/deviceHELD.
