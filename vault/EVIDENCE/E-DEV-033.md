@@ -2,15 +2,15 @@
 test_id: E-DEV-033
 contract_id_version: "ADR-015 Decision2; repository topology v1"
 subject_file: modules/e10-graph/REPOSITORY_TOPOLOGY.md
-subject_digest: a18df31192b1342d074a1424790e7650273aa2f10abd09c01aeabc4ca9a72eaf
-result: "BLOCKED: independent task-end assessment outstanding"
+subject_digest: 313fc532fedd478248e69d6dfbbe45c6abd2ae835a8915158471c3467953be6c
+result: "PASS: independent task-end review accepted bounded repository topology and path coverage"
 evidence_links:
   - "[[modules/e10-graph/REPOSITORY_TOPOLOGY.md]]"
   - "[[vault/INVENTORIES/E10-GOVERNED-PATHS.md]]"
   - "[[vault/PACKS/P-E10-006.md]]"
   - "[[vault/REGISTRY/T-E10-006.md]]"
-gate_verdict: "BLOCKED (review/CI receipts outstanding; production unproved)"
-reviewer: none
+gate_verdict: "PASS (linkage/addresses/no-orphan admission/manifest coverage only; semantic product/production unproved)"
+reviewer: "independent gpt-6-luna max; /root/pr35_independent_review"
 timestamp: 2026-10-02
 purpose: Establish governed repository addresses and capsule linkage coverage
 domain: project-execution
@@ -46,3 +46,8 @@ Independent first-round verdict at8f35a75e1acfbeab8460126c9d709038451a704a: /roo
 
 
 Second narrow-review finding at3879a678c9f3b8acf48357ffbe2a37c82c26535a: reviewer confirmed logical-registry correction, found unintended mojibake in pack escalation arrow. Restored ASCII direction marker and initial proof-title punctuation using explicit UTF8 IO; no semantic/status/digest change. Exact corrected-head re-review required.
+
+
+Actual independent acceptance2026-10-02: /root/pr35_independent_review, gpt-6-luna max/forknone/separate bounded context, PASS at 16a2e17ac78253ea10b363c9f0a07f8200ef4749 against basef382812b32497f145076072b928202d031c82e56. First finding at8f35a75 (logical-registry mapping/source) fixed and independently re-reviewed; second finding at3879a67 (encoding) fixed and independently re-reviewed at16a2e17. No remaining actionable findings. Reviewer recomputed all401file hashes/79folder rows/rawcatalog/anchors and10capsule anatomy/public/internal/tests; actual E3/E5 platform subjects and archived custody retained. Source topology digest a18df31192b1342d074a1424790e7650273aa2f10abd09c01aeabc4ca9a72eaf; accepted inventory32d1fb3ffa3fd7b79a67dade87e1b52c3fb03f96fe8269352e2fb0f87a38589a. Final status-only topology digest 313fc532fedd478248e69d6dfbbe45c6abd2ae835a8915158471c3467953be6c; final status-only inventory digest 2613a1b572af74cd3ce8ed0eb54d1033893936443040ed3644ae204394f7e939. Old proof/core/catalog history unchanged.
+
+Exact source-head CI all8SUCCESS: pull_request architecture-checks 36949449721, pull_request e5-current-authority-tests 36949449635, pull_request e3-commit-authorization-tests 36949449671, pull_request e3-live-auth-tests 36949449642, push architecture-checks 36949446905, push e5-current-authority-tests 36949446882, push e3-commit-authorization-tests 36949446887, push e3-live-auth-tests 36949446891. Expected label-gated T3 skips for documentary E10 T2/no privileged runtime; actual independent review obtained. Direct standing owner mandate accepts actual bounded PASS/greenCI before normal merge. Task DONE/rule ACTIVE/inventory RECORDED/pack ACTIVE for this acceptance only. Final metadata/index/evidence audit and exact new-head CI required before merge; immutable final-head audit/CI goes in PR35 body without recursive proof commits. E3R1 REVIEW/E5 IN_PROGRESS/production activation/release holds remain.
