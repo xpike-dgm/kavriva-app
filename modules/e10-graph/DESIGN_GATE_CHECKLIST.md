@@ -16,7 +16,7 @@ depends_on: [design-token, V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V-E10
 used_by: [P-E10-013, T-E10-013, E-DEV-041]
 evidence: [E-DEV-041]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Design gate checklist and controlled-change entry v1
