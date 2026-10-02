@@ -34,6 +34,8 @@ used_by:
   - "E-DEV-064"
   - "P-E4-006"
   - "E-DEV-065"
+  - "P-E4-007"
+  - "E-DEV-066"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -158,3 +160,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers61units (accepted47
 ## E4 complete-package fallback coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers72units (accepted61 +11fallback). `modules/e04-offline/tests/test_full_package_fallback.py` probes missing/stale/mixed/malformed/hostile delta or base, exacthintdeferred, targetfreshness/selection, completeIDs, partial/corrupt T005integrationfailures, immutability/no callback/finiteerrors/NONE/productionHELD. Memory fixtures are not actualdelta/fullfetch/encryptedatomicstore/canonicalacceptance/device evidence. Context `vault/PACKS/P-E4-006.md`; proof `vault/EVIDENCE/E-DEV-065.md`. Exacthead12CI/actualPRT3/fulltask/finalmetadatareview remain separate; no workflow/gatepolicy/custodychange.
+
+## E4 required-only automatic scheduling coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers84units (accepted72 +12scheduling). `modules/e04-offline/tests/test_required_auto_transfer.py` probes requiredonly/nointent/priority/alltransports/arbitraryfixturelength/no dialog/notneedednoauto/unknownclassification/wrongscope/optionalexplicitcontext/hostiletypes/completionNONE/unknown or forgedqueue/immutability/productionHELD. Memory declarations not actualE1needs/visiblegesture/size/physicalnetwork/start/completion/encryptedstore/authority/device proof. Context `vault/PACKS/P-E4-007.md`; proof `vault/EVIDENCE/E-DEV-066.md`. Exacthead12CI/actualPRT3/fulltask/finalmetadatareview remain separate; no workflow/gatepolicy/custodychange.

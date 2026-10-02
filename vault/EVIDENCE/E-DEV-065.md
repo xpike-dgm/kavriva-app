@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_full_package_fallback.py, modules/e10-gra
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E4-FALLBACK-001]
-used_by: [V-E4-FALLBACK-001, P-E4-006, T-E4-006]
+used_by: [V-E4-FALLBACK-001, P-E4-006, T-E4-006, P-E4-007, E-DEV-066]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -65,3 +65,7 @@ OwnerdirectstandingDEC0069/0070 accepts full delegatedtaskPASS/normalmatchedhead
 Reviewed source primary a7cafca4f7adefd8f2391534b24f17f224e3bf6b2c7916e6827d10197666dbfc preserved as historical review digest; current ACTIVE primary 04029c6975bf3b3be910b084c136abf9c365080f20eb89bc60e210623d09bf58. No prior source failure/rejection; no actual fetch or runtime proof inferred.
 
 Final root metadata preparation graph12checks+42regressionsPASS0.451s/worstexit0/build_index58/routingT006DONE/eligible[]/diff/exact six closeoutpaths. OriginalP-PROOF001warning unchanged. Independentfinalaudit/latesthead12CI required before normalmerge.
+
+## Secondary accepted custody receipt / T-E4-007 consumption
+
+PR67finalfebc7ebb51dabc2adb31af46887cf101c1ad0827 separateconfiguredgpt-6-luna/max finalmetadataPASS/no findings, exactfinalall12CIgreen/actualPRT3SUCCESS37039635041/E4CI72PASS0.074s. Normal matchedheadmerge2340378b27b06d04cf0f585415ca4a88c2fd9293 verified2026-10-02T17:20:01Z. Sourcec65834f/fulltaskPASS/primary/digests/reviewer/no-rejection/history retained. Inventoryv33rawarchive `vault/EVIDENCE/SNAPSHOTS/E-DEV-065-E10-GOVERNED-PATHS.md.snapshot`; documentary consumers `vault/PACKS/P-E4-007.md` / `vault/EVIDENCE/E-DEV-066.md`. InternalfallbackruleDONE, actualfetch/storage/runtime/device proof HELD.
