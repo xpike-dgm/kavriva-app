@@ -2,7 +2,7 @@
 test_id: E-DEV-062
 contract_id_version: "ADR009 R1; nonessential media rules v1"
 subject_file: vault/PROFILES/nonessential-media-rules.md
-subject_digest: e16193bfa37e5ead9b541d0a67940cc14e301401865615bed66f68ab4471194b
+subject_digest: 6628e1f9b229822268f1a6439d89be9d8206aa2a93739238b318b246ef2cc58f
 result: "PASS full T-E4-003 internal lifecycle rules; actual source and runtime HELD"
 evidence_links:
   - "vault/PROFILES/nonessential-media-rules.md"
@@ -58,12 +58,12 @@ Root graph12checks+42regressionsPASS0.477s/worstexit0/index55/routingT003REVIEW/
 
 Root subsequently identified spec declared_bytes10**5000 causing raw json ValueError after type guards. New focused stress test actual1ERROR0.009s before fix, preserved; narrow serializer catches ValueError/TypeError/OverflowError/RecursionError as finite OPTIONAL_SPEC_ENCODING_FAILED, no input echo, interpreter setting change, byte-size policy/limit, accepted checker change or effect.13new+accepted22full35PASS0.100s/compile. No independent rejection; root-discovered post-PASS correction requires fresh full source review/latest12CI. Prior initial33/currentold34 PASSs are historical and correct; no longer claim no unit error for whole history.
 
-Current normalizedSHA256:
+Historical bcdd72a source-review normalizedSHA256:
 - vault/PROFILES/nonessential-media-rules.md: 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea
 - modules/e04-offline/internal/optional_media.py: dc8bcc95e27b9fc7a71faac9e7fa5cfbacfdbd03c44079fbc6902508097be842
 - modules/e04-offline/tests/test_optional_media.py: 5b42aeb999187af3afd99843d39a9ed49cead48111b6d9d2b09db55fb143478f
 
-Old reviewed primary 648cc4c3825e283aa4145ffd020be1a6d6f4cda54b8152cda53f1aa5ce2fbae2 preserved as historical source proof; current REVIEW primary 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea. Task notDONE; no current independent verdict, production remainsHELD.
+Old reviewed primary 648cc4c3825e283aa4145ffd020be1a6d6f4cda54b8152cda53f1aa5ce2fbae2 preserved as historical source proof; historical REVIEW primary at bcdd72a source freeze 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea. At that pre-review state the task was notDONE and had no independent verdict; current source verdict is recorded below, production remainsHELD.
 
 ## Independent full task completion receipt
 
@@ -73,6 +73,10 @@ Exact current source all12CI SUCCESS: PRarchitecture37031288894 actualT3SUCCESS/
 
 Owner direct standing DEC0069/0070 delegated full-task verdict acceptance, pendingplanPR4 remainsunmerged. Profile/packACTIVE/taskDONE only internal nonessential lifecycle rules. Separate/explicit/cancelable/evictable/refetchable model passes full review; actual E3/E6 classification/semantic completeness/current source/context, real E1 human gesture/controls/size rendering, physical transfer/cancellation/eviction/durable storage/encryption/mobile/device/runtime remain MISSING/HELD. Coherent supplied state/intent/source can be false; intrinsicNONE and constant productionHELD unchanged. No real transfer/user/authentication or approved package/productreadiness claim. Size-before-download rule T004 separate. E3R1REVIEW/E5-003IN_PROGRESS/unresolvedPR47/57/59 unchanged. Final six metadata/view paths only; code/tests/acceptedcheckers/workflow/archive/priorproof/inventory/manifest/CIplan unchanged. Independent final metadata audit/latest-head twelve green CI required before normal matchedheadmerge.
 
-Reviewed corrected primary 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea preserved as historical source digest; current ACTIVE primary e16193bfa37e5ead9b541d0a67940cc14e301401865615bed66f68ab4471194b. Earlier initial e1 primary/hash/PASS/test success, root new regressionERROR/finitefix/current35PASS/currentre-review remain exact history, no source rejection invented.
+Reviewed corrected primary 2432326e6a145ce74da16069e30e02f456781ab625b6c39b49b35946a18085ea preserved as historical source digest; ACTIVE primary at initial 94f9497 metadata freeze e16193bfa37e5ead9b541d0a67940cc14e301401865615bed66f68ab4471194b, superseded by the historical-label correction below. Earlier initial e1 primary/hash/PASS/test success, root new regressionERROR/finitefix/current35PASS/currentre-review remain exact history, no source rejection invented.
 
 Final root metadata preparation graph12checks+42regressionsPASS0.434s/worstexit0/build_index55/routingT003DONE/eligible[]/diff, exact six closeout paths. Original P-PROOF001warning unchanged. Independent final audit/latest final12CI still required.
+
+## Final metadata review correction
+
+Separate configured gpt-6-luna/max /root/pr58_snapshot_binding_review actual final metadata CHANGES_REQUESTED at94f949739f956e2730d0cb729cc052b787297bb3: prior bcdd-review digest/status and pre-review requirement were still labeled current, inconsistent with later sourcePASS/DONE/ACTIVE. This is an actual metadata rejection, not a source-code rejection. Root relabeled both prior source states explicitly historical; original values and failure/PASS history retained. Profile primary recomputed after label-only correction: 6628e1f9b229822268f1a6439d89be9d8206aa2a93739238b318b246ef2cc58f. Exactly profile/evidence changed relative94f9497; six closeout paths relative acceptedbcdd. Code/tests/workflow/archive/inventory/manifest/CIplan/views/pack/task unchanged. Full current source acceptance bcdd remains valid, productionNONE/HELD unchanged; new independent final audit/latest-head12CI required before merge. No admin/selfPASS/bypass.

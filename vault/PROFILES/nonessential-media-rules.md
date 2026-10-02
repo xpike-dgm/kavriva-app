@@ -45,7 +45,7 @@ ADR009R1b -> C4.1 -> F4.1.2 -> FL4.1.2 -> T-E4-003 -> M-E4-001 -> E-DEV-062. Tas
 
 Separate configured gpt-6-luna/max reviewer gave full T-E4-003 task-level PASS/no actionable findings at e1fcde49a429b126149742155c06e0a21ba029f4. That accepted review remains historical, not approval of new source. Root then identified an unbounded declared-size integer that passed plain type guards but json serialization raised a non-finite ValueError. A new focused stress regression first ran1 ERROR0.009s, actual failure preserved. The local spec serializer now converts its ValueError/TypeError/OverflowError/RecursionError into finite OPTIONAL_SPEC_ENCODING_FAILED, without echoing input or changing interpreter limits, selected byte policy or accepted checkers. Fixture10**5000 is a serializer stress probe only, never a product/candidate size boundary.
 
-Current13new+accepted22full35PASS0.100s/compile. No independent source rejection: this was implementer-discovered concrete risk after old source PASS. Per-use core protection, lifecycle, source/classification and intrinsicNONE/constant productionHELD unchanged. Current new source requires independent full re-review and exact latest12CI; old green/old PASS not substituted.
+Current13new+accepted22full35PASS0.100s/compile. No independent source rejection: this was implementer-discovered concrete risk after old source PASS. Per-use core protection, lifecycle, source/classification and intrinsicNONE/constant productionHELD unchanged. Historical state at bcdd72a source freeze required independent full re-review and exact latest12CI; old green/old PASS could not be substituted. Actual current source acceptance is recorded in the later independent completion receipt.
 
 ## Independent full task completion receipt
 
