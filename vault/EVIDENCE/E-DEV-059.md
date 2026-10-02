@@ -26,7 +26,7 @@ tests: [modules/e06-release/tests/test_ota_denial.py, modules/e10-graph/checks/c
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E6-OTA-001]
-used_by: [V-E6-OTA-001, P-E6-017, T-E6-017]
+used_by: [V-E6-OTA-001, P-E6-017, T-E6-017, P-E4-001, E-DEV-060]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -60,3 +60,7 @@ Direct owner DEC0069/0070 standing bounded source verdict acceptance, pending pl
 
 Current ACTIVE primary ddb887e83190eb480d6214b52553f566d252b4bee30b0823abb1d06ef16bf6d0; original reviewed primary5e9cea97c461b8b57dab11e4a803672925cb76d473b63c6554776d640fca57c2 preserved as historical source proof.
 Final root metadata preparation: build_index52/routingeligible[]/T017boundedDONE, run_all12checks+42regressionsPASS0.455s/worstexit0/diffPASS; exact six closeout paths. Historical P-PROOF001warning unchanged. Independent final metadata audit/currentfinalheadCI still required.
+
+## Secondary accepted custody receipt / T-E4-001 consumption
+
+PR61 final 0d5446d2443360f9bf1577c2b30f16b858d81718 separate gpt-6-luna/max final metadata PASS/no findings; exact all10CI SUCCESS, actual PR T3 SUCCESS37021975586; E6 CI50PASS. Normal matched-head merge e5c9aeef3f024fb2ed0e2035fe86d852591a3d43 verified at 2026-10-02T14:59:44Z. Earlier primary/source digests/review/no-rejection/history preserved. Inventory v27 archived byte-equal by `vault/EVIDENCE/SNAPSHOTS/E-DEV-059-E10-GOVERNED-PATHS.md.snapshot`, documentary consumers `vault/PACKS/P-E4-001.md` / `vault/EVIDENCE/E-DEV-060.md`, no new runtime approval.

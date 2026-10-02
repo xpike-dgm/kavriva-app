@@ -1,0 +1,16 @@
+name: e4-offline-composition-tests
+on:
+  push:
+  pull_request:
+jobs:
+  e4-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Kavriva
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # existing reviewed v5 pin
+        with:
+          persist-credentials: false
+      - name: Test E4 internal composition
+        run: python3 -m unittest discover -s modules/e04-offline/tests -v
