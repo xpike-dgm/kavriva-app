@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: []
-used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044]
+used_by: [P-E10-001, I-E10-REGISTRATION-BASELINE, V-E10-REL-001, P-E10-002, T-E10-002, E-DEV-028, V-E10-STRUCT-001, P-E10-003a, V-E10-GOV-001, P-E10-003b, E-DEV-030, D-APP-DOC-003, P-E10-004, E-DEV-031, V-E10-DIR-001, P-E10-005, E-DEV-032, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E10-TOPO-001, D-APP-DOC-004, P-E10-007, E-DEV-034, V-E10-LIFE-001, P-E10-008, E-DEV-035, V-E10-CLOSE-001, P-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042, V-E10-REVIEW-001, P-E10-015, E-DEV-043, V-E10-PARALLEL-001, P-E10-016, E-DEV-044, V-E10-MEASURE-001, P-E10-017, E-DEV-046]
 implements: [ADR-015, C10.1, C10.2, C10.3, C10.4, C10.5, C10.6, C10.7]
 public_contracts: [task-pack, design-token, V-E10-NODE-001, V-E10-REL-001]
 internal_scope: Registry and router tooling, generated indexes, checks and simulations
-tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016]
+tasks: [T-E10-001, T-E10-002, T-E10-003a, T-E10-003b, T-E10-004, T-E10-005, T-E10-006, T-E10-007, T-E10-008, T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014, T-E10-015, T-E10-016, T-E10-017]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -178,3 +178,8 @@ Rule `modules/e10-graph/INDEPENDENT_REVIEW_AND_EXTERNAL_NOTICE.md`; pack `vault/
 ## Independent parallel-output guards (T-E10-016)
 
 Rule `modules/e10-graph/PARALLEL_OUTPUT_GUARDS.md`; pack `vault/PACKS/P-E10-016.md`; task `vault/REGISTRY/T-E10-016.md`; proof `vault/EVIDENCE/E-DEV-044.md`. Five DEC0041 guards and original-output synthesis; no parallel dispatch engine, shared concurrent overwrite, automatic votes or product proof.
+
+
+## Measurement evidence and ten-layer gaps (T-E10-017)
+
+Rule `modules/e10-graph/MEASUREMENT_EVIDENCE_CLOSURE.md`; pack `vault/PACKS/P-E10-017.md`; task `vault/REGISTRY/T-E10-017.md`; proof `vault/EVIDENCE/E-DEV-046.md`. Subject-bound measurement intake and current C4.8/C4.9 visible-gap connection; no actual corpus/device run or numeric policy selection. Historical T010 observation unchanged.
