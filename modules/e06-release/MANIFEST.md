@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e06-release"
 owner: "E6"
 depends_on: [M-E3-001, M-E5-001]
-used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE]
+used_by: [M-E7-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E6"
 public_contracts:
   - "[[modules/e06-release/MANIFEST.md#Public contract surface]]"
 internal_scope: "Authority roster, seal/verify tooling, suspension-strap state, incident runbooks, custody policy docs. Lane execution machinery lives in E7; this capsule holds the rules E7 must obey."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e07-build-lane"
 owner: "E7"
 depends_on: [M-E3-001, M-E6-001]
-used_by: [I-E10-REGISTRATION-BASELINE]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E7"
 public_contracts:
   - "[[modules/e07-build-lane/MANIFEST.md#Public contract surface]]"
 internal_scope: "Lane scripts, runner configs, signing-execution plumbing, cost dashboards. Policy texts stay in E6; this capsule proves compliance per run."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

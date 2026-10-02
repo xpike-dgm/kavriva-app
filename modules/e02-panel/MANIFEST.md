@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e02-panel"
 owner: "E2"
 depends_on: [M-E3-001, M-E5-001, M-E8-001]
-used_by: [I-E10-REGISTRATION-BASELINE]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E2"
 public_contracts:
   - "[[modules/e02-panel/MANIFEST.md#Public contract surface]]"
 internal_scope: "Panel layout/navigation, queue filters, draft editor state (WS-04 Kavriva-internal drafts; draft-never-live, never self-publishes). No canonical data; no audit vault; no signing custody."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

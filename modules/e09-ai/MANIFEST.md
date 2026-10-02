@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

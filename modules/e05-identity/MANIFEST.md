@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e05-identity"
 owner: "E5"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE]
+used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E5"
 public_contracts:
   - "[[modules/e05-identity/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase Auth direction, session handling, policy evaluation, audit vault storage, quarantine line, recovery ceremonies. Vault contents never exposed except through investigation chain with authorization."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

@@ -6,11 +6,11 @@ domain: project-execution
 module: e10-graph
 owner: E10
 depends_on: [V-E10-REL-001, V-TST-001, V-CMD-001, M-E10-001]
-used_by: [P-E10-003a, T-E10-003a, E-DEV-029, V-E10-GOV-001, P-E10-003b, E-DEV-030, V-E10-DIR-001, P-E10-005, E-DEV-032]
+used_by: [P-E10-003a, T-E10-003a, E-DEV-029, V-E10-GOV-001, P-E10-003b, E-DEV-030, V-E10-DIR-001, P-E10-005, E-DEV-032, V-E10-TOPO-001, P-E10-006, E-DEV-033]
 implements: [ADR-015, C10.1, F10.1.1, R-002, R-003, R-014]
 public_contracts: []
 internal_scope: structural-detector-specification
-tasks: [T-E10-003a, T-E10-003b, T-E10-005]
+tasks: [T-E10-003a, T-E10-003b, T-E10-005, T-E10-006]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py, modules/e10-graph/checks/check_edges.py, modules/e10-graph/checks/check_orphans.py]
 evidence: [E-DEV-029]
 supersedes: []

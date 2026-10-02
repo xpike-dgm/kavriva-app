@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e08-content"
 owner: "E8"
 depends_on: [M-E3-001]
-used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE]
+used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E8"
 public_contracts:
   - "[[modules/e08-content/MANIFEST.md#Public contract surface]]"
 internal_scope: "Derivation pipelines, projection rebuilders (all projections re-derivable, CMS included), measurement aggregators, quality dashboards. Canonical stores stay in E3; publish authority stays in E6."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []

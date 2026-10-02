@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e04-offline"
 owner: "E4"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
 public_contracts:
   - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
 internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
-tasks: [T-E10-001]
+tasks: [T-E10-001, T-E10-006]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
