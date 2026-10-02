@@ -485,7 +485,7 @@ These are current audit limitations, not a copied all-UNVERIFIED template preten
 | task | MISSING / BLOCKED | 175canonical physical records absent at appbase; E3R1REVIEW/E5IN_PROGRESS; current task acceptance receipts do not close all206product needs |
 | feature | UNVERIFIED | 106catalog addresses resolve but full behavior/failure/a11y/data-state execution proof not audited or supplied |
 | flow | UNVERIFIED | 115declared flows resolve; no real full-product cross-module E2E execution established by this document run |
-| requirement | UNVERIFIED | 175compound/range need rows including3canonicalheld declare tasks; individual approved requirement/rule/screen/state source definitions/content validation not independently completed |
+| requirement | UNVERIFIED | 175compound/range need rows comprise172task-bearing plus3taskless NONE/HELD rows; individual approved requirement/rule/screen/state source definitions/content validation not independently completed |
 | design | UNVERIFIED | No actual product screen/state/canonical reference/responsive/a11y proof supplied or executed in this audit |
 | architecture | UNVERIFIED | Declared catalog/owner/serialized subject segments inspected, not AST/private-import/semantic orphan/public-contract full corpus audit |
 | data/migration | UNVERIFIED | No actual whole-product migration/rollback/offline/restore execution proof in this audit |
