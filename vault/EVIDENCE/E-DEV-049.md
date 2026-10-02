@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E5-ACTIVATION-001]
-used_by: [V-E5-ACTIVATION-001, P-E5-021, T-E5-021]
+used_by: [V-E5-ACTIVATION-001, P-E5-021, T-E5-021, P-E5-017, E-DEV-050]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -45,3 +45,7 @@ Root run_all.py PASS twelve architecture checks and42 existing record-preservati
 Independent /root/pr51_activation_skeleton_review, gpt-6-luna/max, bounded source PASS at db0302f89f767aab3bdf6eb9c2350f6879b184db over accepted4347d3ce80a88b1e35accbeafc65f5e4757ad388, no findings. Exact tenpaths/14fields/eleven-row ADR004 R10 and DEBATE010 section8 source reconciliation/tenclosurelayers/bidirectional trace inspected. Every evidence slot UNKNOWN→HELD, mandatory violations reject affected capability; evaluator issues no OPEN/deploy/accessgrant. Reviewer verified source normalized digest ce8741bbc2a58961554ba991e01fa319dd8c327c72cd86121f4332dfcaa42d95 and exact acceptedv16 raw snapshot135395bytes SHA256903abac6f029e2148805c4d791d7f2be45e51314fbbad8032f871bca9e877efb. Prior EDEV048 primary/digest/verdict/reviewer/heads/core preserved. Real second human/organization recovery custody absent means privileged production HELD regardless of delegated AI task review. Reviewer made no edits, ran no tests/CI, provider or secret operations.
 
 Root fetched all8 exact source workflows SUCCESS: labelledPRarchitecture36992741520 (earlierunlabelled36992723832alsoSUCCESS), E3live36992723854, E536992723851, Auth36992723810; pusharchitecture36992717793,E3live36992717752,E536992717591,Auth36992717668. Direct standing owner mandate DEC0070 accepts this bounded review aftergreenCI; pendingplanPR4 not claimed merged. Primary/pack ACTIVE, T021 skeleton-only DONE, generated44 actual rows; current status-only primary normalizedSHA256 4093ac374bef287d7bab6c5d57e77ea3c1e0396cc87e234293779dd4cbc02052. Source body unchanged; prior provisional reviewer-none/BLOCKED retained in Git history. Final six-path metadata audit/latest-head CI separate required gates, immutable final receipt in PRbody. Actual activation evidence remains unfilled/HELD, no production/open permission or physical gate proof; E3R1REVIEW/E5-003IN_PROGRESS/provisioning HELD remain.
+
+## T-E5-017 secondary inventory custody
+
+AcceptedPR51merge 671e7de484ec5c190458d98ed9cba0d805c84ec3 inventoryv17 exact raw payload archived at `vault/EVIDENCE/SNAPSHOTS/E-DEV-049-E10-GOVERNED-PATHS.md.snapshot`, normalizedSHA256 1afa8094055630add5932fd2bf1a719ff202118b4d12fe6bb4c37f5e64136a91. Original subject/digest/verdict/reviewer/heads/date/core unchanged. Secondary documentary custody/actual consumers only, not currentinventory/product approval. Context `vault/PACKS/P-E5-017.md`; proof `vault/EVIDENCE/E-DEV-050.md`.

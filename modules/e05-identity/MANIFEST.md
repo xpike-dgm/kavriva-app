@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e05-identity"
 owner: "E5"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049]
+used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049, V-E5-INGEST-001, P-E5-017, E-DEV-050]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E5"
 public_contracts:
   - "[[modules/e05-identity/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase Auth direction, session handling, policy evaluation, audit vault storage, quarantine line, recovery ceremonies. Vault contents never exposed except through investigation chain with authorization."
-tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021]
+tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021, T-E5-017]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -100,3 +100,7 @@ Method `vault/PROFILES/privileged-login-method.md`; task `vault/REGISTRY/T-E5-00
 ## Privileged activation skeleton (T-E5-021)
 
 Evaluation-only checklist `vault/PROFILES/privileged-activation-checklist.md`; task `vault/REGISTRY/T-E5-021.md`; context `vault/PACKS/P-E5-021.md`; proof `vault/EVIDENCE/E-DEV-049.md`. Eleven evidence slots UNKNOWN/HELD; no open verdict/production operation. Original anatomy/public authority/metadataorigin and all operational holds preserved; no new runtime seam.
+
+## Internal quarantine processing policy (T-E5-017)
+
+Policy `modules/e05-identity/internal/quarantine_pipeline.py`; regressions `modules/e05-identity/tests/test_quarantine_pipeline.py`; specification `vault/PROFILES/quarantine-processing-policy.md`; task `vault/REGISTRY/T-E5-017.md`; context `vault/PACKS/P-E5-017.md`; proof `vault/EVIDENCE/E-DEV-050.md`. Pure internal state policy, no public product caller/new runtime seam. Future E3 enforcement/producers and E2 rendering separate; trusted producer/persistence/audit/isolation/producttests missing. Original public authority/anatomy/metadataorigin/holds preserved.
