@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e05-identity"
 owner: "E5"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048]
+used_by: [M-E1-001, M-E2-001, M-E6-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E5-LOCAL-001, P-E5-001, E-DEV-047, V-E5-AUTHMETHOD-001, P-E5-007a, E-DEV-048, V-E5-ACTIVATION-001, P-E5-021, E-DEV-049]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E5"
 public_contracts:
   - "[[modules/e05-identity/MANIFEST.md#Public contract surface]]"
 internal_scope: "Supabase Auth direction, session handling, policy evaluation, audit vault storage, quarantine line, recovery ceremonies. Vault contents never exposed except through investigation chain with authorization."
-tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a]
+tasks: [T-E10-001, T-E10-006, T-E5-001, T-E5-007a, T-E5-021]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -96,3 +96,7 @@ Procedure `vault/PROFILES/account-light-start.md`; task `vault/REGISTRY/T-E5-001
 ## Privileged login method specification (T-E5-007a)
 
 Method `vault/PROFILES/privileged-login-method.md`; task `vault/REGISTRY/T-E5-007a.md`; context `vault/PACKS/P-E5-007a.md`; proof `vault/EVIDENCE/E-DEV-048.md`. Required phishing-resistant method class only; no provider/product/numeric/implementation selection or credential/session/production activation. Original anatomy/public surface/metadataorigin/productholds retained.
+
+## Privileged activation skeleton (T-E5-021)
+
+Evaluation-only checklist `vault/PROFILES/privileged-activation-checklist.md`; task `vault/REGISTRY/T-E5-021.md`; context `vault/PACKS/P-E5-021.md`; proof `vault/EVIDENCE/E-DEV-049.md`. Eleven evidence slots UNKNOWN/HELD; no open verdict/production operation. Original anatomy/public authority/metadataorigin and all operational holds preserved; no new runtime seam.

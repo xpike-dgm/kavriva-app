@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E5-AUTHMETHOD-001]
-used_by: [V-E5-AUTHMETHOD-001, P-E5-007a, T-E5-007a]
+used_by: [V-E5-AUTHMETHOD-001, P-E5-007a, T-E5-007a, P-E5-021, E-DEV-049]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -53,3 +53,7 @@ Nonblocking citation freshness note: W3C WebAuthn Level3 Recommendation2026-08-2
 Root d5 source run_all.py PASS12 architecture checks/42 regressions0.471s and diff check. All eight d5 workflows SUCCESS: PRarchitecture36991035313, E336991035444, E536991035314, Auth36991035312; pusharchitecture36991030272, E336991030304, E536991030243, Auth36991030161. Labelled PR T3 check PASS; independent human-authorized second eye recorded separately. Direct standing owner mandate, recorded DEC0070 in pending planPR4, accepts this bounded source verdict after green CI. No planPR4 merge is claimed.
 
 Primary status-only ACTIVE, pack ACTIVE, T007a DONE and generated views retain43 actual tasks. Current normalized primary digest c5037bb7f654df7e689172f42f2d254fe0dd3a7fc7be8c8d6bd52cc502ec68d4. Earlier provisional reviewer-none/BLOCKED receipts remain in Git history. Final six-path metadata/evidence/view audit and latest-head CI remain separate merge gates; immutable final receipt belongs in PR body. No runtime/code/device/browser/provider/credential/session change or physical product acceptance. E3R1 REVIEW/E5-003 IN_PROGRESS/live provisioning/privileged production HELD remain.
+
+## T-E5-021 secondary inventory custody
+
+Accepted PR50 merge 4347d3ce80a88b1e35accbeafc65f5e4757ad388 inventoryv16 exact raw payload preserved at `vault/EVIDENCE/SNAPSHOTS/E-DEV-048-E10-GOVERNED-PATHS.md.snapshot`, normalizedSHA256 903abac6f029e2148805c4d791d7f2be45e51314fbbad8032f871bca9e877efb. Original primary subject/digest/verdict/reviewer/heads/date/core unchanged; this is secondary documentary custody only, not currentinventory or privileged activation proof. Context `vault/PACKS/P-E5-021.md`; proof `vault/EVIDENCE/E-DEV-049.md`.
