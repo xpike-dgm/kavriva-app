@@ -2,7 +2,7 @@
 test_id: E-DEV-033
 contract_id_version: "ADR-015 Decision2; repository topology v1"
 subject_file: modules/e10-graph/REPOSITORY_TOPOLOGY.md
-subject_digest: bd19a22e3a8759f74fc74135e52cbba173e4fde92946bb19b439fe1ff438559c
+subject_digest: a18df31192b1342d074a1424790e7650273aa2f10abd09c01aeabc4ca9a72eaf
 result: "BLOCKED: independent task-end assessment outstanding"
 evidence_links:
   - "[[modules/e10-graph/REPOSITORY_TOPOLOGY.md]]"
@@ -40,3 +40,6 @@ Initial inventory authoring attempts rejected missing typed inventory/contract i
 
 
 Actual local validation2026-10-02: run_all exit0, all12checks/20unittest regressions;155Markdown records/128indexedIDs/1973resolveddocument links/36evidence/31packs. All10manifests/12runtime+8provision declared edges checked;29row index/routing rebuilt. git diff --check clean; four new non-task IDs have zero pinned canonical collisions, exact task row supersession. Frozen P-PROOF-001 freshness WARN retains historical scope. Inventory normalized subject digest c5e6a407f80bddd76e18d61a807309ab6fffc547ea29d2e330d8f92b23142b7f; raw base catalog distinction retained. Actual source consumer/task traces retained, old accepted template/relationship/structural proof subjects still archived unchanged. Independent final review and exact-head CI still required.
+
+
+Independent first-round verdict at8f35a75e1acfbeab8460126c9d709038451a704a: /root/pr35_independent_review, gpt-6-luna max/separate bounded context, CHANGES_REQUESTED: domain-authorities.json was wrongly grouped as generated/tooling and omitted in REGISTRY address map. Reviewer independently recomputed all401files/79folders/catalog/anchors/tencapsule anatomy, no other actionable issues. Narrow remediation binds existing D-APP-DOC-017 profile, preserves E3/E5/E6 logical owners/all physical_activation HELD, states not generated/task-record/runtime permission in both placements, and adds real source consumer/task traces. No JSON/runtime/product semantics changed. Corrected inventory normalized digest 32d1fb3ffa3fd7b79a67dade87e1b52c3fb03f96fe8269352e2fb0f87a38589a; immutable base file/hash/catalog unchanged. Exact new-head independent re-review required; no source acceptance yet.

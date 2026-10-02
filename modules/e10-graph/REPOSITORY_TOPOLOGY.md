@@ -5,7 +5,7 @@ purpose: Define governed implementation addresses, record linkage and capsule pa
 domain: project-execution
 module: e10-graph
 owner: E10
-depends_on: [D-APP-DOC-003, V-E10-REL-001, V-E10-STRUCT-001, I-E10-PATHS-001]
+depends_on: [D-APP-DOC-003, V-E10-REL-001, V-E10-STRUCT-001, I-E10-PATHS-001, D-APP-DOC-017]
 used_by: [P-E10-006, T-E10-006, E-DEV-033]
 implements: [ADR-015, C10.2, F10.2.1, R-001, R-002, R-004, R-010]
 public_contracts: []
@@ -37,7 +37,7 @@ One planning repository owns decisions/design/requirements. One application repo
 | .github/workflows | Installed CI definitions/specification, E10 delivery tooling; workflows do not replace independent review |
 | modules/e01-app through modules/e10-graph | Exactly one governed capsule per epic, each actual MANIFEST and public/internal/tests addresses; empty reserved directories prove existence only |
 | templates | Reusable authoring sources; manifest template is current complete form after preserved stub, contract/pack stubs retain their own actual scope |
-| vault/REGISTRY | Physical task IDs explicitly supersede their frozen planning row; execution state is here, planning PROPOSED rows stay frozen |
+| vault/REGISTRY | Physical task IDs explicitly supersede their frozen planning row; execution state is here, planning PROPOSED rows stay frozen. Existing domain-authorities.json is a reviewed versioned logical authority assignment, defined by vault/PROFILES/domain-authority-registry.md; E3/E5/E6 domain ownership remains, every physical_activation is HELD. It is not a generated index, task record or runtime permission |
 | vault/PACKS | Versioned fourteen-field task context, mandatory sources/allowed paths/negative cases; a pack grants no runtime authority |
 | vault/CONTRACTS | Stable typed contract records and provider/source/version references; consumed surface does not transfer ownership |
 | vault/PROFILES | Scoped operating/security/recovery policy records, not evidence of live activation |
@@ -47,6 +47,8 @@ One planning repository owns decisions/design/requirements. One application repo
 | supabase | Existing implementation configuration/migration addresses outside modules, linked to actual E3 manifest internal scope and recorded inventories; E5 authority migration retains its E5 subject ownership. Physical provider directory is not a new capsule or general client authority |
 
 Root/platform/extra inventory/profile/snapshot addresses extend the installed blueprint through actual recorded Development artifacts. Their explicit mapping does not rewrite the original blueprint or assume they existed at bootstrap.
+
+Existing logical registry source: `vault/PROFILES/domain-authority-registry.md` (D-APP-DOC-017); payload: `vault/REGISTRY/domain-authorities.json`. Address custody does not change this assignment or activate any domain.
 
 ## Capsule coverage and constituent paths
 

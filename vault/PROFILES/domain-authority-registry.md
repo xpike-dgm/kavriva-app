@@ -16,22 +16,12 @@ domain: "project-records"
 module: "e03-server"
 depends_on:
   - "ADR-015"
-used_by:
-  - "D-APP-DOC-013"
-  - "D-APP-DOC-018"
-  - "D-APP-DOC-019"
-  - "D-APP-DOC-021"
-  - "E-DEV-013"
-  - "I-E10-REGISTRATION-BASELINE"
-  - "M-E3-001"
-  - "P-E3-009"
-  - "T-E3-009"
+used_by: [D-APP-DOC-013, D-APP-DOC-018, D-APP-DOC-019, D-APP-DOC-021, E-DEV-013, I-E10-REGISTRATION-BASELINE, M-E3-001, P-E3-009, T-E3-009, I-E10-PATHS-001, V-E10-TOPO-001, P-E10-006, E-DEV-033]
 implements:
   - "ADR-001 Decision 1; T-E3-009; C3.2"
 public_contracts: []
 internal_scope: "Original document declarations and record custody; no new runtime authority"
-tasks:
-  - "T-E10-001"
+tasks: [T-E10-001, T-E10-006]
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"
