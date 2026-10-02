@@ -16,7 +16,7 @@ depends_on: [V-E10-CLOSE-001, V-E10-LIFE-001, D-APP-DOC-004, V-E10-NODE-001, V-E
 used_by: [P-E10-011a, T-E10-011a, E-DEV-038]
 evidence: [E-DEV-038]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Core document simulation checklists v1
