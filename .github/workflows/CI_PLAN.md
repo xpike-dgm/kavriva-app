@@ -18,6 +18,8 @@ used_by:
   - "P-E3-001-R3"
   - "P-E6-003"
   - "E-DEV-056"
+  - "P-E6-004"
+  - "E-DEV-057"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -110,3 +112,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 `.github/workflows/e6-tests.yml` independently installs `python3 -m unittest discover -s modules/e06-release/tests -v` on push and pull_request, using the existing reviewed immutable checkout pin, contents: read and persist-credentials: false. No dependency installation, product credential or deployment. It runs accepted registry and new snapshot-binding tests present in this branch; absent draft PR57 role code is not claimed covered or merged. Current-head gates include this family alongside existing workflows, with independent review/T3/main-protection unchanged. Green structural tests grant no authenticated approval or publication permission.
 
 Context `vault/PACKS/P-E6-003.md`; evidence `vault/EVIDENCE/E-DEV-056.md`. Draft PR57's parallel pending E6-family/CI-plan additions need normal source/evidence reconciliation when its full task is ready. Original CI plan and metadata custody above remain unchanged.
+
+## Incomplete T-E6-004 unit coverage
+
+Existing E6 family discovers accepted registry/snapshot and new fixture guarded-transition units. `vault/PACKS/P-E6-004.md` / `vault/EVIDENCE/E-DEV-057.md` record incomplete actual transaction/floor/authority/audit/read-after gates. No workflow/provider/dependency installation change; green fixtures do not close task or production. Independent task review occurs only at full task completion, not this initial slice.

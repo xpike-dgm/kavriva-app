@@ -27,7 +27,7 @@ tests: [modules/e06-release/tests/test_snapshot_binding.py, modules/e06-release/
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E6-SNAPSHOT-001]
-used_by: [V-E6-SNAPSHOT-001, P-E6-003, T-E6-003]
+used_by: [V-E6-SNAPSHOT-001, P-E6-003, T-E6-003, P-E6-004, E-DEV-057]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -68,3 +68,7 @@ Current ACTIVE primary normalized SHA256 af9895459076521dffd64317848425cdfbae1bc
 Final root metadata preparation: build_index50rows, task bounded DONE/profile-pack ACTIVE, run_all12checks+42regressionsPASS0.484s/worst exit0, diffPASS. Routing eligibility empty; no live prerequisite promoted.
 
 Final metadata head dd146a5f3848ae3b22d3a48f624de45f96f71bda architecture CI FAILED (PR37015625412/push37015620185): root regenerated registry but omitted routing_run. Earlier unchanged-routing statement was incorrect: eligibility stayed empty but excluded T-E6-003 still said REVIEW. Ran actual routing_run to regenerate excluded status DONE; six final metadata/view files now changed against accepted source. No checker weakened; all production holds preserved. New final audit/latest-head CI required; failed heads not accepted.
+
+## Secondary custody consumption for incomplete T-E6-004
+
+Original primary/core/hashes/reviewer/finding/CI/failure/fix history above unchanged. Actual PR58 final metadata head4d845 received independent gpt-6-luna/max metadata PASS and all10green/actualT3SUCCESS per immutable PR58 body; merged a2798024bda445cec4b11bdab43e98ff9576ba7c. T004 archives accepted inventoryv24 byte-equal at `vault/EVIDENCE/SNAPSHOTS/E-DEV-056-E10-GOVERNED-PATHS.md.snapshot` normalized 82e1ed23f52dfc113facbd9ea4998826c20be6c196834f8d40ff56f1e3bbab36; secondary consumer P-E6-004/EDEV057 only. This appendix does not grant publication or accept the incomplete transition task.
