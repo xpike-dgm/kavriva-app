@@ -22,6 +22,9 @@ used_by:
   - "V-E10-DESIGN-001"
   - "P-E10-013"
   - "E-DEV-041"
+  - "V-E10-DESIGN-EVID-001"
+  - "P-E10-014"
+  - "E-DEV-042"
 implements:
   - "planning CONTRACT_CATALOG.md row 9 (DESIGN_CONSISTENCY_AND_CHANGE.md + V10/REF-VISUAL-001, single truth — not copied here; tokens finalized per design gate)"
 public_contracts:
@@ -30,6 +33,7 @@ internal_scope: "Original document declarations and record custody; no new runti
 tasks:
   - "T-E10-001"
   - "T-E10-013"
+  - "T-E10-014"
 tests:
   - "modules/e10-graph/checks/check_identity.py"
   - "modules/e10-graph/checks/check_conformance.py"

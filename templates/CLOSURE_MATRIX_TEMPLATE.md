@@ -8,12 +8,12 @@ owner: E10
 implements: [ADR-015, C10.4, F10.4.1, R-013, R-014]
 public_contracts: []
 internal_scope: closure-matrix-authoring-shape
-tasks: [T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013]
+tasks: [T-E10-009, T-E10-010, T-E10-011a, T-E10-011b, T-E10-012, T-E10-013, T-E10-014]
 tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [D-APP-DOC-004, V-E10-NODE-001, V-E10-REL-001, M-E10-001, V-E10-TOPO-001, I-E10-PATHS-001]
-used_by: [P-E10-009, T-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041]
+used_by: [P-E10-009, T-E10-009, E-DEV-036, V-E10-AUDIT-001, I-E10-CLOSURE-001, P-E10-010, E-DEV-037, V-E10-SIM-001, P-E10-011a, E-DEV-038, V-E10-SIM-002, P-E10-011b, E-DEV-039, V-E10-EXCESS-001, P-E10-012, E-DEV-040, V-E10-DESIGN-001, P-E10-013, E-DEV-041, V-E10-DESIGN-EVID-001, P-E10-014, E-DEV-042]
 evidence: [E-DEV-036]
 supersedes: []
 status: ACTIVE
