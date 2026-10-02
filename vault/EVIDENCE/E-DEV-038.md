@@ -1,10 +1,11 @@
 ---
 test_id: E-DEV-038
 contract_id_version: "ADR-015 Decision7; core documentary simulation checklist v1"
-subject_file: modules/e10-graph/CORE_SIMULATION_CHECKLISTS.md
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-038-CORE_SIMULATION_CHECKLISTS.md.snapshot
 subject_digest: 11ce21444e19d370ee3a89d5921807a9057bb77419ea1ff61f50831fcd48f92a
 result: "PASS: independent exact-source review accepted order/document/failure checklist specification"
 evidence_links:
+  - "[[vault/EVIDENCE/SNAPSHOTS/E-DEV-038-CORE_SIMULATION_CHECKLISTS.md.snapshot]]"
   - "[[modules/e10-graph/CORE_SIMULATION_CHECKLISTS.md]]"
   - "[[vault/PACKS/P-E10-011a.md]]"
   - "[[vault/REGISTRY/T-E10-011a.md]]"
@@ -19,12 +20,12 @@ owner: E10
 implements: [ADR-015, C10.5, F10.5.1, R-006, R-007, R-009, R-010, R-014]
 public_contracts: []
 internal_scope: core-document-simulation-checklists
-tasks: [T-E10-011a]
+tasks: [T-E10-011a, T-E10-011b]
 tests: [modules/e10-graph/checks/check_trace.py, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_conformance.py]
 superseded_by: []
 last_verified: 2026-10-02
 depends_on: [V-E10-SIM-001]
-used_by: [V-E10-SIM-001, P-E10-011a, T-E10-011a]
+used_by: [V-E10-SIM-001, P-E10-011a, T-E10-011a, P-E10-011b, E-DEV-039]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -46,3 +47,6 @@ Actual local validation2026-10-02: all12run_allchecks and42existingunittest regr
 
 
 Actual independent source acceptance2026-10-02: /root/pr40_independent_review, gpt-6-luna max/forknone/separate bounded context, PASS at f5a79ca0ea916c8b10a51c90108a5a30c2b38cbc. Reviewer read exact local base/head diff, pinned planning/governance sources, changed checklist/task/pack/evidence/metadata, verified18pathscope, exact archived inventoryGitblob and normalized source subjectdigest b558922f1ed673dd97549ecc5845a62bdf58fde5f5640c9329847ed04efcaa15. Reviewer ran git diff --check once, clean; no tests/repo gates/product scenarios. Implementer local12checks42existingtests/views/diff and GitHub CI are separate. All8exact-source workflowsSUCCESS: pull_request e5-current-authority-tests 36958723846, pull_request architecture-checks 36958723801, pull_request e3-commit-authorization-tests 36958723796, pull_request e3-live-auth-tests 36958723826, push e5-current-authority-tests 36958718101, push architecture-checks 36958718137, push e3-commit-authorization-tests 36958718142, push e3-live-auth-tests 36958718109. Expected label-gatedT3skips for documentaryE10T2; actual separated review obtained. Standing owner mandate accepts bounded taskDONE/primaryACTIVE/packACTIVE only. Final status-only subjectdigest 11ce21444e19d370ee3a89d5921807a9057bb77419ea1ff61f50831fcd48f92a; checklist body/scenarios/pin/holds/custody unchanged. Final six-file metadata/evidence/index audit and all8exact-finalheadCI required before normalPR40merge. Immutable final receipt in PRbody avoids recursiveproof rewriting. Product simulation/production authorization/release still unproved; E3R1REVIEW/E5IN_PROGRESS/productionactivationreleaseHELD preserved.
+
+
+T011b custody continuation2026-10-02: before current normative consumer/task/admission metadata edits, exact accepted PR40final 5807418e192c35b62f06769964af88772760a6e1 raw primary and inventoryv6 payloads retained at `vault/EVIDENCE/SNAPSHOTS/E-DEV-038-CORE_SIMULATION_CHECKLISTS.md.snapshot` normalized 11ce21444e19d370ee3a89d5921807a9057bb77419ea1ff61f50831fcd48f92a, `vault/EVIDENCE/SNAPSHOTS/E-DEV-038-E10-GOVERNED-PATHS.md.snapshot` normalized 38dcc5c140725a3e0e52677ea8bfceafcb6ab16028ddd6d6e04fac825e25af70. Original primary digest/verdict/reviewer/source+finalheads/date/body receipts unchanged; subject_file now exact identical accepted core payload, not approval of changedcurrentmetadata. Primary/secondary immutable history retained; this is documentary provenance/custody only.
