@@ -110,6 +110,27 @@ class PreviewIsolationTests(unittest.TestCase):
         with self.assertRaisesRegex(IsolationError, "SOURCE_PROCESSING_HELD"):
             preview_requirements(receive(record.subject), derivative, boundary)
 
+    def test_equality_spoofed_context_is_rejected_before_comparison(self):
+        class EqualityTrap:
+            def __eq__(self, other):
+                raise AssertionError("CALLER_COMPARISON_INVOKED")
+
+            def __ne__(self, other):
+                raise AssertionError("CALLER_COMPARISON_INVOKED")
+
+        record, derivative, boundary = fixture()
+        for name in ("source_subject", "source_receipt_ref", "classification"):
+            with self.subTest(field=name):
+                with self.assertRaisesRegex(IsolationError, "DERIVATIVE_CONTEXT_INVALID"):
+                    preview_requirements(record, dataclasses.replace(
+                        derivative, **{name: EqualityTrap()}), boundary)
+        for name in ("source_receipt_ref", "classification"):
+            for value in (None, "", False, 1):
+                with self.subTest(field=name, value=value):
+                    with self.assertRaisesRegex(IsolationError, "DERIVATIVE_CONTEXT_INVALID"):
+                        preview_requirements(record, dataclasses.replace(
+                            derivative, **{name: value}), boundary)
+
     def test_policy_is_immutable_and_never_advances_processing(self):
         record, derivative, boundary = fixture()
         rules = preview_requirements(record, derivative, boundary)

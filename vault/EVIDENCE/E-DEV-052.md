@@ -2,8 +2,8 @@
 test_id: E-DEV-052
 contract_id_version: "ADR004 R7; ADR001 R4; preview requirements v1"
 subject_file: vault/PROFILES/isolated-preview-rules.md
-subject_digest: f3039bf1c006389a2e3eb754078f291f52318a7b844d2a7c1dcf02843c5bdf44
-result: "RECORDED: executable preview rules/unit/local browser witness; independent review/currentCI pending"
+subject_digest: 8c4340852e65f6b1045c5ec36d2b0626d6ba55ff98f2279e0cb2993ec59e0dcb
+result: "RECORDED: initial bounded source PASS; stricter derivative types awaiting re-review/currentCI"
 evidence_links:
   - "[[vault/PROFILES/isolated-preview-rules.md]]"
   - "[[vault/PACKS/P-E5-018.md]]"
@@ -13,7 +13,7 @@ evidence_links:
   - modules/e05-identity/tests/test_preview_isolation.py
   - modules/e05-identity/tests/preview_browser_fixture.cjs
 gate_verdict: "BLOCKED (independent review/currentCI missing; real preview/production HELD)"
-reviewer: none (separate gpt-6-luna/max T3 required)
+reviewer: /root/pr53_proposal_tag_review (gpt-6-luna/max; initial PASS, updated re-review pending)
 timestamp: 2026-10-02
 purpose: Define and validate credential-free isolated preview rules
 domain: project-execution
@@ -50,3 +50,13 @@ Actual canonical source/derivation/isolation observation producer, E2 renderer/E
 ## Prepared source boundary
 
 Root completed compile, architecture12checks/42regressionsPASS0.797s, generated47actualrows/T018REVIEW/diffcheck; historical P-PROOF-001 warning unchanged. Local synthetic browser/fullE5 results are performed receipts, not independent acceptance or GitHub CI. Browser fixture closed its context and both ephemeral servers. This frozen task branch is based on acceptedPR53mergead623eac59086ac54aac597fee59cf43b9bc0d80; prior planPR4 remains unmerged and PR47 physical provisioning unresolved. Independent review/currentCI are separate gates; actual preview/production remains HELD.
+
+## Initial independent verdict and stricter derivative types
+
+Actual independent /root/pr53_proposal_tag_review gpt-6-luna/max bounded T3 PASS at exactc0c044c6d6cd07544be53ffc5f748f1ed5242c00 over acceptedad623eac59086ac54aac597fee59cf43b9bc0d80. Reviewer verified thirteen paths/fourteen fields/task authority/dependency/manifest/graph, primary code/unit/browser hashes and exact accepted inventory archive blob. Read-only, no tests/CI/edits/provider operations. No blocking findings in that verdict; actual serving/authenticated observations/production isolation/mobile/native/composite proof remains MISSING/HELD. Reviewer earlier considered embedded derivative field types; root chose to strengthen this structural check before closure. This is an author hardening after actual PASS, not a fabricated reviewer rejection or self-PASS.
+
+All eight applicable actual exactc0c source workflows SUCCESS: labelledPRarchitecture37001876816 (T3 SUCCESS; earlier unlabelled37001854467 also green), E3commit37001854330,E537001854421,liveAuth37001854359; pusharchitecture37001847851,E3commit37001847875,E537001847858,liveAuth37001847936. Exact source E5 CI48testsPASS1.435s. These results and prior hashes belong to c0c and do not substitute updated source review/CI.
+
+Root now requires embedded derivative source to be exact Subject with validated fields, source receipt/classification nonempty plain strings before equality. Added a meaningful equality-callback trap and invalid-field-type regression; caller-defined equality cannot spoof context or execute during the comparison. Eleven updated unit testsPASS0.023s/compilePASS; unchanged synthetic browser fixture rerun with updated policyPASS, same Chrome154.0.8037.93/three deliveries/probes/limits. Current normalized profile8c4340852e65f6b1045c5ec36d2b0626d6ba55ff98f2279e0cb2993ec59e0dcb, codeb41a6e20f953671f406129b3a50913f0e1c40b96073d47b43808c04ec285497a, unitfcb6a1d266e125a2d9521bd15b5766af233ab5509ae4fe459e21399b0d9e774f. Browser/archive/prior proof/inventory/manifest unchanged by this correction. Task remains REVIEW until actual updated independent verdict/currentCI; no production/current authority proof added.
+
+Updated preparation architecture12checks/42regressionsPASS0.468s/diffcheck, existing47-row views remain correct and taskREVIEW. Frozen updated head and exact applicableCI/independent re-review still required. No new paths or runtime/product operation.

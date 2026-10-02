@@ -9,7 +9,7 @@ from dataclasses import dataclass, field, fields
 import re
 from urllib.parse import urlsplit
 
-from quarantine_pipeline import Record, State, Subject, _record
+from quarantine_pipeline import Record, State, Subject, _record, _subject
 
 
 class IsolationError(ValueError):
@@ -101,6 +101,11 @@ def preview_requirements(record: Record, derivative: Derivative,
         raise IsolationError("SOURCE_PROCESSING_HELD")
     if type(derivative) is not Derivative:
         raise IsolationError("DERIVATIVE_REQUIRED")
+    if (type(derivative.source_subject) is not Subject
+            or not _text(derivative.source_receipt_ref)
+            or not _text(derivative.classification)):
+        raise IsolationError("DERIVATIVE_CONTEXT_INVALID")
+    _subject(derivative.source_subject)
     if (derivative.source_subject != record.subject
             or derivative.source_receipt_ref != record.history[-1].observation.receipt_ref
             or derivative.classification != record.subject.classification):

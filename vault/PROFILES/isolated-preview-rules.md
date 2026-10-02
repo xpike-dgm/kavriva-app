@@ -31,6 +31,8 @@ Operations and preview origins must be canonical ASCII HTTPS origins without cre
 
 The factory requires a structurally SCANNED-or-later source record, exact full subject/current receipt/classification, distinct derived object identity, output digest and transformation receipt, and explicitly passive text. Original, received/unscanned/failed/lifecycle-closed sources, stale generation/receipt/classification and unknown/active derived format are blocked. These are fixture provenance checks, not proof of actual scanning/derivation/current source truth. Equal byte digests can occur for distinct originals/derivatives; provenance never follows from bytes alone. Processing readiness does not grant access, correctness, approval or publication.
 
+Embedded derivative source context is type-checked before comparison: exact Subject with validated fields, nonempty plain-string source receipt and classification. Objects with caller-defined equality cannot impersonate the source or run comparison callbacks. These structural guards still do not authenticate a real producer or prove an observed transformation.
+
 ## Required browser and serving constraints
 
 Returned immutable requirements have intrinsic UNTRUSTED_PREVIEW/NONE, empty iframe sandbox tokens and request credential mode omit. Response headers require CSP default/script/connect/image/style/font/media/object/frame/worker/base/form denial, frame-ancestors restricted to the configured operations origin and an empty response sandbox for direct entry. Cache-Control no-store, Referrer-Policy no-referrer, nosniff, explicit HTML UTF8 and restrictive Permissions-Policy are required; no Set-Cookie/CORS grant is emitted. Headers must be actual responses, not a report-only or meta-policy substitute.
@@ -61,7 +63,7 @@ ADR004R7/ADR001R4 → C5.6 → F5.6.1 → FL5.6.1 → T-E5-018 (T017 prerequisit
 | architecture | Same E5 internal state reuse; E2 rendering/E3 enforcement unchanged, no new runtime seam |
 | data/migration | Fixture exact derived/source context; no canonical schema/persistence/custody |
 | release | No actual origin/host/provider/billing/provisioning/production activation |
-| product-scenario | Ten configuration negatives plus one Chrome local fixture; product/HTTPS/mobile/native containment MISSING |
+| product-scenario | Eleven configuration/type negatives plus one Chrome local fixture; product/HTTPS/mobile/native containment MISSING |
 | gap-audit | Real canonical observation producers/renderer/transport/egress/revocation/audit/floor attributed E3/E2/E5; no owner debugging |
 
 E3R1 REVIEW/E5-003 IN_PROGRESS/physical provisioning/privileged production HELD unchanged. No actual view/access/audit/classification/release operation, no automatic safety or authorization proof. Source `vault/PROFILES/quarantine-processing-policy.md`; code `modules/e05-identity/internal/preview_isolation.py`; pack `vault/PACKS/P-E5-018.md`; task `vault/REGISTRY/T-E5-018.md`; proof `vault/EVIDENCE/E-DEV-052.md`; capsule `modules/e05-identity/MANIFEST.md`; addresses `vault/INVENTORIES/E10-GOVERNED-PATHS.md`.
