@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-ALLOWED-001]
-used_by: [V-E9-ALLOWED-001, P-E9-008, T-E9-008]
+used_by: [V-E9-ALLOWED-001, P-E9-008, T-E9-008, P-E9-009, E-DEV-083]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -64,3 +64,9 @@ Standingowner/acceptedDEC0069 accepts complete canonical exacttenreference with 
 Actual consumer provider/model/toolbinding/schema/account/key/paidchoice/cost/retry/eval/runtime/E3currentauthority/E5identity/E1UI/native/device/physical/universaloperationalhandoff proof remainsMISSING/HELD. T006unfinished actualtool-authority/binding/retryconfig/trustworthycostproducer missing/unselected; T007dependency006DONEunmet. ProductE3R1 REVIEW/E5-003IN_PROGRESS/heldPR47/57/59 unchanged. Complete static ten-reference acceptance is not full product/feature/flow/runtime or qualified human attestation.
 
 Historical rejectedb368profile9e6b37013086f94f10249454b7f0915108505eb54f48aa322b905a16779760df and corrected6cabprofile147a3a9fa17f7a328dcd88ae52bfe20a93e6054fa521edf53aa8f0e7208aff49 retained; current ACTIVE primary e9a1d6ac23e19669a3b2c206890f59911955409783200a8d97e0ca61fb7661bf. No actual assistance/authority/runtime activated.
+
+## Secondary actual PR84 acceptance / T-E9-009 consumer
+
+Actual PR84 MERGED 2026-10-03T13:47:06Z, merge5fdc2d6bb3978ba2d20f28fa45e78cba9104ac7a/final19b0c79ac39fd22b06dcdbe8a0e38f84a22ac2fc. Corrected source6cab independent FULL PASS closed original b368 P2; final19b0 independent six-file metadata PASS /root/e9008_allowed_ten_full_review configured gpt-6-luna/max, no new findings. Root closure12checks+42regressionsPASS0.481s/build75/routingDONE/diff6. CurrentACTIVE primarye9a1d6ac23e19669a3b2c206890f59911955409783200a8d97e0ca61fb7661bf. Actual final all14CI SUCCESS: PRarch37126839231/E337126839270/live37126839315/E437126839392/E537126839243/E637126839216/E937126839237; pusharch37126837010/E337126837003/live37126837021/E437126837020/E537126836957/E637126836994/E937126837056. ExecutedPRT3job111213751172five/checks111213751506sevenSUCCESS; E4PR170PASS0.100s/E9PR9PASS0.001s. Correctedsource all14green separately recorded in E-DEV-082. Original independent rejection and helper pre-write assertion preserved; green never overrode rejection. Normal ready and exact-head matched merge waited and actual GitHub state verified; no admin/bypass/directmain push. Complete static ten-reference only; provider/tool/cost/runtime/E3E5/device/physical proof remains HELD. T006/T007 not advanced. Inventoryv50/views75. Independent review configured via actual spawn, not runtime model self-attestation.
+
+Prior primary/hash/reviewer/verdict/finding history retained; consumer and actual secondary receipt only, no renewed prior approval. Final pending observations above were as of19b0 write; actual external audit/CI/merge recorded here. Actual runtime/tool/cost/physical evidence remains HELD.

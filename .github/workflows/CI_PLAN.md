@@ -68,6 +68,8 @@ used_by:
   - "E-DEV-081"
   - "P-E9-008"
   - "E-DEV-082"
+  - "P-E9-009"
+  - "E-DEV-083"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -264,3 +266,7 @@ Manual pinnedADR014R3fourtrigger/negative/missingidentitybehavior/currentdepende
 ## E9 ten-assistance documentary coverage
 
 Manual pinnedADR014Decision5 exactten/casequalifier/slash/sourcecitation/negative/seam comparison; currenthash/pins/rawv49/exact11/build/routing/run_all12+42/diff. Staticreference no mirroredconstant units/code/test/workflow change; acceptedE9nine/E4170 retained. Freshindependent FULL/sourceCI beforeboundedclosure and finalmetadata/finalexacthead allsevenfamiliesnominal14+extras/executedPRT3/E9-E4 before normalmatchedmerge. Actualprovider/tool/cost/runtime/physicalproofHELD. Context `vault/PACKS/P-E9-008.md`; proof `vault/EVIDENCE/E-DEV-082.md`.
+
+## E9 never-fifteen documentary coverage
+
+Exact15 source clauses/citations/qualifiers/HOLD/assistance/role/seam negative comparisons; primary/pins/rawv50/exact11/prior primary/build/routing/run_all12+42/diff. No new constant tests or workflow implementation; accepted E4 170/E9 nine unchanged. Fresh independent FULL/source CI before bounded closure; final metadata/final-head all seven CI families plus executed PR T3/E4/E9 before normal matched merge. Context `vault/PACKS/P-E9-009.md`; proof `vault/EVIDENCE/E-DEV-083.md`. Runtime/physical authority proof remains HELD.
