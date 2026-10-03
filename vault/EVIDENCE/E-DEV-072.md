@@ -91,3 +91,5 @@ PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 had independent configuredgpt
 ## Secondary accepted custody receipt / T-E4-016 consumption
 
 PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 independentgpt6luna/max finalmetadata PASS/no findings, final12CI SUCCESS/actualPRT337068102611/E4CI148PASS0.108s; normalmatchedmergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal eligibility task PASS retained. Original primary/hashes/verdict/reviewer/history unchanged; consumer/actualsecondaryreceipt only, not priorproofrenewal. Physical eligibility/recovery/encrypteddevice gates HELD, pendingPR75 notaccepted. T016 source candidate registry grants no policy/physical authority.
+
+T016 historicalv40 consumption paragraph immediately above records as-ofPR74/f04 preparation: pendingPR75 was not accepted at that historical time. Current actualPR75e69/PR76b636 are accepted; present v43 task uses raw acceptedv42 archive and EDEV074actualsecondaryreceipt. Historical statement not a current unmerged claim; priorproof primary/reviewer/hash/verdict/body unchanged.
