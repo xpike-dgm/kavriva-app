@@ -3,14 +3,14 @@ test_id: E-DEV-075
 contract_id_version: "ADR009 R8; held candidate registry v1"
 subject_file: vault/PROFILES/numeric-candidate-points.md
 subject_digest: 6be6c69d04b4ae7c00dbef9df6bcd92eaef115578df00c618b7dd43338010c96
-result: "RECORDED verbatim held candidate registry; FULL independent review required"
+result: "PASS independently reviewed documentary candidate registry; exact-head CI missing; policy HELD"
 evidence_links:
   - "vault/PROFILES/numeric-candidate-points.md"
   - "vault/PACKS/P-E4-016.md"
   - "vault/REGISTRY/T-E4-016.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
-gate_verdict: RECORDED
-reviewer: none
+gate_verdict: "PASS bounded documentary source only; exact-head CI missing; numeric policy HELD"
+reviewer: "/root/e4_held_points_independent_review; gpt-6-luna/max; FULLPASS atb054c96d61e8aa83559ad63ec42edb6aab120b24"
 timestamp: 2026-10-03
 purpose: Register source-attributed held storage test points without selecting numeric product policy
 domain: offline-measurement
@@ -31,6 +31,8 @@ status: RECORDED
 ---
 
 # E-DEV-075 candidate points
+
+Historical initial source-freeze observations follow; actual current independent review receipt below.
 
 Pre-edit14field11path pack saved; no harddependencies, actualacceptedmainf04 only. FULL independent task/currentCI pending, no authorPASS/DONE. No executable implementation/constant tests because documentary registry only. Manual root comparison checked each exactexpression against actual pinnedplan Git blobs, preserved ADR cache500MB omission/olderdifference/percentage notation. No production numeric selection or physicalmeasurement/encryption claims.
 
@@ -85,3 +87,13 @@ Source-review normalizedSHA256:
 Rawacceptedv40 archive byteequal, localv43 skipsunacceptedpendingv41/v42; original401/79/allaccepted admissions/pendingv13/v23/v25 retained. PriorEDEV072 consumer+actualsecondaryPR74receipt only, originalsubject/hash/reviewer/verdict/historyunchanged. Sharedcustodyreconcile/freshreview/checks required ifmainadvancesbeforepublication. No current checker failure or independent verdict yet. No actual sourcecode/unit/provider/device/data/key mutation. Actual CIstartupfailurePR75 is separately preserved; E3R1/E5/openPRs unchanged.
 
 Source verification: actual pinned-plan Git-blob substring comparison matches all8 source expressions, ADR cache500MB omission checked; rawacceptedv40 archive equal. build_index66/routingT016REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.517s/worstexit0/diffcheckPASS/exact11paths. Existing P-PROOF001 warning unchanged. No code/unit/provider/measurement/currentGitHubCI action performed. Independent FULL task review pending.
+
+## Independent FULL task review PASS; exact-head CI pending
+
+Separate owner-selected /root/e4_held_points_independent_review gpt-6-luna/max returned FULLPASS/no findings at frozen sourceb054c96d61e8aa83559ad63ec42edb6aab120b24 againstactualacceptedmainf04a10e542f9853f7551b4eabc3d8b0c43298419 and planningpinfa914f. All8 expressions match their pinned sources; older500MBcachepoint remains separate, percentage notation verbatim, HELD/nonadditive/CON005/AutoBackupquotaboundaries preserved, no numericselection/runtime/measurement. Exact11paths/rawacceptedv40blob/currentprofile/sourcehashes/custody/prepublicationreconcileconditions reviewed. Reviewer performed no tests/CI/provider/device actions. No independent rejection or rootcheckfailure forT016, othertaskhistoriesunchanged.
+
+This FULLPASS accepts complete bounded documentary registry scope only under direct standingowner mandate/acceptedDEC0069. Current applicable remoteCI is MISSING; profileREVIEW/packIN_PROGRESS/taskREVIEW retained, no DONE/ACTIVE/merge/physicalproof/selectedproductionlimit. Root12checks+42regressionsPASS0.517s/actualmanualsourcecompare are localsourcechecks, never substitute forGitHubCI. PR75billingstartupblock unchanged, T015localgate separatelyreviewed/currentCIpending. Localv43reservedagainstactualv40, pendingv41/v42notcopied; sharedinventory/manifest/priorproof/views must reconcilefreshacceptedmain and receive newfrozenreview/checks beforepublication. Missinguniversalhandoffaffectedoperational/productionhandoffBLOCKED, no inventedID.
+
+Receipt only changes proof/pack/task. Separate finalmetadataaudit on frozenreceipt/current-headCI needed beforemerge. Originalsourcehash/oldprimary/priorproof/401catalog/79folders/admissions/pendingv13v23v25 and all actual failure histories preserved. Actualcorpus/device/encryption/key/native/runtime andT018measurement/matrix142/146policyselection remainMISSING/HELD. No provider/version/format/budget/policy/financialaction chosen.
+
+Review-receipt metadata verification: build_index66/routingT016REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.585s/worstexit0/diffcheckPASS; existing P-PROOF001 warning unchanged. Three receipt docs only; profile/snapshot/inventory/manifest/CIplan/index/source content unchanged. Independent frozen finalmetadataaudit/currentCI still required.
