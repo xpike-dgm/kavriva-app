@@ -74,6 +74,8 @@ used_by:
   - "E-DEV-084"
   - "P-E9-011"
   - "E-DEV-085"
+  - "P-E7-001"
+  - "E-DEV-086"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -282,3 +284,7 @@ Manual condition-to-HOLD/reason/no-fallback seven-row matrix, qualifiednever15/a
 ## E9 role/notice documentary coverage
 
 Manual role mapping/sixexactnoticeheadings-completefields/negativecases/DEC0068-69/E10ownership/E9-E3-E1; ninecurrentpins/primary/rawv52/exact11/priorprimary/E10sourceandacceptedcode-tests-workflows unchanged/build/routing/run_all12+42/diff. No mirroredconstanttests/newworkflowmechanism, E4170/E9nine retained. IndependentFULL+sourceCI then boundedclosure/finalmetaaudit/currentallsevenfamilyCI/executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E9-011.md`; proof `vault/EVIDENCE/E-DEV-085.md`. Realexternalqualification/runtime/device proof HELD.
+
+## E7 Android checklist documentary coverage
+
+Exacteightclauses/citations/actualeightMISSINGHELDrows/E6decision-nopolicy/negativecases/AndroidiOSindependence/ADR008realdevicebounds; currentninepins/primary/rawv53/exact11/priorprimary/E6-code-tests-workflows unchanged/build/routing/run_all12+42/diff. No new runner/build/constantmirrortests; acceptedE4170/E9nine preserved. FreshindependentFULL/sourceCI beforeboundedclosure/finalmetaaudit/finalallsevenfamiliesCI/executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E7-001.md`; proof `vault/EVIDENCE/E-DEV-086.md`. Actualrelease-custody-cost-rebuild-device proof HELD.
