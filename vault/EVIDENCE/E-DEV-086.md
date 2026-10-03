@@ -45,3 +45,11 @@ Initial read-only manual verifier failed a case-sensitive phrase assertion: the 
 Shared blind spot: reviewers and author may mistake a complete static checklist for actual Android build/custody/cost/device evidence. Independent FULL must compare canonical acceptance and all actual readiness holds; no physical release acceptance follows from documentary DONE.
 
 Root corrected manual verifier PASS: exact eight clauses/citations and eight actual held rows; nine pins/digest/raw v53/exact eleven paths/prior primary and E6/code/tests/workflows unchanged. Regenerated views: 79 rows, T-E7-001 REVIEW. run_all: all 12 checks and 42 regressions PASS (0.424s), worst exit 0; git diff --check PASS. Existing P-PROOF-001 freshness warning unchanged. These are author checks, not independent FULL or actual GitHub CI.
+
+## Bağımsız inceleme bulgusu ve dar düzeltme
+
+/root/e7001_android_checklist_full_review, ayrı görev bağlamında gpt-6-luna/max ile 9af9e9fc448dcfb14eb83165d5bd48cb0734533d başlığını inceledi ve CHANGES_REQUESTED verdi. Tek P2 bulgu: P-E7-001 alan 12 ham v53 özetini kanıtta istiyor; önceki kayıtta byte eşitliği yazsa da ham SHA-256 değeri açıkça yazılmamıştı. Önceki 15 başarılı CI bu eksiği kapatmaz.
+
+Ham v53 kopyası: `vault/EVIDENCE/SNAPSHOTS/E-DEV-085-E10-GOVERNED-PATHS-FOR-T-E7-001.md.snapshot`. Boyut: 179896 byte. Ham SHA-256: cf98a0040e04efdac05391918bae9b93a3033c6ae700def371d5ef620da1e5eb. Kaynak: ab133f3680d4acd6da72c87eb1a80f1965d5951e başlığındaki `vault/INVENTORIES/E10-GOVERNED-PATHS.md`; kaynak blobu ile ham kopya byte eşit ve aynı SHA-256 değerinde. Satır sonu normalleştirmesi uygulanmadan ölçüldü.
+
+Dar düzeltme yalnız kanıt ve görev geçmişine yazıldı; kaynak kontrol listesi, ham kopya, pack, envanter ve kod değişmedi. Yaşam döngüsü REVIEW → CHANGES_REQUESTED → dar düzeltme → REVIEW; yeni başlıkta tam bağımsız tekrar inceleme ve gerçek CI bekleniyor. Yazarın düzeltmesi bağımsız PASS değildir. Gerçek Android hazırlığı ve E6 yayın kararı HELD kalır.
