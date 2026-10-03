@@ -21,7 +21,7 @@ status: REVIEW
 
 # Media and history classification table
 
-Canonical T-E4-017 row125/F4.9.1/FL4.9.1/C4.1/acceptance192 requires criteria plus Q156/Q157 examples, rule only; mechanism remains in F4.1.1/F4.1.2. Harddeps T-E4-001/T-E4-003 are DONE internal checks at actualacceptedmainf04a10e542f9853f7551b4eabc3d8b0c43298419 after actual PR62/PR64 merges. They do not authenticate source semantics or complete E3 productR1. UnmergedPR75/unpublishedT015/T016 and their admissions/statuses are not consumed. Source planning pinfa914f, directownerstandingmandate/acceptedDEC0069; pendinglocalplanPR4/DEC0070 notacceptedmain.
+Current context: canonical T-E4-017 row125/F4.9.1/FL4.9.1/C4.1/acceptance192 criteria+Q156/Q157examples ruleonly; mechanismF4.1.1/F4.1.2 remainsseparate. Actualharddeps T001/T003 DONE ataccepted PR77 ac28ec4389fbf5cc0c12299695c04a51c6ccdb47; PR62 merge 6af8dbf323d2e688b7a6b2d4634e00971672af14 / PR64 merge d0b5b06778b8a2789c96f1454607e5de8140c6fc verifiedactualancestors. They do not authenticate semantics/media/mobile or close E3productR1. AcceptedT014/T015/T016 retained; rawv43custody/currentv44/sourcehistory reconciled. Originalf04/c8rejection/b205FULL/4e342metadata historical in E-DEV-076, not approval of changedsource. NewFULL/currentCI required. Planfa914f/standingowner/DEC0069 govern; unmergedlocalplanPR4 separate.
 
 ## Authoritative rule and evidence sources
 
@@ -58,7 +58,7 @@ These are source-derived rule examples, not actual corpus measurements, item cla
 
 E3/E6 own current authoritative classification and generation through E3 serving; E8 only derives/checks and cannot approve or reclassify. This table grants no semantic writer, source authenticity or canonical release permission. Actual consumed item/source/provenance/version/context must be verified at its owning runtime boundary; a fixture label or this review verdict cannot open it. A changed required/optional classification requires new reviewed current source/pinned complete-core context and revalidation under accepted T001/T003, never silently weakening the old accepted pin. Actual complete core/safety/recovery/generation/compatibility/negative floors/authority/storage/encryption/device/runtime/rendering remain MISSING/HELD. No new private import/public seam.
 
-Actual user data/physical media/classification/release/export/entitlement/download/deletion/key/provider/device effects absent. This static table cannot prove actual semantic classification or app enforcement. Existing source/profile/test helpers unchanged; no new units mirroring constants. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59/75 unchanged. Missing universal handoff stays MISSING/BLOCKED for affected operational/production handoff.
+Actual user data/physical media/classification/release/export/entitlement/download/deletion/key/provider/device effects absent. This static table cannot prove actual semantic classification or app enforcement. Existing source/profile/test helpers unchanged; no new units mirroring constants. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59 unchanged; actualPR75/76/77 accepted within bounded internal scopes. Missing universal handoff stays MISSING/BLOCKED for affected operational/production handoff.
 
 ## Trace
 

@@ -2,14 +2,15 @@
 test_id: E-DEV-076
 contract_id_version: "BR131..133; classification criteria v1"
 subject_file: vault/PROFILES/media-classification-table.md
-subject_digest: 692437558eedc4845f937c366bb08a88d452bc0c388faae89df7c8f6a017eb5f
-result: "PASS bounded documentary source review; current CI missing; runtime/physical proof HELD"
+subject_digest: 400283568feae96d0a99b2c0f9e9d1e11fcf80d548de5a42822957ce4079f198
+result: "RECORDED reconciled classification criteria; fresh FULL/currentCI pending; runtime HELD"
 evidence_links:
   - "vault/PROFILES/media-classification-table.md"
   - "vault/PACKS/P-E4-017.md"
   - "vault/REGISTRY/T-E4-017.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-017.md.snapshot"
-gate_verdict: PASS
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-075-E10-GOVERNED-PATHS-FOR-T-E4-017.md.snapshot"
+gate_verdict: "RECORDED fresh review pending; historical verdicts retained; physical/runtime HELD"
 reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; FULL PASS at b205c39b407639d472b42a1407cec6e3bf5400d3; prior CHANGES_REQUESTED retained"
 timestamp: 2026-10-03
 purpose: Record media and history classification criteria without authorizing semantic classification or storage effects
@@ -105,3 +106,9 @@ Narrow remediation verification: actual full PR64 object/ancestry validated, bui
 Owner-selected independent /root/e4_classification_independent_review, gpt-6-luna/max, returned FULL PASS for the complete documentary task at frozen b205c39b407639d472b42a1407cec6e3bf5400d3 against rejected c8be7d95cc1d01e6eaea6c0aee58614e41e22bab and accepted base f04a10e542f9853f7551b4eabc3d8b0c43298419. Prior blocking receipt corrected; full PR64 object and accepted-base ancestry checked. Mandatory source paths resolve and all11 allowed paths have expected change verbs. BR131..133/Q156..158 criteria, necessity/preservation guards, E3/E6 ownership and rule-only scope pass. Profile/source hashes match and raw snapshot is byte-equal to accepted v40. No remaining findings; actual prior CHANGES_REQUESTED remains history. Reviewer ran no tests or CI and made no edits.
 
 This PASS covers the bounded documentary source review only. Profile REVIEW, pack IN_PROGRESS and task REVIEW remain; no current CI, remote PR, DONE, actual item classification, runtime or physical proof claimed. These three receipt documents record the actual verdict without changing criteria/profile/hash/snapshot/custody/manifest/CI plan/views. A local receipt metadata audit remains required. Shared records must reconcile against fresh accepted main with a new frozen review/checks before publication; actual current CI and later final closeout metadata review remain required before merge.
+
+## Current accepted-main reconciliation / fresh FULL pending
+
+P-E4-017v2/exact13paths saved beforecurrentv43archive/EDEV075consumerwrites. ActualmainPR77 ac28ec4389fbf5cc0c12299695c04a51c6ccdb47 at2026-10-03T03:45:32Z/all12finalCI/actualPRT3/E4PR170PASS0.088s/independentfinal881/source351PASS. Sharedinventory/manifest/CI/priorEDEV072/views conflicts reconciled preservingacceptedT014/T015/T016/401/79/pendingv13v23v25. Trueacceptedv43rawarchive and historicalv40bytes retained. Currentprofileprimary 400283568feae96d0a99b2c0f9e9d1e11fcf80d548de5a42822957ce4079f198; original692437558eedc4845f937c366bb08a88d452bc0c388faae89df7c8f6a017eb5f historical. Old c8actualrejection/b205FULL/4e342metadata not currentapproval. All criteria/tables/ninecorefield meanings/conditionalexpandedexamples/E3E6E8authority/BR133Q158preservation unchanged. InitialunheadedTASK lifecycle explicitlyhistoricalbeforefuturecloseout; no currentstaleREVIEWstatementafterDONE. Root noticed v2scopepreptemporarily ran together merge+d0 commit text, corrected actual spacedfullhash beforecurrentfreeze; authorformatcleanup not an invented secondindependentrejection. FreshFULL/currentCI required, profileREVIEW/packIN_PROGRESS/taskREVIEW. Realitemclassifier/writer/mobile/key/encryption/device/corpus/runtime/physicalproof/universaloperationalhandoff remainMISSING/HELD. Currentrootverification pending, no authorPASS/DONE.
+
+Actual root preparation failure: reconciliation script initially searched a guessed spaced inventory paragraph prefix; actual source used different spacing, ValueError before inventory/profile/archive/proof updates. Attempted run_all on incomplete merge actuallyworstexit2/42regressionsPASS0.432/conflictmarkers remained. This is script/partial-merge verification failure, not an itemclassifier unit failure or secondindependentrejection. Reconciliation restarted from exactacceptedbase+ownfrozenHEAD deterministically for sharedrecords (no duplicateconsumerwrites), actualparagraph boundary checkedv40, completedremainingwrites. Retrybuild69/routingT017REVIEW/eligible[]/run_all12checks+42PASS0.421s/worst0/diffcheckPASS. Rawv40/v43byteequal/currentprofilehashmatches/T001T003actualDONEandancestry verified; criteria/table rows/nineQ156meanings unchanged fromhistoricalreviewedsource/manualBR131..133/Q156Q157Q158source read confirmssemantics. No newcode/mirrorunits/physicalclassification/measurement. FreshFULL/currentCI pending; failure/rejection/sourcehashhistory retained.

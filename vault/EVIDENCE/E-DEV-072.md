@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_offline_eligibility.py, modules/e10-graph
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-ELIGIBILITY-001]
-used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-017, E-DEV-076]
+used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-014, E-DEV-073, P-E4-015, E-DEV-074, P-E4-016, E-DEV-075, P-E4-017, E-DEV-076]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -76,6 +76,28 @@ Historical reviewed primary 32f71d985e137f3e65db0cbe6f0b19a2a9cf74f2d43c99f51426
 
 Final six-file metadata verification: build_index65/routingT013DONE/eligible[]; run_all12checksPASS +42 regressions PASS0.572s/worstexit0; diffcheckPASS/exact six paths. Original P-PROOF001 warning unchanged.
 
+## Secondary accepted custody receipt / T-E4-014 consumption
+
+PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 separate configuredgpt-6-luna/max finalmetadata PASS/no findings, actual final all12CI SUCCESS/PRT3SUCCESS37068102611/E4CI148PASS0.108s; normal matched mergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal offline eligibility task PASS retained. Original primary/hashes/source verdict/reviewer/history unchanged; this consumer/secondary receipt not new prior approval. Taxonomy/windows gate145, actual canonical eligibility/recovery/monotonic encrypted device cache/runtime HELD.
+
+## Historical initial v40 consumption receipt
+
+## Secondary accepted custody receipt / T-E4-015 consumption
+
+PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 had independent configuredgpt-6-luna/max finalmetadata PASS/no findings, actual final all12CI SUCCESS/PRT3SUCCESS37068102611/E4CI148PASS0.108s; normal matched mergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal eligibility task PASS preserved. Original primary/hash/source verdict/reviewer/history unchanged; consumer and secondary actual receipt only, not a new prior approval. Actual taxonomy/windows/eligibility/recovery/encrypted device runtime remain HELD. T015 no-plaintext gate independent of unmergedPR75, no positive storage authority.
+
+## Historical initial v40 consumption receipt
+
+## Secondary accepted custody receipt / T-E4-016 consumption
+
+PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 independentgpt6luna/max finalmetadata PASS/no findings, final12CI SUCCESS/actualPRT337068102611/E4CI148PASS0.108s; normalmatchedmergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal eligibility task PASS retained. Original primary/hashes/verdict/reviewer/history unchanged; consumer/actualsecondaryreceipt only, not priorproofrenewal. Physical eligibility/recovery/encrypteddevice gates HELD, pendingPR75 notaccepted. T016 source candidate registry grants no policy/physical authority.
+
+T016 historicalv40 consumption paragraph immediately above records as-ofPR74/f04 preparation: pendingPR75 was not accepted at that historical time. Current actualPR75e69/PR76b636 are accepted; present v43 task uses raw acceptedv42 archive and EDEV074actualsecondaryreceipt. Historical statement not a current unmerged claim; priorproof primary/reviewer/hash/verdict/body unchanged.
+
+## Historical initial v40 consumption / as-ofPR74 preparation
+
 ## Secondary accepted custody receipt / T-E4-017 consumption
 
 PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 independentgpt6luna/max finalmetadataPASS/no findings, actualfinal12CI SUCCESS/PRT337068102611/E4CI148PASS0.108s; normalmatchedmergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bdFULLinternaleligibilityPASS retained. Originalprimary/hash/verdict/reviewer/history unchanged; consumer/actualsecondaryreceipt only, no priorproofrenewal. T017 harddepsT001/T003 actualinternalDONE not physicalproof. Classification/physicaleligibility/recovery/encrypteddevice gatesHELD; unmergedPR75/unpublishedT015/T016 not consumed.
+
+The above T017initialv40consumption paragraph is historical as-ofPR74; actualPR75/76/77 now accepted. CurrentT017 uses trueacceptedv43archive/EDEV075secondaryreceipt. Original priorprimary/reviewer/verdict/hash/body retained, no old approval renewal.

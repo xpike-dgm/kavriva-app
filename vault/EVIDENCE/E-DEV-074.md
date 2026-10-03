@@ -1,0 +1,104 @@
+---
+test_id: E-DEV-074
+contract_id_version: "ADR009 R7; no-plaintext gate v1"
+subject_file: vault/PROFILES/no-plaintext-rule.md
+subject_digest: 6c003defbe89c31ee1bc0f8dc3e0c5488303b2bb103367897883a5e4adf02ba5
+result: "PASS full internal no-plaintext gate; actual encryption/key/device/runtime HELD"
+evidence_links:
+  - "vault/PROFILES/no-plaintext-rule.md"
+  - "vault/PACKS/P-E4-015.md"
+  - "vault/REGISTRY/T-E4-015.md"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-015.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-073-E10-GOVERNED-PATHS-FOR-T-E4-015.md.snapshot"
+  - "modules/e04-offline/internal/no_plaintext.py"
+  - "modules/e04-offline/tests/test_no_plaintext.py"
+  - ".github/workflows/e4-tests.yml"
+gate_verdict: "PASS internal gate acceptance only; production HELD"
+reviewer: "/root/t015_reconciled_full_review; gpt-6-luna/max; FULL task PASS at27500546714569973b1ad1d1645ee30773efe9a6; historical rejection and verdicts retained"
+timestamp: 2026-10-03
+purpose: Block plaintext local storage while encryption mechanism and key custody remain unproven
+domain: offline-storage
+module: e04-offline
+owner: E4
+implements: [ADR-009, ADR-001, C4.7, F4.7.1, R-001, R-003, R-004, R-007, R-011, R-013]
+public_contracts: []
+internal_scope: no-plaintext-rule
+tasks: [T-E4-015]
+tests: [modules/e04-offline/tests/test_no_plaintext.py, modules/e10-graph/checks/check_registration.py]
+superseded_by: []
+last_verified: 2026-10-03
+depends_on: [V-E4-PLAINTEXT-001]
+used_by: [V-E4-PLAINTEXT-001, P-E4-015, T-E4-015, P-E4-016, E-DEV-075]
+evidence: []
+supersedes: []
+status: RECORDED
+---
+
+# E-DEV-074 no-plaintext gate
+
+Historical initial source freeze: pre-code14field/exact13path pack saved before implementation. FULL independent review/current12CI/actualT3/finalmetadata audit were pending; actual current review receipt below; no author PASS/DONE. PendingPR75 not a dependency and its startup failure remains actual.
+
+Historical initial source-freeze observations follow; actual current review and remediation are recorded below.
+
+Canonical TASK_INDEX123/ADR009R7/C4.7/F4.7.1/FL4.7.1/acceptance141 requires no-plaintext gate only; exact mechanism/key/versions/device proof stays HELD under matrix146. No hard task dependencies. AcceptedbasePR74 f04a10e542f9853f7551b4eabc3d8b0c43298419 has148 E4 tests. PR75 T014 code/metadata is unmerged and not consumed; final CI was actual startup FAILURE on GitHub payment/spending notice. This independent local task does not resolve that block or accept T014. Source accepted planfa914f/localpendingplanPR4 distinguished; direct owner standing authorization and DEC0069 delegated review apply.
+
+LocalStorageIntent is frozen, with operation and representation only; no payload/path/key enters this model. Strict exact plain types and finite known labels are required; malformed/unknown/mutable/subclass/hostile values raise finite InvalidComposition reasons before any effect. READ/WRITE/STAGE/PROMOTE/COPY/BACKUP/RESTORE/MIGRATE/EXPORT/FALLBACK are local operation categories, not new product wire/API/storage formats. PLAINTEXT always returns BLOCKED_PLAINTEXT_LOCAL_STORAGE. ENCRYPTED and UNKNOWN both return HELD_ENCRYPTION_MECHANISM_KEY_CUSTODY_AND_DEVICE_PROOF_MISSING. A ciphertext label is not proof of local at-rest encryption or native storage/key lifecycle.
+
+guarded_dispatch evaluates the intent and returns the negative assessment without inspecting, invoking or returning a supplied handler; all routes are closed. Invalid intents also cannot invoke effects. All verdicts intrinsically NONE/local_storage_readyFalse, even a caller-constructed assessment with reason ALLOW. Frozen assessments/intent reject ordinary mutation. Constant production_gate ignores caller data/callbacks/claimed ciphertext/key metadata/HTTPS/cloud encryption/device flags and stays HELD_ENCRYPTED_LOCAL_RUNTIME_AND_KEY_LIFECYCLE_UNPROVEN. No fallback to plaintext on encrypted hold, invalid input or unknown mechanism.
+
+This is a standalone internal gate; no real mobile/filesystem/database/read/write/export/backup/restore/migration handler is wired, executed or authenticated. It cannot establish whole-app absence of plaintext. Actual enforcement integration and exact encryption library/version/native dependency/key custody/creation/loss/rotation/backup/restore/migration/device proof remain MISSING/HELD. No crypto/provider/SQLCipher/OS/keychain mechanism selected. SQLite/Drift working direction alone is not encryption proof. E5 account-light procedure is documentary, no private runtime imported; lack of local storage never implies forced cloud sign-in. Actual renderer/accessibility/device/runtime and broader product gates remain HELD. No user/content/history bytes or keys read, written, logged or deleted by this code.
+
+Ten new+accepted148 full158 E4 tests PASS0.251s; compile PASS. All10 operation categories across3 representations, strict invalid types/unknown values/subclasses/hostile callbacks/extreme integers/finite non-echo reasons, closed effect paths, frozen fields/intrinsic negative assessment, false complete encryption/cloud/key/device flags, unknown production data and encrypted-hold/plaintext-fallback rejection checked. These fixtures prove gate behavior only, not device confidentiality or real storage integration. No current executed unit failure or independent review verdict yet; all prior actual failure/review histories remain unchanged. E3R1 REVIEW/E5-003 IN_PROGRESS/unmergedPR47/57/59/75 unchanged.
+
+Historical initial source-review normalizedSHA256 at2ecc3fc6ef3f3041423cf3c112884e74f5e604c4:
+- vault/PROFILES/no-plaintext-rule.md: 41fd7fe60cabdc9be2ec311f9cd852172c62db7cbed968f1a8ac4561b6513f99
+- modules/e04-offline/internal/no_plaintext.py: 51bde38574980df420c5aa08f58d664d210de6e8595e884cbd740f89a6b22218
+- modules/e04-offline/tests/test_no_plaintext.py: e017de4bcaf78a4cb18273666f1b33887672f46a06bfda35d2319279f3a53624
+- .github/workflows/e4-tests.yml: 1bc5e117dcba3d37d1620bf789890d95034b1699049b51da26b98abaa0174f62
+- vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-015.md.snapshot: 19fe00119c1c8236e66ef7bcb6cf87f87f42ca03970d6df75f9dbadf8bec1f50
+
+Accepted v40 raw archive equal; localv42 reserves pendingv41 without claiming its merge/admissions. Original401/79/allaccepted admissions/pendingv13/v23/v25 retained. Prior EDEV072 consumer/secondary actualPR74 receipt only, original proof/hash/verdict/history unchanged. Shared custody/manifest/views must reconcile to latest acceptedmain before publication and review. Gap anchors `vault/PROFILES/no-plaintext-rule.md` / `vault/PACKS/P-E4-015.md` / `vault/REGISTRY/T-E4-015.md`.
+
+Source verification: build_index66/routingT015REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.450s/worstexit0. Original P-PROOF001 freshness warning unchanged. Full158 E4 PASS0.251s/compile. Frozen source includes only the13 pack paths; rawacceptedv40 archive equals actual Git blob. No provider/device encryption proof, no remote current-head CI executed for this local task yet.
+
+## Actual independent CHANGES_REQUESTED and narrow remediation
+
+Independent /root/e4_no_plaintext_independent_review (gpt-6-luna/max) reviewed full frozen2ecc3fc6ef3f3041423cf3c112884e74f5e604c4 againstacceptedmainf04a10e542f9853f7551b4eabc3d8b0c43298419 and returned CHANGES_REQUESTED. No code-level gate acceptance defect: all ten operations block plaintext, encrypted/unknown held, no effects, false claims cannot open production gate. Actual findings: field13 I-E10-PATHS-001 accidentally replaced by a repeated path list; field12 missing explicit handoff-template source and field14 missing canonical owner-option format reference. Reviewer verified13paths/rawacceptedarchive/profile/source/test/snapshot hashes; ran no tests/CI, made no edits. This is an actual review rejection, not an executed unit failure; not erased or relabeled PASS.
+
+Narrow remediation restores exact I-E10-PATHS-001 node and leaves paths only in field5; field12 explicitly cites accepted D-APP-DOC-004 v1 templates/PACK_TEMPLATE.md field12/source pointer for this bounded P-E4-015 v1 reviewer handoff, and preserves genuinely missing universal approved handoff-template ID as MISSING/BLOCKED for affected production/operational handoff. No fabricated new ID/general handoff protocol. Field14 explicitly cites pinned OWNER_STATUS_AND_ESCALATION BLOCKED option cards and format. Initial no-verdict statement in profile is now explicitly historical; primary digest updated, old source digest above preserved. Code/tests/archive/workflow/inventory/manifest/CI plan unchanged. Task CHANGES_REQUESTED -> narrow remediation -> REVIEW; independent FULL re-review required, no author PASS/DONE or green CI. Actual mechanism/key/device/wiring and account startup block still HELD.
+
+Current remediation profile normalizedSHA256: 3ad4314e409a6abb4ff58403b89b2156dc0eba7d09225a26d37b1d6b93ff8540; initial reviewed source profile 41fd7fe60cabdc9be2ec311f9cd852172c62db7cbed968f1a8ac4561b6513f99 preserved.
+
+Actual root remediation graph failure: run_all worstexit1,42regressionsPASS0.509s; check_links reported dangling reference to planning OWNER_STATUS_AND_ESCALATION path mistakenly formatted as an app-local code-path link. Reproduced targeted check_links FAIL (other targeted conformance/registration passed). Corrected field14 to exact accepted-plan fa914f GitHub source pointer/section; this tooling/link failure is preserved, not a unit-code failure or second independent rejection.
+
+Remediation graph verification after source-pointer correction: build_index66/routingT015REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.608s/worstexit0. Source/tests unchanged; initial full158PASS0.251s/compile preserved. Pending FULL independent re-review, no current-head CI or DONE/merge.
+
+## Independent FULL re-review PASS; CI remains pending
+
+Independent /root/e4_no_plaintext_independent_review (owner-selected gpt-6-luna/max) returned FULLPASS for the bounded internal T-E4-015 no-plaintext gate at reviewedsource3c367e1391986c15d59018e4f144d20654bb54d3 againstacceptedmainf04a10e542f9853f7551b4eabc3d8b0c43298419. No remaining acceptance/architecture findings. All prior CHANGES_REQUESTED findings closed: exact graph node restored/paths only field5; actual D-APP-DOC-004 v1 source pointer and P-E10-007 precedent support bounded task-pack reviewer handoff while missing universal handoff ID stays MISSING/BLOCKED for affected operational/production handoffs; canonical pinned owner-option format/section cited. Source/test implementation unchanged; original rejected-head/hash/failure/remediation history preserved; current profile digest matches. Reviewer made no edits and ran no tests/CI.
+
+Owner direct standing mandate/acceptedDEC0069 accepts this independent scoped review, but applicable exact-current-head CI is NOT present. Profile REVIEW, pack IN_PROGRESS and task REVIEW remain; no DONE/ACTIVE/merge or actual encryption activation. Actual mechanism/key custody/device/storage-wiring/whole-app absence of plaintext/production handoff remain MISSING/HELD. Standalone guard does not prove actual phone enforcement. Root158E4 PASS0.251s/compile and remediation12checks+42PASS0.608s remain actual historical local checks, not GitHub CI. Source-only local branch has no PR/push/current-head CI; GitHub PR75 startup payment/spending block and actual acceptedmain stillf04 unchanged.
+
+This receipt changes only proof/pack/task documentation. Separate metadata audit required at its frozen head; shared custody/manifest/views must reconcile and receive new frozen review/checks if accepted main advances before publication. No billing action/directmainpush/merge. No prior failure or rejection erased.
+
+Review-receipt metadata verification: build_index66/routingT015REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.470s/worstexit0, diffcheckPASS. Source/test bytes unchanged, current profile hash retained; existing freshness warning unchanged. Three receipt documents only; final independent metadata audit pending. No applicable remote current-head CI/merge/DONE.
+
+## Current accepted-main reconciliation / fresh review required
+
+Accepted PR75 e69ba23e0b41e4e13d2e869d8425c9c45dd73ea9 at2026-10-03T02:46:12Z; exact727/all12 actualCI SUCCESS/actualPRT3 executed/E4CI160PASS0.174s. Historical startup failures remain preserved. Owner fix observed by actual run, no agent billing action. Fresh P-E4-015v2 declared exactly15 paths before adding new v41 archive and EDEV073 secondary consumer/actual merge receipt. Merge conflicts in inventory/manifest/CI coverage/prior EDEV072/views were resolved retaining both tasks; generated views must rebuild. Raw v41 snapshot equals accepted Git blob; historical rawv40 snapshot unchanged. Original code/tests unchanged; all prior rejection/remediation/FULL3c/metadata0cb are historical, not approval of new reconciled source. Current profile digest 1bbd44440dad13fd8366848776db39d1d2e19b2190eea67c4f174bdc036a568c; previous3ad4314e409a6abb4ff58403b89b2156dc0eba7d09225a26d37b1d6b93ff8540 remains historical. Fresh FULL gpt-6-luna/max review and current12CI/actualT3/final metadata audit required. Profile REVIEW/pack IN_PROGRESS/task REVIEW, no DONE. Actual local encryption/key custody/device/mobile wiring/whole-app enforcement and universal operational handoff remain MISSING/HELD. Current root verification pending.
+
+Actual reconciliation verification: build_index67/routingT015REVIEW/eligible[]; all170 E4 units PASS0.231s/compilePASS; run_all12checks+42regressionsPASS0.476s/worstexit0; originalP-PROOF001 warning unchanged. DiffcheckPASS. Original code/test bytes match historical3c; original v40 archive raw bytes unchanged; new acceptedv41 snapshot raw bytes equal actual e69ba23e0b41e4e13d2e869d8425c9c45dd73ea9 Git blob. Fresh independent FULL review pending, not author acceptance.
+
+## Actual FULL review and source CI acceptance / bounded task closure
+
+Independent /root/t015_reconciled_full_review, owner-selected gpt-6-luna/max, returned FULL task PASS at27500546714569973b1ad1d1645ee30773efe9a6 against acceptedmaine69ba23e0b41e4e13d2e869d8425c9c45dd73ea9, no findings. Reviewer independently inspected15paths/all14packfields/exact acceptedmain ancestry/source-test preservation/rawv40+v41byteequal/currentprofiledigest/priorproofconsumer-only/T014coverage; no edits/tests/CI by reviewer. Original2ecc actualCHANGES_REQUESTED/3cFULLPASS/0cbmetadataPASS remain tied to historical bytes and retained.
+
+Root actual source275 all13 runs SUCCESS: PR architecture37091465258 and37091465280 (label/open events), E337091465290, live37091465281, E437091465304, E537091465275, E637091465270; push architecture37091452495, E337091452418, live37091452401, E437091452387, E537091452380, E637091452411. Both PR T3 gates actually5stepsSUCCESS/architecture7steps, E4 PR log170PASS0.195s. Root local170PASS0.231s/compile/root12checks+42PASS0.461s/worstexit0/build67/routingREVIEW/rawarchives/code-preservationPASS. This is actual CI execution, not reviewer-reported test execution.
+
+Standing owner mandate/acceptedDEC0069 accepts bounded internal gate FULL review and actual sourceCI. T-E4-015 REVIEW -> DONE / profile REVIEW -> ACTIVE / pack IN_PROGRESS -> DONE only for canonical acceptance Mechanism HELD; plaintext blocked at gate. Entire task's gate acceptance satisfied, no partial-production claim. This6filecloseout changes only profile/pack/task/proof/twogeneratedviews; source/tests/workflow/manifest/inventory/archives/priorproofs unchanged. New final metadata audit and all applicable exact-final-head CI/actualPRT3/executedE4 required before normal matched merge. Current task not accepted into main until actual PR76 merge. Actual encryption/key custody/native/device/mobile integration/whole-app confidentiality/universal operational handoff remain MISSING/HELD; other product/held tasks unchanged. Historical startupfailures/linkfailures/rejections preserved, no billing/admin/mainpush.
+
+Historical reconciled-source profile digest1bbd44440dad13fd8366848776db39d1d2e19b2190eea67c4f174bdc036a568c retained; current ACTIVE primary 6c003defbe89c31ee1bc0f8dc3e0c5488303b2bb103367897883a5e4adf02ba5. No old PASS renewed over altered subject.
+
+## Secondary accepted custody receipt / T-E4-016 consumption
+
+PR76 final39215b71de7e13c708d860126f6c15eb51eeff76 / FULLsource27500546714569973b1ad1d1645ee30773efe9a6 independently PASS by owner-selectedgpt-6-luna/max /root/t015_reconciled_full_review; no findings. Actual all13sourceCIgreen (open+labelextraarch), all12finalCI SUCCESS: PRarch37091865593/E337091865674/live37091865529/E437091865545/E537091865614/E637091865550; pusharch37091862751/E337091862697/live37091862706/E437091862695/E537091862694/E637091862741. ActualPRT35stepsSUCCESS/checks7steps/E4PR170PASS0.085s. Normal matched merge b636145c700ba00acb2da29eafe9fe78658bc0d1 verified2026-10-03T03:08:23Z. Fullscope internal no-plaintext gate only; actual encryption/key/native/device/mobile/wholeapp enforcement remainsHELD. Original primary/hash/FULLverdict/reviewer/actualrejections/failures retained; documentary consumer and actual secondary receipt only, not renewed priorapproval.
