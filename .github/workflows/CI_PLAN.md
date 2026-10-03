@@ -72,6 +72,8 @@ used_by:
   - "E-DEV-083"
   - "P-E9-010"
   - "E-DEV-084"
+  - "P-E9-011"
+  - "E-DEV-085"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -276,3 +278,7 @@ Exact15 source clauses/citations/qualifiers/HOLD/assistance/role/seam negative c
 ## E9 ambiguity-HOLD documentary coverage
 
 Manual condition-to-HOLD/reason/no-fallback seven-row matrix, qualifiednever15/allowed10/roles/seams/source consistency; currentninepins/primary/rawv51/exact11/priorprimary/acceptedcode-tests-workflows unchanged/build/routing/run_all12+42/diff. ExistingE4170/E9nine preserved/no mirroredunits. FULL/sourceCI before boundedclosure; finalmetadata/currentheadallsevenfamilies+executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E9-010.md`; proof `vault/EVIDENCE/E-DEV-084.md`. Actual semantic/runtime/physical proof HELD.
+
+## E9 role/notice documentary coverage
+
+Manual role mapping/sixexactnoticeheadings-completefields/negativecases/DEC0068-69/E10ownership/E9-E3-E1; ninecurrentpins/primary/rawv52/exact11/priorprimary/E10sourceandacceptedcode-tests-workflows unchanged/build/routing/run_all12+42/diff. No mirroredconstanttests/newworkflowmechanism, E4170/E9nine retained. IndependentFULL+sourceCI then boundedclosure/finalmetaaudit/currentallsevenfamilyCI/executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E9-011.md`; proof `vault/EVIDENCE/E-DEV-085.md`. Realexternalqualification/runtime/device proof HELD.
