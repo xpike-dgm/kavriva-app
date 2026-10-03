@@ -82,6 +82,8 @@ used_by:
   - "E-DEV-088"
   - "P-E7-003c"
   - "E-DEV-089"
+  - "P-E7-004"
+  - "E-DEV-090"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -306,3 +308,7 @@ Exacteightclauses/citations/actualeightMISSINGHELDrows/E6decision-nopolicy/negat
 ## E7 beşinci iOS kanıtı belge kapsamı
 
 Beşinci HELD/iki altgereksinim/negatifler/Android bağımsızlığı/E6 sınırı; on bir kaynak pini/profil ve hamv56hash-byte eşitliği/11yol/priorprimary korunması/12+42/build/routing/diff. Kod/test/workflow değişmez; E4170/E9nine korunur. Kaynak bağımsız FULL+CI; sonaltıdosyakapanış/metaaudit/sonCI ve gerçekT3 olmadan merge yok. Pack `vault/PACKS/P-E7-003c.md`; kanıt `vault/EVIDENCE/E-DEV-089.md`.
+
+## E7 derleme ve yayın sorumluluklarının ayrımı belge kapsamı
+
+Yedi görev/beş sahiplik yasağı/fiziksel bağımsızlık HELD/negatifler/Android bağımsızlığı/E6 sınırı; on iki kaynak pini/profil ve hamv57hash-byte eşitliği/11yol/priorprimary korunması/12+42/build/routing/diff. Kod/test/workflow değişmez; E4170/E9nine korunur. Kaynak bağımsız FULL+CI; sonaltıdosyakapanış/metaaudit/sonCI ve gerçekT3 olmadan merge yok. Pack `vault/PACKS/P-E7-004.md`; kanıt `vault/EVIDENCE/E-DEV-090.md`.

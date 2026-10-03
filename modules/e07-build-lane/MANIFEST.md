@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e07-build-lane"
 owner: "E7"
 depends_on: [M-E3-001, M-E6-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086, V-E7-IOS-ACCESS-001, P-E7-003a, E-DEV-087, V-E7-IOS-RECOVERY-001, P-E7-003b, E-DEV-088, V-E7-IOS-CLEAN-001, P-E7-003c, E-DEV-089]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086, V-E7-IOS-ACCESS-001, P-E7-003a, E-DEV-087, V-E7-IOS-RECOVERY-001, P-E7-003b, E-DEV-088, V-E7-IOS-CLEAN-001, P-E7-003c, E-DEV-089, V-E7-SEPARATION-001, P-E7-004, E-DEV-090]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E7"
 public_contracts:
   - "[[modules/e07-build-lane/MANIFEST.md#Public contract surface]]"
 internal_scope: "Lane scripts, runner configs, signing-execution plumbing, cost dashboards. Policy texts stay in E6; this capsule proves compliance per run."
-tasks: [T-E10-001, T-E10-006, T-E7-001, T-E7-003a, T-E7-003b, T-E7-003c]
+tasks: [T-E10-001, T-E10-006, T-E7-001, T-E7-003a, T-E7-003b, T-E7-003c, T-E7-004]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -100,3 +100,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E7-003c beşinci iOS kanıtı
 
 `vault/PROFILES/ios-clean-room-proof.md` gerçek temiz yeniden derleme ve sağlayıcı değiştirme için HELD değerlendirmesini kaydeder. E6 politikası değişmez; gerçek erişim/anahtar/mağaza eylemi veya taahhüt yok. Pack `vault/PACKS/P-E7-003c.md`, kanıt `vault/EVIDENCE/E-DEV-089.md`; bağımsız tam inceleme/CI bekleniyor.
+
+## T-E7-004 derleme ve yayın sorumluluklarının ayrımı
+
+`vault/PROFILES/lane-separation-check.md` yedi deklarasyon sınırını ve sağlayıcının yetki devralmaması kuralını kaydeder; gerçek fiziksel bağımsızlık HELD. E6 politikası değişmez; gerçek erişim/anahtar/mağaza eylemi veya taahhüt yok. Pack `vault/PACKS/P-E7-004.md`, kanıt `vault/EVIDENCE/E-DEV-090.md`; bağımsız tam inceleme/CI bekleniyor.
