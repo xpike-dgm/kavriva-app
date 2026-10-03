@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e07-build-lane"
 owner: "E7"
 depends_on: [M-E3-001, M-E6-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086, V-E7-IOS-ACCESS-001, P-E7-003a, E-DEV-087]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E7"
 public_contracts:
   - "[[modules/e07-build-lane/MANIFEST.md#Public contract surface]]"
 internal_scope: "Lane scripts, runner configs, signing-execution plumbing, cost dashboards. Policy texts stay in E6; this capsule proves compliance per run."
-tasks: [T-E10-001, T-E10-006, T-E7-001]
+tasks: [T-E10-001, T-E10-006, T-E7-001, T-E7-003a]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -88,3 +88,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E7-001 Android eight-item checklist
 
 `vault/PROFILES/android-lane-checklist.md` records exacteight ADR013R1requirements and eight actualMISSING/HELDreadinessrows; definesnopolicy/HELDunlesscurrentE6decides/no build-signing-submission. E6owns/E7executes/E3serves/E1fixtureonly/AndroidindependentiOSMac. Context `vault/PACKS/P-E7-001.md`; proof `vault/EVIDENCE/E-DEV-086.md`. FreshFULL/currentCIpending, no physicalrelease/deviceproof.
+
+## T-E7-003a ilk iki iOS kanıtı
+
+`vault/PROFILES/ios-access-custody-proof.md` gerçek Mac/Xcode ve Apple emaneti/roller için ayrı HELD değerlendirmesini kaydeder. E6 politikası değişmez; gerçek erişim/anahtar/mağaza eylemi veya taahhüt yok. Pack `vault/PACKS/P-E7-003a.md`, kanıt `vault/EVIDENCE/E-DEV-087.md`; bağımsız tam inceleme/CI bekleniyor.
