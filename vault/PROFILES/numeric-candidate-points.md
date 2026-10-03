@@ -21,7 +21,7 @@ status: REVIEW
 
 # Candidate-points HELD registry
 
-Canonical T-E4-016 taskrow124/ADR009R8/C4.8/F4.8.1/FL4.8.1/acceptance142 accepts a HELD registry only. No hard task dependencies. Actual accepted appbasef04a10e542f9853f7551b4eabc3d8b0c43298419(PR74); unmergedPR75T014 and unpublishedT015 not consumed. Actual code/product/device/corpus/encryption/selection remain separate. Local branch reservations/graph checks do not establish accepted merge or numeric policy.
+Current context: canonical T-E4-016 row124/ADR009R8/C4.8/F4.8.1/FL4.8.1/acceptance142 accepts only HELD candidate registry, no harddependencies. Actual accepted PR76 b636145c700ba00acb2da29eafe9fe78658bc0d1 includes T014/T015/170E4units/v42. Fresh v43 source reconciled with all accepted admissions/history; original f04/FULLb054/metadata8e01 are historical only in E-DEV-075. FreshFULL/currentCI required. Actual code/product/device/corpus/encryption/selection remain separate and HELD; graph/local reservations do not select numeric policy.
 
 ## Approved ADR009 candidate text (verbatim expressions)
 
@@ -59,6 +59,6 @@ Real guide/media corpus distribution and safety classification, device storage c
 
 ## Trace and bounded scope
 
-ADR009R8 -> C4.8 -> F4.8.1 -> FL4.8.1 -> T-E4-016 -> M-E4-001 -> E-DEV-075. This registry records the source candidates only, no runtime/API/UI/provider/key/device action. E4/E3/E1 render boundaries unchanged; no private import or new public seam. Actual Owner-view/rendering/accessibility not implemented. Missing universal operational handoff remains MISSING/BLOCKED per installed template. Direct owner standing acceptance/acceptedDEC0069 delegated independent review applies; pending localplanPR4/DEC0070 not acceptedmain. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59/75 unchanged.
+ADR009R8 -> C4.8 -> F4.8.1 -> FL4.8.1 -> T-E4-016 -> M-E4-001 -> E-DEV-075. This registry records the source candidates only, no runtime/API/UI/provider/key/device action. E4/E3/E1 render boundaries unchanged; no private import or new public seam. Actual Owner-view/rendering/accessibility not implemented. Missing universal operational handoff remains MISSING/BLOCKED per installed template. Direct owner standing acceptance/acceptedDEC0069 delegated independent review applies; pending localplanPR4/DEC0070 not acceptedmain. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59 unchanged; PR75/76 actually accepted within their internal scopes.
 
 Pack `vault/PACKS/P-E4-016.md`; task `vault/REGISTRY/T-E4-016.md`; proof `vault/EVIDENCE/E-DEV-075.md`. FULL independent task review/exact-head CI before DONE; no author PASS/selected policy.

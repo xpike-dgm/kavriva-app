@@ -2,14 +2,15 @@
 test_id: E-DEV-075
 contract_id_version: "ADR009 R8; held candidate registry v1"
 subject_file: vault/PROFILES/numeric-candidate-points.md
-subject_digest: 6be6c69d04b4ae7c00dbef9df6bcd92eaef115578df00c618b7dd43338010c96
-result: "PASS independently reviewed documentary candidate registry; exact-head CI missing; policy HELD"
+subject_digest: a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a70a423329b
+result: "RECORDED reconciled registry; fresh FULL/currentCI pending; numeric policy HELD"
 evidence_links:
   - "vault/PROFILES/numeric-candidate-points.md"
   - "vault/PACKS/P-E4-016.md"
   - "vault/REGISTRY/T-E4-016.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
-gate_verdict: "PASS bounded documentary source only; exact-head CI missing; numeric policy HELD"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-074-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
+gate_verdict: "RECORDED fresh review pending; historical PASS retained; policy HELD"
 reviewer: "/root/e4_held_points_independent_review; gpt-6-luna/max; FULLPASS atb054c96d61e8aa83559ad63ec42edb6aab120b24"
 timestamp: 2026-10-03
 purpose: Register source-attributed held storage test points without selecting numeric product policy
@@ -97,3 +98,9 @@ This FULLPASS accepts complete bounded documentary registry scope only under dir
 Receipt only changes proof/pack/task. Separate finalmetadataaudit on frozenreceipt/current-headCI needed beforemerge. Originalsourcehash/oldprimary/priorproof/401catalog/79folders/admissions/pendingv13v23v25 and all actual failure histories preserved. Actualcorpus/device/encryption/key/native/runtime andT018measurement/matrix142/146policyselection remainMISSING/HELD. No provider/version/format/budget/policy/financialaction chosen.
 
 Review-receipt metadata verification: build_index66/routingT016REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.585s/worstexit0/diffcheckPASS; existing P-PROOF001 warning unchanged. Three receipt docs only; profile/snapshot/inventory/manifest/CIplan/index/source content unchanged. Independent frozen finalmetadataaudit/currentCI still required.
+
+## Current accepted-main reconciliation / fresh FULL required
+
+P-E4-016v2 declared exactly13paths before new acceptedv42 snapshot/EDEV074 consumerwrites. Actual acceptedmain b636145c700ba00acb2da29eafe9fe78658bc0d1 PR76 at2026-10-03T03:08:23Z; all12finalCI/actualPRT3/E4PR170PASS0.085s and independentFULL275/final392PASS. Earlier account startup failures resolved by owner; histories retained, no agentbillingaction. Reconciled shared inventory/manifest/CI coverage/EDEV072/view conflicts retaining allT014/T015 code/admissions/history and original401/79/pendingv13v23v25. Fresh acceptedv42 raw archive byte-equal; historicalv40unchanged. All8 sourceexpressions/tables unchanged, no new executable thresholds/mirrorunits/device/corpus/measurement. Current profile primary a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a70a423329b; historical6be6c69d04b4ae7c00dbef9df6bcd92eaef115578df00c618b7dd43338010c96 retained. Historical FULLb054/metadata8e01 notapprovalofchangedbytes. FreshFULL/currentCI required; profileREVIEW/packIN_PROGRESS/taskREVIEW. Current local verification pending, no authorPASS/DONE/mainacceptance. Actual measurements/T018/key/native/encryption/device/mobile/productionnumericselection/universaloperationalhandoff remainMISSING/HELD.
+
+Actual root reconciliation verification: all8 source expressions match pinned approvedADR009/olderDEBATE017 separately; source table rows byte-unchanged from originalreviewedregistry; newv42/historicalv40 rawarchives equal actualGitblobs; profileprimarymatches. build_index68/routingT016REVIEW/eligible[]/run_all12checks+42regressionsPASS0.453s/worstexit0/diffcheckPASS; originalP-PROOF001warningunchanged. No new mirrorunit or runtimeclaim for static registry. FreshFULL review/currentCI pending.
