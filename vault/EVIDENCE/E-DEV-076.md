@@ -3,14 +3,14 @@ test_id: E-DEV-076
 contract_id_version: "BR131..133; classification criteria v1"
 subject_file: vault/PROFILES/media-classification-table.md
 subject_digest: 692437558eedc4845f937c366bb08a88d452bc0c388faae89df7c8f6a017eb5f
-result: "RECORDED classification criteria/examples; FULL independent review required"
+result: "PASS bounded documentary source review; current CI missing; runtime/physical proof HELD"
 evidence_links:
   - "vault/PROFILES/media-classification-table.md"
   - "vault/PACKS/P-E4-017.md"
   - "vault/REGISTRY/T-E4-017.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-017.md.snapshot"
-gate_verdict: RECORDED
-reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; CHANGES_REQUESTED atc8be7d95cc1d01e6eaea6c0aee58614e41e22bab; narrow remediation re-review pending"
+gate_verdict: PASS
+reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; FULL PASS at b205c39b407639d472b42a1407cec6e3bf5400d3; prior CHANGES_REQUESTED retained"
 timestamp: 2026-10-03
 purpose: Record media and history classification criteria without authorizing semantic classification or storage effects
 domain: offline-classification
@@ -99,3 +99,9 @@ Reviewer found criteria/Q156Q157 examples/BR131..133 necessity and preservation/
 Only pack/proof/task remediation; profile/criteria/source hash/rawarchive/inventory/manifest/CI plan/views unchanged. Actual rejection preserved, no relabeling as PASS or code/unit failure. Task CHANGES_REQUESTED -> narrow documentary remediation -> REVIEW pending independent FULL re-review. Current CI missing, no author DONE/ACTIVE/merge or actual semantic classification/runtime/physical proof. Billing startup block/other tasks' actual histories unchanged.
 
 Narrow remediation verification: actual full PR64 object/ancestry validated, build_index66/routingT017REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.535s/worstexit0/diffcheckPASS. Exactly pack/proof/task changed from rejected head; profile/sourcehash/criteria/snapshot/inventory/manifest/CIplan/views unchanged. Existing P-PROOF001 warning unchanged; no units/runtime/currentCI or authorPASS/DONE.
+
+## Actual independent FULL re-review PASS
+
+Owner-selected independent /root/e4_classification_independent_review, gpt-6-luna/max, returned FULL PASS for the complete documentary task at frozen b205c39b407639d472b42a1407cec6e3bf5400d3 against rejected c8be7d95cc1d01e6eaea6c0aee58614e41e22bab and accepted base f04a10e542f9853f7551b4eabc3d8b0c43298419. Prior blocking receipt corrected; full PR64 object and accepted-base ancestry checked. Mandatory source paths resolve and all11 allowed paths have expected change verbs. BR131..133/Q156..158 criteria, necessity/preservation guards, E3/E6 ownership and rule-only scope pass. Profile/source hashes match and raw snapshot is byte-equal to accepted v40. No remaining findings; actual prior CHANGES_REQUESTED remains history. Reviewer ran no tests or CI and made no edits.
+
+This PASS covers the bounded documentary source review only. Profile REVIEW, pack IN_PROGRESS and task REVIEW remain; no current CI, remote PR, DONE, actual item classification, runtime or physical proof claimed. These three receipt documents record the actual verdict without changing criteria/profile/hash/snapshot/custody/manifest/CI plan/views. A local receipt metadata audit remains required. Shared records must reconcile against fresh accepted main with a new frozen review/checks before publication; actual current CI and later final closeout metadata review remain required before merge.
