@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E4-016"
+  - "E-DEV-075"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 candidate-points documentary coverage
+
+`vault/PROFILES/numeric-candidate-points.md` is source-attributed HELD registry only; no new runtime/constants/thresholds or tests mirroring documentary values. Existing E4workflow148units acceptedbase unchanged; pendingPR75T014/T015tests not consumed. Graph registration/link/trace/custody checks and independent manual verbatim source review required. Context `vault/PACKS/P-E4-016.md`; proof `vault/EVIDENCE/E-DEV-075.md`. All6workflowfamilies/current12CI/actualT3/FULLtask/finalmetadata requirements retained, no workflow/gatepolicy change. Actualcorpus/device/encryption/numericpolicy gates HELD; startup billing block not a localcheck PASS substitute.
