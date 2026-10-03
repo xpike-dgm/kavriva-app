@@ -3484,6 +3484,51 @@
    "evidence": "E-DEV-079",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-002",
    "status": "DONE"
+  },
+  {
+   "task_id": "T-E9-003",
+   "flow_feature": "FL9.2.1/F9.2.1",
+   "objective": "Economy skeleton",
+   "context_pack": "P-E9-003",
+   "acceptance": "Cheapest-adequate first; nothing selected/logged/budgeted",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Record cheapest adequate assistance principle while model selection and economics remain held",
+   "domain": "assistant-economy",
+   "module": "e09-ai",
+   "owner": "E9",
+   "implements": [
+    "ADR-014",
+    "ADR-001",
+    "C9.2",
+    "F9.2.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "economy-skeleton",
+   "tasks": [
+    "T-E9-003"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [],
+   "used_by": [
+    "V-E9-ECONOMY-001",
+    "P-E9-003",
+    "E-DEV-078"
+   ],
+   "evidence": "E-DEV-078",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-003",
+   "status": "DONE"
   }
  ]
 }

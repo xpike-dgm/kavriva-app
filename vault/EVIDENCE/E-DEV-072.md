@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_offline_eligibility.py, modules/e10-graph
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-ELIGIBILITY-001]
-used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-014, E-DEV-073, P-E4-015, E-DEV-074, P-E4-016, E-DEV-075, P-E4-017, E-DEV-076, P-E9-001, E-DEV-077]
+used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-014, E-DEV-073, P-E4-015, E-DEV-074, P-E4-016, E-DEV-075, P-E4-017, E-DEV-076, P-E9-001, E-DEV-077, V-E9-ECONOMY-001, P-E9-003, E-DEV-078]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -109,3 +109,11 @@ The above T017initialv40consumption paragraph is historical as-ofPR74; actualPR7
 Actual PR74 merged at f04a10e542f9853f7551b4eabc3d8b0c43298419 on2026-10-02T21:43:00Z; published final27ad1d0b5e97aef1bd7508204c3b4048456efcd3, FULL sourceacc77bdea437b5c19a318ca5dcc2815709959a59 and separate final metadata review PASS, all source/final12CI actualPRT3 green. This appended secondary historical receipt/consumer does not refresh original primary/hash/source-verdict/reviewer/activation. T-E9-001 archives actual accepted v40 for custody only; it does not depend on E4 offline eligibility or pending PR75/T015/T016/T017. Raw accepted archive `vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot` byte-equal. New source evidence `vault/EVIDENCE/E-DEV-077.md`/pack `vault/PACKS/P-E9-001.md`/profile `vault/PROFILES/five-option-proposals.md`; current task CI/independent review missing, no borrowed PASS/DONE.
 
 The preceding E9 original preparation is historical at PR74; PR75..78 now actually accepted. Current E9 source uses trueacceptedv44 archive/EDEV076 secondary receipt; no prior primary/hash/reviewer/history renewal.
+
+## Historical initial v40 economy consumption at PR74
+
+## Secondary accepted-main receipt and documentary T-E9-003 consumer
+
+Actual PR74 mergef04a10e542f9853f7551b4eabc3d8b0c43298419 on2026-10-02T21:43:00Z, publishedfinal27ad1d0b5e97aef1bd7508204c3b4048456efcd3/sourceacc77bdea437b5c19a318ca5dcc2815709959a59 FULL and finalmetadataPASS/allsourcefinal12CIactualPRT3green. This appended historical secondary receipt does not refresh original primary/hash/sourceverdict/reviewer/physical activation. T-E9-003 consumes custody only/archives actual acceptedv40 raw byte-equal at `vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot`; no task dependency on E4 offline eligibility or pendingPR75/T015/T016/T017/T-E9-001. New profile `vault/PROFILES/economy-skeleton.md`/pack `vault/PACKS/P-E9-003.md`/proof `vault/EVIDENCE/E-DEV-078.md`; actualcurrentreviewCI absent/no borrowedPASS/DONE.
+
+The preceding economy initialpreparation is historicalasofPR74; actualPR75..80nowaccepted. Current source uses trueacceptedv46archive/EDEV079actualsecondaryreceipt; no priorprimary/hash/reviewer/historyapproval renewed.

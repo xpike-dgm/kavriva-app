@@ -60,6 +60,8 @@ used_by:
   - "E-DEV-077"
   - "P-E9-002"
   - "E-DEV-079"
+  - "P-E9-003"
+  - "E-DEV-078"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -240,3 +242,7 @@ New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_op
 ## E9 six-dimension checklist documentary coverage
 
 Manual pinned ADR014R1 six-row/source-role/negative-consistency and CON001 comparison; graph registration/links/custody/views/run_all12+42/currentprofilehash/rawv45archive/diff/exact11; no staticconstant mirror units, code orworkflowchange. Existing E9nine/E4170 unitdiscovery preserved, actualcurrent7family14nominalCI/allactualevents/actualPRT3/E9-E4logs/FULLsource/finalmetadata gatesbeforematchedmerge. Checklistreview is not actualE3canonicalverification or E1 rendering/device/physicalproof. Pack `vault/PACKS/P-E9-002.md`; proof `vault/EVIDENCE/E-DEV-079.md`.
+
+## E9 economy skeleton documentary coverage
+
+`vault/PROFILES/economy-skeleton.md`/context `vault/PACKS/P-E9-003.md`/proof `vault/EVIDENCE/E-DEV-078.md`: static approved principle only, no code/workflow/new unit tests mirroring constants. Manual pinned ADR014 Decision2/F9.2.1/FL9.2.1/C9.2 comparison and existing views/run_all/sourcehash/rawarchive checks. Actual adequate-model/need/cost selection evidence/provider/runtime remains HELD, nothing selected/logged/budgeted. Historical account startup block owner-resolved with observableexecutedgreenCI; newexactheadCI stillrequired; independent FULL source/final metadata/current applicable CI actualPRT3 required before DONE/merge. Actualacceptedsevenfamilies/E9workflow require allactualnewheadruns nominal14 and actualPRT3/E9nine/E4170 execution; currentT001/002 accepted, sourceFULL/currentCI/finalaudit gates. No gate weakening or financial action.

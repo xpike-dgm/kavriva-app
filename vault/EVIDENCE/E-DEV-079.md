@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-VERIFY-001]
-used_by: [V-E9-VERIFY-001, P-E9-002, T-E9-002]
+used_by: [V-E9-VERIFY-001, P-E9-002, T-E9-002, P-E9-003, E-DEV-078]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -59,3 +59,11 @@ Actual E3 current source-fit-approval-prerequisite-safety-provenance producers/r
 Historical88 sourceprofile54ca8710d9de570344b71f4e01ed9791869cd0a92bc38123bce8204f139bf743 retained; currentACTIVEprimary 85b0b47cb5d9f7ddc5af7af063d5413a1f9f0746d7eb6b29c947ad350c23b3ac. No actualcandidate/source producer activated.
 
 Root six-file closeout verification: build_index71/routingT-E9-002DONE/eligible[]/run_all12checks+42regressionsPASS0.458s/worst0/diffcheckPASS. Current ACTIVE primary85b0b47cb5d9f7ddc5af7af063d5413a1f9f0746d7eb6b29c947ad350c23b3ac matches; source54ca8710 historical. Exactsource88 parentc321 scopedpack-before-writes, c321 parentactualaccepted6d; acceptedbase is ancestor, no direct-parent claim. No checklist rows/criteria/code/tests/workflow/rawarchive/inventory/manifest/CIplan/priorproof changed. Finalmetadata/finalheadCI/actualmatchedmerge pending, not claimed.
+
+## Secondary accepted PR80 receipt / T-E9-003 documentary consumer
+
+Actual independent sourceFULL PASS88d25a24ea7a27e16f7996dae4c8e4d05c6f90df and final six-file metadata PASS e28d31194debec95cf60430e9b862095b9803303 by /root/e9002_six_dimension_full_review owner-selected gpt-6-luna/max/no findings/no reviewerexecution. Full canonical six-dimension checklist accepted; actualcandidateverification/E3producers/E1runtime/device/physical/handoff notproved. Source88 parentc321 scopedpack-before-writes, c321 parentacceptedPR79 main6d, acceptedbase ancestor notdirectparent. Actual root link-check failure and correction remain recorded, no independentrejectioninvented.
+
+Actual all15source and all14final CI SUCCESS. Final PRarchitecture37098145391/E337098145374/live37098145389/E437098145371/E537098145370/E637098145397/E937098145381; pusharchitecture37098143307/E337098143301/live37098143269/E437098143262/E537098143293/E637098143273/E937098143248. Actual PR T3job111132181473five executedstepsSUCCESS/checks111132181318sevenSUCCESS/E4PR170PASS0.169s/E9PR9PASS0.001s. Root final graph12+42PASS0.458/build71/routingDONE/diff6 and profileACTIVEprimary85b0b47cb5d9f7ddc5af7af063d5413a1f9f0746d7eb6b29c947ad350c23b3ac separatelyattributed. Actual FULL/metadata externalverdicts and finalheadgates distinct, no selfapproval/no priorprimaryrenewal/no production activation.
+
+NormalmatchedPR80 merge 24fd76711f49c248489804b298fd231ce8c16f87 at 2026-10-03T11:59:50Z verified. Originalprimary/profile/sourcehash/sourceverdict/reviewer/history unchanged; actualsecondaryreceipt/documentaryconsumer only, no renewedpriorapproval. Original pendingfinalgates observations above asofsourcewrite; actualexternalgates/merge recordedhere, no selfheadapproval. Actual E3sixdimcandidate/E1runtime/device/physical/universaloperationalhandoff remainHELD; economy skeleton doesnotclose them.
