@@ -2,8 +2,8 @@
 test_id: E-DEV-077
 contract_id_version: "ADR014 Decision1; bounded proposal rule v1"
 subject_file: vault/PROFILES/five-option-proposals.md
-subject_digest: 8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332
-result: "PASS bounded proposal source re-review; current CI and canonical verification/runtime missing"
+subject_digest: 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7
+result: "RECORDED reconciled five-category rule; freshFULL/currentCI pending; canonical verification HELD"
 evidence_links:
   - "modules/e09-ai/internal/proposal_options.py"
   - "modules/e09-ai/tests/test_proposal_options.py"
@@ -13,8 +13,9 @@ evidence_links:
   - "vault/REGISTRY/T-E9-001.md"
   - "vault/EVIDENCE/E-DEV-077.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot"
-gate_verdict: PASS
-reviewer: "/root/e9_five_options_independent_review; gpt-6-luna/max; FULL re-review PASS at de0f5fb9c0b774538b37875d39218ae2a7c2d44e; original source and receipt audit PASS retained"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-076-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot"
+gate_verdict: "RECORDED fresh reconciled review pending; historical PASSes retained; runtime HELD"
+reviewer: "none for fresh reconciled source; historical de26/de0/559 gpt-6-luna/max PASSes retained below"
 timestamp: 2026-10-03
 purpose: Bound assistant proposals to five approved route categories without granting authority
 domain: assistant-proposals
@@ -83,3 +84,9 @@ Narrow author cleanup verification: run_all12checksPASS+42regressionsPASS0.472s/
 Independent /root/e9_five_options_independent_review (gpt-6-luna/max) returned FULL PASS at frozen corrected source de0f5fb9c0b774538b37875d39218ae2a7c2d44e against original FULL source de26c0d1c3c096ec83f1f9f021a27afbe3c739fb and receipt-audit head 3a79491dd6bffb4b0932e6443f4278e3e71e3807. Exactly four intended documentation paths; profile's missing-review observation is explicitly historical, current verdicts point here. Original reviewed digest 0572e8b0417adf955917132d3af29555049e0019ad4693a6af7a633b526e3620 historical, current 8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332 independently recomputed/matched. Earlier actual FULL/audit PASS remain tied to earlier exact heads; no T-E9-001 rejection invented. No remaining findings. Reviewer ran no tests/CI/edits and did not treat root local results as remote CI, canonical verification or runtime proof.
 
 New three-document receipt only, reviewed profile/current hash/code/tests/workflow/archive/inventory/priorproof/manifest/CIplan/views unchanged. Profile/task REVIEW and pack IN_PROGRESS remain; current CI/real canonical verification/runtime/remote PR absent, no DONE/push/merge/positive authority. Local receipt metadata audit still required; future fresh-main shared-record reconciliation/new frozen source review/checks/current14applicableCIwiththisworkflow/actualPRT3asapplicable/later final closeout review still required before publication/merge.
+
+## Current accepted-main reconciliation / fresh source review pending
+
+P-E9-001v2/exact16 paths saved before v44 snapshot/EDEV076 consumer writes. Actual PR78 6ac75ad5e47851426080b6d3430b14317cc4548c accepted, currentv45 followsv44 preservingacceptedT014..T017/170E4tests/alladmissions/401/79/pendingv13v23v25. Oldv40 and newv44 snapshots rawbyteequal; old de26/de0/559 source/audit verdicts historical, no fabricated rejection or currentPASS. Profile old8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332 preserved historical; current REVIEW primary 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7. Code/test/workflow/category semantics unchanged. Root current checks pending; no authorDONE. Actual E3 six-dimensional source/fit/approval/prerequisite/readiness/provenance verification/E1render/provider/runtime/physicalproof stillHELD. Seven actualworkflow families require every actual newheadCI (nominal14), actualexecutedPRT3/E9/E4 counts, fresh independentFULL then boundedcloseout/finalmetadata/finalCI before matchedmerge. Billing resolution observed in executed PR75..78; no provider/payment/credential/account change by agent. Original root link-check failure and actual other-task rejection histories retained, not reclassified.
+
+Root current-source verification: expected shared-record merge conflicts in CI_PLAN/EDEV072/inventory resolved from exactacceptedmain plus frozen own bounded sections, preservingall acceptedsource/admissions/history. No failed test/independent rejection invented. Build_index70/routingT-E9-001REVIEW/eligible[]; run_all12checks+42regressionsPASS0.413s/worst0. E9 nine meaningful unitsPASS0.001s/py_compile; acceptedE4 170PASS0.296s unchanged. Exact16 declaredpaths/manualADR014category/E3verifyE1render review/byte-equal rawv40-v44/categorytable/code-test-workflow invariants/diffcheckPASS. Current REVIEW primary116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7; helper9d72dacc75dda8666b6478ced781c24c9e3d0c5723666d60400894e5dd7f6b18/tests2932eaea9f5f6927262de6c8c1041564fbb91ad887e3cc4e527c25568f775f99/workflow76d61208fd17be9f5c56bc7db2fc0f32b2ecc73af2877c5610ecbb971bcfe3c0 unchanged. Fresh FULL/currentCI pending; no authorPASS/DONE.

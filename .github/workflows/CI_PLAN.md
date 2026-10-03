@@ -48,6 +48,14 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E4-014"
+  - "E-DEV-073"
+  - "P-E4-015"
+  - "E-DEV-074"
+  - "P-E4-016"
+  - "E-DEV-075"
+  - "P-E4-017"
+  - "E-DEV-076"
   - "P-E9-001"
   - "E-DEV-077"
 implements:
@@ -203,6 +211,26 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
 
+## E4 recovery-closure coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers160units(accepted148+12closure). `modules/e04-offline/tests/test_recovery_closure.py` probes branches/terminal/cycle reachability, missing either recovery role, unreachable malformed graph/mappings, exact compact bytes/roles/dependency graph pin/capability/expiry/scope, strict types/extreme encoding/coherent omissions/immutability/constant HELD. Fixtures do not prove actual reviewed physical corpus/instructions/canonical eligibility/encrypted device/runtime. Context `vault/PACKS/P-E4-014.md`; proof `vault/EVIDENCE/E-DEV-073.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 no-plaintext gate local coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers170units (accepted160+10no-plaintext); accepted PR75 closure tests retained. `modules/e04-offline/tests/test_no_plaintext.py` probes all operation/representation pairs, finite strict input rejection, no effects/hostile callbacks, immutable intrinsic holds, false cloud/key/encryption metadata and no fallback. Fixtures do not prove actual encryption/key lifecycle/storage runtime/device confidentiality. Context `vault/PACKS/P-E4-015.md`; proof `vault/EVIDENCE/E-DEV-074.md`. FULL independent task/current12CI/actualPRT3/finalmetadata audit required, no workflow/gate policy change. Historical PR75 startup billing failure retained; owner-reported fix followed by executed green CI/actual merge; local checks cannot replace applicable exact-head green CI.
+
+## E4 candidate-points documentary coverage
+
+`vault/PROFILES/numeric-candidate-points.md` is source-attributed HELD registry only; no new runtime/constants/thresholds or tests mirroring documentary values. Existing E4workflow148units acceptedbase unchanged; pendingPR75T014/T015tests not consumed. Graph registration/link/trace/custody checks and independent manual verbatim source review required. Context `vault/PACKS/P-E4-016.md`; proof `vault/EVIDENCE/E-DEV-075.md`. All6workflowfamilies/current12CI/actualT3/FULLtask/finalmetadata requirements retained, no workflow/gatepolicy change. Actualcorpus/device/encryption/numericpolicy gates HELD; startup billing block not a localcheck PASS substitute.
+
+Current acceptedbase PR76 retains all170 E4units and T014/T015 coverage. No new mirror unit test for this static registry. Old148-base observations above are historical; fresh graph/manual source/custody/review/currentCI gates apply.
+
+## E4 classification table documentary coverage
+
+`vault/PROFILES/media-classification-table.md` static source-attributed criteria/examples only, no source code or constant-mirror units. ExistingacceptedE4workflow148units unchanged; pendingPR75/T015unitsnotconsumed. Graph registration/links/trace/custody, actualdependencyreceipts and manual independentcanonicalcriteria/Q156Q157/Q158source review required. Context `vault/PACKS/P-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. FULLtask/current12CI/actualT3/finalmetadataaudit remain, no workflow/gatepolicy changes. Actualclassification/physicalmedia/entitlements/encryptedruntime/deviceproofHELD, CIbillingstartupblockcannotbe replacedbylocalchecks.
+
+Current acceptedbasePR77 retains170E4units and allT014/T015/T016coverage; earlier148/pending observations above are historical sourcepreparation, not current codeclaims. Staticregistry adds no mirrorunits; currentgraph/source/manual/review/CI gates apply.
+
 ## E9 bounded proposal rule coverage
 
-New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_options.py` with accepted checkout v5 full pin, persist-credentials false and contents read; no secrets/provider/DB/tool effects. Nine tests cover category boundary, invalid/stale opaque targets, malformed/unrecognized/sixth category, hostile hooks, immutability/authority claims and constant production closure. No canonical E3 verification/live assistant/provider/UI proof. Applicable seven push/PR workflow families require14 current-head successful runs with actual PR T3 as applicable; no gate weakening. Local9PASS0.002s/compile is not remote CI. Existing GitHub account startup block prevents current executed CI. Pack `vault/PACKS/P-E9-001.md`; proof `vault/EVIDENCE/E-DEV-077.md`. Independent FULL review/final closeout metadata/currentCI required before DONE/merge.
+New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_options.py` with accepted checkout v5 full pin, persist-credentials false and contents read; no secrets/provider/DB/tool effects. Nine tests cover category boundary, invalid/stale opaque targets, malformed/unrecognized/sixth category, hostile hooks, immutability/authority claims and constant production closure. No canonical E3 verification/live assistant/provider/UI proof. Applicable seven push/PR workflow families require14 current-head successful runs with actual PR T3 as applicable; no gate weakening. Local9PASS0.002s/compile is not remote CI. Historical account startup block resolved by owner; actualPR75..78 executedCI recorded, fresh current E9 head CI required. Pack `vault/PACKS/P-E9-001.md`; proof `vault/EVIDENCE/E-DEV-077.md`. Independent FULL review/final closeout metadata/currentCI required before DONE/merge.

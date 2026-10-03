@@ -13,8 +13,8 @@ public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
 tasks: [T-E10-001, T-E10-006, T-E9-001]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e09-ai/tests/test_proposal_options.py]
-evidence: [E-DEV-027, E-DEV-077]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
+evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -89,4 +89,4 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 
 ## T-E9-001 internal bounded proposal rule
 
-`modules/e09-ai/internal/proposal_options.py` provides five ADR014 Decision1 route categories and immutable, nonauthoritative proposals. Unknown/malformed/untrusted/coerced inputs hold using the existing safety-hold category; plain target reference is opaque and unverified. Every proposal authority NONE/physical_progression false/verification HELD, production gate constantly HELD without effects. No E3/E1 import/public runtime seam/provider/request/prompt or tool schema. E3 six-dimension verification/E1 rendering remain separate, actual current authority/source/runtime HELD. Nine meaningful tests at `modules/e09-ai/tests/test_proposal_options.py`, local9PASS0.002s/compile; new pinned read-only `.github/workflows/e9-tests.yml` discovery. Pack `vault/PACKS/P-E9-001.md`/profile `vault/PROFILES/five-option-proposals.md`/proof `vault/EVIDENCE/E-DEV-077.md`. FULL independent task/current CI missing, no author DONE. Original anatomy/metadata custody preserved.
+`modules/e09-ai/internal/proposal_options.py` provides five ADR014 Decision1 route categories and immutable, nonauthoritative proposals. Unknown/malformed/untrusted/coerced inputs hold using the existing safety-hold category; plain target reference is opaque and unverified. Every proposal authority NONE/physical_progression false/verification HELD, production gate constantly HELD without effects. No E3/E1 import/public runtime seam/provider/request/prompt or tool schema. E3 six-dimension verification/E1 rendering remain separate, actual current authority/source/runtime HELD. Nine meaningful tests at `modules/e09-ai/tests/test_proposal_options.py`, local9PASS0.002s/compile; new pinned read-only `.github/workflows/e9-tests.yml` discovery. Pack `vault/PACKS/P-E9-001.md`/profile `vault/PROFILES/five-option-proposals.md`/proof `vault/EVIDENCE/E-DEV-077.md`. Fresh reconciled FULL review/current CI required before acceptance; oldsource PASS recorded in E-DEV-077, no author DONE. Original anatomy/metadata custody preserved.

@@ -1,0 +1,75 @@
+---
+record_id: V-E4-CLASSIFICATION-001
+version: 1
+purpose: Record media and history classification criteria without authorizing semantic classification or storage effects
+domain: offline-classification
+module: e04-offline
+owner: E4
+implements: [ADR-009, ADR-001, BR-131, BR-132, BR-133, C4.1, F4.9.1, R-001, R-003, R-004, R-007, R-011, R-013]
+public_contracts: []
+internal_scope: media-classification-table
+tasks: [T-E4-017]
+tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
+superseded_by: []
+last_verified: 2026-10-03
+depends_on: [M-E4-001, V-E4-CORE-001, V-E4-OPTIONAL-001, I-E10-PATHS-001, V-CI-001]
+used_by: [P-E4-017, T-E4-017, E-DEV-076]
+evidence: [E-DEV-076]
+supersedes: []
+status: ACTIVE
+---
+
+# Media and history classification table
+
+Current context: canonical T-E4-017 row125/F4.9.1/FL4.9.1/C4.1/acceptance192 criteria+Q156/Q157examples ruleonly; mechanismF4.1.1/F4.1.2 remainsseparate. Actualharddeps T001/T003 DONE ataccepted PR77 ac28ec4389fbf5cc0c12299695c04a51c6ccdb47; PR62 merge 6af8dbf323d2e688b7a6b2d4634e00971672af14 / PR64 merge d0b5b06778b8a2789c96f1454607e5de8140c6fc verifiedactualancestors. They do not authenticate semantics/media/mobile or close E3productR1. AcceptedT014/T015/T016 retained; rawv43custody/currentv44/sourcehistory reconciled. Originalf04/c8rejection/b205FULL/4e342metadata historical in E-DEV-076, not approval of changedsource. Actual FULL acceptance and sourceCI are recorded in E-DEV-076; finalmetadata/finalcurrentCI required before merge. Planfa914f/standingowner/DEC0069 govern; unmergedlocalplanPR4 separate.
+
+## Authoritative rule and evidence sources
+
+[Confirmed synthesis BR131..133](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/02_DISCOVERY/SYNTHESIS/BUSINESS_RULES.md) governs product rules. [Raw Q156/Q157/Q158 answers](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/02_DISCOVERY/SESSIONS/SESSION-006_BATCH_06_Q156_Q185.md) supply examples, not a replacement for synthesis. [F4.9.1 feature owner/guard](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/FEATURE_CATALOG.md) preserves E3/E6 classification ownership; E8 derives/checks only. No new runtime E4-to-E6/E8 edge introduced; E4 consumes E3 served classification, E1 renders.
+
+## Classification criteria (rule table, not an item classifier)
+
+| Criterion | Rule outcome | Guard / negative case | Source |
+|---|---|---|---|
+| Basic longitudinal motorcycle history | Preserve motorcycle, operation, date, mileage, actor, outcome, important safety notes, evidence level and correction history | Old basic records never deleted merely to free space; large history is not automatically optional | BR131/Q156 |
+| Evidence necessary to understand or prove the operation | Core evidence regardless of volume, resolution, format or length | Necessary high-resolution photo or long video cannot become expanded merely because large | BR132/Q157 |
+| Media necessary for safe understanding of selected-task instructions/warnings/checks/safe-stop/recovery | Required safety-media inside one complete required compact core | Never additive budget, optional request gate or trimming to a size candidate | ADR009R1/accepted T001/T002 |
+| High-volume high-resolution photos, long videos or wide document archive beyond necessary core evidence and without protected necessity | May be expanded-storage value, conditional on authoritative necessity classification | Format/count/size alone never decides; a needed item stays core, unknown critical necessity holds actual optionalization | BR132/Q157/ADR009R6 |
+| Existing core history and safety-critical evidence under premium/storage limit | Keep access and preserve evidence; basic history view/export continues | No hiding or deleting existing core/safety evidence; new large uploads may be managed without inventing quota/tier | BR133/Q158 |
+| User-owned durable photos/notes/evidence/pending-or-accepted operation truth versus disposable delivery cache | Durable user work remains protected from routine adaptive eviction, including expanded user archive | Expanded is not synonym for evictable; only correctly classified disposable/refetchable nonessential delivery media is subject to its separate lifecycle | ADR009R4/BR133/accepted T003 boundaries |
+| Missing, disputed or uncertain trusted necessity classification | Hold real optionalization/progression pending current authoritative review/source | No optional label/default inferred from missing facts; no deleting evidence or silently changing pinned core | ADR009R6/accepted T001/T003 |
+
+## Q156 core examples
+
+The following exact nine field meanings remain core: motorcycle; operation; date; mileage; actor; outcome; important safety notes; evidence level; correction history. Old basic history cannot be purged for storage pressure or hidden behind premium status. This rule does not authenticate an entered history fact: preservation/core status does not change user-reported evidence into technical truth, canonical approval or publication. No item record is written, accepted or edited here.
+
+## Q157 expanded examples and counterexamples
+
+| Example from Q157 meaning | Required distinction | No automatic inference |
+|---|---|---|
+| A visual needed to understand or prove the operation | Core evidence; included in required compact core if also needed for safe selected-task understanding | Never optional because of size/resolution or premium status |
+| Many high-resolution photos beyond the necessary evidence | Potential expanded archive only when authoritative classification confirms they are beyond core and not protected necessary evidence | No count/resolution threshold chosen; durable user images not routine-evictable cache |
+| A long video beyond the necessary evidence | Potential expanded archive only under the same necessity/protection test | If the full video is required for understanding/proof/safety, it stays core/required regardless of length |
+| A broad document archive beyond the necessary operation evidence | Potential expanded storage value; retain required evidence/access guards | Necessary document/evidence cannot be downgraded because part of a large archive |
+
+These are source-derived rule examples, not actual corpus measurements, item classifications or safe physical instructions. No new safety decision boundary authored. Unknown necessity does not become nonessential by default. New large uploads may be managed under a later reviewed policy, but no numeric limit, tier, price, upload/delete/export mechanism or actual entitlement is selected here.
+
+## Consumption and reclassification boundaries
+
+E3/E6 own current authoritative classification and generation through E3 serving; E8 only derives/checks and cannot approve or reclassify. This table grants no semantic writer, source authenticity or canonical release permission. Actual consumed item/source/provenance/version/context must be verified at its owning runtime boundary; a fixture label or this review verdict cannot open it. A changed required/optional classification requires new reviewed current source/pinned complete-core context and revalidation under accepted T001/T003, never silently weakening the old accepted pin. Actual complete core/safety/recovery/generation/compatibility/negative floors/authority/storage/encryption/device/runtime/rendering remain MISSING/HELD. No new private import/public seam.
+
+Actual user data/physical media/classification/release/export/entitlement/download/deletion/key/provider/device effects absent. This static table cannot prove actual semantic classification or app enforcement. Existing source/profile/test helpers unchanged; no new units mirroring constants. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59 unchanged; actualPR75/76/77 accepted within bounded internal scopes. Missing universal handoff stays MISSING/BLOCKED for affected operational/production handoff.
+
+## Trace
+
+Q0046/BR131..133 -> C4.1 -> F4.9.1 -> FL4.9.1 -> T-E4-017 -> M-E4-001 -> E-DEV-076. Mechanism owned F4.1.1/F4.1.2; this acceptance rule-only. Profile does not claim real corpus/device measurement/numeric/encryption policy or E1 screen/accessibility completion. Pack `vault/PACKS/P-E4-017.md`; task `vault/REGISTRY/T-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. Actual FULL task acceptance and sourceCI recorded in E-DEV-076; separate finalmetadata audit and final-head CI needed before merge, no author PASS.
+
+## Actual corrected-source FULL acceptance and CI / bounded closure
+
+Independent /root/t017_reconciled_full_review (owner-selected gpt-6-luna/max) returned FULL PASS at f83e64097c8a7c1fa1afd48b42ed0a92d48a0437 against accepted main ac28ec4389fbf5cc0c12299695c04a51c6ccdb47 and plan fa914f013fdcd032faed876689092da245989459. Actual360 field4 finding closed: mandatory application reads pin accepted ac28/inventoryv43/rawsnapshot, workingv44 separately admitted. All13 allowed paths, nineQ156 fields, necessary-evidence core independent of size, conditional expanded classification, BR133 access/export protection, E3/E6 ownership/E8 derive-only and rule-only scope pass. Profile source digest and rawv43 source match. No remaining findings. Reviewer made no edits and ran no tests/CI; originalc8 and360 rejections and oldsource PASSes retained as history, not replaced.
+
+Actual corrected f83 source all12 CI SUCCESS: PRarchitecture37095419419/E337095418742/live37095418735/E437095418745/E537095418748/E637095418793; pusharchitecture37095416186/E337095416184/live37095416192/E437095416189/E537095416259/E637095416201. ActualPRT3job111124222752 five steps SUCCESS/checksjob111124222870 seven stepsSUCCESS; E4PR170 testsPASS0.089s. Root narrow-remediation run_all12checks+42regressionsPASS0.450s/worst0/diff3. Rejected360 green CI does not replace corrected source review/CI.
+
+Standing owner/accepted DEC0069 accepts the full bounded canonical documentary task: Criteria + Q156/Q157 examples recorded; rule only, mechanism F4.1.1/F4.1.2 separate. Task REVIEW -> DONE, profile REVIEW -> ACTIVE, pack IN_PROGRESS -> DONE for this complete rule-table acceptance. Six-file closeout only: profile/pack/task/proof/two generated views; criteria/table/source archives/inventory/manifest/CI/prior proofs/code/tests unchanged. Actual main acceptance awaits PR78 normal matched merge after separate finalmetadata audit and all final-head CI/actualPRT3/executedE4 gates. No admin/main push/bypass.
+
+Actual item classification, semantic writers, authoritative runtime consumption, corpus/device/mobile/native encryption/key custody/storage/export/physical proof and universal operational handoff remain MISSING/HELD. This rule table does not implement or prove those product effects. Product E3R1/E5-003 and held PR47/57/59 unchanged.
