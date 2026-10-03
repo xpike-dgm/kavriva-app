@@ -3,14 +3,14 @@ test_id: E-DEV-078
 contract_id_version: "ADR014 Decision2; static economy skeleton v1"
 subject_file: vault/PROFILES/economy-skeleton.md
 subject_digest: a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2
-result: "RECORDED source-status remediation; prior FULL PASS retained; independent re-review/current CI required"
+result: "PASS bounded static source re-review; current CI and actual selection/cost/runtime evidence missing"
 evidence_links:
   - "vault/PROFILES/economy-skeleton.md"
   - "vault/PACKS/P-E9-003.md"
   - "vault/REGISTRY/T-E9-003.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot"
-gate_verdict: RECORDED
-reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; prior FULL PASS at ec043c510f9a9350b859f244a70f8625d73e018e; metadata CHANGES_REQUESTED at be9bb3e7019cd41749aed5d9a3c1aad592f6b505; narrow full re-review pending"
+gate_verdict: PASS
+reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; FULL re-review PASS at 22d7df160874f63c0df04b85d4154d319a783f49; prior source PASS and metadata CHANGES_REQUESTED retained"
 timestamp: 2026-10-03
 purpose: Record cheapest adequate assistance principle while model selection and economics remain held
 domain: assistant-economy
@@ -64,3 +64,9 @@ Independent /root/e4_classification_independent_review (gpt-6-luna/max) rejected
 Root explicitly qualified the profile paragraph as ec043 source-freeze history and points current actual review verdicts/heads/finding closure to this evidence. No economy rule/provider/model/log/budget/runtime/authority choice changed. Only four profile/pack/task/proof docs; inventory/archive/priorproof/manifest/CIplan/views unchanged. Original reviewed profile digest 3133e743ef5a779e79346bf02fc635b25daa174c37aa036aadb5baf9e67a1129 preserved as historical; current corrected profile normalizedSHA256 a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2 now matches primary. Current gate RECORDED until actual full re-review of corrected source, no author PASS/DONE. Profile/task REVIEW, pack IN_PROGRESS/currentCI missing/actual adequacy-selection-cost-runtime HELD.
 
 Narrow remediation verification: run_all12checksPASS+42regressionsPASS0.503s/worstexit0; diffcheckPASS/exact four corrected docs versus rejected metadata head. Currentprimarydigest matches updated profile; historical reviewed digest retained, rawacceptedv40archive/inventory/priorproof/manifest/CIplan/views unchanged. No source rule/runtime/newunit/currentCI or authorPASS/DONE change; actual rejection retained and FULL re-review required.
+
+## Actual independent FULL remediation re-review PASS
+
+Independent /root/e4_classification_independent_review (gpt-6-luna/max) returned FULL PASS at frozen corrected source 22d7df160874f63c0df04b85d4154d319a783f49. Prior profile status finding closed: missing-review observation explicitly historicized at original ec043 source; current actual verdict/head/finding closure points here. Original reviewed digest retained as historical and corrected current primary a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2 independently matched. Prior genuine ec043 FULL PASS and be9 metadata CHANGES_REQUESTED retained accurately; four-document remediation does not change economy policy/overall scope. No remaining findings. Reviewer ran no tests/CI or edits, and did not infer completion/merge readiness from this PASS.
+
+Three new receipt-only documents record actual 22d7 FULL PASS; reviewed profile/current hash/snapshot/inventory/priorproof/manifest/CIplan/views unchanged. Profile/task REVIEW and pack IN_PROGRESS remain, current CI and actual model selection/adequacy/cost/runtime proof missing, nothing selected/logged/budgeted. New local receipt metadata audit required before this receipt is considered reviewed; future fresh accepted-main reconciliation/new frozen review/checks/current applicable CI/actualPRT3asapplicable/final closeout gates before publication/DONE/merge. No root self-PASS or renewed historical proof.
