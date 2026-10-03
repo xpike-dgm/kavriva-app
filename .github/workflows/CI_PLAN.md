@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E4-017"
+  - "E-DEV-076"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 classification table documentary coverage
+
+`vault/PROFILES/media-classification-table.md` static source-attributed criteria/examples only, no source code or constant-mirror units. ExistingacceptedE4workflow148units unchanged; pendingPR75/T015unitsnotconsumed. Graph registration/links/trace/custody, actualdependencyreceipts and manual independentcanonicalcriteria/Q156Q157/Q158source review required. Context `vault/PACKS/P-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. FULLtask/current12CI/actualT3/finalmetadataaudit remain, no workflow/gatepolicy changes. Actualclassification/physicalmedia/entitlements/encryptedruntime/deviceproofHELD, CIbillingstartupblockcannotbe replacedbylocalchecks.

@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e04-offline"
 owner: "E4"
 depends_on: [M-E3-001]
-used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061, V-E4-OPTIONAL-001, P-E4-003, E-DEV-062, V-E4-SIZE-001, P-E4-004, E-DEV-063, V-E4-TRANSITION-001, P-E4-005, E-DEV-064, V-E4-FALLBACK-001, P-E4-006, E-DEV-065, V-E4-AUTO-001, P-E4-007, E-DEV-066, V-E4-RETRY-001, P-E4-008, E-DEV-067, V-E4-EVICTION-001, P-E4-009a, E-DEV-068, V-E4-PROTECTED-001, P-E4-009b, E-DEV-069, V-E4-HOLD-001, P-E4-010, E-DEV-070, V-E4-LEDGER-001, P-E4-011a, E-DEV-071, V-E4-ELIGIBILITY-001, P-E4-013, E-DEV-072]
+used_by: [M-E1-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E4-CORE-001, P-E4-001, E-DEV-060, V-E4-SAFETY-001, P-E4-002, E-DEV-061, V-E4-OPTIONAL-001, P-E4-003, E-DEV-062, V-E4-SIZE-001, P-E4-004, E-DEV-063, V-E4-TRANSITION-001, P-E4-005, E-DEV-064, V-E4-FALLBACK-001, P-E4-006, E-DEV-065, V-E4-AUTO-001, P-E4-007, E-DEV-066, V-E4-RETRY-001, P-E4-008, E-DEV-067, V-E4-EVICTION-001, P-E4-009a, E-DEV-068, V-E4-PROTECTED-001, P-E4-009b, E-DEV-069, V-E4-HOLD-001, P-E4-010, E-DEV-070, V-E4-LEDGER-001, P-E4-011a, E-DEV-071, V-E4-ELIGIBILITY-001, P-E4-013, E-DEV-072, V-E4-CLASSIFICATION-001, P-E4-017, E-DEV-076]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E4"
 public_contracts:
   - "[[modules/e04-offline/MANIFEST.md#Public contract surface]]"
 internal_scope: "Package composer, delta engine, download scheduler, storage janitor order (temp → needless media → old cache; active package/user data/audit/floors never auto-deleted), ledger queue. Mechanism/key custody split decided separately (encryption); no plaintext backups."
-tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002, T-E4-003, T-E4-004, T-E4-005, T-E4-006, T-E4-007, T-E4-008, T-E4-009a, T-E4-009b, T-E4-010, T-E4-011a, T-E4-013]
+tasks: [T-E10-001, T-E10-006, T-E4-001, T-E4-002, T-E4-003, T-E4-004, T-E4-005, T-E4-006, T-E4-007, T-E4-008, T-E4-009a, T-E4-009b, T-E4-010, T-E4-011a, T-E4-013, T-E4-017]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -136,3 +136,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E4-013 actual internal offline eligibility rule
 
 `modules/e04-offline/internal/offline_eligibility.py` / `modules/e04-offline/tests/test_offline_eligibility.py` inherit highest declared consequence, hold unknown/stale dependencies, enforce sticky monotonic cached negatives and online-authoritative Internal Operations routing. All decisions NONE/physical_progressionFalse; actual canonical taxonomy/windows/eligibility/recovery/encrypted runtime HELD. Original scope/anatomy/public edges unchanged. Profile `vault/PROFILES/offline-eligibility-rule.md`; pack `vault/PACKS/P-E4-013.md`; task `vault/REGISTRY/T-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`.
+
+## T-E4-017 classification criteria table
+
+`vault/PROFILES/media-classification-table.md` records BR131..133/Q156Q157 core/expanded necessity criteria and preservation/examples, not actual item classification or effects. Necessity dominates size/format/length; expanded user archive not routinely-evictable cache. E3/E6 own source via E3, E8 derives/checks only; no runtime/private/public boundary change. Pack `vault/PACKS/P-E4-017.md`; task `vault/REGISTRY/T-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`.
