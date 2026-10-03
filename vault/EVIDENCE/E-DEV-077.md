@@ -3,7 +3,7 @@ test_id: E-DEV-077
 contract_id_version: "ADR014 Decision1; bounded proposal rule v1"
 subject_file: vault/PROFILES/five-option-proposals.md
 subject_digest: 8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332
-result: "RECORDED status-wording cleanup; prior FULL/audit PASS retained; current re-review/CI required"
+result: "PASS bounded proposal source re-review; current CI and canonical verification/runtime missing"
 evidence_links:
   - "modules/e09-ai/internal/proposal_options.py"
   - "modules/e09-ai/tests/test_proposal_options.py"
@@ -13,8 +13,8 @@ evidence_links:
   - "vault/REGISTRY/T-E9-001.md"
   - "vault/EVIDENCE/E-DEV-077.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot"
-gate_verdict: RECORDED
-reviewer: "/root/e9_five_options_independent_review; gpt-6-luna/max; historical FULL PASS at de26c0d1c3c096ec83f1f9f021a27afbe3c739fb and local receipt audit PASS at 3a79491dd6bffb4b0932e6443f4278e3e71e3807; current author status cleanup re-review pending"
+gate_verdict: PASS
+reviewer: "/root/e9_five_options_independent_review; gpt-6-luna/max; FULL re-review PASS at de0f5fb9c0b774538b37875d39218ae2a7c2d44e; original source and receipt audit PASS retained"
 timestamp: 2026-10-03
 purpose: Bound assistant proposals to five approved route categories without granting authority
 domain: assistant-proposals
@@ -77,3 +77,9 @@ Independent /root/e9_five_options_independent_review (gpt-6-luna/max) returned l
 Root later found the profile had the same unqualified initial missing-review wording that caused the separate T-E9-003 metadata audit rejection. Root qualified this profile paragraph as original de26 source-freeze history and points current actual verdicts/heads/finding closure here. This is proactive author status cleanup, NOT a T-E9-001 independent CHANGES_REQUESTED. Original FULL source/audit PASS preserved, no source/code/unit failure inferred. Four profile/pack/task/proof docs; category criteria/code/tests/workflow/custody/manifest/CIplan/views unchanged. Original reviewed profile digest 0572e8b0417adf955917132d3af29555049e0019ad4693a6af7a633b526e3620 historical, corrected current profile normalizedSHA256 8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332 matches primary. Current gate RECORDED until actual new FULL re-review, no author new PASS/DONE. Profile/task REVIEW/pack IN_PROGRESS/currentCI missing/real canonical verification and runtime HELD.
 
 Narrow author cleanup verification: run_all12checksPASS+42regressionsPASS0.472s/worstexit0/diffcheckPASS/exact four changed docs from prior audited receipt. Currentprimarydigest matches updated profile, original reviewed hash retained; code/tests/workflow/archive/inventory/priorproof/manifest/CIplan/views unchanged. No code/unit/currentCI failure or T-E9-001 independent rejection; no author renewed PASS/DONE and new FULL re-review required.
+
+## Actual independent FULL author-cleanup re-review PASS
+
+Independent /root/e9_five_options_independent_review (gpt-6-luna/max) returned FULL PASS at frozen corrected source de0f5fb9c0b774538b37875d39218ae2a7c2d44e against original FULL source de26c0d1c3c096ec83f1f9f021a27afbe3c739fb and receipt-audit head 3a79491dd6bffb4b0932e6443f4278e3e71e3807. Exactly four intended documentation paths; profile's missing-review observation is explicitly historical, current verdicts point here. Original reviewed digest 0572e8b0417adf955917132d3af29555049e0019ad4693a6af7a633b526e3620 historical, current 8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332 independently recomputed/matched. Earlier actual FULL/audit PASS remain tied to earlier exact heads; no T-E9-001 rejection invented. No remaining findings. Reviewer ran no tests/CI/edits and did not treat root local results as remote CI, canonical verification or runtime proof.
+
+New three-document receipt only, reviewed profile/current hash/code/tests/workflow/archive/inventory/priorproof/manifest/CIplan/views unchanged. Profile/task REVIEW and pack IN_PROGRESS remain; current CI/real canonical verification/runtime/remote PR absent, no DONE/push/merge/positive authority. Local receipt metadata audit still required; future fresh-main shared-record reconciliation/new frozen source review/checks/current14applicableCIwiththisworkflow/actualPRT3asapplicable/later final closeout review still required before publication/merge.
