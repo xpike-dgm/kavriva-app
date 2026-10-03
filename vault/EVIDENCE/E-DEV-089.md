@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-IOS-CLEAN-001]
-used_by: [V-E7-IOS-CLEAN-001, P-E7-003c, T-E7-003c]
+used_by: [V-E7-IOS-CLEAN-001, P-E7-003c, T-E7-003c, P-E7-004, E-DEV-090]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -76,3 +76,15 @@ Bu kaynak FULL+CI kabulüne göre yalnız profil/pack/görev/kanıt/iki görün�
 Sınırlı belge devri D-APP-DOC-004v1/P-E10-007v1/P-E7-003c; evrensel operationalhandoffID MISSING/BLOCKED. T-E7-002/T006007 ilerlemedi; E3R1 REVIEW/E5-003 IN_PROGRESS/PR47-57-59 beklemede. Yeni vault açıklamaları Türkçe, eski İngilizce geçmiş korunur.
 
 İncelenen kaynak birincil özeti d99184f4b2058d1d33e050c6da6cb9b73c7c9ceff1d6203b16394dd14ad050fc korundu; ACTIVE kaydın güncel özeti 3e3833dc715e1c22492256c11ef855c58ffc2b526849585446999e2d49bad8c8. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek iOS temiz yeniden derleme/sağlayıcı değiştirme veya yayın yetkisi verilmedi.
+
+## Gerçek PR91 kabulünün ikincil kaydı ve T-E7-004 tüketicisi
+
+## PR91 gerçek ikincil kabul kaydı
+
+PR91 olağan merge/match-head-commit ile MERGED; sonbaşlık b8712a871f87447aed88a105eb83c1d04cd0fbbf, merge2d3d38a786f5fa1c40192aa4c6128b2fe2e11aa8, mergedAt2026-10-03T23:00:24Z (Türkiye2026-10-04). GitHubMERGED ve origin/main fetch sonucu doğrulandı. Kaynakbfb53d5 bağımsız FULL PASS; sonb8712a8 bağımsız FINAL METADATA PASS/no findings /root/e7003c_ios_clean_room_full_review gerçek gpt-6-luna/max spawn yapılandırması ve sahip acceptedDEC0069 ile ayrı kaydedildi. İncelemeci canonical/pins/rawbytehash/exact11/sourcepreservation ve finalexact6/profileLFhash3e3833dc715e1c22492256c11ef855c58ffc2b526849585446999e2d49bad8c8/views82DONE/source-final distinction kontrol etti. CI'ı çalıştırmadı veya bağımsız sorgulamadı; onun olmayan işlemler ona yüklenmez.
+
+Root kaynak12+42PASS0.610, source15CIgreen; final12+42PASS0.516/views82DONE/diff6PASS. Son14/14SUCCESS: PRarchitecture37160080896/E337160080842/live37160080825/E437160080835/E537160080899/E637160080826/E937160080965; pusharchitecture37160077993/E337160078047/live37160078031/E437160077992/E537160078007/E637160078025/E937160078083. GerçekPRT3job111311532319beşadım/checks111311532493yediadımSUCCESS; E4PR170PASS0.214/E9PR9PASS0.001. Plan uzakmainfa914f013fdcd032faed876689092da245989459 değişmedi. Mainpush/admin/bypass yok.
+
+Kabul edilmiş inventoryv57/views82/scopedcanonical79DONE127remaining. Beşinci gerçek iOS koşulu temiz yeniden derleme+opak durum kopyalamadan sağlayıcı değiştirme altgereksinimleriyle HELD; ilkdörtHELD/iOSactivationE6currentdecision/device/universalhandoff eksik. T002/T006007/E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59 unchanged. Frozenproof finalaudit/CIpending yazıldığı anın kaydı; bu daha sonraki gerçek ikincil sonuç eski birincil kaynağın yeniden onayı değildir. Belge DONE ürün/feature/flow/iOS/yayın hazır oluşu değildir. Yeni vault açıklamaları Türkçe, eski İngilizce tarihi kayıtlar korunur. Devam talimatı aktif.
+
+Önceki birincilsubject/digest/reviewer/verdict/history değişmedi. Son frozenproof pending ifadesi o başlığın yazıldığı anı gösterir; ikincil gerçek merge sonuçları eski kaynağı yeniden onaylamaz. Gerçek fiziksel Android/iOS/yayın HELD kalır.
