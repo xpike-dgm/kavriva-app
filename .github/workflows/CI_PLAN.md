@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E9-003"
+  - "E-DEV-078"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E9 economy skeleton documentary coverage
+
+`vault/PROFILES/economy-skeleton.md`/context `vault/PACKS/P-E9-003.md`/proof `vault/EVIDENCE/E-DEV-078.md`: static approved principle only, no code/workflow/new unit tests mirroring constants. Manual pinned ADR014 Decision2/F9.2.1/FL9.2.1/C9.2 comparison and existing views/run_all/sourcehash/rawarchive checks. Actual adequate-model/need/cost selection evidence/provider/runtime remains HELD, nothing selected/logged/budgeted. Existing account startup block means current remote CI absent; independent FULL source/final metadata/current applicable CI actualPRT3 required before DONE/merge. Base sixfamilies12runs, re-evaluate exact applicable set at publication fresh accepted main (pendingE9workflow not copied/accepted). No gate weakening or financial action.

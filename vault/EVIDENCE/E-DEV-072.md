@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_offline_eligibility.py, modules/e10-graph
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-ELIGIBILITY-001]
-used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013]
+used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, V-E9-ECONOMY-001, P-E9-003, E-DEV-078]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -75,3 +75,7 @@ Closeout changes exactly six documentary/view paths. Source/tests/workflow/archi
 Historical reviewed primary 32f71d985e137f3e65db0cbe6f0b19a2a9cf74f2d43c99f514260bb67d5b79d3 preserved; current ACTIVE primary 0678908857511f85bfdd07024b9debc86cf216c1a3e7247bb449cbf349e01c2f. No source failure/rejection/current unit failure; no canonical taxonomy/windows/eligibility/physical runtime proof inferred.
 
 Final six-file metadata verification: build_index65/routingT013DONE/eligible[]; run_all12checksPASS +42 regressions PASS0.572s/worstexit0; diffcheckPASS/exact six paths. Original P-PROOF001 warning unchanged.
+
+## Secondary accepted-main receipt and documentary T-E9-003 consumer
+
+Actual PR74 mergef04a10e542f9853f7551b4eabc3d8b0c43298419 on2026-10-02T21:43:00Z, publishedfinal27ad1d0b5e97aef1bd7508204c3b4048456efcd3/sourceacc77bdea437b5c19a318ca5dcc2815709959a59 FULL and finalmetadataPASS/allsourcefinal12CIactualPRT3green. This appended historical secondary receipt does not refresh original primary/hash/sourceverdict/reviewer/physical activation. T-E9-003 consumes custody only/archives actual acceptedv40 raw byte-equal at `vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot`; no task dependency on E4 offline eligibility or pendingPR75/T015/T016/T017/T-E9-001. New profile `vault/PROFILES/economy-skeleton.md`/pack `vault/PACKS/P-E9-003.md`/proof `vault/EVIDENCE/E-DEV-078.md`; actualcurrentreviewCI absent/no borrowedPASS/DONE.
