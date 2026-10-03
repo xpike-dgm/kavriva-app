@@ -64,6 +64,8 @@ used_by:
   - "E-DEV-078"
   - "P-E9-004"
   - "E-DEV-080"
+  - "P-E9-005"
+  - "E-DEV-081"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -252,3 +254,7 @@ Manual pinned ADR014R1 six-row/source-role/negative-consistency and CON001 compa
 ## E9 provider adapter boundary documentary coverage
 
 Manual immutable ADR014R3 seven-behavior/five-product-area/identity-behavior-change/negative mapping, currenthash/rawv47/exact11/build/routing/run_all12+42/diff. No mirroredunits/code/workflow changes; accepted E9nine/E4170 preserved. Every current-source/finalhead run nominal14sevenfamilies+extras/executedPRT3/E9-E4 logs; independent FULL/sourceCI before bounded closure and finalmetadata/finalCI before normalmatchedmerge. Actual provider/evaluation/runtime/physical proof HELD. Pack `vault/PACKS/P-E9-004.md`; proof `vault/EVIDENCE/E-DEV-080.md`.
+
+## E9 re-evaluation trigger documentary coverage
+
+Manual pinnedADR014R3fourtrigger/negative/missingidentitybehavior/currentdependency comparison; currentprofilehash/rawv48/pins/exact11/build/routing/run_all12+42/diff. Staticrule no mirroredunit/code/test/workflow change; existingE9nine/E4170 unchanged. Fresh independent FULL+sourceCI before bounded closure, finalmetadata/final exacthead allruns sevenfamiliesnominal14+extras/executedPRT3/E9-E4 before normalmatchedmerge. Actualproviderchange/evaluation/runtime/devicephysicalHELD. Context `vault/PACKS/P-E9-005.md`; proof `vault/EVIDENCE/E-DEV-081.md`.

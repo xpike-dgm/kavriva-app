@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080, V-E9-CHANGE-001, P-E9-005, E-DEV-081]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
-tasks: [T-E10-001, T-E10-006, T-E9-001, T-E9-002, T-E9-003, T-E9-004]
+tasks: [T-E10-001, T-E10-006, T-E9-001, T-E9-002, T-E9-003, T-E9-004, T-E9-005]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -102,3 +102,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E9-004 static provider adapter boundary
 
 `vault/PROFILES/provider-adapter-boundary.md` maps all seven ADR014R3 provider behaviors behind adapters, keeps producttaxonomy/allowedroutes/safety/eligibility/authorization Kavriva-owned, observable identity/behavior changes require re-evaluation. No actual adapter/provider/config/schema/code/test/workflow/runtime/new public seam or privateimport. Pack `vault/PACKS/P-E9-004.md`; proof `vault/EVIDENCE/E-DEV-080.md`; fresh FULL/currentCI required, no authorDONE. Actual provider/runtime/product readiness HELD.
+
+## T-E9-005 static re-evaluation trigger
+
+`vault/PROFILES/reevaluation-trigger.md`: observable provider/model/version identity OR behavior change requires review, includingbehaviorchangeunderstableversion; missing/ambiguousproofholds and no shape/confidence/cheapbypass. Accepted adapter boundary retained/no code/test/workflow/runtime/privateimport/newpublicseam/evaldesign/providerchoice. Context `vault/PACKS/P-E9-005.md`; proof `vault/EVIDENCE/E-DEV-081.md`; FULL/currentCI beforeacceptance, actualprovider observation/evaluation/runtime/physicalproof HELD.
