@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-HOLD-001]
-used_by: [V-E9-HOLD-001, P-E9-010, T-E9-010]
+used_by: [V-E9-HOLD-001, P-E9-010, T-E9-010, P-E9-011, E-DEV-085]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -53,3 +53,9 @@ Original reviewed source primary78c275a241bde2a249fbd97eaa69ef1113a38898f245324b
 
 ## Actual bounded closure checks
 Root build77/routingDONE/run_all12checks+42regressionsPASS0.459s/worst0/diffPASS. Exactly six changed paths versus independently reviewed681c: profile/pack/task/proof/two views. Full rule/negative matrix/qualifiednever15/allowed10/role/seam boundaries/currentpins/rawsnapshot/inventory/manifestCI/priorproof/acceptedimplementation unchanged. Final six-file metadataaudit and exact final-head CI pending; normal merge not yet performed.
+
+## Secondary actual PR86 acceptance / T-E9-011 consumer
+
+Actual PR86MERGED2026-10-03T14:25:11Z merge386d6e110eab48b056dfe2538984dc047b39fcc5/finalc109183c3ffb39c2dd2fb6fd4ca8c5cb18cf8694/source681c02d8a77fd446c0e02195f8ffd6b59cb7e9b3. Independent /root/e9010_ambiguity_hold_full_review configuredviaactualspawn gpt-6-luna/max sourceFULLPASSnofindings/finalmetaauditPASSnofindings/read-only/no edits-tests-buildCI-network. CurrentACTIVEprimary64107e3f01a288892c5ed33aaf7b060ff3fdcbc78128241b1958616adf804228 matched; source12+42PASS0.460/build77/routingREVIEW/closure12+42PASS0.459/build77/routingDONE/diff6/manualsevenconditionHOLDreasonnofallback/9pins/rawv51/exact11/priorprimary/actualT009DONE/acceptedcodepreserved. Sourceall15SUCCESS/openedT3skip0/labeledexecutedT3job111219791809five/checks111219791678seven/E4170PASS0.173/E9ninePASS0.001. Finalall14SUCCESS: PRarch37129261957/E337129261958/live37129261975/E437129261969/E537129262022/E637129262047/E937129261952; pusharch37129259908/E337129259920/live37129259918/E437129259916/E537129259886/E637129259914/E937129259873; executedPRT3job111220913207five/checks111220913271sevenSUCCESS/E4170PASS0.169/E9ninePASS0.001. Normalreadywaited/normalmatchedmergewaited/actualGitHubMERGEDverified/mainfetchmatched386; noadmin/bypass/mainpush. v52/views77. Complete staticHOLD rule only/no semanticclassifier/currentverification/provider/tool/cost/retry/runtime/E3E5/E1/native/device/physicaluniversalhandoffproof. T006unfinished/T007dep006DONEunmet/held47-57-59notadvanced; T011notice nextseparate. Roothelperwrongfilenametokenassertion beforefilewrites preserved/fixed notunitCI/independentrejection. SourceFULL/sourceCI/finalaudit/currentCI distinct; noqualifiedhumanattestation.
+
+Original primary/reviewer/verdict/history retained; documentaryconsumer+actualsecondaryreceipt only, earlierfinalgatepending asofc109write/no renewedpriorapproval. Actualsemantic/runtime/physical evidence HELD.
