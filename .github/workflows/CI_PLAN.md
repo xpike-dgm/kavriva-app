@@ -62,6 +62,8 @@ used_by:
   - "E-DEV-079"
   - "P-E9-003"
   - "E-DEV-078"
+  - "P-E9-004"
+  - "E-DEV-080"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -246,3 +248,7 @@ Manual pinned ADR014R1 six-row/source-role/negative-consistency and CON001 compa
 ## E9 economy skeleton documentary coverage
 
 `vault/PROFILES/economy-skeleton.md`/context `vault/PACKS/P-E9-003.md`/proof `vault/EVIDENCE/E-DEV-078.md`: static approved principle only, no code/workflow/new unit tests mirroring constants. Manual pinned ADR014 Decision2/F9.2.1/FL9.2.1/C9.2 comparison and existing views/run_all/sourcehash/rawarchive checks. Actual adequate-model/need/cost selection evidence/provider/runtime remains HELD, nothing selected/logged/budgeted. Historical account startup block owner-resolved with observableexecutedgreenCI; newexactheadCI stillrequired; independent FULL source/final metadata/current applicable CI actualPRT3 required before DONE/merge. Actualacceptedsevenfamilies/E9workflow require allactualnewheadruns nominal14 and actualPRT3/E9nine/E4170 execution; currentT001/002 accepted, sourceFULL/currentCI/finalaudit gates. No gate weakening or financial action.
+
+## E9 provider adapter boundary documentary coverage
+
+Manual immutable ADR014R3 seven-behavior/five-product-area/identity-behavior-change/negative mapping, currenthash/rawv47/exact11/build/routing/run_all12+42/diff. No mirroredunits/code/workflow changes; accepted E9nine/E4170 preserved. Every current-source/finalhead run nominal14sevenfamilies+extras/executedPRT3/E9-E4 logs; independent FULL/sourceCI before bounded closure and finalmetadata/finalCI before normalmatchedmerge. Actual provider/evaluation/runtime/physical proof HELD. Pack `vault/PACKS/P-E9-004.md`; proof `vault/EVIDENCE/E-DEV-080.md`.
