@@ -3475,7 +3475,7 @@
     "modules/e10-graph/checks/check_links.py"
    ],
    "superseded_by": [],
-   "last_verified": "2026-10-03",
+   "last_verified": "2026-10-04",
    "depends_on": [],
    "used_by": [
     "V-E7-IOS-ACCESS-001",
@@ -3484,7 +3484,7 @@
    ],
    "evidence": "E-DEV-087",
    "supersedes": "planning TASK_INDEX T-E7-003a",
-   "status": "REVIEW"
+   "status": "DONE"
   },
   {
    "task_id": "T-E9-001",

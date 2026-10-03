@@ -11,12 +11,12 @@ internal_scope: ios-access-custody-proof
 tasks: [T-E7-003a]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 superseded_by: []
-last_verified: 2026-10-03
+last_verified: 2026-10-04
 depends_on: [M-E7-001, M-E6-001, V-E6-AUTHORITY-001, V-E7-ANDROID-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E7-003a, T-E7-003a, E-DEV-087]
 evidence: [E-DEV-087]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # iOS için Mac erişimi ve Apple emaneti: iki ayrı kanıt
@@ -66,3 +66,19 @@ ADR013R2 → C7.2 → F7.2.1 → FL7.2.1 → T-E7-003a → M-E7-001 → E-DEV-08
 ## Kayıt adresleri
 
 Bağlam `vault/PACKS/P-E7-003a.md`, görev `vault/REGISTRY/T-E7-003a.md`, kanıt `vault/EVIDENCE/E-DEV-087.md`; E6 politika sınırı `modules/e06-release/MANIFEST.md`, E7 uygulama sınırı `modules/e07-build-lane/MANIFEST.md`. HELD gerekçesi özgün ADR013 kaynağının ilk iki koşulu ve bu kaydın iki ayrı değerlendirme tablosudur.
+
+## 2026-10-04 tam görev incelemesi ve kaynak CI kabulü
+
+Bağımsız /root/e7003a_ios_access_custody_full_review, ayrı sınırlı bağlamda gpt-6-luna/max yapılandırmasıyla 6e6c2a9e2e65ad1878eab832f0b6bcebe3f805ed başlığı için FULL PASS verdi; taban eb5a26abd5b5192c3b586740d1504efe4354aa82, kabul edilmiş plan fa914f013fdcd032faed876689092da245989459. Açık bulgu veya düzeltme isteği yok. Model bilgisi gerçekten yapılan spawn yapılandırmasıdır; modelin çalışma içinden kimlik doğrulaması değildir. Kullanıcı bu bağımsız altajanı ikinci göz olarak ve gerekli yeşil CI sonrası olağan birleştirmeleri aksini söyleyene kadar açıkça kabul etti; DEC-0069 geçerli, kabul edilmemiş DEC-0070/planPR4 yetki değil.
+
+Kullanıcının güvenli dur talimatıyla inceleme kesildiğinde yalnız ön bulgular vardı, PASS verilmedi; hiçbir kapanış veya birleştirme yapılmadı. 2026-10-04 devam et talimatıyla aynı temiz kaynak ve ayrılmış reviewer bağlamında kalan inceleme tamamlandı. Kesinti bir ret değildir. Tam kaynak görevi kabulü, iki kanıtı ayrı değerlendirmek ve taahhüt vermemektir: gerçek Kavriva Mac/Xcode çalıştırma kanıtı HELD, Apple sertifika/profil/özel anahtar yenileme/iptal/kurtarma/Connectrol sınırı kanıtı ayrı HELD. Kaynakta kanıt bulunmaması, sahibin hiç Mac veya hesabı olmadığı iddiası değildir. Beşli iOS paketi ve gerçek iOS açılışı tamamlanmış sayılmaz.
+
+İncelemeci pinned task/ADR013R2ilkiki koşul/ADR008D4–8/C7.2F7.2.1FL7.2.1 ve 14 alanlı pack'i karşılaştırdı. Dokuz sabit pini, kaynak profil LF özeti df3f659c08fd7f12edde33d4264fbbd5700cf12bc796d97817122fce330568b4, ham v54 boyut180901byte/raw SHA256b1590840e18c2a17839488b9c49ccb4a8d97398520c1bf5e6f38adff0902d3ae/source blob byte eşitliği, tam11izinliyol, packcheckpoint62e0811artifactöncesi ve öncekiEDEV086primaryreviewverdict korunmasını bağımsız doğruladı. İkiHELD gerekçe/altayrıntıları, borrowed iPhone/simulator/VDS/CI/roladı/eski inceleme ikamelerinin reddi, E6owns/E7executes/Androidindependent/kalanüçkanıtHELD/noownerdebug/noimpersonation/no procure-build-sign-store-device doğrulandı. İncelemeci fiilen run_all12kontrol+42regresyon PASS, build/routing sonuçlarının salt okunur yeniden hesabının80satır/REVIEW görünümleriyle eşleşmesi, diffcheck/temizağaç/hash/custody denetimlerini yaptı. GitHub sorgusu yapmadı; aşağıdaki CI root'un ayrı gerçek ölçümüdür. Önceden var olan P-PROOF-001 freshness uyarısı kaldı.
+
+Kaynak başlığında 15/15 SUCCESS: PR architecture37134874621(opened)/37134900245(labeled)/E337134874610/live37134874619/E437134874603/E537134874618/E637134874672/E937134874657; push architecture37134829453/E337134829509/live37134829426/E437134829421/E537134829413/E637134829429/E937134829431. AçılışT3job111237267526skipped0adım; etiketliT3job111237337724 gerçekten5adımSUCCESS/checks1112373378147adımSUCCESS/E4PR170testPASS0.168s/E9PR9testPASS0.001s. 2026-10-04 yeniden sorguda aynı15runSUCCESS ve PR89OPEN/DRAFT/head/base eşleşti; ilk statequery geçiciHTTP503 okuma hatası sonra düzeldi, CI hatası veya ret değildir. OtomatikT3 bağımsız hükmün yerine geçmez.
+
+Yazar ilkpacksonboşluk hatasını artifactöncesi düzeltti. İlk yerel HELDlinkcheck hatası iki çalıştırmada görüldü; kayıtadresleri ve doğrulanmış ADR008satır64–71 adresiyle düzeltildi, geçmişte korunur. Son kaynak root12+42PASS0.431s/worst0/build80/routingREVIEW/diff/manual2koşul/2HELD/9pins/raw/exact11/priorprimary/code-tests-workflowunchanged PASS. Bağımsız ret veya sonradan kapatılmamış bulgu uydurulmaz.
+
+Bu kabul bütün T-E7-003a'nın iki ayrı HELD değerlendirme kaydı içindir. Profil REVIEW→ACTIVE, pack IN_PROGRESS→DONE, görev REVIEW→DONE; son altı yol profil/pack/görev/kanıt/iki görünüm. Gerçek kanıt durumu, sekizAndroidHELD, E6kararı, kalanüçiOSkanıtı, hamkopya/envanter/manifestCI/priorproof/code değişmez. Önceki hazırlık/bekleyen inceleme metinleri yazıldıkları anın geçmişidir; bu bölüm güncel belge kabulünü bildirir. Son bağımsız metadata incelemesi ve son başlığın bütün gerçekCI/PRT3/E4/E9 sonuçları olmadan PR89birleştirilemez.
+
+Gerçek Mac/Xcode, Apple emaneti/rol/kurtarma, provenance, gerçekcihaz, gider ve evrensel operasyonhandoff eksik/beklemede. Sınırlı belge devri D-APP-DOC-004v1/P-E10-007v1; gerçek evrenselhandoffID MISSING/BLOCKED. T-E7-002/T003b-c/T006007 ilerlemedi, E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59beklemede. Belge görevi DONE ürün/feature/flow/iOS hazırlığı değil. Hesap, anahtar, ücret, sağlayıcı, build, signing, mağaza veya cihaz eylemi yapılmadı. Yeni vault açıklamaları Türkçe; mevcut İngilizce geçmiş korunuyor.
