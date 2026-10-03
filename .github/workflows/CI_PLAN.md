@@ -50,6 +50,8 @@ used_by:
   - "E-DEV-072"
   - "P-E4-014"
   - "E-DEV-073"
+  - "P-E4-015"
+  - "E-DEV-074"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -206,3 +208,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted13
 ## E4 recovery-closure coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers160units(accepted148+12closure). `modules/e04-offline/tests/test_recovery_closure.py` probes branches/terminal/cycle reachability, missing either recovery role, unreachable malformed graph/mappings, exact compact bytes/roles/dependency graph pin/capability/expiry/scope, strict types/extreme encoding/coherent omissions/immutability/constant HELD. Fixtures do not prove actual reviewed physical corpus/instructions/canonical eligibility/encrypted device/runtime. Context `vault/PACKS/P-E4-014.md`; proof `vault/EVIDENCE/E-DEV-073.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 no-plaintext gate local coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers170units (accepted160+10no-plaintext); accepted PR75 closure tests retained. `modules/e04-offline/tests/test_no_plaintext.py` probes all operation/representation pairs, finite strict input rejection, no effects/hostile callbacks, immutable intrinsic holds, false cloud/key/encryption metadata and no fallback. Fixtures do not prove actual encryption/key lifecycle/storage runtime/device confidentiality. Context `vault/PACKS/P-E4-015.md`; proof `vault/EVIDENCE/E-DEV-074.md`. FULL independent task/current12CI/actualPRT3/finalmetadata audit required, no workflow/gate policy change. Historical PR75 startup billing failure retained; owner-reported fix followed by executed green CI/actual merge; local checks cannot replace applicable exact-head green CI.

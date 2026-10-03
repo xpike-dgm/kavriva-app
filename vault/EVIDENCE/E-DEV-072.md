@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_offline_eligibility.py, modules/e10-graph
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-ELIGIBILITY-001]
-used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-014, E-DEV-073]
+used_by: [V-E4-ELIGIBILITY-001, P-E4-013, T-E4-013, P-E4-014, E-DEV-073, P-E4-015, E-DEV-074]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -79,3 +79,9 @@ Final six-file metadata verification: build_index65/routingT013DONE/eligible[]; 
 ## Secondary accepted custody receipt / T-E4-014 consumption
 
 PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 separate configuredgpt-6-luna/max finalmetadata PASS/no findings, actual final all12CI SUCCESS/PRT3SUCCESS37068102611/E4CI148PASS0.108s; normal matched mergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal offline eligibility task PASS retained. Original primary/hashes/source verdict/reviewer/history unchanged; this consumer/secondary receipt not new prior approval. Taxonomy/windows gate145, actual canonical eligibility/recovery/monotonic encrypted device cache/runtime HELD.
+
+## Historical initial v40 consumption receipt
+
+## Secondary accepted custody receipt / T-E4-015 consumption
+
+PR74 final27ad1d0b5e97aef1bd7508204c3b4048456efcd3 had independent configuredgpt-6-luna/max finalmetadata PASS/no findings, actual final all12CI SUCCESS/PRT3SUCCESS37068102611/E4CI148PASS0.108s; normal matched mergef04a10e542f9853f7551b4eabc3d8b0c43298419 verified2026-10-02T21:43:00Z. Sourceacc77bd FULL internal eligibility task PASS preserved. Original primary/hash/source verdict/reviewer/history unchanged; consumer and secondary actual receipt only, not a new prior approval. Actual taxonomy/windows/eligibility/recovery/encrypted device runtime remain HELD. T015 no-plaintext gate independent of unmergedPR75, no positive storage authority.

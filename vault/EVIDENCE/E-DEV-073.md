@@ -27,7 +27,7 @@ tests: [modules/e04-offline/tests/test_recovery_closure.py, modules/e10-graph/ch
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-RECOVERY-001]
-used_by: [V-E4-RECOVERY-001, P-E4-014, T-E4-014]
+used_by: [V-E4-RECOVERY-001, P-E4-014, T-E4-014, P-E4-015, E-DEV-074]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -95,3 +95,7 @@ PR75 remains OPEN/DRAFT and unmerged. Accepted main remainsf04a10e542f9853f7551b
 Independent /root/pr75_recovery_closure_review gpt-6-luna/max returned proof-only audit PASS/no findings ated5b33242a8aac386fece471fcb61398ae3e5719 versus44817643733199ef55ff63d3fe60fd5364328b73. Only this evidence appendix changed, all source and metadata digests/statuses unchanged; no tests/CI/provider changes by reviewer. Root run_all12checks+42regressionsPASS0.514s/worstexit0 for that continuation; existing freshness warning unchanged.
 
 Following owner continuation, root performed one bounded retry of architecture run37082606446 at publishedhead44817643733199ef55ff63d3fe60fd5364328b73. Attempt2 again concluded FAILURE: checks111089915086 and t3-gate111089914914 started2026-10-03T00:52:08Z and ended00:52:11Z, zero job steps. New checks annotation111089915086 repeats payment/spending-limit startup block. This is not executed test failure or review rejection. No further rerun loop, billing action, final-green claim or merge. Local continuation remains unpublished pending external account correction, fresh metadata audit/current-headCI required before merge.
+
+## Secondary accepted custody receipt / T-E4-015 consumption
+
+PR75 final727be40fa2f8f7b99a24ae6cb63969316a043bfc independently audited PASS by configured gpt-6-luna/max; FULL source PASS e87ea3c53c5c0ca910dbacac0f07ec562f6b1bbd. Actual all12 finalCI SUCCESS: PR37090435266/37090435316/37090435284/37090435267/37090435273/37090435302 and push37090433484/37090433470/37090433463/37090433469/37090433476/37090433474. Actual PR T3 job111109417304 SUCCESS/5steps; E4 CI160PASS0.174s. Normal matched merge e69ba23e0b41e4e13d2e869d8425c9c45dd73ea9 verified2026-10-03T02:46:12Z. Earlier actual startup failures/attempt2 zero-step failure and subsequent owner-reported fix/attempt3 executed success preserved in original history and immutable PR receipt. First merge attempt was rejected while ready-state command was still completing; ready completion verified, then normal matched merge succeeded without bypass. No billing/payment/account changes by agent. Original primary/hash/source verdict/reviewer/history retained; documentary consumer/actual secondary receipt only, not a renewed approval of prior changed bytes. Actual physical source/eligibility/encryption/device/runtime HELD.
