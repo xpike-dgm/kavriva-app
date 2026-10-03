@@ -16,12 +16,12 @@ depends_on: [M-E9-001, M-E3-001, M-E1-001, V-E9-NEVER-001, I-E10-PATHS-001, V-CI
 used_by: [P-E9-010, T-E9-010, E-DEV-084]
 evidence: [E-DEV-084]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # HOLD on ambiguity — no invented certainty or fallback answer
 
-Canonical T-E9-010/C9.6/F9.6.1/FL9.6.1; prerequisite T-E9-009 is DONE in actual accepted PR85, not merely local author state. This is the complete bounded rule artifact, not an implemented production classifier or current verification receipt. Independent FULL/current CI pending; no author DONE.
+Canonical T-E9-010/C9.6/F9.6.1/FL9.6.1; prerequisite T-E9-009 is DONE in actual accepted PR85, not merely local author state. This is the complete bounded rule artifact, not an implemented production classifier or current verification receipt. Actual independent FULL and source CI acceptance are recorded in E-DEV-084. Final metadata audit and exact final-head CI remain required before merge.
 
 ## Binding rule
 
@@ -56,3 +56,9 @@ T006 actual tool authority/binding/bounded retry configuration/trustworthy cost 
 ## Source authority and trace
 
 [ADR014 Decision6](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/05_ADR/RECORDS/ADR-014__AI_LLM_ASSISTANCE_AND_DECISION_LAYER.md#L82-L86); [canonical task and acceptance](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/TASK_INDEX.md); accepted F9.6.1/FL9.6.1 and ACCEPTANCE_MATRIX never15/HOLD/CON001-003. C9.6 -> F9.6.1 -> FL9.6.1 -> T-E9-010 -> M-E9-001 -> E-DEV-084. Profile `vault/PROFILES/ai-ambiguity-hold.md`; pack `vault/PACKS/P-E9-010.md`; task `vault/REGISTRY/T-E9-010.md`; proof `vault/EVIDENCE/E-DEV-084.md`.
+
+## Actual complete HOLD-rule FULL acceptance and source CI / bounded closure
+Independent /root/e9010_ambiguity_hold_full_review configured through actual successful spawn gpt-6-luna/max under direct human preference/acceptedDEC0069 returned FULL PASS, nofindings, at681c02d8a77fd446c0e02195f8ffd6b59cb7e9b3 against acceptedmain49feacc0152c3661d0530710d65bcaebff781416/planfa914f013fdcd032faed876689092da245989459 and actualT009DONEdependency. Complete bounded canonical staticT010rule reviewed: truthful ambiguityHOLD/no fallback/currentowningevidenceresolution/clarificationnotpermission, qualifiedDecision5/6/4/7/E9-E3-E1, acceptedproposalhelper shapeguardnotsemanticverifier. Fourteenfieldpackcheckpoin449788c/exact11/9currentpins/rawv51byteequal/priorprimary/statuscoherence. No reviewer edits/tests/build/CI claimed; model provenance is actual configuredspawn, not runtime attestation. No actual independent rejection or newfinding.
+Actual source all15CI SUCCESS: PRarch37128875435(opened)/37128886381(labeled)/E337128875454/live37128875437/E437128875486/E537128875457/E637128875441/E937128875753; pusharch37128834031/E337128834110/live37128834078/E437128834040/E537128834057/E637128834019/E937128834027. OpenedT3job111219761446skipped0steps; labeledactual executedT3job111219791809five SUCCESS/checks111219791678seven SUCCESS; E4PR170PASS0.173s/E9PRninePASS0.001s. Root source12checks+42regressionsPASS0.460s/worst0/build77/routingREVIEW/manual7conditionmatrix/9pins/hash/rawv51/exact11/priorprimary/acceptedcode-tests-workflows unchanged/diffPASS. Rootverifier wrongfilename token failure and fix kept in evidence, not CI/unit/independentfailure.
+Standingowner accepts complete staticrule/profileREVIEW->ACTIVE/packIN_PROGRESS->DONE/taskREVIEW->DONE; exactsixclosurepaths profile/pack/task/proof/two views only. SourceHOLD/negativecases/qualifiers/roles/sourcepins/rawsnapshot/inventory/manifestCI/priorproof/acceptedcode-tests-workflows unchanged. Final independent six-file metadataaudit and final currenthead allactualruns nominal14+extras/executedPRT3/E4/E9 stillrequired before normalmatchedPR86merge; no admin/bypass/mainpush.
+Actual semanticclassifier/currentcanonicalE3verification/E5identity/E1UI/provider/tool/schema/cost/retry/runtime/native/device/physical/universaloperationalhandoff remainMISSING/HELD. T006unfinished actualtoolauthority-binding-retryconfig-trustworthycostproducer absent/unselected/T007dep006DONEunmet; T011notice separate, productE3R1REVIEW/E5-003IN_PROGRESS/heldPR47/57/59unchanged. Staticrule acceptance never proves fullproduct/feature/flow/consumerconversation or qualified human authority.
