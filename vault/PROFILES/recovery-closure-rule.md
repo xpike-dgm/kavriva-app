@@ -16,10 +16,12 @@ depends_on: [M-E4-001, V-E4-ELIGIBILITY-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-014, T-E4-014, E-DEV-073]
 evidence: [E-DEV-073]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Recovery closure rule
+
+Historical pre-code/source-freeze sections below preserved; current FULL task acceptance and separate physical/product holds are in completion receipt.
 
 Canonical T014/ADR009R6/C4.6/F4.6.1/FL4.6.1 acceptance matrix140/145; harddepT013 DONE internal negative-only rule at acceptedmainf04a10e542f9853f7551b4eabc3d8b0c43298419 after PR74 merged2026-10-02T21:43:00Z with FULL independent source/final metadata PASS and exact-source/final12CI/actualT3. Taxonomy/windows gate145, canonical eligibility/floors/encryption/device/runtime remain separately HELD. T001/T005 full compact composition/verification reused unchanged. T011b/T012 actual E3 operation source pending, productR1 unfinished; no bootstrap-product dependency substitution. E4 consumes E3/E1 renders unchanged, no E6 private import/new public seam. Acceptedplanmainfa914f/localstale7d705/localpendinge3c2/planPR4unmerged/directstandingmandate distinguished. E3R1 REVIEW/E5-003 IN_PROGRESS/unmergedPR47/57/59 unchanged.
 
@@ -35,4 +37,16 @@ Actual independently reviewed complete reachable physical-state graph/instructio
 
 ## Trace
 
-ADR009R6 -> C4.6 -> F4.6.1 -> FL4.6.1 -> T-E4-014 -> M-E4-001 -> E-DEV-073. Taxonomy/windows gate145 remains HELD independently of rule acceptance; E1 client renderer HELD. Source `modules/e04-offline/internal/recovery_closure.py`; tests `modules/e04-offline/tests/test_recovery_closure.py`; pack `vault/PACKS/P-E4-014.md`; task `vault/REGISTRY/T-E4-014.md`; proof `vault/EVIDENCE/E-DEV-073.md`. FULL canonical task review/exact-head CI required before internal rule DONE, no selfPASS.
+ADR009R6 -> C4.6 -> F4.6.1 -> FL4.6.1 -> T-E4-014 -> M-E4-001 -> E-DEV-073. Taxonomy/windows gate145 remains HELD independently of rule acceptance; E1 client renderer HELD. Source `modules/e04-offline/internal/recovery_closure.py`; tests `modules/e04-offline/tests/test_recovery_closure.py`; pack `vault/PACKS/P-E4-014.md`; task `vault/REGISTRY/T-E4-014.md`; proof `vault/EVIDENCE/E-DEV-073.md`. At historical source freeze FULL canonical task review/exact-head CI were required before internal rule DONE, no selfPASS. Current acceptance below.
+
+## Independent full task completion receipt
+
+Separate owner-selected gpt-6-luna/max /root/pr75_recovery_closure_review returned FULL T-E4-014 internal recovery-closure checker PASS, findings none, at sourcee87ea3c53c5c0ca910dbacac0f07ec562f6b1bbd over acceptedbasef04a10e542f9853f7551b4eabc3d8b0c43298419. All13 changed paths and canonical dependency/acceptance reviewed. Complete package revalidation, admitted exact graph dependency digest, scope/capability binding and same-core safe-stop/recovery coverage for every reachable state meet checker acceptance. Branches/cycles terminate; incomplete/unsupported/expired/unknown cases hold. Complete model conveys no authority and production gate stays HELD. Saved v40 snapshot matches accepted base raw inventory. Pack/profile/evidence/registry/routing/manifest/inventory/CI plan align with bounded task. Reviewer ran no tests/CI and made no edits/provider/writes.
+
+Earlier retained /root/pr58_snapshot_binding_review remained pending_init without starting this PR75 review and was interrupted without a verdict. Root reassigned the exact same frozen brief/head to a fresh explicitly configured gpt-6-luna/max independent reviewer, whose FULL verdict above is the actual acceptance. Initialization delay is not CHANGES_REQUESTED, a test failure, or a PASS. No current unit failure or independent rejection; prior histories preserved.
+
+Exact-source all12 applicable CI SUCCESS: PRarchitecture37069194639 actual checks+t3-gateSUCCESS (otherduplicate37069177296), E4 37069194419 actual160PASS0.143s, E3commit37069194501/E5 37069194490/E6 37069194665/live37069194497; pusharchitecture37069158580/E4 37069158579/E3commit37069158638/E5 37069158597/E6 37069158584/live37069158602. Root12new+148accepted full160PASS0.381s/compile; build_index66/routingT014REVIEW/eligible[]; run_all12checks+42regressionsPASS0.446s/worstexit0; diffcheck/exact13paths/rawacceptedv40archiveequal/v41original401/79/alladmissions/pendingv13/v23/v25 retained. Original P-PROOF001 freshness warning unchanged.
+
+Owner direct standing mandate accepts independent delegated FULL task PASS + applicable exact-head green CI + normal matched merge until revoked, acceptedDEC0069 delegation. PendinglocalplanPR4/DEC0070text unmerged and not governing accepted main. Profile/pack ACTIVE/task DONE only the complete internal recovery-closure checker acceptance. Actual independently reviewed complete real physical-state corpus/instructions/safe decision boundaries, authenticated release/recovery/source/dependency/capability/expiry, current authoritative eligibility/negative floors/taxonomy/windows, encrypted complete device store/process death/restore/clock/runtime/E1 rendering remain MISSING/HELD. Coherent supplied graph/CURRENT flag or complete bytes never establish actual physical start; alloutputsNONE/physical_startFalse. No invented safe instructions, production format/TTL/crypto/provider selected or user/content/history written. Matrix145 taxonomy/windows and actual physical recovery gates remain separate. T013 internal rule preserved, T011b/T012/productE3R1 unclosed/E3R1 REVIEW/E5-003 IN_PROGRESS/unmergedPR47/57/59 unchanged.
+
+Closeout changes exactly six documentary/view paths. Source/tests/workflow/archive/inventory/manifest/CI-plan/prior proof unchanged. Separate final metadata audit and exact-final-head12CI/actualT3 are merge gates at closeout; immutable final PR receipt will record their actual completion.
