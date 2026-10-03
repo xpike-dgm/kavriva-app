@@ -2,16 +2,16 @@
 test_id: E-DEV-075
 contract_id_version: "ADR009 R8; held candidate registry v1"
 subject_file: vault/PROFILES/numeric-candidate-points.md
-subject_digest: a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a70a423329b
-result: "RECORDED reconciled registry; fresh FULL/currentCI pending; numeric policy HELD"
+subject_digest: 3a9aa8cd7874f6053a524d2dff4e552a3a1e118ad50d2e8bf0e4a43b7ad30196
+result: "PASS full documentary candidate registry; actual selection/measurement/runtime HELD"
 evidence_links:
   - "vault/PROFILES/numeric-candidate-points.md"
   - "vault/PACKS/P-E4-016.md"
   - "vault/REGISTRY/T-E4-016.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-074-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
-gate_verdict: "RECORDED fresh review pending; historical PASS retained; policy HELD"
-reviewer: "/root/t016_reconciled_full_review; gpt-6-luna/max; CHANGES_REQUESTED at252ba2bfd4cfe4c9e1ec2e612b2d6b2c6df30431; fresh FULL pending; historicalb054 PASS retained"
+gate_verdict: "PASS full candidate registry acceptance only; actual numeric policy HELD"
+reviewer: "/root/t016_reconciled_full_review; gpt-6-luna/max; FULL PASS at351795a981abe85b525d3d60ecade65668b99a38; prior actual252 CHANGES_REQUESTED retained"
 timestamp: 2026-10-03
 purpose: Register source-attributed held storage test points without selecting numeric product policy
 domain: offline-measurement
@@ -112,3 +112,13 @@ Independent /root/t016_reconciled_full_review, owner-selectedgpt-6-luna/max, ret
 Narrow remediation updates numberedfields9/12/13 themselves: actual13pathscope/rawv40+v42archives/everyactualcurrentCI event; boundedP-E4-016v2 under unchangedD-APP-DOC-004v1/P-E10-007precedent/universalhandoffMISSING; actualacceptedv42archivedbeforev43 withT014/T015/all401/79/pendingv13v23v25 retained and priorproofconsumer-only. Observedaccountfix/history rather than currentbillingblock. Original candidate/profile/table/archive/manifest/inventory/CIcoverage/view bytes unchanged. Additional author clarification only labels EDEV072 historicalPR74/T016consumption as-ofPR74; reviewer marked that concern nonblocking, not a fourth rejection. Original priorproof primary/verdict/body preserved. TaskREVIEW -> CHANGES_REQUESTED -> narrow remediation -> REVIEW pending freshFULL; profileREVIEW/packIN_PROGRESS remain, no authorDONE. Historicalb054FULL/8e01metadataPASS and actual252 rejection remain tied to their heads.
 
 Rejectedsource252 actualall13CI SUCCESS does not override pack rejection: PRarch37092465627 checksPASS/T3skip0steps atopened, actualPRarch37092466062 T35stepsSUCCESS/checks7steps labeled; E337092465718/live37092465589/E437092465605(170PASS0.166s)/E537092465619/E637092465692; pusharch37092439506/E337092439530/live37092439532/E437092439526/E537092439480/E637092439508. Fresh correctedsource review/currentCI required beforestatuscloseout/merge. Actualdevice/corpus/T018/native/key/encryption/runtime/numericpolicyremainHELD. No account/provider/version/selection/charge/mainpush/merge.
+
+## Actual FULL corrected-source acceptance and source CI / bounded closure
+
+Independent /root/t016_reconciled_full_review owner-selectedgpt-6-luna/max returned FULL PASS at351795a981abe85b525d3d60ecade65668b99a38. All threeactual252CHANGES_REQUESTED findings closed directly in numberedfields9/12/13; no furtherfindings. EDEV072as-ofPR74clarification accepted as author nonblockingcleanup, no inventedfourthfinding. Entire13path canonicaltask verified: eightverbatimsourcelistsseparate/HELD/noselection/nonadditivesafety/CON005/unrelatedOSbackupquota/T018actualmeasurementheld; rawv40/v42equal/preservation/manifest/CIcoverage/views. Reviewer did no edits/tests/CI/provider/GitHub actions. Originalb054FULL/8e01metadata and actual252 rejection retained at their heads, no oldPASS renewed.
+
+Actual correctedsource351 all12CI SUCCESS: PRarchitecture37093102786/E337093102766/live37093102774/E437093102790/E537093102768/E637093102771; pusharchitecture37093100233/E337093100260/live37093100257/E437093100249/E537093100265/E637093100224. ActualPRT3job1111174309775stepsSUCCESS/checks7steps; E4PR170PASS0.153s. Root remediation12checks+42PASS0.429s/worst0/diff4; originalmanual8sources/table/rawarchives/currenthash verified. Rejected252all13green does not substitute for this correctedreview/CI.
+
+Standingowner/acceptedDEC0069 accepts full bounded canonicaldocumentarytask: Verbatim TEST POINTS; selection deferred to evidence. TaskREVIEW -> DONE/profileREVIEW -> ACTIVE/packIN_PROGRESS -> DONE for that complete registry acceptance only. This sixfilecloseout is profile/pack/task/proof/twoviews; no code/tests/workflow/inventory/manifest/archive/priorproof edits. Actualmainacceptance awaits normalmatchedPR77merge after separatefinalmetadataaudit/allapplicablefinalCI/actualPRT3/executedE4 count. No admin/mainpush/reviewlessmerge. Actual numericpolicy selection/realcorpus/device/T018/native/key/encryption/mobile/runtime/universaloperationalhandoffremainMISSING/HELD. No provider/price/tier/threshold/storagebudget/runtime authority chosen. Otherheldproducttasks unchanged.
+
+Historical sourceprofile a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a70a423329b retained; currentACTIVEprimary 3a9aa8cd7874f6053a524d2dff4e552a3a1e118ad50d2e8bf0e4a43b7ad30196. Original6be6sourcehashretained; no priorverdictrenewal.

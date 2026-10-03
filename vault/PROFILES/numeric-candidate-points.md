@@ -16,12 +16,12 @@ depends_on: [M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E4-016, T-E4-016, E-DEV-075]
 evidence: [E-DEV-075]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Candidate-points HELD registry
 
-Current context: canonical T-E4-016 row124/ADR009R8/C4.8/F4.8.1/FL4.8.1/acceptance142 accepts only HELD candidate registry, no harddependencies. Actual accepted PR76 b636145c700ba00acb2da29eafe9fe78658bc0d1 includes T014/T015/170E4units/v42. Fresh v43 source reconciled with all accepted admissions/history; original f04/FULLb054/metadata8e01 are historical only in E-DEV-075. FreshFULL/currentCI required. Actual code/product/device/corpus/encryption/selection remain separate and HELD; graph/local reservations do not select numeric policy.
+Current context: canonical T-E4-016 row124/ADR009R8/C4.8/F4.8.1/FL4.8.1/acceptance142 accepts only HELD candidate registry, no harddependencies. Actual accepted PR76 b636145c700ba00acb2da29eafe9fe78658bc0d1 includes T014/T015/170E4units/v42. Fresh v43 source reconciled with all accepted admissions/history; original f04/FULLb054/metadata8e01 are historical only in E-DEV-075. Actual FULL acceptance and sourceCI are recorded in E-DEV-075; finalmetadata/currentCI required before merge. Actual code/product/device/corpus/encryption/selection remain separate and HELD; graph/local reservations do not select numeric policy.
 
 ## Approved ADR009 candidate text (verbatim expressions)
 
@@ -62,3 +62,11 @@ Real guide/media corpus distribution and safety classification, device storage c
 ADR009R8 -> C4.8 -> F4.8.1 -> FL4.8.1 -> T-E4-016 -> M-E4-001 -> E-DEV-075. This registry records the source candidates only, no runtime/API/UI/provider/key/device action. E4/E3/E1 render boundaries unchanged; no private import or new public seam. Actual Owner-view/rendering/accessibility not implemented. Missing universal operational handoff remains MISSING/BLOCKED per installed template. Direct owner standing acceptance/acceptedDEC0069 delegated independent review applies; pending localplanPR4/DEC0070 not acceptedmain. E3R1 REVIEW/E5-003IN_PROGRESS/unmergedPR47/57/59 unchanged; PR75/76 actually accepted within their internal scopes.
 
 Pack `vault/PACKS/P-E4-016.md`; task `vault/REGISTRY/T-E4-016.md`; proof `vault/EVIDENCE/E-DEV-075.md`. FULL independent task review/exact-head CI before DONE; no author PASS/selected policy.
+
+## Actual FULL corrected-source acceptance and source CI / bounded closure
+
+Independent /root/t016_reconciled_full_review owner-selectedgpt-6-luna/max returned FULL PASS at351795a981abe85b525d3d60ecade65668b99a38. All threeactual252CHANGES_REQUESTED findings closed directly in numberedfields9/12/13; no furtherfindings. EDEV072as-ofPR74clarification accepted as author nonblockingcleanup, no inventedfourthfinding. Entire13path canonicaltask verified: eightverbatimsourcelistsseparate/HELD/noselection/nonadditivesafety/CON005/unrelatedOSbackupquota/T018actualmeasurementheld; rawv40/v42equal/preservation/manifest/CIcoverage/views. Reviewer did no edits/tests/CI/provider/GitHub actions. Originalb054FULL/8e01metadata and actual252 rejection retained at their heads, no oldPASS renewed.
+
+Actual correctedsource351 all12CI SUCCESS: PRarchitecture37093102786/E337093102766/live37093102774/E437093102790/E537093102768/E637093102771; pusharchitecture37093100233/E337093100260/live37093100257/E437093100249/E537093100265/E637093100224. ActualPRT3job1111174309775stepsSUCCESS/checks7steps; E4PR170PASS0.153s. Root remediation12checks+42PASS0.429s/worst0/diff4; originalmanual8sources/table/rawarchives/currenthash verified. Rejected252all13green does not substitute for this correctedreview/CI.
+
+Standingowner/acceptedDEC0069 accepts full bounded canonicaldocumentarytask: Verbatim TEST POINTS; selection deferred to evidence. TaskREVIEW -> DONE/profileREVIEW -> ACTIVE/packIN_PROGRESS -> DONE for that complete registry acceptance only. This sixfilecloseout is profile/pack/task/proof/twoviews; no code/tests/workflow/inventory/manifest/archive/priorproof edits. Actualmainacceptance awaits normalmatchedPR77merge after separatefinalmetadataaudit/allapplicablefinalCI/actualPRT3/executedE4 count. No admin/mainpush/reviewlessmerge. Actual numericpolicy selection/realcorpus/device/T018/native/key/encryption/mobile/runtime/universaloperationalhandoffremainMISSING/HELD. No provider/price/tier/threshold/storagebudget/runtime authority chosen. Otherheldproducttasks unchanged.
