@@ -11,7 +11,7 @@ evidence_links:
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-074-E10-GOVERNED-PATHS-FOR-T-E4-016.md.snapshot"
 gate_verdict: "PASS full candidate registry acceptance only; actual numeric policy HELD"
-reviewer: "/root/t016_reconciled_full_review; gpt-6-luna/max; FULL PASS at351795a981abe85b525d3d60ecade65668b99a38; prior actual252 CHANGES_REQUESTED retained"
+reviewer: "/root/t016_reconciled_full_review; gpt-6-luna/max; FULL PASS corrected351; finalmetadata974 CHANGES_REQUESTED lifecycle labeling; re-audit pending; prior252 rejection retained"
 timestamp: 2026-10-03
 purpose: Register source-attributed held storage test points without selecting numeric product policy
 domain: offline-measurement
@@ -122,3 +122,9 @@ Actual correctedsource351 all12CI SUCCESS: PRarchitecture37093102786/E3370931027
 Standingowner/acceptedDEC0069 accepts full bounded canonicaldocumentarytask: Verbatim TEST POINTS; selection deferred to evidence. TaskREVIEW -> DONE/profileREVIEW -> ACTIVE/packIN_PROGRESS -> DONE for that complete registry acceptance only. This sixfilecloseout is profile/pack/task/proof/twoviews; no code/tests/workflow/inventory/manifest/archive/priorproof edits. Actualmainacceptance awaits normalmatchedPR77merge after separatefinalmetadataaudit/allapplicablefinalCI/actualPRT3/executedE4 count. No admin/mainpush/reviewlessmerge. Actual numericpolicy selection/realcorpus/device/T018/native/key/encryption/mobile/runtime/universaloperationalhandoffremainMISSING/HELD. No provider/price/tier/threshold/storagebudget/runtime authority chosen. Otherheldproducttasks unchanged.
 
 Historical sourceprofile a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a70a423329b retained; currentACTIVEprimary 3a9aa8cd7874f6053a524d2dff4e552a3a1e118ad50d2e8bf0e4a43b7ad30196. Original6be6sourcehashretained; no priorverdictrenewal.
+
+## Actual final metadata CHANGES_REQUESTED974 / historical lifecycle clarification
+
+Independent /root/t016_reconciled_full_review gpt-6-luna/max returned final sixfilemetadata CHANGES_REQUESTED at97451821453f7693b5c99bd0863d8cefa6f906e2: unheaded initial task lifecycle said REVIEW/FULL/currentCIpending/NoauthorDONE despite current boundedDONE and recorded FULL351/sourceCI. That sentence is now explicitly historical pre-acceptance lifecycle (original wording preserved). All other sixfile/hash/status/attribution/HELD checks aligned; no edits/tests/CI/GitHub actions by reviewer. This is actual metadata rejection, separate from original252FULL rejection; not a code/unit failure or revocation of corrected351 FULL sourcePASS.
+
+Narrow2document remediation changes only TASK historicallabel and EDEV075actualaudit/rejectionhistory. Current profile3a9aa8cd7874f6053a524d2dff4e552a3a1e118ad50d2e8bf0e4a43b7ad30196/pack/view/status/source/table/archive/inventory/manifest/CI/priorproofs unchanged. Bounded sourceDONE/ACTIVE remains grounded in actual351FULLPASS/source12green; actualmainacceptance/merge blocked pending freshfinalmetadataaudit/newexactheadCI. Rejected974actualall12green/actualT3job1111184902465steps/E4PR170PASS0.177s preserved and cannot override rejection. Numericselection/actualmeasurements/T018/device/native/key/encryption/mobile/runtimeHELD. No authorfinalauditPASS/bypass/mainpush/merge.
