@@ -2,15 +2,15 @@
 test_id: E-DEV-082
 contract_id_version: "ADR014 Decision5; ten assistance reference v1"
 subject_file: vault/PROFILES/allowed-ai-help.md
-subject_digest: 147a3a9fa17f7a328dcd88ae52bfe20a93e6054fa521edf53aa8f0e7208aff49
-result: "RECORDED Decision7 remediation; fresh FULL/currentCI pending; actual assistance/runtime HELD"
+subject_digest: e9a1d6ac23e19669a3b2c206890f59911955409783200a8d97e0ca61fb7661bf
+result: "PASS complete qualified static ten-reference; actual assistance/runtime HELD"
 evidence_links:
   - "vault/PROFILES/allowed-ai-help.md"
   - "vault/PACKS/P-E9-008.md"
   - "vault/REGISTRY/T-E9-008.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-081-E10-GOVERNED-PATHS-FOR-T-E9-008.md.snapshot"
-gate_verdict: "RECORDED new-head review pending; actual b368 CHANGES_REQUESTED retained"
-reviewer: "/root/e9008_allowed_ten_full_review; configured gpt-6-luna/max; CHANGES_REQUESTED at b36851b9076034c924e6bfd37f5188dd1ffc7a42; corrected source re-review pending"
+gate_verdict: "PASS complete corrected canonical reference acceptance only; actual b368 rejection closed"
+reviewer: "/root/e9008_allowed_ten_full_review; configured at spawn gpt-6-luna/max; FULL PASS at 6cab01a6e4c125bedaa5e09edd3986c695c576c9; prior b368 finding closed/no new findings"
 timestamp: 2026-10-03
 purpose: Cite the ten approved AI assistance items verbatim with owning verification boundaries
 domain: assistant-allowed-help
@@ -40,7 +40,7 @@ PrimarynormalizedprofileSHA256 9e6b37013086f94f10249454b7f0915108505eb54f48aa322
 
 Actual root source verification: manually compared all ten approved ADR014Decision5 clauses/qualification-negative owning boundaries; exact text/case/slashes/approved-content/already-eligible/boundedallowedset retained with10pinnedL78-L81citations, source linewrap alone folded. P008fourteenfields/exact11 checkpointaf6c322 before artifacts; noharddeps/T006actualruntime-tool-costproof remains unfinished/T007dependencyunmet no registry falseDONE. Current7appsourcepins/profile9e6b37013086f94f10249454b7f0915108505eb54f48aa322b905a16779760df/rawv49byteequal/exact11/priorprimary/acceptedcode-tests-workflows unchanged/diffPASS/build75/routingT008REVIEW/eligible[]/run_all12checks+42regressionsPASS0.446s/worst0. Existing P-PROOF001warning unchanged; no independent rejection/testfailure/providerchoice or mirrorunits invented. FreshFULL/currentCI pending noauthorPASS/DONE.
 
-## Actual b368 FULL review CHANGES_REQUESTED / bounded Decision7 remediation
+## Historical b368 FULL rejection and6cab remediation before acceptance
 
 Independent /root/e9008_allowed_ten_full_review, configured at successful spawn as gpt-6-luna/max, returned CHANGES_REQUESTED at b36851b9076034c924e6bfd37f5188dd1ffc7a42 against accepted8759060c18aea408d4fdccf913ccf8662303c01e and planfa914f. One P2 finding: item9 project/company assistance did not explicitly preserve Decision7 separate implementer/reviewer/validator roles, evidence/independent review and prohibition on impersonating legal identity/store ownership/qualified attestation, despite pack field4 targeting Decision7. Ten exact source clauses/citations, fourteen-field pack/checkpoint, exacteleven paths/rawv49custody/noharddeps/no006007 advancement otherwise passed. Reviewer made no edits and ran no tests/checks/CI/network. Configured model provenance is actual spawn configuration, not invented runtime self-attestation. This is actual FULL rejection, not sourceCI/unit failure or approval.
 
@@ -52,3 +52,15 @@ Current corrected profile normalizedSHA256 147a3a9fa17f7a328dcd88ae52bfe20a93e60
 
 Actual remediation verification: first root helper mistakenly addressed a one-based Decision7 end line as a later zero-based line; AssertionError occurred before any file write. Unchanged oldsource checks12+42PASS0.501s followed and are not corrected-source acceptance. Root resolved exact accepted Decision7 source lines87–88 by locating the actual qualified-attestation clause; narrowly wrote three approved paths. No unit failure/second independent rejection or source authority assertion invented.
 Current remediation actual run_all12checks+42regressionsPASS0.617s/worst0/diff3; exacttenoriginalclauses/case/slashes/qualifiers/pinnedcitations and unchanged pack blob preserved. Current primary147a3a9fa17f7a328dcd88ae52bfe20a93e6054fa521edf53aa8f0e7208aff49 matches corrected profile, rawv49/pins/exact11/priorprimary/acceptedcode-tests-workflows/no006007falseDONE verified. Root manualDecision7role-evidence-nonimpersonation comparison against actual87–88 passes as remediation, not independent acceptance; new frozen head FULL/currentCI required. Profile/taskREVIEW/packIN_PROGRESS and actualruntime/physical proofHELD.
+
+## Actual complete corrected ten-reference FULL acceptance and source CI / bounded closure
+
+Independent /root/e9008_allowed_ten_full_review, configured at successful spawn as gpt-6-luna/max under direct standing human preference/acceptedDEC0069, returned FULL PASS complete static T-E9-008 at6cab01a6e4c125bedaa5e09edd3986c695c576c9 against acceptedbase8759060c18aea408d4fdccf913ccf8662303c01e and planfa914f013fdcd032faed876689092da245989459. Actual prior b368 P2 Decision7 omission closed, no new findings. Exacttenclauses/qualifiers/citations78–81 remain; explicit item9 Decision7roles/evidence-independentreview/nonimpersonation citation87–88 matchesapprovedsource. E3verification/E1rendering/noexecution/pack/task/proof/current11scope preserved. T011 implementationnotice separate; T006007notadvanced. Reviewer made no edits and ran no tests/checks/CI/network. Configured model provenance is actual tool selection, not invented runtime self-attestation. Original b368 CHANGES_REQUESTED/sourceCI/helper failure preserved as history, not erased or silently promoted.
+
+Actual corrected6cab all14 CI SUCCESS: PRarch37126136441/E337126136429/live37126136424/E437126136446/E537126136505/E637126136461/E937126136464; pusharch37126133724/E337126133768/live37126133735/E437126133818/E537126133747/E637126133761/E937126133738. ActualPRT3job111211677127fiveexecutedstepsSUCCESS/checks111211677252sevenSUCCESS/E4PR170PASS0.080s/E9PR9PASS0.001s. Root actual corrected12checks+42regressionsPASS0.617s/worst0/diff3/currenthash/sourcepins/rawv49byteequal/exact11/tenverbatim/Decision7manualcomparison/priorprimary/acceptedcode-tests-workflows/no006007falseDONE separately recorded. Oldb368all15green is not a corrected-head substitute; actual independent rejection was semantic, not a CI failure. No reviewer execution claimed.
+
+Standingowner/acceptedDEC0069 accepts complete canonical exacttenreference with source qualifications: profile REVIEW -> ACTIVE/pack IN_PROGRESS -> DONE/task REVIEW -> DONE. Six-file closure only profile/pack/task/proof/two views, tenclauses/qualification-role-controls/negativeguards/source refs/code-tests-workflows/rawsnapshot/inventory/manifestCI/priorproof unchanged. SourceFULL plus correctedsourceCI satisfied; separate final six-file metadataaudit and final exacthead allactualruns nominal14+extras/executedPRT3/E4-E9 logs required before normalmatchedPR84merge. No admin or directmainpush.
+
+Actual consumer provider/model/toolbinding/schema/account/key/paidchoice/cost/retry/eval/runtime/E3currentauthority/E5identity/E1UI/native/device/physical/universaloperationalhandoff proof remainsMISSING/HELD. T006unfinished actualtool-authority/binding/retryconfig/trustworthycostproducer missing/unselected; T007dependency006DONEunmet. ProductE3R1 REVIEW/E5-003IN_PROGRESS/heldPR47/57/59 unchanged. Complete static ten-reference acceptance is not full product/feature/flow/runtime or qualified human attestation.
+
+Historical rejectedb368profile9e6b37013086f94f10249454b7f0915108505eb54f48aa322b905a16779760df and corrected6cabprofile147a3a9fa17f7a328dcd88ae52bfe20a93e6054fa521edf53aa8f0e7208aff49 retained; current ACTIVE primary e9a1d6ac23e19669a3b2c206890f59911955409783200a8d97e0ca61fb7661bf. No actual assistance/authority/runtime activated.
