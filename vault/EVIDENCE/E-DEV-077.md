@@ -2,8 +2,8 @@
 test_id: E-DEV-077
 contract_id_version: "ADR014 Decision1; bounded proposal rule v1"
 subject_file: vault/PROFILES/five-option-proposals.md
-subject_digest: 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7
-result: "RECORDED reconciled five-category rule; freshFULL/currentCI pending; canonical verification HELD"
+subject_digest: 6a69236235cc535c9f46f676b74a2bb662afa8ae03f9da9561bd74dd6cf89a1b
+result: "PASS full internal five-category proposal rule; canonical verification/runtime HELD"
 evidence_links:
   - "modules/e09-ai/internal/proposal_options.py"
   - "modules/e09-ai/tests/test_proposal_options.py"
@@ -14,8 +14,8 @@ evidence_links:
   - "vault/EVIDENCE/E-DEV-077.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-076-E10-GOVERNED-PATHS-FOR-T-E9-001.md.snapshot"
-gate_verdict: "RECORDED fresh reconciled review pending; historical PASSes retained; runtime HELD"
-reviewer: "none for fresh reconciled source; historical de26/de0/559 gpt-6-luna/max PASSes retained below"
+gate_verdict: "PASS full bounded proposal-rule acceptance only; real assistant/verification HELD"
+reviewer: "/root/e9001_reconciled_full_review; gpt-6-luna/max; FULL PASS at a902ead93522b15b94b29bd27bf48b52ac4ae0a4; historical original source/audit PASSes retained"
 timestamp: 2026-10-03
 purpose: Bound assistant proposals to five approved route categories without granting authority
 domain: assistant-proposals
@@ -36,6 +36,8 @@ status: RECORDED
 ---
 
 # E-DEV-077 bounded proposal rule
+
+## Historical initial f04 source preparation observations
 
 Pre-code14field14pathpack saved. Canonical T-E9-001 has no hard task dependency; actual accepted base f04a10e after PR74, accepted plan fa914f. Pending PR75/T015/T016/T017 not consumed. Owner standing mandate/acceptedDEC0069 applies, local planPR4/DEC0070 unmerged. Exactly five route categories from ADR014 Decision1, not a requirement to generate five task recommendations. E9 proposes/E3 verifies/E1 renders; no new private dependency or public runtime seam.
 
@@ -85,8 +87,22 @@ Independent /root/e9_five_options_independent_review (gpt-6-luna/max) returned F
 
 New three-document receipt only, reviewed profile/current hash/code/tests/workflow/archive/inventory/priorproof/manifest/CIplan/views unchanged. Profile/task REVIEW and pack IN_PROGRESS remain; current CI/real canonical verification/runtime/remote PR absent, no DONE/push/merge/positive authority. Local receipt metadata audit still required; future fresh-main shared-record reconciliation/new frozen source review/checks/current14applicableCIwiththisworkflow/actualPRT3asapplicable/later final closeout review still required before publication/merge.
 
-## Current accepted-main reconciliation / fresh source review pending
+## Historical accepted-main reconciliation / source review pending before a902 acceptance
 
 P-E9-001v2/exact16 paths saved before v44 snapshot/EDEV076 consumer writes. Actual PR78 6ac75ad5e47851426080b6d3430b14317cc4548c accepted, currentv45 followsv44 preservingacceptedT014..T017/170E4tests/alladmissions/401/79/pendingv13v23v25. Oldv40 and newv44 snapshots rawbyteequal; old de26/de0/559 source/audit verdicts historical, no fabricated rejection or currentPASS. Profile old8da5903720ecca7726a767e73c70f0c9e1cfd3e86bb17de3a1e2acb9b9617332 preserved historical; current REVIEW primary 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7. Code/test/workflow/category semantics unchanged. Root current checks pending; no authorDONE. Actual E3 six-dimensional source/fit/approval/prerequisite/readiness/provenance verification/E1render/provider/runtime/physicalproof stillHELD. Seven actualworkflow families require every actual newheadCI (nominal14), actualexecutedPRT3/E9/E4 counts, fresh independentFULL then boundedcloseout/finalmetadata/finalCI before matchedmerge. Billing resolution observed in executed PR75..78; no provider/payment/credential/account change by agent. Original root link-check failure and actual other-task rejection histories retained, not reclassified.
 
 Root current-source verification: expected shared-record merge conflicts in CI_PLAN/EDEV072/inventory resolved from exactacceptedmain plus frozen own bounded sections, preservingall acceptedsource/admissions/history. No failed test/independent rejection invented. Build_index70/routingT-E9-001REVIEW/eligible[]; run_all12checks+42regressionsPASS0.413s/worst0. E9 nine meaningful unitsPASS0.001s/py_compile; acceptedE4 170PASS0.296s unchanged. Exact16 declaredpaths/manualADR014category/E3verifyE1render review/byte-equal rawv40-v44/categorytable/code-test-workflow invariants/diffcheckPASS. Current REVIEW primary116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7; helper9d72dacc75dda8666b6478ced781c24c9e3d0c5723666d60400894e5dd7f6b18/tests2932eaea9f5f6927262de6c8c1041564fbb91ad887e3cc4e527c25568f775f99/workflow76d61208fd17be9f5c56bc7db2fc0f32b2ecc73af2877c5610ecbb971bcfe3c0 unchanged. Fresh FULL/currentCI pending; no authorPASS/DONE.
+
+## Actual reconciled FULL acceptance and source CI / bounded closure
+
+Independent /root/e9001_reconciled_full_review (owner-selected gpt-6-luna/max) returned FULL PASS at a902ead93522b15b94b29bd27bf48b52ac4ae0a4 against accepted PR78 main6ac75ad5e47851426080b6d3430b14317cc4548c and planfa914f013fdcd032faed876689092da245989459. Five bounded categories, opaque references, strict malformed-input holds, intrinsic no authority/physical progression/verification and constant production HELD with no callback effects, meaningful tests/new pinned read-only E9 CI and E3verify/E1render separation reviewed. Exact16 paths/current mandatory sources/rawv40-v44 custody/primary digest/historical proof preservation pass; no remaining findings. Reviewer made no edits and ran no tests/CI. Old de26/de0/559 reviews remain historical source/audit PASSes; no independent rejection invented.
+
+Actual sourcea902 all15 CI SUCCESS (extra opened/labeled architecture event): PRarchitecture37096352318/37096360772/E337096352246/live37096352317/E437096352223/E537096352319/E637096352300/E937096352352; pusharchitecture37096336826/E337096336821/live37096336852/E437096336842/E537096336825/E637096336854/E937096337094. Opened architecture T3skipped0steps is preserved, labeled architecture actualT3job111127002442 five executedstepsSUCCESS/checks111127002577 sevenSUCCESS. E4PR170PASS0.167s/E9PR9PASS0.001s. Root source9unitsPASS0.001/compile/E4170PASS0.296/build70/routingREVIEW/12checks+42regressionsPASS0.413/worst0/exact16/diff/rawarchives/code-test-workflow-category invariants PASS. No earlier-head/local substitute.
+
+Standing owner/accepted DEC0069 accepts full canonical T-E9-001 five-option proposal rule: exactly five bounded options/categories, not a live assistant or canonical verification. Profile REVIEW -> ACTIVE/pack IN_PROGRESS -> DONE/task REVIEW -> DONE. Six-file bounded closure only: profile/pack/task/proof/two regenerated views; helper/test/workflow/criteria/rawarchives/inventory/manifest/CIplan/prior proofs unchanged. Source FULL plus source CI accepted; separate finalmetadata audit/final-head all14nominal CI (everyactualevent)/executedPRT3/E9-E4 tests then normalmatchedPR79merge required before actualmain acceptance. No admin/mainpush/bypass.
+
+E3 six-dimensional correct motorcycle/variant, guide applicability, approved/current status, prerequisites, safety/readiness and source/provenance verification remains separate T-E9-002. Actual canonical identity/authority/guide/source/runtime/E1render/live provider/physical/device/safe continuation and universal operational handoff MISSING/HELD. No model/provider/price/schema/action permission selected. Held product tasks/PR47/57/59 unchanged.
+
+Historical a902 sourceprofile 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7 retained; currentACTIVEprimary 6a69236235cc535c9f46f676b74a2bb662afa8ae03f9da9561bd74dd6cf89a1b. Earlier0572/8da5 historicalprofile digests retained.
+
+Root six-file closure verification: build_index70/routingT-E9-001DONE/eligible[]; run_all12checks+42regressionsPASS0.422s/worst0/diffcheckPASS. Current ACTIVE primary6a69236235cc535c9f46f676b74a2bb662afa8ae03f9da9561bd74dd6cf89a1b matches; source116904 preserved historical. Code/tests/workflow/rawarchives/inventory/manifest/CIplan/priorproofs unchanged. Separate final metadata audit/finalheadCI stillpending, no actualmainmergeclaimed.
