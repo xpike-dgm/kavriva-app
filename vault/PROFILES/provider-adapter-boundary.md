@@ -16,12 +16,12 @@ depends_on: [M-E9-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E9-004, T-E9-004, E-DEV-080]
 evidence: [E-DEV-080]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Provider/model adapter boundary rule
 
-Canonical T-E9-004 acceptance is "Specifics behind adapters; change re-evaluates" under ADR014 Decision3/C9.3/F9.3.1/FL9.3.1. This complete static rule assigns every approved provider-specific behavior to the adapter boundary and keeps Kavriva product rules outside it. It selects no provider, model, integration, schema, account, configuration, evaluation algorithm or rollout. Actual adapter/runtime implementation and observed provider change remain MISSING/HELD. Fresh independent FULL review/current CI are required for documentary task acceptance, not actual provider readiness.
+Canonical T-E9-004 acceptance is "Specifics behind adapters; change re-evaluates" under ADR014 Decision3/C9.3/F9.3.1/FL9.3.1. This complete static rule assigns every approved provider-specific behavior to the adapter boundary and keeps Kavriva product rules outside it. It selects no provider, model, integration, schema, account, configuration, evaluation algorithm or rollout. Actual adapter/runtime implementation and observed provider change remain MISSING/HELD. Actual independent FULL and source CI acceptance are recorded in E-DEV-080; separate final metadata audit/final-head CI still required before merge. Documentary acceptance does not establish actual provider readiness.
 
 ## Specific behavior belongs behind adapters
 
@@ -52,3 +52,13 @@ Root manual immutable-source/negative comparisons, raw accepted inventory and cu
 ## Sources and trace
 
 [ADR014 Decision3](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/05_ADR/RECORDS/ADR-014__AI_LLM_ASSISTANCE_AND_DECISION_LAYER.md), [F9.3.1](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/FEATURE_CATALOG.md), [FL9.3.1](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/USER_FLOW_CATALOG.md), [task index](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/TASK_INDEX.md) and adapter review row in ACCEPTANCE_MATRIX govern. C9.3 -> F9.3.1 -> FL9.3.1 -> T-E9-004 -> M-E9-001 -> E-DEV-080; E9proposes/E3verifies/E1renders preserved. Profile `vault/PROFILES/provider-adapter-boundary.md`; pack `vault/PACKS/P-E9-004.md`; task `vault/REGISTRY/T-E9-004.md`; proof `vault/EVIDENCE/E-DEV-080.md`.
+
+## Actual complete adapter boundary FULL acceptance and source CI / bounded closure
+
+Independent /root/e9004_adapter_boundary_full_review (owner-selected gpt-6-luna/max) returned FULL PASS static complete task review at 2a6c57f1e7eec9adb5e4a92ef112b124dd67db6e versus accepted PR81 main21ed2c3945c584484fbb8ffb1d11b7100814812a and planfa914f013fdcd032faed876689092da245989459. No findings. Exact eleven paths match fourteen-field P-E9-004v1, mandatory source pins/noharddeps/profile/rawv47 custody match. All seven ADR014R3 behavior boundaries/five protected Kavriva product areas/identity-version-behavior re-evaluation/unknown-same-version-shape-confidence negatives covered; T005 detailed trigger stays separate. Reviewer made no edits and ran no tests/checks/CI/network. No independent rejection invented.
+
+Actual source2a6 all15 runs SUCCESS: PRarch37123120522/37123137424/E337123120532/live37123120485/E437123120492/E537123120504/E637123120530/E937123120540; pusharch37123110527/E337123110548/live37123110525/E437123110532/E537123110523/E637123110629/E937123110582. OpenedarchitectureT3skip0steps preserved; labeledactualPRT3job111203031972five executedstepsSUCCESS/checks111203032073sevenSUCCESS. Actual E4PR170PASS0.179s/E9PR9PASS0.001s. Root actual manual immutable7/5boundary/negative comparisons/currenthash/sourcepins/rawv47byteequal/exact11/priorprimary/code-tests-workflows unchanged/build73/routingREVIEW/run_all12+42PASS0.608s/worst0/diffPASS separately recorded; no local/other-head substitute or reviewer-executed tests claimed.
+
+Standingowner/acceptedDEC0069 accepts complete canonical static adapter boundary: profile REVIEW -> ACTIVE/pack IN_PROGRESS -> DONE/task REVIEW -> DONE solely for rule Specifics behind adapters; change re-evaluates. Six-file closure only profile/pack/task/proof/two views; substantive table/boundaries/negative guards/source refs/code-tests-workflows/rawsnapshot/inventory/manifest/CIplan/priorproof unchanged. Actual source FULL and source CI satisfied; separate final six-file metadata audit and final exact-head all current runs/executedPRT3/E9-E4 logs still required before normal matched PR82 merge. No admin or directmainpush.
+
+Actual provider/model/version/config/schema/selection/integration/observations/revalidation algorithm/threshold/privacy approval/cost/log/budget/runtime/identity/currentcanonical verification/E1 UI/native/device/physical/universal operational handoff remain MISSING/HELD. T005 actual harddep can use accepted004 after realmerge, but no provider swap or automatic rollout authorized. ProductE3R1 REVIEW/E5-003IN_PROGRESS/heldPR47/57/59 unchanged. Complete static rule acceptance is not full feature/flow/product/provider readiness.
