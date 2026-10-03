@@ -2645,6 +2645,195 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E4-014",
+   "flow_feature": "FL4.6.1/F4.6.1",
+   "objective": "Recovery-closure check",
+   "context_pack": "P-E4-014",
+   "acceptance": "Complete compact closure for offline start",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Check complete declared recovery coverage for every reachable physical state without granting offline authority",
+   "domain": "offline-recovery",
+   "module": "e04-offline",
+   "owner": "E4",
+   "implements": [
+    "ADR-009",
+    "ADR-001",
+    "ADR-003",
+    "C4.6",
+    "F4.6.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "recovery-closure-rule",
+   "tasks": [
+    "T-E4-014"
+   ],
+   "tests": [
+    "modules/e04-offline/tests/test_recovery_closure.py",
+    "modules/e10-graph/checks/check_registration.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [
+    "T-E4-013"
+   ],
+   "used_by": [
+    "V-E4-RECOVERY-001",
+    "P-E4-014",
+    "E-DEV-073"
+   ],
+   "evidence": "E-DEV-073",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E4-014",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E4-015",
+   "flow_feature": "FL4.7.1/F4.7.1",
+   "objective": "No-plaintext gate",
+   "context_pack": "P-E4-015",
+   "acceptance": "Mechanism HELD; plaintext blocked at gate",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Block plaintext local storage while encryption mechanism and key custody remain unproven",
+   "domain": "offline-storage",
+   "module": "e04-offline",
+   "owner": "E4",
+   "implements": [
+    "ADR-009",
+    "ADR-001",
+    "C4.7",
+    "F4.7.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "no-plaintext-rule",
+   "tasks": [
+    "T-E4-015"
+   ],
+   "tests": [
+    "modules/e04-offline/tests/test_no_plaintext.py",
+    "modules/e10-graph/checks/check_registration.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [],
+   "used_by": [
+    "V-E4-PLAINTEXT-001",
+    "P-E4-015",
+    "E-DEV-074"
+   ],
+   "evidence": "E-DEV-074",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E4-015",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E4-016",
+   "flow_feature": "FL4.8.1/F4.8.1",
+   "objective": "Candidate-points HELD registry",
+   "context_pack": "P-E4-016",
+   "acceptance": "Verbatim TEST POINTS; selection deferred to evidence",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Register source-attributed held storage test points without selecting numeric product policy",
+   "domain": "offline-measurement",
+   "module": "e04-offline",
+   "owner": "E4",
+   "implements": [
+    "ADR-009",
+    "ADR-001",
+    "C4.8",
+    "F4.8.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "numeric-candidate-points",
+   "tasks": [
+    "T-E4-016"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [],
+   "used_by": [
+    "V-E4-POINTS-001",
+    "P-E4-016",
+    "E-DEV-075"
+   ],
+   "evidence": "E-DEV-075",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E4-016",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E4-017",
+   "flow_feature": "FL4.9.1/F4.9.1",
+   "objective": "Classification table",
+   "context_pack": "P-E4-017",
+   "acceptance": "Criteria + Q156/Q157 examples recorded; rule only, mechanism in F4.1.1/F4.1.2",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Record media and history classification criteria without authorizing semantic classification or storage effects",
+   "domain": "offline-classification",
+   "module": "e04-offline",
+   "owner": "E4",
+   "implements": [
+    "ADR-009",
+    "ADR-001",
+    "BR-131",
+    "BR-132",
+    "BR-133",
+    "C4.1",
+    "F4.9.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "media-classification-table",
+   "tasks": [
+    "T-E4-017"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [
+    "T-E4-001",
+    "T-E4-003"
+   ],
+   "used_by": [
+    "V-E4-CLASSIFICATION-001",
+    "P-E4-017",
+    "E-DEV-076"
+   ],
+   "evidence": "E-DEV-076",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E4-017",
+   "status": "DONE"
+  },
+  {
    "task_id": "T-E5-001",
    "flow_feature": "FL5.1.1/F5.1.1",
    "objective": "Account-light start procedure",
@@ -3201,6 +3390,99 @@
    ],
    "evidence": "E-DEV-059",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E6-017",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E9-001",
+   "flow_feature": "FL9.1.1/F9.1.1",
+   "objective": "5-option proposal rule",
+   "context_pack": "P-E9-001",
+   "acceptance": "Exactly 5 bounded options",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Bound assistant proposals to five approved route categories without granting authority",
+   "domain": "assistant-proposals",
+   "module": "e09-ai",
+   "owner": "E9",
+   "implements": [
+    "ADR-014",
+    "ADR-001",
+    "C9.1",
+    "F9.1.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "five-option-proposals",
+   "tasks": [
+    "T-E9-001"
+   ],
+   "tests": [
+    "modules/e09-ai/tests/test_proposal_options.py",
+    "modules/e10-graph/checks/check_registration.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [],
+   "used_by": [
+    "V-E9-PROPOSAL-001",
+    "P-E9-001",
+    "E-DEV-077"
+   ],
+   "evidence": "E-DEV-077",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-001",
+   "status": "DONE"
+  },
+  {
+   "task_id": "T-E9-002",
+   "flow_feature": "FL9.1.1/F9.1.1",
+   "objective": "6-dimension verify checklist",
+   "context_pack": "P-E9-002",
+   "acceptance": "All six dimensions checked",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Record the six canonical verification requirements without granting verification authority",
+   "domain": "assistant-verification-checklist",
+   "module": "e09-ai",
+   "owner": "E9",
+   "implements": [
+    "ADR-014",
+    "ADR-001",
+    "CON-001",
+    "C9.1",
+    "F9.1.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "six-dimension-checklist",
+   "tasks": [
+    "T-E9-002"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [
+    "T-E9-001"
+   ],
+   "used_by": [
+    "V-E9-VERIFY-001",
+    "P-E9-002",
+    "E-DEV-079"
+   ],
+   "evidence": "E-DEV-079",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-002",
    "status": "DONE"
   },
   {

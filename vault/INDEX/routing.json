@@ -55,6 +55,10 @@
   "T-E4-010": "DONE",
   "T-E4-011a": "DONE",
   "T-E4-013": "DONE",
+  "T-E4-014": "DONE",
+  "T-E4-015": "DONE",
+  "T-E4-016": "DONE",
+  "T-E4-017": "DONE",
   "T-E5-001": "DONE",
   "T-E5-003": "IN_PROGRESS",
   "T-E5-007a": "DONE",
@@ -67,6 +71,8 @@
   "T-E6-003": "DONE",
   "T-E6-011": "DONE",
   "T-E6-017": "DONE",
+  "T-E9-001": "DONE",
+  "T-E9-002": "DONE",
   "T-E9-003": "REVIEW"
  }
 }

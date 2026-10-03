@@ -2,15 +2,16 @@
 test_id: E-DEV-078
 contract_id_version: "ADR014 Decision2; static economy skeleton v1"
 subject_file: vault/PROFILES/economy-skeleton.md
-subject_digest: a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2
-result: "PASS bounded static source re-review; current CI and actual selection/cost/runtime evidence missing"
+subject_digest: 1815e57e0034ad32ebbbc8ae62f5d014a8dfd4326dc445895d37bb57ab41710f
+result: "RECORDED reconciled economy principle; freshFULL/currentCI pending; model/cost/runtime HELD"
 evidence_links:
   - "vault/PROFILES/economy-skeleton.md"
   - "vault/PACKS/P-E9-003.md"
   - "vault/REGISTRY/T-E9-003.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot"
-gate_verdict: PASS
-reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; FULL re-review PASS at 22d7df160874f63c0df04b85d4154d319a783f49; prior source PASS and metadata CHANGES_REQUESTED retained"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-079-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot"
+gate_verdict: "RECORDED newsource review pending; historical verdicts retained; selection HELD"
+reviewer: "none for fresh reconciled source; oldec043/22d7/4d0 PASS and actualbe9metadataCHANGES_REQUESTED retained"
 timestamp: 2026-10-03
 purpose: Record cheapest adequate assistance principle while model selection and economics remain held
 domain: assistant-economy
@@ -31,6 +32,8 @@ status: RECORDED
 ---
 
 # E-DEV-078 economy skeleton
+
+## Historical original f04 preparation and review observations
 
 Fresh14field11pathpack before edits. Actual canonical T-E9-003/noharddeps/ADR014 Decision2/C9.2/F9.2.1/FL9.2.1: cheapest-adequate first, nothing selected/logged/budgeted. Actual accepted appf04afterPR74/planfa914f, pendingPR75/T015/T016/T017/T-E9-001 not borrowed. Standing owner mandate/acceptedDEC0069 delegated review, localplanPR4/DEC0070 unmerged/notmainauthority.
 
@@ -70,3 +73,9 @@ Narrow remediation verification: run_all12checksPASS+42regressionsPASS0.503s/wor
 Independent /root/e4_classification_independent_review (gpt-6-luna/max) returned FULL PASS at frozen corrected source 22d7df160874f63c0df04b85d4154d319a783f49. Prior profile status finding closed: missing-review observation explicitly historicized at original ec043 source; current actual verdict/head/finding closure points here. Original reviewed digest retained as historical and corrected current primary a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2 independently matched. Prior genuine ec043 FULL PASS and be9 metadata CHANGES_REQUESTED retained accurately; four-document remediation does not change economy policy/overall scope. No remaining findings. Reviewer ran no tests/CI or edits, and did not infer completion/merge readiness from this PASS.
 
 Three new receipt-only documents record actual 22d7 FULL PASS; reviewed profile/current hash/snapshot/inventory/priorproof/manifest/CIplan/views unchanged. Profile/task REVIEW and pack IN_PROGRESS remain, current CI and actual model selection/adequacy/cost/runtime proof missing, nothing selected/logged/budgeted. New local receipt metadata audit required before this receipt is considered reviewed; future fresh accepted-main reconciliation/new frozen review/checks/current applicable CI/actualPRT3asapplicable/final closeout gates before publication/DONE/merge. No root self-PASS or renewed historical proof.
+
+## Current accepted-main reconciliation / fresh FULL pending
+
+P-E9-003v2 exact13scope declaredbeforecurrentv46archive/EDEV079consumerwrites. Actualmain PR80 24fd76711f49c248489804b298fd231ce8c16f87 /v46, currentv47onlystatic economy. AllacceptedT001/002/T014..T017/original40179/catalog/admissions/pending13/23/25 preserved. Oldv40andcurrentv46 snapshots rawbyteequal, oldprofile a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2 historical; current REVIEW primary 1815e57e0034ad32ebbbc8ae62f5d014a8dfd4326dc445895d37bb57ab41710f. Sourceprinciple/table unchanged; oldec043FULL/be9actualmetadataRET/22d7FULL/4d0audit remainhistory, no newcodefailure/rejection/PASSinvented. FreshFULL/currentCI missing, root currentchecks pending/profiletaskREVIEW/packIN_PROGRESS/noauthorDONE. Sevenacceptedfamilies nominal14+actualevents/actualPRT3/E9E4counts/sourceFULLCI then6filecloseout/finalmetadata-finalCI-normalmatchedmerge. Nothingselected/logged/budgeted, actualprovider-model-adequacy-cost-runtime held; projectreviewer modelcontext distinct fromconsumer productmodel selection.
+
+Root current-source reconciliation verification: expected shared CIplan/M-E9/EDEV072/inventory/views merge conflicts resolved from exactacceptedbase24fd plus ownfrozenboundedsections, preservingall acceptedT001/002/T014..T017/code/admissions/history/catalog. Initialpreparatoryrun_all12+42PASS0.446 occurred before completionreceipt of the source script; after confirmed scriptexit0 bothviews regenerated and current12checks+42regressionsPASS0.750s/worst0/build72/routingT003REVIEW/eligible[]. No failedtest/newindependentretinvented. Manual immutableADR014Decision2/cheapest-fastestADEQUATE/deterministicprecedence/strongerreasoningonlyprovenallowedneed/economicsneverweakenauthority/unknownneedholds/nothingselectedloggedbudgeted/sourcepolicytable unchanged/exact13/diff/rawv40-v46byteequal/currentprofilehashPASS. Current REVIEWprimary1815e57e0034ad32ebbbc8ae62f5d014a8dfd4326dc445895d37bb57ab41710f; originala857 and3133 history retained. Acceptedcode/tests/workflow unchanged, no newmirroredunits/modelselection/costlog/budget/provider/runtimeeffect. FreshFULL/currentCI pending no authorPASS/DONE.

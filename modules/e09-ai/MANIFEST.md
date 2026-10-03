@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-ECONOMY-001, P-E9-003, E-DEV-078]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
-tasks: [T-E10-001, T-E10-006, T-E9-003]
+tasks: [T-E10-001, T-E10-006, T-E9-001, T-E9-002, T-E9-003]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
-evidence: [E-DEV-027, E-DEV-078]
+evidence: [E-DEV-027]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -87,6 +87,14 @@ This metadata frame preserves the original identity and document scope. Where no
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
 
+## T-E9-001 internal bounded proposal rule
+
+`modules/e09-ai/internal/proposal_options.py` provides five ADR014 Decision1 route categories and immutable, nonauthoritative proposals. Unknown/malformed/untrusted/coerced inputs hold using the existing safety-hold category; plain target reference is opaque and unverified. Every proposal authority NONE/physical_progression false/verification HELD, production gate constantly HELD without effects. No E3/E1 import/public runtime seam/provider/request/prompt or tool schema. E3 six-dimension verification/E1 rendering remain separate, actual current authority/source/runtime HELD. Nine meaningful tests at `modules/e09-ai/tests/test_proposal_options.py`, local9PASS0.002s/compile; new pinned read-only `.github/workflows/e9-tests.yml` discovery. Pack `vault/PACKS/P-E9-001.md`/profile `vault/PROFILES/five-option-proposals.md`/proof `vault/EVIDENCE/E-DEV-077.md`. Fresh reconciled FULL review/current CI required before acceptance; oldsource PASS recorded in E-DEV-077, no author DONE. Original anatomy/metadata custody preserved.
+
+## T-E9-002 documentary six-dimension checklist
+
+`vault/PROFILES/six-dimension-checklist.md` records allsix exactADR014R1dimensions with required owningE3 evaluations/missing-negative consequences/cross-context consistency, E9proposes/E3verifies/E1renders. No actual verifier, producer/issuer/schema/privateimport/runtime/publiccontract or code/unit change. Actual source/fit/approval/prerequisites/readiness/provenance/runtimeE1/physicalproofHELD. Pack `vault/PACKS/P-E9-002.md`; proof `vault/EVIDENCE/E-DEV-079.md`. Fresh FULL/currentCI pending, no authorDONE. Original anatomy/metadata custody preserved.
+
 ## T-E9-003 static economy skeleton
 
-`vault/PROFILES/economy-skeleton.md` records approved ADR014 Decision2 cheapest/fastest adequate first, reliable deterministic rules precedence, stronger reasoning only when actual permitted task need proven. Adequacy/need/cost evidence missing holds actual selection; economic pressure never weakens canonical safety/current source/fit/authority. No provider/model/version/threshold/log/budget/runtime/integration chosen or code/workflow changes. E9 proposes/E3 verifies/E1 renders preserved; no public seam/private import. Context `vault/PACKS/P-E9-003.md`; proof `vault/EVIDENCE/E-DEV-078.md`; profile/task REVIEW/packIN_PROGRESS/currentFULLreviewCI missing. No original anatomy/metadata custody rewrite, no authorDONE.
+`vault/PROFILES/economy-skeleton.md` records approved ADR014 Decision2 cheapest/fastest adequate first, reliable deterministic rules precedence, stronger reasoning only when actual permitted task need proven. Adequacy/need/cost evidence missing holds actual selection; economic pressure never weakens canonical safety/current source/fit/authority. No provider/model/version/threshold/log/budget/runtime/integration chosen or code/workflow changes. E9 proposes/E3 verifies/E1 renders preserved; no public seam/private import. Context `vault/PACKS/P-E9-003.md`; proof `vault/EVIDENCE/E-DEV-078.md`; profile/task REVIEW/packIN_PROGRESS/fresh reconciled FULL/currentCI required; oldFULL/metadatafindings/PASSes historical. No original anatomy/metadata custody rewrite, no authorDONE.
