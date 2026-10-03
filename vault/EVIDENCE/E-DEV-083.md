@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-NEVER-001]
-used_by: [V-E9-NEVER-001, P-E9-009, T-E9-009]
+used_by: [V-E9-NEVER-001, P-E9-009, T-E9-009, P-E9-010, E-DEV-084]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -56,3 +56,9 @@ Original reviewed source primary65ced0b49c0f2cff1b81dd637444f5a7bf53fe342c0b7f73
 
 ## Actual bounded closure checks
 Root build76/routingDONE/run_all12checks+42regressionsPASS0.466s/worst0/diffPASS. Exactly six changed paths relative reviewedff263 (profile/pack/task/proof/two views); fifteen clauses, controls, currentpins/rawcustody/inventory/manifestCI/priorproof and accepted implementation remain unchanged. Final six-file independent audit and final-head CI pending, no normal merge yet.
+
+## Secondary actual PR85 acceptance / T-E9-010 consumer
+
+Actual PR85 MERGED2026-10-03T14:04:46Z merge49feacc0152c3661d0530710d65bcaebff781416/final37b87d80bbbd90ec82e6c4abb5c73f31dc5ddf4d. Sourceff26377d28f7fbd6c00455034aea96faf97f23e0 independent FULL PASS/nofindings and final37b87 independent six-file metadata PASS/nofindings, /root/e9009_never_fifteen_full_review configured via successful spawn gpt-6-luna/max/read-only/no testsCI/network. ACTIVEprofiled7ae278c0bc7d047f7cea32f0122597ad2dfd75e2db565aac2bbd89ed5ff3b13 recomputedbyfinalreviewer/matched. Root source12+42PASS0.571/build76/routingREVIEW and closure12+42PASS0.466/build76/routingDONE/diff6/manualexact15/pins/rawv50/priorprimary/code preserved. Sourceall15SUCCESS/openedT3skip0/labeledT3job111216698850five/checks111216698687sevenSUCCESS/E4170PASS0.162/E9ninePASS0.001. Finalall14SUCCESS: PRarch37128164490/E337128164422/live37128164465/E437128164414/E537128164424/E637128164519/E937128164417; pusharch37128162506/E337128162497/live37128162538/E437128162523/E537128162569/E637128162533/E937128162529. ExecutedfinalPRT3job111217652936five/checks111217652994sevenSUCCESS/E4170PASS0.170/E9ninePASS0.001. Normalreadycompletionwaited/normalmatchedmergecompletionwaited/actualGitHubMERGEDverified; noadmin/bypass/directmainpush. Inventoryv51/views76. Complete canonical static fifteen-reference only: qualified never-soleauthority/HOLD/citations/roles/seams preserved; no actualprovider/tool/cost/retry/runtime/E3E5/E1/device/physical/universalhandoffproof. T006unfinished/T007dep006DONEunmet/T010notyetstarted/T011notice separate. Root packUTF8beforewrites and verifieroldpackpathfailures accuratelypreserved/resolved; no independentrejection/sourceCI/unitfailure. No qualified human attestation invented.
+
+Original primary/reviewer/verdict/history retained; consumer and actual secondary receipt only. Earlier finalgatespending statements asof37b87write; no renewedpriorapproval. Actualruntime/device/physical authority remainsHELD.

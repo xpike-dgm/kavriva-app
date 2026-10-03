@@ -70,6 +70,8 @@ used_by:
   - "E-DEV-082"
   - "P-E9-009"
   - "E-DEV-083"
+  - "P-E9-010"
+  - "E-DEV-084"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -270,3 +272,7 @@ Manual pinnedADR014Decision5 exactten/casequalifier/slash/sourcecitation/negativ
 ## E9 never-fifteen documentary coverage
 
 Exact15 source clauses/citations/qualifiers/HOLD/assistance/role/seam negative comparisons; primary/pins/rawv50/exact11/prior primary/build/routing/run_all12+42/diff. No new constant tests or workflow implementation; accepted E4 170/E9 nine unchanged. Fresh independent FULL/source CI before bounded closure; final metadata/final-head all seven CI families plus executed PR T3/E4/E9 before normal matched merge. Context `vault/PACKS/P-E9-009.md`; proof `vault/EVIDENCE/E-DEV-083.md`. Runtime/physical authority proof remains HELD.
+
+## E9 ambiguity-HOLD documentary coverage
+
+Manual condition-to-HOLD/reason/no-fallback seven-row matrix, qualifiednever15/allowed10/roles/seams/source consistency; currentninepins/primary/rawv51/exact11/priorprimary/acceptedcode-tests-workflows unchanged/build/routing/run_all12+42/diff. ExistingE4170/E9nine preserved/no mirroredunits. FULL/sourceCI before boundedclosure; finalmetadata/currentheadallsevenfamilies+executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E9-010.md`; proof `vault/EVIDENCE/E-DEV-084.md`. Actual semantic/runtime/physical proof HELD.
