@@ -76,6 +76,8 @@ used_by:
   - "E-DEV-085"
   - "P-E7-001"
   - "E-DEV-086"
+  - "P-E7-003a"
+  - "E-DEV-087"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -288,3 +290,7 @@ Manual role mapping/sixexactnoticeheadings-completefields/negativecases/DEC0068-
 ## E7 Android checklist documentary coverage
 
 Exacteightclauses/citations/actualeightMISSINGHELDrows/E6decision-nopolicy/negativecases/AndroidiOSindependence/ADR008realdevicebounds; currentninepins/primary/rawv53/exact11/priorprimary/E6-code-tests-workflows unchanged/build/routing/run_all12+42/diff. No new runner/build/constantmirrortests; acceptedE4170/E9nine preserved. FreshindependentFULL/sourceCI beforeboundedclosure/finalmetaaudit/finalallsevenfamiliesCI/executedPRT3/E4/E9 before normalmatchedmerge. Context `vault/PACKS/P-E7-001.md`; proof `vault/EVIDENCE/E-DEV-086.md`. Actualrelease-custody-cost-rebuild-device proof HELD.
+
+## E7 ilk iki iOS kanıtı belge kapsamı
+
+İki ayrı HELD/koşul ayrıntıları/negatifler/Android bağımsızlığı/E6 sınırı; dokuz kaynak pini/profil ve hamv54hash-byte eşitliği/11yol/priorprimary korunması/12+42/build/routing/diff. Kod/test/workflow değişmez; E4170/E9nine korunur. Kaynak bağımsız FULL+CI; sonaltıdosyakapanış/metaaudit/sonCI ve gerçekT3 olmadan merge yok. Pack `vault/PACKS/P-E7-003a.md`; kanıt `vault/EVIDENCE/E-DEV-087.md`.
