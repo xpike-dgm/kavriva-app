@@ -58,6 +58,8 @@ used_by:
   - "E-DEV-076"
   - "P-E9-001"
   - "E-DEV-077"
+  - "P-E9-002"
+  - "E-DEV-079"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -234,3 +236,7 @@ Current acceptedbasePR77 retains170E4units and allT014/T015/T016coverage; earlie
 ## E9 bounded proposal rule coverage
 
 New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_options.py` with accepted checkout v5 full pin, persist-credentials false and contents read; no secrets/provider/DB/tool effects. Nine tests cover category boundary, invalid/stale opaque targets, malformed/unrecognized/sixth category, hostile hooks, immutability/authority claims and constant production closure. No canonical E3 verification/live assistant/provider/UI proof. Applicable seven push/PR workflow families require14 current-head successful runs with actual PR T3 as applicable; no gate weakening. Local9PASS0.002s/compile is not remote CI. Historical account startup block resolved by owner; actualPR75..78 executedCI recorded, fresh current E9 head CI required. Pack `vault/PACKS/P-E9-001.md`; proof `vault/EVIDENCE/E-DEV-077.md`. Independent FULL review/final closeout metadata/currentCI required before DONE/merge.
+
+## E9 six-dimension checklist documentary coverage
+
+Manual pinned ADR014R1 six-row/source-role/negative-consistency and CON001 comparison; graph registration/links/custody/views/run_all12+42/currentprofilehash/rawv45archive/diff/exact11; no staticconstant mirror units, code orworkflowchange. Existing E9nine/E4170 unitdiscovery preserved, actualcurrent7family14nominalCI/allactualevents/actualPRT3/E9-E4logs/FULLsource/finalmetadata gatesbeforematchedmerge. Checklistreview is not actualE3canonicalverification or E1 rendering/device/physicalproof. Pack `vault/PACKS/P-E9-002.md`; proof `vault/EVIDENCE/E-DEV-079.md`.

@@ -29,7 +29,7 @@ tests: [modules/e09-ai/tests/test_proposal_options.py, modules/e10-graph/checks/
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-PROPOSAL-001]
-used_by: [V-E9-PROPOSAL-001, P-E9-001, T-E9-001]
+used_by: [V-E9-PROPOSAL-001, P-E9-001, T-E9-001, P-E9-002, E-DEV-079]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -106,3 +106,7 @@ E3 six-dimensional correct motorcycle/variant, guide applicability, approved/cur
 Historical a902 sourceprofile 116904dc0488a8c9d6ce376bea466ee13f64740b7abb914c144d6e5850efc7d7 retained; currentACTIVEprimary 6a69236235cc535c9f46f676b74a2bb662afa8ae03f9da9561bd74dd6cf89a1b. Earlier0572/8da5 historicalprofile digests retained.
 
 Root six-file closure verification: build_index70/routingT-E9-001DONE/eligible[]; run_all12checks+42regressionsPASS0.422s/worst0/diffcheckPASS. Current ACTIVE primary6a69236235cc535c9f46f676b74a2bb662afa8ae03f9da9561bd74dd6cf89a1b matches; source116904 preserved historical. Code/tests/workflow/rawarchives/inventory/manifest/CIplan/priorproofs unchanged. Separate final metadata audit/finalheadCI stillpending, no actualmainmergeclaimed.
+
+## Secondary accepted PR79 receipt / T-E9-002 documentary consumer
+
+Actual sourceFULLa902ead93522b15b94b29bd27bf48b52ac4ae0a4/finalmetadata97c2e2f9deedbfd5fa03da00fe73db746ca9a65f PASS independent /root/e9001_reconciled_full_review configuredgpt-6-luna/max, no findings/no reviewerexecution. Actualall15source/all14finalCI SUCCESS. Final PRarch37096875416/E337096875620/live37096875444/E437096875483/E537096875439/E637096875480/E937096875440; pusharch37096871897/E337096871879/live37096871871/E437096871863/E537096871870/E637096871860/E937096871873. ActualPRT3job1111284895225steps/checks1111284897427stepsSUCCESS/E4PR170PASS0.169s/E9PR9PASS0.001s. Normalmatchedmerge 6d946850fce5f540ee9ca010816021bdc1a501a8 at2026-10-03T04:35:48Z verified. Priorprimary/hash/sourceverdict/reviewer/allhistory preserved; currentconsumer+actualsecondaryreceipt only, not renewedpriorapproval. Earlier pendingfinalgates sentence above was as-of97write; actualexternalPASS/gates/merge recordedhere, no selfheadapproval. ActualE3sixdim/E1/provider/runtime/physical proofHELD, checklistdoesnot implementit.
