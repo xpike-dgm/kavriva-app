@@ -56,6 +56,8 @@ used_by:
   - "E-DEV-075"
   - "P-E4-017"
   - "E-DEV-076"
+  - "P-E9-001"
+  - "E-DEV-077"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -228,3 +230,7 @@ Current acceptedbase PR76 retains all170 E4units and T014/T015 coverage. No new 
 `vault/PROFILES/media-classification-table.md` static source-attributed criteria/examples only, no source code or constant-mirror units. ExistingacceptedE4workflow148units unchanged; pendingPR75/T015unitsnotconsumed. Graph registration/links/trace/custody, actualdependencyreceipts and manual independentcanonicalcriteria/Q156Q157/Q158source review required. Context `vault/PACKS/P-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. FULLtask/current12CI/actualT3/finalmetadataaudit remain, no workflow/gatepolicy changes. Actualclassification/physicalmedia/entitlements/encryptedruntime/deviceproofHELD, CIbillingstartupblockcannotbe replacedbylocalchecks.
 
 Current acceptedbasePR77 retains170E4units and allT014/T015/T016coverage; earlier148/pending observations above are historical sourcepreparation, not current codeclaims. Staticregistry adds no mirrorunits; currentgraph/source/manual/review/CI gates apply.
+
+## E9 bounded proposal rule coverage
+
+New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_options.py` with accepted checkout v5 full pin, persist-credentials false and contents read; no secrets/provider/DB/tool effects. Nine tests cover category boundary, invalid/stale opaque targets, malformed/unrecognized/sixth category, hostile hooks, immutability/authority claims and constant production closure. No canonical E3 verification/live assistant/provider/UI proof. Applicable seven push/PR workflow families require14 current-head successful runs with actual PR T3 as applicable; no gate weakening. Local9PASS0.002s/compile is not remote CI. Historical account startup block resolved by owner; actualPR75..78 executedCI recorded, fresh current E9 head CI required. Pack `vault/PACKS/P-E9-001.md`; proof `vault/EVIDENCE/E-DEV-077.md`. Independent FULL review/final closeout metadata/currentCI required before DONE/merge.

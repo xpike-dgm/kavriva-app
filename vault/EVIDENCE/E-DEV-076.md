@@ -25,7 +25,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-CLASSIFICATION-001]
-used_by: [V-E4-CLASSIFICATION-001, P-E4-017, T-E4-017]
+used_by: [V-E4-CLASSIFICATION-001, P-E4-017, T-E4-017, P-E9-001, E-DEV-077]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -134,3 +134,7 @@ Actual item classification, semantic writers, authoritative runtime consumption,
 Historical f83 sourceprofile 400283568feae96d0a99b2c0f9e9d1e11fcf80d548de5a42822957ce4079f198 retained; current ACTIVE primary 0c7fc2f3239c7ad115f8842eaf868b044179ed11cd30638c9a64674a0f2de2e9. Original692437 source digest retained above.
 
 Root six-file closeout verification: build_index69/routingT017DONE/eligible[]; run_all12checks+42regressionsPASS0.450s/worstexit0/diffcheckPASS. Criteria and source archives unchanged. Current ACTIVE subject digest 0c7fc2f3239c7ad115f8842eaf868b044179ed11cd30638c9a64674a0f2de2e9 independently recomputed; source400283 retained historical. Final metadata audit and final CI are pending gates, not claimed.
+
+## Secondary accepted PR78 receipt / T-E9-001 documentary consumption
+
+Actual independent FULL PASS f83e64097c8a7c1fa1afd48b42ed0a92d48a0437 and finalmetadata PASS 2da6c68e56fbce780f66ad7f3fe370de94465406 by /root/t017_reconciled_full_review (owner-selected gpt-6-luna/max). Actual originalc8 and360 CHANGES_REQUESTED retained/corrected, no invented unit failure or renewed earlierhead approval. Finalall12CI SUCCESS PRarch37095855487/E337095855474/live37095855473/E437095855475/E537095855471/E637095855527; pusharch37095851755/E337095851754/live37095851751/E437095851747/E537095851750/E637095851749. ActualPRT3job111125511181 five executed steps SUCCESS/checks111125511035 sevenSUCCESS/E4PR170PASS0.152s. Normal matched PR78 merge 6ac75ad5e47851426080b6d3430b14317cc4548c at 2026-10-03T04:19:23Z. Prior primary digest/profile/source/verdict/reviewer/history retained; documentary consumer and actual secondary receipt only. Source-write pending finalaudit/CI observations above are historical as-of2da write, actual external gates recorded here, no self-headapproval. Classification mechanism/device/physical/runtime remainHELD.
