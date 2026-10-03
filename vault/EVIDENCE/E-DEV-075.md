@@ -25,7 +25,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E4-POINTS-001]
-used_by: [V-E4-POINTS-001, P-E4-016, T-E4-016]
+used_by: [V-E4-POINTS-001, P-E4-016, T-E4-016, P-E4-017, E-DEV-076]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -128,3 +128,7 @@ Historical sourceprofile a6dcb2e246a0733953489e6e6c8fd68f0d4acc27dd6c6eca47785a7
 Independent /root/t016_reconciled_full_review gpt-6-luna/max returned final sixfilemetadata CHANGES_REQUESTED at97451821453f7693b5c99bd0863d8cefa6f906e2: unheaded initial task lifecycle said REVIEW/FULL/currentCIpending/NoauthorDONE despite current boundedDONE and recorded FULL351/sourceCI. That sentence is now explicitly historical pre-acceptance lifecycle (original wording preserved). All other sixfile/hash/status/attribution/HELD checks aligned; no edits/tests/CI/GitHub actions by reviewer. This is actual metadata rejection, separate from original252FULL rejection; not a code/unit failure or revocation of corrected351 FULL sourcePASS.
 
 Narrow2document remediation changes only TASK historicallabel and EDEV075actualaudit/rejectionhistory. Current profile3a9aa8cd7874f6053a524d2dff4e552a3a1e118ad50d2e8bf0e4a43b7ad30196/pack/view/status/source/table/archive/inventory/manifest/CI/priorproofs unchanged. Bounded sourceDONE/ACTIVE remains grounded in actual351FULLPASS/source12green; actualmainacceptance/merge blocked pending freshfinalmetadataaudit/newexactheadCI. Rejected974actualall12green/actualT3job1111184902465steps/E4PR170PASS0.177s preserved and cannot override rejection. Numericselection/actualmeasurements/T018/device/native/key/encryption/mobile/runtimeHELD. No authorfinalauditPASS/bypass/mainpush/merge.
+
+## Secondary accepted custody receipt / T-E4-017 consumption
+
+Actual PR77 final88118f3405026e51b5bfe225e8f656d8ae63b767/source351795a981abe85b525d3d60ecade65668b99a38 independent FULLsource/finalmetadataPASS by configuredgpt-6-luna/max /root/t016_reconciled_full_review. ActualFULL252CHANGES_REQUESTED stalepackfields and metadata974CHANGES_REQUESTED unlabeledlifecycle retained, both corrected/re-audited, no unitfailure invented. All12finalCI SUCCESS: PRarch37094066648/E337094066606/live37094066597/E437094066686/E537094066673/E637094066653; pusharch37094064686/E337094064671/live37094064674/E437094064695/E537094064688/E637094064718. ActualPRT3job1111202637505stepsSUCCESS/checks7steps; E4PR170PASS0.088s. Normal matched merge ac28ec4389fbf5cc0c12299695c04a51c6ccdb47 verified2026-10-03T03:45:32Z. Original primary/hash/sourceverdict/reviewer/allhistories unchanged; currentconsumer/actualsecondaryreceipt only, not renewed priorapproval. Current old re-auditpending sentence is as-ofits881write; actualexternalfinalPASS and merge recorded here, no invented self-headapproval. Allnumericselection/device/corpus/T018/nativekeyencryption/runtimeHELD.

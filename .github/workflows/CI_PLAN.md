@@ -54,6 +54,8 @@ used_by:
   - "E-DEV-074"
   - "P-E4-016"
   - "E-DEV-075"
+  - "P-E4-017"
+  - "E-DEV-076"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -220,3 +222,9 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers170units (accepted1
 `vault/PROFILES/numeric-candidate-points.md` is source-attributed HELD registry only; no new runtime/constants/thresholds or tests mirroring documentary values. Existing E4workflow148units acceptedbase unchanged; pendingPR75T014/T015tests not consumed. Graph registration/link/trace/custody checks and independent manual verbatim source review required. Context `vault/PACKS/P-E4-016.md`; proof `vault/EVIDENCE/E-DEV-075.md`. All6workflowfamilies/current12CI/actualT3/FULLtask/finalmetadata requirements retained, no workflow/gatepolicy change. Actualcorpus/device/encryption/numericpolicy gates HELD; startup billing block not a localcheck PASS substitute.
 
 Current acceptedbase PR76 retains all170 E4units and T014/T015 coverage. No new mirror unit test for this static registry. Old148-base observations above are historical; fresh graph/manual source/custody/review/currentCI gates apply.
+
+## E4 classification table documentary coverage
+
+`vault/PROFILES/media-classification-table.md` static source-attributed criteria/examples only, no source code or constant-mirror units. ExistingacceptedE4workflow148units unchanged; pendingPR75/T015unitsnotconsumed. Graph registration/links/trace/custody, actualdependencyreceipts and manual independentcanonicalcriteria/Q156Q157/Q158source review required. Context `vault/PACKS/P-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. FULLtask/current12CI/actualT3/finalmetadataaudit remain, no workflow/gatepolicy changes. Actualclassification/physicalmedia/entitlements/encryptedruntime/deviceproofHELD, CIbillingstartupblockcannotbe replacedbylocalchecks.
+
+Current acceptedbasePR77 retains170E4units and allT014/T015/T016coverage; earlier148/pending observations above are historical sourcepreparation, not current codeclaims. Staticregistry adds no mirrorunits; currentgraph/source/manual/review/CI gates apply.
