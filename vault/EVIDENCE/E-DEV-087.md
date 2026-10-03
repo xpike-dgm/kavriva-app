@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-IOS-ACCESS-001]
-used_by: [V-E7-IOS-ACCESS-001, P-E7-003a, T-E7-003a]
+used_by: [V-E7-IOS-ACCESS-001, P-E7-003a, T-E7-003a, P-E7-003b, E-DEV-088]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -67,3 +67,11 @@ Gerçek Mac/Xcode, Apple emaneti/rol/kurtarma, provenance, gerçekcihaz, gider v
 İncelenen kaynak birincil özeti df3f659c08fd7f12edde33d4264fbbd5700cf12bc796d97817122fce330568b4 korundu; ACTIVE kaydın güncel özeti a3ca37a651ce9d89a1caad2bdfc18aa5c07fefd934c807e89c88e833d648ff9f. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek Mac/Apple erişimi veya iOS yayın yetkisi verilmedi.
 
 Son kapanış yazar kontrolü: altıdosya farkı ve güncelprofil/proof özeti eşleşti; build80/routingDONE/run_all12kontrol+42regresyon PASS/worst0/diffPASS. Son bağımsız metadata hükmü ve bu kapanış başlığının gerçek CI sonuçları hâlâ bekleniyor.
+
+## Gerçek PR89 kabulünün ikincil kaydı ve T-E7-003b tüketicisi
+
+## PR89 gerçek ikincil kabul kaydı
+PR89 normal merge/match-head-commit ile MERGED; sonHEADced8cf3fc942cce463389d19817483ce732aa34e/merge6e1811d46464145d516254800a6d89e1a75899d6/mergedAt2026-10-03T22:14:52Z (Türkiye2026-10-04). Kaynak6e6c2a9 bağımsızFULLPASS/no findings ve sonced8metadataFULLPASS ayrı /root/e7003a_ios_access_custody_full_review gpt6luna-max/owneracceptedDEC0069. Reviewer kaynaktaactual12+42/build-routingread-only/hash/raw/exact11/priorprimary/diff-clean; finalmetaactual4checksregistration-links-packs-conformance/views/digest/diff-clean, GitHubquerynone. Root final14/14SUCCESS: PRarch37157445103/E337157445238/live37157445160/E437157445144/E537157445157/E637157445175/E937157445150; pusharch37157442950/E337157442876/live37157442916/E437157442946/E537157442892/E637157442884/E937157442901. GerçekT3job111303674820five/checks111303674992sevenSUCCESS/E4PR170PASS.175/E9PRninePASS.001. Uzayanlogread kesildi, boundedcurrentheadquery/logsuccess ile teyit edildi; HTTP503/slowread unitCI veya bağımsızret değil. Kullanıcının önceki güvenlidur/resume tarihsel; çalışmaya devamet yetkisi2026-10-04 aktif. NormalmergeactualGitHubstate/fetch doğrulandı; no mainpush/admin/bypass.
+Kabul edilmişinventoryv55/views80/scopedcanonical77DONE129remaining. İlkiki gerçek iOS kanıtı ayrıHELD; gerçek Mac/Appleemaneti ve beşli iOS aktivasyonu eksik. T002/T003b-c/T006007 ilerlemedi; E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59unchanged. Frozenproofmetadata-finalCIpending yazıldığıanı gösterir; bu sonraki ikincil dışsonuç primaryyenidenonay değil. Ürün/physical/feature/flow/yayın hazır sayılmaz. Yeni Türkçe açıklamalar, eski İngilizce kayıtlar preserved.
+
+Önceki birincilsubject/digest/reviewer/verdict/history değişmedi. Son frozenproof pending ifadesi o başlığın yazıldığı anı gösterir; ikincil gerçek merge sonuçları eski kaynağı yeniden onaylamaz. Gerçek fiziksel Android/iOS/yayın HELD kalır.
