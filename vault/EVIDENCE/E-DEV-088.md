@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-IOS-RECOVERY-001]
-used_by: [V-E7-IOS-RECOVERY-001, P-E7-003b, T-E7-003b]
+used_by: [V-E7-IOS-RECOVERY-001, P-E7-003b, T-E7-003b, P-E7-003c, E-DEV-089]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -59,3 +59,11 @@ Gerçek provenance, rutin ve incident kurtarma, diğer üç iOS koşulu, güncel
 İncelenen kaynak birincil özeti 1297f04207e1df251ca77f494b49f70290ef89e0cc7b955d93ada4ee990445d8 korundu; ACTIVE kaydın güncel özeti e44226f0f1d0e8b928ff7a51ec0727ad21441ce7a6da71fe61117202645a6cdd. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek iOS provenance/kurtarma veya yayın yetkisi verilmedi.
 
 Son kapanış yazar kontrolü: altıdosya farkı/profilhash eşleşti; build81/routingDONE/run_all12kontrol+42regresyon PASS/worst0/diffPASS. Son metadata bağımsız hükmü ve bu son başlığın gerçek CI kapıları bekleniyor.
+
+## Gerçek PR90 kabulünün ikincil kaydı ve T-E7-003c tüketicisi
+
+## PR90 gerçek ikincil kabul kaydı
+PR90 normal merge/match-head-commit ile MERGED; finalf5cfb3aa8cfc24c7edf8cc208bf65f72296756e0/merge392bd7ad6ae2bca372df84014352add55d2c394e/mergedAt2026-10-03T22:36:58Z (Türkiye2026-10-04). Kaynak9c07b52 bağımsızFULLPASS ve sonf5metadataPASS/no findings /root/e7003b_ios_provenance_recovery_full_review gpt6luna-max/owneracceptedDEC0069 ile ayrı kaydedildi. Reviewer source/finaltest veyaCI/GitHubquery yapmadı; actualsource-pins/rawhash-byte/scope/canonical/protocol/negativecases/priorprimary/diff/clean ve final6files/profiledigest/viewDONE/sourcefinaldistinction denetlendi. Rootfinal14/14SUCCESS: PRarch37158736379/E337158736345/live37158736352/E437158736354/E537158736335/E637158736342/E937158736376; pusharch37158732888/E337158732833/live37158732847/E437158732812/E537158732814/E637158732914/E937158732844. GerçekPRT3job1113074884165step/checks1113074881567stepSUCCESS/E4PR170PASS.171/E9PR9PASS.001. Rootfinal12+42PASS.620/build81/DONE/diffPASS. ActualGitHubMERGED/fetch verified; no mainpush/admin/bypass. Planmainremote fa914f013fdcd032faed876689092da245989459 teyit edildi; pendingDEC0070 yetki değil.
+Kabul edilmişinventoryv56/views81/scopedcanonical78DONE128remaining. Üçüncü ve dördüncü actualiOSkanıtı ayrıHELD; ilkikiHELD, beşinci değerlendirilmedi; iOS/E6currentdecision/realprovenance/routine+incidentrecovery/device/universalhandoff eksik. T002/T003c/T006007/E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59unchanged. FrozenprooffinalauditCIpending yazıldığıanın snapshotı; bu sonraki ikincil dışsonuç eski kaynağın renewedapproval değil. Ürün/physical/feature/flow/yayın hazır değil. Yeni Türkçe açıklamalar ve eski İngilizce tarihi korunur; 4Octcontinueactive/no stop/no goals-automations.
+
+Önceki birincilsubject/digest/reviewer/verdict/history değişmedi. Son frozenproof pending ifadesi o başlığın yazıldığı anı gösterir; ikincil gerçek merge sonuçları eski kaynağı yeniden onaylamaz. Gerçek fiziksel Android/iOS/yayın HELD kalır.
