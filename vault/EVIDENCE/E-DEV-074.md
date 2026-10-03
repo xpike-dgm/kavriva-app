@@ -2,17 +2,18 @@
 test_id: E-DEV-074
 contract_id_version: "ADR009 R7; no-plaintext gate v1"
 subject_file: vault/PROFILES/no-plaintext-rule.md
-subject_digest: 3ad4314e409a6abb4ff58403b89b2156dc0eba7d09225a26d37b1d6b93ff8540
-result: "PASS independently reviewed bounded internal gate; exact-head CI missing; production HELD"
+subject_digest: 1bbd44440dad13fd8366848776db39d1d2e19b2190eea67c4f174bdc036a568c
+result: "RECORDED reconciled source; fresh independent FULL/current CI pending; production HELD"
 evidence_links:
   - "vault/PROFILES/no-plaintext-rule.md"
   - "vault/PACKS/P-E4-015.md"
   - "vault/REGISTRY/T-E4-015.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-015.md.snapshot"
+  - "vault/EVIDENCE/SNAPSHOTS/E-DEV-073-E10-GOVERNED-PATHS-FOR-T-E4-015.md.snapshot"
   - "modules/e04-offline/internal/no_plaintext.py"
   - "modules/e04-offline/tests/test_no_plaintext.py"
   - ".github/workflows/e4-tests.yml"
-gate_verdict: "PASS bounded internal source gate only; exact-head CI missing; production HELD"
+gate_verdict: "RECORDED fresh review pending; historical FULL PASS retained; production HELD"
 reviewer: "/root/e4_no_plaintext_independent_review; gpt-6-luna/max; FULLPASS at3c367e1391986c15d59018e4f144d20654bb54d3; prior CHANGES_REQUESTED preserved"
 timestamp: 2026-10-03
 purpose: Block plaintext local storage while encryption mechanism and key custody remain unproven
@@ -81,3 +82,9 @@ Owner direct standing mandate/acceptedDEC0069 accepts this independent scoped re
 This receipt changes only proof/pack/task documentation. Separate metadata audit required at its frozen head; shared custody/manifest/views must reconcile and receive new frozen review/checks if accepted main advances before publication. No billing action/directmainpush/merge. No prior failure or rejection erased.
 
 Review-receipt metadata verification: build_index66/routingT015REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.470s/worstexit0, diffcheckPASS. Source/test bytes unchanged, current profile hash retained; existing freshness warning unchanged. Three receipt documents only; final independent metadata audit pending. No applicable remote current-head CI/merge/DONE.
+
+## Current accepted-main reconciliation / fresh review required
+
+Accepted PR75 e69ba23e0b41e4e13d2e869d8425c9c45dd73ea9 at2026-10-03T02:46:12Z; exact727/all12 actualCI SUCCESS/actualPRT3 executed/E4CI160PASS0.174s. Historical startup failures remain preserved. Owner fix observed by actual run, no agent billing action. Fresh P-E4-015v2 declared exactly15 paths before adding new v41 archive and EDEV073 secondary consumer/actual merge receipt. Merge conflicts in inventory/manifest/CI coverage/prior EDEV072/views were resolved retaining both tasks; generated views must rebuild. Raw v41 snapshot equals accepted Git blob; historical rawv40 snapshot unchanged. Original code/tests unchanged; all prior rejection/remediation/FULL3c/metadata0cb are historical, not approval of new reconciled source. Current profile digest 1bbd44440dad13fd8366848776db39d1d2e19b2190eea67c4f174bdc036a568c; previous3ad4314e409a6abb4ff58403b89b2156dc0eba7d09225a26d37b1d6b93ff8540 remains historical. Fresh FULL gpt-6-luna/max review and current12CI/actualT3/final metadata audit required. Profile REVIEW/pack IN_PROGRESS/task REVIEW, no DONE. Actual local encryption/key custody/device/mobile wiring/whole-app enforcement and universal operational handoff remain MISSING/HELD. Current root verification pending.
+
+Actual reconciliation verification: build_index67/routingT015REVIEW/eligible[]; all170 E4 units PASS0.231s/compilePASS; run_all12checks+42regressionsPASS0.476s/worstexit0; originalP-PROOF001 warning unchanged. DiffcheckPASS. Original code/test bytes match historical3c; original v40 archive raw bytes unchanged; new acceptedv41 snapshot raw bytes equal actual e69ba23e0b41e4e13d2e869d8425c9c45dd73ea9 Git blob. Fresh independent FULL review pending, not author acceptance.
