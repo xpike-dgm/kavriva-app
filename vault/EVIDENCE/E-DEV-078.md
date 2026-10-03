@@ -2,15 +2,15 @@
 test_id: E-DEV-078
 contract_id_version: "ADR014 Decision2; static economy skeleton v1"
 subject_file: vault/PROFILES/economy-skeleton.md
-subject_digest: 3133e743ef5a779e79346bf02fc635b25daa174c37aa036aadb5baf9e67a1129
-result: "PASS bounded static economy source review; current CI and actual selection/cost/runtime evidence missing"
+subject_digest: a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2
+result: "RECORDED source-status remediation; prior FULL PASS retained; independent re-review/current CI required"
 evidence_links:
   - "vault/PROFILES/economy-skeleton.md"
   - "vault/PACKS/P-E9-003.md"
   - "vault/REGISTRY/T-E9-003.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot"
-gate_verdict: PASS
-reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; FULL PASS at ec043c510f9a9350b859f244a70f8625d73e018e"
+gate_verdict: RECORDED
+reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; prior FULL PASS at ec043c510f9a9350b859f244a70f8625d73e018e; metadata CHANGES_REQUESTED at be9bb3e7019cd41749aed5d9a3c1aad592f6b505; narrow full re-review pending"
 timestamp: 2026-10-03
 purpose: Record cheapest adequate assistance principle while model selection and economics remain held
 domain: assistant-economy
@@ -38,7 +38,7 @@ Static source-attributed skeleton: reliable deterministic rules first, cheapest/
 
 Actual source anchors `vault/PROFILES/economy-skeleton.md`/`vault/PACKS/P-E9-003.md`/`vault/REGISTRY/T-E9-003.md` preserve holds. FULL independent review/currentCI missing, profile/taskREVIEW/packIN_PROGRESS, no authorPASS/DONE/remotePR/push. Exact frozen source head/verdict will be recorded with actual independent receipt after commit exists and then independently metadata audited. Project reviewer model metadata is not a selected/logged/budgeted consumer model in this skeleton. Existing GitHub account payment-or-spend startup block retained, no localcheck/sourcegreen substitute for currentCI. Base6families12CI, exact applicable set recomputed fresh main beforepublication; pending E9 workflow not copied. ActualPRT3asapplicable/finalmetadata/currentCI required beforemerge.
 
-Source normalizedSHA256:
+Historical initial reviewed source normalizedSHA256 (current primary updated with status-wording remediation below):
 - vault/PROFILES/economy-skeleton.md: 3133e743ef5a779e79346bf02fc635b25daa174c37aa036aadb5baf9e67a1129
 - vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E9-003.md.snapshot: 19fe00119c1c8236e66ef7bcb6cf87f87f42ca03970d6df75f9dbadf8bec1f50
 - accepted plan 05_ADR/RECORDS/ADR-014__AI_LLM_ASSISTANCE_AND_DECISION_LAYER.md: c06b6ca5beab92331e2d7a0df903a147e1d0bbee82fc710e5d6ed7591bffab7b
@@ -55,3 +55,12 @@ Actual source verification: build_index66/routingT-E9-003REVIEW/eligible[], run_
 Independent owner-selected /root/e4_classification_independent_review (gpt-6-luna/max) returned FULL PASS for the complete bounded static task at frozen source ec043c510f9a9350b859f244a70f8625d73e018e against accepted app base f04a10e542f9853f7551b4eabc3d8b0c43298419 and accepted plan fa914f013fdcd032faed876689092da245989459. No actionable findings. Deterministic-first behavior, conditional cheapest/fastest adequate assistance, selection held for unproven adequacy/need and economic pressure never weakening safety/authority all pass. No provider/model/logging/budget/runtime/new seam introduced. Fourteen pack fields and pinned reads resolve; exact eleven declared documentary paths, profile/source/snapshot hashes and byte-equal accepted v40 archive checked. Original E-DEV-072 proof retained; localv46 pending reservation skips unacceptedv41..45. Reviewer ran no tests/CI and made no edits; root checks are not semantic approval or remote CI.
 
 Actual frozen source head is recorded after commit exists; no self-referential eventual receipt-head claim. Earlier missing-verdict statements are historical source-freeze observations. Profile/task REVIEW and pack IN_PROGRESS stay; current CI/remote PR and actual model-selection/adequacy/cost/runtime evidence remain missing or HELD, nothing selected/logged/budgeted by this documentary PASS. Only pack/task/proof receipt changes; profile/hash/snapshot/inventory/priorproof/manifest/CIplan/views unchanged. Local receipt metadata audit required; fresh accepted-main shared-record reconciliation/new frozen review/checks/current applicable CI/actualPRT3asapplicable/later final closeout audit still required before publication/DONE/merge.
+
+
+## Actual metadata CHANGES_REQUESTED and narrow remediation
+
+Independent /root/e4_classification_independent_review (gpt-6-luna/max) rejected receipt metadata at be9bb3e7019cd41749aed5d9a3c1aad592f6b505 against prior FULL source ec043c510f9a9350b859f244a70f8625d73e018e. Exact finding: economy-skeleton.md original line42 said FULL independent review/current CI missing without a historical qualifier, contradicting the now genuine FULL source PASS. Receipt attribution/history/three-file scope otherwise passed; reviewer ran no tests/CI. Original FULL source PASS preserved, not converted into a source/code/unit failure.
+
+Root explicitly qualified the profile paragraph as ec043 source-freeze history and points current actual review verdicts/heads/finding closure to this evidence. No economy rule/provider/model/log/budget/runtime/authority choice changed. Only four profile/pack/task/proof docs; inventory/archive/priorproof/manifest/CIplan/views unchanged. Original reviewed profile digest 3133e743ef5a779e79346bf02fc635b25daa174c37aa036aadb5baf9e67a1129 preserved as historical; current corrected profile normalizedSHA256 a85784d1f9ef19d75324945e78f98b58d8ff90060e97df7191d5311804786dd2 now matches primary. Current gate RECORDED until actual full re-review of corrected source, no author PASS/DONE. Profile/task REVIEW, pack IN_PROGRESS/currentCI missing/actual adequacy-selection-cost-runtime HELD.
+
+Narrow remediation verification: run_all12checksPASS+42regressionsPASS0.503s/worstexit0; diffcheckPASS/exact four corrected docs versus rejected metadata head. Currentprimarydigest matches updated profile; historical reviewed digest retained, rawacceptedv40archive/inventory/priorproof/manifest/CIplan/views unchanged. No source rule/runtime/newunit/currentCI or authorPASS/DONE change; actual rejection retained and FULL re-review required.
