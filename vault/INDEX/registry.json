@@ -3529,6 +3529,51 @@
    "evidence": "E-DEV-078",
    "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-003",
    "status": "DONE"
+  },
+  {
+   "task_id": "T-E9-004",
+   "flow_feature": "FL9.3.1/F9.3.1",
+   "objective": "Adapter boundary rule",
+   "context_pack": "P-E9-004",
+   "acceptance": "Specifics behind adapters; change re-evaluates",
+   "claimed_by": "Codex development run",
+   "claimed_at": "2026-10-03",
+   "purpose": "Record replaceable provider adapter boundaries without selecting an integration",
+   "domain": "assistant-adapter-boundary",
+   "module": "e09-ai",
+   "owner": "E9",
+   "implements": [
+    "ADR-014",
+    "ADR-001",
+    "C9.3",
+    "F9.3.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013"
+   ],
+   "public_contracts": [],
+   "internal_scope": "provider-adapter-boundary",
+   "tasks": [
+    "T-E9-004"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-03",
+   "depends_on": [],
+   "used_by": [
+    "V-E9-ADAPTER-001",
+    "P-E9-004",
+    "E-DEV-080"
+   ],
+   "evidence": "E-DEV-080",
+   "supersedes": "planning 06_DELIVERY_PLANNING/TASK_INDEX.md row T-E9-004",
+   "status": "REVIEW"
   }
  ]
 }
