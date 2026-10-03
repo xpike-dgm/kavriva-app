@@ -10,7 +10,7 @@ evidence_links:
   - "vault/REGISTRY/T-E4-017.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-072-E10-GOVERNED-PATHS-FOR-T-E4-017.md.snapshot"
 gate_verdict: RECORDED
-reviewer: none
+reviewer: "/root/e4_classification_independent_review; gpt-6-luna/max; CHANGES_REQUESTED atc8be7d95cc1d01e6eaea6c0aee58614e41e22bab; narrow remediation re-review pending"
 timestamp: 2026-10-03
 purpose: Record media and history classification criteria without authorizing semantic classification or storage effects
 domain: offline-classification
@@ -31,6 +31,8 @@ status: RECORDED
 ---
 
 # E-DEV-076 classification table
+
+Historical initial source-freeze observations follow; actual current review/remediation below.
 
 Pre-edit14field11pathpack saved; actualacceptedharddepsT001/T003DONEverifiedfromf04Gitblobs. FULLindependenttask/currentCIpending, no authorPASS/DONE. Documentaryruleonly; no executableclassifier/new constant-mirror units. RootcheckedpinnedcanonicalBR131..133/rawQ156..158/F4.9.1sourceowner/guard; synthesis authority preserved/rawexamples not substitute. Noactualphysicalcorpus/itemclassification/metadatawriter oreffects.
 
@@ -87,3 +89,13 @@ Source-review normalizedSHA256:
 Acceptedv40rawarchivebyteequal/localv44leavespendingv41/v42/v43unaccepted; original401/79/alladmissions/pendingv13/v23/v25 preserved. PriorEDEV072consumer/actualsecondaryPR74receiptonly, originalsubject/hash/sourceverdict/reviewer/historyretained. Sharedmetadata reconciliation/freshreview/checks requiredbeforepublication ifmainadvances. No current checker failure orindependentverdict known; actualPR75startupbillingfailure/T015actualCHANGES_REQUESTEDthenFULLPASS/localgraphlinkfailure preserved separately, nohistoryborrowed. Guessedoptional-media-rule.md absent correctedactualnonessential-media-rules.md discovery/read; readlimitation not unitfailure.
 
 Source verification: actualacceptedmain T001/T003 DONE Git-blob receipts checked, sourcepinnedBR131..133/rawQ156..158/F4.9.1 semanticownership reviewed; rawv40archiveequal/build_index66/routingT017REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.438s/worstexit0/diffcheckPASS/exact11paths. Existing P-PROOF001 warning unchanged. No new runtime/units/item classifications/measured corpus/provider/device actions. FULL independent task review/currentCI pending.
+
+## Actual independent CHANGES_REQUESTED and narrow pack remediation
+
+Independent /root/e4_classification_independent_review (owner-selected gpt-6-luna/max) reviewed complete frozen c8be7d95cc1d01e6eaea6c0aee58614e41e22bab against accepted main f04a10e542f9853f7551b4eabc3d8b0c43298419 and returned CHANGES_REQUESTED. Blocking finding: P-E4-017 field3 run-together PR64 dependency receipt was interpreted as 39-character 0b5b06778b8a2789c96f1454607e5de8140c6fc, which is not an object. Actual full PR64 merge d0b5b06778b8a2789c96f1454607e5de8140c6fc exists and is an ancestor of f04, with T003 actually DONE. Root independently verified full object/ancestry. Pack now uses unmistakably separated code-formatted full hashes and precise dependency statuses. No undone dependency or accepted-main/source substitution.
+
+Reviewer found criteria/Q156Q157 examples/BR131..133 necessity and preservation/rule-only E3E6 ownership consistent, exact11 paths/source hashes/rawarchive matched; ran no tests/CI and made no edits. Preliminary messages raised pack-read/expected-change specificity concerns, but the final blocking verdict named only the dependency receipt. Root also explicitly expanded field4 into actual pinned plan source paths/versions and accepted app record IDs/versions, and field7 into11 path-to-change-verb mappings under accepted template guidance. These additional documentary refinements are not a second independent rejection.
+
+Only pack/proof/task remediation; profile/criteria/source hash/rawarchive/inventory/manifest/CI plan/views unchanged. Actual rejection preserved, no relabeling as PASS or code/unit failure. Task CHANGES_REQUESTED -> narrow documentary remediation -> REVIEW pending independent FULL re-review. Current CI missing, no author DONE/ACTIVE/merge or actual semantic classification/runtime/physical proof. Billing startup block/other tasks' actual histories unchanged.
+
+Narrow remediation verification: actual full PR64 object/ancestry validated, build_index66/routingT017REVIEW/eligible[]; run_all12checksPASS+42regressionsPASS0.535s/worstexit0/diffcheckPASS. Exactly pack/proof/task changed from rejected head; profile/sourcehash/criteria/snapshot/inventory/manifest/CIplan/views unchanged. Existing P-PROOF001 warning unchanged; no units/runtime/currentCI or authorPASS/DONE.
