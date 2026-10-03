@@ -16,12 +16,12 @@ depends_on: [M-E9-001, M-E3-001, M-E1-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E9-009, T-E9-009, E-DEV-083]
 evidence: [E-DEV-083]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Never sole AI authority — fifteen verbatim source categories
 
-Canonical T-E9-009/C9.6/F9.6.1/FL9.6.1 requires all fifteen Decision6 clauses cited verbatim and HOLD on ambiguity. Numbering separates the original semicolon clauses; only original Markdown line wrapping is folded. This reference grants no execution authority and creates no new provider or runtime policy. Independent FULL and current CI are pending; no author DONE.
+Canonical T-E9-009/C9.6/F9.6.1/FL9.6.1 requires all fifteen Decision6 clauses cited verbatim and HOLD on ambiguity. Numbering separates the original semicolon clauses; only original Markdown line wrapping is folded. This reference grants no execution authority and creates no new provider or runtime policy. Actual independent FULL and source CI acceptance are recorded in E-DEV-083. Final metadata audit and exact final-head CI remain required before merge.
 
 ## Exactly fifteen source clauses
 
@@ -62,3 +62,9 @@ Bounded P-E9-009v1 documentary handoff follows approved D-APP-DOC-004v1/P-E10-00
 ## Sources and trace
 
 C9.6 -> F9.6.1 -> FL9.6.1 -> T-E9-009 -> M-E9-001 -> E-DEV-083. [Canonical task](https://github.com/xpike-dgm/motobakim-plan/blob/fa914f013fdcd032faed876689092da245989459/06_DELIVERY_PLANNING/TASK_INDEX.md), accepted feature/flow/acceptance matrix and ADR014 Decision6 govern. Profile `vault/PROFILES/never-sole-ai-authority.md`; pack `vault/PACKS/P-E9-009.md`; task `vault/REGISTRY/T-E9-009.md`; proof `vault/EVIDENCE/E-DEV-083.md`.
+
+## Actual complete never-fifteen FULL acceptance and source CI / bounded closure
+Independent /root/e9009_never_fifteen_full_review, configured through actual spawn gpt-6-luna/max under direct human preference and accepted DEC-0069, returned FULL PASS at ff26377d28f7fbd6c00455034aea96faf97f23e0 against accepted main5fdc2d6bb3978ba2d20f28fa45e78cba9104ac7a/planfa914f013fdcd032faed876689092da245989459. No findings. Whole canonical static T-E9-009 acceptance: all15 verbatim clauses, preserved qualifiers and last period, immutable82–86 citations, HOLD/no invention, assistance distinctions, E9/E3/E1, Decision4 and Decision7 boundaries, noharddeps/exact11/14fieldcheckpoint/custody/priorprimary/state coherence. Reviewer read-only, no tests/build/CI/network; configured model is actual spawn provenance, not runtime self-attestation. Reviewer's older14/15CI observation was as ofdispatch; actual root later fetched all15success separately.
+Actual source all15 CI SUCCESS: PRarch37127812667(opened)/37127837345(labeled), E337127812635/live37127812654/E437127812638/E537127812686/E637127812646/E937127812672; pusharch37127776423/E337127776459/live37127776466/E437127776474/E537127776384/E637127776444/E937127776413. Opened T3job111216624994skipped0steps retained; labeled actual executedT3job111216698850five SUCCESS/checks111216698687seven SUCCESS. E4PR170PASS0.162s/E9PRninePASS0.001s. Root actual source12checks+42regressionsPASS0.571s/worst0/build76/routingREVIEW/manualexact15/pins/currentprimary/rawv50byteequal/exact11/priorprimary/acceptedcode-tests-workflows preserved/diffPASS. Helper failures and correction preserved in E-DEV-083, no source unit failure/independent rejection invented.
+Standing owner accepts complete static reference; profileREVIEW->ACTIVE/packIN_PROGRESS->DONE/taskREVIEW->DONE. Exactly six closure paths (profile/pack/task/evidence/two views) only; sourceclauses/qualifiers/HOLD/role controls/sourcepins/snapshot/inventory/manifestCI/priorproof/code-tests-workflows remain unchanged. Final six-file independent metadata audit and final exact-head all seven CI families nominal14+extras/actual executed PR T3/E4/E9 remain required before normal matched PR85 merge. No admin/bypass/directmainpush.
+No actual provider/model/tool/schema/account/key/paid choice/evaluation/cost/retry/runtime/E3canonicalverification/E5identity/E1UI/native/device/physical/universalhandoff proof. T006unfinished actualtoolauthority/binding/retryconfiguration/trustworthycostsource absent/unselected; T007dep006DONEunmet. T010 detailedrule and T011notice remain separate; E3R1REVIEW/E5-003IN_PROGRESS/heldPR47/57/59 unchanged. Static task completeness is not complete product/feature/flow or consumer runtime approval.
