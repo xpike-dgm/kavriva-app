@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
-tasks: [T-E10-001, T-E10-006]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
-evidence: [E-DEV-027]
+tasks: [T-E10-001, T-E10-006, T-E9-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e09-ai/tests/test_proposal_options.py]
+evidence: [E-DEV-027, E-DEV-077]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -86,3 +86,7 @@ Same stable manifest identity and original semantic body preserved. Purpose/inte
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## T-E9-001 internal bounded proposal rule
+
+`modules/e09-ai/internal/proposal_options.py` provides five ADR014 Decision1 route categories and immutable, nonauthoritative proposals. Unknown/malformed/untrusted/coerced inputs hold using the existing safety-hold category; plain target reference is opaque and unverified. Every proposal authority NONE/physical_progression false/verification HELD, production gate constantly HELD without effects. No E3/E1 import/public runtime seam/provider/request/prompt or tool schema. E3 six-dimension verification/E1 rendering remain separate, actual current authority/source/runtime HELD. Nine meaningful tests at `modules/e09-ai/tests/test_proposal_options.py`, local9PASS0.002s/compile; new pinned read-only `.github/workflows/e9-tests.yml` discovery. Pack `vault/PACKS/P-E9-001.md`/profile `vault/PROFILES/five-option-proposals.md`/proof `vault/EVIDENCE/E-DEV-077.md`. FULL independent task/current CI missing, no author DONE. Original anatomy/metadata custody preserved.

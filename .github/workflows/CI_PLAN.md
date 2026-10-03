@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E9-001"
+  - "E-DEV-077"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E9 bounded proposal rule coverage
+
+New `.github/workflows/e9-tests.yml` runs `modules/e09-ai/tests/test_proposal_options.py` with accepted checkout v5 full pin, persist-credentials false and contents read; no secrets/provider/DB/tool effects. Nine tests cover category boundary, invalid/stale opaque targets, malformed/unrecognized/sixth category, hostile hooks, immutability/authority claims and constant production closure. No canonical E3 verification/live assistant/provider/UI proof. Applicable seven push/PR workflow families require14 current-head successful runs with actual PR T3 as applicable; no gate weakening. Local9PASS0.002s/compile is not remote CI. Existing GitHub account startup block prevents current executed CI. Pack `vault/PACKS/P-E9-001.md`; proof `vault/EVIDENCE/E-DEV-077.md`. Independent FULL review/final closeout metadata/currentCI required before DONE/merge.
