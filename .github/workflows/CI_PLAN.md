@@ -48,6 +48,8 @@ used_by:
   - "E-DEV-071"
   - "P-E4-013"
   - "E-DEV-072"
+  - "P-E4-015"
+  - "E-DEV-074"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -200,3 +202,7 @@ Existing `.github/workflows/e4-tests.yml` unchanged discovers137units(accepted12
 ## E4 offline eligibility coverage
 
 Existing `.github/workflows/e4-tests.yml` unchanged discovers148units(accepted137+11eligibility). `modules/e04-offline/tests/test_offline_eligibility.py` probes highest dependency inheritance, unknown/stale holds, Internal Operations online-authoritative routing, cached negative flags/floors/monotonic merge/context conflicts, anomalies/strict types/coherent forgery/immutability/constant HELD. Fixtures do not prove canonical taxonomy/windows/eligibility, recovery closure, durable cache, encryption or device/runtime. Context `vault/PACKS/P-E4-013.md`; proof `vault/EVIDENCE/E-DEV-072.md`. FULL task/current12CI/actualPRT3/finalmetadata review required; no gate policy/workflow change.
+
+## E4 no-plaintext gate local coverage
+
+Existing `.github/workflows/e4-tests.yml` unchanged discovers158units (accepted148+10no-plaintext); pendingPR75 closure tests are not accepted in this base. `modules/e04-offline/tests/test_no_plaintext.py` probes all operation/representation pairs, finite strict input rejection, no effects/hostile callbacks, immutable intrinsic holds, false cloud/key/encryption metadata and no fallback. Fixtures do not prove actual encryption/key lifecycle/storage runtime/device confidentiality. Context `vault/PACKS/P-E4-015.md`; proof `vault/EVIDENCE/E-DEV-074.md`. FULL independent task/current12CI/actualPRT3/finalmetadata audit required, no workflow/gate policy change. GitHub finalPR75 startup billing block remains; local checks cannot replace applicable exact-head green CI.
