@@ -84,6 +84,8 @@ used_by:
   - "E-DEV-089"
   - "P-E7-004"
   - "E-DEV-090"
+  - "P-E7-006"
+  - "E-DEV-091"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -312,3 +314,7 @@ Beşinci HELD/iki altgereksinim/negatifler/Android bağımsızlığı/E6 sınır
 ## E7 derleme ve yayın sorumluluklarının ayrımı belge kapsamı
 
 Yedi görev/beş sahiplik yasağı/fiziksel bağımsızlık HELD/negatifler/Android bağımsızlığı/E6 sınırı; on iki kaynak pini/profil ve hamv57hash-byte eşitliği/11yol/priorprimary korunması/12+42/build/routing/diff. Kod/test/workflow değişmez; E4170/E9nine korunur. Kaynak bağımsız FULL+CI; sonaltıdosyakapanış/metaaudit/sonCI ve gerçekT3 olmadan merge yok. Pack `vault/PACKS/P-E7-004.md`; kanıt `vault/EVIDENCE/E-DEV-090.md`.
+
+## E7 dört sınıf ve ihtiyaç tetikleri belge kapsamı
+
+Tam8/5/4/6kalem/özgün nitelikler/iki ayrı eşzamanlılık bağlamı/helper-only/scale-not-current-recommendation/allactualHELD/no-purchaseauthority/E6policy/Androidbağımsız. 13sabitpin/profilLF/rawv58boyut-SHA-bayteşitliği/exact11/öncekiprimaryret-history/policy-code-workflowpreservation; build/routing/runall12+42/diff. Kaynak bağımsızFULL+CI/actualPRT3; ardından bounded6closure/finalmeta/finalCI+T3/normalmatchedmerge. E4170/E9nine değişmez. Pack `vault/PACKS/P-E7-006.md`; kanıt `vault/EVIDENCE/E-DEV-091.md`.

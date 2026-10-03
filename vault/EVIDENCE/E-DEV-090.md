@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-SEPARATION-001]
-used_by: [V-E7-SEPARATION-001, P-E7-004, T-E7-004]
+used_by: [V-E7-SEPARATION-001, P-E7-004, T-E7-004, P-E7-006, E-DEV-091]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -82,3 +82,15 @@ Sınırlı belge devri D-APP-DOC-004v1/P-E10-007v1/P-E7-004; universaloperationa
 Bağımsız /root/e7004_lane_separation_full_review exact8b72471807af0d39120144bf440aa307b3f3cd41 metadata auditine CHANGES_REQUESTED verdi. Tek bulgu: kaynak kabul receiptindeki pack14alan/REVIEW kısaltması kaynak pack'i REVIEW gibi gösterebiliyordu; gerçek546d966 başlığında pack IN_PROGRESS, görev ve profil REVIEW idi. Aynı receiptin profil/pack/görev/kanıt dört kopyası doğru üç durumla açıklaştırıldı. Hiçbir sourcecanonical koşul, kaynak FULL PASS veya gerçek HELD değişmedi. Son satırdaki Gerçek Gerçek tekrarının tek kopyası düzeltildi. Önceki bütün diğer metaaudit kontrolü PASS: exact6overallscope/digests/rawv57/profileACTIVE/pack-taskDONE/83viewsDONE/pins-policy-workflow-preservation. Reviewer dosya yazmadı, test/CI/network işlemi yapmadı; kendi ilk registry helper okuması top-level list varsayımıyla hata verdi, rows object üzerinden düzeltti ve83row/DONE doğruladı; proje test hatası değildir.
 
 Eski8b72471 başlığında root14/14CI SUCCESS/PRT3job111314736955beşadım/checks111314737140yediadımSUCCESS/E4PR37161174325 170PASS0.175s/E9PR37161174324 9PASS0.001s. E4log ilk20s salt-okunur istek timeout, boundedretry başarılı; gerçek CI hatası değil. Bu eski başlığın sonuçları yeni düzeltmenin CI'ı sayılmaz. Ret bulgusu düzeltildi fakat kapanış hükmü bağımsız tekrar metadata incelemesi gelmeden PASS değil; yeni başlık CI/T3 de ayrıca zorunlu. Metadata hazırlığındaki durum geçişleri kayıtta kalır; bu ret açıkça korunur, görev acceptedmainDONE sayılmaz. Kaynak FULL PASS exact546d966 için geçerli; yalnız kapanış açıklaması düzeldi, gerçek yedi fiziksel kanıt ve beş iOS koşulu HELD kalır.
+
+## Gerçek PR92 kabulünün ikincil kaydı ve T-E7-006 tüketicisi
+
+## PR92 gerçek ikincil kabul kaydı
+
+PR92 olağan matched-head merge ile MERGED; finalhead e4d0def1c3897b8918f0e114ea966ae2dc2572ae/merged2b0c5a77be01082ff4aefd13b610f9495292606/mergedAt2026-10-03T23:26:51Z (Türkiye2026-10-04). GitHubMERGED ve origin/main fetch doğrulandı. Mainpush/admin/bypass yok. Source546d966 bağımsız FULL PASS; firstmetadata8b72471 CHANGES_REQUESTED tek belirsizsourcepackstatus bulgusu; dört receipt düzeltmesi e4d0def üzerinde aynı bağımsız /root/e7004_lane_separation_full_review gpt-6-luna/max FINAL METADATA PASS/findingclosednonewfinding. Eski sourcepackIN_PROGRESS/task-profileREVIEW açıklaştırıldı ve hatalı durum kısaltması tüm kopyalardan kaldırıldı. Ret, düzeltme ve reviewer ownreadonlyhelperlist/rows error history EDEV090'da korunur. İncelemeci no files/tests/CI/network; onun olmayan işlemler ona mal edilmez.
+
+Root source12+42PASS0.433/source15CIgreenT3five/E4170.151/E9nine.001; oldfinal8b12+42PASS0.423/14CIgreen ayrıhistorical/logread20stimeoutboundedretrysuccess. Correctedfinale4d12+42PASS0.458, exact4fixpaths/overall6closepaths/currentLFdfa87213bf7552903a4e7b8819f83a39e5860e94066ee8d78f4726aeaa4d426a/views83DONE/diffclean. Actualfinal14/14SUCCESS: PRarchitecture37161502897/E337161502877/live37161502985/E437161502891/E537161502955/E637161502917/E937161502928; pusharchitecture37161499858/E337161499838/live37161499977/E437161499806/E537161499827/E637161499844/E937161499854. ActualPRT3job111315712479beşadım/checks111315712644yediadımSUCCESS; E4PR170PASS0.178s/E9PR9PASS0.001s. Appmain2d3d38a/planmainfa914f013fdcd032faed876689092da245989459 uzak kaynakları merge öncesi teyit edildi.
+
+Kabul edilmiş inventoryv58/views83/scopedcanonical80DONE126remaining. T-E7-004 review kabulü mevcut yedi ayrı deklarasyon ve beş sağlayıcı sahipliği yasağının kaynak karşılaştırması; runtime enforcement/fiziksel kişi-key-audit-lane-provenance-onay-transport-device bağımsızlığı kanıtı değil, bütün gerçek kanıtlar HELD. E6politika/E7uygulama/E3kaynak/Androidbağımsız/allfiveiOSHELD korunur. T-E7-005harddep004 şimdi acceptedDONE fakat gerçek E6keylossplaybook absent readinessHELD; claim/pack/artifact/DONE yok. T002/T006007/E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59 unchanged. Frozenproof finalpending yazıldığı anın kaydı; bu dış ikincil sonuç onun yeniden onayı değil. Ürün/feature/flow/physical/iOS/yayın hazır oluşu değil. Yeni Türkçe vault açıklamaları/eski İngilizce tarihi korunur; kullanıcı devam talimatı aktif.
+
+Önceki birincilsubject/digest/reviewer/verdict/ret-history değişmedi. Son frozenproof pending ifadesi yazıldığı anın kaydı; sonraki gerçek merge sonucu eski kaynağın yeniden onayı değildir. Bütün gerçek fiziksel ayrım/iOS/yayın HELD.
