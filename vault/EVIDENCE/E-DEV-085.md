@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-03
 depends_on: [V-E9-DISCIPLINE-001]
-used_by: [V-E9-DISCIPLINE-001, P-E9-011, T-E9-011]
+used_by: [V-E9-DISCIPLINE-001, P-E9-011, T-E9-011, P-E7-001, E-DEV-086]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -54,3 +54,9 @@ Original reviewed source primaryf8aea68386e398267ed6690d9334d71ff293d7e79e6970a7
 
 ## Actual bounded closure checks
 Root build78/routingDONE/run_all12checks+42regressionsPASS0.411s/worst0/diffPASS. Exactly six changes versus independently FULL-reviewed d87a: profile/pack/task/proof/two views only. Source roles/sixnoticefields/negativecontrols/Decision7-amendedindependence/E10ownership/seams/currentpins/rawsnapshot/inventory/manifestCI/priorproof/acceptedcode-tests-workflows preserved. Finalmetaaudit/finalcurrentheadCI pending; normalmerge not yet performed.
+
+## Secondary actual PR87 acceptance / T-E7-001 consumer
+
+Actual PR87MERGED2026-10-03T14:51:22Z mergeab133f3680d4acd6da72c87eb1a80f1965d5951e/finalffbef02a08b6ab7f8038c95356d2d219fca60d9c/source d87a159ba0ca7e933d708ba5ef82d61cc96e5dca. Actualindependent /root/e9011_project_role_notice_full_review configuredviaactualspawn gpt-6-luna/max FULLPASSnofindings/finalmetaauditPASSnofindings/read-only/no edits-tests-buildCI-network. ClarificationFLdifferentchatcheckedagainstacceptedDEC0069/directhumanstandinggrant/E10protocol -> nofinding/no sourceedits/no CHANGES_REQUESTED, historypreservednotwaived. ACTIVEprimaryc32d4d1136401bc04eb7e1f636f7faa6f60a79d75acc0352733ec11f52a412da matched/sourceprimaryf8aea retained; root source12+42PASS0.489/build78/routingREVIEW/closure12+42PASS0.411/build78/routingDONE/diff6/manualroles-sixnoticefields/9pins/rawv52/exact11/priorprimary/E10andacceptedcode-tests-workflowspreserved. Sourceall15SUCCESS/openedT3skip0/labeledexecutedT3job111223364161five/checks111223364364seven/E4170PASS0.149/E9ninePASS0.001. Finalall14SUCCESS: PRarch37130845096/E337130845109/live37130845120/E437130845074/E537130845130/E637130845103/E937130845121; pusharch37130843085/E337130843089/live37130843076/E437130843122/E537130843093/E637130843094/E937130843083; actual executedPRT3job111225465821five/checks111225465947sevenSUCCESS/E4170PASS0.144/E9ninePASS0.001. Normalreadywaited/normalmatchedmergecompleted/actualGitHubMERGEDverified/mainfetchab133matched; noadmin/bypass/mainpush. Inventoryv53/views78. CompletecanonicalstaticE9disciplinereference/E10owningprotocol unchanged, no actualautomaticreview/account/legal-storequalification/provider-tool-cost-retry-runtime/E3E5/E1/native/device/physicaluniversalhandoffproof. T006unfinished/T007dep006DONEunmet/E3R1REVIEW/E5-003IN_PROGRESS/held47-57-59unchanged. No roothelper/unitCI/sourcefailure/independentrejection invented. Product-feature-flow completeness distinct.
+
+Originalprimary/reviewer/verdict/history retained; documentaryconsumer+actualsecondaryreceipt only/earlierfinalpending asofffbefwrite/no renewedpriorapproval. Actualexternal-runtime-devicephysicalproofHELD.
