@@ -16,7 +16,7 @@ depends_on: [M-E7-001, M-E6-001, V-E6-AUTHORITY-001, V-E7-ANDROID-001, V-E7-IOS-
 used_by: [P-E7-004, T-E7-004, E-DEV-090]
 evidence: [E-DEV-090]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Derleme ve yayın sorumluluklarının ayrımı
@@ -72,3 +72,36 @@ Android hattı iOS/Mac eksikliği yüzünden durmaz. iOS ilk iki, sonraki iki ve
 ## Kayıt adresleri ve iz
 
 ADR013R3/ADR008R5/ADR007 → C7.3 → F7.3.1 → FL7.3.1 → T-E7-004 → M-E7-001 → E-DEV-090. Pack `vault/PACKS/P-E7-004.md`; görev `vault/REGISTRY/T-E7-004.md`; kanıt `vault/EVIDENCE/E-DEV-090.md`. E7 `modules/e07-build-lane/MANIFEST.md`; E6 `modules/e06-release/MANIFEST.md`; mantıksal registry `vault/PROFILES/release-authority-registry.md`; Android `vault/PROFILES/android-lane-checklist.md`; iOS `vault/PROFILES/ios-access-custody-proof.md`, `vault/PROFILES/ios-provenance-recovery-proof.md`, `vault/PROFILES/ios-clean-room-proof.md`.
+
+## Bütün görev kaynak kabul kaydı — T-E7-004
+
+Bağımsız /root/e7004_lane_separation_full_review ayrı sınırlı bağlamda gpt-6-luna/max spawn yapılandırmasıyla exact546d9663cd49f27a66215f43f23606703d197fd9 için FULL PASS verdi; bulgu yok. Model bilgisi gerçek spawn çağrısıdır, modelin çalışma içinde alt sürüm kimlik doğrulaması değildir. Sahip bağımsız altajan ikinci gözü ve gerekli yeşil CI sonrası olağan merge kabul etti; DEC0069 geçerli, pendingDEC0070 yetki değil. Taban2d3d38a786f5fa1c40192aa4c6128b2fe2e11aa8, planfa914f013fdcd032faed876689092da245989459.
+
+İncelemeci bütün canonical kabulü karşılaştırdı: TASK_INDEX Distinctness verified; no takeover / F7.3.1 execution only / FL7.3.1 Separation recorded; no key handling; key-loss refers to E6 playbook; execution E6-gated noneauthorizedhere. Kabul, mevcut kaynak deklarasyonlarının ayrımının incelenmesidir; runtime enforcement görevi diye değiştirilmedi. Profilin yedi ayrı satırdaki sorumluluk sınırları ve birbirinin yerine geçmeyen sonuçları, E7 manifestindeki aynı yedili ayrım, beş sağlayıcı sahipliği yasağı ve E6 anahtar-kayıp yönü bütün kayıt/inceleme kabulünü karşılıyor. Gerçek hat, kişi, anahtar ve audit ayrılığı, gerçek provenance veya yayın yetkisi bu FULL tarafından onaylanmadı; yedi gerçek uygulama kanıtı HELD. E7 çalışan hat kodu yok; mantıksal E6 sekiz alanı farklı taksonomidir ve actualholder/key/auditrefsnull/physicalactivationHELD. No-owner-debug/Android bağımsız/allfiveiOSHELD ve E6 politika/E7 uygulama/E3 kaynak sınırları korunur. Sağlayıcının onayı veya teknik çıktısı yayın yetkisi değildir. Anahtar işlemi veya kompromize anahtar kopyası yok; key-loss politikası E6'da.
+
+İncelemeci canonical ADR013/007/008/capability-feature-flow-acceptance/dependency/taskprotocol/packstandard/moduleboundary/E10rules bağlamlarını okudu; 12 sabit kaynak LF-normalize SHA256 özeti taban bloblarıyla bağımsız12/12 doğrulandı. Profil kaynakLF208b245726263d3688f70f8684e6716a50e05cdfe9419066b736cc8c2aec35af; hamv57snapshot184074byte/rawSHA6aa04f819cb1c6411a3b5f981a374c75dc1834072de68150c973dcd1d1e65692/baseblob bayt eşitliği, exact11allowedpaths, EDEV089primarysubject-review-verdict-history korunması, pack14alan/REVIEW/cleanworktree doğrulandı. İncelemeci dosya yazmadı ve test veya CI çalıştırmadı ya da bağımsız CI sorgulamadı. Sonuçlar ona mal edilmez.
+
+Root kaynak12kontrol+42regresyonPASS0.433s/worst0/build83/routingREVIEW/diff/manualsource karşılaştırmaları PASS. Artifact öncesi packmetadataF7.2.1 adresi33d5eaa ile F7.3.1 yapıldı, eski checkpoint geçmişi korunur. Salt-okunur Temp manuel helper önce inline quote regex yüzünden IndexError, sonra iki ayrı tablonun releaseapproval satırını global saydığı için assertion verdi. Helper alıntı sınırı ve yedi görev tablosuna düzeltildi; profil değişmedi; EDEV090 geçmişinde kayıtlı. Bağımsız ret veya ürün testi başarısızlığı değildi. P-PROOF001 mevcut freshness uyarısı korunur.
+
+Kaynak546d966 için 15/15 SUCCESS:
+- pull_request architecture-checks: 37160807726 SUCCESS
+- pull_request architecture-checks: 37160818225 SUCCESS
+- pull_request e3-commit-authorization-tests: 37160807727 SUCCESS
+- pull_request e3-live-auth-tests: 37160807758 SUCCESS
+- pull_request e4-offline-composition-tests: 37160807734 SUCCESS
+- pull_request e5-current-authority-tests: 37160807753 SUCCESS
+- pull_request e6-release-policy-tests: 37160807740 SUCCESS
+- pull_request e9-bounded-proposal-tests: 37160807718 SUCCESS
+- push architecture-checks: 37160787057 SUCCESS
+- push e3-commit-authorization-tests: 37160787015 SUCCESS
+- push e3-live-auth-tests: 37160787017 SUCCESS
+- push e4-offline-composition-tests: 37160787044 SUCCESS
+- push e5-current-authority-tests: 37160787020 SUCCESS
+- push e6-release-policy-tests: 37160786966 SUCCESS
+- push e9-bounded-proposal-tests: 37160786943 SUCCESS
+
+Açılışarchitecture37160807726 checks111313659999yediadımSUCCESS/T3job111313660550skipped0; etiketliarchitecture37160818225 checks111313692654yediadımSUCCESS/T3job111313692764 gerçekbeşadımSUCCESS. E4PR37160807734 170testPASS0.151s; E9PR37160807718 9testPASS0.001s. Otomatik T3 bağımsız incelemenin yerine geçmez.
+
+Bu kaynak FULL+CI kabulüne dayanarak profilACTIVE, pack/görevDONE; yalnız profil/pack/görev/EDEV090/registry/routing altı kapanış dosyası. İlk hüküm exact546d966 kaynağına bağlıdır; finalmetadataaudit ve finalheadCI/T3 ayrı zorunlu, henüz bekleniyor. Eski pending ifadeler yazıldıkları anın kaydıdır. Yedi görev/beş sahiplik yasağı/12pins/rawv57/workingv58/manifestCI/priorEDEV089/kod-politika-workflow değişmez. Belge görevi DONE gerçek runtime/ürün/feature/flow/iOS/cihaz/yayın hazır oluşu değildir.
+
+Sınırlı belge devri D-APP-DOC-004v1/P-E10-007v1/P-E7-004; universaloperationalhandoffID MISSING/BLOCKED. T-E7-005 actualE6playbook bulunmadan ilerlemez; T-E7-002/T006007/E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59 gerçek engelleri korunur. Yeni vault açıklamaları Türkçe, mevcut İngilizce tarihi kayıtlar değişmez.
