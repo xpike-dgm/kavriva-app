@@ -16,12 +16,12 @@ depends_on: [M-E4-001, V-E4-CORE-001, V-E4-OPTIONAL-001, I-E10-PATHS-001, V-CI-0
 used_by: [P-E4-017, T-E4-017, E-DEV-076]
 evidence: [E-DEV-076]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Media and history classification table
 
-Current context: canonical T-E4-017 row125/F4.9.1/FL4.9.1/C4.1/acceptance192 criteria+Q156/Q157examples ruleonly; mechanismF4.1.1/F4.1.2 remainsseparate. Actualharddeps T001/T003 DONE ataccepted PR77 ac28ec4389fbf5cc0c12299695c04a51c6ccdb47; PR62 merge 6af8dbf323d2e688b7a6b2d4634e00971672af14 / PR64 merge d0b5b06778b8a2789c96f1454607e5de8140c6fc verifiedactualancestors. They do not authenticate semantics/media/mobile or close E3productR1. AcceptedT014/T015/T016 retained; rawv43custody/currentv44/sourcehistory reconciled. Originalf04/c8rejection/b205FULL/4e342metadata historical in E-DEV-076, not approval of changedsource. NewFULL/currentCI required. Planfa914f/standingowner/DEC0069 govern; unmergedlocalplanPR4 separate.
+Current context: canonical T-E4-017 row125/F4.9.1/FL4.9.1/C4.1/acceptance192 criteria+Q156/Q157examples ruleonly; mechanismF4.1.1/F4.1.2 remainsseparate. Actualharddeps T001/T003 DONE ataccepted PR77 ac28ec4389fbf5cc0c12299695c04a51c6ccdb47; PR62 merge 6af8dbf323d2e688b7a6b2d4634e00971672af14 / PR64 merge d0b5b06778b8a2789c96f1454607e5de8140c6fc verifiedactualancestors. They do not authenticate semantics/media/mobile or close E3productR1. AcceptedT014/T015/T016 retained; rawv43custody/currentv44/sourcehistory reconciled. Originalf04/c8rejection/b205FULL/4e342metadata historical in E-DEV-076, not approval of changedsource. Actual FULL acceptance and sourceCI are recorded in E-DEV-076; finalmetadata/finalcurrentCI required before merge. Planfa914f/standingowner/DEC0069 govern; unmergedlocalplanPR4 separate.
 
 ## Authoritative rule and evidence sources
 
@@ -62,4 +62,14 @@ Actual user data/physical media/classification/release/export/entitlement/downlo
 
 ## Trace
 
-Q0046/BR131..133 -> C4.1 -> F4.9.1 -> FL4.9.1 -> T-E4-017 -> M-E4-001 -> E-DEV-076. Mechanism owned F4.1.1/F4.1.2; this acceptance rule-only. Profile does not claim real corpus/device measurement/numeric/encryption policy or E1 screen/accessibility completion. Pack `vault/PACKS/P-E4-017.md`; task `vault/REGISTRY/T-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. FULL independent task/current-head CI needed before DONE, no author PASS.
+Q0046/BR131..133 -> C4.1 -> F4.9.1 -> FL4.9.1 -> T-E4-017 -> M-E4-001 -> E-DEV-076. Mechanism owned F4.1.1/F4.1.2; this acceptance rule-only. Profile does not claim real corpus/device measurement/numeric/encryption policy or E1 screen/accessibility completion. Pack `vault/PACKS/P-E4-017.md`; task `vault/REGISTRY/T-E4-017.md`; proof `vault/EVIDENCE/E-DEV-076.md`. Actual FULL task acceptance and sourceCI recorded in E-DEV-076; separate finalmetadata audit and final-head CI needed before merge, no author PASS.
+
+## Actual corrected-source FULL acceptance and CI / bounded closure
+
+Independent /root/t017_reconciled_full_review (owner-selected gpt-6-luna/max) returned FULL PASS at f83e64097c8a7c1fa1afd48b42ed0a92d48a0437 against accepted main ac28ec4389fbf5cc0c12299695c04a51c6ccdb47 and plan fa914f013fdcd032faed876689092da245989459. Actual360 field4 finding closed: mandatory application reads pin accepted ac28/inventoryv43/rawsnapshot, workingv44 separately admitted. All13 allowed paths, nineQ156 fields, necessary-evidence core independent of size, conditional expanded classification, BR133 access/export protection, E3/E6 ownership/E8 derive-only and rule-only scope pass. Profile source digest and rawv43 source match. No remaining findings. Reviewer made no edits and ran no tests/CI; originalc8 and360 rejections and oldsource PASSes retained as history, not replaced.
+
+Actual corrected f83 source all12 CI SUCCESS: PRarchitecture37095419419/E337095418742/live37095418735/E437095418745/E537095418748/E637095418793; pusharchitecture37095416186/E337095416184/live37095416192/E437095416189/E537095416259/E637095416201. ActualPRT3job111124222752 five steps SUCCESS/checksjob111124222870 seven stepsSUCCESS; E4PR170 testsPASS0.089s. Root narrow-remediation run_all12checks+42regressionsPASS0.450s/worst0/diff3. Rejected360 green CI does not replace corrected source review/CI.
+
+Standing owner/accepted DEC0069 accepts the full bounded canonical documentary task: Criteria + Q156/Q157 examples recorded; rule only, mechanism F4.1.1/F4.1.2 separate. Task REVIEW -> DONE, profile REVIEW -> ACTIVE, pack IN_PROGRESS -> DONE for this complete rule-table acceptance. Six-file closeout only: profile/pack/task/proof/two generated views; criteria/table/source archives/inventory/manifest/CI/prior proofs/code/tests unchanged. Actual main acceptance awaits PR78 normal matched merge after separate finalmetadata audit and all final-head CI/actualPRT3/executedE4 gates. No admin/main push/bypass.
+
+Actual item classification, semantic writers, authoritative runtime consumption, corpus/device/mobile/native encryption/key custody/storage/export/physical proof and universal operational handoff remain MISSING/HELD. This rule table does not implement or prove those product effects. Product E3R1/E5-003 and held PR47/57/59 unchanged.
