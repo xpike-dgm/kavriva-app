@@ -3,10 +3,10 @@ test_id: E-DEV-105
 version: 1
 contract_id_version: "SCR-016; C1.3/F1.3.1/FL1.3.2 resume v1"
 subject_file: modules/e01-app/internal/shell/lib/resume_revalidation.dart
-subject_digest: e435ce0a497062ca08f4296d0e8eea56d0dca80253b9f2278ca186c13c747db6
-result: "CHANGES_REQUESTED P1 güncellik olumlu karar değildir; dar onarım gerekir"
+subject_digest: 8c7624f495c5b85d05072187443459e35e96439e1c2be6c8ba96f6c74b703153
+result: "RECORDED P1/P2 dar onarım; yeni bütün kaynak incelemesi bekleniyor"
 evidence_links: [vault/PROFILES/resume-revalidation-render.md, vault/PACKS/P-E1-007.md, vault/REGISTRY/T-E1-007.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-104-E10-GOVERNED-PATHS-FOR-T-E1-007.md.snapshot, modules/e01-app/internal/shell/lib/resume_revalidation.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json]
-gate_verdict: "CHANGES_REQUESTED kaynak528; üretim/cihaz/yayın HELD"
+gate_verdict: "RECORDED yeni kaynak REVIEW; ilk528ret ve ikinci okuma açıklık retli; üretim/cihaz/yayın HELD"
 reviewer: "/root/e1007_resume_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
 purpose: Kesinti sonrası geçmiş bağlamı güncel yeniden doğrulamadan ayrı sunmak
@@ -273,3 +273,85 @@ Typedstate6eba44bc9441328af26fb3cb89bcb85e5b6f863b/122localPASS/14nativePNG. İl
 - “Güncel rehber adımını aç” bağlantısı, bazı ekranlarda gerekli kontroller bitene dek adımın kapalı olduğu uyarısıyla birlikte görünüyor. Bağlantının yalnızca içeriği görüntülediği mi yoksa adım akışını açtığı mı açıklanmıyor; düğmenin devam izni vermediği ise açık.
 - Motosiklet tanımı “kullanıcı beyanı”, kontrol/ölçüm değerleri de örnek olarak sunuluyor. Bunların bağımsız doğrulanmış gerçekler veya mühendislik ölçümleri olduğu ekrandan anlaşılmıyor; rapor bunları böyle kabul etmiyor.
 
+
+## Güncel dar onarım kaynağı — kabul değildir
+
+Yukarıdaki ilk V1 gövde/ilk13PNG/ilk9yanıt ve exact52805c22920d53134aaa2fd2442d4420f1c93a09 CHANGES_REQUESTED hükmü tarihsel kayıttır; referans varlığına dayalı eski gate bu yeni kaynağın kabul kanıtı değildir. İlk tam rapor SHA256f01d0ad43b0e6cfa16615eb2f5e94bcbf83e2db624aaf9807de518a80bd3e097 saklıdır. Ret6509d8c → typedstatefixIN_PROGRESS6eba44bc9441328af26fb3cb89bcb85e5b6f863b → ikinci ilk okuma açıklık CHANGES_REQUESTED4701db7 → dar başlık/eylem/amaç onarımıde047cd ve güncel kaynakdea0c35a5d80bd0370146bc04144b79d5493999c. Yeni bütün kaynak hükmü/CI hâlâ beklenir.
+
+P1: ResumeReferenceState her dört amaç için required unknown/held/confirmed sağlayıcı sonucudur; üretici APIde varsayılan olumlu yok. Normal devam yalnız explicitconfirmed + bütün eski güncellik/tamkapsam/yeni kesinti/amaç/konu/güvenlik/gözden geçirme/rehber-değişmedi koşullarıyla açılır. Güncel unknown/held kapı açmaz; sağlayıcı nedeni görünürdür. E1 reason metnini parse etmez veya olumlu karar üretmez.
+
+Gerçek regresyon: önce yalnız durum veri alanı tanımlandı, eski matches guard değişmedi. decision/unknown current iken normal kapıtrue: beklenenfalse/gerçektrue,0PASS1FAIL; Tempkavriva_e1007_r2_scaffold.patch +r2_actual_regression_red.txt saklıdır. Yanlış app kökünde ilk komut No pubspec ile durdu; r2_regression_red.txt yalnız cwd hatasıdır, semanticRED değildir. Doğru shellcwd semanticFAIL ardından matches explicitconfirmed gerektirdi ve aynı test dört amaç×unknownheld/neden/recheck/ücretsizkapanış/kapalıdevam koşullarını geçti.
+
+Typedfix6eba44b strict18zero/analyze0issue8.3s/122localPASS=106önceki+15yeni+1PNG; ikinci bağımsız ilk okuyucu14PNG/sabit9soru ile Q4 amacı ve readybaşlık/baskınrecheck belirsizliği buldu. Gerçek rapor ayrı bölümde değişmeden saklıdır, kabul sayılmadı. Böylece guard başarısı CON004 açıklığı yerine geçirilmedi.
+
+Güncel P2 onarımı: geçmişin yarım kalan işte nerede kaldığını/sökülen parçaları/notları hatırlamak için korunduğu collapsed görünür metindir; devam izni/güncel fiziksel kanıt olmaz. Ready başlık Güncel kontroller doğrulandı, bölüm Bu kesinti için güncel sonuç, tek baskın CTA güncel rehber ekranına geçiş; recheck sakin ikincildir. Held başlık yeniden kontrol/tek baskın recheck, rehber yolunun şu anda kapalı olduğu açık. Yol niyeti otomatik fiziksel adım/tamamlama yapmaz. Tüm olumlu sonuçlar görünür açık yeniden doğrulandı; başarı garantisi yok. Pack field9 eski105 gerçek106 olarak düzeltildi.
+
+16yeni anlamlı test ve106önceki ile normalCI122beklenir; yerelnativecapture1ile actual123PASS. Yeni ready testi actualbody/focus contrast ve TabTabEnter/currentScope-yeniinterruptionintent, açık başlık/amaç ve sahtecompletion yok ölçer. Önceki15test/negatiftypedstates/52/320390768×1/2/3×4state/disabledSemantics/Space/liveRegion/kontrast korunur. İlk R3 analyze0issue7.1s/123PASS16s saklı; ready bölüm başlığı da koşullu açıklandı, ilk strict18dosya1değişiklik needed exit1 nedeniyle sonraki analyze/test çalışmadı. Normal18dosya1değişiklik .30s ardından strict18zero .29s, güncel bütün123PASS ve14nativePNG yeniden üretildi. Güncel analyzer gerçek log:
+Analyzing shell...
+No issues found! (ran in 7.3s)
+
+Yeni kodLF8c7624f495c5b85d05072187443459e35e96439e1c2be6c8ba96f6c74b703153; testLFb41a4e12d49f162c6c085020c43ff0b4e2b2b95d5b21874f939766dd6abe56da; kod kaynağıdea0c35a5d80bd0370146bc04144b79d5493999c; sabit9soru19c03cc26172c2bea8eb3aea798b10f5c444c07f6a9f3760c5e2bfc10c1e20b2 değişmedi. Mevcut lockedpubgetPASS/SDK/publock/YAML/önceki106test aynı. Rawv71Gitblobbyteeşit/15temelpin/EDEV104esasgövde saklı. Yeni14PNG rootview_image ile açılıp ilkbilinmeyen/pending/olumlu/rehberdeğişimi/açıkhistory tam kaydırmaları, canonicalE03 ve önceki iki ekranın yedi karşılaştırması kontrol edildi. Gerçekmainkabul93/kalan113/206; yeni kaynak/final bağımsız kabul ve sameCI-T3/actualmerge/main8 olmadan artmaz. Üretim/E3R1/E5-003/Supabase47-57-59/RET97/telefon/OS/fiziksel/yayın/altbarHELD.
+
+## Güncel14nativePNG
+
+- Temp kavriva_e1007_r3-changed-0.png PNG SHA256 3b1bdfc19b4aa61d0fa29e64093f0f78dfedba566539570558f428d197140204
+- Temp kavriva_e1007_r3-changed-1.png PNG SHA256 261aa66eef6a90813000ed62b916666e776754a144f4d60dac07253b9bb9157b
+- Temp kavriva_e1007_r3-changed-2.png PNG SHA256 e907d5cabc3f8ce100393a2f73607f1f2564802e8c44afb93636e411ff0658a4
+- Temp kavriva_e1007_r3-held-0.png PNG SHA256 9115b85bc3f2e2887dc6b7c314ad24b5f8478a9b53124b66fa648a426fc43088
+- Temp kavriva_e1007_r3-held-1.png PNG SHA256 abb88635864a7d30b14f67ea08aa94920d0a4b72e2662cf7b3d7ac48f66988df
+- Temp kavriva_e1007_r3-history-0.png PNG SHA256 9115b85bc3f2e2887dc6b7c314ad24b5f8478a9b53124b66fa648a426fc43088
+- Temp kavriva_e1007_r3-history-1.png PNG SHA256 480ea467f0810b3e2d9b88e2cedf96678b4f4c7f6fb939bf49d4cdd66c25bb11
+- Temp kavriva_e1007_r3-history-2.png PNG SHA256 609ff0c0da431f7878099c835af7432a381be3f846487d9f3dc98bc495a876f1
+- Temp kavriva_e1007_r3-pending-0.png PNG SHA256 7163b603f187bf0adaf8011868daa50a0ab5c927fdbcaf3c38ddcec90b301784
+- Temp kavriva_e1007_r3-pending-1.png PNG SHA256 2e6c402f1ccb102101d8fef1f832137fc89e4787cfc719bc5a31a18d10e18968
+- Temp kavriva_e1007_r3-pending-2.png PNG SHA256 614dfaba5c03942ec378cb4399b78010deda1fb4b3b55b4cbc018a18b707c460
+- Temp kavriva_e1007_r3-ready-0.png PNG SHA256 339c84386a792f4b93e658ee726d84bca04c80da8021a48d13812d7609670a4f
+- Temp kavriva_e1007_r3-ready-1.png PNG SHA256 2c9af81833a1c98afddb6fe00a63f6f373a3ae1075b2f85000924dc593edbe61
+- Temp kavriva_e1007_r3-ready-2.png PNG SHA256 eff91362c58de0cfe2a7c7eb9ed5ed583386fd59be1d26fbd8532b82e8c51c79
+
+## Üçüncü geçmişsiz ilk okuma — önceki yanıtlar verilmedi
+
+E1007 R3 — bağımsız ilk okuma raporu
+
+Yöntem ve sınırlar
+- Yalnız aşağıda listelenen 14 adet 390x844 PNG ekranını ve dondurulmuş sorular JSON dosyasını açıp okudum. Kod, plan, başka rapor, cevap anahtarı veya dış kaynak açmadım.
+- Soruları yalnız ekranlarda görünen yazı ve bağlantı açıklamalarına göre kendi kelimelerimle yanıtladım. Görseller tam kaydırmanın örtüşen parçaları olarak incelendi.
+- Bu, bir AI modelinin ekran görüntülerini okumasıdır. İnsan okuyucu/telefon kullanılabilirliği testi, gerçek cihazda dokunma veya gezinme denemesi, erişilebilirlik testi ya da mühendislik kabulü değildir. Ekran metninin anlamını değerlendirebilirim; etkileşimlerin gerçekten çalıştığını bu görüntülerden doğrulayamam.
+
+Dokuz soruya yanıtlar
+1. Hayır. Kaydedilen adım yalnız geçmiş ilerlemeyi gösterir; motosikletin şu anki fiziksel durumunu doğrulamaz.
+2. İşe dönmeden önce mevcut fiziksel durum, motosiklete uygunluk, hazırlık koşulları ve zorunlu kontroller güncel kaynakla yeniden doğrulanmalıdır. Eksik veya belirsiz zorunlu koşul varsa normal ilerleme durur ve rehber adımı kapalı kalır.
+3. Hayır. Eski kritik kontrol onayları otomatik geçerli sayılmaz; gerekli güncel kontroller yeniden yapılmalıdır.
+4. Eski adım, sökülmüş/gevşetilmiş parçalar, ölçüm ve notlar nerede kalındığını hatırlatmak için geçmiş bağlam olarak gösterilir. Bunlar güncel fiziksel kanıt, talimat veya devam izni sayılmaz.
+5. Hayır. Fotoğraf ya da not eklemek tek başına adımı açmaz; gözlem de kritik kontrolü doğrulamaya yetmez.
+6. Hayır. Güncel kaynak kararı ve bütün zorunlu kontroller olumlu biçimde tamamlanana kadar devam edilmez; eksik veya belirsiz koşulda normal ilerleme durur.
+7. Hayır. Rehber sürümü değiştiyse eski adımdan devam edilemez; güncel fiziksel durum yeni rehberle yeniden eşlenmelidir.
+8. Hayır. “Yeniden kontrol iste” yalnızca yeniden değerlendirme talep eder; kendiliğinden devam izni vermez ve işi tamamlandı olarak işaretlemez.
+9. Evet. “Güvenli şekilde durdurma yolunu aç” seçeneği görünüyor; açıklaması bu yolun ücret gerektirmediğini, işi tamamlanmış veya güvenli olarak kaydetmediğini söylüyor.
+
+Belirsizlikler / okuma notları
+- Dokuz sorunun yanıtı ekran metninde açıkça bulunuyor; anlamını çözemediğim bir soru yok.
+- Görseller farklı durumları gösteriyor: bazı ekranlarda doğrulama henüz yapılmamış, bazılarında bu kesit için doğrulanmış, rehber değişikliği olan durumda ise eski adımdan devam açıkça engellenmiş. Bu durum farkı, hangi yeniden kontrol/rehber yolunun sunulduğunu değiştiriyor; geçmiş kaydın tek başına kanıt veya izin olmadığı mesajını değiştirmiyor.
+- “Güvenli durdurma” ifadesini yalnızca ekrandaki seçeneğin ve açıklamasının mevcut olması olarak yorumladım; gerçek hayattaki güvenlik sonucunu doğrulamış değilim.
+
+Açılan girdiler
+PNG ekranları:
+1. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-held-0.png
+2. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-held-1.png
+3. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-pending-0.png
+4. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-pending-1.png
+5. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-pending-2.png
+6. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-ready-0.png
+7. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-ready-1.png
+8. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-ready-2.png
+9. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-changed-0.png
+10. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-changed-1.png
+11. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-changed-2.png
+12. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-history-0.png
+13. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-history-1.png
+14. C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r3-history-2.png
+
+Dondurulmuş sorular:
+C:/Users/Xpike/.codex/worktrees/e4-required-auto-transfer/kavriva-app/modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json
+
+Yeni bütün exacthead bağımsız kaynak hükmü/aynıCI-T3, ardından ayrı sonmetadata hükmü/sonCI bekleniyor.

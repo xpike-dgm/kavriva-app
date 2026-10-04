@@ -45,3 +45,21 @@ Son normal formatter18dosya1değişiklik .30s; strict18dosya0değişiklik .28s; 
 
 
 `vault/PROFILES/resume-revalidation-render.md`; `vault/PACKS/P-E1-007.md`; `vault/REGISTRY/T-E1-007.md`; `vault/EVIDENCE/E-DEV-105.md`.
+
+## Güncel dar onarım kaynağı — kabul değildir
+
+Yukarıdaki ilk V1 gövde/ilk13PNG/ilk9yanıt ve exact52805c22920d53134aaa2fd2442d4420f1c93a09 CHANGES_REQUESTED hükmü tarihsel kayıttır; referans varlığına dayalı eski gate bu yeni kaynağın kabul kanıtı değildir. İlk tam rapor SHA256f01d0ad43b0e6cfa16615eb2f5e94bcbf83e2db624aaf9807de518a80bd3e097 saklıdır. Ret6509d8c → typedstatefixIN_PROGRESS6eba44bc9441328af26fb3cb89bcb85e5b6f863b → ikinci ilk okuma açıklık CHANGES_REQUESTED4701db7 → dar başlık/eylem/amaç onarımıde047cd ve güncel kaynakdea0c35a5d80bd0370146bc04144b79d5493999c. Yeni bütün kaynak hükmü/CI hâlâ beklenir.
+
+P1: ResumeReferenceState her dört amaç için required unknown/held/confirmed sağlayıcı sonucudur; üretici APIde varsayılan olumlu yok. Normal devam yalnız explicitconfirmed + bütün eski güncellik/tamkapsam/yeni kesinti/amaç/konu/güvenlik/gözden geçirme/rehber-değişmedi koşullarıyla açılır. Güncel unknown/held kapı açmaz; sağlayıcı nedeni görünürdür. E1 reason metnini parse etmez veya olumlu karar üretmez.
+
+Gerçek regresyon: önce yalnız durum veri alanı tanımlandı, eski matches guard değişmedi. decision/unknown current iken normal kapıtrue: beklenenfalse/gerçektrue,0PASS1FAIL; Tempkavriva_e1007_r2_scaffold.patch +r2_actual_regression_red.txt saklıdır. Yanlış app kökünde ilk komut No pubspec ile durdu; r2_regression_red.txt yalnız cwd hatasıdır, semanticRED değildir. Doğru shellcwd semanticFAIL ardından matches explicitconfirmed gerektirdi ve aynı test dört amaç×unknownheld/neden/recheck/ücretsizkapanış/kapalıdevam koşullarını geçti.
+
+Typedfix6eba44b strict18zero/analyze0issue8.3s/122localPASS=106önceki+15yeni+1PNG; ikinci bağımsız ilk okuyucu14PNG/sabit9soru ile Q4 amacı ve readybaşlık/baskınrecheck belirsizliği buldu. Gerçek rapor ayrı bölümde değişmeden saklıdır, kabul sayılmadı. Böylece guard başarısı CON004 açıklığı yerine geçirilmedi.
+
+Güncel P2 onarımı: geçmişin yarım kalan işte nerede kaldığını/sökülen parçaları/notları hatırlamak için korunduğu collapsed görünür metindir; devam izni/güncel fiziksel kanıt olmaz. Ready başlık Güncel kontroller doğrulandı, bölüm Bu kesinti için güncel sonuç, tek baskın CTA güncel rehber ekranına geçiş; recheck sakin ikincildir. Held başlık yeniden kontrol/tek baskın recheck, rehber yolunun şu anda kapalı olduğu açık. Yol niyeti otomatik fiziksel adım/tamamlama yapmaz. Tüm olumlu sonuçlar görünür açık yeniden doğrulandı; başarı garantisi yok. Pack field9 eski105 gerçek106 olarak düzeltildi.
+
+16yeni anlamlı test ve106önceki ile normalCI122beklenir; yerelnativecapture1ile actual123PASS. Yeni ready testi actualbody/focus contrast ve TabTabEnter/currentScope-yeniinterruptionintent, açık başlık/amaç ve sahtecompletion yok ölçer. Önceki15test/negatiftypedstates/52/320390768×1/2/3×4state/disabledSemantics/Space/liveRegion/kontrast korunur. İlk R3 analyze0issue7.1s/123PASS16s saklı; ready bölüm başlığı da koşullu açıklandı, ilk strict18dosya1değişiklik needed exit1 nedeniyle sonraki analyze/test çalışmadı. Normal18dosya1değişiklik .30s ardından strict18zero .29s, güncel bütün123PASS ve14nativePNG yeniden üretildi. Güncel analyzer gerçek log:
+Analyzing shell...
+No issues found! (ran in 7.3s)
+
+Yeni kodLF8c7624f495c5b85d05072187443459e35e96439e1c2be6c8ba96f6c74b703153; testLFb41a4e12d49f162c6c085020c43ff0b4e2b2b95d5b21874f939766dd6abe56da; kod kaynağıdea0c35a5d80bd0370146bc04144b79d5493999c; sabit9soru19c03cc26172c2bea8eb3aea798b10f5c444c07f6a9f3760c5e2bfc10c1e20b2 değişmedi. Mevcut lockedpubgetPASS/SDK/publock/YAML/önceki106test aynı. Rawv71Gitblobbyteeşit/15temelpin/EDEV104esasgövde saklı. Yeni14PNG rootview_image ile açılıp ilkbilinmeyen/pending/olumlu/rehberdeğişimi/açıkhistory tam kaydırmaları, canonicalE03 ve önceki iki ekranın yedi karşılaştırması kontrol edildi. Gerçekmainkabul93/kalan113/206; yeni kaynak/final bağımsız kabul ve sameCI-T3/actualmerge/main8 olmadan artmaz. Üretim/E3R1/E5-003/Supabase47-57-59/RET97/telefon/OS/fiziksel/yayın/altbarHELD.

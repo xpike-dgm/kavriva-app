@@ -413,3 +413,7 @@ Aynı e1-tests.yml sabitSDK/lock/format/analyze/bütün widgettest;14yeni+106ön
 
 
 `vault/PROFILES/resume-revalidation-render.md`; `vault/PACKS/P-E1-007.md`; `vault/REGISTRY/T-E1-007.md`; `vault/EVIDENCE/E-DEV-105.md`.
+
+## Resume P1/P2 dar düzeltme ve açıklık test kapsamı
+
+İlk14+106=120CI/121local geçmiş kayıt korunur. Typedstatefix15+106/122local sonrası açıklık dar onarım16+106=122normalCI; nativecaptureile123localPASS. Strict18zero/analyze0; İlkisHidden ve scaffoldoldguard0PASS1FAIL, retliiki okuma korunur. WorkflowYAML aynı; yeni actualCI/bağımsız inceleme beklenir.
