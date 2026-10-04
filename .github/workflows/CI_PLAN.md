@@ -439,3 +439,7 @@ Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 12
 
 
 `vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
+
+## T-E1-009 R2 fotoğraf kapsamı
+
+142önceki+34yeni=176normalCI;177 yerelyakalamayla. Güncelaynısoru/kapsam/istek/amaç/konu bağlı maddiyararlılık kaynağı olmadan fotoğrafCTA yok; önceki fotoğraf yeniden istenmez.24responsive durum/43 nativePNG/14 kod öncesiilkoku; gerçekeskiG02RED0PASS1FAIL→aynıGREEN1 PASS, R4eskiisteğebağlımetinbeklentisiFAIL→pozitiffotoğraförneğinetaşınanaynıbeklenti. YeniCI/T3/bütünR2bağımsızhükümzorunlu. WorkflowYAML/SDK/lock/önceki 142 değişmedi.
