@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-005c",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek render ve sorular, dış yardım/kod/plan/cevap anahtarı yok. AI insan veya gerçek cihaz kullanılabilirliği kanıtı değildir.",
+  "passRule": "Bütün sorular ek dış yardım olmadan doğru cevaplanmalı; yanlış/cevapsız/belirsiz soru CHANGES_REQUESTED, dar metin düzeltmesi, yeni gerçek render ve başka geçmişsiz okuyucu gerektirir.",
+  "questions": [
+    {
+      "id": "013-reference-what",
+      "surface": "reference",
+      "question": "Bu görünümün amacı ne; motosiklette yapacağın işlem adımı mı, genel bilgi mi?"
+    },
+    {
+      "id": "013-reference-why",
+      "surface": "reference",
+      "question": "Kaynak ve konu açıklamasını okumak neden motosiklete uygunluk veya hazır olma garantisi vermez?"
+    },
+    {
+      "id": "013-reference-next",
+      "surface": "reference",
+      "question": "Uygunluk ve hazırlık sonucunu tekrar almak veya önceki ekrana dönmek için ne yapabilirsin; bunlar kendiliğinden işlem başlatır mı?"
+    },
+    {
+      "id": "013-stale-offline-what",
+      "surface": "stale-offline",
+      "question": "Çevrimdışıyken bu eski açıklamayı okuyabilmen hangi anlama geliyor?"
+    },
+    {
+      "id": "013-stale-offline-why",
+      "surface": "stale-offline",
+      "question": "Önceki kaynak bilgisi neden şimdi motosiklette uygulama yapmaya izin vermiyor?"
+    },
+    {
+      "id": "013-stale-offline-next",
+      "surface": "stale-offline",
+      "question": "Güncel değerlendirme için hangi yolu kullanabilirsin; çevrimdışı okuma işi tamamlanmış sayar mı?"
+    },
+    {
+      "id": "013-missing-what",
+      "surface": "missing",
+      "question": "Bu motosiklet ve konu için açıklama eksikse ekran sana ne söylüyor?"
+    },
+    {
+      "id": "013-missing-why",
+      "surface": "missing",
+      "question": "Başka motosiklete ait açıklama veya yakın model tahmini neden burada kullanılmıyor?"
+    },
+    {
+      "id": "013-missing-next",
+      "surface": "missing",
+      "question": "Eksik bilgiyi değerlendirtmek veya önceki ekrana dönmek için hangi seçenekler var?"
+    }
+  ]
+}
