@@ -599,13 +599,11 @@ class _OutcomeState extends State<WorkOutcomeView> {
               w.scope.executionId,
             ) ??
             false);
-    bool permitted(WorkOutcome o) =>
-        matched &&
-        switch (o) {
-          WorkOutcome.completed => completed,
-          WorkOutcome.partialUnresolved => true,
-          WorkOutcome.safelyStopped => safelyStopped,
-        };
+    bool permitted(WorkOutcome o) => switch (o) {
+      WorkOutcome.completed => completed,
+      WorkOutcome.partialUnresolved => true,
+      WorkOutcome.safelyStopped => safelyStopped,
+    };
     final valid = selected != null && permitted(selected!);
     final canRecord =
         valid &&

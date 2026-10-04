@@ -622,6 +622,50 @@ void main() {
     },
   );
   testWidgets(
+    'Absent or foreign outcome permits only a current-scope unresolved user report, never verified success or safe stop',
+    (tester) async {
+      final current = _scope();
+      for (final result in <OutcomePresentation?>[
+        null,
+        _result(scope: _scope(bike: 'other-bike')),
+        _result(scope: _scope(work: 'other-work')),
+        _result(scope: _scope(guideVersion: 'old-guide')),
+        _result(scope: _scope(revision: 'old-evaluation')),
+        _result(scope: _scope(physical: 'old-physical')),
+      ]) {
+        final sent = <OutcomeRequest>[];
+        final closed = <ExecutionRequest>[];
+        await tester.pumpWidget(
+          _app(
+            _outcome(
+              scope: current,
+              result: result,
+              record: sent.add,
+              close: closed.add,
+            ),
+          ),
+        );
+        expect(_enabled(tester, _saveLabel), isFalse);
+        expect(_enabled(tester, _completeLabel), isFalse);
+        expect(_enabled(tester, _safeLabel), isFalse);
+        expect(_enabled(tester, _partialLabel), isTrue);
+        await _tap(tester, _completeLabel);
+        await _tap(tester, _safeLabel);
+        expect(_enabled(tester, _saveLabel), isFalse);
+        await _tap(tester, _partialLabel);
+        await _tap(tester, _saveLabel);
+        expect(sent.single.outcome, WorkOutcome.partialUnresolved);
+        expect(identical(sent.single.scope, current), isTrue);
+        expect(find.text('Kaydedildi'), findsNothing);
+        expect(find.textContaining('Son kontrol:'), findsNothing);
+        await _tap(tester, _closeLabel);
+        expect(identical(closed.single.scope, current), isTrue);
+        expect(closed.single.stepId, isNull);
+        expect(sent.length, 1);
+      }
+    },
+  );
+  testWidgets(
     'Unverified safe stop stays distinct from freely accessible safe closure request and unresolved record',
     (tester) async {
       final closed = <ExecutionRequest>[];
@@ -923,6 +967,11 @@ void main() {
             close: (_) {},
             back: (_) {},
           ),
+          'unverifiedClosure': _outcome(
+            record: (_) {},
+            close: (_) {},
+            back: (_) {},
+          ),
         };
         for (final entry in scenes.entries) {
           final key = GlobalKey();
@@ -939,8 +988,11 @@ void main() {
             ),
           );
           await tester.pumpAndSettle();
-          if (entry.key == 'closure') {
-            await _tap(tester, _safeLabel);
+          if (entry.key == 'closure' || entry.key == 'unverifiedClosure') {
+            await _tap(
+              tester,
+              entry.key == 'closure' ? _safeLabel : _partialLabel,
+            );
             final scroll = tester.state<ScrollableState>(
               find.byType(Scrollable).first,
             );
