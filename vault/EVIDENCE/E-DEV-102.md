@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-READINESS-001]
-used_by: [V-E1-READINESS-001, P-E1-005b, T-E1-005b]
+used_by: [V-E1-READINESS-001, P-E1-005b, T-E1-005b, V-E1-TEACHING-001, P-E1-005c]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -274,3 +274,7 @@ Bağımsız /root/e1005b_readiness_full_review, geçmişsiz gpt-6-luna/max göre
 ACTIVE profil LF SHA256 7a5ef603b6cd8b07ddf7a72936681ae8ed959e84ecdce55b7287fee0d2579de9; kodsubject özeti yerine geçmez.
 
 Son altı metadata adayı: build_index94/routingDONEcandidate; run_all on iki kontrol ve42koruma/kimlik testi PASS/worstexit0; diffcheckPASS ve actualdiff yalnız altımetadata. Son metadata incelemesi ve aynı başlık CI/T3 henüz beklenir; bu kayıt yazılırken merge yok, kabul sayacı90/kalan116.
+
+## T-E1-005c tüketimi ve gerçekPR104 ikincil makbuzu
+
+PR104 https://github.com/xpike-dgm/kavriva-app/pull/104 MERGED@2026-10-04T11:05:38Z; normalmatchedfinal9aebbaeb4091d9e585036c8fdb6604a9c1c45a5b merge b2d003f182d948f210fa9b4438acb9068e0765a3; fetchedorigin/main eşit. Kaynak0ac8f6a2c5b5d6ecff7c2c62da0e0bfe8d9ca7d0 FULLPASS/P2closed, ayrıfinalmetadataPASS/no findings. Kaynak16/son16/main8actualSUCCESS, PR T3beş/checksyedi gerçek başarılı adım. İlk ret/52testdüzeltmesi/önceki birincil gövde/hash/hüküm/yöntem/başarısızlık geçmişi korunur. Kabul91/kalan115/206; yeni öğrenme kabulü yok.
