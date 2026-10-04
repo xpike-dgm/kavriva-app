@@ -159,11 +159,11 @@ class _AddMotorcycleFormState extends State<AddMotorcycleForm> {
               backgroundCursorColor: const Color(0xFF5E6E81),
               keyboardType: numeric ? TextInputType.number : TextInputType.text,
               readOnly: !enabled || widget.busy,
-              textInputAction: numeric
+              textInputAction: numeric || (label == 'Model' && unknownYear)
                   ? TextInputAction.done
                   : TextInputAction.next,
               onSubmitted: (_) {
-                if (numeric) {
+                if (numeric || (label == 'Model' && unknownYear)) {
                   submit();
                 } else if (label == 'Marka') {
                   modelFocus.requestFocus();
@@ -199,6 +199,7 @@ class _AddMotorcycleFormState extends State<AddMotorcycleForm> {
             ? null
             : () => setState(() {
                 unknownYear = !unknownYear;
+                yearFocus.canRequestFocus = !unknownYear;
                 validationError = null;
                 if (unknownYear) yearFocus.unfocus();
               }),

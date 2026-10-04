@@ -288,6 +288,54 @@ void main() {
     await tester.pump();
     expect(drafts.single.year, 2020);
   });
+  testWidgets('bilinmeyen yılda model done doğrular ve yalnız beyan gönderir', (
+    tester,
+  ) async {
+    final drafts = <MotorcycleDraft>[];
+    await tester.pumpWidget(_app(_form(submit: drafts.add)));
+    await _tap(tester, 'Yılı bilmiyorum');
+    await _enter(tester, 'Model', 'Deneme model');
+    expect(
+      tester
+          .widget<EditableText>(find.byKey(const ValueKey('Model')))
+          .textInputAction,
+      TextInputAction.done,
+    );
+    expect(
+      tester
+          .widget<EditableText>(find.byKey(const ValueKey('Yıl')))
+          .focusNode
+          .canRequestFocus,
+      isFalse,
+    );
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pump();
+    expect(drafts, isEmpty);
+    expect(find.text('Marka ve modeli yaz.'), findsOneWidget);
+    await _enter(tester, 'Marka', 'Deneme marka');
+    await _enter(tester, 'Model', 'Deneme model');
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pump();
+    expect(drafts.length, 1);
+    expect(drafts.single.year, isNull);
+    expect(drafts.single.model, 'Deneme model');
+    expect(find.text('Motosiklet eklendi'), findsNothing);
+    await _tap(tester, 'Yılı bilmiyorum');
+    expect(
+      tester
+          .widget<EditableText>(find.byKey(const ValueKey('Model')))
+          .textInputAction,
+      TextInputAction.next,
+    );
+    expect(
+      tester
+          .widget<EditableText>(find.byKey(const ValueKey('Yıl')))
+          .focusNode
+          .canRequestFocus,
+      isTrue,
+    );
+  });
+
   testWidgets('ilk kullanım ve form büyük yazıyla kayar, alanlar en az48', (
     tester,
   ) async {

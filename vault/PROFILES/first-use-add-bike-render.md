@@ -29,8 +29,10 @@ AddMotorcycleForm yerel TextEditingController taslağıdır; çağıran busy/err
 
 Türkçe metin, scroll, büyüyen metin/320390768×1/2/3, min52kontrol, alan semantik adları, TabEnter ve yılDone/aynıvalidation. Empty/invalid/error/busy/unknownyear/uibeyanıvsverified/disabled/back callback negatifleri anlamlı testlerde. ActualContainerborder/nearestColoredBox/DefaultTextStyle kontrastı ölçülür. Yeni görüntü/sesvideoasset yok, captionvoice gerçekdevicea11y gate HELD. SDK/lock/önceki shellgarage/workflowsunchanged; ilkglobalfont/token/ikon seçimi yok. İlklanding/bar görünürlüğü productionpolicyseçilmedi; PNGfixtureactualshellnavfalseyalnız bu test.
 
-Yerel35PASS (firstuse11+shell10+garage13+optionalPNG1), CIcapturekapalı34. lockedpubgetPASS, formatter6dosya0değişim.08s, analyze0sorun11.5s. Actual390×844 iki TempPNG açıkzemin/koyumetin/3intent veya3formalanı+unknownyear+Devam/Geri; taşma yok. AsılmanagerchatPNGbinary repoda yok, birebirpixel fidelity iddiası yok. İlkformatterparantezFAIL ve ilk34PASS/1FAILsemanticsfinder historykanıtta.
+Yerel36PASS (firstuse12+shell10+garage13+optionalPNG1), CIcapturekapalı35. lockedpubgetPASS, formatter6dosya0değişim.08s, analyze0sorun10.8s. Actual390×844 iki TempPNG açıkzemin/koyumetin/3intent veya3formalanı+unknownyear+Devam/Geri; taşma yok. AsılmanagerchatPNGbinary repoda yok, birebirpixel fidelity iddiası yok. İlkformatterparantezFAIL ve ilk34PASS/1FAILsemanticsfinder historykanıtta.
 
 Bütün kanonik bağımsızgpt6luna/max exactsourceincelemesi + gerçeksourceCI/T3 ve boundedfinalmetadata+exactfinalCI ayrıca zorunlu. Sahip sürekliçalışma onayı bu reviewer/gatesi kaldırmaz. ProductE3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59/retliPR97/proddevicephysicalreleaseMISSINGHELD değişmez. Sırf belge/fixture varlığı DONE değil.
 
 Pack `vault/PACKS/P-E1-003.md`; görev `vault/REGISTRY/T-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`.
+
+İlkwholeb762CHANGES_REQUESTED/P2 unknownyearModelNextno-op. Dar düzeltme bilinmeyenyılda ModelDone→aynıvalidation, bilinen yılda Next→yıl; readonlyunknownyear focus atlanır. Yeni anlamlıklavye testi dahil36localPASS, yeniwhole exactsourceincelemeveCI beklenir; ilkbekleyiş/failurehistory kanıtta korunur.

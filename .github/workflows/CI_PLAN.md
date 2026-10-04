@@ -357,4 +357,4 @@ Mevcut sabit SDK/lock workflow değişmeden garage13+shell10=23 headless davran�
 
 ## İlk kullanım ve motosiklet ekleme kontrolü
 
-MevcutlockedSDK/workflowunchanged; firstuse11+garage13+shell10=34mandatorytest, optionalcaptureCIkapalı. Üçintent/hesapzorlamayanbaşlangıç/markamodelyıl/unknownyear/invalidnoemit/errorbusydraftpreservation/disabled/back/keyboard/9scale/min48/actualpaintcontrast. Graph12+42/manual13pin/rawv65/exact13/priorprimary ve bütün bağımsızscope+actualsource/finalCI/T3 gerekir. Pack `vault/PACKS/P-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`. Actualprod/device/physicalreleaseHELDMISSING.
+MevcutlockedSDK/workflowunchanged; firstuse12+garage13+shell10=35mandatorytest, optionalcaptureCIkapalı. Üçintent/hesapzorlamayanbaşlangıç/markamodelyıl/unknownyear/invalidnoemit/errorbusydraftpreservation/disabled/back/keyboard/9scale/min48/actualpaintcontrast. Graph12+42/manual13pin/rawv65/exact13/priorprimary ve bütün bağımsızscope+actualsource/finalCI/T3 gerekir. Pack `vault/PACKS/P-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`. Actualprod/device/physicalreleaseHELDMISSING.
