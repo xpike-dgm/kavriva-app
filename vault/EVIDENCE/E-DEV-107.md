@@ -4,10 +4,10 @@ version: 1
 contract_id_version: "SCR-019..021; C1.4/F1.4.1/FL1.4.1 diagnosis v1"
 subject_file: modules/e01-app/internal/shell/lib/diagnosis.dart
 subject_digest: 8b1d2ac77088a2bf497dfc5dd739cd0a12eac1f297241c105caac04342eb1417
-result: "RECORDED tanı sunumu; bağımsız kabul bekleniyor"
+result: "CHANGES_REQUESTED koşulsuz fotoğraf yolu; üretim/cihaz/yayın HELD"
 evidence_links: [vault/PROFILES/diagnosis-render.md, vault/PACKS/P-E1-009.md, vault/REGISTRY/T-E1-009.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-106-E10-GOVERNED-PATHS-FOR-T-E1-009.md.snapshot, modules/e01-app/internal/shell/lib/diagnosis.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/fixtures/diagnosis_reading_questions.json]
-gate_verdict: "RECORDED kaynak REVIEW; üretim/cihaz/yayın HELD"
-reviewer: none
+gate_verdict: "CHANGES_REQUESTED bağımsız P2; yeşil CI kabul değil"
+reviewer: "/root/e1009_diagnosis_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
 purpose: Belirti, tek gözlem ve desteklenmiş veya belirsiz tanı sonucunu sunmak
 domain: diagnosis
@@ -220,3 +220,112 @@ Yalnız38 görüntü ve koddan önce sabit12 soruyla geçmişsiz Luna max okuyuc
 
 
 `vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
+
+## İlk bağımsız kaynak reddi — değiştirilmemiş rapor
+
+T-E1-009 / PR109 — Bağımsız tam görev incelemesi
+Tarih: 2026-10-05
+
+KARAR: CHANGES_REQUESTED
+
+İncelenen kaynak: 3a42930073240a0d73f4f94e7c8da9216616f865
+Karşılaştırma tabanı: 303f0de2beb0ec4933bb6d4f1302085ba2092c3b
+Plan kanıt sabitlemesi: fa914f013fdcd032faed876689092da245989459
+PR: https://github.com/xpike-dgm/kavriva-app/pull/109 — OPEN, DRAFT, base/head eşleşiyor
+
+Bu, performeri yapan kişiden ayrı yürütülmüş kaynak ve tasarım kabul incelemesidir. Kaynak diffi ile plan kısıtları genel olarak kapsamlı ve izlenebilir; gerçek CI ve T3 de başarılıdır. Buna rağmen aşağıdaki P2 bulgusu, onaylı G02 kapsamıyla çeliştiğinden bu HEAD için kaynak kabulünü engelliyor. E-DEV-107 RECORDED ve T-E1-009 REVIEW olarak kalmalı; bu rapor hiçbir kaydı DONE yapmaz.
+
+1. Bulgu — P2: her gözlemde gereksiz fotoğraf yolu açılıyor
+
+Konum: modules/e01-app/internal/shell/lib/diagnosis.dart:631-638
+
+Kontrol ekranında fotoğraf yolu eylemi koşulsuz olarak oluşturuluyor: “İstersen fotoğraf ekleme yolunu aç”. Eylem normal durum ve observationSafe ile etkinleşiyor; aynı kontrol için fotoğrafın isteğe bağlı ve otomatik teşhis olmadığı açıklaması gösteriliyor. Ancak geçerli gözlem örneği “Ses ne zaman oluyor?” olup kullanıcıdan yalnızca sesin ne zaman duyulduğunu ayırması isteniyor. DiagnosisCheck sözleşmesinde bu soru için güncel, kapsam/istek/soruya bağlı bir “fotoğraf belirsizliği anlamlı ölçüde azaltır” kanıtı veya nedeni bulunmuyor. Bu nedenle E1, fotoğraf yolunu soru bazında faydaya göre kapatamıyor.
+
+Planın sabitlenmiş 03_DESIGN/KAVRIVA_DIAGNOSIS_VISUALS_01_HANDOFF.md, J/102-108 bölümü G01 ve G02’de fotoğraf çekiminin varsayılan etkileşim olmadığını, G02’nin basit gözlemle yanıtlandığını ve bu ekranda fotoğraf kontrolü gösterilmediğini açıkça söyler. Gelecekte fotoğraf ancak belirsizliği anlamlı biçimde azaltıyorsa istenmeli; önceki kanıt tekrar yükletilmemelidir. Sabitlenmiş 03_DESIGN/DIAGNOSIS_VISUAL_REFERENCES.md, Required Constraints #5 de fotoğrafı yalnızca anlamlı ölçüde faydalı olduğunda istemeyi şart koşar. Gerçek G02 referans görüntüsü aynı sınırı gösteriyor.
+
+Bu fark yalnızca teorik değil: gerçek 390×844 aday ekranlarından kavriva_e1009_r3-check-0.png ve kavriva_e1009_r3-check-unsure-0.png üzerinde kontrol fotoğraf CTA’sı bulunuyor. “İsteğe bağlı” ve “otomatik teşhis değil” metni zorlayıcılığı azaltıyor; fakat gereksiz veri/medya yolunu standart gözlem akışında sunma ve kabul edilmiş G02 sınırını ihlal etme sorununu gidermiyor. Bu tek başına fiziksel güvenlik ihlali olarak sınıflandırılmadı; kapsam, gereksiz özel medya toplama ve kullanıcı beklentisi riski nedeniyle P2’dir.
+
+Düzeltme ölçütü: mevcut G02 gözleminde fotoğraf eylemini kaldırın. Gelecek bir soru için eylem gerekiyorsa, yalnızca güncel ve aynı kapsam/istek/soruya bağlı, yetkili bir tipli fayda gerekçesi fotoğrafın belirsizliği neden anlamlı azalttığını bildirdiğinde gösterilsin; unknown/stale/foreign durum kapalı kalsın ve daha önce sağlanmış kanıt yeniden istenmesin. Hem mevcut G02’de kapalı durumu hem de gerekçe bulunduğu desteklenen örneği doğrulayan regresyon ve yeni gerçek native durum görüntüleri eklenmeli; ilk okuyucunun soruları bu kararı sınamalı ve düzeltilmiş HEAD aynı PR CI/T3 ile ayrı yeniden incelenmelidir. Bu öneri bir medya sağlayıcısı, yükleme, backend veya gerçek fotoğraf işleme üreticisi gerektirmez.
+
+2. İnceleme kapsamı ve kimlik doğrulaması
+
+• Kaynak checkout tam HEAD 3a42930073240a0d73f4f94e7c8da9216616f865 olarak doğrulandı; git çalışma ağacı temizdi. Base→HEAD diffin tamamı ve diff check okundu. Değişiklikler tam 15 kapsam yolunda: 4.147 ekleme, 12 silme. Scope manifestindeki 16 base pinin blob kimlikleri karşılaştırıldı. Plan dosyaları güncel çalışma kopyasından değil, istenen fa914f013fdcd032faed876689092da245989459 pininden okundu.
+• Koddan önce sabitlenmiş pack kaynağı cf6216f5ed8f3373f0ec943f62e2215be05e9a52; ilk kod commit’i 146aa3f23c5f6d56892c911b38ded161391b0156. Kod/test/12 soru dosyalarının konu özeti ve E-DEV-107 hashleri eşleşiyor: diagnosis.dart LF SHA-256 8b1d2ac77088a2bf497dfc5dd739cd0a12eac1f297241c105caac04342eb1417; diagnosis_test.dart 3dc8e56e0e65aec845c1dacabac8343186a617b36505c84946cc622e1ff876c2; frozen questions 08a990f13fe51cc7b705d4a9511eb7fbb826153d627605269f8e392f4a77e6e3.
+• 841 satırlık diagnosis.dart, 1.150 satırlık diagnosis_test.dart ve 12 sorunun tamamı incelendi. E-DEV-107, profile, pack, registry, sabit governed-path snapshot, inventory, E-DEV-106 farkı, E1/E9 manifestleri, registry/routing indeksleri ve CI_PLAN da okundu. Yeni snapshot’ın önceki governed-path inventory içeriğini koruduğu; E-DEV-106 ana gövdesinin korunup yalnızca tüketim bağlarının eklendiği; eski M1/M9 sözleşme metinleri, raw v73 kanıtı, shell/SDK/lock/YAML ve önceki 142 testin korunduğu kayıt ve bloblarla karşılaştırıldı. E3R1, E5-003, Supabase 47/57/59 ve RET97 üzerinde değişiklik yok.
+• Planın TASK_INDEX, kabul matrisi, dependency graph, TASK_EXECUTION_PROTOCOL, ADR-014, CON-004, MODULE_BOUNDARIES ve diagnosis tasarım/handoff/reference belgeleri sabit plandan incelendi. E9 önerir, E1 sunar, E3 doğrular sınırı ve T-E1-009 için bağımsız reviewer şartı doğrulandı. T-E1-009 kodu yalnızca render/presentation kapsamındadır; üretici veya fiziksel gerçeklik kanıtı değildir.
+
+3. Tasarım ve ekran kanıtının bağımsız değerlendirmesi
+
+Aday manifestteki 38 PNG’nin her biri gerçek view_image ile açıldı; kaydırılmış görüntüler tam ekranın devamı olarak okundu. Ayrıca dört gerçek kanonik G01-G04 plan PNG’si açılıp reference pin metadata’sındaki SHA-256 ve boyutla eşleşti. Önceki kabul edilmiş E1008 R6 remap ailesinden 38 PNG de gerçek görüntü olarak açılıp ortak akış/ekran davranışı karşılaştırıldı. İnceleme böylece 38 aday + 4 kanonik referans + 38 önceki kabul edilmiş ekranı kapsar; görsel kopya/pixel eşitliği veya nihai marka/token onayı iddia edilmez.
+
+Yedi V-E10 tasarım kanıtı karşılaştırması:
+1) Full-screen: 20 sunum durumu için 38 native 390×844 görüntü mevcut; tam ekran ve kaydırma devamları okundu. Görüntü kanıtı mevcut; içerik kabulü aşağıdaki G02 bulgusu nedeniyle geçmez.
+2) Cross-screen: önceki kabul edilmiş remap ekran ailesi ile G01-G04 karşılaştırıldı. Akış hiyerarşisi ve amaçların büyük bölümü tutarlı; her gözlemde fotoğraf yolu G02 ile çeliştiği için bu kapı geçmez.
+3) Cross-state: 20 durumun güvenlik, eksik/eski/yabancı kaynak, supported/unresolved/held, busy/unknown/error ve recovery ayrımları incelendi; tehlikeli veya belirsiz yanıttan normal ilerleme kapalı. Geçer.
+4) Responsive/Türkçe: gerçek widget testleri 20 durum × 320/390/768 genişlik × 1/2/3 metin ölçeği, kaydırma ve en az 52 hedef ölçümünü kapsıyor; native çıktılar 390×844. Kanıt geçer; gerçek telefon/OS ölçümü değildir.
+5) Accessibility: Tab/Space/Enter, odak korunumu, disabled semantics/liveRegion, boyanmış metin kontrastı ve pointer uyarılarının fatal olması test edilmiş. Kaynak test kanıtı geçer; fiziksel ekran okuyucu veya yardımcı teknoloji sertifikası değildir.
+6) Visual regression: eski test kapsamı ile yeni kapsam birlikte korunmuş; görüntü kimlikleri, gerçek state testleri ve önce/sonra kanıtları mevcut. Test/evidence kapsamı geçer; canonical fotoğraf kısıtı ayrıca kalır.
+7) Canonical reference: G01/G03/G04’ün genel rolü ve G02’nin tek ayırt edici gözlem rolü korunuyor; fakat G02’de fotoğraf CTA’sı olmadığı halde adayda bulunuyor. Bu nedenle uyum geçmez.
+
+E10 DESIGN_GATE_CHECKLIST ve DESIGN_REGRESSION_EVIDENCE_RULE bunların kaynak bazlı manuel, konuya bağlı karşılaştırmalar olduğunu; tek screenshot, metadata varlığı veya yeşil yapısal CI’nin UI tasarım kabulünü kanıtlamadığını belirtir. Burada görüntü ve state kanıtı gerçekten incelenmiştir; kalan G02 uyumsuzluğu buna rağmen görünür tutulmuştur.
+
+4. 12 soruluk ilk okuma
+
+Önceki görev geçmişine sahip olmayan, kodu/planı/cevap anahtarını/önceki raporu/dış kaynağı görmeyen ayrı Luna Max ilk okuyucu yalnızca sabit 12 soru ve 38 PNG’yi kullanmıştır. Değiştirilmemiş rapor Temp/kavriva_e1009_first_reading.txt, SHA-256 e09aa7a08258ddb4e1cbc066a09a38424470e12e15b6c2d4bb34048fa65580bf. On iki yanıtı bu incelemede görseller ve kaynakla karşılaştırdım; ana anlamları doğru ve makul biçimde gerekçelendirilmiş. Okuyucu belirsizlik/otorite, güvenlik, tamir iddiası, sonuç, tekrar uygulama ve özet konularını ayırt ediyor; desteklenen yön ve olumlu kaynak kontrolleriyle ilgili iki hızlı okuma nüansı da raporlanmış.
+
+9. soruya “fotoğraf isteğe bağlıdır, otomatik teşhis değildir” cevabı görüntü metnini doğru okuyor. Ancak soru, bu spesifik basit gözlemde fotoğrafın anlamlı faydası olup olmadığını sormuyor; böylece okuyucu gerçek plan/kapsam uyumsuzluğunu yakalamıyor. Bu durum ilk okumanın 12 yanıtını yanlış yapmaz, ama G02 fotoğraf kısıtını bağımsız kabul için tek başına yeterli biçimde sınamadığını gösterir. Okuma AI statik ekran okumasıdır; insan kullanıcı, fiziksel cihaz, gerçek etkileşim veya üretim çalışma zamanı kanıtı değildir.
+
+5. Testler, gerçek CI ve PR
+
+Kaynak testleri çalıştırılmadı; kayıt ve CI makbuzları incelendi. Gerçek R3 yerel makbuzları C:/Users/Xpike/AppData/Local/Temp/kavriva_e1009_r3_format.txt, kavriva_e1009_r3_analyze.txt ve kavriva_e1009_r3_all_test.txt: locked pub get PASS; 22 format dosyası / 0 değişiklik; analyzer 0 sorun; toplam 173 test PASS (önceden var olan 142 + 30 yeni normal CI testi + 1 yerel native test). Ayrı 30 test; kapsam/kimlik/değişmezlik, güvenlik ve tek gözlem, 11 invalid source case, durum değişince seçim sıfırlama, 6 boyutun her biri için 11 negatif kaynak, 15 result authority uyuşmazlığı, yalnız öneri, supported/unresolved/held, foreign/busy/unknown/error fail-closed, aynı kimlik ve özgün istek türüyle reconcile intent, klavye/semantics/odak/kontrast ve 20×9 responsive görünüm gruplarını kapsıyor.
+
+GitHub makbuzu C:/Users/Xpike/AppData/Local/Temp/kavriva_e1009_source_ci_receipt.md, source_ci.json, source_jobs.json ve ilgili source_log_*.txt dosyalarından, ayrıca read-only gh run view ile doğrulandı. Exact HEAD’de aynı pull_request run 37233779837 SUCCESS; checks job 111528749986 7/7 adım, t3-gate job 111528750193 5/5 adım SUCCESS. Kaynak makbuzu 17/17 başarıyı (8 push ve 8 PR suite olayı ile son PR T3/label gate) doğruluyor. E1 PR CI: 172 PASS, format 22/0 değişiklik, analyzer 0 sorun; E4 170 PASS; E9 9 PASS. İlk PR mimari çalışmasındaki T3 SKIPPED durumu kabul kanıtı sayılmadı. Yeşil CI bulguyu ortadan kaldırmaz.
+
+E-DEV-107’deki eski yerel hata geçmişi de okundu: native Tristate beklentisi düzeltilmiş; bekleyen kaydırma/tap uyarıları bastırılmak yerine fatal test kapısına alınmış; kritik unknown durumunun olumlu eski kaynak başlığından sonra kalmasına karşı önce RED sonra GREEN sıralama testi eklenmiş; SemanticsHandle try/finally ile kapatılmış. Bunlar mevcut HEAD’e karşı bağımsız bulgu değildir.
+
+6. Görev ve ürün sınırı
+
+E-DEV-107 sonucu RECORDED; bağımsız reviewer alanı boş ve gate verdict REVIEW’dür. T-E1-009 registry REVIEW kalmalı. Inventory’de 95 DONE / 111 remaining / 206 toplam sayımı değişmiyor; v74/99 üretilmiş kayıt bu görev için adaydır, ana kabul değildir. Son altı metadata kabul adımı bu kaynak hükmüne dahil değildir ve tamamlanmış sayılmamalıdır.
+
+PR109 read-only GH görünümünde OPEN ve DRAFT; reviewDecision boş, mergeState CLEAN. Açık/draft PR durumu görev kabulü veya yayın değildir.
+
+Bu kaynak E1 tanı sunumudur. E9 üreticisi/öneri runtime’ı, E3 doğrulaması ve gerçek T-E4-011b/T-E3-004 uzlaştırma entegrasyonu yoktur. OUTCOME_UNKNOWN aynı kimlik ve özgün türle yalnızca reconcile niyetini verir; gerçek request-result proof veya replay yoktur. Üretim API/model/veri tabanı/kimlik/medya, fiziksel motosiklet durumu, tamir veya sürüş kullanımı kanıtı, cihaz/yardımcı teknoloji doğrulaması ve yayın HELD kalır.
+
+Nihai hüküm:
+• Kaynak/T-E1-009: CHANGES_REQUESTED (tek P2: her G02 gözleminde fotoğraf CTA’sı).
+• Aynı HEAD CI/T3: PASS, gerçek PR T3 ve 17/17 receipt doğrulandı.
+• Task: REVIEW; bağımsız kabul verilmedi, DONE değil.
+• PR: OPEN/DRAFT; yayımlanmış/merge edilmiş değil.
+• Üretim, fiziksel sonuç ve kalan altı metadata kapısı: HELD / ayrı değerlendirme bekliyor.
+
+Bu rapor için kaynak dosyalara, PR’a, git reflerine veya iş akışlarına mutasyon yapılmadı. Yalnızca istenen bağımsız rapor Temp alanına yazıldı.
+
+
+Rapor RAW SHA256 dde4c9a1eb99114fae4212ae00f5d1fa59f47aa79f1c2a977e12c9f6d2505046. Exact eski kaynak 3a42930073240a0d73f4f94e7c8da9216616f865; aynı kaynak17CI/T3 başarısı P2 bulgusunu kapatmaz. İlk12 okuma doğru fakat fotoğrafın maddi fayda şartını sınamaz. Yeni soru kapsamı koddan önce ayrı sabitlenecek; eski12soru/rapor/PNG/Gitkimliği korunur.
+
+## Gerçek source CI makbuzu
+
+Exact kaynak 3a42930073240a0d73f4f94e7c8da9216616f865; 17/17 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR checks job111528749986: 7 başarılı adım/success.
+
+PR t3-gate job111528750193: 5 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763925 — SUCCESS.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233779837 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763967 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763932 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763914 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763910 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233764015 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763919 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233763904 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760043 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760046 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760054 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760038 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233759962 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760034 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233760037 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37233759992 — SUCCESS.
+
+PR E1 gerçek log: formatter22zero/analyze0issue/172PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
