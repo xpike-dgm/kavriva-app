@@ -100,6 +100,8 @@ used_by:
   - "E-DEV-098"
   - "P-E1-004"
   - "E-DEV-100"
+  - "P-E1-005a"
+  - "E-DEV-101"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -364,3 +366,10 @@ MevcutlockedSDK/workflowunchanged; firstuse12+garage13+shell10=35mandatorytest, 
 ## Motosiklet ayrımı ve uygunluk sunumu test kapsamı
 
 T-E1-004 için aynı mevcut e1-tests.yml sabit SDK/lockedpubget/format/analyze/bütün widget testlerini çalıştırır; workflow değişmedi. Yeni13 ayrım/fit negatif ve a11y testiyle CI48 (yerel optionalPNG1 ile49). run_all12+42 ve index yeniden üretimi ayrı. Actual PR T3 kontrolü bağımsız insanın kabul ettiği gpt-6-luna/max hükmünün yerine geçmez; aynı kaynak/final CI ve gerçek review beklenir. Üretim fit/kimlik/cihaz/yayın HELD.
+
+## Discovery sunumu test kapsamı
+
+Aynı e1-tests.yml sabit SDK/lockedpubget/format/analyze/bütün widget testleri; workflow değişmedi.15yeni+48eski=CI63; yerel optionalPNG ile64. CON004 ilk okuma ve bütün bağımsız kabul ayrıca zorunlu; CI veya T3 otomatik kontrol okuyucunun hükmü değildir.
+
+
+Profil `vault/PROFILES/guide-discovery-render.md`; pack `vault/PACKS/P-E1-005a.md`; görev `vault/REGISTRY/T-E1-005a.md`; kanıt `vault/EVIDENCE/E-DEV-101.md`.
