@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, M-E4-001, I-E10-PATHS-001, V-CI-001, 
 used_by: [P-E1-008, T-E1-008, E-DEV-106]
 evidence: [E-DEV-106]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Rehber değişiminde güncel durumun yeniden eşlenmesi
@@ -183,3 +183,11 @@ Gözlem ve olası karışıklıklar
 - Temp kavriva_e1008_r6-unmappable-0.png SHA256 83eb820cb6f8cd910fbfb8c4d4c75ba962c30d4982f9889921f9cd4f8a32bd2c
 - Temp kavriva_e1008_r6-unmappable-1.png SHA256 e630fad9ec5335c63d60e01e9127738e63852d03dd951e51a0140335bb7f9e36
 - Temp kavriva_e1008_r6-unmappable-2.png SHA256 a33ce95a4f039b65c5a4d4537118f56c36437efae601f1619d5e989aec6cc98c
+
+## İkinci bütün kaynak kabulü
+
+Bağımsız /root/e1008_remap_full_review gpt-6-luna/max ayarıyla görevlendirildi ve 22591bef785ae3317867cb79ad14f49b00d28938 kaynağına FULL PASS verdi. SCR-017 sunumu, mühendislik, tasarım ve CON-004 yönteminin yeterliliği birlikte incelendi. Koddan önce sabit dokuz soru, gerçek 38 R6 görüntüsü ve ayrı geçmişsiz okuyucunun bütün yanıtları/belirsizlikleri korunur. Model görevlendirmesi çalışma zamanı model tasdiki değildir; AI okuması insan veya fiziksel telefon kullanılabilirliği kanıtı değildir. Sahip DEC-0069 ve sürekli sohbet yetkisiyle bağımsız alt ajanı kabul etmiştir.
+
+Kaynağın 16/16 gerçek CI çalışması başarılıdır. Etiketli PR T3 beş, genel kontroller yedi başarılı adımla doğrulandı. E1 142 test başarılı; strict formatter 20 dosya / 0 değişiklik; analyze 0 sorun. Yerel native yakalamayla 143 test başarılıydı. DONE yalnız bu sunum görevi için kabul adayıdır; altı son kayıt dosyasının ayrı bağımsız incelemesi ve son kaynağın CI/T3 sonucu beklenir. Bu kayıt anında PR birleşmedi; kabul 94 / kalan 112 / toplam 206 değişmedi.
+
+İlk bağımsız R1 CHANGES_REQUESTED P2 raporu ve gerçek aynı kaynak CI makbuzu korunur. Gerçek eski kaynak hata regresyonu 0 PASS / 1 FAIL, bağlamlı istek hatası düzeltmesi ve aynı beklentinin 1 PASS sonucu korunur. Olumlu kaynak sonucu son isteğin başarısı sayılmaz; kaynak değerlendirmesi hata yüzünden iptal edilmiş sayılmaz. İlk eksik kayıt bağlantıları, ilk analiz sorunları, test sahnesinin odak taşıması, gerçek dinamik odak kaybının başarısız testi ve kararlı anahtar düzeltmesi, R3 bilinmeyen bildirim yakalama yanlışı ve gerçek R4 düzeltmesi saklıdır. Önceki başarısız taslağa olmayan dondurulmuş Git kimliği atfedilmez. Üretim eşleme/kimlik/yetki/teknik kaynak/fiziksel değerlendirme/kalıcılık/medya, E3R1/E5-003/Supabase47-57-59/RET97, cihaz/OS/yardımcı teknoloji/fiziksel uygulama ve yayın HELD. Nihai L05A, font/token/altbar ve routing politikası da HELD. Önceki 122 test, eski kod/SDK/lock/YAML, ham v72, E-DEV-105 esas gövdesi ve sabit dokuz soru korunur. Bu kabul bütün ürünün veya canlı kullanımın hazır olduğu anlamına gelmez.

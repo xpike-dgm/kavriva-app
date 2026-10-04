@@ -4,10 +4,10 @@ version: 1
 contract_id_version: "SCR-017; C1.3/F1.3.1/FL1.3.3 remap v1"
 subject_file: modules/e01-app/internal/shell/lib/guide_change_remap.dart
 subject_digest: c29fe159a30657051f6aa4f735ec7e3b594e66ccac49840a14b0f9c6dafd2105
-result: "RECORDED ikinci kaynak; önceki bağımsız ret korunur; yeniden inceleme bekleniyor"
+result: "PASS rehber değişiminde yeniden eşleme sunumu; üretim/cihaz/yayın HELD"
 evidence_links: [vault/PROFILES/guide-change-remap-render.md, vault/PACKS/P-E1-008.md, vault/REGISTRY/T-E1-008.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-105-E10-GOVERNED-PATHS-FOR-T-E1-008.md.snapshot, modules/e01-app/internal/shell/lib/guide_change_remap.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/fixtures/remap_reading_questions.json]
-gate_verdict: "RECORDED R2 kaynak REVIEW; yeni CI ve bağımsız kabul bekleniyor"
-reviewer: "/root/e1008_remap_full_review; gpt-6-luna/max ayrı görevlendirme"
+gate_verdict: "PASS tam kaynak sunum kabulü; üretim/cihaz/yayın HELD"
+reviewer: "/root/e1008_remap_full_review; gpt-6-luna/max R2 bağımsız yeniden inceleme"
 timestamp: 2026-10-04
 purpose: Materyal rehber değişiminde fiziksel durumun yeniden eşlenmesini sunmak
 domain: first-use
@@ -370,3 +370,117 @@ Gözlem ve olası karışıklıklar
 - Temp kavriva_e1008_r6-unmappable-0.png SHA256 83eb820cb6f8cd910fbfb8c4d4c75ba962c30d4982f9889921f9cd4f8a32bd2c
 - Temp kavriva_e1008_r6-unmappable-1.png SHA256 e630fad9ec5335c63d60e01e9127738e63852d03dd951e51a0140335bb7f9e36
 - Temp kavriva_e1008_r6-unmappable-2.png SHA256 a33ce95a4f039b65c5a4d4537118f56c36437efae601f1619d5e989aec6cc98c
+
+## Bütün bağımsız kaynak hükmü — değiştirilmemiş rapor
+
+T-E1-008 / PR #108 — R2 bağımsız tam görev incelemesi
+İnceleme rolü: Ayrı görevlendirilmiş bağımsız incelemeci, gpt-6-luna / max.
+İnceleme tarihi: 2026-10-04.
+
+Verdict: FULL PASS
+
+Hüküm kapsamı
+Bu hüküm yalnız T-E1-008’in SCR-017 rehber değişiminde güncel fiziksel durumu yeniden eşleme sunumuna ve aşağıdaki exact R2 kaynağına ilişkindir. PR #108 OPEN/DRAFT durumundadır; merge, görev DONE, ürün/yayın kabulü veya gerçek motosiklette güvenlik doğrulaması anlamına gelmez.
+
+Kaynak ve temel kimlik
+- Exact head: 22591bef785ae3317867cb79ad14f49b00d28938
+- Base: 499a6a43bcffe6ae203c3f38b313ee1cfe8374dc
+- Kanonik plan pin: fa914f013fdcd032faed876689092da245989459
+- PR: https://github.com/xpike-dgm/kavriva-app/pull/108 — OPEN, DRAFT, base main; GitHub head exact R2 ile aynı.
+- İncelenen çalışma ağacı: C:\Users\Xpike\.codex\worktrees\e4-required-auto-transfer\kavriva-app; son doğrulamada HEAD exact head ve git status temizdi.
+- Yeni kod/test kaynağı: b1d93e0cbd052e4a9456df4d77aad5132dec962d.
+- Dondurulmuş okuyucu soruları değişmedi; JSON özeti: c30d01059c04b1d993a46f3c8e567711052529c0b0645762e61e9e770d3ab6cd.
+- R1 exact head 8500b0597324411ab729302c1273dafb993ae04b’de verdiğim CHANGES_REQUESTED tarihsel olarak korunmuştur. R1 raporu E-DEV-106 ve Temp kaydında byte eşittir (SHA-256 0858c78b7319a17c36d642bc2aa71330a17ef1e8c1581823662741b16ddef98e). Bu rapor R1’i geriye dönük değiştirmez; mevcut verdict yalnız R2 içindir.
+
+Yönetilen kapsam ve plan bağları
+Öncelikli AI_START_HERE, TASK_EXECUTION_PROTOCOL, MODULE_BOUNDARIES, T-E1-008/TASK_INDEX, DAG ve ilgili C1.3/F1.3.1/F1.3.3/FL1.3.3/SCR-017/BR-021/BR-148/CON-004/F10.6.1 ile aktif güvenlik ekranı, state, gezinme, aile, referans ve handoff kaynakları; E10 Design Gate Checklist ve Design Regression Evidence Rule değerlendirildi. T-E1-008 ölçütü “eski adımdan devam yok, tahmini devam yok, altbar HELD ve acemi için anlaşılır açıklama”dır. CON-004’ün pinlenmiş ölçüsü, uygulama öncesi sabitlenmiş what/why/next sorularına ilk okuyucunun dış yardım olmadan verdiği bütün yanıtların doğru olmasını ister. Kabul matrisi yanlış, yanıtsız veya belirsiz yanıtı CHANGES_REQUESTED sayar. Görsel/yardımcı teknoloji/telefon/üretim kanıtı dışındaki kapsamlar ayrıca E10 kurallarıyla denetlendi.
+- P-E1-008’deki izinli 14 adres ve 15 base pin korundu. Read-only scope audit sonucu 14 izinli yol, 15 pin, raw v72, eski E-DEV-105 ana gövdesi, sabit soru seti, SDK/lock/YAML ve eski kod korumaları PASS; git diff --check ve temiz çalışma ağacı PASS.
+- Base’e göre 14 değişen yol: .github/workflows/CI_PLAN.md, modules/e01-app/MANIFEST.md, modules/e01-app/internal/shell/lib/guide_change_remap.dart, modules/e01-app/internal/shell/test/fixtures/remap_reading_questions.json, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, vault/EVIDENCE/E-DEV-105.md, vault/EVIDENCE/E-DEV-106.md, E-DEV-105 T-E1-008 snapshot’ı, vault/INDEX/registry.json, vault/INDEX/routing.json, vault/INVENTORIES/E10-GOVERNED-PATHS.md, vault/PACKS/P-E1-008.md, vault/PROFILES/guide-change-remap-render.md ve vault/REGISTRY/T-E1-008.md.
+- Ham v72 ve E-DEV-105 ana gövde korumaları, SDK/lock/YAML, önceki kod ve soru seti değiştirilmedi. 98 satırlı v73 ve yeni kayıtlar adaydır; kabul 94/112/206 sayısı artırılmamıştır.
+
+Kod ve davranış değerlendirmesi
+guide_change_remap.dart / testi ve R2 diff’i incelendi. Bu çalışma yalnız E1 sunumudur; harici sağlayıcının fiziksel değerlendirmesini, rehber eşlemesini ya da kararı kendisi üretmez.
+- R2, GuideRemapRequestError içine tam güncel kapsamı, changeId, beş istek türünden birini ve boş olmayan mesajı bağlar. Hata yalnız aynı motosiklet/çalışma/rehber ve değişim kapsamıyla eşleştiğinde özel hata metnini gösterir; eski/yabancı özel metin gizlenir.
+- Kaynağın mevcut değerlendirmesi ile en son isteğin sonucu ayrıdır. Hata olumlu kaynak değerlendirmesini iptal ettiğini veya fiziksel işlem gerçekleştiğini söylemez. Buna rağmen hata varken doğrulanmış yeni adıma geçiş kapalı kalır; bekleyen eylem de devam hakkı oluşturmaz. Eşleme için fiziksel durum, uygunluk, hazırlık, güncel karar ve boş olmayan güncel zorunlu kontrollerin hepsi bağlam/değişimle olumlu olmalıdır. Referansın varlığı tek başına olumlu sonuç sayılmaz.
+- Eski ilerleme/not/fotoğraf güncel fiziksel kanıt veya talimat değildir; kaynağı olmayan sonraki adım ve otomatik geri alma üretilmez. Handler yokluğu kapalı sonuç verir. busy=false iken, hata normal doğrulanmış adımı açmayı kapatır fakat callback varsa fotoğraf/not gözlemi ve eşleme retry kullanılabilir. busy=true iken yeni gözlem, eşleme ve normal adım talepleri kapanır. Güvenli durdurma bilgisi handler varsa busy/hata durumundan bağımsız açılır; bu yolu açmak fiziksel durdurmayı veya tamamlanmayı kaydetmez.
+- Klavye Tab/Enter/Space, rol/etiket ve disabled Semantics, canlı durum, gerçek boyanmış kontrast, dinamik odak ve 320/390/768 genişlik × 1/2/3 ölçek kapsamı incelendi. Testlerde adım için callback olmayan/kapalı durum ve yanlış adım isteği üretilmemesi doğrulanıyor.
+- R1’in gerçek regresyonu R2’de aynı beklentiyle tekrar incelendi: R1 exact kodunda 0 PASS / 1 FAIL (ayrı istek sonucu başlığı yok); R2 düzeltmesinde aynı beklenti 1 PASS. Ulaşılmayan sonraki beklentiler başarısız gibi raporlanmadı. Gerçek eski kaynak/başarısız scaffold özeti E-DEV-106’da korunuyor. R2 değişikliği sınırlı; yeni provider/API/kimlik/kalıcılık yetkisi eklemiyor.
+
+Görsel ve E10 değerlendirmesi
+E04-SCR-017-Material-Guide-Change-Remap-v2-L05A kanonik çalışma PNG’si açıldı; SHA-256 b0c050ee2b2e414a5d11cbdc1d62914fd11463237f7054efdad9e66fa4cb6620. Referans sürümü eşleşiyor. Son 38 R6 PNG manifesti ve görüntüleri incelendi; yedi yeni request-error/busy-error ekranı doğrudan açıldı, önceki 31 R4 görüntüsünün R6 kopyaları byte/SHA eşit. PNG’ler tam kaydırmalı 390×844 aday ekranlardır; final varlık/piksel eşleşmesi veya fiziksel cihaz testi değildir.
+E-DEV-106’daki yedi karşılaştırma:
+1. Bütün ekran: değişim ve güvenlik/durma açıklaması, geçmiş, güncel sonuç, sonraki eylem ve güvenli çıkışın tam kaydırma sırası kontrol edildi.
+2. Ekranlar arası: aynı FAM-03 remap ailesindeki başlangıç, unknown/held, eşlenemedi, pending-check, ready, request error ve geçmiş davranışları karşılaştırıldı.
+3. State: initial, provider-held/unknown, mapping-held/unknown, pending-check, ready, unmappable, busy/error ve history dallarında belirsizlik/normal devam kapıları denetlendi.
+4. Duyarlı düzen/Türkçe: 11 state ve 320/390/768 × 1/2/3 ölçek gerçek testlerde geçti; uzun Türkçe metinlerde kaydırma/taşma gözden geçirildi. Sayısal cihaz/breakpoint kabulü uydurulmadı.
+5. Erişilebilirlik: etiket/rol, klavye, disabled semantik, kontrast, canlı durum ve odak doğrulandı; eski dinamik odak FAIL → dar düzeltme → aynı beklentide PASS geçmişi saklıdır.
+6. Regresyon: önceki ana test seti R2 ile aynı çalışmada geçti; eski kaynak/lock ve sabit sorular korunmuş.
+7. Kanonik referans: L05A’da değişim/etki/durma, fiziksel durum/eşleme, eski devamın kesilmesi, eşlenemedi ve güvenli kapanış yapısı korunmuş; final token/font/altbar/logo/routing çıkarımı yapılmamış.
+
+İlk okuyucu ve CON-004 kararı
+kavriva_e1008_r2_first_reading.txt bütünü ve ham rapor (SHA-256 973c68e8f0dccfbc67a28cb4aebefc88fc1b99b26590ef6f6d1c39e82219cf07) incelendi. Raporun yazarı yalnız 38 ekran ve önceden dondurulmuş dokuz soruyu gördü; kod, plan, önceki rapor veya cevap anahtarı verilmedi. Yanıtların 1–9’u anlamca doğru ve dış yardımsızdır:
+1) Eski adım/izin kullanılamaz; güncel yeni eşleme ve kontroller gerekir.
+2) Rehber sürümü değiştiği için eski karar kapsam dışıdır; güvenlik/hazırlık yeniden kontrol edilir.
+3) Geçmiş/notlar güncel fiziksel kanıt değildir.
+4) Güncel gerçek sökülmüş/gevşetilmiş parçalar ve ölçüler yeniden ele alınır; eşleme, uygunluk, hazırlık ve zorunlu kontrol ayrı doğrulanır.
+5) Fotoğraf/not tek başına eşlemeyi veya kontrolü doğrulamaz.
+6) Eşleme isteği sonuç/izin/tamamlanma değildir; adım ekranını açmak işi uygulamaz.
+7) Güncel eşleme ve gerekli kontroller olumlu olmadan normal devam yoktur.
+8) Tahmin veya otomatik geri alma yoktur.
+9) Güvenli durdurma bilgisi ücretsiz ve onaysızdır, fakat fiziksel durdurmayı/tamamlanmayı kaydetmez.
+Q4’te tek bilgi istemine ana yanıt güncel fiziksel durumdur; fit/hazırlık/kritik kontroller ayrı kapı olarak belirtilir ve bunlar ekranda ayrı satırlarla sunulur. Bu, yanlış veya belirsiz yanıt değildir.
+
+Okuyucu raporundaki üç çekinceyi ayrıca adjudike ettim:
+- Busy/error ekranında Mevcut durumu yeniden eşle sözcükleri statik PNG’den tek başına etkinlik bildirmiyor. Ancak aynı görünüm “İstek işleniyor. Yeni gözlem, eşleme veya devam isteği kapalı” diyor; kodda onActivate null, FocusableActionDetector kapalı, semantics enabled:false ve tap yok. Disabled primary görünümde mavi dolgu yoktur. Bu nedenle kullanıcı eylemi başlatamaz; bekleme kopyası da ne olacağını söyler. İlk okuyucunun kullanılabilirliği yalnız görüntüden kesinleştiremeyeceğini söylemesi gerçek telefondaki tıklamanın kanıtlanamayacağı sınıra uygundur; dokuz sabit yanıttan biri yanlış/belirsiz değildir ve safety hold’u açan bir affordance değildir.
+- Fiziksel durumun olumlu değerlendirmesi ile eşleme ayrı satır/başlıkta tutulur. Mapping-held/unmappable state’i ve “güncel eşleme ve gerekli kontroller doğrulanana kadar normal devam kapalı” metni yanında olumlu fiziksel durum tek başına devam/fit izni sayılmaz. Okuyucu Q4/Q7’de bu ayrımı doğru vermiştir. Bu üç çekince içinde olumlu fiziksel bilginin değerlendirmesini veya kapalı devam sınırını tersine çeviren bir cevap yoktur.
+- Son kesin adım: 3/9 ile Kayıtlı eski adım: 4/9 farklı tarihçe alanlarını ifade eder; biri son kesinleşen, diğeri kaydedilmiş eski mevcut adım bilgisidir. Başlıkları farklıdır; çevresindeki kopya kayıtlı adımın devamda kullanılamayacağını ve kanıt olmadığını tekrarlar. Okuyucu bunları çelişen devam talimatı olarak anlamamış, Q1/Q3’ü doğru yanıtlamıştır.
+- Eşlenememe metni motosikletin fiziksel olarak kesin güvensiz olduğunu söylemez; yalnız güncel rehberde güvenli devam adımının eşlenmediğini ve ücretsiz güvenli durdurma bilgisini gösterir. Okuyucu bu ayrımı doğru yaptı.
+Bu bulgular, sabit soruların “hepsi doğru ve dış yardımsız” ölçüsünü geçer. AI ekran okuması insan, gerçek telefon, yardımcı teknoloji veya fiziksel güvenlik attestasyonu değildir; bu kanıtın yerine geçirilmemiştir.
+
+Test ve CI
+- R6 yerel: pinned/locked pub get başarılı; strict formatter 20 dosya, 0 değişiklik; analyze 0 sorun; tüm 143 yerel test PASS. Normal CI’da PNG yakalama olmayan sayım 142’dir. E4 170 PASS ve E9 9 PASS sayımları exact-head CI loglarından doğrulandı; bunlar R6 yerel yeniden koşusu değildir.
+- GitHub exact-head makbuzu: 22591bef785ae3317867cb79ad14f49b00d28938 için 16/16 workflow SUCCESS (8 push + 8 pull_request); job, step ve ilgili loglar incelendi. PR E1: formatter20/0, analyze0, 142 PASS; E4 170 PASS; E9 9 PASS.
+- PR architecture run 37228118578 içinde T3 t3-gate job 111511904173 beş adımın beşi SUCCESS; checks job 111511904356 yedi adımın yedisi SUCCESS. Bu gerçek etiketli pull_request T3 sonucudur. Push t3-gate SKIPPED olan koşular T3 kanıtı sayılmadı. Makbuz: C:\Users\Xpike\AppData\Local\Temp\kavriva_e1008_source_ci_receipt.md; JSON ve loglar aynı Temp dizininde kavriva_e1008_source_* adıyla.
+CI PASS’i bağımsız tasarım/okuyucu hükmünün yerine geçmez; burada semantik inceleme ayrıca tamamlandı.
+
+Sınırlar ve artık açık kalanlar
+Üretim ve sağlayıcı kararları/kimliği, gerçek motosiklet ve fiziksel uygulama, kalıcılık, medya, E3R1, E5-003, Supabase 47/57/59, RET97, cihaz/telefon/OS/yardımcı teknoloji, final asset/logo/token/font, aktif altbar ve routing ile yayın/nihai kabul HELD kalır. T-E1-008’in bounded sunum kabulü bunları kapatmaz; 94 kabul / 112 kalan / 206 toplam değişmez. Merge veya görev DONE önerisi bu raporun kapsamı dışındadır.
+
+## Gerçek source CI makbuzu
+
+Exact kaynak 22591bef785ae3317867cb79ad14f49b00d28938; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111511904173: 5 başarılı adım/success.
+
+PR checks job111511904356: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118578 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118704 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118823 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118770 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118587 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118601 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118622 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228118651 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116360 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116323 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116273 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116213 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116311 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116338 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116216 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37228116399 — SUCCESS.
+
+PR E1 gerçek log: formatter20zero/analyze0issue/142PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+
+## İkinci bütün kaynak kabulü
+
+Bağımsız /root/e1008_remap_full_review gpt-6-luna/max ayarıyla görevlendirildi ve 22591bef785ae3317867cb79ad14f49b00d28938 kaynağına FULL PASS verdi. SCR-017 sunumu, mühendislik, tasarım ve CON-004 yönteminin yeterliliği birlikte incelendi. Koddan önce sabit dokuz soru, gerçek 38 R6 görüntüsü ve ayrı geçmişsiz okuyucunun bütün yanıtları/belirsizlikleri korunur. Model görevlendirmesi çalışma zamanı model tasdiki değildir; AI okuması insan veya fiziksel telefon kullanılabilirliği kanıtı değildir. Sahip DEC-0069 ve sürekli sohbet yetkisiyle bağımsız alt ajanı kabul etmiştir.
+
+Kaynağın 16/16 gerçek CI çalışması başarılıdır. Etiketli PR T3 beş, genel kontroller yedi başarılı adımla doğrulandı. E1 142 test başarılı; strict formatter 20 dosya / 0 değişiklik; analyze 0 sorun. Yerel native yakalamayla 143 test başarılıydı. DONE yalnız bu sunum görevi için kabul adayıdır; altı son kayıt dosyasının ayrı bağımsız incelemesi ve son kaynağın CI/T3 sonucu beklenir. Bu kayıt anında PR birleşmedi; kabul 94 / kalan 112 / toplam 206 değişmedi.
+
+İlk bağımsız R1 CHANGES_REQUESTED P2 raporu ve gerçek aynı kaynak CI makbuzu korunur. Gerçek eski kaynak hata regresyonu 0 PASS / 1 FAIL, bağlamlı istek hatası düzeltmesi ve aynı beklentinin 1 PASS sonucu korunur. Olumlu kaynak sonucu son isteğin başarısı sayılmaz; kaynak değerlendirmesi hata yüzünden iptal edilmiş sayılmaz. İlk eksik kayıt bağlantıları, ilk analiz sorunları, test sahnesinin odak taşıması, gerçek dinamik odak kaybının başarısız testi ve kararlı anahtar düzeltmesi, R3 bilinmeyen bildirim yakalama yanlışı ve gerçek R4 düzeltmesi saklıdır. Önceki başarısız taslağa olmayan dondurulmuş Git kimliği atfedilmez. Üretim eşleme/kimlik/yetki/teknik kaynak/fiziksel değerlendirme/kalıcılık/medya, E3R1/E5-003/Supabase47-57-59/RET97, cihaz/OS/yardımcı teknoloji/fiziksel uygulama ve yayın HELD. Nihai L05A, font/token/altbar ve routing politikası da HELD. Önceki 122 test, eski kod/SDK/lock/YAML, ham v72, E-DEV-105 esas gövdesi ve sabit dokuz soru korunur. Bu kabul bütün ürünün veya canlı kullanımın hazır olduğu anlamına gelmez.
+
+R2 bağımsız rapor ham SHA256 81a3934eec8654cc34803d66cafea315687b459c499493953196d0e9e917bad0. İlk verilen R2 raporundaki hata/busy ve E4/E9 yerel/CI ifadeleri incelemeci tarafından gerçek kaynakla uyumlu düzeltildi; hüküm FULL PASS kaldı, ürün kodu veya kaynak değişmedi. Önceki R2 rapor ham SHA256 acb5a9a31a40b8ae4cdb75fdd04b6716accfaa49d2cd1b958f22b6f2d44e4cb0 Temp altında ayrıca korunur; yukarıdaki metin incelemecinin son tam raporudur.
+
+ACTIVE profil LF SHA256 51a65a6716861c9aed7a5c7f8fc6ea6bdb3bf565d1d09dbaf8e9f8e0516ce989; kod özeti yerine geçmez.
