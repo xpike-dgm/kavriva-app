@@ -90,6 +90,8 @@ used_by:
   - "E-DEV-092"
   - "P-E8-001"
   - "E-DEV-093"
+  - "P-E8-004"
+  - "E-DEV-094"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -330,3 +332,7 @@ ADR013R5 bütün nitelikler/mağaza ayrımı/tarihsel bağlam/gerçek toplam HEL
 ## E8 yetki kaynak referansı kapsamı
 
 ADR011R1 bütün bileşik nitelikler/tam cümle/sekiz referans/owner sınırı/no-newauthority/no-newseam/allactualHELD;13sabitpin/profileLF/rawv60SHA-byte/exact11/önceki kanıt koruma/build/routing/runall12+42/diff. Bağımsız FULL+sourceCI/T3 ve bounded6closure/finalmetadata/finalCI/T3; workflow veya ürün testi değişmez. Pack `vault/PACKS/P-E8-001.md`; kanıt `vault/EVIDENCE/E-DEV-093.md`.
+
+## E8 dört yazarlık sınırı değerlendirmesi
+
+ADR011R2 bütün bileşik nitelikler/tam cümle/dört sınırlı yazarlık işlemi/altı yasak eylem/adayHELD/owner sınırı/no-newauthority/no-newseam/allactualHELD;13sabitpin/profileLF/rawv61SHA-byte/exact11/önceki kanıt koruma/build/routing/runall12+42/diff. Bağımsız FULL+sourceCI/T3 ve bounded6closure/finalmetadata/finalCI/T3; workflow veya ürün testi değişmez. Pack `vault/PACKS/P-E8-004.md`; kanıt `vault/EVIDENCE/E-DEV-094.md`.
