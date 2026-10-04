@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "scope": "Flutter widget development and tests; not native application or release approval",
+  "flutter": {
+    "repository": "https://github.com/flutter/flutter.git",
+    "release_tag": "3.47.0",
+    "revision": "4cf24164269a5ebf0c16a028a00727d0e77bbb05",
+    "checkout_mode": "detached tag",
+    "reported_channel": "[user-branch]"
+  },
+  "engine": {
+    "revision": "5f77625673248ee5846fbcaf5d3e1a3878386fd7",
+    "content_identity": "59d54a2b2896a6bbf356c94b7fac7b9e235bdacd"
+  },
+  "dart_sdk_version": "3.13.0",
+  "flutter_workspace_lock_lf_sha256": "2cc7cf7a8b961803ef2738cf1c124f43e12635d0dac198dbfa647c1ecbb37ba8",
+  "pubspec_lock_lf_sha256": "31bea7713638489095ebe69ef458941398b3063e7067f91d4d80039cf988ec18",
+  "packages": {
+    "async": {
+      "source": "hosted",
+      "version": "2.13.1",
+      "sha256": "e2eb0491ba5ddb6177742d2da23904574082139b07c1e33b8503b9f46f3e1a37"
+    },
+    "boolean_selector": {
+      "source": "hosted",
+      "version": "2.1.2",
+      "sha256": "8aab1771e1243a5063b8b0ff68042d67334e3feab9e95b9490f9a6ebf73b42ea"
+    },
+    "characters": {
+      "source": "hosted",
+      "version": "1.4.1",
+      "sha256": "faf38497bda5ead2a8c7615f4f7939df04333478bf32e4173fcb06d428b5716b"
+    },
+    "clock": {
+      "source": "hosted",
+      "version": "1.1.3",
+      "sha256": "e51d50bca3217c9a9fa2b41a30e4a38971133f5f9ec7a3d57bae095007f1d28e"
+    },
+    "collection": {
+      "source": "hosted",
+      "version": "1.19.1",
+      "sha256": "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
+    },
+    "fake_async": {
+      "source": "hosted",
+      "version": "1.3.3",
+      "sha256": "5368f224a74523e8d2e7399ea1638b37aecfca824a3cc4dfdf77bf1fa905ac44"
+    },
+    "flutter": {
+      "source": "sdk",
+      "version": "0.0.0"
+    },
+    "flutter_test": {
+      "source": "sdk",
+      "version": "0.0.0"
+    },
+    "leak_tracker": {
+      "source": "hosted",
+      "version": "11.0.2",
+      "sha256": "33e2e26bdd85a0112ec15400c8cbffea70d0f9c3407491f672a2fad47915e2de"
+    },
+    "leak_tracker_flutter_testing": {
+      "source": "hosted",
+      "version": "3.0.10",
+      "sha256": "1dbc140bb5a23c75ea9c4811222756104fbcd1a27173f0c34ca01e16bea473c1"
+    },
+    "leak_tracker_testing": {
+      "source": "hosted",
+      "version": "3.0.2",
+      "sha256": "8d5a2d49f4a66b49744b23b018848400d23e54caf9463f4eb20df3eb8acb2eb1"
+    },
+    "matcher": {
+      "source": "hosted",
+      "version": "0.12.20",
+      "sha256": "31bd099b47c10cd1aeb55146a2d46ce0277630ecef3f7dae54ad7873f36696cd"
+    },
+    "material_color_utilities": {
+      "source": "hosted",
+      "version": "0.13.0",
+      "sha256": "9c337007e82b1889149c82ed242ed1cb24a66044e30979c44912381e9be4c48b"
+    },
+    "meta": {
+      "source": "hosted",
+      "version": "1.19.0",
+      "sha256": "307249ce4ff29d58a18e97f6345f539382eb9c9c29ecda628900f31de0443dd9"
+    },
+    "path": {
+      "source": "hosted",
+      "version": "1.9.1",
+      "sha256": "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
+    },
+    "sky_engine": {
+      "source": "sdk",
+      "version": "0.0.0"
+    },
+    "source_span": {
+      "source": "hosted",
+      "version": "1.10.2",
+      "sha256": "56a02f1f4cd1a2d96303c0144c93bd6d909eea6bee6bf5a0e0b685edbd4c47ab"
+    },
+    "stack_trace": {
+      "source": "hosted",
+      "version": "1.12.2",
+      "sha256": "277654b3034d17ac6f9f1cb5595db011b1d5d41e8806866db28e0abaa101c490"
+    },
+    "stream_channel": {
+      "source": "hosted",
+      "version": "2.1.4",
+      "sha256": "969e04c80b8bcdf826f8f16579c7b14d780458bd97f56d107d3950fdbeef059d"
+    },
+    "string_scanner": {
+      "source": "hosted",
+      "version": "1.4.1",
+      "sha256": "921cd31725b72fe181906c6a94d987c78e3b98c2e205b397ea399d4054872b43"
+    },
+    "term_glyph": {
+      "source": "hosted",
+      "version": "1.2.2",
+      "sha256": "7f554798625ea768a7518313e58f83891c7f5024f88e46e7182a4558850a4b8e"
+    },
+    "test_api": {
+      "source": "hosted",
+      "version": "0.7.12",
+      "sha256": "2a122cbe059f8b610d3a5415f42e255b6c17b1f21eee1d960f31080237fb4f11"
+    },
+    "vector_math": {
+      "source": "hosted",
+      "version": "2.4.3",
+      "sha256": "92b9910f66ed1057fd4da7b040ae7c74cafacf885bdc81be496928d5049b032d"
+    },
+    "vm_service": {
+      "source": "hosted",
+      "version": "15.3.0",
+      "sha256": "5f37239c4851efcef929cea7824e76df7f2f0970aef85d66bbc430afa40e72f0"
+    }
+  },
+  "local_windows_observed_engine_files": {
+    "flutter_tester.exe": {
+      "bytes": 40429056,
+      "sha256": "b408f290fd938d866f58c4fd4a8e7a1e7089f96a672655f32b5c65d29de95b0d"
+    },
+    "font-subset.exe": {
+      "bytes": 1259520,
+      "sha256": "3c1ff2b12771aa2c820c89a9b21c1b04b81192842353b1b0694530b9ff09d2ac"
+    },
+    "gen_snapshot.exe": {
+      "bytes": 5203968,
+      "sha256": "b83affe02b1df7398c1a0022b164bde1a7c108259edc356d8b60bffc23369206"
+    },
+    "impellerc.exe": {
+      "bytes": 5989888,
+      "sha256": "0f3d3cc207953c87ec76c6ff9c9fb3c53697a90b57866a10d4af4928778824ac"
+    },
+    "isolate_snapshot.bin": {
+      "bytes": 11647016,
+      "sha256": "e226cc7a31ce0d20fbfa4cc003875aa064a1eade8dbc4f26de4f14fd84a3807c"
+    },
+    "libtessellator.dll": {
+      "bytes": 500736,
+      "sha256": "3069491a11d572abc0568da2bceb4fb787e8deef118b355fd6d50a76d50799e8"
+    },
+    "path_ops.dll": {
+      "bytes": 440320,
+      "sha256": "5760001e50acbd18499e8ef24e646d5fdde4549a17fff65c27259f64a57eeacc"
+    },
+    "vm_isolate_snapshot.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "local_test_font": {
+    "file": "material_fonts/roboto-regular.ttf",
+    "sha256": "79e851404657dac2106b3d22ad256d47824a9a5765458edb72c9102a45816d95",
+    "scope": "fixture preview only; not production font selection"
+  },
+  "native_application_targets": [],
+  "physical_device_release_evidence": "MISSING/HELD"
+}

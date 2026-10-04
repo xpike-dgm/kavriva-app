@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E8-MEASUREMENT-BANDS-001]
-used_by: [V-E8-MEASUREMENT-BANDS-001, P-E8-009, T-E8-009]
+used_by: [V-E8-MEASUREMENT-BANDS-001, P-E8-009, T-E8-009, P-E1-001, E-DEV-097]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -74,3 +74,9 @@ Gerçek analitik uygulaması, SDK, sağlayıcı, olay şeması, gizlilik gerekç
 İncelenen kaynak birincil özeti 9fc973918a0f31ada8d04cd7e1598a13564c7b8325faa5850a0bd575f56b6983 korundu; ACTIVE kaydın güncel özeti 33cf633d4ea15c63d111abe4294a49c39717881783b898b30f4a00b870302dd9. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek kullanım ve fiziksel hazırlık veya yayın yetkisi verilmedi.
 
 Son kayıt doğrulaması: kapanış farkı tam altı izinli kayıt/görünüm dosyası. Güncel profil özeti kanıttaki subject_digest ile eşleşti; kaynak özeti ayrı korunur. build 88 DONE, routing DONE, run_all 12 kontrol + 42 regresyon (0.405 s), worst exit 0; diff kontrolü başarılı. Bu yerel kapanış doğrulamasının ardından bağımsız son kayıt incelemesi ve aynı son başlık CI/T3 bekleniyor. Hazırlık sırasında salt okunur yanlış yol denemeleri gerçek dosya listesine göre düzeltildi; konsol kodlama hatası UTF-8 okumasıyla giderildi. Hiçbir ürün testi veya CI başarısızlığı bu okuma hatalarından türetilmedi.
+
+## Gerçek PR98 kabulünün ikincil kaydı ve T-E1-001 tüketicisi
+
+PR #98 gerçekten MERGED: 2026-10-04T01:59:04Z, birleşme commit’i f301195c59022758bcdc0fc9a51c0ddce990e501, son incelenen başlık 2606fd320483751b9c33ac5951faf369e2839b19. Normal PR birleşmesi; admin/bypass yok. Bağımsız kaynak FULL PASS 37c18cf2eff1c927a5cfc014bf2d09faf56ecb43 ve son kayıt FINAL METADATA PASS 2606fd320483751b9c33ac5951faf369e2839b19. Kaynak 15/15 ve son 14/14 GitHub CI SUCCESS; son T3 111338740592 beş SUCCESS, checks111338740451 yedi SUCCESS; E4 170 PASS0.118s ve E9 9 PASS0.001s. Bunlar T-E8-009 sınıflandırmasının sınırlı kabulüdür; gerçek analitik, kesinti ve gizlilik kanıtları HELD. PR97 retli taslak kalır.
+
+Önceki birincil subject/inceleme/hüküm/geçmiş korunur; önceki bekleniyor ifadeleri kendi zamanına aittir. Gerçek analitik/kesinti/gizlilik/ürün kabulü HELD kalır.

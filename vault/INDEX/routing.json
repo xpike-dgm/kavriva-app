@@ -2,6 +2,7 @@
  "generated_by": "routing-run (proof tooling, e10)",
  "eligible": [],
  "excluded_by_status": {
+  "T-E1-001": "REVIEW",
   "T-E10-001": "DONE",
   "T-E10-002": "DONE",
   "T-E10-003a": "DONE",

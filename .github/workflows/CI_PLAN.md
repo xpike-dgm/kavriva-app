@@ -94,6 +94,8 @@ used_by:
   - "E-DEV-094"
   - "P-E8-009"
   - "E-DEV-096"
+  - "P-E1-001"
+  - "E-DEV-097"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -342,3 +344,7 @@ ADR011R2 bütün bileşik nitelikler/tam cümle/dört sınırlı yazarlık işle
 ## E8 ölçüm kabiliyetlerinin sınıfları değerlendirmesi
 
 ADR012R4 bütün bileşik nitelikler/tam cümle/tam 9/6/5/7 ölçüm kalemi ve her sınıfın koşulları; gerçek uygulama HELD/owner sınırı/no-newauthority/no-newseam/allactualHELD;12sabitpin/profileLF/rawv62SHA-byte/exact11/önceki kanıt koruma/build/routing/runall12+42/diff. Bağımsız FULL+sourceCI/T3 ve bounded6closure/finalmetadata/finalCI/T3; workflow veya ürün testi değişmez. Pack `vault/PACKS/P-E8-009.md`; kanıt `vault/EVIDENCE/E-DEV-096.md`.
+
+## E1 beş bölümlü kabuk kontrolü
+
+`.github/workflows/e1-tests.yml` yalnız sabit SDK kaynak/engine/Dart/workspace-lock ve paket-lock kontrolü, Dart format, analyze ve 10 headless widget kontrolü çalıştırır. Yerel isteğe bağlı PNG capture CI’da etkin değildir. SDK/App kaynakları pinned; Android/iOS/native build/signing/hesap veya provider seçilmez. E1 render sınırı/yeni seam yok/18yol/9immutablepin/rawv63/önceki birincil kanıt korunması/build/routing/run_all/diff ve whole bağımsız inceleme zorunlu. CI başarıları ürün/custody/güvenlik/gerçek cihaz HELD çizgisini açmaz. Pack `vault/PACKS/P-E1-001.md`; kanıt `vault/EVIDENCE/E-DEV-097.md`.

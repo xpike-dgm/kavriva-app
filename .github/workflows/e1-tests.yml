@@ -1,0 +1,60 @@
+name: e1-shell-widget-tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  e1-shell-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CI: 'true'
+      FLUTTER_SUPPRESS_ANALYTICS: 'true'
+      PUB_CACHE: ${{ runner.temp }}/kavriva-flutter/bin/cache/kavriva-pub
+    defaults:
+      run:
+        working-directory: modules/e01-app/internal/shell
+    steps:
+      - name: Checkout kavriva-app
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - name: Install exact Flutter source and verify effective SDK
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          lock = json.loads(pathlib.Path('toolchain.lock.json').read_text())
+          sdk = pathlib.Path(os.environ['RUNNER_TEMP']) / 'kavriva-flutter'
+          subprocess.run(['git', 'clone', '--depth', '1', '--branch', lock['flutter']['release_tag'],
+                          'https://github.com/flutter/flutter.git', str(sdk)], check=True)
+          head = subprocess.check_output(['git', '-C', str(sdk), 'rev-parse', 'HEAD'], text=True).strip()
+          assert head == lock['flutter']['revision'], 'Flutter source mismatch'
+          run = subprocess.run([str(sdk / 'bin/flutter'), '--version', '--machine'],
+                               text=True, capture_output=True, check=True)
+          version = json.loads(run.stdout[run.stdout.index('{'):])
+          assert version['frameworkRevision'] == head
+          assert version['frameworkVersion'] == lock['flutter']['release_tag']
+          assert version['engineRevision'] == lock['engine']['revision']
+          assert version['dartSdkVersion'] == lock['dart_sdk_version']
+          digest = hashlib.sha256((sdk / 'pubspec.lock').read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+          assert digest == lock['flutter_workspace_lock_lf_sha256'], 'SDK workspace lock mismatch'
+          assert not subprocess.check_output(['git', '-C', str(sdk), 'status', '--porcelain'], text=True).strip()
+          with open(os.environ['GITHUB_PATH'], 'a') as path:
+              path.write(str(sdk / 'bin') + '\n')
+          print('Pinned SDK source/engine/Dart/workspace verified; no native release claimed')
+          PY
+      - name: Resolve only locked widget dependencies
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          lock = json.loads(pathlib.Path('toolchain.lock.json').read_text())
+          actual = hashlib.sha256(pathlib.Path('pubspec.lock').read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+          assert actual == lock['pubspec_lock_lf_sha256'], 'App dependency lock mismatch'
+          PY
+          flutter pub get --enforce-lockfile
+          git diff --exit-code -- pubspec.lock
+      - name: Verify Dart format and analyze presentation
+        run: |
+          dart format --output none --set-exit-if-changed lib test
+          flutter analyze --no-pub
+      - name: Run headless shell behavior and accessibility checks
+        run: flutter test --no-pub --reporter expanded
