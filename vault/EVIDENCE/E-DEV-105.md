@@ -4,9 +4,9 @@ version: 1
 contract_id_version: "SCR-016; C1.3/F1.3.1/FL1.3.2 resume v1"
 subject_file: modules/e01-app/internal/shell/lib/resume_revalidation.dart
 subject_digest: 8c7624f495c5b85d05072187443459e35e96439e1c2be6c8ba96f6c74b703153
-result: "RECORDED R4 görsel kanıt düzeltmesi; yeni tam kaynak hükmü bekleniyor"
+result: "PASS tam kesinti sonrası yeniden doğrulama sunumu; üretim/cihaz/yayın HELD"
 evidence_links: [vault/PROFILES/resume-revalidation-render.md, vault/PACKS/P-E1-007.md, vault/REGISTRY/T-E1-007.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-104-E10-GOVERNED-PATHS-FOR-T-E1-007.md.snapshot, modules/e01-app/internal/shell/lib/resume_revalidation.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json]
-gate_verdict: "RECORDED R3 P2 ret saklı; R4 REVIEW; üretim/cihaz/yayın HELD"
+gate_verdict: "PASS tam kaynak sunum kabulü; üretim/cihaz/yayın HELD"
 reviewer: "/root/e1007_resume_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
 purpose: Kesinti sonrası geçmiş bağlamı güncel yeniden doğrulamadan ayrı sunmak
@@ -449,3 +449,93 @@ Provider-unknown ekranı: Rehber adımı, motosikletin şu anki fiziksel durumu 
 Anlam belirsizliği: Genel kural ve kapalı olma nedenleri anlaşılır. Ancak “güncel kaynakla açıkça kontrol ettir” ve “uygunluğu yeniden kontrol ettir” ifadeleri kontrolü kimin yapacağını, hangi kaynağın kabul edildiğini ve olumlu sonucun kullanıcıya nasıl bildirileceğini belirtmiyor. Provider-unknown için de güncel fiziksel durum kontrolünün nasıl yapılacağı/sorumlusunun kim olduğu ekrandan kesin anlaşılmıyor. Bu nedenle sonraki adımın gerekli olduğu açık, ama işlemsel olarak nasıl tamamlanacağı tam belirgin değil.
 
 Yöntem notu: Bu, yapay zekânın ekran metinlerini okumasına dayalı bir ilk okuma. İnsanların veya telefonda erişilebilirliğin kullanılabilir olduğuna dair kanıt değildir.
+
+## Bütün bağımsız kaynak hükmü
+
+# T-E1-007 — Bağımsız tam kaynak incelemesi (R4)
+
+## Hüküm
+
+**FULL PASS — exact source `3fe85594c304de5e269b0e228b0f9cc8133d290d`.** Bu hüküm, T-E1-007’nin sınırlı E1 resume/revalidation sunum ve niyet katmanı içindir. İncelediğim kaynakta açık bir mühendislik, tasarım veya kapsam engeli bulmadım. Önceki P1 ve P2 bulgularının bu kaynakta kapandığını doğruladım.
+
+Bu, görevin son metadata kabulü, merge, DONE veya ürün/yayın onayı değildir. Kayıtlar T-E1-007’yi hâlâ REVIEW durumunda tutuyor. Değişiklik yapmadım; çalışma ağacı temizdi.
+
+## İncelenen kaynak ve kapsam
+
+- Kaynak: `3fe85594c304de5e269b0e228b0f9cc8133d290d`
+- Base: `52424e0775e64738a280f3abff271fca9e290247`
+- Plan pin: `fa914f013fdcd032faed876689092da245989459`
+- İnceleme bağlamı: PR 107 OPEN/DRAFT; bu görev için sahibi ayrı reviewer’ı DEC-0069 kapsamında kabul etmiş.
+- Base farkı scope dosyasındaki 14 izinli yolun 14’üyle birebir eşleşiyor; fazladan/eksik yol yok. Sabit 15 temel pin SHA-256 ve Git blob içeriğiyle doğrulandı.
+- Ham v71 envanter snapshot’ının SHA-256’sı `a6c62501cbe3f2023d13f38105d0b8d54f1ca97a5241b4adc6d2989b9d0d3585`; base’teki v71 inventory içeriğiyle byte-eşit. E-DEV-104’ün önceki gövdesi korunmuş; T-E1-007 tüketimi ayrı eklenmiş.
+- Ürün kodu SHA-256 `8c7624f495c5b85d05072187443459e35e96439e1c2be6c8ba96f6c74b703153`; dokuz soruluk dondurulmuş fixture SHA-256 `19c03cc26172c2bea8eb3aea798b10f5c444c07f6a9f3760c5e2bfc10c1e20b2). R4 test SHA-256 `853f802caa235eca1bc037a68bd1165c29238d674996385ecfc9ed91027fe591`.
+- R3’ten R4’e fark dört dosya: testte 18 satır ek ve E-DEV-105/profile/registry kanıt güncellemesi. Ürün kodu, soru fixture’ı, pubspec, pubspec.lock ve workflow YAML değişmemiş.
+
+## Mühendislik incelemesi ve önceki bulgular
+
+P1 kapanışı [resume_revalidation.dart](/C:/Users/Xpike/.codex/worktrees/e4-required-auto-transfer/kavriva-app/modules/e01-app/internal/shell/lib/resume_revalidation.dart:50) içinde doğrulandı: her provider referansı zorunlu `unknown/held/confirmed` state taşıyor. Eylem yalnız `confirmed`, aynı yeni kesinti kimliği ve `ExecutionProof.matches` ile tam güncel kapsam/amaç/konu eşleşince kabul ediliyor. Hazır olma koşulu aynı güncel assessment, geçmiş bağlam, rehber değişikliği yokluğu, dört farklı amaçtaki olumlu referans ve boş olmayan, tümü açıkça incelenmiş güncel zorunlu kontrolleri birlikte gerektiriyor. Eski onay veya kesinti replay’i kapıyı açmıyor.
+
+[resume_revalidation_test.dart](/C:/Users/Xpike/.codex/worktrees/e4-required-auto-transfer/kavriva-app/modules/e01-app/internal/shell/test/resume_revalidation_test.dart:469) held/unknown’ı dört amaç × iki state için dener; her durumda normal rehber eylemi kapalı kalır. Eski/yabancı kapsam, amaç/konu, fiziksel revizyon, eski kesinti, boş kontrol listesi, eksik kanıt/açık inceleme, rehber değişimi ve remap, callback kimliği, busy/error retry, ücretsiz güvenli kapanış ve salt-niyet sınırları da mevcut testlerde korunuyor.
+
+İlk ready-result/CTA P2’si kapalı: olumlu başlık ve “Bu kesinti için güncel sonuç” ayrımı görünür; kaynak kararının güncel adım yoluna izin verdiği ama başarı garantisi olmadığı yazıyor. Ana eylem güncel rehber adımı isteği; recheck ikincil. Her iki eylemin de otomatik iş uygulamadığı/tamamlamadığı belirtiliyor.
+
+Field 9 sayımı da tutarlı: 106 önceki test + 16 yeni CI testi = 122 normal CI testi; ek native capture ile 123 yerel test.
+
+## R3 cross-state P2 kapanışı ve CON-004
+
+R4 test capture’ı gerçek provider sonucu olarak iki temsilî durum eklemiş: fit sonucu held iken fiziksel durum/hazırlık/karar/kontrol olumlu; fiziksel durum unknown iken diğer üç referans ve kontrol olumlu. Her ikisinde de gerçek kullanıcı metni neden olarak gösteriliyor, normal rehber eylemi kapalı ve “Yeniden kontrol iste” yalnız yeniden değerlendirme isteği olarak açıklanıyor. Dört kaynak amacı için tüm held/unknown kombinasyonları ayrıca widget testinde korunuyor.
+
+Manifestteki 20 PNG’nin tamamında SHA-256 ve byte sayısı doğrulandı; hepsi 390×844. R3’teki önceki 14 görüntü R4’te byte-eşit, ek altı görüntü provider-held ve provider-unknown durumlarının üçer gerçek scroll yakalaması. 20 görüntünün tamamını açtım. Plan pinli E03-SCR-016 v2 L05A görselinin SHA-256’sı `6d0b7f6327874f6a9ca5210a9ff184d68693b7822863961ae0404a2539e2981d`; plan Git blob kimliği yerel referansla eşleşiyor. E1005b ready ve E1006 active önceki ekranlarını da karşılaştırdım.
+
+Planın SCR-016/FL1.3.2/F1.3.1, BR-020/021/148/149, CON-004, F10.6.1, DESIGN_PRINCIPLES ve pinli E10 design-regression kuralını uyguladım. Tasarım kanıtı; tam kaydırmalı ekranları, ilgili önceki ekran ailesini, initial/pending/ready/guide-change/history/provider-held/provider-unknown durumlarını, 320/390/768 ve 1×/2×/3× genel responsive matrisi, gerçek Tab/Enter/Space ve disabled semantics, en az 52 hedef, live-region ve boyanmış kontrast kontrollerini kapsıyor. Provider’a özgü iki yeni reason varyantı 390×844×1 PNG’lerde gösteriliyor; çoklu genişlik/yazı ölçeği testi aynı scrollable widget yapısının diğer resume durumlarını kapsıyor. Bu kanıt gerçek cihaz/OS/yardımcı teknoloji testi değildir.
+
+Aynı dondurulmuş dokuz soru ile R4 ekranlarını gören yeni, geçmişsiz okuyucunun raporunu okudum. Dokuz yanıtın tümü doğru; provider-held ve provider-unknown nedenini ve sonraki güvenli adımı doğru açıkladı. Okuyucu, kontrolü hangi kişinin/hangi operasyonel kaynağın yürüteceğinin ve olumlu sonucun nasıl döneceğinin görünmediğini not etmiş. Bunu bu E1 kapsamı için ret sebebi saymıyorum: ekranda blocker, neden, gereken güncel yeniden kontrol ve tek “Yeniden kontrol iste” yolu anlaşılır; callback gerçek sağlayıcıyı çalıştırmaz veya kanıt üretmez. CON-004 açıklığı hedefler, her işlemin ekranda kendi kendine yapılabilir olmasını şart koşmaz; provider/prosedür/sonucun teslimi bu görevde açıkça HELD. Bu AI ilk okuması insan kullanılabilirliği kanıtı değildir.
+
+## Gerçek doğrulama
+
+- Exact source CI kaydı `3fe85594c304de5e269b0e228b0f9cc8133d290d` SHA’sına bağlı: 16/16 actual job SUCCESS. PR T3-gate beş adımı, PR checks yedi adımı başarılı. PR E1 logu 122 PASS, formatter 18 dosyada sıfır değişiklik, analyzer 0 issue; E4 170 ve E9 9 test PASS. Push T3 skip bu hükümde kanıt olarak kullanılmadı.
+- Yerel gerçek test logu PNG capture dahil 123 PASS; analyzer 0 issue. Run-all makbuzu 12 kontrol +42 test PASS; locked dependency/strict-format sonucu görev makbuzunda kayıtlı. Bu rapor yeşil CI’yı bağımsız kaynak/tasarım incelemesinin yerine koymuyor.
+- Kaynak profile ve registry’de T-E1-007 REVIEW; DONE/merge sayımı yapılmamış.
+
+## Sınırlar
+
+Gerçek provider/teknik karar, fiziksel doğrulama, kalıcılık, kamera/medya, telefondaki erişilebilirlik ve cihaz/OS, final marka/font/token, active-flow altbar ve yayın/production bu E1 hükmünde doğrulanmadı; HELD kalıyor. Sağlanan planlama kaydındaki reviewer bağlamı gpt-6-luna/max, ayrı görevlendirme olarak belirtilmiş; bu ortamdan runtime model attestation iddiasında bulunmuyorum.
+
+Hüküm yalnız yukarıdaki exact source içindir. Bu rapor dışındaki son metadata kabulü, aynı final CI/T3 veya owner task-level kararı tamamlanmış sayılmaz.
+
+## Gerçek source CI makbuzu
+
+Exact kaynak 3fe85594c304de5e269b0e228b0f9cc8133d290d; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111476687409: 5 başarılı adım/success.
+
+PR checks job111476687527: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058165 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058128 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058146 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058131 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058137 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058172 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058123 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216058145 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216056001 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216056030 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216055993 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216056033 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216055985 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216055975 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216056022 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37216055973 — SUCCESS.
+
+PR E1 gerçek log: formatter18zero/analyze0issue/122PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+
+## Bütün kaynak kabulü
+
+Bağımsız /root/e1007_resume_full_review, gpt-6-luna/max ayarıyla görevlendirildi ve 3fe85594c304de5e269b0e228b0f9cc8133d290d kaynağına FULL PASS verdi. SCR-016 sunumu, mühendislik, tasarım ve CON-004 yönteminin yeterliliği birlikte incelendi. Koddan önce sabitlenen dokuz soru, gerçek 20 PNG, ayrı ve geçmişsiz ilk okuyucunun dokuz yanıtı ve belirttiği belirsizlikler korunur. Model görevlendirme kaydı, çalışma zamanı model doğrulaması değildir; AI okuması insan veya gerçek telefon kullanılabilirliği kanıtı değildir. Sahip, DEC-0069 ve sürekli sohbet yetkisiyle bağımsız alt ajanı kabul etmiştir.
+
+Kaynağın 16/16 gerçek CI çalışması başarılıdır. PR üzerindeki T3 işinin beş, genel kontrollerin yedi adımı başarılıdır. E1: 122 test geçti, biçim denetimi 18 dosyada değişiklik istemedi, analiz sorun bulmadı. DONE yalnız bu sunum görevi için kabul adayıdır; altı son kayıt dosyasının ayrı bağımsız incelemesi ve son kaynakta CI/T3 doğrulaması beklenir. Bu kayıt anında PR birleşmedi; kabul edilen 93, kalan 113, toplam 206 görev sayısı değişmedi. İlk gizli ekran öğesi testi hatası, ilk P1 ret, eski kapıyla gerçek başarısız regresyon testi, dar olumlu sonuç düzeltmesi, ikinci okumanın açıklık bulgusu ve R3 görsel kanıt reddi korunur. R4 ek altı ekran ve yeni ilk okuma ile doğrulandı; 123 yerel test geçti. Bütün gerçek raporlar ve komut çıktıları saklıdır.
+
+Gerçek teknik rehber, değerlendirme, fiziksel kontrol, kimlik, yetki, kalıcılık ve medya kaynakları E1 dışında HELD kalır. E3-R1, E5-003, Supabase 47/57/59, reddedilen PR 97, telefon, işletim sistemi, yardımcı teknoloji, fiziksel uygulama ve yayın sınırları kapanmadı. Nihai L05A varlıkları, yazı tipi, tasarım değerleri, aktif iş alt çubuğu ve yönlendirme politikası da HELD kalır. Önceki 106 test, eski kod, SDK, bağımlılık kilidi, iş akışları, ham v71 arşivi, E-DEV-104 esas gövdesi ve sabit dokuz soru korunur. Bu kabul üretim veya bütün ürünün hazır olduğuna dair kanıt değildir. SCR-017 eşleme isteği bu görevde gerçek eşleme sonucu üretmez.
+
+ACTIVE profil LF SHA256 6664d6fd1d2c10f1858094cb134ebc0fc782a5c1e553e24f9f63ecfd81d3d261; kod subject özeti yerine geçmez.
