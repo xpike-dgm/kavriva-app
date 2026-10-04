@@ -557,22 +557,31 @@ void main() {
       expect(count, 1);
     },
   );
-  testWidgets('Klavye Tab Enter doğru koşul için kontrol isteği gönderir', (
-    t,
-  ) async {
-    ReadinessRecheckRequest? request;
-    await t.pumpWidget(
-      _app(_view(result: _result(), fit: _fit(), recheck: (r) => request = r)),
-    );
-    await t.sendKeyEvent(LogicalKeyboardKey.tab);
-    await t.pump();
-    await t.sendKeyEvent(LogicalKeyboardKey.enter);
-    await t.pump();
-    expect(request!.conditionId, 'extra');
-    expect(request!.kind, ReadinessCheckKind.fresh);
-  });
   testWidgets(
-    'Hazırlık ve hold uzun Türkçe büyük yazıyla kayar; son kontrol en az48',
+    'Klavye Tab Enter Space doğru koşul için kontrol isteği gönderir',
+    (t) async {
+      final requests = <ReadinessRecheckRequest>[];
+      await t.pumpWidget(
+        _app(_view(result: _result(), fit: _fit(), recheck: requests.add)),
+      );
+      await t.sendKeyEvent(LogicalKeyboardKey.tab);
+      await t.pump();
+      await t.sendKeyEvent(LogicalKeyboardKey.enter);
+      await t.pump();
+      expect(requests, hasLength(1));
+      await t.sendKeyEvent(LogicalKeyboardKey.space);
+      await t.pump();
+      expect(requests, hasLength(2));
+      for (final request in requests) {
+        expect(request.conditionId, 'extra');
+        expect(request.kind, ReadinessCheckKind.fresh);
+        expect(request.context.matches(_context()), isTrue);
+        expect(request.evaluationRevision, 'evaluation-r2');
+      }
+    },
+  );
+  testWidgets(
+    'Hazırlık ve hold uzun Türkçe büyük yazıyla kayar; bütün kontroller en az52',
     (t) async {
       for (final width in [320.0, 390.0, 768.0]) {
         await t.binding.setSurfaceSize(Size(width, 844));
@@ -602,10 +611,17 @@ void main() {
               find.bySemanticsLabel('Öğrenme görünümünü aç'),
             );
             await t.pumpAndSettle();
-            expect(
-              t.getSize(find.bySemanticsLabel('Öğrenme görünümünü aç')).height,
-              greaterThanOrEqualTo(48),
+            final controls = find.byWidgetPredicate(
+              (widget) =>
+                  widget is Semantics && widget.properties.button == true,
             );
+            expect(controls.evaluate(), isNotEmpty);
+            for (final control in controls.evaluate()) {
+              expect(
+                t.getSize(find.byWidget(control.widget)).height,
+                greaterThanOrEqualTo(52),
+              );
+            }
             expect(t.takeException(), isNull);
           }
         }

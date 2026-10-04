@@ -160,3 +160,52 @@ Kaynak revizyonu olarak `5af94efb93dc528dc411847c0afa943cadb25f3b` verildi; bunu
 ## Kaynak dondurma öncesi kayıt denetimi
 
 Gerçek build_index94/routingREVIEW; run_all on iki mimari kontrol ve42kimlik/koruma testi PASS/.434s/worstexit0. diffcheckPASS. On dört değişen adres, on beş base LF özeti, hamv68 byteeşitliği, EDEV101 önceki birincil gövdesi, eski E1kod/test/SDK/publock ve bütün workflowYAML bytekoruması, değişmeyen soru özeti ayrı actual karşılaştırmada PASS. v69/94aday; kabul90/kalan116 değişmedi. Kaynak bütün incelemesi ve aynı CI/T3 henüz bekleniyor.
+
+## Bütün inceleme P2 bulgusu ve doğrulama düzeltmesi
+
+Bağımsız incelemeci /root/e1005b_readiness_full_review; gpt-6-luna/max ayrı geçmişsiz görevlendirmesi. Gerçek hüküm:
+
+**Verdict: CHANGES_REQUESTED** for frozen head `6707be9182b75aa4c39737c6d8bff2835f73df6f`.
+
+**P2 — Accessibility evidence is weaker than the task pack requires.** P-E1-005b.md:35 requires Tab, Enter, Space, and 52-height controls. The implementation binds Space and sets a 52 minimum, but the widget test exercises only Tab and Enter and accepts a height of 48 at line 607. E-DEV-102:156 consequently overstates the 52-control test evidence. This is a verification gap; I found no corresponding defect in the current Space binding or 52 minimum.
+
+The remaining review supports acceptance: readiness and fit guards require matching current context and item evidence; missing mandatory conditions close the start path; optional omissions do not; hold, recheck, busy/error, and teaching paths preserve the stated boundaries. The initial reader’s clarity findings are addressed in the current copy, and the second blind reader answered all nine fixed questions. I inspected the current 10 screenshots, the archived initial screenshots, and the accepted 005a comparison screens; the seven F10.6.1 comparison areas are documented with their limits.
+
+Identity and custody checks passed: exact head, clean worktree, precisely 14 changed paths matching the allowed list, all 15 base pins, source/test/question hashes, and the byte-identical 197,052-byte v68 inventory snapshot. E-DEV-101’s prior primary body is preserved before its secondary section. Actual CI receipts show 17/17 successful runs at this head; the current PR run has checks 7/7 and T3 5/5. Earlier skipped T3 runs do not substitute for that successful PR gate.
+
+I used the pinned plan commit `fa914f013fdcd032faed876689092da245989459` for the criteria. I made no file changes and did not rerun tests. Production, device, and release claims remain held.
+
+## Gerçek source CI makbuzu
+
+Exact kaynak 6707be9182b75aa4c39737c6d8bff2835f73df6f; 17/17 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR checks job111384420960: 7 başarılı adım/success.
+
+PR t3-gate job111384421139: 5 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789593 — SUCCESS.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184810530 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789583 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789655 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789609 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789592 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789624 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789621 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184789587 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725631 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725637 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725656 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725622 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725633 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725617 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725652 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37184725609 — SUCCESS.
+
+PR E1 gerçek log: formatter12zero/analyze0issue/80PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+### Dar doğrulama düzeltmesi
+
+6707be9 için bütün inceleme CHANGES_REQUESTED: önceki 52-kontrol test iddiası aşırıydı; o kaynakta boyut testi yalnız≥48 ve klavye Tab/Enter idi. Önceki iddia/hüküm/17CI başarısı yukarıda tarihsel olarak korunur; yeşil CI eksik kanıtı kapatmadı. Kodda Space/52 mevcut olması test kanıtı değildi.
+
+Mevcut klavye testi gerçek Tab→Enter→Space olaylarını gönderip tam iki isteği, doğru extra koşulunu, fresh türünü, motosiklet/rehber/bağlamı ve evaluation-r2 revizyonunu denetliyor. Hazırlık ve hold320/390/768×1/2/3 bağlamlarının her birinde bütün gerçek Semantics button kontrolleri ölçülüyor ve ≥52 gerektiriliyor. Beklenen sınır küçültülmedi, sorular/kod/üretim guardları değişmedi. Yeni test LF SHA256 e604b27f94ad8c05a8097b197465511a8b68a7ff852ecdacf586694f5e20d130. Normal format12/1değişiklik/.22s; ardından strict12/0/.21s, analyze0sorun/12.8s, bütün80testPASS~5s. Temp kavriva_e1005b_p2_analyze.txt/test.txt gerçek makbuzları. Görsel yakalama bu koşuda kapalı; eski81 yalnız yakalama açıkken gerçek sonuçtu.
+
+Sunum kodu ve sabit soru özeti önceki5af94ef/ikinci kör okuma ile byteeşit; kodbb005131…ac8fd, dolayısıyla aynı on gerçek PNG ve ikinci okuyucunun cevapları hâlâ o kod kimliğine bağlıdır. Yeni render veya yeni kör okuma yapılmış gibi iddia yok; uygulama görünümü değişmedi. Yeni test başlığında bütün bağımsız yeniden inceleme ve exact yeni CI/T3 bekler. Durum döngüsü REVIEW → CHANGES_REQUESTED → dar doğrulama düzeltmesi → REVIEW; DONE/merge henüz yok.
