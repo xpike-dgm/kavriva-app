@@ -26,7 +26,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-FIRSTUSE-001]
-used_by: [V-E1-FIRSTUSE-001, P-E1-003, T-E1-003]
+used_by: [V-E1-FIRSTUSE-001, P-E1-003, T-E1-003, V-E1-VARIANT-001, P-E1-004]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -116,3 +116,7 @@ Yukarıdaki bekleyişler yazım anı geçmişidir, şimdi bütün kanonik kaynak
 BirincilkodLFb87a5cc171163aa9f041ecc5beb9147765834b22a1bfd25ef3deac61eaa0eb40 ve testLFcb9e6f8501490bf91e41195c3c7ef6933f29d9969bc7ef9fceb9a4322215ce6e unchanged. Son kayıt yalnız profilACTIVE/packtaskDONE/evidencePASS/two91generatedviews. Kod/test/SDK/publock/oldshellgarage/workflow/rawv65/priorEDEV098body değişmez. Sınırlısonmetadata+aynıfinalheadCI/T3 henüzbeklenir, mergeveacceptedcountadvanceyok. Üretimcreate/account/fitprovider/native/cihaz/physicalwork/release HELD, E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59/retliPR97 değişmez. ÖncekiUTFread/formatter/semanticsfinderFAIL ve sourcebekleyişgeçmişi ve ilk b762 CHANGES_REQUESTED/P2 dar klavye düzeltmesi/yenideninceleme korunur.
 
 ACTIVEprofilLF SHA256 e21a02904c649299d578656c0f21ab1d7b9ec7862e1811d235e1ce42034c943f ikincil kayıt özeti; kodsubjectdigest yerinegeçmez.
+
+## T-E1-004 tüketimi ve PR101 gerçek ikincil makbuzu
+
+Kaynak6732 bütün bağımsız PASS/P2 kapalı; final9a033 FINALMETADATAPASS ve tam üç hash teyidi. Ara reviewer codehash kısaltmasındaki yazım hatası reviewer tarafından düzeltilmiştir; gerçek codehash …eaa0eb40 değişmedi. PR101 https://github.com/xpike-dgm/kavriva-app/pull/101 normal başlık eşleşmeli birleştirme, MERGED @2026-10-04T05:13:52Z; merge a5ad4eaae388b321e5c810cd12e851d6c47a4fcb, fetch origin/main eşit; kaynak16/final16/main8SUCCESS ve gerçek PR T3five/checkssevenSUCCESS. Bütün mevcut kayıt gövdesi/hüküm/failurehistory kod özeti korunur; bu ikincil kayıt başka kodun kabulü değildir. Kabul main88/kalan118/206. Yeni ayrım görevinin bütün incelemesi henüz yok.

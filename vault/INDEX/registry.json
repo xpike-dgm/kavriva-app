@@ -158,6 +158,69 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-004",
+   "version": "1",
+   "flow_feature": "FL1.1.2/F1.1.2",
+   "objective": "Gözlenebilir ayrımı ve uygun/eksik durumlarını sunmak",
+   "context_pack": "P-E1-004",
+   "acceptance": "Distinction + fit/missing states",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-04",
+   "purpose": "Gözlenebilir motosiklet ayrımını ve uygunluk durumlarını sunmak",
+   "domain": "first-use",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-008",
+    "C1.1",
+    "F1.1.2",
+    "SCR-003",
+    "SCR-004",
+    "BR-001",
+    "BR-002",
+    "BR-003",
+    "BR-004",
+    "BR-005",
+    "BR-050",
+    "BR-051",
+    "BR-105",
+    "BR-106",
+    "BR-107",
+    "BR-134",
+    "BR-135",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "variant-fit-presentation",
+   "tasks": [
+    "T-E1-004"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-04",
+   "depends_on": [
+    "T-E1-003"
+   ],
+   "used_by": [
+    "V-E1-VARIANT-001",
+    "P-E1-004",
+    "E-DEV-100"
+   ],
+   "evidence": "E-DEV-100",
+   "supersedes": "planning TASK_INDEX T-E1-004",
+   "status": "DONE"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
