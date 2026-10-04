@@ -426,3 +426,7 @@ Aynı e1-tests.yml ve sabit SDK/lock/format/analyze/bütün testler. Önceki 122
 
 
 `vault/PROFILES/guide-change-remap-render.md`; `vault/PACKS/P-E1-008.md`; `vault/REGISTRY/T-E1-008.md`; `vault/EVIDENCE/E-DEV-106.md`.
+
+## T-E1-008 ikinci kaynak kapsamı
+
+Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 122 önceki + 20 yeni = 142 normal CI; 143 yalnız yerel yakalamayla. On bir duyarlı durum, 38 R6 native görüntü; eski 31 görüntü byte eşit, yedi yeni hata/bekleme görüntüsü root tarafından açıldı. Gerçek eski kaynak regresyonu 0 PASS / 1 FAIL ve aynı onarılan beklenti 1 PASS. İlk ret korunur; yeni tam CI/T3 ve bütün bağımsız yeniden inceleme gerekir. Workflow YAML değişmedi.
