@@ -1138,7 +1138,7 @@ void main() {
                   color: const Color(0xFFF8FAFC),
                   child: _view(
                     saved: _saved(),
-                    notice: _notice(),
+                    notice: entry.key == 'notice-unknown' ? null : _notice(),
                     assessment: entry.value,
                     observe: (_) {},
                     map: (_) {},
@@ -1152,6 +1152,13 @@ void main() {
             ),
           );
           await t.pumpAndSettle();
+          if (entry.key == 'notice-unknown') {
+            expect(find.text('Ne değişti?'), findsNothing);
+            expect(
+              find.textContaining('değişimi ve etkisi henüz doğrulanmadı'),
+              findsOneWidget,
+            );
+          }
           final pos = t
               .state<ScrollableState>(find.byType(Scrollable).first)
               .position;
