@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e07-build-lane"
 owner: "E7"
 depends_on: [M-E3-001, M-E6-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086, V-E7-IOS-ACCESS-001, P-E7-003a, E-DEV-087, V-E7-IOS-RECOVERY-001, P-E7-003b, E-DEV-088, V-E7-IOS-CLEAN-001, P-E7-003c, E-DEV-089, V-E7-SEPARATION-001, P-E7-004, E-DEV-090, V-E7-BANDS-001, P-E7-006, E-DEV-091]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E7-ANDROID-001, P-E7-001, E-DEV-086, V-E7-IOS-ACCESS-001, P-E7-003a, E-DEV-087, V-E7-IOS-RECOVERY-001, P-E7-003b, E-DEV-088, V-E7-IOS-CLEAN-001, P-E7-003c, E-DEV-089, V-E7-SEPARATION-001, P-E7-004, E-DEV-090, V-E7-BANDS-001, P-E7-006, E-DEV-091, V-E7-SPEND-001, P-E7-007, E-DEV-092]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E7"
 public_contracts:
   - "[[modules/e07-build-lane/MANIFEST.md#Public contract surface]]"
 internal_scope: "Lane scripts, runner configs, signing-execution plumbing, cost dashboards. Policy texts stay in E6; this capsule proves compliance per run."
-tasks: [T-E10-001, T-E10-006, T-E7-001, T-E7-003a, T-E7-003b, T-E7-003c, T-E7-004, T-E7-006]
+tasks: [T-E10-001, T-E10-006, T-E7-001, T-E7-003a, T-E7-003b, T-E7-003c, T-E7-004, T-E7-006, T-E7-007]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -108,3 +108,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E7-006 dört kabiliyet sınıfı
 
 `vault/PROFILES/lane-capability-classification.md` bütün8/5/4/6 kalemi, kaynak niteliklerini ve ihtiyaç tetiklerini tutar; E6 politikası ve gerçek HELD değişmez. Ücretli taahhüt veya aktivasyon yok. Pack `vault/PACKS/P-E7-006.md`; kanıt `vault/EVIDENCE/E-DEV-091.md`; bağımsız bütün görev incelemesi ve CI bekleniyor.
+
+## T-E7-007 salt okunur gider değerlendirmesi
+
+`vault/PROFILES/lane-spend-range-assessment.md` ADR013R5 aralığını nitelikleri ve mağaza ayrımıyla değerlendirir. Gerçek toplam ve uygunluk NOT_PROVEN/HELD; E3/E6 bekletme görevlerine yalnız referans, ödeme veya canlı BILLING_HELD ilanı yok. Pack `vault/PACKS/P-E7-007.md`; kanıt `vault/EVIDENCE/E-DEV-092.md`; tam bağımsız kabul incelemesi bekleniyor.

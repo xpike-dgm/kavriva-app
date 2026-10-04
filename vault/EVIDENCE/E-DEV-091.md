@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-BANDS-001]
-used_by: [V-E7-BANDS-001, P-E7-006, T-E7-006]
+used_by: [V-E7-BANDS-001, P-E7-006, T-E7-006, P-E7-007, E-DEV-092]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -80,3 +80,9 @@ Bu bütün görev kaynakFULL+CI kabulüne dayanarak profilACTIVE, pack ve görev
 Sınırlı belge devri D-APP-DOC-004v1/P-E10-007v1/P-E7-006; universaloperationalhandoffID MISSING/BLOCKED. T005 gerçekE6keylossplaybook eksik/T002/T006007/E3R1REVIEW/E5-003IN_PROGRESS/PR47-57-59 aynı. Yeni vault açıklamaları Türkçe, eski İngilizce tarihçe korunur.
 
 İncelenen kaynak birincil özeti a587a13ea4046b15693522bddac85b1742a8f3f580de2b0f1575d9ecc9f58b9a korundu; ACTIVE kaydın güncel özeti cc0eb9a0919eb8d1dab735312706fb9315363b1b764134f842778ff25934df12. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek kullanım ve fiziksel hazırlık veya yayın yetkisi verilmedi.
+
+## Gerçek PR93 birleştirmesinin ikincil kaydı ve T-E7-007 tüketicisi
+
+PR93 MERGED e092c0c4f74e7c851ebe5b9b18d96190d0d834d8 @2026-10-03T23:52:32Z. Exact source 7d8324d9878571ff227e90bc358b535f490485c0 FULL PASS; exact final12318ab633fe644cbdb2604c8059ea108b4ad750 independent FINAL METADATA PASS, final14CI SUCCESS, executedPRT3five/checksseven/E4170/E9nine. No actual readiness or production authority granted. Actual accepted count81/remaining125/v59/views84. Root gh MERGED and git fetch verified.
+
+Önceki birincil özet/incelemeci/hüküm/geçmiş korunur; bekleniyor ifadeleri yazıldıkları anın kaydıdır. Bu ikincil makbuz üretim hazırlığı değildir.

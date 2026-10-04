@@ -86,6 +86,8 @@ used_by:
   - "E-DEV-090"
   - "P-E7-006"
   - "E-DEV-091"
+  - "P-E7-007"
+  - "E-DEV-092"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -318,3 +320,7 @@ Yedi görev/beş sahiplik yasağı/fiziksel bağımsızlık HELD/negatifler/Andr
 ## E7 dört sınıf ve ihtiyaç tetikleri belge kapsamı
 
 Tam8/5/4/6kalem/özgün nitelikler/iki ayrı eşzamanlılık bağlamı/helper-only/scale-not-current-recommendation/allactualHELD/no-purchaseauthority/E6policy/Androidbağımsız. 13sabitpin/profilLF/rawv58boyut-SHA-bayteşitliği/exact11/öncekiprimaryret-history/policy-code-workflowpreservation; build/routing/runall12+42/diff. Kaynak bağımsızFULL+CI/actualPRT3; ardından bounded6closure/finalmeta/finalCI+T3/normalmatchedmerge. E4170/E9nine değişmez. Pack `vault/PACKS/P-E7-006.md`; kanıt `vault/EVIDENCE/E-DEV-091.md`.
+
+## E7 salt okunur gider aralığı değerlendirmesi
+
+ADR013R5 bütün nitelikler/mağaza ayrımı/tarihsel bağlam/gerçek toplam HELD/E3-E6 referansı/sahip yalnız ödeme/no-taahhüt; 13pin/profil LF/rawv59/önceki kanıt koruma/exact11/runall12+42/graph/diff. Tam bağımsız görev incelemesi ve aynı başlık CI/T3 zorunlu; belge varlığı finansal hazırlık değildir. Pack `vault/PACKS/P-E7-007.md`; kanıt `vault/EVIDENCE/E-DEV-092.md`. Workflow ve test değişikliği yok.
