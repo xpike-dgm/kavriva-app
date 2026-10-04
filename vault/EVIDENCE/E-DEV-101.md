@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-DISCOVERY-001]
-used_by: [V-E1-DISCOVERY-001, P-E1-005a, T-E1-005a]
+used_by: [V-E1-DISCOVERY-001, P-E1-005a, T-E1-005a, V-E1-READINESS-001, P-E1-005b]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -170,3 +170,7 @@ ACTIVE profil LF SHA256 ff7e577c83118df3fb06f99510dd5ba95cfc34ae1973bacddb7dde09
 Ek gerçek kontroller: pubget --enforce-lockfile PASS/mevcut24paket21hosted3SDK; PR101entry/form ve PR102confirmed/missing actualPNG yeniden açıldı, yeni6PNG ile ortak shell/kenar/ink/spacing/Türkçe terimler ve beyan≠fit≠hazırlık/teaching≠application anlamları karşılaştırıldı. Gerçek navigation/üretim/cihaz testi değil. Temp süreklilik JSON ilk defaultcp1254 okumada UnicodeDecodeError verdi, explicitUTF8 ile düzeltildi; repo/test değişmedi. Yanlış T3 label bulunamadı; actualt3-privileged ile labelled gerçekPRgate başarılı. TempCI metni defaultencoding okunmuştu, UTF8düzeltildi; gerçek job/result unchanged. Yanlış varsayımsal vaultprofil adresi okunamadı, gerçek modules/e10-graph designrule/checklist kullanıldı. Bunlar ürün/test başarısızlığı değildir, gizlenmez.
 
 Son altı metadata adayı: build_index93/routingDONEcandidate; run_all12+42PASS .430s/worstexit0 ve diffcheckPASS. Gerçek finalmetadatareview/finalCI/T3 henüz bekleniyor; bu kayıt yazılırken merge yok.
+
+## T-E1-005b tüketimi ve actualPR103 ikincil makbuzu
+
+PR103 https://github.com/xpike-dgm/kavriva-app/pull/103 MERGED@2026-10-04T06:31:23Z normalmatchedfinal5afb32ea779ba6512bf10f03937257e8c0251899 merge ae1e7413e4f650317396bda5e834cb920eeb2d22; fetchedorigin/main eşit. Source30b95de8a8b126405cad3875cb0a10798642af59 FULLPASS/no findings ve ayrıfinalmetadataPASS/no findings; source17/final16/main8actualSUCCESS/actualPRT3five/checksseven. CON004 firstreaderprofile insanşartı belirtmiyor, ayrıAI9correctscopedmeasure/human-deviceproofdeğil. Previousprimarybody/subjecthash/verdict/readingmethod/failhistory korunur; accepted90/kalan116/206, yeni hazırlık kabulü yok.
