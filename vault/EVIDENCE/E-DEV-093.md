@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E8-AUTH-REF-001]
-used_by: [V-E8-AUTH-REF-001, P-E8-001, T-E8-001]
+used_by: [V-E8-AUTH-REF-001, P-E8-001, T-E8-001, P-E8-004, E-DEV-094]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -68,3 +68,9 @@ Bu sınırlı kapanış kaynak kabulüne göre profil ACTIVE, pack/görev DONE v
 İncelenen kaynak birincil özeti 3431f350fa4906c64341ab3e101f64220223eb5595f5fdf2b6b5714011b2132b korundu; ACTIVE kaydın güncel özeti d56960405ec9d6ae3450bc3d0c66277094a602ad046af4b871cad3b6142f3a71. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek kullanım ve fiziksel hazırlık veya yayın yetkisi verilmedi.
 
 Son kapanış yazar kontrolü run_all12+42PASS0.457s/worst0/build86DONE/routingDONE/diff6temiz. Gerçek bağımsız son metadata ve son başlık CI/T3 henüz bekleniyor.
+
+## Gerçek PR95 kabulünün ikincil kaydı ve T-E8-004 tüketicisi
+
+PR95 MERGED29d3ece714b8472e42a63a5bb85c6694e620b09c @2026-10-04T00:30:57Z actualGitHubMERGED/fetchverified. WholeFULL3e70a0f and FINALMETADATA297dbf5 independently PASS; source15/final14CIactualSUCCESS; finalPRarch37164951538checks111325863310seven/T3job111325863436fiveSUCCESS/E4PR37164951597170PASS.138/E9PR371649516269PASS.001. ScopedT8-001referenceacceptance complete, noactualCMS/privilegedhuman/authority/publishing/bypass/rebuild readiness. Accepted83/206 remaining123 v61 views86.
+
+Önceki birincil özet/incelemeci/hüküm/geçmiş korunur; pending ifadeleri yazıldıkları zamana aittir. Gerçek maliyet uygunluğu ve ürün hazır oluşu hâlâ HELD.
