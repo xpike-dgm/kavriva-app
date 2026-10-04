@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-003, T-E1-003, E-DEV-099]
 evidence: [E-DEV-099]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # İlk kullanım ve motosiklet ekleme sunumu
@@ -36,3 +36,9 @@ Bütün kanonik bağımsızgpt6luna/max exactsourceincelemesi + gerçeksourceCI/
 Pack `vault/PACKS/P-E1-003.md`; görev `vault/REGISTRY/T-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`.
 
 İlkwholeb762CHANGES_REQUESTED/P2 unknownyearModelNextno-op. Dar düzeltme bilinmeyenyılda ModelDone→aynıvalidation, bilinen yılda Next→yıl; readonlyunknownyear focus atlanır. Yeni anlamlıklavye testi dahil36localPASS, yeniwhole exactsourceincelemeveCI beklenir; ilkbekleyiş/failurehistory kanıtta korunur.
+
+## İlk kullanım görevinin bütün kaynak kabulü
+
+Bağımsız /root/e1003_first_use_full_review gpt-6-luna/max ayrı görevlendirme, exact 6732dd3a4e48c44b2b73661988b2e72fde5a0e77 FULL PASS; önceki unknown-year Model Next P2 kapalı. Görevlendirme model ayarı runtime attestation değildir. Reviewer kod yazmadı/testCIağ çalıştırmadı; sahip DEC0069 ve açık sürekli sohbet yetkisiyle alt ajanı kabul etti. Aynı kaynak16/16actualCI/T3five/checksseven SUCCESS. Ayrıntılıkanit `vault/EVIDENCE/E-DEV-099.md`.
+
+Yalnız canonical Value before account; creation form sunumu kabul edilir. Gerçekcreate/fit/authDB/native/cihaz/physicalwork/release MISSINGHELD. Son boundedmetadataincelemesi ve aynı finalheadCI/T3 ayrıca zorunlu, henüzmergeyok. Eski bekleyişler yazıldığıan tarihidir, failurehistorysilinmez; kabulmain sayacı actualnormalmatchedmerge öncesi ilerletilmez.
