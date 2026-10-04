@@ -88,6 +88,8 @@ used_by:
   - "E-DEV-091"
   - "P-E7-007"
   - "E-DEV-092"
+  - "P-E8-001"
+  - "E-DEV-093"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -324,3 +326,7 @@ Tam8/5/4/6kalem/özgün nitelikler/iki ayrı eşzamanlılık bağlamı/helper-on
 ## E7 salt okunur gider aralığı değerlendirmesi
 
 ADR013R5 bütün nitelikler/mağaza ayrımı/tarihsel bağlam/gerçek toplam HELD/E3-E6 referansı/sahip yalnız ödeme/no-taahhüt; 13pin/profil LF/rawv59/önceki kanıt koruma/exact11/runall12+42/graph/diff. Tam bağımsız görev incelemesi ve aynı başlık CI/T3 zorunlu; belge varlığı finansal hazırlık değildir. Pack `vault/PACKS/P-E7-007.md`; kanıt `vault/EVIDENCE/E-DEV-092.md`. Workflow ve test değişikliği yok.
+
+## E8 yetki kaynak referansı kapsamı
+
+ADR011R1 bütün bileşik nitelikler/tam cümle/sekiz referans/owner sınırı/no-newauthority/no-newseam/allactualHELD;13sabitpin/profileLF/rawv60SHA-byte/exact11/önceki kanıt koruma/build/routing/runall12+42/diff. Bağımsız FULL+sourceCI/T3 ve bounded6closure/finalmetadata/finalCI/T3; workflow veya ürün testi değişmez. Pack `vault/PACKS/P-E8-001.md`; kanıt `vault/EVIDENCE/E-DEV-093.md`.

@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E7-SPEND-001]
-used_by: [V-E7-SPEND-001, P-E7-007, T-E7-007]
+used_by: [V-E7-SPEND-001, P-E7-007, T-E7-007, P-E8-001, E-DEV-093]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -72,3 +72,9 @@ Bu kapanışta kaynak görevin kabulüyle profil ACTIVE, pack/görev DONE ve gra
 İncelenen kaynak birincil özeti 5d96d179f198f8407bc500f8f304a17fe6756fcc512d20243e1e43fefb8fd42b korundu; ACTIVE kaydın güncel özeti 105329d25dc4643124228d3a5ec86095688f77eaaf9d176016d9a71c014eef23. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek kullanım ve fiziksel hazırlık veya yayın yetkisi verilmedi.
 
 Son kapanış yazar kontrolü: run_all12+42PASS0.421s/worst0; build85DONE/routingDONE/diffcheck temiz. İncelemeci kimliği commit öncesinde gerçek spend_range agent kimliğiyle doğrulandı; henüz bağımsız son metadata/son CI bekleniyor.
+
+## Gerçek PR94 kabulünün ikincil kaydı ve T-E8-001 tüketicisi
+
+PR94 MERGED 7827ee630dfcd23a9aa68d2353c51fefda0d0f80 @2026-10-04T00:12:30Z; actual GitHub MERGED and fetch origin/main verified. Source82016cd FULL PASS independently, final05684a3 FINALMETADATA PASS independently, actualsource15/final14CI SUCCESS. FinalPRarch37163968819checks111322987735seven/T3job111322987869fiveSUCCESS/E4PR37163968771170PASS.112/E9PR371639688329PASS.001. ScopedT007 contextual evaluation accepted, notnumericcurrenttotal/affordability; allactualfinancial/productionHELD. Accepted82/206/remaining124/v60/views85. No external financial/account action.
+
+Önceki birincil özet/incelemeci/hüküm/geçmiş korunur; pending ifadeleri yazıldıkları zamana aittir. Gerçek maliyet uygunluğu ve ürün hazır oluşu hâlâ HELD.
