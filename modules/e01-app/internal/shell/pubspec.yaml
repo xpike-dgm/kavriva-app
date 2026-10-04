@@ -1,0 +1,11 @@
+name: kavriva_shell
+version: 0.0.1
+publish_to: none
+environment:
+  sdk: '>=3.13.0 <3.14.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

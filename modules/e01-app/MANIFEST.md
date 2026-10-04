@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e01-app"
 owner: "E1"
 depends_on: [M-E3-001, M-E5-001, M-E4-001]
-used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
+used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E1"
 public_contracts:
   - "[[modules/e01-app/MANIFEST.md#Public contract surface (only this is usable across boundaries)]]"
 internal_scope: "Flutter widget tree, navigation state, caches, offline reads of E4 packages, in-flight UI state. No direct database access; no Supabase service_role; no signing keys; no canonical truth stored here."
-tasks: [T-E10-001, T-E10-006]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
-evidence: [E-DEV-027]
+tasks: [T-E10-001, T-E10-006, T-E1-001]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart]
+evidence: [E-DEV-027, E-DEV-097]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -83,3 +83,7 @@ Same stable manifest identity and original semantic body preserved. Purpose/inte
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## T-E1-001 iç sunum kabuğu
+
+`modules/e01-app/internal/shell/lib/kavriva_shell.dart` beş çağıran görünümü ve Türkçe bölüm etiketlerini taşır; seçili sekme/görünürlük açık girdi, değişim yalnız istek. SCR-005 ve diğer ürün ekranları ayrı; yeni public contract/seam yok. Kalıcı gerçek E3/E5/E4 dış sınırlarında; bu koda taşınmadı. Headless SDK/widget testi gerçek cihaz/yayın kabulü değildir; aktif-iş alt-bar ve ilk landing HELD. Pack `vault/PACKS/P-E1-001.md`; profil `vault/PROFILES/app-shell-boundary.md`; kanıt `vault/EVIDENCE/E-DEV-097.md`.
