@@ -4,10 +4,10 @@ version: 1
 contract_id_version: "SCR-016; C1.3/F1.3.1/FL1.3.2 resume v1"
 subject_file: modules/e01-app/internal/shell/lib/resume_revalidation.dart
 subject_digest: e435ce0a497062ca08f4296d0e8eea56d0dca80253b9f2278ca186c13c747db6
-result: "RECORDED kesinti sonrası yeniden doğrulama sunumu; bağımsız kabul bekleniyor"
+result: "CHANGES_REQUESTED P1 güncellik olumlu karar değildir; dar onarım gerekir"
 evidence_links: [vault/PROFILES/resume-revalidation-render.md, vault/PACKS/P-E1-007.md, vault/REGISTRY/T-E1-007.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-104-E10-GOVERNED-PATHS-FOR-T-E1-007.md.snapshot, modules/e01-app/internal/shell/lib/resume_revalidation.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json]
-gate_verdict: "RECORDED kaynak REVIEW; üretim/cihaz/yayın HELD"
-reviewer: none
+gate_verdict: "CHANGES_REQUESTED kaynak528; üretim/cihaz/yayın HELD"
+reviewer: "/root/e1007_resume_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
 purpose: Kesinti sonrası geçmiş bağlamı güncel yeniden doğrulamadan ayrı sunmak
 domain: first-use
@@ -146,3 +146,82 @@ Bütün bağımsız kaynak hükmü/aynıCI/T3 ve ayrı sonmetadata hükmü/sonCI
 
 
 `vault/PROFILES/resume-revalidation-render.md`; `vault/PACKS/P-E1-007.md`; `vault/REGISTRY/T-E1-007.md`; `vault/EVIDENCE/E-DEV-105.md`.
+
+## İlk bütün bağımsız kaynak hükmü — ret korunur
+
+T-E1-007 — BAĞIMSIZ TAM KAYNAK İNCELEMESİ
+
+Verdict: CHANGES_REQUESTED — P1
+İncelenen base: 52424e0775e64738a280f3abff271fca9e290247
+İncelenen exact source/HEAD: 52805c22920d53134aaa2fd2442d4420f1c93a09
+PR: 107 OPEN/DRAFT (görevlendirme bağlamı)
+Reviewer: implementer'dan ayrı Codex delegated sub-agent; root orchestration kaydında gpt-6-luna / max, fork_turns=none. Bu not çalışma zamanı model attestation'ı değildir.
+
+Özet
+
+Exact source, task sözleşmesi, mevcut kod/testler, değişen kayıtlar, doğrulama makbuzları ve tasarım kanıtları incelendi. Diff, görev scope JSON'undaki izinli 14 yolla bire bir aynı; repository HEAD exact source ve working tree temiz. Base commit içindeki 15 sabit SHA-256 pin ham Git blob içeriği üzerinden doğrulandı. Buna rağmen geçerli güncel kaynak referanslarının olumlu bir sonuç anlamına geldiğini kod temsil edemiyor. Şu anda olumsuz fiziksel durum/fit/hazırlık kararı da tüm `current` referans koşullarını sağlayıp normal rehber niyetini açabilir. Bu P1, kaynak kabulünü engeller.
+
+Bulgular
+
+1. [P1] Güncel kaynak varlığı olumlu yeniden başlama kararı gibi kullanılıyor
+Dosyalar: `modules/e01-app/internal/shell/lib/resume_revalidation.dart:73`, `:160-190`, `:278-282`; karşılaştırma için mevcut `active_execution.dart` içindeki `ExecutionDisplayState` ve `ActiveStepPresentation.state`.
+
+`ResumeAssessment` dört `ResumeReference?` (`decision`, `physicalState`, `fit`, `readiness`), `reason` ve `materialGuideChange` taşıyor; provider'ın değerlendirme sonucunu (`confirmed/held/unknown` gibi) taşıyan bir alan yok. `ResumeReference.matches` yalnızca yeni interruption id'si ile `ExecutionProof.matches` üzerinden kapsam, amaç, konu ve `current` uygunluğunu kontrol ediyor. `ready` ise kayıtlı aynı motosiklet/iş geçmişi, bu dört current referans, boş olmayan ve eşleşen kontroller ve rehber değişikliği bulunmamasından hesaplanıyor. Referansın gösterdiği kararın olumlu olup olmadığı denetlenmiyor. `reason` yalnızca `!ready` iken gösteriliyor; `ready` olunca `Güncel rehber adımını aç` etkinleşiyor.
+
+Bu yalnızca teorik bir model boşluğu değil: test yardımcısı `_assessment()` tüm dört güncel referansı ve doğrulanmış kontrolü verirken `reason` alanını “Güncel fiziksel durum ve bütün zorunlu koşullar yeniden doğrulanmalı.” yapıyor. `Only current revalidated assessment opens current-step intent` testi bu nesneyle devam niyetinin etkin olmasını bekliyor. Model olumsuz/held değerlendirmeyi temsil edemediği için yanlış motosiklet değilken de güncel fakat olumsuz bir fit/hazırlık/fiziksel/karar kaynağı kapıyı açabilir. Bu, SCR-016'nın güncel fiziksel durumu yeniden kurma şartı ve E1'in karar üretmeme sınırıyla çelişiyor.
+
+Gerekli dar düzeltme: provider'ın açık sonucu tiplenmiş biçimde taşıması (örneğin her değerlendirme için unknown/held/confirmed veya aynı güce sahip tek bir açık yeniden-başlama disposition'ı) ve normal adımın yalnız tam güncel kapsam/yeni kesinti üzerinde tüm ilgili sonuçlar açıkça olumlu olduğunda açılması. E1 `current`/kaynak varlığından kabul kararı çıkarmamalı. Olumsuz/unknown sonuçta adım kapalı kalmalı ve sağlayıcı nedeni görünür olmalı. Her dört değerlendirme türü için current ama held/negative negatif durumları test edilmeli. Bağımsız source incelemesi ve yeni exact-head CI/T3 ardından yeniden yapılmalı.
+
+2. [P2] Hazır görünümünün sonucu anlaşılır bir dille belirtilmiyor
+Dosyalar: `modules/e01-app/internal/shell/lib/resume_revalidation.dart:236-245`, `:278-282`; kanıt: `vault/EVIDENCE/E-DEV-105.md:138-142`.
+
+Ready PNG'lerinde fiziksel durum, uygunluk ve hazırlık için “güncel değerlendirme mevcut”; kontrol için “güncel ve açıkça gözden geçirilmiş kontrol mevcut” yazıyor. Özet ise yalnız “Güncel koşullar ... yeniden değerlendirildi” diyor. Bunlar sonucun olumlu olduğunu söylemiyor; geçerli adım eylemi ikincil bağlantı olarak kalırken mavi baskın eylem yeniden kontrol isteği. E-DEV-105'in geçmişsiz okuyucusu ready durumundaki koşul sonucunun/ilerleme izninin açık etiketle belirtilmediğini ayrıca kaydetmiş. Bu, DP-07 “current claim state leads” ve F10.6.1/CON-004 netliği açısından kalan bir açıklık sorunu.
+
+Provider sonucu P1 düzeltmesinde eklenince collapsed görünümde o sonucu ve neden sıradaki eylemin açık/kapalı olduğunu açıkça adlandırın; güvenlik veya başarı garantisi iddiası üretmeyin. Güncellenmiş PNG'lerle yeni geçmişsiz okuyucu çalıştırılmalı. Mevcut 9 yanıt anlam yönünden çoğunlukla doğru; bu ready-state belirsizliği CON-004'ü kapatmak için yeterince temiz değil.
+
+3. [P2] Pack doğrulama sayısı bir test eksik gösteriliyor
+Dosya: `vault/PACKS/P-E1-007.md:33`.
+
+Alan 9 “bütün önceki105 ve yeni” test diyor. Aynı kaynakta `vault/EVIDENCE/E-DEV-104.md`, `.github/workflows/CI_PLAN.md:412` ve gerçek PR CI, T-E1-006'dan devralınan önceki sayıyı 106 gösteriyor; 14 yeni test ile CI toplamı 120, yerel gerçek PNG capture ile 121. Pack alanını 106 olarak düzeltin (veya doğrulama yöntemi tüm keşfedilen testleri çalıştırdığı için sabit eski sayıyı kaldırıp doğru kapsamı açıkça belirtin). Bu çalıştırma kapsamını/kanıtını tutarlı kılar; runtime kusuru değildir.
+
+Kapsam ve olumlu gözlemler
+
+- Plan `fa914f013fdcd032faed876689092da245989459` içinden task index/dependency ve görevde belirtilen F1.3.1/FL1.3.2, BR-020/021/148/149, CON-004/F10.6.1, SCR-016, ekran ailesi, durum matrisi, DP, navigation/reference ve ADR-008 okundu. T-E1-007'nin T-E1-006'ya bağımlılığı ve kabul kriterleriyle implementasyon ilişkisi tutarlı.
+- 14 değişen dosyanın tamamı: `.github/workflows/CI_PLAN.md`; `modules/e01-app/MANIFEST.md`; `modules/e01-app/internal/shell/lib/resume_revalidation.dart`; `modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json`; `modules/e01-app/internal/shell/test/resume_revalidation_test.dart`; `vault/EVIDENCE/E-DEV-104.md`; `vault/EVIDENCE/E-DEV-105.md`; `vault/EVIDENCE/SNAPSHOTS/E-DEV-104-E10-GOVERNED-PATHS-FOR-T-E1-007.md.snapshot`; `vault/INDEX/registry.json`; `vault/INDEX/routing.json`; `vault/INVENTORIES/E10-GOVERNED-PATHS.md`; `vault/PACKS/P-E1-007.md`; `vault/PROFILES/resume-revalidation-render.md`; `vault/REGISTRY/T-E1-007.md`. Scope JSON diff ile 14/14 eşleşiyor; 15 base pin 15/15 eşleşiyor.
+- E1 kodu sunum/niyet sınırında kalıyor: kalıcı yazım, medya yükleme, teknik/fiziksel karar veya yeni dependency/seam eklemiyor. Eski motosiklet/iş geçmişi gizleniyor; uyumlu geçmiş ayrıntısı kapalı; eksik değer bilinmiyor; eski interruption replay ve stale/wrong-scope/wrong-purpose kaynaklar bloke ediliyor; rehber değişiminde eski yol kapanıyor; safe-closure handler'ı busy/hata sırasında erişilebilir kalıyor. Callback'ler güncel scope ve yeni interruption taşıyor. Bu olumlu sınırlar P1 kapı hesabını düzeltmiyor.
+- Exact Flutter test logları okundu; local kaynakta 118 pass/1 fail olan ilk erişilebilirlik çalıştırması korunmuş, sonraki düzeltme logunda 121 test geçti; local analyze 0 issue ve locked pub get PASS. İlk Semantics başarısızlığı ve düzeltme E-DEV-105'te dürüstçe saklanmış.
+- 13 PNG'nin tamamı açıldı; her dosyanın SHA-256'sı `kavriva_e1007_images.json` ile eşleşiyor. E03-SCR-016 referansı pinli plan tablosundaki kanonik SHA-256 ile aynı; local dosya hash'i Git blob provenance ile doğrulandı. Önceki active ve readiness ekranları da karşılaştırıldı. İlk doğrulanmamış, pending, ready, guide-changed ve history varyantları var. History ayrıntısı varsayılan kapalı; risk/önleme/durma metni görünür; safe-closure ücretsiz ve sonuç iddiası üretmiyor. Gerçek logo/altbar politikası seçilmemiş; test kabuğunda nav gizlenmesi belgeli ve ürün altbarı HELD. Ready-state sonuç etiketi belirsizliği yukarıdaki P2'dir. Piksel eşleşmesi, cihaz/OS ya da gerçek erişilebilirlik kanıtı iddia edilmiyor.
+- İlk okuma yöntemi fixture'daki dokuz sabit soruyu ve yalnız 13 gerçek PNG'yi kullanıyor; rapor kod/plan/cevap anahtarı/dış yardım verilmediğini kaydediyor. Dokuz cevap temel gereksinimleri doğru anlıyor; Q4'te tarihsel verinin amacını bağlam başlığından çıkardığını, ready durumunda ise sonucu açık etiketin söylemediğini belirtmiş. Bu kayıtlar saklanmış. Bu bir AI ekran okumasıdır; insan okuyucu veya telefon kullanılabilirliği kanıtı değildir.
+- Exact source CI makbuzunda 17/17 tamamlanmış SUCCESS gözlendi; PR başlıklı run 37211819373'te gerçek T3 gate beş, checks job yedi başarılı adım. Ayrı E1 PR logu 120 test/format/analyze, architecture logu 42 test, E4 170 ve E9 9 test başarıyla bitmiş. İlk PR run'ındaki T3 skipped durumu, sonraki gerçek T3 run'ı ile karıştırılmadı. Bu CI/T3 başarıları bağımsız mühendislik kabulünün yerine geçmez.
+
+Kapsam sınırı
+
+Bu hüküm yalnız bounded E1 resume-revalidation presentation işi içindir. Üretici/provider entegrasyonu, fiziksel doğrulama, history persistence, gerçek medya, gerçek telefon/OS/yardımcı teknoloji, E3R1/E5-003/Supabase ve yayın/aktivasyon bu görevde kapatılmış sayılmaz; ADR-008 R6/pack sınırları gereği HELD. Hiçbir dosya repository'de değiştirilmedi; yalnız bu rapor Temp'e yazıldı.
+## Gerçek source CI makbuzu
+
+Exact kaynak 52805c22920d53134aaa2fd2442d4420f1c93a09; 17/17 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111464373741: 5 başarılı adım/success.
+
+PR checks job111464373958: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803266 — SUCCESS.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211819373 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803429 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803366 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803329 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803346 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803356 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803358 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211803333 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758487 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758471 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758474 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758460 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758499 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758456 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758486 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37211758462 — SUCCESS.
+
+PR E1 gerçek log: formatter18zero/analyze0issue/120PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+İlk17CI yeşili P1i kapatmaz. İlk13PNG/ilk9yanıt/kaynakCI-logları Tempkavriva_e1007_r1_* bayt eşit arşivlerdir; ilk hüküm SHA256 f01d0ad43b0e6cfa16615eb2f5e94bcbf83e2db624aaf9807de518a80bd3e097. Yeni test/veri-modeli/dar guard/yeni ilk okuyucu/yeni bütün exacthead incelemesi olmadan kabul veya merge yok. Gerçek main93/kalan113 değişmedi.
