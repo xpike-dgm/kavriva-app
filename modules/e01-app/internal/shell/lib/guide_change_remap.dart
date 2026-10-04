@@ -176,6 +176,33 @@ class GuideRemapRequest {
   final String? checkId, targetStepId;
 }
 
+enum GuideRemapRequestKind {
+  observation('Fotoğraf veya not yolunu açma'),
+  mapping('Yeniden eşleme'),
+  check('Zorunlu kontrol'),
+  currentStep('Doğrulanmış adımı açma'),
+  safeClosure('Güvenli durdurma bilgisini açma');
+
+  const GuideRemapRequestKind(this.label);
+  final String label;
+}
+
+/// İsteğe ait hata; olumlu kaynak sonucunu iptal etmez, fiziksel sonuç üretmez.
+class GuideRemapRequestError {
+  GuideRemapRequestError({
+    required this.scope,
+    required String changeId,
+    required this.kind,
+    required String message,
+  }) : changeId = _required(changeId),
+       message = _required(message);
+  final ExecutionScope scope;
+  final String changeId, message;
+  final GuideRemapRequestKind kind;
+  bool matches(ExecutionScope current, String change) =>
+      scope.matches(current) && changeId == change;
+}
+
 class GuideChangeRemapView extends StatefulWidget {
   GuideChangeRemapView({
     super.key,
@@ -186,7 +213,7 @@ class GuideChangeRemapView extends StatefulWidget {
     required this.notice,
     required this.assessment,
     required this.busy,
-    required this.errorMessage,
+    required this.error,
     required this.onObservationRequested,
     required this.onMappingRequested,
     required this.onCheckRequested,
@@ -200,7 +227,7 @@ class GuideChangeRemapView extends StatefulWidget {
   final GuideChangeNotice? notice;
   final GuideRemapAssessment? assessment;
   final bool busy;
-  final String? errorMessage;
+  final GuideRemapRequestError? error;
   final ValueChanged<GuideRemapRequest>? onObservationRequested;
   final ValueChanged<GuideRemapRequest>? onMappingRequested, onCheckRequested;
   final ValueChanged<GuideRemapRequest>? onCurrentStepRequested;
@@ -269,16 +296,15 @@ class _RemapState extends State<GuideChangeRemapView> {
         a.checks.isNotEmpty &&
         a.checks.every((c) => c.matches(w.scope, w.changeId));
     final canAct = !w.busy;
+    final hasError = w.error != null;
+    final errorCurrent = w.error?.matches(w.scope, w.changeId) ?? false;
     final canOpen =
-        ready &&
-        canAct &&
-        w.errorMessage == null &&
-        w.onCurrentStepRequested != null;
+        ready && canAct && !hasError && w.onCurrentStepRequested != null;
     final request = GuideRemapRequest(scope: w.scope, changeId: w.changeId);
     final stepAction = _RemapAction(
       key: const ValueKey('current-step'),
       label: 'Yeni rehberdeki doğrulanmış adımı aç',
-      primary: ready,
+      primary: ready && !hasError,
       onActivate: canOpen
           ? () => w.onCurrentStepRequested!(
               GuideRemapRequest(
@@ -306,7 +332,9 @@ class _RemapState extends State<GuideChangeRemapView> {
                 'Güncel rehber: ${w.scope.context.guideLabel} · ${w.scope.guideVersion}',
               ),
               Text(
-                ready
+                hasError
+                    ? 'Son isteğin sonucu doğrulanamadı'
+                    : ready
                     ? 'Yeni rehberle eşleme doğrulandı'
                     : unmappable
                     ? 'Mevcut durum yeni rehbere eşlenemedi'
@@ -351,7 +379,9 @@ class _RemapState extends State<GuideChangeRemapView> {
                   'Bu motosiklet ve çalışma için geçmiş bağlam bilinmiyor. Eksik ilerleme tamamlanmış sayılmaz; eski veya yeni adım tahmin edilmez.',
                 ),
               Text(
-                ready
+                ready && hasError
+                    ? 'Kaynağın güncel değerlendirmesi'
+                    : ready
                     ? 'Bu değişim için güncel sonuç'
                     : 'Devamdan önce gereken güncel sonuç',
                 style: const TextStyle(
@@ -410,7 +440,9 @@ class _RemapState extends State<GuideChangeRemapView> {
                 ),
               if (current && !ready) _Status('Neden kapalı? ${a.reason}'),
               _Status(
-                ready
+                ready && hasError
+                    ? 'Görünen olumlu sonuçlar kaynağın güncel değerlendirmesidir. Son isteğin sonucu doğrulanamadığı için normal devam şu anda kapalı.'
+                    : ready
                     ? 'Güncel fiziksel durum, eşleme, uygunluk, hazırlık ve zorunlu kontroller doğrulandı. Kaynak kararı yeni rehberdeki adım yoluna izin veriyor; başarı garantisi değildir.'
                     : 'Güncel eşleme ve gerekli kontroller doğrulanana kadar normal devam kapalı.',
               ),
@@ -425,9 +457,11 @@ class _RemapState extends State<GuideChangeRemapView> {
                 const _Status(
                   'İstek işleniyor. Yeni gözlem, eşleme veya devam isteği kapalı.',
                 ),
-              if (w.errorMessage != null)
+              if (hasError)
                 _Status(
-                  'İstek tamamlanmadı: ${w.errorMessage}. Eşleme veya fiziksel işlem gerçekleşmiş sayılmaz; yeniden istenebilir.',
+                  errorCurrent
+                      ? '${w.error!.kind.label} isteğinin sonucu doğrulanamadı: ${w.error!.message}. Yeni bir eşleme veya fiziksel işlem sonucu bu hatadan çıkarılamaz. Hata, görüntülenen kaynak değerlendirmesinin iptal edildiği anlamına gelmez.'
+                      : 'Hata bilgisi bu motosiklet, çalışma ve rehber değişimine ait değil; eski veya yabancı hata ayrıntısı gösterilmez. Normal devam kapalı; güncel istek sonucunu yeniden kontrol et.',
                 ),
               _RemapAction(
                 key: const ValueKey('observation'),
@@ -439,7 +473,7 @@ class _RemapState extends State<GuideChangeRemapView> {
               const Text(
                 'Önce motosikletin güncel fiziksel durumu ele alınmalı. Fotoğraf veya not eklemek tek başına eşlemeyi veya kritik kontrolü doğrulamaz.',
               ),
-              if (ready) ...[
+              if (ready && !hasError) ...[
                 stepAction,
                 const Text(
                   'Bu yol yalnız kaynağın eşlediği yeni rehber adımı ekranına geçiş ister. Adımı otomatik uygulamaz veya işi tamamlandı yapmaz.',
@@ -448,7 +482,7 @@ class _RemapState extends State<GuideChangeRemapView> {
               _RemapAction(
                 key: const ValueKey('mapping'),
                 label: 'Mevcut durumu yeniden eşle',
-                primary: !ready && !unmappable,
+                primary: (!ready || hasError) && !unmappable,
                 onActivate: canAct && w.onMappingRequested != null
                     ? () => w.onMappingRequested!(request)
                     : null,
@@ -456,13 +490,13 @@ class _RemapState extends State<GuideChangeRemapView> {
               const Text(
                 'Bu düğme yalnız güncel durumun yeni rehberle eşlenmesini ister. İstek tek başına eşleme sonucu, devam izni veya tamamlanma değildir.',
               ),
-              if (!ready) ...[
+              if (!ready || hasError) ...[
                 stepAction,
                 const Text(
                   'Yeni rehber adımına geçiş şu anda kapalı; kayıtlı eski adım veya tahmini yeni adım kullanılmaz.',
                 ),
               ],
-              if (ready && !canOpen)
+              if (ready && !canOpen && !hasError)
                 const _Status(
                   'Adım ekranına geçiş şu anda kullanılamıyor. Olumlu kaynak sonucu fiziksel uygulama veya tamamlanma değildir.',
                 ),

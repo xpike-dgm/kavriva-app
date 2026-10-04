@@ -211,6 +211,7 @@ Widget _view({
   GuideRemapAssessment? assessment,
   bool busy = false,
   String? error,
+  GuideRemapRequestError? requestError,
   ValueChanged<GuideRemapRequest>? map,
   ValueChanged<GuideRemapRequest>? step,
   ValueChanged<GuideRemapRequest>? observe,
@@ -224,7 +225,16 @@ Widget _view({
   notice: notice,
   assessment: assessment,
   busy: busy,
-  errorMessage: error,
+  error:
+      requestError ??
+      (error == null
+          ? null
+          : GuideRemapRequestError(
+              scope: scope ?? _scope(),
+              changeId: change,
+              kind: GuideRemapRequestKind.mapping,
+              message: error,
+            )),
   onObservationRequested: observe,
   onMappingRequested: map,
   onCheckRequested: check,
@@ -313,6 +323,24 @@ void main() {
       throwsArgumentError,
     );
     expect(() => _mapping(target: ' '), throwsArgumentError);
+    expect(
+      () => GuideRemapRequestError(
+        scope: _scope(),
+        changeId: ' ',
+        kind: GuideRemapRequestKind.mapping,
+        message: 'Örnek hata',
+      ),
+      throwsArgumentError,
+    );
+    expect(
+      () => GuideRemapRequestError(
+        scope: _scope(),
+        changeId: _change,
+        kind: GuideRemapRequestKind.mapping,
+        message: ' ',
+      ),
+      throwsArgumentError,
+    );
     expect(
       () => _assessment(checks: [_check(), _check()]),
       throwsArgumentError,
@@ -853,6 +881,138 @@ void main() {
       );
     },
   );
+  testWidgets(
+    'Hata, güncel kaynak değerlendirmesi ve son isteğin sonucu açıkça ayrılır',
+    (t) async {
+      for (final busy in [false, true]) {
+        final sent = <GuideRemapRequest>[];
+        await t.pumpWidget(
+          _app(
+            _view(
+              saved: _saved(),
+              notice: _notice(),
+              assessment: _assessment(),
+              busy: busy,
+              error: 'Örnek istek sonucu alınamadı',
+              map: sent.add,
+              step: sent.add,
+              close: sent.add,
+            ),
+          ),
+        );
+        expect(find.text('Son isteğin sonucu doğrulanamadı'), findsOneWidget);
+        expect(find.text('Kaynağın güncel değerlendirmesi'), findsOneWidget);
+        expect(find.text('Yeni rehberle eşleme doğrulandı'), findsNothing);
+        expect(
+          find.text('Yeni rehbere eşleme: Güncel kaynakla doğrulandı'),
+          findsOneWidget,
+        );
+        expect(
+          find.textContaining(
+            'Eşleme veya fiziksel işlem gerçekleşmiş sayılmaz',
+          ),
+          findsNothing,
+        );
+        expect(
+          find.textContaining(
+            'Yeni bir eşleme veya fiziksel işlem sonucu bu hatadan çıkarılamaz',
+          ),
+          findsOneWidget,
+        );
+        expect(_enabled(t, _step), isFalse);
+        expect(_enabled(t, _map), !busy);
+        expect(_enabled(t, _close), isTrue);
+        await _tap(t, _close);
+        expect(sent.single.targetStepId, isNull);
+      }
+    },
+  );
+  testWidgets(
+    'Hata türü gösterilir; eski yabancı hata ayrıntısı gizlenir ve olumlu kaynak korunur',
+    (t) async {
+      for (final kind in GuideRemapRequestKind.values) {
+        await t.pumpWidget(
+          _app(
+            _view(
+              saved: _saved(),
+              notice: _notice(),
+              assessment: _assessment(),
+              requestError: GuideRemapRequestError(
+                scope: _scope(),
+                changeId: _change,
+                kind: kind,
+                message: 'Yalnız bu güncel isteğe ait açıklama',
+              ),
+              step: (_) {},
+              close: (_) {},
+              map: (_) {},
+            ),
+          ),
+        );
+        expect(
+          find.textContaining('${kind.label} isteğinin sonucu doğrulanamadı'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Yeni rehbere eşleme: Güncel kaynakla doğrulandı'),
+          findsOneWidget,
+        );
+        expect(_enabled(t, _step), isFalse);
+      }
+      for (final scope in [
+        _scope(bike: 'foreign'),
+        _scope(work: 'foreign'),
+        _scope(guide: 'foreign'),
+        _scope(version: 'old'),
+        _scope(context: 'old'),
+        _scope(evaluation: 'old'),
+        _scope(physical: 'old'),
+      ]) {
+        await t.pumpWidget(
+          _app(
+            _view(
+              saved: _saved(),
+              notice: _notice(),
+              assessment: _assessment(),
+              requestError: GuideRemapRequestError(
+                scope: scope,
+                changeId: _change,
+                kind: GuideRemapRequestKind.mapping,
+                message: 'YABANCI ÖZEL HATA',
+              ),
+              step: (_) {},
+              close: (_) {},
+            ),
+          ),
+        );
+        expect(find.textContaining('YABANCI ÖZEL HATA'), findsNothing);
+        expect(
+          find.textContaining('Hata bilgisi bu motosiklet'),
+          findsOneWidget,
+        );
+        expect(_enabled(t, _step), isFalse);
+        expect(_enabled(t, _close), isTrue);
+      }
+      await t.pumpWidget(
+        _app(
+          _view(
+            saved: _saved(),
+            notice: _notice(),
+            assessment: _assessment(),
+            requestError: GuideRemapRequestError(
+              scope: _scope(),
+              changeId: 'previous-change',
+              kind: GuideRemapRequestKind.mapping,
+              message: 'ESKİ DEĞİŞİM HATASI',
+            ),
+            step: (_) {},
+          ),
+        ),
+      );
+      expect(find.textContaining('ESKİ DEĞİŞİM HATASI'), findsNothing);
+      expect(_enabled(t, _step), isFalse);
+    },
+  );
   testWidgets('Yeni kapsam, değişim veya kayıt değişince açık geçmiş kapanır', (
     t,
   ) async {
@@ -947,6 +1107,10 @@ void main() {
                   saved: _saved(),
                   notice: entry.key == 'notice-unknown' ? null : _notice(),
                   assessment: entry.value,
+                  error: entry.key.endsWith('error')
+                      ? 'Örnek istek sonucu alınamadı'
+                      : null,
+                  busy: entry.key == 'busy-error',
                   observe: (_) {},
                   map: (_) {},
                   step: (_) {},
@@ -984,6 +1148,7 @@ void main() {
       for (final entry in {
         'pending': null,
         'ready': _assessment(),
+        'error': _assessment(),
         'unmappable': _assessment(
           mapping: _mapping(state: GuideMappingState.unmappable),
         ),
@@ -996,6 +1161,9 @@ void main() {
               saved: _saved(),
               notice: entry.key == 'notice-unknown' ? null : _notice(),
               assessment: entry.value,
+              error: entry.key == 'error'
+                  ? 'Örnek istek sonucu alınamadı'
+                  : null,
               observe: (_) {},
               map: (_) {},
               step: (_) {},
@@ -1107,6 +1275,37 @@ void main() {
     await t.pumpAndSettle();
     expect(mappings, hasLength(2));
     expect(steps, isEmpty);
+    await t.pumpWidget(
+      _app(
+        _view(
+          saved: saved,
+          notice: notice,
+          assessment: _assessment(),
+          error: 'Örnek istek sonucu alınamadı',
+          map: mappings.add,
+          step: steps.add,
+        ),
+      ),
+    );
+    await t.pumpAndSettle();
+    final errorDecoration =
+        t
+                .widget<Container>(
+                  find
+                      .ancestor(
+                        of: find.text(_map),
+                        matching: find.byType(Container),
+                      )
+                      .first,
+                )
+                .decoration!
+            as BoxDecoration;
+    expect((errorDecoration.border! as Border).top.width, 3);
+    expect(_enabled(t, _step), isFalse);
+    await t.sendKeyEvent(LogicalKeyboardKey.enter);
+    await t.pumpAndSettle();
+    expect(mappings, hasLength(3));
+    expect(steps, isEmpty);
   });
   final capture = Platform.environment['KAVRIVA_REMAP_PREVIEW'];
   if (capture != null)
@@ -1140,6 +1339,10 @@ void main() {
                     saved: _saved(),
                     notice: entry.key == 'notice-unknown' ? null : _notice(),
                     assessment: entry.value,
+                    error: entry.key.endsWith('error')
+                        ? 'Örnek istek sonucu alınamadı'
+                        : null,
+                    busy: entry.key == 'busy-error',
                     observe: (_) {},
                     map: (_) {},
                     step: (_) {},
@@ -1158,6 +1361,19 @@ void main() {
               find.textContaining('değişimi ve etkisi henüz doğrulanmadı'),
               findsOneWidget,
             );
+          }
+          if (entry.key.endsWith('error')) {
+            expect(
+              find.text('Son isteğin sonucu doğrulanamadı'),
+              findsOneWidget,
+            );
+            expect(
+              find.text('Kaynağın güncel değerlendirmesi'),
+              findsOneWidget,
+            );
+            expect(find.text('Yeni rehberle eşleme doğrulandı'), findsNothing);
+            expect(_enabled(t, _step), isFalse);
+            expect(_enabled(t, _close), isTrue);
           }
           final pos = t
               .state<ScrollableState>(find.byType(Scrollable).first)
@@ -1222,6 +1438,8 @@ Map<String, GuideRemapAssessment?> _states() => {
   ),
   'pending-check': _assessment(checks: [_check(proof: false)]),
   'ready': _assessment(),
+  'request-error': _assessment(),
+  'busy-error': _assessment(),
   'unmappable': _assessment(
     mapping: _mapping(state: GuideMappingState.unmappable),
     reason: 'Güncel fiziksel durum yeni rehberde güvenli bir devam adımıyla eşlenemedi. Normal devam durur; güvenli durdurma bilgisine erişebilirsin.',
