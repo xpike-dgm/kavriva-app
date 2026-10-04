@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-006",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek ekran görüntüleri ve sorular, kod/plan/cevap anahtarı/dış yardım yok. AI okuması insan veya gerçek cihaz kullanılabilirliği kanıtı değildir.",
+  "passRule": "Bütün sorular dış yardım olmadan doğru cevaplanmalı. Yanlış/cevapsız/belirsiz cevap CHANGES_REQUESTED; dar düzeltme, yeni gerçek görüntüler ve başka geçmişsiz okuyucu gerektirir.",
+  "questions": [
+    {
+      "id": "014-active-what",
+      "surface": "active",
+      "question": "Bu ekranda hangi tek işi yapman ve nereye bakman isteniyor?"
+    },
+    {
+      "id": "014-active-why",
+      "surface": "active",
+      "question": "Görünür güvenlik koşulu ve rehberin kaynak bilgisi ne anlama geliyor; bunlar başarı garantisi mi?"
+    },
+    {
+      "id": "014-active-next",
+      "surface": "active",
+      "question": "Kontrolün bittiğinde veya bir sorun gördüğünde hangi yolu kullanabilirsin; düğmeye basmak hangi sonucu tek başına doğrular?"
+    },
+    {
+      "id": "015-recovery-what",
+      "surface": "recovery",
+      "question": "Bu ekranda normal ilerlemenin durumu nedir?"
+    },
+    {
+      "id": "015-recovery-why",
+      "surface": "recovery",
+      "question": "Belirtilen sorunu açıklamadan veya güncel kontrol sonucu olmadan neden sonraki normal adıma gidilemiyor?"
+    },
+    {
+      "id": "015-recovery-next",
+      "surface": "recovery",
+      "question": "Şimdi hangi yolları kullanabilirsin; yeniden kontrol istemek kendiliğinden devam izni verir mi?"
+    },
+    {
+      "id": "018-closure-what",
+      "surface": "closure",
+      "question": "Bu ekranda çalışmanın sonucu nasıl ayrılıyor; seçili sonucun anlamı nedir?"
+    },
+    {
+      "id": "018-closure-why",
+      "surface": "closure",
+      "question": "Kısmi, belirsiz veya güvenli durdurulmuş bir çalışma neden tamamlandı sayılmıyor?"
+    },
+    {
+      "id": "018-closure-next",
+      "surface": "closure",
+      "question": "Sonucu kaydetmek neyi kaydeder ve neyi doğrulamaz; güvenli şekilde durdurma için ödeme veya başarı seçimi gerekir mi?"
+    }
+  ]
+}
