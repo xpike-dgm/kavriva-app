@@ -259,9 +259,12 @@ class _ResumeState extends State<ResumeRevalidationView> {
                 const _Status(
                   'Rehber değişmiş. Eski adımdan devam edilemez; güncel fiziksel durum yeni rehbere yeniden eşlenmelidir.',
                 ),
-              const Text(
-                'Şu an doğrulanmalı',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              Text(
+                ready ? 'Bu kesinti için güncel sonuç' : 'Şu an doğrulanmalı',
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               Text(
                 'Mevcut fiziksel durum: ${physical ? "Bu kesinti için olumlu olarak yeniden doğrulandı" : "Henüz olumlu olarak doğrulanmadı"}',
