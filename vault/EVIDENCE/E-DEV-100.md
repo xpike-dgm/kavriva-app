@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-VARIANT-001]
-used_by: [V-E1-VARIANT-001, P-E1-004, T-E1-004]
+used_by: [V-E1-VARIANT-001, P-E1-004, T-E1-004, V-E1-DISCOVERY-001, P-E1-005a]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -111,3 +111,7 @@ Bu tablo gerçek yapılan sunum kontrolünü tarif eder; ürün/feature/release/
 ACTIVE profil LF SHA256 b37d0bed89fc569688be4e4bcbc3a3349bc6a953b258cf112f5cd8121bfd898a; ikincil profil özeti, kodsubject özeti yerine geçmez.
 
 Son altı kayıt adayında gerçek run_all12+42PASS .404s/worstexit0;92DONEaday görünümleri yalnız T-E1-004 durumunu değiştiriyor, kod/test kaynağa byte eşit; gitdiffcheckPASS. Bu son yerel makbuz bağımsız final metadata ve aynı final CI/T3 yerine geçmez; merge ve kabul sayacı hâlâ bekliyor.
+
+## T-E1-005a tüketimi ve PR102 gerçek ikincil makbuzu
+
+PR102 https://github.com/xpike-dgm/kavriva-app/pull/102 MERGED @2026-10-04T05:48:26Z normal başlık eşleşmeli merge 22d9b623d4ad07f86fc1327343f4e82e4033de58; fetchedorigin/main eşit. Kaynak37796f0103066d9244acb344fbb0bbb63a66f88a FULLPASS; final2a068cf55ca2aa9b503877a07e6bb443e9ca3795 FINALMETADATAPASS, kaynak17/final16/main8SUCCESS ve gerçek PR T3five/checkssevenSUCCESS. Kabul89/kalan117/206. İlk kısa mainSHA sorgusu boş dönmüştü; tamSHA gerçek8SUCCESS doğrulandı. Önceki birincil hüküm, özet ve graphlinkFAIL geçmişi korunur; bu ikincil kayıt discovery kabulü değildir.
