@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-008",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek görüntüler+sorular, kod/plan/cevap anahtarı/dış yardım yok. AI okuması insan/telefon kullanılabilirliği kanıtı değildir.",
+  "passRule": "Bütün sorular anlamca dış yardımsız doğru olmalı; yanlış/cevapsız/belirsiz cevap CHANGES_REQUESTED, dar düzeltme ve yeni geçmişsiz okuyucu gerekir.",
+  "questions": [
+    {
+      "id": 1,
+      "surface": "remap",
+      "question": "Rehber değiştiğinde eski kaldığın adımdan devam edebilir misin?"
+    },
+    {
+      "id": 2,
+      "surface": "remap",
+      "question": "Bu değişikliğin neden önemli olduğunu nereden anlarsın?"
+    },
+    {
+      "id": 3,
+      "surface": "remap",
+      "question": "Kaydedilmiş eski adım ve notlar şu anki fiziksel durumu doğrular mı?"
+    },
+    {
+      "id": 4,
+      "surface": "remap",
+      "question": "Devam etmeden önce motosikletin hangi bilgisi yeniden ele alınmalı?"
+    },
+    {
+      "id": 5,
+      "surface": "remap",
+      "question": "Fotoğraf veya not eklemek eşlemenin doğrulandığı anlamına gelir mi?"
+    },
+    {
+      "id": 6,
+      "surface": "remap",
+      "question": "Mevcut durumu eşle düğmesi kendi başına devam izni veya tamamlandı sonucu üretir mi?"
+    },
+    {
+      "id": 7,
+      "surface": "remap",
+      "question": "Güncel eşleme veya zorunlu güvenlik kontrolü eksikse ilerlenebilir mi?"
+    },
+    {
+      "id": 8,
+      "surface": "remap",
+      "question": "Ekran sökülen parçayı otomatik geri takmayı veya bir sonraki adımı tahmin etmeyi söylüyor mu?"
+    },
+    {
+      "id": 9,
+      "surface": "remap",
+      "question": "Eşleme yapılamazsa güvenli durdurma bilgisine erişim ücret veya devam onayı gerektirir mi?"
+    }
+  ]
+}
