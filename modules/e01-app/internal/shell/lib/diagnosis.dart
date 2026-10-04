@@ -141,6 +141,7 @@ class DiagnosisCheck {
     required String why,
     required this.authority,
     required List<DiagnosisChoice> choices,
+    this.photoRequest,
   }) : requestId = _required(requestId),
        id = _required(id),
        revision = _required(revision),
@@ -157,6 +158,7 @@ class DiagnosisCheck {
   final DiagnosisScope scope;
   final String requestId, id, revision, question, why;
   final DiagnosisReference? authority;
+  final DiagnosisPhotoRequest? photoRequest;
   final List<DiagnosisChoice> choices;
   String get subject => '$id/$revision';
   bool valid(DiagnosisScope expected, String expectedId) =>
@@ -175,6 +177,46 @@ class DiagnosisCheck {
             choices[i].id == other.choices[i].id &&
             choices[i].label == other.choices[i].label,
       );
+}
+
+/// Güncel soruda görselin neden yararlı olduğunu dış kaynak bildirir.
+/// E1 yararlılık veya daha önce yüklenmiş kanıt gerçeği üretmez.
+class DiagnosisPhotoRequest {
+  DiagnosisPhotoRequest({
+    required this.scope,
+    required String requestId,
+    required String checkId,
+    required String checkRevision,
+    required String reason,
+    required this.materiallyUseful,
+    required this.evidenceAlreadyProvided,
+    required this.authority,
+  }) : requestId = _required(requestId),
+       checkId = _required(checkId),
+       checkRevision = _required(checkRevision),
+       reason = _required(reason);
+  final DiagnosisScope scope;
+  final String requestId, checkId, checkRevision, reason;
+  final bool materiallyUseful, evidenceAlreadyProvided;
+  final DiagnosisReference? authority;
+  bool valid(
+    DiagnosisCheck check,
+    DiagnosisScope expected,
+    String expectedId,
+  ) =>
+      check.valid(expected, expectedId) &&
+      scope.matches(expected) &&
+      requestId == expectedId &&
+      checkId == check.id &&
+      checkRevision == check.revision &&
+      materiallyUseful &&
+      (authority?.confirmed(
+            expected,
+            'diagnosis-photo',
+            check.subject,
+            expectedId,
+          ) ??
+          false);
 }
 
 enum DiagnosisOutcome { supported, unresolved, held }
@@ -405,8 +447,14 @@ class _DiagnosisViewState extends State<DiagnosisView> {
     symptom: kind == DiagnosisRequestKind.symptom ? text.text.trim() : null,
     safety: kind == DiagnosisRequestKind.symptom ? answer : null,
     choiceId: kind == DiagnosisRequestKind.observation ? selected : null,
-    checkId: kind == DiagnosisRequestKind.observation ? widget.check?.id : null,
-    checkRevision: kind == DiagnosisRequestKind.observation
+    checkId:
+        kind == DiagnosisRequestKind.observation ||
+            kind == DiagnosisRequestKind.photo
+        ? widget.check?.id
+        : null,
+    checkRevision:
+        kind == DiagnosisRequestKind.observation ||
+            kind == DiagnosisRequestKind.photo
         ? widget.check?.revision
         : null,
     resultId:
@@ -462,6 +510,9 @@ class _DiagnosisViewState extends State<DiagnosisView> {
   Widget build(BuildContext context) {
     final w = widget;
     final checkValid = w.check?.valid(w.scope, w.requestId) ?? false;
+    final photo = w.check?.photoRequest;
+    final photoValid =
+        checkValid && (photo?.valid(w.check!, w.scope, w.requestId) ?? false);
     final resultValid = w.result?.valid(w.scope, w.requestId) ?? false;
     final preview =
         observationSafe &&
@@ -628,14 +679,23 @@ class _DiagnosisViewState extends State<DiagnosisView> {
                             (selected == 'unsure' ||
                                 w.check!.choices.any((v) => v.id == selected)),
                       ),
-                      action(
-                        DiagnosisRequestKind.photo,
-                        'İstersen fotoğraf ekleme yolunu aç',
-                        enabled: normal && observationSafe,
-                      ),
-                      const Text(
-                        'Fotoğraf isteğe bağlıdır; eklemek otomatik teşhis, fiziksel doğrulama veya devam izni değildir.',
-                      ),
+                      if (photoValid) ...[
+                        heading('Fotoğraf bu gözleme neden yardımcı olabilir?'),
+                        Text(photo!.reason),
+                        if (photo.evidenceAlreadyProvided)
+                          const Text(
+                            'Kaynak, bu gözleme ait önceki fotoğrafın mevcut olduğunu bildiriyor. Yeniden fotoğraf istenmiyor.',
+                          )
+                        else
+                          action(
+                            DiagnosisRequestKind.photo,
+                            'İstersen fotoğraf ekleme yolunu aç',
+                            enabled: normal && observationSafe,
+                          ),
+                        const Text(
+                          'Fotoğraf isteğe bağlıdır; eklemek otomatik teşhis, fiziksel doğrulama veya devam izni değildir.',
+                        ),
+                      ],
                     ] else
                       const Text(
                         'Eksik, eski veya başka motosiklete ait soru ile yanıt gönderilmez. Bir sonraki kontrol tahmin edilmez.',

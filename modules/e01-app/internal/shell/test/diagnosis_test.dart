@@ -58,6 +58,7 @@ DiagnosisCheck _check({
   DiagnosisReference? authority,
   bool missing = false,
   List<DiagnosisChoice>? choices,
+  DiagnosisPhotoRequest? photoRequest,
 }) => DiagnosisCheck(
   scope: scope ?? _scope(),
   requestId: request,
@@ -68,6 +69,7 @@ DiagnosisCheck _check({
   authority: missing
       ? null
       : authority ?? _ref('diagnosis-check', 'check-example/$revision'),
+  photoRequest: photoRequest,
   choices:
       choices ??
       [
@@ -75,6 +77,35 @@ DiagnosisCheck _check({
         DiagnosisChoice(id: 'released', label: 'Fren bırakıldığında da'),
         DiagnosisChoice(id: 'moving', label: 'Hareket ederken sürekli'),
       ],
+);
+DiagnosisPhotoRequest _photo({
+  DiagnosisScope? scope,
+  String request = _request,
+  String check = 'check-example',
+  String revision = 'question-r1',
+  bool useful = true,
+  bool alreadyProvided = false,
+  DiagnosisReference? authority,
+  bool missing = false,
+}) => DiagnosisPhotoRequest(
+  scope: scope ?? _scope(),
+  requestId: request,
+  checkId: check,
+  checkRevision: revision,
+  reason: 'Örnek kaynak, gözlemin hangi bölgeye ait olduğunu ayırmak için görsel bilgiyi yararlı buluyor. Bu yalnız test verisidir.',
+  materiallyUseful: useful,
+  evidenceAlreadyProvided: alreadyProvided,
+  authority: missing
+      ? null
+      : authority ?? _ref('diagnosis-photo', 'check-example/$revision'),
+);
+DiagnosisCheck _photoCheck({DiagnosisPhotoRequest? request}) => _check(
+  question: 'Gözlemin hangi bölgeye ait olduğundan emin misin?',
+  choices: [
+    DiagnosisChoice(id: 'identified', label: 'Bölgeyi ayırt edebiliyorum'),
+    DiagnosisChoice(id: 'unclear', label: 'Bölgeyi ayırt edemiyorum'),
+  ],
+  photoRequest: request ?? _photo(),
 );
 DiagnosisResult _result({
   DiagnosisScope? scope,
@@ -263,6 +294,29 @@ Map<String, DiagnosisView> _states() => {
   'danger-unsure': _view(stage: DiagnosisStage.symptom),
   'check': _view(stage: DiagnosisStage.check, check: _check()),
   'check-unsure': _view(stage: DiagnosisStage.check, check: _check()),
+  'photo-useful': _view(stage: DiagnosisStage.check, check: _photoCheck()),
+  'photo-reuse': _view(
+    stage: DiagnosisStage.check,
+    check: _photoCheck(request: _photo(alreadyProvided: true)),
+  ),
+  'photo-held': _view(
+    stage: DiagnosisStage.check,
+    check: _photoCheck(
+      request: _photo(
+        authority: _ref(
+          'diagnosis-photo',
+          'check-example/question-r1',
+          state: DiagnosisReferenceState.held,
+        ),
+      ),
+    ),
+  ),
+  'photo-foreign': _view(
+    stage: DiagnosisStage.check,
+    check: _photoCheck(
+      request: _photo(scope: _scope(bike: 'other')),
+    ),
+  ),
   'check-held': _view(
     stage: DiagnosisStage.check,
     check: _check(
@@ -467,7 +521,7 @@ void main() {
       expect(sent.single.checkRevision, 'question-r1');
       expect(sent.single.kind, DiagnosisRequestKind.observation);
       expect(sent.single.requestId, _request);
-      expect(find.textContaining('Fotoğraf isteğe bağlıdır'), findsOneWidget);
+      expect(_action(DiagnosisRequestKind.photo), findsNothing);
     },
   );
   testWidgets(
@@ -546,7 +600,7 @@ void main() {
           t,
           _view(
             stage: DiagnosisStage.check,
-            check: _check(),
+            check: _photoCheck(),
             safe: false,
             declaration: declaration,
           ),
@@ -777,19 +831,134 @@ void main() {
       expect(_enabled(t, DiagnosisRequestKind.safeSupport), isTrue);
     },
   );
+  testWidgets('Basit gözlem fotoğraf yolu istemez', (t) async {
+    await _pump(t, _view(stage: DiagnosisStage.check, check: _check()));
+    expect(_action(DiagnosisRequestKind.photo), findsNothing);
+  });
   testWidgets('Fotoğraf yalnız ayrı güncel istek taşır ve kontrolü onaylamaz', (
     t,
   ) async {
     final sent = <DiagnosisRequest>[];
     await _pump(
       t,
-      _view(stage: DiagnosisStage.check, check: _check(), record: sent.add),
+      _view(
+        stage: DiagnosisStage.check,
+        check: _photoCheck(),
+        record: sent.add,
+      ),
     );
+    expect(find.textContaining('Fotoğraf isteğe bağlıdır'), findsOneWidget);
     await _tap(t, _action(DiagnosisRequestKind.photo));
     expect(sent.single.kind, DiagnosisRequestKind.photo);
     expect(sent.single.scope.matches(_scope()), isTrue);
+    expect(sent.single.requestId, _request);
+    expect(sent.single.checkId, 'check-example');
+    expect(sent.single.checkRevision, 'question-r1');
     expect(sent.single.choiceId, isNull);
     expect(_enabled(t, DiagnosisRequestKind.observation), isFalse);
+  });
+  testWidgets('Fotoğrafın yararlılık kaynağı tam güncel soruya bağlıdır', (
+    t,
+  ) async {
+    for (final request in [
+      for (final scope in _foreign()) _photo(scope: scope),
+      _photo(request: 'foreign-request'),
+      _photo(check: 'foreign-check'),
+      _photo(revision: 'old-question'),
+      _photo(useful: false),
+      _photo(missing: true),
+      for (final scope in _foreign())
+        _photo(
+          authority: _ref(
+            'diagnosis-photo',
+            'check-example/question-r1',
+            scope: scope,
+          ),
+        ),
+      _photo(
+        authority: _ref(
+          'diagnosis-photo',
+          'check-example/question-r1',
+          request: 'foreign-request',
+        ),
+      ),
+      _photo(authority: _ref('diagnosis-check', 'check-example/question-r1')),
+      _photo(authority: _ref('diagnosis-photo', 'other-check/question-r1')),
+      _photo(authority: _ref('diagnosis-photo', 'check-example/old-question')),
+      _photo(
+        authority: _ref(
+          'diagnosis-photo',
+          'check-example/question-r1',
+          current: false,
+        ),
+      ),
+      for (final state in [
+        DiagnosisReferenceState.held,
+        DiagnosisReferenceState.unknown,
+      ])
+        _photo(
+          authority: _ref(
+            'diagnosis-photo',
+            'check-example/question-r1',
+            state: state,
+          ),
+        ),
+    ]) {
+      await _pump(
+        t,
+        _view(
+          stage: DiagnosisStage.check,
+          check: _photoCheck(request: request),
+        ),
+      );
+      expect(_action(DiagnosisRequestKind.photo), findsNothing);
+      expect(
+        find.textContaining('görsel bilgiyi yararlı buluyor'),
+        findsNothing,
+      );
+      expect(find.textContaining('Fotoğraf bu gözleme'), findsNothing);
+      await _tap(t, find.byKey(const ValueKey('choice-unsure')));
+      expect(_enabled(t, DiagnosisRequestKind.observation), isTrue);
+    }
+  });
+  testWidgets(
+    'Önceki fotoğraf mevcutsa yeniden istenmez ve gözlem tamamlanmaz',
+    (t) async {
+      final sent = <DiagnosisRequest>[];
+      await _pump(
+        t,
+        _view(
+          stage: DiagnosisStage.check,
+          check: _photoCheck(request: _photo(alreadyProvided: true)),
+          record: sent.add,
+        ),
+      );
+      expect(_action(DiagnosisRequestKind.photo), findsNothing);
+      expect(
+        find.textContaining('Yeniden fotoğraf istenmiyor'),
+        findsOneWidget,
+      );
+      expect(_enabled(t, DiagnosisRequestKind.observation), isFalse);
+      expect(sent, isEmpty);
+      await _tap(t, find.byKey(const ValueKey('choice-unsure')));
+      expect(_enabled(t, DiagnosisRequestKind.observation), isTrue);
+      await _tap(t, _action(DiagnosisRequestKind.observation));
+      expect(sent.single.kind, DiagnosisRequestKind.observation);
+      expect(sent.single.choiceId, 'unsure');
+    },
+  );
+  testWidgets('Güncel fotoğraf nedeni hata ve işleyici yokluğunu aşamaz', (
+    t,
+  ) async {
+    for (final view in [
+      _view(stage: DiagnosisStage.check, check: _photoCheck(), error: _error()),
+      _view(stage: DiagnosisStage.check, check: _photoCheck(), handlers: {}),
+      _view(stage: DiagnosisStage.check, check: _photoCheck(), busy: true),
+    ]) {
+      await _pump(t, view);
+      expect(_enabled(t, DiagnosisRequestKind.photo), isFalse);
+      expect(_enabled(t, DiagnosisRequestKind.observation), isFalse);
+    }
   });
   testWidgets(
     'OUTCOME_UNKNOWN olumlu eski değerlendirmeyi başarı veya yeniden uygulama saymaz',
@@ -842,7 +1011,7 @@ void main() {
           t,
           _view(
             stage: DiagnosisStage.check,
-            check: _check(),
+            check: _photoCheck(),
             unknown: _unknown(),
             busy: busy,
           ),
@@ -1114,6 +1283,12 @@ void main() {
             expect(_enabled(t, DiagnosisRequestKind.symptom), isFalse);
           if (entry.key == 'check-unsure')
             expect(_enabled(t, DiagnosisRequestKind.observation), isTrue);
+          if (entry.key == 'check' || entry.key == 'check-unsure')
+            expect(_action(DiagnosisRequestKind.photo), findsNothing);
+          if (entry.key == 'photo-useful')
+            expect(_enabled(t, DiagnosisRequestKind.photo), isTrue);
+          if (entry.key.startsWith('photo-') && entry.key != 'photo-useful')
+            expect(_action(DiagnosisRequestKind.photo), findsNothing);
           if (entry.key == 'supported')
             expect(_enabled(t, DiagnosisRequestKind.preview), isTrue);
           if (entry.key == 'outcome-unknown') {
