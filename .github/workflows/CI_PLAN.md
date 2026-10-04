@@ -102,6 +102,8 @@ used_by:
   - "E-DEV-100"
   - "P-E1-005a"
   - "E-DEV-101"
+  - "P-E1-005b"
+  - "E-DEV-102"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -373,3 +375,10 @@ Aynı e1-tests.yml sabit SDK/lockedpubget/format/analyze/bütün widget testleri
 
 
 Profil `vault/PROFILES/guide-discovery-render.md`; pack `vault/PACKS/P-E1-005a.md`; görev `vault/REGISTRY/T-E1-005a.md`; kanıt `vault/EVIDENCE/E-DEV-101.md`.
+
+## Hazırlık test kapsamı
+
+Aynı e1-tests.yml pinnedSDK/lock/format/analyze/bütün widgettest.17yeni+63eski=CI80; yerelPNG1 ile81. Workflow unchanged. CON004ilkokuma/whole/finalreview/sameCI/T3 ayrıca zorunlu.
+
+
+`vault/PROFILES/preparation-readiness-render.md`; `vault/PACKS/P-E1-005b.md`; `vault/REGISTRY/T-E1-005b.md`; `vault/EVIDENCE/E-DEV-102.md`.
