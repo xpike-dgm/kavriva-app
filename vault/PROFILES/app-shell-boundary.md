@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-001, T-E1-001, E-DEV-097]
 evidence: [E-DEV-097]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Beş bölümlü sunum kabuğu
@@ -44,3 +44,7 @@ Türkçe etiketler hesap veya profil istemez. Girdilerde sayısal değer göster
 Eksik görünüm, otomatik ilk sekme, seçim isteğini onay sayma, saklı ekran odağı/semantics sızması, büyük metnin kesilmesi, yerel state’i fiziksel gerçek sayma reddedilir. Callerin gerçek güvenlik/restore/recall akışları bu fixture’da uygulanmış değildir. Aktif-iş alt-bar, gerçek cihaz/a11y/novice comprehension, E3 kimlik/yazıcı, E5 current authorization ve bütün yayın gate’leri HELD; E3R1 REVIEW/E5-003 IN_PROGRESS/PR47-57-59/retli PR97 değişmez.
 
 Kaynaklar plan fa914f013fdcd032faed876689092da245989459 ve taban f301195c59022758bcdc0fc9a51c0ddce990e501; 14 alan/9 sabit app pin/18 repo yolu pack’te. Boş public_contracts yeni modüller arası contract olmadığını, supersedes boşluğu başka kaydın yerini almadığını gösterir. Kanıt `vault/EVIDENCE/E-DEV-097.md`; görev `vault/REGISTRY/T-E1-001.md`; pack `vault/PACKS/P-E1-001.md`.
+
+## Sınırlı shell kabul kaydı
+
+Bağımsız /root/e1001_shell_full_review (gpt-6-luna/max) bütün kaynak 0a1bd18b5da7c4d39b110d98a27017be1c3af083 için FULL PASS; önceki P2 kapalı. Gerçek aynı kaynak 16/16 CI SUCCESS ve PR T3 beş adım SUCCESS. Ayrıntılı makbuz `vault/EVIDENCE/E-DEV-097.md`. Bu yalnız T-E1-001 shell kabulüdür; gerçek cihaz/native/yayın/aktif-iş/üretim kaynakları HELD kalır. Sınırlı son kayıt metadata incelemesi ve son başlık CI ayrıca zorunlu; merge henüz yapılmadı.
