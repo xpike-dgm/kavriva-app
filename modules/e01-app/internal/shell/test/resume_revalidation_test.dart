@@ -921,6 +921,24 @@ void main() {
       addTearDown(t.view.resetDevicePixelRatio);
       for (final entry in {
         'held': null,
+        'provider-held': _assessment(
+          overrides: {
+            ExecutionProofKind.fit: _ref(
+              ExecutionProofKind.fit,
+              state: ResumeReferenceState.held,
+            ),
+          },
+          reason: 'Bu motosiklet için güncel uygunluk sonucu ilerlemeyi durduruyor. Uygunluğu yeniden kontrol ettirmeden rehber adımına geçme.',
+        ),
+        'provider-unknown': _assessment(
+          overrides: {
+            ExecutionProofKind.content: _ref(
+              ExecutionProofKind.content,
+              state: ResumeReferenceState.unknown,
+            ),
+          },
+          reason: 'Motosikletin şu anki fiziksel durumu doğrulanamadı. Güncel durum kontrolü istenmeden kayıtlı adımdan devam etme.',
+        ),
         'pending': _assessment(checks: [_check(proof: false)]),
         'ready': _assessment(),
         'changed': _assessment(changed: true),
