@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-EXECUTION-001]
-used_by: [V-E1-EXECUTION-001, P-E1-006, T-E1-006]
+used_by: [V-E1-EXECUTION-001, P-E1-006, T-E1-006, V-E1-RESUME-001, P-E1-007]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -465,3 +465,7 @@ ACTIVE profil LF SHA256 649a05c6345c07a2d0df87682540457d1c0820ab853d8395c665743e
 ## İlk başarılı CI loglarının ayrı arşiv zamanı
 
 İlk kaynak17CI JSON/makbuz/job kayıtları r1 olarak onarım başlamadan kopyalandı. Yeni96cfe sourcehelper dört başarılı log için aynı genel dosya adlarını kullandı; eski başarısız/yarım yerel loglar etkilenmedi. İlk kaynağın başarılı4PRlogu, son metadata yazımından önce GitHubdaki orijinalrun37203798074/37203782014/37203782037/37203782045 üzerinden yeniden okunarak kavriva_e1006_r1_source_log_* adlarına ayrıldı. Yeni r2 whole-source raporunun eskijob/logr1 arşivinden söz etmesi bu zaman ayrımıyla okunur; ilk başarılı105E1 sonucu yeni106E1 sonucu ile karıştırılmaz. Bu yeniden log okuması yeni test veya geçmiş hükmü yükseltme değildir. Gerçek arşivhashleri Temp/kavriva_e1006_r1_log_archives.json içindedir.
+
+## T-E1-007 tüketimi ve gerçekPR106 ikincil makbuzu
+
+PR106 https://github.com/xpike-dgm/kavriva-app/pull/106 MERGED@2026-10-04T14:43:02Z, normal aynı sonbaşlık9b158468d58c9271c786dab254db000f64c844e7 merge 52424e0775e64738a280f3abff271fca9e290247; fetchedorigin/main/treeeşit. Düzeltilmişkaynak96cfe38e859cf5bac483bb365d376e4dc2e09809 FULLPASS, ayrı sonFINALMETADATAPASS; kaynak16/son16/main8 gerçekSUCCESS ve PR T3beş/checksyedi. Önceki birincil gövde/hash/P1ret/RED→darfix/107localPASS/yeni7PNG/yeni9yanıt ve yeniden inceleme korunur. Kabul93/kalan113/206; yeni007kabulü yok.

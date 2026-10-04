@@ -108,6 +108,8 @@ used_by:
   - "E-DEV-103"
   - "P-E1-006"
   - "E-DEV-104"
+  - "P-E1-007"
+  - "E-DEV-105"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -404,3 +406,10 @@ Aynı e1-tests.yml sabitSDK/lock/format/analyze/bütün widgettest;16yeni+89eski
 ## P1 sonuç bildirimi negatif regresyonu
 
 Kısmi beyan null/yabancı providerresult olmadan güncel scope ile niyet üretir; verifiedcompletion ve safeStop açılmaz. Yeni17 + eski89 = CI106; yerel gerçek7PNGcapture1 ile107PASS. Önceki105/106 sayıları ilk ret kaynak tarihçesidir. Yeni bağımsız bütün kaynak hükmü/aynıCI beklenir.
+
+## Kesinti sonrası yeniden doğrulama test kapsamı
+
+Aynı e1-tests.yml sabitSDK/lock/format/analyze/bütün widgettest;14yeni+106önceki=CI120, yerelPNG1ile121. Workflow değişmedi. CON004ilk okuma/bütün bağımsız kaynak/sonmetadata incelemesi ve aynıCI/T3 ayrıca zorunlu.
+
+
+`vault/PROFILES/resume-revalidation-render.md`; `vault/PACKS/P-E1-007.md`; `vault/REGISTRY/T-E1-007.md`; `vault/EVIDENCE/E-DEV-105.md`.
