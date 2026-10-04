@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-007",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek görüntüler+sorular, kod/plan/cevap anahtarı/dış yardım yok. AI okuması insan/telefon kullanılabilirliği kanıtı değildir.",
+  "passRule": "Bütün sorular anlamca dış yardımsız doğru olmalı; yanlış/cevapsız/belirsiz cevap CHANGES_REQUESTED, dar düzeltme ve yeni geçmişsiz okuyucu gerekir.",
+  "questions": [
+    {
+      "id": "1",
+      "surface": "resume",
+      "question": "Kaydedilen adım motosikletin şu anki durumunu doğrular mı?"
+    },
+    {
+      "id": "2",
+      "surface": "resume",
+      "question": "İşe yeniden başlamadan önce ne yapılmalı?"
+    },
+    {
+      "id": "3",
+      "surface": "resume",
+      "question": "Eski kritik kontrol onayları otomatik geçerli mi?"
+    },
+    {
+      "id": "4",
+      "surface": "resume",
+      "question": "Eski adım, sökülmüş parçalar ve notlar ne amaçla gösteriliyor?"
+    },
+    {
+      "id": "5",
+      "surface": "resume",
+      "question": "Fotoğraf veya not eklemek tek başına adımı açar mı?"
+    },
+    {
+      "id": "6",
+      "surface": "resume",
+      "question": "Güncel kaynak veya zorunlu kontrol eksikse devam edilebilir mi?"
+    },
+    {
+      "id": "7",
+      "surface": "resume",
+      "question": "Rehber sürümü değişmişse eski adımdan devam edilir mi?"
+    },
+    {
+      "id": "8",
+      "surface": "resume",
+      "question": "Yeniden kontrol düğmesi tamamlandı veya devam izni üretir mi?"
+    },
+    {
+      "id": "9",
+      "surface": "resume",
+      "question": "Devam edilemezse güvenli kapatma bilgisine ulaşılabilir mi?"
+    }
+  ]
+}
