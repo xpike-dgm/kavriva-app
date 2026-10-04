@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-005a",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Bağımsız ilk okuyucu; yalnız görüntü/metin ve sorular, dış yardım yok. AI profili insan veya cihaz kullanılabilirlik kanıtı değildir.",
+  "passRule": "Bütün sorular ek dış açıklama veya yardım olmadan doğru cevaplanmalı; yanlış/cevapsız soru CHANGES_REQUESTED ve metin düzeltmesi/yeniden okuma gerektirir.",
+  "questions": [
+    {
+      "id": "009-what",
+      "surface": "discovery",
+      "question": "Bu ekranda ne yapıyorsun?"
+    },
+    {
+      "id": "009-why",
+      "surface": "discovery",
+      "question": "Bir işi seçince motosiklete uygunluğu ve hazırlığın doğrulanmış olur mu? Neden?"
+    },
+    {
+      "id": "009-next",
+      "surface": "discovery",
+      "question": "Aradığın iş bulunmaz veya sonuç eskiyse ne yapabilirsin?"
+    },
+    {
+      "id": "010-fit-what",
+      "surface": "current-preview",
+      "question": "Bu rehber hangi motosiklet ve iş için; kapsamı nerede görüyorsun?"
+    },
+    {
+      "id": "010-fit-why",
+      "surface": "current-preview",
+      "question": "Uygun olması işi başarıyla yapmayı veya şimdi hazır olmayı garanti eder mi?"
+    },
+    {
+      "id": "010-fit-next",
+      "surface": "current-preview",
+      "question": "Fiziksel iş başlamadan sıradaki adım nedir?"
+    },
+    {
+      "id": "010-missing-what",
+      "surface": "missing-preview",
+      "question": "Ne eksik veya eski; bu motosiklete özel uygulama açık mı?"
+    },
+    {
+      "id": "010-missing-why",
+      "surface": "missing-preview",
+      "question": "Öğrenme görünümü neden motosiklette uygulama adımı değildir?"
+    },
+    {
+      "id": "010-missing-next",
+      "surface": "missing-preview",
+      "question": "Eksik bilgi nasıl yeniden kontrol edilir?"
+    }
+  ]
+}
