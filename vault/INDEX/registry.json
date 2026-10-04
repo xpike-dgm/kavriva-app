@@ -48,6 +48,61 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-002",
+   "flow_feature": "FL1.0.2/F1.0.1",
+   "objective": "Garaj motosiklet bağlamını SCR-005/008 kapsamında yalnız sunumda göstermek",
+   "context_pack": "P-E1-002",
+   "acceptance": "Display/switch; lifecycle entry; no hub",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-04",
+   "purpose": "Seçili motosiklet bağlamını ve değiştirme/yönetim girişlerini yalnız sunum olarak göstermek",
+   "domain": "garage-context",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-008",
+    "C1.0",
+    "F1.0.1",
+    "SCR-005",
+    "SCR-008",
+    "BR-045",
+    "BR-106",
+    "BR-107",
+    "BR-134",
+    "BR-135",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "garage-context-presentation",
+   "tasks": [
+    "T-E1-002"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-04",
+   "depends_on": [
+    "T-E1-001"
+   ],
+   "used_by": [
+    "V-E1-GARAGE-001",
+    "P-E1-002",
+    "E-DEV-098"
+   ],
+   "evidence": "E-DEV-098",
+   "supersedes": "planning TASK_INDEX T-E1-002",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",

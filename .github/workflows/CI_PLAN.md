@@ -96,6 +96,8 @@ used_by:
   - "E-DEV-096"
   - "P-E1-001"
   - "E-DEV-097"
+  - "P-E1-002"
+  - "E-DEV-098"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -348,3 +350,7 @@ ADR012R4 bütün bileşik nitelikler/tam cümle/tam 9/6/5/7 ölçüm kalemi ve h
 ## E1 beş bölümlü kabuk kontrolü
 
 `.github/workflows/e1-tests.yml` yalnız sabit SDK kaynak/engine/Dart/workspace-lock ve paket-lock kontrolü, Dart format, analyze ve 10 headless widget kontrolü çalıştırır. Yerel isteğe bağlı PNG capture CI’da etkin değildir. SDK/App kaynakları pinned; Android/iOS/native build/signing/hesap veya provider seçilmez. E1 render sınırı/yeni seam yok/18yol/9immutablepin/rawv63/önceki birincil kanıt korunması/build/routing/run_all/diff ve whole bağımsız inceleme zorunlu. CI başarıları ürün/custody/güvenlik/gerçek cihaz HELD çizgisini açmaz. Pack `vault/PACKS/P-E1-001.md`; kanıt `vault/EVIDENCE/E-DEV-097.md`.
+
+## E1 Garaj bağlamı kontrolü
+
+Mevcut sabit SDK/lock workflow değişmeden garage12+shell10=22 headless davranış testi, formatter/analyze çalıştırır; localoptionalPNG CI’da açılmaz. Snapshot/kimlik/selectionistek-vs-karar/başka-moto-uyarı-iş sızıntısı/inactivehistory/criticalprominence/cacheunknown/empty/TR/klavye/9ölçek/gerçekshellintegration; graph12+42/pin13/rawv64/exact13/priorprimary preservation + whole bağımsız kaynak/CI ve son kayıt denetimi/CI zorunlu. Pack `vault/PACKS/P-E1-002.md`; kanıt `vault/EVIDENCE/E-DEV-098.md`. Yedi eski CI ailesi korunur, gerçek source/final16/T3; ürün/cihaz gate HELD.

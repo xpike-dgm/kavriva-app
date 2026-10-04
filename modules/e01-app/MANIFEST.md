@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e01-app"
 owner: "E1"
 depends_on: [M-E3-001, M-E5-001, M-E4-001]
-used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097]
+used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E1"
 public_contracts:
   - "[[modules/e01-app/MANIFEST.md#Public contract surface (only this is usable across boundaries)]]"
 internal_scope: "Flutter widget tree, navigation state, caches, offline reads of E4 packages, in-flight UI state. No direct database access; no Supabase service_role; no signing keys; no canonical truth stored here."
-tasks: [T-E10-001, T-E10-006, T-E1-001]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart]
-evidence: [E-DEV-027, E-DEV-097]
+tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart]
+evidence: [E-DEV-027, E-DEV-097, E-DEV-098]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -87,3 +87,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E1-001 iç sunum kabuğu
 
 `modules/e01-app/internal/shell/lib/kavriva_shell.dart` beş çağıran görünümü ve Türkçe bölüm etiketlerini taşır; seçili sekme/görünürlük açık girdi, değişim yalnız istek. SCR-005 ve diğer ürün ekranları ayrı; yeni public contract/seam yok. Kalıcı gerçek E3/E5/E4 dış sınırlarında; bu koda taşınmadı. Headless SDK/widget testi gerçek cihaz/yayın kabulü değildir; aktif-iş alt-bar ve ilk landing HELD. Pack `vault/PACKS/P-E1-001.md`; profil `vault/PROFILES/app-shell-boundary.md`; kanıt `vault/EVIDENCE/E-DEV-097.md`.
+
+## T-E1-002 Garaj sunumu
+
+`modules/e01-app/internal/shell/lib/garage_context.dart` selected motorcycle ve doğru kimlikli selection/lifecycle/history/safety/work isteklerini yalnız sunumda taşır. E3 serves/E5 authorizes/E4 gerçeklik dışarıda; yeni public contract/private import/seam yok. Per-bike ayrım, inactive history ve critical reach-back korunur. Native/cihaz/üretim gerçek kaynakları HELD. Pack `vault/PACKS/P-E1-002.md`; profil `vault/PROFILES/garage-context-render.md`; kanıt `vault/EVIDENCE/E-DEV-098.md`.
