@@ -838,6 +838,67 @@ void main() {
       );
     },
   );
+  testWidgets(
+    'Ready outcome has clear next action; actual focused current-step text and border contrast and Enter intent',
+    (t) async {
+      final scope = _scope(), sent = <ResumeRequest>[];
+      await t.pumpWidget(
+        _app(
+          _view(
+            scope: scope,
+            saved: _saved(),
+            assessment: _assessment(),
+            observe: (_) {},
+            recheck: (_) {},
+            resume: sent.add,
+          ),
+        ),
+      );
+      expect(find.text('Güncel kontroller doğrulandı'), findsOneWidget);
+      expect(find.text('Devam etmeden önce yeniden kontrol'), findsNothing);
+      expect(
+        find.textContaining(
+          'yarım kalan işte nerede kaldığını hatırlaman için korunur',
+        ),
+        findsOneWidget,
+      );
+      final f = find.text(_resume);
+      await t.ensureVisible(f);
+      await t.pump();
+      final paragraph = t.renderObject<RenderParagraph>(f).text as TextSpan;
+      BoxDecoration decoration() =>
+          t
+                  .widget<Container>(
+                    find
+                        .ancestor(of: f, matching: find.byType(Container))
+                        .first,
+                  )
+                  .decoration!
+              as BoxDecoration;
+      double contrast(Color a, Color b) {
+        final x = a.computeLuminance(), y = b.computeLuminance();
+        return (x > y ? x + .05 : y + .05) / (x > y ? y + .05 : x + .05);
+      }
+
+      final background = decoration().color!;
+      expect(
+        contrast(paragraph.style!.color!, background),
+        greaterThanOrEqualTo(4.5),
+      );
+      await t.sendKeyEvent(LogicalKeyboardKey.tab);
+      await t.pump();
+      await t.sendKeyEvent(LogicalKeyboardKey.tab);
+      await t.pump();
+      final border = decoration().border! as Border;
+      expect(border.top.width, 3);
+      expect(contrast(border.top.color, background), greaterThanOrEqualTo(3));
+      await t.sendKeyEvent(LogicalKeyboardKey.enter);
+      await t.pumpAndSettle();
+      expect(identical(sent.single.scope, scope), isTrue);
+      expect(sent.single.interruptionId, _interrupt);
+      expect(find.text('İş tamamlandı'), findsNothing);
+    },
+  );
   final capture = Platform.environment['KAVRIVA_RESUME_PREVIEW'];
   if (capture != null)
     testWidgets('Capture actual full held ready and changed resume views', (

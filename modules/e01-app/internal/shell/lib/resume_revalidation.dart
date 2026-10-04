@@ -199,6 +199,17 @@ class _ResumeState extends State<ResumeRevalidationView> {
       scope: w.scope,
       interruptionId: w.interruptionId,
     );
+    final currentStepAction = _ResumeAction(
+      label: 'Güncel rehber adımını aç',
+      primary: ready,
+      onActivate:
+          canAct &&
+              w.errorMessage == null &&
+              ready &&
+              w.onCurrentStepRequested != null
+          ? () => w.onCurrentStepRequested!(request)
+          : null,
+    );
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -215,9 +226,14 @@ class _ResumeState extends State<ResumeRevalidationView> {
               Text(
                 'Güncel rehber: ${w.scope.context.guideLabel} · ${w.scope.guideVersion}',
               ),
-              const Text(
-                'Devam etmeden önce yeniden kontrol',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+              Text(
+                ready
+                    ? 'Güncel kontroller doğrulandı'
+                    : 'Devam etmeden önce yeniden kontrol',
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               const Text(
                 'Kaydedilen ilerleme, motosikletin şu anki durumunu doğrulamaz. Eski kritik onaylar otomatik geçerli değildir.',
@@ -231,6 +247,9 @@ class _ResumeState extends State<ResumeRevalidationView> {
                 ),
                 Text(
                   'Bu bilgiler geçmiş bağlamdır. Kayıt zamanı: ${saved.savedAt}',
+                ),
+                const Text(
+                  'Eski adım, sökülen parçalar ve notlar, yarım kalan işte nerede kaldığını hatırlaman için korunur. Bunlar devam izni veya güncel fiziksel kanıt değildir.',
                 ),
               ] else
                 const _Status(
@@ -308,9 +327,15 @@ class _ResumeState extends State<ResumeRevalidationView> {
               const Text(
                 'Gözlem eklemek tek başına kritik kontrolü doğrulamaz veya rehber adımını açmaz.',
               ),
+              if (ready) ...[
+                currentStepAction,
+                const Text(
+                  'Bu düğme, güncel kontrolleri doğrulanmış rehber adımı ekranına geçiş ister. Kendiliğinden sonraki adımı uygulamaz veya işi tamamlandı saymaz.',
+                ),
+              ],
               _ResumeAction(
                 label: 'Yeniden kontrol iste',
-                primary: true,
+                primary: !ready,
                 onActivate: canAct && w.onRevalidationRequested != null
                     ? () => w.onRevalidationRequested!(request)
                     : null,
@@ -325,19 +350,12 @@ class _ResumeState extends State<ResumeRevalidationView> {
                       ? () => w.onRemapRequested!(request)
                       : null,
                 ),
-              _ResumeAction(
-                label: 'Güncel rehber adımını aç',
-                onActivate:
-                    canAct &&
-                        w.errorMessage == null &&
-                        ready &&
-                        w.onCurrentStepRequested != null
-                    ? () => w.onCurrentStepRequested!(request)
-                    : null,
-              ),
-              const Text(
-                'Eski adım tahmin edilerek devam edilmez. Güncel adım yolu da kendi uygunluk ve güvenlik kontrolünü korur.',
-              ),
+              if (!ready) ...[
+                currentStepAction,
+                const Text(
+                  'Güncel rehber adımını açmak, doğrulanmış rehber ekranına geçiş isteğidir. Şu anda bu yol kapalı; eski adım tahmin edilerek devam edilmez.',
+                ),
+              ],
               _ResumeAction(
                 label: 'Güvenli şekilde durdurma yolunu aç',
                 onActivate: w.onSafeClosureRequested != null
