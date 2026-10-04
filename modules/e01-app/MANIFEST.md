@@ -127,3 +127,7 @@ Profil `vault/PROFILES/guide-discovery-render.md`; pack `vault/PACKS/P-E1-005a.m
 
 
 `vault/PROFILES/active-execution-render.md`; `vault/PACKS/P-E1-006.md`; `vault/REGISTRY/T-E1-006.md`; `vault/EVIDENCE/E-DEV-104.md`.
+
+## P1 sonuç bildirimi negatif regresyonu
+
+Kısmi beyan null/yabancı providerresult olmadan güncel scope ile niyet üretir; verifiedcompletion ve safeStop açılmaz. Yeni17 + eski89 = CI106; yerel gerçek7PNGcapture1 ile107PASS. Önceki105/106 sayıları ilk ret kaynak tarihçesidir. Yeni bağımsız bütün kaynak hükmü/aynıCI beklenir.

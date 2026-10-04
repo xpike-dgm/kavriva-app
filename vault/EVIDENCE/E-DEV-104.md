@@ -3,10 +3,10 @@ test_id: E-DEV-104
 version: 1
 contract_id_version: "SCR-014/015/018; C1.3/F1.3.1/FL1.3.1 execution v1"
 subject_file: modules/e01-app/internal/shell/lib/active_execution.dart
-subject_digest: a6a59b5dd4068ad0c42c035c40d24454625847b6a5c7aeba2fb989fce4a727da
-result: "CHANGES_REQUESTED P1 sonuç yok/yabancı olduğunda kısmi bildirim kapanıyor"
+subject_digest: 812c9a1d1023baddf7d7518fd89ef4035243201f9e5e02f2c1c32c5441ef0997
+result: "RECORDED P1 dar onarım; yeni bütün kaynak incelemesi bekleniyor"
 evidence_links: [vault/PROFILES/active-execution-render.md, vault/PACKS/P-E1-006.md, vault/REGISTRY/T-E1-006.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-103-E10-GOVERNED-PATHS-FOR-T-E1-006.md.snapshot, modules/e01-app/internal/shell/lib/active_execution.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/fixtures/execution_reading_questions.json]
-gate_verdict: "CHANGES_REQUESTED kaynak5a7d107; üretim/cihaz/yayın HELD"
+gate_verdict: "RECORDED yeni kaynak REVIEW; ilk5a7d107ret korunur; üretim/cihaz/yayın HELD"
 reviewer: "/root/e1006_active_execution_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
 purpose: Aktif adımı, sorun çözümünü ve dürüst çalışma sonucunu sunmak
@@ -214,3 +214,73 @@ PR checks job111440689073: 7 başarılı adım/success.
 PR E1 gerçek log: formatter16zero/analyze0issue/105PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
 
 Yukarıdaki17CI gerçek başarıdır, semantikP1retini kapatmaz; merge veya DONE yok.
+
+## P1 dar onarım ve gerçek yeniden doğrulama
+
+İlk exact5a7d107 bütün CHANGES_REQUESTED hükmü ve source17CI başarısı yukarıda saklanır. Kısmi/sonuç doğrulanmadı kullanıcı beyanı artık provider sonuç nesnesi eşleşmesinden ayrıdır; result null veya yabancı motosiklet/çalışma/rehber sürümü/değerlendirme/fiziksel revizyon olduğunda mevcut immutable scope ile yalnız partialUnresolved niyeti gider. Completed ve safelyStopped hâlâ aynı güncel amaç/konu/kapsam ve zorunlu kontrol kanıt kapılarına bağlıdır; yabancı son kontrol/kaynak/veri gösterilmez. Kaydedildi, başarı veya güvenli durma yerel olarak üretilmez.
+
+Yeni gerçek regresyon eski uygulamada0PASS1FAIL; bulgu gerçekten tekrar üretildi (Temp kavriva_e1006_r2_regression_red.txt). Test gevşetilmedi. Dar dış matched koşulu yalnız partial kolundan çıkarıldı; doğrulanmış completed/safeStop predicate değiştirilmedi. Yeni17inci anlamlı test null ve beş yabancı/eski kapsamın tümünde partial seçimi/güncel scope kimliği/noSaved/noforeignfinalcheck ve bağımsız ücretsiz güvenli erişim ile verified seçeneklerin kapalı kaldığını doğrular.
+
+Son format16dosya2değişiklik .25s, strict16zero .26s, analyze0issue10.9s, bütün107PASS yaklaşık12s:89eski+17yeni+isteğe bağlı gerçekPNG1. Capturekapalı CI106 beklenir, henüz yeniCI sonucu değildir. Gerçek7PNG yeniden üretildi: önceki3yüzey5PNG ve providerresultnull/kısmi seçili ek2PNG; tamamı390×844/tam örtüşen kaydırma, sonradan edit/crop yok. Root bütün7yi açtı. Önceki5PNG ve önceki ilk-okuma yanıtları tutulur. Yeni geçmişsiz okuyucu yöntemi/9soru ve aynı yeni bütün kaynak bağımsız hükmü/CI hâlâ beklenir.
+
+Kod öncesi sorular değişmedi; kök7PNG görsel kontrolünden sonra onarım kodu1e43cdefd2ab5c04aea0764d10db25db21644402 donduruldu. Raporlanmış retP1 için süreçREVIEW→CHANGES_REQUESTED(006c0ed)→IN_PROGRESS(1e43cde)→yeniREVIEW; bütün görev kabulü yok. Kabul92/kalan114, v71/96aday ve bütün üretim/telefon/fiziksel/kimlik/marka/altbar/yayın HELD korunur.
+
+Yeni codeLF SHA256 812c9a1d1023baddf7d7518fd89ef4035243201f9e5e02f2c1c32c5441ef0997; testLF 94c26b57ab12b9bd4aed1d7faac8e38526eb78a7405dbb243bc7e1fee3986c1a; sabit questions 0987a10259c74d67f18fbc4f1a528a53a050f7ea59c81390929694f678aeaf88.
+
+## Dar onarım gerçek görsel özetleri
+
+- Temp kavriva_e1006_r2-active-0.png PNG SHA256 e2f699262f4d407aaed6d75944ddf2d3b3709fb5882f57df506faca64f69a6ee
+- Temp kavriva_e1006_r2-active-1.png PNG SHA256 5907a6822c453f593715bc9b5acead289dc38f3ca4d4b5368043f3242e9fa02a
+- Temp kavriva_e1006_r2-closure-0.png PNG SHA256 93eacbd425996f996b38ff3b0017cb2fe427a18be9b1d88ed5793af91bb138ec
+- Temp kavriva_e1006_r2-closure-1.png PNG SHA256 05755a28919c4e98be91c0be6d725bfbf836eda70c4f2cf9da4566e979cfe7ec
+- Temp kavriva_e1006_r2-recovery-0.png PNG SHA256 9c02106078fd9d2b8d550621a9f3aa17b8ec7f83642996c71c0f15b1eae5e1a2
+- Temp kavriva_e1006_r2-unverifiedClosure-0.png PNG SHA256 90906a2b1165678689dabc24bf66b287c491bf3f4c3bb95d7b4fb9337e7d317a
+- Temp kavriva_e1006_r2-unverifiedClosure-1.png PNG SHA256 12cacff68647f785799cc9221b55b5ce44ed2ab3ca6819fc87ee710213c3e091
+
+## Dar onarım sonrası yeni geçmişsiz ilk okuma
+
+/root/e1006_r2_blind_reading, ayrı geçmişsiz gpt-6-luna/max görevlendirmesi, yalnız7gerçekPNG+sabit9soru. Kök gerçek yanıtların tümünü anlamca okudu:9/9 amaç/gerekçe/sonraki yol doğru, seçili güvenli durma ile doğrulanmamış kısmi durum ayrılıyor; sorular değiştirilmedi. Bütün bağımsız reviewer yöntemi/kapsamı ayrıca değerlendirecek; insan/telefon/runtimeattestation kanıtı değildir. Gerçek rapor aşağıda değiştirilmeden korunur.
+
+Kavriva E1-006 — ilk okuma raporu
+
+Kaynak kimliği (raporla ilişkilendirme için): 1e43cdefd2ab5c04aea0764d10db25db21644402
+
+Yöntem: Yalnızca aşağıdaki yedi gerçek ekran görüntüsünü ve verilen execution_reading_questions.json dosyasındaki dokuz soruyu okudum. Kod, plan, cevap anahtarı, başka rapor veya web açmadım; başka birinden yardım almadım. Bu, bir AI'ın ekran görüntüsü okumasıdır; insan kullanılabilirliği veya gerçek telefon testi değildir.
+
+Açılan ekran görüntüleri:
+- kavriva_e1006_r2-active-0.png
+- kavriva_e1006_r2-active-1.png
+- kavriva_e1006_r2-recovery-0.png
+- kavriva_e1006_r2-closure-0.png
+- kavriva_e1006_r2-closure-1.png
+- kavriva_e1006_r2-unverifiedClosure-0.png
+- kavriva_e1006_r2-unverifiedClosure-1.png
+
+014-active-what — Bu ekranda hangi tek işi yapman ve nereye bakman isteniyor?
+Mavi çerçeveyle işaretlenmiş örnek konum bölgesine bakıp, o konum için kontrol sonucunu bildirmem isteniyor.
+
+014-active-why — Görünür güvenlik koşulu ve rehberin kaynak bilgisi ne anlama geliyor; bunlar başarı garantisi mi?
+Görünür zorunlu koşul, örnek konum için güvenlik kontrolü yapılması. Bu kontrol yapılmazsa güvenli ilerleme sonucu doğrulanamıyor. Önleme olarak ilgili koşulun güncel kaynakla açıkça kontrol edilmesi isteniyor. Rehber satırında “Örnek konum kontrolü · guide-v2” yazıyor; bu rehber adı/sürüm bilgisidir. Ekran, uygunluk ve güvenlik kontrollerini ayrıca gösterdiğini ve bunun doğrulama başarısı garantisi olmadığını söylüyor.
+
+014-active-next — Kontrolün bittiğinde veya bir sorun gördüğünde hangi yolu kullanabilirsin; düğmeye basmak hangi sonucu tek başına doğrular?
+Kontrol tamamlandıysa “Kontrolü tamamladım” düğmesi kullanılabilir. Sorun varsa “Sorun var” yolunu, durmak gerekiyorsa “Güvenli şekilde durdurma yolunu aç” bağlantısını kullanabilirim. Tamamlandı düğmesi adım bildirimini gönderir; kendiliğinden sonraki adıma geçirmez ve tüm işin tamamlandığını göstermez. Tek başına gerçek kontrol sonucunu veya güvenliği doğrulamaz.
+
+015-recovery-what — Bu ekranda normal ilerlemenin durumu nedir?
+Normal ilerleme durdurulmuş. Sorun açıklanıp güncel durum yeniden değerlendirilmeden normal adıma devam edilemiyor.
+
+015-recovery-why — Belirtilen sorunu açıklamadan veya güncel kontrol sonucu olmadan neden sonraki normal adıma gidilemiyor?
+Örnek zorunlu güvenlik kontrolünün sonucu uyumsuz göründüğü için bu güvenlik şartı çözülmüş değil. Gözlenen durumu açıklayıp güncel koşul ve gözlemle yeniden değerlendirme istemeden normal ilerlemek güvenli ilerlemeyi doğrulamaz.
+
+015-recovery-next — Şimdi hangi yolları kullanabilirsin; yeniden kontrol istemek kendiliğinden devam izni verir mi?
+Gözlenen uyumsuzluğu anlatan fotoğraf veya not ekleyebilirim, güncel koşul ve gözlem bilgisiyle yeniden kontrol isteyebilirim ya da güvenli durdurma yolunu açabilirim. Yeniden kontrol istemek veya kanıt eklemek sorunu kendiliğinden çözmez ve devam izni vermez.
+
+018-closure-what — Bu ekranda çalışmanın sonucu nasıl ayrılıyor; seçili sonucun anlamı nedir?
+Sonuç; zorunlu son kontroller doğrulanarak tamamlanmış, kısmen tamamlanmış/sonucu doğrulanmamış veya güvenli şekilde durdurulmuş olarak ayrılıyor. closure görüntülerinde seçili olan “Güvenli şekilde durduruldu — güncel güvenlik kontrolü mevcut”; bu işin bu sonuçla güvenli şekilde durdurulduğunu belirtir, tamamlandığını ya da başarıyı garanti etmez. unverifiedClosure görüntülerinde seçili sonuç “Kısmi / sonuç doğrulanmadı”; ayrıca bu bağlamda güncel sonuç bilgisinin bulunmadığı ve önceki motosiklet sonucunun kullanılamayacağı yazıyor.
+
+018-closure-why — Kısmi, belirsiz veya güvenli durdurulmuş bir çalışma neden tamamlandı sayılmıyor?
+Tamamlanmış seçeneği için tüm zorunlu son kontroller ve güncel sonuç kanıtı gerekiyor. Kısmi/sonucu doğrulanmamış durum bu kanıtı vermiyor; güvenli durdurma ise işin tamamlandığını değil durdurulduğunu bildiriyor. Seçim tek başına doğrulama üretmiyor.
+
+018-closure-next — Sonucu kaydetmek neyi kaydeder ve neyi doğrulamaz; güvenli şekilde durdurma için ödeme veya başarı seçimi gerekir mi?
+“Belirttiğim sonucu kaydet” seçili sonucu taşıyan bir kayıt isteği gönderir; gerçek kaydın yapıldığını veya sonucun doğrulandığını tek başına göstermez. Güvenli durdurma yolunu açmak için ödeme ya da “tamamlandı” seçimi gerekmiyor.
+
+Yeni bütün kaynak yeniden incelemesi/aynı kaynakCI/T3 ve ayrı sonmetadata incelemesi/sonCI bekleniyor.

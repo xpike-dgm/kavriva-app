@@ -45,3 +45,15 @@ Gerçek106PASS/yerelPNG ve önceki tüm başarısız/kesilmiş çalışma loglar
 
 
 `vault/PROFILES/active-execution-render.md`; `vault/PACKS/P-E1-006.md`; `vault/REGISTRY/T-E1-006.md`; `vault/EVIDENCE/E-DEV-104.md`.
+
+## P1 dar onarım ve gerçek yeniden doğrulama
+
+İlk exact5a7d107 bütün CHANGES_REQUESTED hükmü ve source17CI başarısı yukarıda saklanır. Kısmi/sonuç doğrulanmadı kullanıcı beyanı artık provider sonuç nesnesi eşleşmesinden ayrıdır; result null veya yabancı motosiklet/çalışma/rehber sürümü/değerlendirme/fiziksel revizyon olduğunda mevcut immutable scope ile yalnız partialUnresolved niyeti gider. Completed ve safelyStopped hâlâ aynı güncel amaç/konu/kapsam ve zorunlu kontrol kanıt kapılarına bağlıdır; yabancı son kontrol/kaynak/veri gösterilmez. Kaydedildi, başarı veya güvenli durma yerel olarak üretilmez.
+
+Yeni gerçek regresyon eski uygulamada0PASS1FAIL; bulgu gerçekten tekrar üretildi (Temp kavriva_e1006_r2_regression_red.txt). Test gevşetilmedi. Dar dış matched koşulu yalnız partial kolundan çıkarıldı; doğrulanmış completed/safeStop predicate değiştirilmedi. Yeni17inci anlamlı test null ve beş yabancı/eski kapsamın tümünde partial seçimi/güncel scope kimliği/noSaved/noforeignfinalcheck ve bağımsız ücretsiz güvenli erişim ile verified seçeneklerin kapalı kaldığını doğrular.
+
+Son format16dosya2değişiklik .25s, strict16zero .26s, analyze0issue10.9s, bütün107PASS yaklaşık12s:89eski+17yeni+isteğe bağlı gerçekPNG1. Capturekapalı CI106 beklenir, henüz yeniCI sonucu değildir. Gerçek7PNG yeniden üretildi: önceki3yüzey5PNG ve providerresultnull/kısmi seçili ek2PNG; tamamı390×844/tam örtüşen kaydırma, sonradan edit/crop yok. Root bütün7yi açtı. Önceki5PNG ve önceki ilk-okuma yanıtları tutulur. Yeni geçmişsiz okuyucu yöntemi/9soru ve aynı yeni bütün kaynak bağımsız hükmü/CI hâlâ beklenir.
+
+Kod öncesi sorular değişmedi; kök7PNG görsel kontrolünden sonra onarım kodu1e43cdefd2ab5c04aea0764d10db25db21644402 donduruldu. Raporlanmış retP1 için süreçREVIEW→CHANGES_REQUESTED(006c0ed)→IN_PROGRESS(1e43cde)→yeniREVIEW; bütün görev kabulü yok. Kabul92/kalan114, v71/96aday ve bütün üretim/telefon/fiziksel/kimlik/marka/altbar/yayın HELD korunur.
+
+Yeni codeLF SHA256 812c9a1d1023baddf7d7518fd89ef4035243201f9e5e02f2c1c32c5441ef0997; testLF 94c26b57ab12b9bd4aed1d7faac8e38526eb78a7405dbb243bc7e1fee3986c1a; sabit questions 0987a10259c74d67f18fbc4f1a528a53a050f7ea59c81390929694f678aeaf88.
