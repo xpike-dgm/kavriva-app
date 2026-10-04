@@ -287,6 +287,15 @@ class _ReadinessPage extends StatelessWidget {
                     const Text(
                       'Bu ekran fiziksel işlem adımı değildir. Uygunluk ve bütün zorunlu koşullar güncel olarak doğrulanmadan işe başlanmaz.',
                     ),
+                    const Text(
+                      'Uygunluk ve hazırlık ayrı kontrollerdir. Uygunluk güncel olsa bile hazırlık eski, eksik veya doğrulanmamışsa işe başlanmaz.',
+                    ),
+                    const Text(
+                      'Kritik koşullar güvenli başlangıçla ilgilidir ve zorunludur. Diğer zorunlu koşullar da tamamlanmalıdır; isteğe bağlı kalemler bunların yerine geçmez.',
+                    ),
+                    const Text(
+                      'Önceki kontrol, şu anki hazırlık koşullarının aynı olduğunu tek başına göstermez; güncel kontrol gerekir.',
+                    ),
                     Text(
                       fitCurrent
                           ? 'Bu motosiklet ve rehberin uygunluğu güncel olarak doğrulandı.'
