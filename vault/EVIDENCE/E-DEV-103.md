@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-TEACHING-001]
-used_by: [V-E1-TEACHING-001, P-E1-005c, T-E1-005c]
+used_by: [V-E1-TEACHING-001, P-E1-005c, T-E1-005c, V-E1-EXECUTION-001, P-E1-006]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -163,3 +163,7 @@ Kaynak17/17CI; gerçekPR T3beş adım ve checks yedi adım SUCCESS, gerçek E1lo
 Üretim içerik/kimlik/otorite/E3R1/E5-003/Supabase47-57-59/retliPR97/gerçek cihaz/fiziksel işlem/yayın HELD. Eski kanıt gövdesi/SDK/publock/oldcode/YAML/rawv69/EDEV102birincil gövdesi değişmedi. Öğrenme sunumu başarısı gerçek üretim kaynağının bağlanması anlamına gelmez.
 
 ACTIVE profil LF SHA256 deb800f9eeb5cf71529fce3a851bae72622c1ca87a1c31f9900aa5e6f39cdd0c; kodsubject özeti yerine geçmez.
+
+## T-E1-006 tüketimi ve gerçekPR105 ikincil makbuzu
+
+PR105 https://github.com/xpike-dgm/kavriva-app/pull/105 MERGED@2026-10-04T12:04:13Z, normalaynısonbaşlık78b18ae84a7e2c35dcc116ed60d9375cdaa541cd merge d97f88f61fcddf137ef1f3a746c6a9078534d1b6; fetchedorigin/main/treeeşit. Kaynakf3d4b9f173873ebc3c1bc7125c88f13279f889f7 FULLPASS, ayrısonFINALMETADATAPASS; kaynak17/son16/main8 gerçekSUCCESS ve PR T3beş/checksyedi. Önceki birincil gövde/hash/hüküm/ilkikiSemantics hata ve okuma yöntemi korunur. Kabul92/kalan114/206; yeni aktif çalışma kabulü yok.
