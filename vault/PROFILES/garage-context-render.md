@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, M-E4-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-002, T-E1-002, E-DEV-098]
 evidence: [E-DEV-098]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Garaj bağlamı sunumu
@@ -48,3 +48,9 @@ Bütün canonical kaynak ve exactsourceCI/T3 bağımsız Luna Max incelemesi bek
 Pack `vault/PACKS/P-E1-002.md`; görev `vault/REGISTRY/T-E1-002.md`; kanıt `vault/EVIDENCE/E-DEV-098.md`.
 
 İlk kaynak bb994 bağımsız CHANGES_REQUESTED/P2 kontrol işareti kontrastı; aynı görevde normal sınır belirginleştirildi. Gerçek shell üzerindeki boya/yazı/zemin ve klavye odağı ölçümü yeni teste eklendi. Güncel 24 yerel PASS, yeni bütün kaynak incelemesi ve aynı kaynak CI bekleniyor; önceki 17 yeşil yalnız bb994 makbuzudur. Geçmiş kanıtta korunur.
+
+## Garaj görevinin kaynak kabulü
+
+Bağımsız /root/e1002_luna_max_rereview, insanın istediği gpt-6-luna/max ayarıyla ayrı görevlendirildi. Tam kaynak 3b930263616aafb363eb44728a8db3309863583d FULL PASS; önceki bb994 kontrast P2 kapalı, yeni bulgu yok. Bu ayar görevlendirme metadata kaydıdır, bağımsız runtime model attestation değildir. İncelemeci kod yazmadı/test/CI/ağ çalıştırmadı. Sahip bağımsız alt ajanı DEC-0069 ve sohbet yetkisiyle kabul etti; implementer self-PASS değildir. Aynı kaynak16/16 gerçek CI SUCCESS, PR T3beş/checksyedi adım SUCCESS. Ayrıntılı kanıt `vault/EVIDENCE/E-DEV-098.md`.
+
+Bu yalnız kanonik Display/switch; lifecycle entry; no hub, motosiklet ayrımı ve Türkçe/erişilebilirlik Garaj sunumunun kabulüdür. Üretim veri/kimlik/authority, native/gerçek cihaz, fiziksel iş/güvenlik ve yayın MISSING/HELD değişmez. Önceki bekleyişler tarihsel yazım anlarını gösterir. Sınırlı son kayıt adayı: bağımsız son metadata incelemesi ve aynı son başlık CI/T3 ayrıca beklenir; merge henüz yapılmadı. Sahibin son talimatı bu görev tamamlanınca güvenli durmaktır; sonraki görev başlatılmayacak.
