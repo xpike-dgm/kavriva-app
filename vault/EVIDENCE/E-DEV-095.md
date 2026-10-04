@@ -9,7 +9,7 @@ evidence_links:
   - "vault/PACKS/P-E8-005a.md"
   - "vault/REGISTRY/T-E8-005a.md"
   - "vault/EVIDENCE/SNAPSHOTS/E-DEV-094-E10-GOVERNED-PATHS-FOR-T-E8-005a.md.snapshot"
-gate_verdict: "REJECT task acceptance; CHANGES_REQUESTED; no DONE or merge; product HELD"
+gate_verdict: "FAIL task acceptance; CHANGES_REQUESTED; no DONE or merge; product HELD"
 reviewer: "/root/e8005a_removability_full_review; spawn gpt-6-luna/max; CHANGES_REQUESTED 78fcd6cbea8e9bddf66d9d7edf14e9ec4efa20b3"
 timestamp: 2026-10-04
 purpose: Yazarlık ekinin beş çıkarılabilirlik kanıtını gate kapsamında değerlendirmek
@@ -53,3 +53,5 @@ Bu ret kaydı görevi CHANGES_REQUESTED, pack CHANGES_REQUESTED yapar; profil RE
 İncelenen sourceprofil LF0fa1c06e90210aad7230b3db9af7c3f052834a4a2609a47315b56f2847e0df00 korunur; ret hükmü eklenmiş güncel profil LF234ecb98233cfdcd0e070eb5803512942b04021b0617339d94edc874d85ceb04. Eski bekleniyor ifadeleri yazıldıkları anın tarihçesidir.
 
 Ret kaydı sonrası ilk run_allcheck_conformance gate_verdict kapalı kümesinde CHANGES_REQUESTED etiketini reddetti (worst1;42regresyonPASS0.427s). Gate verdict kabul edilen REJECT etiketiyle kayıtlandı; görev ve pack CHANGES_REQUESTED kaldı, Major bulgu kapanmadı.
+
+İkinci ret kayıt kontrolü de REJECT etiketini reddetti (worst1/42testPASS0.430s). Önceki “kabul edilen REJECT” açıklaması yanlıştı ve tarihçe olarak korunur. Gerçek check_conformance kapalı kümesi okundu: PASS/FAIL/VERIFIED/RECORDED/BLOCKED; bu bağımsız ret FAIL olarak serileştirildi. Görev ve pack CHANGES_REQUESTED, gerçek Major bulgu açık kaldı.
