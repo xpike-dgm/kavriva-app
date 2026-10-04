@@ -98,6 +98,8 @@ used_by:
   - "E-DEV-097"
   - "P-E1-002"
   - "E-DEV-098"
+  - "P-E1-004"
+  - "E-DEV-100"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -358,3 +360,7 @@ Mevcut sabit SDK/lock workflow değişmeden garage13+shell10=23 headless davran�
 ## İlk kullanım ve motosiklet ekleme kontrolü
 
 MevcutlockedSDK/workflowunchanged; firstuse12+garage13+shell10=35mandatorytest, optionalcaptureCIkapalı. Üçintent/hesapzorlamayanbaşlangıç/markamodelyıl/unknownyear/invalidnoemit/errorbusydraftpreservation/disabled/back/keyboard/9scale/min48/actualpaintcontrast. Graph12+42/manual13pin/rawv65/exact13/priorprimary ve bütün bağımsızscope+actualsource/finalCI/T3 gerekir. Pack `vault/PACKS/P-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`. Actualprod/device/physicalreleaseHELDMISSING.
+
+## Motosiklet ayrımı ve uygunluk sunumu test kapsamı
+
+T-E1-004 için aynı mevcut e1-tests.yml sabit SDK/lockedpubget/format/analyze/bütün widget testlerini çalıştırır; workflow değişmedi. Yeni13 ayrım/fit negatif ve a11y testiyle CI48 (yerel optionalPNG1 ile49). run_all12+42 ve index yeniden üretimi ayrı. Actual PR T3 kontrolü bağımsız insanın kabul ettiği gpt-6-luna/max hükmünün yerine geçmez; aynı kaynak/final CI ve gerçek review beklenir. Üretim fit/kimlik/cihaz/yayın HELD.
