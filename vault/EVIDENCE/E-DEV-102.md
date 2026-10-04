@@ -3,7 +3,7 @@ test_id: E-DEV-102
 version: 1
 contract_id_version: "SCR-011/012; C1.2/F1.2.1/FL1.2.1 readiness v1"
 subject_file: modules/e01-app/internal/shell/lib/preparation_readiness.dart
-subject_digest: 6957c1648767e4451d827c0b99818e6b4913d0bd994ab4d2c8078d55a19e5faa
+subject_digest: bb0051310f2729305decf2847fc6dc5c999049e8ac76f95361103f92b55ac8fd
 result: "RECORDED hazırlık sunumu; bağımsız kabul bekleniyor"
 evidence_links: [vault/PROFILES/preparation-readiness-render.md, vault/PACKS/P-E1-005b.md, vault/REGISTRY/T-E1-005b.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-101-E10-GOVERNED-PATHS-FOR-T-E1-005b.md.snapshot, modules/e01-app/internal/shell/lib/preparation_readiness.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/fixtures/readiness_reading_questions.json]
 gate_verdict: "RECORDED kaynak REVIEW; üretim/cihaz/yayın HELD"
@@ -97,3 +97,66 @@ Bu, yalnızca AI tarafından görsellerin ilk okuyucu gibi okunmasıdır; insan 
 ## İlk okuma açıklık bulguları — düzeltme isteniyor
 
 İlk okuyucu9soruyu doğru cevapladı; dış yardım istemedi. Ancak kritik-zorunlu farkının ve currentfit/eski hazırlığın ayrı değerlendirmeler olduğunun açık yazılmadığını belirtti; bilinmeyen güncellik nedeni E1 tarafından tahmin edilmemeli. Uygulayıcı açıklık bulgularını CHANGES_REQUESTED olarak taşır; henüz kabul hükmü yok. Dar kullanıcı metni düzeltmesi, yeni actualrender ve geçmişsiz başka kör okuyucu gerekir. Sabit9soru değişmez; kanıt/currentguard/fitproof algoritması gevşetilmez. İlk source f1faa6c codeLF6957c1648767e4451d827c0b99818e6b4913d0bd994ab4d2c8078d55a19e5faa/testLF6fe023e25c2e7b94e2281306b00875e6d80bfc9b5831e8d49c60249f46a44016 ve8actualPNG ilk makbuzda korunur; rawPNG Temp kavriva_e1005b_first_read-{ready,hold,unknown}-{index}.png adına kopyalandı, byte özetleri aynı. Yanlış okuma veya metin notları ilk başarıyla gizlenmedi. Kapsam bütün incelemesi henüz alınmadı.
+
+## İkinci okuma ve açıklık düzeltmesi
+
+İlk açıklık bulguları ve önceki sekiz görselin özetleri yukarıda korunur. 5af94efb93dc528dc411847c0afa943cadb25f3b yalnız üç açıklayıcı paragraf ekledi; güncel kod LF SHA256 bb0051310f2729305decf2847fc6dc5c999049e8ac76f95361103f92b55ac8fd; test ve dokuz sabit sorunun özeti değişmedi. Kritik koşulların güvenli başlangıçla ilgili ve zorunlu olduğu, uygunluk ile hazırlığın ayrı olduğu, önceki kontrolün güncel koşulları tek başına göstermediği açıklandı. Gerçekte bilinmeyen eskime nedeni uydurulmadı; izin denetimi gevşetilmedi.
+
+İlk strict formatter bir dosyanın biçimini değiştirip exit1 verdi; analyze/test henüz çalıştırılmadı. Biçim düzeltildikten sonra strictformat12dosya/0değişiklik/.16s, analyze0sorun/8.9s, bütün81test başarılı. Yerel sayı17yeni+63eski+1isteğe bağlı görsel yakalama; CI yakalama kapalı80. Gerçek loglar Temp kavriva_e1005b_copyfix_analyze.txt ve kavriva_e1005b_copyfix_test.txt. Aynı test koşusunda 2026-10-04T09:56:12yerel on adet390×844örtüşen tam kaydırma görseli tekrar üretildi ve uygulayıcı tamamını açtı; önceki görseller yeni kaynak diye etiketlenmedi.
+
+İncelemeci: /root/e1005b_blind_reading_v2; ayrı geçmişsiz gpt-6-luna/max görevlendirmesi. Gerçek yanıt aşağıdadır; görev model ayarı çalışma zamanı attestation değildir.
+
+## 9 soru için ilk okuma yanıtlarım
+
+- **011-ready-what:** Araç/rehber uygunluğu ile hazırlık ayrı kontrol ediliyor. Ekranda çalışma alanı kontrolü kritik ve zorunlu, araç kontrolü zorunlu; ek bilgi ise isteğe bağlı ve eksik. İsteğe bağlı eksik bilgi zorunlu koşulun yerini tutmuyor.
+- **011-ready-why:** Hazır sonucu, araç ve rehber uygunluğunun güncel doğrulanmasına ve kritik/zorunlu hazırlık kontrollerinin doğrulanmış olmasına dayanıyor. “Hazırım” ya da deneyimli olmak kontrolün yerine geçmiyor; yeni bilgi göndermek de tek başına doğrulama sayılmıyor.
+- **011-ready-next:** **“Rehberi başlat”** seçeneği görünüyor. Ekran fiziksel işlem adımı olmadığını ve güncel güvenlik kontrolü yoksa işe başlanmaması gerektiğini de belirtiyor.
+- **012-hold-what:** İşe başlama kapalı; kritik ve zorunlu çalışma alanı kontrolü eksik. Bu koşul doğrulanmadan ilgili fiziksel işe başlanamayacağı yazıyor.
+- **012-hold-why:** Hazır olduğunu veya deneyimli olduğunu söylemek eksik koşulu geçirmiyor; kritik kontrolün yerini tutmuyor. İstenen yeni bilgiyi göndermek de koşulu kendiliğinden doğrulamıyor.
+- **012-hold-next:** Kaynağın istediği koşulu tamamlayıp yeni bilgiyle yeniden kontrol istenebilir. Ekranda güncel kontrol, fotoğraf, ölçüm veya başka bir kontrolle yeniden değerlendirme seçenekleri var. Bunlar doğrulama isteği; geçiş izni değil.
+- **011-unknown-what:** Hayır. Hazırlık bilgisi eski; önceki kontrolün şimdi hazır olunduğu anlamına gelmediği yazıyor. Ekrandaki kritik ve zorunlu kontrollerin doğrulaması da güncel değil.
+- **011-unknown-why:** Önceki kontrolün aynı koşullara hâlâ uyduğunu tek başına göstermediği ve güncel kontrol gerektiği açıklanıyor.
+- **011-unknown-next:** Güncel hazırlık kontrolü istenebilir; eksik bilgi fotoğraf, ölçüm veya başka kontrolle desteklenip yeniden değerlendirme talep edilebilir. Yalnız bilgi için öğrenme görünümü açılabilir; ekrana göre bu motosiklette uygulama adımı değil.
+
+Sorularda veya görüntülerde yanıt vermemi engelleyen belirgin bir belirsizlik görmedim. **“Rehberi başlat”** seçeneğini uygulama için sonraki adım olarak okudum; ekran ayrıca bunun fiziksel işe başlama adımı olmadığını söylüyor.
+
+## Okuma kapsamı ve kaynak
+
+Sabit JSON’daki soru kimlikleri: `011-ready-what`, `011-ready-why`, `011-ready-next`, `012-hold-what`, `012-hold-why`, `012-hold-next`, `011-unknown-what`, `011-unknown-why`, `011-unknown-next`.
+
+Verilen `readiness_reading_questions.json` dosyasını ve belirtilen 10 PNG’nin tamamını açtım; örtüşen kaydırma görüntülerini birlikte okudum. JSON SHA-256: `24438C84D5F3327B06288DB1D2EAEB5668748405112FA918FA555635D59509C0`.
+
+| PNG | SHA-256 |
+|---|---|
+| `kavriva_e1005b-ready-0.png` | `141F1030AE57DC59FB99FF303A331404D8774F3792BB9920A65E9D2CE662D82F` |
+| `kavriva_e1005b-ready-1.png` | `A784F3E586C9CEAB917C61A6C409274897421D13BC3FDEF6F3B0BD99E135A9E9` |
+| `kavriva_e1005b-ready-2.png` | `CA17CCB4AF92593E067DF747B4937C46E21F1CF04FD40C4C0687BAF77EFD6A01` |
+| `kavriva_e1005b-hold-0.png` | `49D2F918DB717E0F2CA6968FE0DAE0F07A6C42081B2FE09ABA9BE9C03014D35D` |
+| `kavriva_e1005b-hold-1.png` | `FC84DCE28345019DCF26755DB9C0084B7A5F53C9F74EDCACA12DF1F1B6EC305D` |
+| `kavriva_e1005b-hold-2.png` | `F251EAE718C1DE15AB6C7B99ABCA3E016729266C25C93FB1433C6DF1C89AF7AC` |
+| `kavriva_e1005b-unknown-0.png` | `A25B3F8834CEA4233046158697A1367BA5876C06788EF8D4927D07621C5A82FD` |
+| `kavriva_e1005b-unknown-1.png` | `3F7F35BFF666F40BB61AAF4CB2F2C28D8F5A3C06B0EA82C1C1173F04E46C8AB4` |
+| `kavriva_e1005b-unknown-2.png` | `88ECC28B899F99D16AC8EFEA17BB40D1D439179350FA1E260B7C8D9019274B95` |
+| `kavriva_e1005b-unknown-3.png` | `184F40C47767843DC2C9BDE2798180B6A486A0921E1D91EDA4E8D319B0D01D89` |
+
+Kaynak revizyonu olarak `5af94efb93dc528dc411847c0afa943cadb25f3b` verildi; bunu bağımsız doğrulamadım. Bu, yalnızca görüntüler üzerinden yapılan bir AI okuması; insanın veya gerçek cihazın kullanılabilirlik testi kanıtı değildir.
+
+### Uygulayıcı değerlendirmesi ve bekleyen kabul
+
+İkinci geçmişsiz okuyucu yalnız değişmeyen dokuz soru ile yeni on görseli aldı; kaynak/plan/ilk cevap/cevap anahtarı/dış yardım almadı. Dokuz cevap kaynakta belirlenen ne/neden/sonraki adım anlamlarıyla uyumlu; başlangıç niyetini fiziksel izin saymıyor, zorunlu koşulun beyanla geçilemeyeceğini, eski hazırlığın olumlu sonucu açmadığını anlıyor. İlk açıklık bulguları bu sınırlı okumada kapanır: CHANGES_REQUESTED → REVIEW. Bu uygulayıcı değerlendirmesidir; bağımsız bütün görev incelemesi ve gerçek kaynak CI/T3 kabulü henüz bekler. AI okuması insan/cihaz kullanılabilirliği veya üretim güvenliği kanıtı değildir.
+
+### Gerçek tasarım karşılaştırmaları — yedi alan
+
+| Alan | Gerçek bağlam / yöntem / sonuç / kalan sınır |
+|---|---|
+| Tam ekran | SCR011 hazır/eski ve SCR012 eksik için on örtüşen390×844PNG baştan sona açıldı; koşul, neden, çözüm, kaynak, risk/önleme/durma ve eylemler kaydırma boyunca okunuyor. İzole parça yerine tüm içerik; gerçek cihaz kanıtı HELD. |
+| Ekranlar arası | Kabul edilmiş PR103 current-preview-top ile missing-preview-bottom görselleri yeniden açılıp yeni hazır/eski/hold ile karşılaştırıldı: aynı motor/rehber bağlamı, güncel kaynak açıklaması, uygunluk ≠ hazırlık ≠ fiziksel izin, aynı52yükseklik/sınır/öğrenme niyeti. Önceki hazırlığı görüntüle niyeti yeni sunumla tutarlı; gerçek gezinme bağlayıcısı yok. |
+| Durumlar arası | Yeni testler hazır/held/eski/unknown/pending/missing/failed/foreigncontext/boş/sadeceözet/loading/error/nohandler ve düzeltme-sonrası hazırlığa dönüşü çalıştırır. Fotoğraf/ölçüm/alternatif talebi kendi kendine doğrulama yaratmaz. Offline ayrı üretim durumu bu kapsüle aktarılmadığından iddiası yok. |
+| Duyarlılık ve Türkçe | Gerçek widget testleri320/390/768genişlik×1/2/3yazı ölçeğinde ana/hold uzun Türkçe içerik ve son eyleme kaydırmayı denetledi; overflow/exception yok, hedef≥48. Bunlar test bağlamı; nihai breakpoint/telefon/pencere kanıtı HELD. |
+| Erişilebilirlik | Gerçek Tab/Enter callback testi, düğme/disabled/liveRegion semantiği ve actualpaint sınır≥3/text≥4.5 oranı,52kontrol testleri geçti. Native ekran okuyucu/cihaz ve nihai token/font sertifikasyonu yapılmadı. |
+| Görsel gerileme | Yeni on PNG ilk sekiz arşivle ve kabul edilmiş discovery ile karşılaştırıldı; yalnız açıklık paragrafları/yeniden akış değişti, güvenli ret ve bağlam korunuyor. Kabul edilmiş63eski test ve tüm eski kod/SDK/YAML aynı; eski onayın yeni özetlere taşınması yok. |
+| Kanonik başvuru | Sabit planfa914f… REF-GUIDE001D03/D04 ve SCR011012 şartları: kritik/zorunlu/isteğe bağlı ayrımı, ön koşullar/risk ve nooverride/neden/çözüm/recheck gerçek sunumda karşılaştırıldı. Binaryreferans repoda yok; pixelperfect/blueK/logo/finaltoken/font/U04ün evrenselliği veya fiziksel bottomnav politikası iddiası yok. |
+
+## Kaynak dondurma öncesi kayıt denetimi
+
+Gerçek build_index94/routingREVIEW; run_all on iki mimari kontrol ve42kimlik/koruma testi PASS/.434s/worstexit0. diffcheckPASS. On dört değişen adres, on beş base LF özeti, hamv68 byteeşitliği, EDEV101 önceki birincil gövdesi, eski E1kod/test/SDK/publock ve bütün workflowYAML bytekoruması, değişmeyen soru özeti ayrı actual karşılaştırmada PASS. v69/94aday; kabul90/kalan116 değişmedi. Kaynak bütün incelemesi ve aynı CI/T3 henüz bekleniyor.
