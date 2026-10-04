@@ -11,7 +11,6 @@ jobs:
     env:
       CI: 'true'
       FLUTTER_SUPPRESS_ANALYTICS: 'true'
-      PUB_CACHE: ${{ runner.temp }}/kavriva-flutter/bin/cache/kavriva-pub
     defaults:
       run:
         working-directory: modules/e01-app/internal/shell
@@ -20,6 +19,8 @@ jobs:
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
       - name: Install exact Flutter source and verify effective SDK
         run: |
+          export PUB_CACHE="$RUNNER_TEMP/kavriva-flutter/bin/cache/kavriva-pub"
+          printf 'PUB_CACHE=%s\n' "$PUB_CACHE" >> "$GITHUB_ENV"
           python3 - <<'PY'
           import hashlib, json, os, pathlib, subprocess
           lock = json.loads(pathlib.Path('toolchain.lock.json').read_text())
