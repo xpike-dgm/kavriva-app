@@ -59,14 +59,40 @@ Bounded keyboard denemesi1test başarısız; ardından dar teşhis1test başarı
 
 ## Son kabul sınırı
 
-Bütün canonical TASK_INDEX/feature/flow/acceptance/shell source qualifiers incelemeci tarafından okunmalı; taskı sırf fixture yeşil diye daraltmak veya aktif alt-bar/ilk landing kararını seçmek yasak. Bağımsız bütün görev hükmü, aynı sourcehead CI ve sınırlı son kayıt/CI incelemesi bekleniyor. Graph ve kaynak manuel doğrulaması henüz aşağıda gerçek sonuçla eklenecek.
+Bütün canonical TASK_INDEX/feature/flow/acceptance/shell source qualifiers incelemeci tarafından okunmalı; taskı sırf fixture yeşil diye daraltmak veya aktif alt-bar/ilk landing kararını seçmek yasak. Bağımsız bütün görev hükmü, aynı sourcehead CI ve sınırlı son kayıt/CI incelemesi bekleniyor. Bu ilk kaynak hazırlanırken graph ve manuel doğrulama bekliyordu; aşağıdaki gerçek sonuçlar bu tarihsel bekleyişi günceller.
 
 ## Kaynak bağlantısı ve graph düzeltmesi
 
 İlk graph koşusunda 11/12 kontrol geçti; check_links, HELD kaydının gövdede çözülen kaynak bağlantısı bulunmadığı için exit1 verdi. 42 regresyon geçti (.418s); bu koşu genel başarı değildir. Açık ürün/cihaz/aktif-iş sınırlarının kaynağı `vault/PACKS/P-E1-001.md` ve `vault/PROFILES/app-shell-boundary.md`; görev `vault/REGISTRY/T-E1-001.md`. Gerçek kaynak bağlantıları eklendi; kontrol bastırılmadı. Dar klavye testi ardından son tam koşu 11/11 geçti; geçici teşhis çıktıları kaldırıldı.
 
-Son kaynak kontrolu: dogru checks/run_all.py adresinde 12/12 kontrol ve 42 regresyon PASS (.402s), worst exit0. Onceki yanlis run_all.py adresi dosya bulunamadi exit2; test sonucu sayilmadi. Manuel 18/18 izinli yol, 9/9 taban pin, ham v63 bayt esitligi, onceki EDEV096 birincil govde korunumu ve pub kilit ozeti dogrulandi. SDK sabitli CI Linux sonucu henuz bekleniyor.
+Son kaynak kontrolu: dogru checks/run_all.py adresinde 12/12 kontrol ve 42 regresyon PASS (.402s), worst exit0. Onceki yanlis run_all.py adresi dosya bulunamadi exit2; test sonucu sayilmadi. Manuel 18/18 izinli yol, 9/9 taban pin, ham v63 bayt esitligi, onceki EDEV096 birincil govde korunumu ve pub kilit ozeti dogrulandi. Bu yerel kaynak kontrolü sırasında SDK sabitli Linux CI bekliyordu; aşağıdaki 577c makbuzu gerçek tamamlanan sonucu kaydeder.
 
 ## İlk kaynak CI düzeltmesi
 
-6d86701836327fc75e142445ea9fe414a6d6fe25 için E1 workflow koşusu 37172758890, jobs=[] ve failure; testler başlamadı, yeşil değildir. [GitHub resmî context tablosu](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts) jobs.env içinde runner kullanımına izin vermez. PUB_CACHE tanımı runner başladıktan sonra ilk shell adımında RUNNER_TEMP ile kurulur, aynı süreçte export ve sonraki adımlar için GITHUB_ENV ile aktarılır. SDK/kod/test/lock değişmedi; yeni kaynak incelemesi ve CI bekleniyor. PR99 açıldı; app attachment girişimi 100 kimlik sınırı nedeniyle reddedildi, kayıt silinmedi. Var olmayan independent-review-approved etiketi ekleme girişimi sonuçsuz kaldı; mevcut gerçek t3-privileged etiketi eklendi, bağımsız onay yerine geçmez.
+6d86701836327fc75e142445ea9fe414a6d6fe25 için E1 workflow koşusu 37172758890, jobs=[] ve failure; testler başlamadı, yeşil değildir. [GitHub resmî context tablosu](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts) jobs.env içinde runner kullanımına izin vermez. PUB_CACHE tanımı runner başladıktan sonra ilk shell adımında RUNNER_TEMP ile kurulur, aynı süreçte export ve sonraki adımlar için GITHUB_ENV ile aktarılır. Bu düzeltme anında SDK/kod/test/lock değişmedi ve yeni kaynak incelemesi/CI bekliyordu; aşağıdaki 577c makbuzu CI bekleyişini kapatır. PR99 açıldı; app attachment girişimi 100 kimlik sınırı nedeniyle reddedildi, kayıt silinmedi. Var olmayan independent-review-approved etiketi ekleme girişimi sonuçsuz kaldı; mevcut gerçek t3-privileged etiketi eklendi, bağımsız onay yerine geçmez.
+
+## Bağımsız ilk inceleme ve düzeltme
+
+Bağımsız /root/e1001_shell_full_review, gpt-6-luna/max, bounded salt okunur bütün görev incelemesi; sahip alt ajanı DEC-0069 kapsamında önceden kabul etti. İncelemeci 577c698bf003e77bf6789b5d59985edd6a8bc817 başında kod/workflow/kabul kapsamına aykırılık bulmadı; C1.0/F1.0.1/FL1.0.1 ile shell kapsamı, 18 yol/9 pin/ham v63/kod-test-lock-toolchain özetleri doğrulandı. Hüküm CHANGES_REQUESTED: P2, kanıtta Linux CI bekleyişinin güncellenmesi gerekiyor. Bu hüküm PASS veya DONE değildir. İlk kaynak hazırlığına ait bekleyişler tarihsel olarak tanımlandı; gerçek 577c CI makbuzu aşağıya eklendi. Yeni başlık için bütün görev tekrar incelemesi ve aynı başlık CI bekleniyor; görev REVIEW, pack IN_PROGRESS.
+## Gercek kaynak CI makbuzu
+
+Kaynak 577c698bf003e77bf6789b5d59985edd6a8bc817; PR99 OPEN/DRAFT. 16/16 gercek GitHub kosusu success; push ve PR sekiz ayri workflow ailesi. Bu makbuz ilk kaynak CI içindir; yukarıda ayrı ilk inceleme hükmü ve kayıt düzeltmesi belirtilmiştir. Push T3 skipped sifir adim, onay degildir; PR T3 111349505171 gercek bes adim success, checks111349505305 yedi adim success. E1 PR111349504748 ve push111349495951 sekizer adim success; SDK kaynagi/engine/Dart/lock kontrolu ve headless widget testleri calisti.
+
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172954085 — success.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172954028 — success.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172953997 — success.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172954137 — success.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172953993 — success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172954108 — success.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172953991 — success.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172953987 — success.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951286 — success.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951192 — success.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951237 — success.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951211 — success.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951261 — success.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951288 — success.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951245 — success.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37172951291 — success.
+
+Gerçek PR E1 koşusu 37172953997 logu: format 2 dosya/0 değişim; analyze 0 sorun (7.0s); 10 widget PASS. Yerel 11 sayısı ayrıca yalnız Temp PNG capture testini içerir; CI capture etkinleştirmez. E4 koşusu37172954085: 170 test PASS (.166s); E9 koşusu37172953993: 9 test PASS (.001s). SDK Windows binary gözlemi Linux binary eşitliği iddiası değildir. 6d başarısız workflow geçmişi korunur, diğer başlığın yeşili yeni başlığın sonucu yerine kullanılmaz.
