@@ -3819,6 +3819,54 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E8-009",
+   "flow_feature": "FL8.5.1/F8.5.1",
+   "objective": "Ölçüm kabiliyetlerinin tam kaynak nitelikleriyle sınıflarını kontrol etmek",
+   "context_pack": "P-E8-009",
+   "acceptance": "Exact-qualifier bands incl. 9th outage item",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-04",
+   "purpose": "Ölçüm kabiliyetlerini tam kaynak nitelikleriyle dört sınıfa ayırmak",
+   "domain": "measurement-capability-bands",
+   "module": "e08-content",
+   "owner": "E8",
+   "implements": [
+    "ADR-012",
+    "ADR-001",
+    "ADR-005",
+    "ADR-010",
+    "C8.5",
+    "F8.5.1",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "measurement-capability-bands",
+   "tasks": [
+    "T-E8-009"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-04",
+   "depends_on": [],
+   "used_by": [
+    "V-E8-MEASUREMENT-BANDS-001",
+    "P-E8-009",
+    "E-DEV-096"
+   ],
+   "evidence": "E-DEV-096",
+   "supersedes": "planning TASK_INDEX T-E8-009",
+   "status": "DONE"
+  },
+  {
    "task_id": "T-E9-001",
    "flow_feature": "FL9.1.1/F9.1.1",
    "objective": "5-option proposal rule",
