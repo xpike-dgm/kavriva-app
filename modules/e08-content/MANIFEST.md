@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e08-content"
 owner: "E8"
 depends_on: [M-E3-001]
-used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E8-AUTH-REF-001, P-E8-001, E-DEV-093, V-E8-AUTHORING-BOUND-001, P-E8-004, E-DEV-094]
+used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E8-AUTH-REF-001, P-E8-001, E-DEV-093, V-E8-AUTHORING-BOUND-001, P-E8-004, E-DEV-094, V-E8-MEASUREMENT-BANDS-001, P-E8-009, E-DEV-096]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E8"
 public_contracts:
   - "[[modules/e08-content/MANIFEST.md#Public contract surface]]"
 internal_scope: "Derivation pipelines, projection rebuilders (all projections re-derivable, CMS included), measurement aggregators, quality dashboards. Canonical stores stay in E3; publish authority stays in E6."
-tasks: [T-E10-001, T-E10-006, T-E8-001, T-E8-004]
+tasks: [T-E10-001, T-E10-006, T-E8-001, T-E8-004, T-E8-009]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -94,3 +94,7 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E8-004 kanonik yazarlık sınırını değerlendirme
 
 `vault/PROFILES/bounded-authoring-evaluation.md` ADR011R2 tam cümlesi ve dört sınırlı yazarlık işlemini değerlendirir. Eski public surface gövdesi değiştirilmedi; kısa tarihsel terimler tam kaynak yerine geçmez. E3/E6 sahipliği/E5 yetkilendirme sınırı/E8derive/E2render korunur; yeni runtime sözleşmesi veya yetki yok. Bypass/rebuild ve fiziksel yetki HELD, bu gate değerlendirmesi bunları tamamlamaz. Pack `vault/PACKS/P-E8-004.md`; kanıt `vault/EVIDENCE/E-DEV-094.md`; bağımsız bütün görev incelemesi bekleniyor.
+
+## T-E8-009 ölçüm kabiliyetlerinin sınıflandırılması
+
+`vault/PROFILES/measurement-capability-bands.md` ADR012R4 tam cümlesi ve tam9/6/5/7ölçüm kalemini değerlendirir. Eski public surface gövdesi değiştirilmedi; kısa tarihsel terimler tam kaynak yerine geçmez. E3/E6 sahipliği/E5 yetkilendirme sınırı/E8derive/E2render korunur; yeni runtime sözleşmesi veya yetki yok. Gerçek analitik uygulaması ve kesinti bağımsızlığı HELD; bu sınıflandırma onların kanıtı değildir. Pack `vault/PACKS/P-E8-009.md`; kanıt `vault/EVIDENCE/E-DEV-096.md`; bağımsız bütün görev incelemesi bekleniyor.

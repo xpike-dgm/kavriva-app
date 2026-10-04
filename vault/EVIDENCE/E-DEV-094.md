@@ -24,7 +24,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E8-AUTHORING-BOUND-001]
-used_by: [V-E8-AUTHORING-BOUND-001, P-E8-004, T-E8-004]
+used_by: [V-E8-AUTHORING-BOUND-001, P-E8-004, T-E8-004, P-E8-009, E-DEV-096]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -70,3 +70,9 @@ Kaynak kabulüne göre sınırlı kapanış profilACTIVE/pack-taskDONE/graphDONE
 İncelenen kaynak birincil özeti 0bfec4ea83ce93f6ffc606f37b3531daef4afb32eef9cdd1720b99d785972d07 korundu; ACTIVE kaydın güncel özeti 5bf1c896f1048a7e93f07a02207275e7e3d45ac34d2267a33b14e854d4a5f851. Önceki hazırlık metinleri yazıldıkları anın geçmiş kaydıdır. Gerçek kullanım ve fiziksel hazırlık veya yayın yetkisi verilmedi.
 
 Son kapanış yazar kontrolü run_all12+42PASS0.464s/worst0/build87DONE/routingDONE/diff6temiz. Son bağımsız metadata ve son başlık CI/T3 bekleniyor; gerçek aday gate HELD.
+
+## Gerçek PR96 kabulünün ikincil kaydı ve T-E8-009 tüketicisi
+
+PR96 MERGEDa43f47c558b7e6ccadd483e1eca4a25675893172 @2026-10-04T01:14:01Z actualGitHubMERGED/fetch originmainverified. WholeFULLsource978744575d3a6bd51ca19114c794efc54b6cbaa9 and FINALMETADATAfinal096641ad8d6e420e970807c7c68a009df5d89241 independentlyPASS; actualsource15/final14CIallSUCCESS; finalPRarch37167166738T3job111332392433five/checks111332392568sevenSUCCESS/E4PR37167166724170PASS.164/E9PR371671667009PASS.001. WholeT004gate-onlyfourboundschecked accepted, not realCMS candidate physicalboundedness. Allcandidate+globalproductgateHELD/nofirstreleaseCMS. Accepted84/206 remaining122 v62 views87.
+
+Önceki birincil özet/incelemeci/hüküm/geçmiş korunur; pending ifadeleri yazıldıkları zamana aittir. PR96 sınırlı yazarlık değerlendirmesini kabul eder; gerçek CMS ve ürün hazır oluşu hâlâ HELD.
