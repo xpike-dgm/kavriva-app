@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-RESUME-001]
-used_by: [V-E1-RESUME-001, P-E1-007, T-E1-007]
+used_by: [V-E1-RESUME-001, P-E1-007, T-E1-007, V-E1-REMAP-001, P-E1-008]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -539,3 +539,7 @@ Kaynağın 16/16 gerçek CI çalışması başarılıdır. PR üzerindeki T3 iş
 Gerçek teknik rehber, değerlendirme, fiziksel kontrol, kimlik, yetki, kalıcılık ve medya kaynakları E1 dışında HELD kalır. E3-R1, E5-003, Supabase 47/57/59, reddedilen PR 97, telefon, işletim sistemi, yardımcı teknoloji, fiziksel uygulama ve yayın sınırları kapanmadı. Nihai L05A varlıkları, yazı tipi, tasarım değerleri, aktif iş alt çubuğu ve yönlendirme politikası da HELD kalır. Önceki 106 test, eski kod, SDK, bağımlılık kilidi, iş akışları, ham v71 arşivi, E-DEV-104 esas gövdesi ve sabit dokuz soru korunur. Bu kabul üretim veya bütün ürünün hazır olduğuna dair kanıt değildir. SCR-017 eşleme isteği bu görevde gerçek eşleme sonucu üretmez.
 
 ACTIVE profil LF SHA256 6664d6fd1d2c10f1858094cb134ebc0fc782a5c1e553e24f9f63ecfd81d3d261; kod subject özeti yerine geçmez.
+
+## T-E1-008 tüketimi ve gerçek PR107 ikincil makbuzu
+
+PR107 https://github.com/xpike-dgm/kavriva-app/pull/107 MERGED @2026-10-04T16:49:20Z; kaynak 3fe85594c304de5e269b0e228b0f9cc8133d290d ve ayrı son metadata 2c6d4da03824c1c6c390652f047cad0a810e2d4d FULL PASS. Normal aynı başlık merge 499a6a43bcffe6ae203c3f38b313ee1cfe8374dc; fetched origin/main ve son ağaç eşit. Gerçek kaynak 16 / son 16 / main 8 başarılı; etiketli PR T3 kaynak 37216058165 / son 37217382074, beş adım ve yedi kontrol başarılı. Önceki birincil gövde, yerel başarısızlıklar, R1/R3 retleri, R4 raporu ve P3 notu korunur. Kabul 94 / kalan 112 / 206; yeni T-E1-008 kabulü yok.
