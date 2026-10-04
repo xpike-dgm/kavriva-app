@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, M-E4-001, I-E10-PATHS-001, V-CI-001, 
 used_by: [P-E1-005a, T-E1-005a, E-DEV-101]
 evidence: [E-DEV-101]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # İşi bulma ve rehber kapsamı sunumu
@@ -33,3 +33,9 @@ Yerel64 test PASS (15 yeni+optionalPNG1+eski48); CI capture kapalı63. Strict fo
 
 
 Profil `vault/PROFILES/guide-discovery-render.md`; pack `vault/PACKS/P-E1-005a.md`; görev `vault/REGISTRY/T-E1-005a.md`; kanıt `vault/EVIDENCE/E-DEV-101.md`.
+
+## Bütün kaynak kabulü
+
+Bağımsız /root/e1005a_discovery_full_review, gpt-6-luna/max geçmişsiz ayrı görevlendirme; exact 30b95de8a8b126405cad3875cb0a10798642af59 FULL PASS. Tam SCR009/010 discovery render ve CON004 sabit soru/ilk okuyucu yöntemi kabul kapsamında ayrıca değerlendirildi. Kör okuyucu9gerçekcevap yalnız6ekran+questions; kaynakd8f75b9 ile sourcekod/test/questions byteeşit. AIreader insan/gerçek cihaz usability attestation değildir. Sahip DEC0069 ve sürekli yetkiyle ayrı inceleme alt ajanını kabul etti; görevlendirme runtime modelattestation değildir. Actualsource17/17CI ve gerçekPRT3five/checkssevenSUCCESS ayrıca kaydedildi.
+
+Tam kanonik sunum görevi kabul adayı; son altı metadata incelemesi ve aynıfinalCI/T3 hâlâ beklenir. Henüz merge/main sayacı artışı yok. Üretim/E3R1/E5-003/PR47-57-59/retliPR97/gerçek cihaz/fiziksel/yayın HELD. Eski bekleyiş/hatalar/kanıt gövdesi tarihsel olarak korunur; SDK/publock/YAML/oldcode-test/rawv67/previousEDEV100primarybody değişmez.
