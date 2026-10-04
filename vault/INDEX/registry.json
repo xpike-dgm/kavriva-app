@@ -3719,7 +3719,7 @@
    ],
    "evidence": "E-DEV-092",
    "supersedes": "planning TASK_INDEX T-E7-007",
-   "status": "REVIEW"
+   "status": "DONE"
   },
   {
    "task_id": "T-E9-001",
