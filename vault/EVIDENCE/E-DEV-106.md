@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-04
 depends_on: [V-E1-REMAP-001]
-used_by: [V-E1-REMAP-001, P-E1-008, T-E1-008]
+used_by: [V-E1-REMAP-001, P-E1-008, T-E1-008, V-E1-DIAG-001, P-E1-009]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -484,3 +484,7 @@ Kaynağın 16/16 gerçek CI çalışması başarılıdır. Etiketli PR T3 beş, 
 R2 bağımsız rapor ham SHA256 81a3934eec8654cc34803d66cafea315687b459c499493953196d0e9e917bad0. İlk verilen R2 raporundaki hata/busy ve E4/E9 yerel/CI ifadeleri incelemeci tarafından gerçek kaynakla uyumlu düzeltildi; hüküm FULL PASS kaldı, ürün kodu veya kaynak değişmedi. Önceki R2 rapor ham SHA256 acb5a9a31a40b8ae4cdb75fdd04b6716accfaa49d2cd1b958f22b6f2d44e4cb0 Temp altında ayrıca korunur; yukarıdaki metin incelemecinin son tam raporudur.
 
 ACTIVE profil LF SHA256 51a65a6716861c9aed7a5c7f8fc6ea6bdb3bf565d1d09dbaf8e9f8e0516ce989; kod özeti yerine geçmez.
+
+## T-E1-009 tüketimi ve gerçek PR108 ikincil makbuzu
+
+PR108 https://github.com/xpike-dgm/kavriva-app/pull/108 MERGED@2026-10-04T20:05:46Z; kaynak22591bef785ae3317867cb79ad14f49b00d28938 ve ayrı son1d4a89abc6c1217377ffe5e371e072c59a4edb0e FULL PASS. Normal matched-head merge303f0de2beb0ec4933bb6d4f1302085ba2092c3b; fetched main/son ağaç eşit. Gerçek kaynak16/son16/main8 başarılı; T3 kaynak37228118578/son37229856419, tüm jobs/steps/logs başarılı. Kabul95/kalan111/206. Önceki esas gövde/retler/yerel hata geçmişi/değiştirilmemiş R2 raporu/P3 notları korunur; T-E1-009 kabulü yoktur.

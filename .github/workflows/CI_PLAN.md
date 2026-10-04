@@ -112,6 +112,8 @@ used_by:
   - "E-DEV-105"
   - "P-E1-008"
   - "E-DEV-106"
+  - "P-E1-009"
+  - "E-DEV-107"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -430,3 +432,10 @@ Aynı e1-tests.yml ve sabit SDK/lock/format/analyze/bütün testler. Önceki 122
 ## T-E1-008 ikinci kaynak kapsamı
 
 Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 122 önceki + 20 yeni = 142 normal CI; 143 yalnız yerel yakalamayla. On bir duyarlı durum, 38 R6 native görüntü; eski 31 görüntü byte eşit, yedi yeni hata/bekleme görüntüsü root tarafından açıldı. Gerçek eski kaynak regresyonu 0 PASS / 1 FAIL ve aynı onarılan beklenti 1 PASS. İlk ret korunur; yeni tam CI/T3 ve bütün bağımsız yeniden inceleme gerekir. Workflow YAML değişmedi.
+
+## Tanı sunumu test kapsamı
+
+Önceki142+yeni30=normal CI172; yerel native yakalama ile173. Sabit SDK/locked pub get/strict format22/0/analyze0;20 durum×9 düzen/38 native PNG/52 hedef/gerçek klavye/kontrast/fatal pointer uyarıları. Kritik istek sırası gerçek RED→GREEN. Workflow YAML değişmedi. Ayrı12 soruluk ilk okuma, bütün kaynak ve ayrı son metadata hükmü, aynı kaynak ve son CI/T3 zorunlu. Yerel sonuç gerçek GitHub CI yerine geçmez.
+
+
+`vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
