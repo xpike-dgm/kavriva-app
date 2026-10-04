@@ -6,13 +6,13 @@ domain: "module-contract"
 module: "e08-content"
 owner: "E8"
 depends_on: [M-E3-001]
-used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033]
+used_by: [M-E2-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E8-AUTH-REF-001, P-E8-001, E-DEV-093]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E8"
 public_contracts:
   - "[[modules/e08-content/MANIFEST.md#Public contract surface]]"
 internal_scope: "Derivation pipelines, projection rebuilders (all projections re-derivable, CMS included), measurement aggregators, quality dashboards. Canonical stores stay in E3; publish authority stays in E6."
-tasks: [T-E10-001, T-E10-006]
+tasks: [T-E10-001, T-E10-006, T-E8-001]
 tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
 evidence: [E-DEV-027]
 supersedes: []
@@ -86,3 +86,7 @@ Same stable manifest identity and original semantic body preserved. Purpose/inte
 This metadata frame preserves the original identity and document scope. Where no record identity existed, record_id is an explicit first claim; existing profile_of remains its original relationship, not a renamed ID. metadata_origin_file, when present, is the exact baseline Git-blob payload, with its normalized digest; historical primary/secondary proof refers to those unchanged bytes. Original verdicts, proof timestamps and subject digests are retained, never approval of this new frame. Newly assigned E10 ownership is documentary record custody only, not ownership/authorization of its product subject; existing declared owners remain. Missing relation entries are not inferred from filenames: added registration dependency is the governing ADR-015, and added used_by is documentary source-reference usage, not runtime calls. Original product dependency/contract/implementation declarations remain authoritative in the unchanged source. Added test pointers cover structural metadata/links/digests only; product and semantic closure remain UNVERIFIED where not proved. Empty public_contracts means this frame declares no new owned runtime contract; original consumed surfaces remain in source. Empty evidence on evidence records means no separate supporting evidence record, never self-approval; subject/support artifacts remain in evidence_links. Empty predecessor/successor lists mean no identity replacement, not erased history. Fresh metadata verification does not refresh historical product verification. No independent acceptance or production activation follows from serialization alone.
 
 Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_REGISTRATION.md`.
+
+## T-E8-001 kanonik yetki kaynaklarına referans
+
+`vault/PROFILES/content-authority-references.md` ADR011R1 tam cümlesi ve sekiz başlığıyla kanonik yetkilere referans verir. Eski public surface gövdesi değiştirilmedi; kısa tarihsel terimler tam kaynak yerine geçmez. E3/E6 sahipliği/E5 yetkilendirme sınırı/E8derive/E2render korunur; yeni runtime sözleşmesi veya yetki yok. Bypass/rebuild ve fiziksel yetki HELD, bu referans görevi bunları tamamlamaz. Pack `vault/PACKS/P-E8-001.md`; kanıt `vault/EVIDENCE/E-DEV-093.md`; bağımsız bütün görev incelemesi bekleniyor.
