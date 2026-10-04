@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "task": "T-E1-009",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek görüntüler ve sorular. Kod, plan, cevap anahtarı veya dış yardım yok. AI okuması insan/telefon kullanılabilirliği kanıtı değildir.",
+  "passRule": "Bütün sorular anlamca dış yardımsız doğru olmalı; yanlış, cevapsız veya belirsiz cevap CHANGES_REQUESTED gerektirir. Dar düzeltme ve yeni geçmişsiz okuyucu gerekir.",
+  "questions": [
+    {
+      "id": 1,
+      "surface": "symptom",
+      "question": "Sorunu anlatmak için teknik terim bilmen gerekir mi?"
+    },
+    {
+      "id": 2,
+      "surface": "symptom",
+      "question": "Şu anda güvenli mi sorusuna hayır veya emin değilim dersen tanı akışına devam edebilir misin?"
+    },
+    {
+      "id": 3,
+      "surface": "check",
+      "question": "Gözlem sorusuna emin değilim demek geçerli bir yanıt mı?"
+    },
+    {
+      "id": 4,
+      "surface": "check",
+      "question": "Bir gözlem seçmek kesin arızayı veya tamir sonucunu doğrular mı?"
+    },
+    {
+      "id": 5,
+      "surface": "supported",
+      "question": "Bulgular bir yönü desteklediğinde doğrudan tamire başlanabilir mi; sıradaki yol nedir?"
+    },
+    {
+      "id": 6,
+      "surface": "supported",
+      "question": "Rehberin motosiklete uygunluğu ve hazırlık koşulları ayrıca kontrol edilir mi?"
+    },
+    {
+      "id": 7,
+      "surface": "unresolved",
+      "question": "Sonuç netleşmediyse rastgele bir parça değiştirmek öneriliyor mu?"
+    },
+    {
+      "id": 8,
+      "surface": "unresolved",
+      "question": "Bilinen ve bilinmeyen bilgiler nasıl ayrılıyor; önceki gözlemler kayboluyor mu?"
+    },
+    {
+      "id": 9,
+      "surface": "check",
+      "question": "Fotoğraf eklemek zorunlu veya otomatik teşhis onayı mı?"
+    },
+    {
+      "id": 10,
+      "surface": "outcome-unknown",
+      "question": "Sonucu henüz doğrulanmayan çevrimdışı istek başarılı sayılır mı veya yeniden fiziksel işlem başlatır mı?"
+    },
+    {
+      "id": 11,
+      "surface": "held",
+      "question": "AI önerisi tek başına onay ya da güvenli kullanım izni verir mi?"
+    },
+    {
+      "id": 12,
+      "surface": "unresolved",
+      "question": "Özet yolu işi tamir edilmiş veya tamamlanmış olarak kaydeder mi?"
+    }
+  ]
+}
