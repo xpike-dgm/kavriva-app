@@ -90,9 +90,11 @@ ResumeReference _ref(
   ExecutionScope? scope,
   bool current = true,
   String? subject,
+  ResumeReferenceState state = ResumeReferenceState.confirmed,
 }) => ResumeReference(
   interruptionId: interruption,
   proof: _proof(kind, scope: scope, current: current, subject: subject),
+  state: state,
 );
 ResumeSafetyCheck _check({
   String interruption = _interrupt,
@@ -125,14 +127,14 @@ ResumeAssessment _assessment({
   Map<ExecutionProofKind, ResumeReference?> overrides = const {},
   List<ResumeSafetyCheck>? checks,
   bool changed = false,
+  String reason = 'Normal devam yalnız güncel olumlu kaynak kararı ve bütün zorunlu kontrollerle açılır.',
 }) {
   ResumeReference? ref(ExecutionProofKind kind) =>
       overrides.containsKey(kind) ? overrides[kind] : _ref(kind);
   return ResumeAssessment(
     scope: scope ?? _scope(),
     interruptionId: interruption,
-    reason:
-        'Güncel fiziksel durum ve bütün zorunlu koşullar yeniden doğrulanmalı.',
+    reason: reason,
     decision: ref(ExecutionProofKind.decision),
     physicalState: ref(ExecutionProofKind.content),
     fit: ref(ExecutionProofKind.fit),
@@ -248,6 +250,7 @@ void main() {
       () => ResumeReference(
         interruptionId: ' ',
         proof: _proof(ExecutionProofKind.fit),
+        state: ResumeReferenceState.unknown,
       ),
       throwsArgumentError,
     );
@@ -288,7 +291,9 @@ void main() {
         findsOneWidget,
       );
       expect(
-        find.textContaining('Mevcut fiziksel durum: Henüz doğrulanmadı'),
+        find.textContaining(
+          'Mevcut fiziksel durum: Henüz olumlu olarak doğrulanmadı',
+        ),
         findsOneWidget,
       );
       expect(_enabled(t, _resume), isFalse);
@@ -419,7 +424,9 @@ void main() {
         expect(_enabled(t, _resume), isFalse);
         expect(find.textContaining('Zorunlu kontrol: Örnek'), findsNothing);
         expect(
-          find.textContaining('Mevcut fiziksel durum: Henüz doğrulanmadı'),
+          find.textContaining(
+            'Mevcut fiziksel durum: Henüz olumlu olarak doğrulanmadı',
+          ),
           findsOneWidget,
         );
       }
@@ -453,6 +460,60 @@ void main() {
           await _tap(t, _checkLabel);
           expect(sent.single.checkId, 'check-a');
           expect(sent.single.interruptionId, _interrupt);
+          expect(_enabled(t, _resume), isFalse);
+        }
+      }
+    },
+  );
+  testWidgets(
+    'Current but held or unknown provider outcome never opens resume; reason and safe retry remain',
+    (t) async {
+      for (final kind in [
+        ExecutionProofKind.decision,
+        ExecutionProofKind.content,
+        ExecutionProofKind.fit,
+        ExecutionProofKind.readiness,
+      ]) {
+        for (final state in [
+          ResumeReferenceState.unknown,
+          ResumeReferenceState.held,
+        ]) {
+          final sent = <ResumeRequest>[],
+              rechecks = <ResumeRequest>[],
+              closings = <ResumeRequest>[];
+          await t.pumpWidget(
+            _app(
+              _view(
+                saved: _saved(),
+                assessment: _assessment(
+                  overrides: {kind: _ref(kind, state: state)},
+                  reason:
+                      'Güncel ${kind.name} sonucu ${state.name}; olumlu yeniden başlama kararı yok.',
+                ),
+                resume: sent.add,
+                recheck: rechecks.add,
+                close: closings.add,
+              ),
+            ),
+          );
+          expect(
+            _enabled(t, _resume),
+            isFalse,
+            reason:
+                '${kind.name}/${state.name}: current source alone is not affirmative permission',
+          );
+          await _tap(t, _resume);
+          expect(sent, isEmpty);
+          expect(
+            find.textContaining(
+              'Güncel ${kind.name} sonucu ${state.name}; olumlu yeniden başlama kararı yok.',
+            ),
+            findsOneWidget,
+          );
+          await _tap(t, _recheck);
+          expect(rechecks.single.interruptionId, _interrupt);
+          await _tap(t, _close);
+          expect(closings.single.interruptionId, _interrupt);
           expect(_enabled(t, _resume), isFalse);
         }
       }

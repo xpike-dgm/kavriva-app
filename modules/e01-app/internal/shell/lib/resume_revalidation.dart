@@ -47,17 +47,27 @@ class InterruptedWorkSnapshot {
 }
 
 /// Kaynak referansı yalnız bu yeni kesinti için kullanılabilir; eski onay taşınmaz.
+enum ResumeReferenceState { unknown, held, confirmed }
+
 class ResumeReference {
-  ResumeReference({required String interruptionId, required this.proof})
-    : interruptionId = _nonempty(interruptionId);
+  ResumeReference({
+    required String interruptionId,
+    required this.proof,
+    required this.state,
+  }) : interruptionId = _nonempty(interruptionId);
   final String interruptionId;
   final ExecutionProof proof;
+  // Güncellik sonuç değildir; olumlu değerlendirmeyi sağlayıcı açıkça bildirir.
+  final ResumeReferenceState state;
   bool matches(
     ExecutionScope scope,
     String interruption,
     ExecutionProofKind purpose,
     String subject,
-  ) => interruptionId == interruption && proof.matches(scope, purpose, subject);
+  ) =>
+      state == ResumeReferenceState.confirmed &&
+      interruptionId == interruption &&
+      proof.matches(scope, purpose, subject);
 }
 
 class ResumeSafetyCheck {
@@ -235,13 +245,13 @@ class _ResumeState extends State<ResumeRevalidationView> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
               ),
               Text(
-                'Mevcut fiziksel durum: ${physical ? "Bu kesinti için güncel değerlendirme mevcut" : "Henüz doğrulanmadı"}',
+                'Mevcut fiziksel durum: ${physical ? "Bu kesinti için olumlu olarak yeniden doğrulandı" : "Henüz olumlu olarak doğrulanmadı"}',
               ),
               Text(
-                'Motosiklete uygunluk: ${fit ? "Güncel değerlendirme mevcut" : "Henüz doğrulanmadı"}',
+                'Motosiklete uygunluk: ${fit ? "Bu kesinti için olumlu olarak yeniden doğrulandı" : "Henüz olumlu olarak doğrulanmadı"}',
               ),
               Text(
-                'Hazırlık koşulları: ${preparation ? "Güncel değerlendirme mevcut" : "Henüz doğrulanmadı"}',
+                'Hazırlık koşulları: ${preparation ? "Bu kesinti için olumlu olarak yeniden doğrulandı" : "Henüz olumlu olarak doğrulanmadı"}',
               ),
               if (current && a.checks.isNotEmpty)
                 for (final item in a.checks) ...[
@@ -254,7 +264,7 @@ class _ResumeState extends State<ResumeRevalidationView> {
                   _Status('Durma koşulu: ${item.check.stopCondition}'),
                   Text(
                     item.matches(w.scope, w.interruptionId)
-                        ? 'Bu kesinti için güncel ve açıkça gözden geçirilmiş kontrol mevcut.'
+                        ? 'Bu kesinti için yeniden doğrulandı ve açıkça gözden geçirildi.'
                         : 'Henüz doğrulanmadı. Eski onay, fotoğraf, beyan veya ses girdisi tek başına yeterli değildir.',
                   ),
                   if (!item.matches(w.scope, w.interruptionId))
@@ -278,7 +288,7 @@ class _ResumeState extends State<ResumeRevalidationView> {
               if (current && !ready) _Status('Neden kapalı? ${a.reason}'),
               _Status(
                 ready
-                    ? 'Güncel koşullar bu kesinti için yeniden değerlendirildi. Bu sonuç başarı garantisi değildir.'
+                    ? 'Güncel fiziksel durum, uygunluk, hazırlık ve zorunlu kontroller bu kesinti için olumlu olarak yeniden doğrulandı. Kaynak kararı güncel rehber adımı yoluna izin veriyor; bu sonuç başarı garantisi değildir.'
                     : 'Gerekli güncel kontroller tamamlanana kadar rehber adımı kapalı.',
               ),
               if (w.busy)
