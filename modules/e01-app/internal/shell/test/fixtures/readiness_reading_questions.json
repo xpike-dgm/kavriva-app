@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "task": "T-E1-005b",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Bağımsız ilk okuyucu; yalnız gerçek ekran görüntüleri ve sorular, dış yardım/kod/plan/cevap anahtarı yok. AI profili insan veya cihaz kullanılabilirlik kanıtı değildir.",
+  "passRule": "Bütün sorular ek dış açıklama veya yardım olmadan doğru cevaplanmalı; yanlış/cevapsız soru CHANGES_REQUESTED ve metin düzeltmesi/yeniden okuma gerektirir.",
+  "questions": [
+    {
+      "id": "011-ready-what",
+      "surface": "ready",
+      "question": "Bu ekranda neleri kontrol ediyorsun; zorunlu, kritik ve isteğe bağlı koşullar nasıl ayrılıyor?"
+    },
+    {
+      "id": "011-ready-why",
+      "surface": "ready",
+      "question": "Uygulamaya hazır sonucu neye dayanıyor; yalnız deneyimliyim demen yeterli mi?"
+    },
+    {
+      "id": "011-ready-next",
+      "surface": "ready",
+      "question": "Güncel uygunluk ve zorunlu hazırlık koşulları doğrulandıysa sıradaki seçenek nedir?"
+    },
+    {
+      "id": "012-hold-what",
+      "surface": "hold",
+      "question": "İşe neden başlayamıyorsun; hangi koşul eksik ve neden önemli?"
+    },
+    {
+      "id": "012-hold-why",
+      "surface": "hold",
+      "question": "Hazırım veya deneyimliyim demek eksik koşulu geçer mi; neden?"
+    },
+    {
+      "id": "012-hold-next",
+      "surface": "hold",
+      "question": "Eksik koşulu gidermek ve tekrar kontrol istemek için hangi yollar var; bu istek koşulu kendiliğinden doğrular mı?"
+    },
+    {
+      "id": "011-unknown-what",
+      "surface": "unknown",
+      "question": "Bilgi eski veya eksikse bu ekran seni hazır sayıyor mu?"
+    },
+    {
+      "id": "011-unknown-why",
+      "surface": "unknown",
+      "question": "Önceki bir kontrol neden şimdi işe başlamak için yeterli değil?"
+    },
+    {
+      "id": "011-unknown-next",
+      "surface": "unknown",
+      "question": "Güncel sonuç almak veya yalnız bilgi edinmek için ne yapabilirsin?"
+    }
+  ]
+}
