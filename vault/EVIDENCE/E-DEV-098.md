@@ -2,7 +2,7 @@
 test_id: E-DEV-098
 contract_id_version: "SCR-005/008; C1.0/F1.0.1/FL1.0.2 garage v1"
 subject_file: modules/e01-app/internal/shell/lib/garage_context.dart
-subject_digest: 5d6b19a0a4b86699df3d0897ac86814f0e45fb5a28039f0020ce2842970f6e10
+subject_digest: 8ea53ed011947455f56d3a1e90f29859cae19b295f6261f4a9e738eecbbd7d9e
 result: "RECORDED Garaj sunumu; bağımsız bütün görev kabulü bekleniyor"
 evidence_links:
   - "vault/PROFILES/garage-context-render.md"
@@ -53,3 +53,35 @@ Güncel bağlı fixture ile analyze0issue12.2s ve bütün22 widgetPASS~2s; ölç
 Son finalfixture ile format/analyze/23PASS tamamlandı; önceki sonuçların sınırı yukarıda korunur. Bütün kaynak kabulü bu görevin literal canonical kapsamına göre ayrı reviewer tarafından yapılacak. Profil `vault/PROFILES/garage-context-render.md`; pack `vault/PACKS/P-E1-002.md`; görev `vault/REGISTRY/T-E1-002.md`. Graph/manual13/pins13/diff sonuçları ayrıca gerçek doğrulamadan sonra kaydedilir.
 
 Kaynak graph doğrulaması gerçek12/12 +42regresyon PASS.470s/worstexit0; build90REVIEW/routing/diff PASS. Manuel13izinliyol/13tabanpin/rawv64byteeşitliği/priorEDEV097birincilbodykodsubjectkorunumu ve eski shellkod/test/SDKlock/publock/workflow LFbyte eşitliği PASS. Bu kayıt kaynak dondurulmadan önceki gerçek yerel sonuçtur; aynı dondurulmuş başlığın CI ve bağımsız bütün görev kabulü ayrıca beklenir.
+
+## İlk kaynak sonucu ve kontrast düzeltmesi
+
+## Gerçek bb994 kaynak CI makbuzu
+
+Kaynak bb9945751da4dcafe85862e548e7dacd603b9fb5; PR100. Gerçek17/17SUCCESS; push8/PR8/labeledarchitecture1. PR labeledarchitecture37174860388/checks111355273481yedi başarılı adım; T3111355273525beş başarılı adım. Opened ve pushT3skipped/sıfır adım onay değildir. E1PR37174830873/job111355185850sekizadımSUCCESS; format4dosya0değişim/analyze0sorun6.3s/22widgetPASS, local23ekcaptureilefarkı açıklıdır. E4PR37174830810:170PASS.179s; E9PR37174830925:9PASS.001s. SDK/kilit/shell/workflow kaynağı unchanged. Bağımsız wholehüküm henüz bekliyor, CItekbaşınaDONE değil.
+
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174860388 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830916 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830822 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830925 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830810 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830865 — SUCCESS.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830829 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830873 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174830833 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776808 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776761 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776724 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776938 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776768 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776760 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776744 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37174776699 — SUCCESS.
+
+Yukarıdaki bekleyişler yazıldıkları zamana aittir. bb994 başlığının bağımsız bütün görev incelemesi /root/e1002_garage_full_review: CHANGES_REQUESTED, tek P2. Şeffaf seçim/işlem yüzeyinin #CCD5E0 sınırı gerçek #F8FAFC shell zemini üzerinde 1.42:1; seçim satırını kontrol olarak ayıran işaret yeterince belirgin değil. Diğer kanonik kapsam maddelerinde ayrı bulgu yok; 13 yol/pin ve ham v64 bağımsız doğrulandı. İncelemeci test/CI/ağ çağrısı yapmadı; gerçek CI yukarıda ayrı sorgulandı. Model ayarı önceki oturum kaydıdır; incelemeci kendi iç model etiketinden Luna Max doğrulayamıyor, yeniden inceleme açık gpt-6-luna/max isteğiyle oluşturulacak.
+
+Normal sınır #5E6E81 olarak düzeltildi; yeni test renkleri sabit beklenen değer olarak kopyalamaz: gerçek action Container Border boyasını, en yakın gerçek ColoredBox zeminini ve inherited DefaultTextStyle yazısını ölçer. Gerçek KavrivaShell içinde seçili/seçili olmayan iki satır ve yönetim/geçmiş kontrollerinin sınırı en az3:1, yazısı en az4.5:1; gerçek Tab odağı sonrası sınır da en az3:1. Bu bu ekranın kontrol işareti doğrulamasıdır; her kenarlık için evrensel WCAG koşulu veya fiziksel cihaz kabulü iddiası değildir. Global token/font/tema politikası kesinlenmedi.
+
+Düzeltmenin ilk analyze koşusu exit1/2hata: Finder üzerinde single getter yok; widget/element erişimleri zaten tek eşleşmeyi zorunlu tuttuğundan kaldırıldı. İlk yeni tam test23geçiş/1hata: açık ensureSemantics handle addTearDown sırasında geç kapandığı için harness son doğrulaması başarısız; gereksiz ek handle kaldırıldı. Bunlar PASS sayılmaz. İlk apply_patch beklenen satır biçimi eşleşmedi, hiçbir dosyayı değiştirmedi; gerçek çok satırlı renk ifadesi okunup dar değişiklik yapıldı.
+
+Son gerçek format4dosya0değişim.06s, analyze0sorun10.3s; tam24/24 widgetPASS~2s (garage13+shell10+optionalPNG1), CI capture kapalı23. Yeni PNG SHA256 a4122a374e739f5fd3ee0db7aa8ca9783f515eb30a715b3e0b524a17fd27625b gerçek390x844; görüntü tekrar açılarak belirgin sınırlar, açık zemin, okunur Türkçe ve taşma yokluğu görüldü. Eski PNG/23 yerel/22 CI makbuzları tarihsel olarak korunur. Güncel kod LF 8ea53ed011947455f56d3a1e90f29859cae19b295f6261f4a9e738eecbbd7d9e; güncel test LF 60a8292795afc74db36fac6fd2e1f5c99ec0411748f37f735c1e6636f2430f1d. Yeni dondurulacak kaynak için whole bağımsız kabul ve aynı yeni kaynak CI/T3 beklenir; bb994 yeşili yeni başlık için kanıt değildir. Üretim/cihaz/kimlik/veri/fiziksel iş/yayın HELD aynen.

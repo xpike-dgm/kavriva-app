@@ -41,8 +41,10 @@ Etiketler Türkçe; numeric/mileage/reminder kaynağı yoksa değer veya birim u
 
 ## Doğrulama ve kalan kaynaklar
 
-Yerel son paket format4dosya0değişim, analyze0sorun12.5s, 23 widgetPASS (12garage+10shell+1optionalTempPNGcapture). CI capture açmaz, 22 davranış testi çalıştıracak. Gerçek390x844 PNG açık zeminde seçili denemeB, iki motosiklet satırı, yönetim/geçmiş girişleri ve beş sekme gösterir; üretim ekranı/verisi/yayın kanıtı değildir. SDK3.47/engine/Dart3.13/24lockeddeps ve bütün mevcut lock/workflow/shell kod/test kaynakları değişmez. İlk analyze/test/PNGQA başarısızlıkları kanıtta korunur.
+Yerel son paket format4dosya0değişim, analyze0sorun10.3s, 24 widgetPASS (13garage+10shell+1optionalTempPNGcapture). CI capture açmaz, 23 davranış testi çalıştıracak. Gerçek390x844 PNG açık zeminde seçili denemeB, iki motosiklet satırı, yönetim/geçmiş girişleri ve beş sekme gösterir; üretim ekranı/verisi/yayın kanıtı değildir. SDK3.47/engine/Dart3.13/24lockeddeps ve bütün mevcut lock/workflow/shell kod/test kaynakları değişmez. İlk analyze/test/PNGQA başarısızlıkları kanıtta korunur.
 
 Bütün canonical kaynak ve exactsourceCI/T3 bağımsız Luna Max incelemesi beklenir; sırf fixture veya belge varlığı DONE sayılmaz. E3R1 REVIEW/E5-003 IN_PROGRESS/PR47-57-59/retliPR97, gerçek producer/authority/cihaz/physical safety/yayın HELD değişmez. Boş public_contracts yeni runtime seam yokluğunu; boş supersedes önceki record değiştirilmediğini belirtir.
 
 Pack `vault/PACKS/P-E1-002.md`; görev `vault/REGISTRY/T-E1-002.md`; kanıt `vault/EVIDENCE/E-DEV-098.md`.
+
+İlk kaynak bb994 bağımsız CHANGES_REQUESTED/P2 kontrol işareti kontrastı; aynı görevde normal sınır belirginleştirildi. Gerçek shell üzerindeki boya/yazı/zemin ve klavye odağı ölçümü yeni teste eklendi. Güncel 24 yerel PASS, yeni bütün kaynak incelemesi ve aynı kaynak CI bekleniyor; önceki 17 yeşil yalnız bb994 makbuzudur. Geçmiş kanıtta korunur.

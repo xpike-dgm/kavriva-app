@@ -120,6 +120,38 @@ Future<void> _show(WidgetTester tester, Finder target) async {
   await tester.pumpAndSettle();
 }
 
+double _contrast(Color first, Color second) {
+  final a = first.computeLuminance();
+  final b = second.computeLuminance();
+  return a > b ? (a + 0.05) / (b + 0.05) : (b + 0.05) / (a + 0.05);
+}
+
+void _checkActionPaint(WidgetTester tester, Finder target) {
+  final container = tester.widget<Container>(
+    find.descendant(of: target, matching: find.byType(Container)),
+  );
+  final decoration = container.decoration! as BoxDecoration;
+  final border = decoration.border! as Border;
+  final text = find.descendant(of: target, matching: find.byType(Text));
+  final element = tester.element(text);
+  Color? background;
+  element.visitAncestorElements((ancestor) {
+    if (ancestor.widget case ColoredBox(:final color)) {
+      background = color;
+      return false;
+    }
+    return true;
+  });
+  expect(background, isNotNull);
+  expect(decoration.color, isNull);
+  expect(border.top.color.a, 1);
+  expect(background!.a, 1);
+  expect(_contrast(border.top.color, background!), greaterThanOrEqualTo(3));
+  final ink = DefaultTextStyle.of(element).style.color!;
+  expect(ink.a, 1);
+  expect(_contrast(ink, background!), greaterThanOrEqualTo(4.5));
+}
+
 void main() {
   test('boş, çift, kayıp ve başka motosiklete bağlı girdiler reddedilir', () {
     expect(() => _bike('', 'Ad'), throwsArgumentError);
@@ -343,6 +375,67 @@ void main() {
       findsOneWidget,
     );
     expect(find.textContaining('Seçili motosiklet:'), findsNothing);
+  });
+
+  testWidgets('gerçek shell içinde seçim ve işlem işaretleri belirgindir', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _app(
+        KavrivaShell(
+          selectedSection: KavrivaSection.garage,
+          showNavigation: true,
+          onSectionRequested: (_) {},
+          pages: {
+            KavrivaSection.garage: _view(
+              _snapshot(selected: 'b'),
+              selection: (_) {},
+              lifecycle: (_) {},
+              history: (_) {},
+            ),
+            for (final s in KavrivaSection.values.where(
+              (s) => s != KavrivaSection.garage,
+            ))
+              s: Text('Deneme bölüm: ${s.label}'),
+          },
+        ),
+      ),
+    );
+    final targets = [
+      find.bySemanticsLabel('Motosikleti yönet'),
+      find.bySemanticsLabel('Bu motosikletin geçmişini aç'),
+      find.byKey(const ValueKey('select:a')),
+      find.byKey(const ValueKey('select:b')),
+    ];
+    for (final target in targets) {
+      await _show(tester, target);
+      expect(
+        tester.getSemantics(target).flagsCollection.isEnabled,
+        ui.Tristate.isTrue,
+      );
+      _checkActionPaint(tester, target);
+    }
+    expect(
+      tester.getSemantics(targets[2]).flagsCollection.isSelected,
+      ui.Tristate.isFalse,
+    );
+    expect(
+      tester.getSemantics(targets[3]).flagsCollection.isSelected,
+      ui.Tristate.isTrue,
+    );
+    for (var i = 0; i < 15; i++) {
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      if (tester.getSemantics(targets[3]).flagsCollection.isFocused ==
+          ui.Tristate.isTrue) {
+        break;
+      }
+    }
+    expect(
+      tester.getSemantics(targets[3]).flagsCollection.isFocused,
+      ui.Tristate.isTrue,
+    );
+    _checkActionPaint(tester, targets[3]);
   });
 
   testWidgets('klavye isteği yalnız doğru motosiklet kimliğini taşır', (

@@ -263,7 +263,7 @@ class _GarageActionState extends State<_GarageAction> {
               width: 2,
               color: focused
                   ? const Color(0xFF0E5BD8)
-                  : const Color(0xFFCCD5E0),
+                  : const Color(0xFF5E6E81),
             ),
           ),
           child: Text(widget.label),
