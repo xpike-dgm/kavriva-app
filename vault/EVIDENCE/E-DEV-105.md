@@ -225,3 +225,51 @@ PR checks job111464373958: 7 başarılı adım/success.
 PR E1 gerçek log: formatter18zero/analyze0issue/120PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
 
 İlk17CI yeşili P1i kapatmaz. İlk13PNG/ilk9yanıt/kaynakCI-logları Tempkavriva_e1007_r1_* bayt eşit arşivlerdir; ilk hüküm SHA256 f01d0ad43b0e6cfa16615eb2f5e94bcbf83e2db624aaf9807de518a80bd3e097. Yeni test/veri-modeli/dar guard/yeni ilk okuyucu/yeni bütün exacthead incelemesi olmadan kabul veya merge yok. Gerçek main93/kalan113 değişmedi.
+
+## P1 düzeltme kodundan sonraki ikinci ilk okuma — kabul edilmedi
+
+Typedstate6eba44bc9441328af26fb3cb89bcb85e5b6f863b/122localPASS/14nativePNG. İlk528bütün kaynak ret hükmü değişmedi. İkinci geçmişsiz okuyucu anlam belirsizliği; implementer açıklık CHANGES_REQUESTED, henüz yeni bütün kaynak hükmü yok. Aşağıdaki gerçek rapor değişmeden korunur.
+
+# E1007 R2 — bağımsız ilk okuyucu raporu
+
+## Yöntem ve sınırlar
+
+14 PNG'nin her birini `view_image` ile özgün 390×844 boyutunda inceledim; bunlar aynı ekranın örtüşen kaydırmaları. Dondurulmuş soru JSON dosyasını okudum. Kod, plan, başka rapor, cevap anahtarı veya dış kaynak açmadım; repo değiştirmedim. Bu bir yapay zekânın ekran metni okumasıdır; insan/telefon kullanılabilirliği testi veya mühendislik kabulü değildir.
+
+## Açılan girdi dosyaları
+
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-held-0.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-held-1.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-pending-0.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-pending-1.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-pending-2.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-ready-0.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-ready-1.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-ready-2.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-changed-0.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-changed-1.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-changed-2.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-history-0.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-history-1.png
+- C:/Users/Xpike/AppData/Local/Temp/kavriva_e1007_r2-history-2.png
+- C:/Users/Xpike/.codex/worktrees/e4-required-auto-transfer/kavriva-app/modules/e01-app/internal/shell/test/fixtures/resume_reading_questions.json
+
+## Sorulara kendi yanıtlarım
+
+1. **Kaydedilen adım motosikletin şu anki durumunu doğrular mı?** Hayır. Ekran açıkça diyor ki kayıtlı ilerleme mevcut durumu doğrulamaz; bunlar geçmiş bağlamdır.
+2. **İşe yeniden başlamadan önce ne yapılmalı?** Mevcut fiziksel durum, motosiklete uygunluk, hazırlık koşulları ve zorunlu kontroller güncel rehbere göre yeniden doğrulanmalı. Gerekli güncel kaynak kararı ve kontroller olumlu değilse normal devam açılmıyor.
+3. **Eski kritik kontrol onayları otomatik geçerli mi?** Hayır. Eski onaylar kendiliğinden geçerli sayılmıyor; kritik koşullar güncel olarak doğrulanmalı.
+4. **Eski adım, sökülmüş parçalar ve notlar ne amaçla gösteriliyor?** Bunlar “önceki bağlam ve kaynak ayrıntıları” olarak sunuluyor: son kesin adım 3/9, kayıtlı adım 4/9, sökülmüş/gevşetilmiş parçalar, ölçüm notu, fotoğraf/not referansları ve önceki güvenlik/hazırlık notları. Geçmişte ne olduğunu hatırlatıyor gibi görünseler de teknik talimat veya güncel kanıt değiller. Ekran bunların tam kullanıcı amacını açıklamıyor.
+5. **Fotoğraf veya not eklemek tek başına adımı açar mı?** Hayır. Gözlem tek başına kritik kontrolü doğrulamıyor veya rehber adımını açmıyor.
+6. **Güncel kaynak veya zorunlu kontrol eksikse devam edilebilir mi?** Hayır. Koşul eksik ya da belirsizse normal ilerleme duruyor; güncel olumlu kaynak kararı ve tüm zorunlu kontroller gerekiyor.
+7. **Rehber sürümü değişmişse eski adımdan devam edilir mi?** Hayır. Ekran eski adımdan devam edilemeyeceğini, güncel fiziksel durumun yeni rehberle yeniden eşlenmesi gerektiğini söylüyor.
+8. **Yeniden kontrol düğmesi tamamlandı veya devam izni üretir mi?** Hayır. Yalnızca yeniden değerlendirme isteği gönderir; kendi başına devam izni vermez veya işi tamamlandı yapmaz.
+9. **Devam edilemezse güvenli kapatma bilgisine ulaşılabilir mi?** Evet. “Güvenli şekilde durdurma yolunu aç” bağlantısı var. Açıklama, bilginin ücret gerektirmediğini ve işi tamamlandı/güvenli olarak kaydetmediğini söylüyor.
+
+## Anlam belirsizlikleri
+
+- 4. sorudaki geçmiş kayıtların tam gösterim amacı belirtilmiyor. “Önceki bağlam ve kaynak ayrıntıları” etiketi var; kesin amaç çıkarılamıyor.
+- Hazır ekranlarında kontrollerin olumlu yeniden doğrulandığı ve kaynak kararının adım yoluna izin verdiği yazarken aynı “Devam etmeden önce yeniden kontrol” başlığı ve “Yeniden kontrol iste” düğmesi kalıyor. Sonraki eylem belirsizleşebilir; ayrıca metin başarı garantisi vermediğini söylüyor.
+- “Güncel rehber adımını aç” bağlantısı, bazı ekranlarda gerekli kontroller bitene dek adımın kapalı olduğu uyarısıyla birlikte görünüyor. Bağlantının yalnızca içeriği görüntülediği mi yoksa adım akışını açtığı mı açıklanmıyor; düğmenin devam izni vermediği ise açık.
+- Motosiklet tanımı “kullanıcı beyanı”, kontrol/ölçüm değerleri de örnek olarak sunuluyor. Bunların bağımsız doğrulanmış gerçekler veya mühendislik ölçümleri olduğu ekrandan anlaşılmıyor; rapor bunları böyle kabul etmiyor.
+
