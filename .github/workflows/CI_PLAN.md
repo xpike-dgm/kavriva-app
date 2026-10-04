@@ -354,3 +354,7 @@ ADR012R4 bütün bileşik nitelikler/tam cümle/tam 9/6/5/7 ölçüm kalemi ve h
 ## E1 Garaj bağlamı kontrolü
 
 Mevcut sabit SDK/lock workflow değişmeden garage13+shell10=23 headless davranış testi, formatter/analyze çalıştırır; localoptionalPNG CI’da açılmaz. Snapshot/kimlik/selectionistek-vs-karar/başka-moto-uyarı-iş sızıntısı/inactivehistory/criticalprominence/cacheunknown/empty/TR/klavye/9ölçek/gerçekshellintegration; graph12+42/pin13/rawv64/exact13/priorprimary preservation + whole bağımsız kaynak/CI ve son kayıt denetimi/CI zorunlu. Pack `vault/PACKS/P-E1-002.md`; kanıt `vault/EVIDENCE/E-DEV-098.md`. Yedi eski CI ailesi korunur, gerçek source/final16/T3; ürün/cihaz gate HELD.
+
+## İlk kullanım ve motosiklet ekleme kontrolü
+
+MevcutlockedSDK/workflowunchanged; firstuse12+garage13+shell10=35mandatorytest, optionalcaptureCIkapalı. Üçintent/hesapzorlamayanbaşlangıç/markamodelyıl/unknownyear/invalidnoemit/errorbusydraftpreservation/disabled/back/keyboard/9scale/min48/actualpaintcontrast. Graph12+42/manual13pin/rawv65/exact13/priorprimary ve bütün bağımsızscope+actualsource/finalCI/T3 gerekir. Pack `vault/PACKS/P-E1-003.md`; kanıt `vault/EVIDENCE/E-DEV-099.md`. Actualprod/device/physicalreleaseHELDMISSING.
