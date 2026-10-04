@@ -110,6 +110,8 @@ used_by:
   - "E-DEV-104"
   - "P-E1-007"
   - "E-DEV-105"
+  - "P-E1-008"
+  - "E-DEV-106"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -417,3 +419,10 @@ Aynı e1-tests.yml sabitSDK/lock/format/analyze/bütün widgettest;14yeni+106ön
 ## Resume P1/P2 dar düzeltme ve açıklık test kapsamı
 
 İlk14+106=120CI/121local geçmiş kayıt korunur. Typedstatefix15+106/122local sonrası açıklık dar onarım16+106=122normalCI; nativecaptureile123localPASS. Strict18zero/analyze0; İlkisHidden ve scaffoldoldguard0PASS1FAIL, retliiki okuma korunur. WorkflowYAML aynı; yeni actualCI/bağımsız inceleme beklenir.
+
+## Rehber değişiminde yeniden eşleme test kapsamı
+
+Aynı e1-tests.yml ve sabit SDK/lock/format/analyze/bütün testler. Önceki 122 + yeni 18 = normal CI 140; yalnız yerel native PNG testiyle 141. Strict formatter 20 / 0 değişiklik, analyze 0 sorun, 31 R4 görüntüsü. Dinamik odak kaybı gerçek başarısız testle bulundu ve kararlı eylem anahtarlarıyla düzeltildi. Workflow YAML değişmedi. CON-004 ilk okuma, bütün bağımsız kaynak/ayrı son metadata ve gerçek aynı CI/T3 ayrıca zorunludur.
+
+
+`vault/PROFILES/guide-change-remap-render.md`; `vault/PACKS/P-E1-008.md`; `vault/REGISTRY/T-E1-008.md`; `vault/EVIDENCE/E-DEV-106.md`.

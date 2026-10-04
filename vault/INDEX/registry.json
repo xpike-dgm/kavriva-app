@@ -577,6 +577,78 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-008",
+   "version": "1",
+   "flow_feature": "FL1.3.3/F1.3.1",
+   "objective": "Rehber değişiminde fiziksel durumun yeni rehbere eşlenmesi",
+   "context_pack": "P-E1-008",
+   "acceptance": "Remap required; no guessed continuation; bottom-bar HELD; novice-comprehensible copy (CON-004; verified at F10.6.1 gate)",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-04",
+   "purpose": "Materyal rehber değişiminde fiziksel durumun yeniden eşlenmesini sunmak",
+   "domain": "first-use",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-008",
+    "C1.3",
+    "F1.3.1",
+    "SCR-017",
+    "BR-018",
+    "BR-019",
+    "BR-020",
+    "BR-021",
+    "BR-022",
+    "BR-028",
+    "BR-039",
+    "BR-048",
+    "BR-059",
+    "BR-075",
+    "BR-084",
+    "BR-104",
+    "BR-124",
+    "BR-125",
+    "BR-126",
+    "BR-127",
+    "BR-148",
+    "BR-149",
+    "CON-001",
+    "CON-002",
+    "CON-003",
+    "CON-004",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-011",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "material-guide-change-remap-presentation",
+   "tasks": [
+    "T-E1-008"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-04",
+   "depends_on": [
+    "T-E1-006"
+   ],
+   "used_by": [
+    "V-E1-REMAP-001",
+    "P-E1-008",
+    "E-DEV-106"
+   ],
+   "evidence": "E-DEV-106",
+   "supersedes": "planning TASK_INDEX T-E1-008",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
