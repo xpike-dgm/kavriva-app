@@ -985,7 +985,7 @@ class _DiagnosisActionState extends State<_DiagnosisAction> {
                       ? const Color(0xFFC5CFDF)
                       : widget.primary
                       ? const Color(0xFF8995AA)
-                      : const Color(0xFFFFFFFF),
+                      : const Color(0xFFC5CFDF),
                   width: focused ? 3 : 1,
                 ),
               ),
@@ -1035,6 +1035,18 @@ class _DiagnosisActionState extends State<_DiagnosisAction> {
                       ),
                     ),
                   ),
+                  if (!widget.primary && widget.selected == null) ...[
+                    const SizedBox(width: 12),
+                    const ExcludeSemantics(
+                      child: Text(
+                        '›',
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: Color(0xFF526079),
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
