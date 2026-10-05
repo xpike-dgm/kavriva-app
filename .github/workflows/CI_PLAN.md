@@ -114,6 +114,8 @@ used_by:
   - "E-DEV-106"
   - "P-E1-009"
   - "E-DEV-107"
+  - "P-E1-010"
+  - "E-DEV-108"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -455,3 +457,10 @@ Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 12
 ## T-E1-009 güncel sürüm4 — tek operatif kabul sayımı
 
 16kodöncesisoru;26duyarlıdurum×9;58gerçeknativePNG.142önceki+36yeni=178normalCI; yerelnativeyakalamaile179PASS. Strictformatter22zero/analyze0; workflowYAML/SDK-lock/önceki142 değişmedi. Geçerli outcome-held ayrı rendering/native ve olumlu boyutlara rağmen normalyolun açılmaması/yalnız bilgi-destekniyetleri regresyonu mevcut. Önceki12/14/15soru,38/43/55/56PNG ve172/176/177CI rakamları tarihsel kaynak kimlikleriyle korunur; bu yeni sayım onların sonucunu değiştirmez. Güncel kaynağın GitHubCI/T3 ve bütün bağımsız hükmü henüz beklenir.
+
+## Güncel bakım sunumu doğrulama kapsamı
+
+Bu kaynakta normal widget sayısı203=önceki178+yeni25; yerel native yakalama ile204PASS. Strictformat24dosya0değişiklik/analyze0;31durum×9responsive/81nativePNG390844/52hedef/gerçekklavye/disabledSemantics/liveRegion/boyanmışkontrast/fatalpointer. SabitSDK/lockedpubget ve workflowYAML korunur. Güncel bakım fixture15kodöncesoruya geçmişsiz LunaMax doğru cevap verdi; AI okuması insan veya telefon kanıtı değildir. Ayrı bütün bağımsız kaynak ve son6metadata incelemesi ile actualsameCI/T3 zorunlu. Yerel testCIyerinegeçmez. Önceki tanı sayımları kendi tarihsel kaynaklarına aittir.
+
+
+`vault/PROFILES/maintenance-render.md`; `vault/PACKS/P-E1-010.md`; `vault/REGISTRY/T-E1-010.md`; `vault/EVIDENCE/E-DEV-108.md`.

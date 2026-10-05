@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e01-app"
 owner: "E1"
 depends_on: [M-E3-001, M-E5-001, M-E4-001]
-used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107]
+used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-MAINT-001, P-E1-010, E-DEV-108]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E1"
 public_contracts:
   - "[[modules/e01-app/MANIFEST.md#Public contract surface (only this is usable across boundaries)]]"
 internal_scope: "Flutter widget tree, navigation state, caches, offline reads of E4 packages, in-flight UI state. No direct database access; no Supabase service_role; no signing keys; no canonical truth stored here."
-tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart]
-evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107]
+tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009, T-E1-010]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/maintenance_test.dart]
+evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107, E-DEV-108]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -152,3 +152,10 @@ Kısmi beyan null/yabancı providerresult olmadan güncel scope ile niyet üreti
 
 
 `vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
+
+## Bakım sunumu tüketimi
+
+`modules/e01-app/internal/shell/lib/maintenance.dart` yalnız SCR022..024 sunar; güncel dış kaynak/geçmiş/zaman/öncelik ve işlem kontrollerini tüketir. E1 bakım veya hatırlatma gerçeği oluşturmaz. E3/E5/kimlik/DB/Supabase/kalıcılık ve gerçek uzlaştırmaT4-011b-T3-004 bağlantısı HELD. Manifest tüketici/test/kanıt kaydı çalışma zamanı bağlantısı değildir.
+
+
+`vault/PROFILES/maintenance-render.md`; `vault/PACKS/P-E1-010.md`; `vault/REGISTRY/T-E1-010.md`; `vault/EVIDENCE/E-DEV-108.md`.

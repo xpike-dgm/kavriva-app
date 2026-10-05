@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-05
 depends_on: [V-E1-DIAG-001]
-used_by: [V-E1-DIAG-001, P-E1-009, T-E1-009]
+used_by: [V-E1-DIAG-001, P-E1-009, T-E1-009, V-E1-MAINT-001, P-E1-010]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -1317,3 +1317,7 @@ Bağımsız rapor RAW SHA256 413c0809835bcbb6d8fdf481d2c4624698c6f7c3fa94e42110f
 ## Sahip tarafından kabul edilen bağımsız inceleme yetkisi
 
 Sahip bu konuşmada bağımsız alt ajan incelemesini kabul etti ve bundan sonraki incelemeler için gpt-6-luna/max modelini istedi. Sahip ayrıca aksini söyleyene kadar bütün görevler için sürekli onay verdi; bu görevde yetki geri alınmamıştır. Plan kararları DEC-0069 ve DEC-0070 ile `planning 07_AI_ARCHITECTURE/TASK_EXECUTION_PROTOCOL.md` içindeki sahip onaylı değişiklikler bu sürekli yetkinin kontrollü kaydıdır. Bu kapsamda /root/e1009_ui_r4_full_review gpt-6-luna/max ayrı uygulayıcıdan bağımsız incelemecidir; exact837b8b837bf628d430c97049e38c7c429cbeca3c ve izinli15dosya üzerindeki FULL PASS hükmü, bulgu kapanışları ve değiştirilmemiş raporu yukarıda kaydedilmiştir. Sahip kabulü, bağımsız hükmün veya gerçek aynı kaynak CI/T3 kontrollerinin yerine geçmez. Sonaltı kayıt için ayrı /root/e1009_ui_v4_final_metadata_review gpt-6-luna/max hükmü ve aynı son CI/T3 hâlâ gereklidir; incelemesiz veya main üzerine doğrudan birleştirme yetkisi verilmiş sayılmaz.
+
+## T-E1-010 tüketimi ve gerçek PR109 ikincil makbuzu
+
+PR109 https://github.com/xpike-dgm/kavriva-app/pull/109 MERGED@2026-10-05T11:57:48Z; source837b8b837bf628d430c97049e38c7c429cbeca3c FULL PASS, son6metadatadcbca8220144541ddfddd9b6a4595aece9b99cc7 ayrı FULL PASS. Normal matched-head mergeca3df6fbea268ff5b720a5d15193a50a1f3e1bda; fetchedmain/sonağaçeşit; gerçeksource16/final16/main8jobsstepslogsSUCCESS. SourceT3run37302717285/finalT3run37304787324. Tamsonrapor ve gerçekmakbuz PR109yorum5993951246; planDEC0070unmergedprovenance açıklaması yorum5993985157. Kabul96/kalan110/206. Önceki esas gövde/tarihselretler/yerelhatalar/değiştirilmemiştamraporlar korunur. Bu ek T-E1-010 kabulü değildir.
