@@ -453,6 +453,45 @@ Future<void> _prepareState(WidgetTester t, String name) async {
 }
 
 void main() {
+  test('R8 farklı UTF16 kimlikleri birbirinin kaynak ve iznini kullanamaz', () {
+    final values = [
+      String.fromCharCodes([0xd800]),
+      String.fromCharCodes([0xd801]),
+      String.fromCharCodes([0xfffd]),
+      '%ud800',
+    ];
+    for (var index = 0; index < values.length; index++) {
+      final original = _item(id: values[index]);
+      final own = _item(
+        id: values[index],
+        source: _ref('maintenance-source', original.subject),
+        overrides: {
+          for (final action in _gated)
+            action: _permit(action, original.subject),
+        },
+      );
+      expect(own.sourceConfirmed(_scope(), _request), isTrue);
+      for (final action in _gated) {
+        expect(own.permit(action, _scope(), _request), isTrue);
+      }
+      for (var otherIndex = 0; otherIndex < values.length; otherIndex++) {
+        if (otherIndex == index) continue;
+        final other = _item(
+          id: values[otherIndex],
+          source: _ref('maintenance-source', original.subject),
+          overrides: {
+            for (final action in _gated)
+              action: _permit(action, original.subject),
+          },
+        );
+        expect(other.sourceConfirmed(_scope(), _request), isFalse);
+        for (final action in _gated) {
+          expect(other.permit(action, _scope(), _request), isFalse);
+        }
+      }
+    }
+  });
+
   test('R7 virgüllü kimlik eski öncelik kanıtını başka listeye taşıyamaz', () {
     final original = _plan(
       items: [_item(id: 'a', revision: 'b,c/d')],

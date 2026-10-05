@@ -1,7 +1,29 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-String _identity(String value) => Uri.encodeComponent(value);
+String _identity(String value) {
+  final units = value.codeUnits;
+  var malformed = false;
+  for (var index = 0; index < units.length; index++) {
+    final unit = units[index];
+    if (unit >= 0xd800 && unit <= 0xdbff) {
+      if (index + 1 < units.length &&
+          units[index + 1] >= 0xdc00 &&
+          units[index + 1] <= 0xdfff) {
+        index++;
+      } else {
+        malformed = true;
+      }
+    } else if (unit >= 0xdc00 && unit <= 0xdfff) {
+      malformed = true;
+    }
+  }
+  // URI çıktısında %u bulunmaz; geçersiz UTF16 kimliği kayıpsız ayrı kodlanır.
+  if (malformed) {
+    return '%u${units.map((unit) => unit.toRadixString(16).padLeft(4, '0')).join()}';
+  }
+  return Uri.encodeComponent(value);
+}
 
 String _required(String value) {
   final result = value.trim();
