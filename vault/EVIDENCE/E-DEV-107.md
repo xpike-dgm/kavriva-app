@@ -3,10 +3,10 @@ test_id: E-DEV-107
 version: 1
 contract_id_version: "SCR-019..021; C1.4/F1.4.1/FL1.4.1 diagnosis v1"
 subject_file: modules/e01-app/internal/shell/lib/diagnosis.dart
-subject_digest: 509029b6c039dab3c7d237b238f22e1d29b1ee7c6944289adc184c4e82c7362c
-result: "RECORDED R3 UI; R1/R2 ret korunur, yeni bağımsız kabul bekleniyor"
+subject_digest: 4716a25c14d2f1e56f19d6b0a9e12168f2a2cf26af271ac95ca67b6ae4af71de
+result: "RECORDED UIr4; eski retler korunur, yeni bağımsız kabul bekleniyor"
 evidence_links: [vault/PROFILES/diagnosis-render.md, vault/PACKS/P-E1-009.md, vault/REGISTRY/T-E1-009.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-106-E10-GOVERNED-PATHS-FOR-T-E1-009.md.snapshot, modules/e01-app/internal/shell/lib/diagnosis.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/fixtures/diagnosis_reading_questions.json]
-gate_verdict: "RECORDED R3 kaynak REVIEW; yeni CI ve bağımsız hüküm bekleniyor"
+gate_verdict: "RECORDED UIr4 kaynak REVIEW; aynı kaynak CI ve bağımsız hüküm bekleniyor"
 reviewer: "/root/e1009_diagnosis_full_review; R1/R2 CHANGES_REQUESTED, R3 bekleniyor"
 timestamp: 2026-10-05
 purpose: Belirti, tek gözlem ve desteklenmiş veya belirsiz tanı sonucunu sunmak
@@ -708,3 +708,144 @@ AI ilk okuması insan/telefon/yardımcı teknoloji veya model runtime tasdiki de
 - Temp kavriva_e1009_ui_r3-unknown-foreign-2.png RAW SHA256 94b2f778ea15470bd61bc4b3fbfe48ed0be3485901ba601be1d7ad98e852761f /70944byte/390×844
 - Temp kavriva_e1009_ui_r3-unresolved-0.png RAW SHA256 cdf886ee5afbfb22a85e069fabb89a149c63d409d612bc2a67f2276d3bd915c2 /69753byte/390×844
 - Temp kavriva_e1009_ui_r3-unresolved-1.png RAW SHA256 4587e3fd1949c33254aa676da6f4ad5c2a341afeb7f0fe14a22cbe858d9e6db0 /63785byte/390×844
+
+## R3 gerçek CI ve ikincil eylem ön bulgusu
+
+## Gerçek ui_source CI makbuzu
+
+Exact kaynak 2cd8602941aef6293471c3f9e914c39c57a9665f; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111724388542: 5 başarılı adım/success.
+
+PR checks job111724388698: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198631 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198518 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198520 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198437 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198503 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198435 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198574 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298198415 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194904 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194984 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194882 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298195007 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194970 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194945 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194907 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37298194796 — SUCCESS.
+
+PR E1 gerçek log: formatter22zero/analyze0issue/176PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+
+Bu sonuç yalnız2cd8602941aef6293471c3f9e914c39c57a9665f için geçerlidir; yeni koda aktarılmaz. Tam R3 bağımsız hükmü henüz beklenmektedir. İncelemecinin ön bildirimi: radio şekil/sınır/dolgu ve büyük başlık iyileşmiş; ancak beyaz kenarlıklı ikincil destek/çıkış/özet/kaynak/fotoğraf eylemleri düz metin gibi görünmektedir. Root bu somut ön bulguyu kabul ederek dar onarım yaptı. Ön bulgu tam CHANGES_REQUESTED veya PASS hükmü diye sunulmaz; geldiğinde değiştirilmeyen tam rapor ayrıca kaydedilecektir.
+
+## UIr4 — ikincil eylemlerin görünür etkileşim olması
+
+Koddan önce dar kapsame7d773eae1c08e04a03e2a12f70db73da88bfa06 commitinde paket/göreve yazıldı. Yeni kod3c671069f80a92031e69f56519b35fc203a929cb; LF SHA2564716a25c14d2f1e56f19d6b0a9e12168f2a2cf26af271ac95ca67b6ae4af71de; test LF5f8492e49bfbe1fc0dbb08aa710a140b47476dd8259a65333a17a4f3c5ec968b;15soruLFdcc0d734362eb559e160eed90e7b0dbee1ba17439e76b9bc7e30a905f4c435d9. Aynı v3 sorular ve testlerin anlamı korunur. İkincil eylemlerde sakin görünür C5CFDF çerçeve ve dekoratif yön işareti vardır; işaret ExcludeSemantics ile bağımsız eylem yaratmaz. Tek dolu ana eylem, radio daire/nokta/metin/sınır/dolgu ve klavye/odak/52hedef sınırları korunur. G01..04 hiyerarşisine ilişkin önceki karşılaştırmaya ek olarak destek/çıkış, özet, kaynak aç/kapat ve fotoğraf yolları artık açıklama paragrafından görünür çerçeve ve işaretle ayrılır. Bilinen/bilinmeyen/alternatif içerik alanları etkileşim olmadığı için yön işaretiyle yanlış tanıtılmaz.
+
+UIr4strictformatter22dosya/0değişiklik; analyze0; bütün178yerelPASS,177normalCI+1nativecapture. Lockedpubget önceki UIr3 gerçekbaşarılı ve SDK/pubspec/lock değişmedi.25×9responsive/fatalhitwarnings/gerçekkaydırma/52hedef/klavye/semantics/kontrast beklentileri korunur.56güncel gerçek390×844PNG vardır; yön işaretinin eklenmesiyle çözülemeyen sonuç ek kaydırma parçası gerektirmiştir. Root56dosyanın tamamını gerçekten açtı ve tam durum/eylem ayrımlarını gözden geçirdi. PNGler düzenlenmedi, RAWhash ve boyutları doğrulandı. Önceki55PNG ve178yerel sonuç eski UIr3 kanıtıdır; yeni görüntülere eşdeğer kabul olarak aktarılmaz.
+
+Yeni geçmişsiz ayrı Luna max okuyucu yalnız56güncelPNG/15kodöncesi soruyu gördü; kod/plan/eski rapor/anahtar/dış yardım yok. Root raporun15yanıtının tamamını okudu; anlamca doğru ve dış yardım ihtiyacı yok. Destek ve çıkışın ayrı adlandırılmış düğmeler olduğunu açıkça ayırt etti. Bu AI okuması insan/telefon/gerçekmotosiklet kullanılabilirlik veya fiziksel durum kanıtı değildir.
+
+## UIr4 geçmişsiz ilk okuma — değiştirilmemiş rapor
+
+RAW SHA25698688a6b4ae35d8210cd6f81d266add7b76a0d0fd8e3b50299e34fa5cdbf71cc
+
+E1009 UI R4 — Bağımsız ilk okuma
+
+İncelediğim görsel sayısı: 56 PNG. Listedeki 56 dosyanın her birini view_image ile açıp görüntüledim.
+
+Bu yanıtlar yalnızca ekrandaki yazı ve görünen akışa dayanır. AI tarafından yapılan bu okuma, gerçek bir insanın kullanılabilirlik denemesinin veya bir cihazın fiziksel durumuna ilişkin kanıtın yerini tutmaz.
+
+1. Hayır. Sorunu günlük dille anlatabilirsin; teknik terim bilmen gerekmiyor.
+
+2. Hayır. “Hayır” veya “Emin değilim” seçilince tanı akışı devam etmiyor. Güvenli bir yerde durman ve güvenli destek ya da çıkış yolunu kullanman söyleniyor.
+
+3. Evet. “Emin değilim” seçenek olarak var ve geçerli yanıt olduğu açıkça yazıyor.
+
+4. Hayır. Bir gözlem, olasılıkları ayırmaya yardımcı oluyor; kesin arızayı veya tamirin sonucunu doğrulamıyor.
+
+5. Doğrudan tamire başlanmıyor. Sıradaki yol rehber önizlemesini açmak. Uygulamadan önce motosiklete uygunluk ve hazırlık ayrıca kontrol edilmeli.
+
+6. Evet. Rehberin motosiklete ve varyanta uygunluğu ile hazırlık ve güvenlik kontrolleri ayrıca ele alınıyor. Olumlu kaynak değerlendirmesi sürüş izni sayılmıyor.
+
+7. Hayır. Sonuç net değilse rastgele parça değiştirilmemesi söyleniyor. Bir ek gözlem yolu açılabiliyor.
+
+8. Bilinenler, bilinmeyenler ve diğer olasılıklar ayrı gösteriliyor. Örneğin bilinen gözlem “ses yalnız fren yaparken duyulmuş”; sesin kesin nedeni bilinmiyor. Önceki gözlemlerin korunduğu da belirtiliyor.
+
+9. Hayır. Fotoğraf zorunlu değil ve eklemek otomatik teşhis, fiziksel doğrulama ya da devam izni vermiyor.
+
+10. Hayır. Sonucu belirsiz çevrimdışı istek başarılı ya da başarısız sayılmıyor. Önce aynı isteğin sonucu kontrol ediliyor; işlem tekrarlanmıyor ve yeni yanıtla normal ilerleme kapalı kalıyor.
+
+11. Hayır. AI önerisi tek başına onay veya güvenli kullanım izni vermiyor. Kaynağın güncel değerlendirmesi ve gerçek durum ayrıca kontrol edilmeli.
+
+12. Hayır. Tanı özeti yalnızca bilgileri görüntülüyor; motosikleti tamir edilmiş veya işi tamamlanmış olarak kaydetmiyor.
+
+13. Hayır, her gözlemde fotoğraf istenmiyor. Fotoğraf yolu, ekranın açıklamasına göre görüntü bilgisinin o gözlemde yardımcı olabileceği için gösteriliyor. İsteğe bağlı; otomatik teşhis veya doğrulama değil.
+
+14. Hayır. Ekran, bu gözlem için önceki fotoğrafın mevcut olduğunu ve yeniden fotoğraf istenmediğini söylüyor.
+
+15. Evet. Ana iş ekrana göre değişiyor: sorunu anlatıp güvenlik yanıtını vermek, gözlem sorusunu yanıtlamak, belirsiz isteğin sonucunu kontrol etmek, desteklenen yönde rehber önizlemesini açmak veya netleşmeyen sonuçta ek gözlem yapmak. Destek ve tanıdan çıkış yolları ayrıca adlandırılmış düğmeler olarak duruyor; ana eylemden ayırabiliyorum.
+
+
+Yeni aynı kaynak GitHubCI/T3 ve bütün bağımsız görev hükmü beklenir. Eski R1/R2 retler ve R3 ön bulgusu korunur. GörevREVIEW/DONEdeğil; ana95/111/206 değişmez. ÜretimE9/E3/E5/identity/API/DB/kalıcılık/medya/fiziksel/cihaz/yayın/nihaitokenfontlogo-routing ve T-E4-011b/T-E3-004 gerçek uzlaştırma sınırları HELD kalır.
+
+## UIr4 görüntü kimlikleri
+
+- Temp kavriva_e1009_ui_r4-busy-supported-0.png RAW SHA256 134831a63437f6be3aa0a169830a023dedcb7dc8bce42a73b599200dd6ad96f1 /74039byte/390×844
+- Temp kavriva_e1009_ui_r4-busy-supported-1.png RAW SHA256 c50f00e36766191b32e5c1ee0094a0a35f2f068f8ff4cb905275f22c5d7ab6cc /71069byte/390×844
+- Temp kavriva_e1009_ui_r4-busy-supported-2.png RAW SHA256 af883456b759f1f98e8962d936037f5ecb07899f35b59d8f818e5e81eddda6cc /71039byte/390×844
+- Temp kavriva_e1009_ui_r4-check-0.png RAW SHA256 72d9431759bba34de7e2a73e84601cf0b09e72500a1a29c1a854824eef615b20 /68384byte/390×844
+- Temp kavriva_e1009_ui_r4-check-1.png RAW SHA256 1d4ddecf14aba21fed61cf76c233f797c079e49871133582b51c78e4e0875c2b /68624byte/390×844
+- Temp kavriva_e1009_ui_r4-check-foreign-0.png RAW SHA256 391f04260d45d77e3e20ad4a7cd2ce174bed8a4baaf7291fb3a3450c4019cfb0 /39984byte/390×844
+- Temp kavriva_e1009_ui_r4-check-held-0.png RAW SHA256 391f04260d45d77e3e20ad4a7cd2ce174bed8a4baaf7291fb3a3450c4019cfb0 /39984byte/390×844
+- Temp kavriva_e1009_ui_r4-check-unsure-0.png RAW SHA256 af1c0363d6f9671126a2293ae277fa0b469aa621c58dc6d566e6fe28b46689c9 /67949byte/390×844
+- Temp kavriva_e1009_ui_r4-check-unsure-1.png RAW SHA256 1f6ebfa8b3c289cdf94313cf01886582c4d023208522ed37bb4551a355bb513b /68190byte/390×844
+- Temp kavriva_e1009_ui_r4-danger-no-0.png RAW SHA256 fa5bd113d0d04dfc5d887a03e044d66d58710428c85f704a4bdf1048a9c330df /60763byte/390×844
+- Temp kavriva_e1009_ui_r4-danger-no-1.png RAW SHA256 99686d7ef21d791c0f1ec07b25bd0ddead470e13badf30633f21cba3e02da295 /62295byte/390×844
+- Temp kavriva_e1009_ui_r4-danger-unsure-0.png RAW SHA256 e1814b89d6372989eb782ab7dc93039172ac48a9d8a8a097fb85ee89a00677c8 /60572byte/390×844
+- Temp kavriva_e1009_ui_r4-danger-unsure-1.png RAW SHA256 0622138d2319ba6efcfcf5d6c63087217e89e1bcaa4b2eee4b4d55935caaa5dc /62209byte/390×844
+- Temp kavriva_e1009_ui_r4-error-foreign-0.png RAW SHA256 be0703cb530ac24cd32984c415e6041558ce7350115790b36c15b8a7bff6d078 /79023byte/390×844
+- Temp kavriva_e1009_ui_r4-error-foreign-1.png RAW SHA256 aba9477b8be013196a0c719995fdd7a9743e398310199187e0b4c1e6e734ad96 /71500byte/390×844
+- Temp kavriva_e1009_ui_r4-error-foreign-2.png RAW SHA256 af883456b759f1f98e8962d936037f5ecb07899f35b59d8f818e5e81eddda6cc /71039byte/390×844
+- Temp kavriva_e1009_ui_r4-error-supported-0.png RAW SHA256 893a3ad26e4f0dbf60a7049f4020536c772fac2d4db83d7c5ea3e187ca08f696 /81905byte/390×844
+- Temp kavriva_e1009_ui_r4-error-supported-1.png RAW SHA256 98e21bb65945ec56973eab4a2e4fef7ee59799925478079897c57947ab331f9a /71874byte/390×844
+- Temp kavriva_e1009_ui_r4-error-supported-2.png RAW SHA256 af883456b759f1f98e8962d936037f5ecb07899f35b59d8f818e5e81eddda6cc /71039byte/390×844
+- Temp kavriva_e1009_ui_r4-outcome-unknown-0.png RAW SHA256 4aa445c599ad3989d27e82c26d0b414fe87a03447fc6b1f6ad4dc9453c8033d8 /82178byte/390×844
+- Temp kavriva_e1009_ui_r4-outcome-unknown-1.png RAW SHA256 98e21bb65945ec56973eab4a2e4fef7ee59799925478079897c57947ab331f9a /71874byte/390×844
+- Temp kavriva_e1009_ui_r4-outcome-unknown-2.png RAW SHA256 af883456b759f1f98e8962d936037f5ecb07899f35b59d8f818e5e81eddda6cc /71039byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-foreign-0.png RAW SHA256 5262e78a4a127b358fb5c2dc7822196c607569fa6814658a646b81b4a2d3b1ba /74157byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-foreign-1.png RAW SHA256 7ba885c7064b4944a16b5be7c8411d1bf969130ba0b280d00ea72f0b5ffd66d0 /74415byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-held-0.png RAW SHA256 5262e78a4a127b358fb5c2dc7822196c607569fa6814658a646b81b4a2d3b1ba /74157byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-held-1.png RAW SHA256 7ba885c7064b4944a16b5be7c8411d1bf969130ba0b280d00ea72f0b5ffd66d0 /74415byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-reuse-0.png RAW SHA256 4a36717398f0047e87c116e8d8a01b332e50779d05630780d383d0edaf47a811 /81587byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-reuse-1.png RAW SHA256 a18c4018b529d72b0177c0d40741f9899db5d01309f5119cfe4e33ebb18abd49 /77585byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-useful-0.png RAW SHA256 bfd5b7b6f0db088b0195ae23dfe1e6803ce7d2858296718f5366b064aace2e22 /78554byte/390×844
+- Temp kavriva_e1009_ui_r4-photo-useful-1.png RAW SHA256 ccb49783c957d3b1bcd67a3478ab75ce81314f5b72aab135c846141ce351c624 /72807byte/390×844
+- Temp kavriva_e1009_ui_r4-proposal-only-0.png RAW SHA256 3b0b2fcb09e7161a51c77fd643d0581f97bf2c6c283c551bcac875f554bfcdcf /54888byte/390×844
+- Temp kavriva_e1009_ui_r4-provider-held-0.png RAW SHA256 cb2538c76cf1415de48cf16cbcf876e4f1cf4c891b2cea10975228ec40705390 /38827byte/390×844
+- Temp kavriva_e1009_ui_r4-safety-no-check-0.png RAW SHA256 de3fcea87ffa02b92aa3852846988a953e16efc41fbcefb4d2a87dbc61e4a6cf /68939byte/390×844
+- Temp kavriva_e1009_ui_r4-safety-no-check-1.png RAW SHA256 6cb2676dff5237a4688d3bb32dfda4021b5481b3da6ab5216851c84836db0535 /68030byte/390×844
+- Temp kavriva_e1009_ui_r4-safety-unknown-result-0.png RAW SHA256 291914fd3f15830d06f8aa1113654cb2501ffe8aea34597d407fc975d295a45b /69460byte/390×844
+- Temp kavriva_e1009_ui_r4-safety-unknown-result-1.png RAW SHA256 48cfa3027927de4e5c7e2171f8dfda0dc5e978f77ed30aa6d06e5e4ad86655eb /69947byte/390×844
+- Temp kavriva_e1009_ui_r4-safety-unknown-result-2.png RAW SHA256 4da4faf6cae5372e093744a4b1e16e7407f08df210e7102ef15640bd09be0261 /68878byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-0.png RAW SHA256 8632804e5f72e0e4a51a672052c10b9d122e52bd8a6f5ab70f1f94cd2f0b4d9e /68227byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-1.png RAW SHA256 43f6cc37118069d6ba8440cb728fa154a90320f78ebf689d40076a5cf09d215f /70776byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-2.png RAW SHA256 baf932bda53a19457793f6c6d711ebe4e952034d4e3b03add53646b458d9beb5 /68898byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-held-0.png RAW SHA256 8632804e5f72e0e4a51a672052c10b9d122e52bd8a6f5ab70f1f94cd2f0b4d9e /68227byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-held-1.png RAW SHA256 b46385084371cbb2f80e11bb7c5d449f28884eb63bd178a1cbaaea85a982d6e3 /73792byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-held-2.png RAW SHA256 d41d641eaf055106746a95d55492e061adcfe9749d71c3ef444d7027bd0355d9 /71634byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-source-open-0.png RAW SHA256 8632804e5f72e0e4a51a672052c10b9d122e52bd8a6f5ab70f1f94cd2f0b4d9e /68227byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-source-open-1.png RAW SHA256 3a2dc4f293e24f598ad70c8c534ad257877dc9016af6e7c4e895c27da441ff95 /74510byte/390×844
+- Temp kavriva_e1009_ui_r4-supported-source-open-2.png RAW SHA256 e7f8cebd7d4997dd12dff20d40237c0b931e7bc67ad1cc849c095b088960d03f /77092byte/390×844
+- Temp kavriva_e1009_ui_r4-symptom-0.png RAW SHA256 8b9c6cfc6efd7570017165cda396875a77300c46bbbe5542627ff713bed432b3 /53851byte/390×844
+- Temp kavriva_e1009_ui_r4-symptom-1.png RAW SHA256 866c5fec3e99daf4e1bcd68eac95d46c4f0e93b2b0e5f6135e303a27149c3273 /55431byte/390×844
+- Temp kavriva_e1009_ui_r4-symptom-yes-0.png RAW SHA256 c3ddf925416cf7c775bd95f50c196760ded30251311aabb9253cf1cf07802d13 /57682byte/390×844
+- Temp kavriva_e1009_ui_r4-symptom-yes-1.png RAW SHA256 7ad38afa0b987d7e5aa7dfe6cc9d358b8ad8ac916604ceeef60b9aa2bfea0ddf /57768byte/390×844
+- Temp kavriva_e1009_ui_r4-unknown-foreign-0.png RAW SHA256 7a3b11daa2e725066f1ee488a30eb84097e471674d48eac1508eb8df9aec65b1 /84775byte/390×844
+- Temp kavriva_e1009_ui_r4-unknown-foreign-1.png RAW SHA256 2d2c6d6200efa2b48f8de9bb91bbd5d39a9ac1a755aface01426bad056241906 /75063byte/390×844
+- Temp kavriva_e1009_ui_r4-unknown-foreign-2.png RAW SHA256 af883456b759f1f98e8962d936037f5ecb07899f35b59d8f818e5e81eddda6cc /71039byte/390×844
+- Temp kavriva_e1009_ui_r4-unresolved-0.png RAW SHA256 cdf886ee5afbfb22a85e069fabb89a149c63d409d612bc2a67f2276d3bd915c2 /69753byte/390×844
+- Temp kavriva_e1009_ui_r4-unresolved-1.png RAW SHA256 2f5c39074eb8b50d5ea0a2f7cece919e50235f0c725bf189d809bc3ac5fbfea3 /65855byte/390×844
+- Temp kavriva_e1009_ui_r4-unresolved-2.png RAW SHA256 33da0986ec1a7a573e90100bf6e44ccefde3327b950fa0c7e6fecf79f577aa82 /65891byte/390×844
