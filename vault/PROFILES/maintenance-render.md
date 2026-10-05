@@ -65,3 +65,9 @@ Gecikmiş eski düğme olayı gerçek RED: beklenen boş niyet listesinde eski o
 
 
 `vault/PROFILES/maintenance-render.md`; `vault/PACKS/P-E1-010.md`; `vault/REGISTRY/T-E1-010.md`; `vault/EVIDENCE/E-DEV-108.md`.
+
+## R7 güncel kaynak — eski bulguların dar onarımı, kabul beklenir
+
+Önceki kaynak14b2cdacf4fe298bbc184fdd07644dc4f444c7d8 tam bağımsız CHANGES_REQUESTED; üç bulgu ve eski17CI/T3 aşağıda korunur. Koddan önce dar onarım kaydı261a4d4; güncel kod5c5a4ed49e5cbc54f2e2893658bb495306f25169. Öncelik tüm aynı-kapsam plan üyelerinin ID+REV dizisini ve ayrı order dizisini kapsar. Her UI olayında oluşturulduğu scope/request ve mounted denetlenir; dispatch güncel item ID+REV ve güncel altı izin boyutunu yeniden kontrol eder. Plan/item/history/notice kimlik bileşenleri Uri.encodeComponent ile ayrı ayrı kaçırılır. Slash/comma/percent içerikli farklı tuple'lar karışmaz; gerçek payload kimlikleri değiştirilmez. Bu E1 özel gösterimidir; yeni public seam veya üretim adaptörü yoktur.
+
+Gerçek üç negatif regresyon eski kaynakta0PASS/3FAIL verdi; aynı üç regresyon dar onarım sonrası3PASS. Ek virgüllü liste regresyonu farklı planın eski öncelik kanıtını kabul etmediğini ve yeni tam kanıtın çalıştığını sınar. Son tam koşu208PASS=207normal(178önceki+29yeni)+1native; strictformat24zero/analyze0.31×9duyarlı/52hedef ve önceki178test aynı koşuda geçti. Güncel81R7native dosyanın her biri öncekiR6 görüntüsüyle SHA256/byteeşit; görünür metin/düzen değişmedi. Önceki root81gerçek açma/ilkoku15doğru/bağımsız81açma kanıtı bu byteeşitlik üzerinden geçerlidir; yeniR7dosyalarını yeniden açtım veya yeniilkoku yaptım denmez. Sabit15soru değişmedi. GerçekCI/T3 ve tam bağımsız yeniden hüküm beklenir. Görev/profilREVIEW, paketIN_PROGRESS, kanıtRECORDED; main96/110/206 ve üretim/cihaz/yayınheld değişmez.

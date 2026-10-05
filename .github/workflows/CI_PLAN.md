@@ -464,3 +464,7 @@ Bu kaynakta normal widget sayısı203=önceki178+yeni25; yerel native yakalama i
 
 
 `vault/PROFILES/maintenance-render.md`; `vault/PACKS/P-E1-010.md`; `vault/REGISTRY/T-E1-010.md`; `vault/EVIDENCE/E-DEV-108.md`.
+
+## R7 bakım sunumu — güncel operatif sayım
+
+207normal=178önceki+29yeni; yerel native dahil208PASS/24format0/analyze0. Eski203normal/204yerel kaynağı14b2 bağımsız üç bulguyla CHANGES_REQUESTED; tarihsel sayımdır. Güncel31durum×9/81native eskiR6 ile her dosya byteeşit;15sabitilkoku kanıtı aynı görünen metin/düzen için taşınır. Güncelkaynak CI/T3 ve tam bağımsız yeniden inceleme henüz beklenir. Testbaşarısı görevkabulü değildir.
