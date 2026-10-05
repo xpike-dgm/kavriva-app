@@ -132,9 +132,11 @@ DiagnosisResult _result({
             ? overrides[d]!
             : _ref('diagnosis-${d.name}', 'result-example'),
   },
-  explanation: outcome == DiagnosisOutcome.supported
-      ? 'Örnek kaynak, gözlemlerin fren bölgesindeki olasılıkların ayrılmasını desteklediğini bildiriyor; kesin arıza değil.'
-      : 'Örnek kaynak, mevcut gözlemlerin tek bir sonucu desteklemeye yetmediğini bildiriyor.',
+  explanation: switch (outcome) {
+    DiagnosisOutcome.supported => 'Örnek kaynak, gözlemlerin fren bölgesindeki olasılıkların ayrılmasını desteklediğini bildiriyor; kesin arıza değil.',
+    DiagnosisOutcome.unresolved => 'Örnek kaynak, mevcut gözlemlerin tek bir sonucu desteklemeye yetmediğini bildiriyor.',
+    DiagnosisOutcome.held => 'Örnek kaynak, tanıya devam kararının beklemede olduğunu bildiriyor. Devam izni verilmedi.',
+  },
   known: known ?? ['Kayıtlı örnek gözlem: ses yalnız fren yaparken duyulmuş.'],
   unknown: ['Sesin kesin nedeni henüz belirlenmedi.'],
   alternatives: ['Başka bir olasılık da olabilir; fiziksel doğrulama gerekir.'],
@@ -355,6 +357,7 @@ Map<String, DiagnosisView> _states() => {
     ),
   ),
   'unresolved': _view(result: _result(outcome: DiagnosisOutcome.unresolved)),
+  'result-held': _view(result: _result(outcome: DiagnosisOutcome.held)),
   'provider-held': _view(
     result: _result(
       authority: _ref(
@@ -861,9 +864,41 @@ void main() {
     (t) async {
       await _pump(t, _view(result: _result(outcome: DiagnosisOutcome.held)));
       expect(find.text('Tanıya devam şu anda kapalı'), findsOneWidget);
-      expect(_enabled(t, DiagnosisRequestKind.moreObservation), isFalse);
+      expect(_action(DiagnosisRequestKind.moreObservation), findsNothing);
       expect(_enabled(t, DiagnosisRequestKind.summary), isTrue);
       expect(_enabled(t, DiagnosisRequestKind.safeSupport), isTrue);
+    },
+  );
+  testWidgets(
+    'Beklemedeki sonuçta olumlu boyutlar normal yolu açmaz; yalnız bilgi ve destek niyetleri gönderilir',
+    (t) async {
+      final sent = <DiagnosisRequest>[];
+      await _pump(
+        t,
+        _view(
+          result: _result(outcome: DiagnosisOutcome.held),
+          record: sent.add,
+        ),
+      );
+      expect(find.textContaining('Devam izni verilmedi'), findsOneWidget);
+      expect(
+        find.textContaining('Yeni gözlem ve rehber önizlemesi şu anda kapalı'),
+        findsOneWidget,
+      );
+      expect(find.textContaining('Sonuç netleşmediyse'), findsNothing);
+      expect(_action(DiagnosisRequestKind.preview), findsNothing);
+      expect(_action(DiagnosisRequestKind.moreObservation), findsNothing);
+      expect(sent, isEmpty);
+      await _tap(t, _action(DiagnosisRequestKind.summary));
+      await _tap(t, _action(DiagnosisRequestKind.safeSupport));
+      await _tap(t, _action(DiagnosisRequestKind.exit));
+      expect(sent.map((v) => v.kind), [
+        DiagnosisRequestKind.summary,
+        DiagnosisRequestKind.safeSupport,
+        DiagnosisRequestKind.exit,
+      ]);
+      expect(sent.first.resultId, 'result-example');
+      expect(sent.every((v) => v.guideId == null), isTrue);
     },
   );
   testWidgets('Basit gözlem fotoğraf yolu istemez', (t) async {

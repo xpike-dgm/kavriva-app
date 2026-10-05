@@ -505,6 +505,7 @@ class _DiagnosisViewState extends State<DiagnosisView> {
               title == 'Motorda ne oluyor?' ||
                   title == widget.check?.question ||
                   title == 'Bulgular bir yönü destekliyor' ||
+                  title == 'Tanıya devam şu anda kapalı' ||
                   title == 'Belirtiyi açıklayacak sonucu henüz netleştiremedik'
               ? 32
               : 22,
@@ -838,7 +839,8 @@ class _DiagnosisViewState extends State<DiagnosisView> {
                             const Text(
                               'Sıradaki yol rehberin önizlemesidir; doğrudan tamire başlama değildir. Uygulamadan önce motosiklete uygunluk ve hazırlık kendi güncel kontrolleriyle ayrıca ele alınır.',
                             ),
-                          ] else ...[
+                          ] else if (w.result!.outcome ==
+                              DiagnosisOutcome.unresolved) ...[
                             const Text(
                               'Sonuç netleşmediyse rastgele parça değiştirme. Bilinen ve bilinmeyen bilgiler korunur; kesin sonuç tahmin edilmez.',
                             ),
@@ -851,6 +853,10 @@ class _DiagnosisViewState extends State<DiagnosisView> {
                                   observationSafe &&
                                   w.result!.outcome ==
                                       DiagnosisOutcome.unresolved,
+                            ),
+                          ] else ...[
+                            const Text(
+                              'Yeni gözlem ve rehber önizlemesi şu anda kapalı. Tanı özetini inceleyebilir, güvenli destek veya çıkış yolunu kullanabilirsin.',
                             ),
                           ],
                           action(
