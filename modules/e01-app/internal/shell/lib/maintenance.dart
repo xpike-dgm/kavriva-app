@@ -1,6 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+String _identity(String value) => Uri.encodeComponent(value);
+
 String _required(String value) {
   final result = value.trim();
   if (result.isEmpty) throw ArgumentError('Bağlam veya açıklama boş olamaz.');
@@ -24,7 +26,7 @@ class MaintenanceScope {
       planId,
       planRevision,
       motorcycleLabel;
-  String get subject => '$planId/$planRevision';
+  String get subject => '${_identity(planId)}/${_identity(planRevision)}';
   bool matches(MaintenanceScope other) =>
       motorcycleId == other.motorcycleId &&
       contextRevision == other.contextRevision &&
@@ -103,7 +105,8 @@ class MaintenanceHistory {
   final String id, revision, explanation;
   final MaintenanceHistoryKind kind;
   final MaintenanceReference? authority;
-  String subject(String item) => '$item/$id/$revision';
+  String subject(String item) =>
+      '$item/${_identity(id)}/${_identity(revision)}';
 }
 
 enum MaintenanceTimingKind { uncertain, supported }
@@ -194,7 +197,7 @@ class MaintenanceItem {
   final MaintenanceReference? source;
   final Map<MaintenanceAction, MaintenancePermit> permits;
   final String? priorityReason, knownAge, nextCheck;
-  String get subject => '$id/$revision';
+  String get subject => '${_identity(id)}/${_identity(revision)}';
   bool sourceConfirmed(MaintenanceScope expected, String request) =>
       scope.matches(expected) &&
       (source?.confirmed(expected, request, 'maintenance-source', subject) ??
@@ -240,7 +243,7 @@ class MaintenanceNotice {
        message = _required(message);
   final String id, revision, message;
   final MaintenanceReference? authority;
-  String get subject => '$id/$revision';
+  String get subject => '${_identity(id)}/${_identity(revision)}';
 }
 
 class MaintenancePlan {
@@ -293,7 +296,7 @@ class MaintenancePlan {
             expected,
             request,
             'maintenance-priority',
-            '${expected.subject}/${priorityOrder.map((id) => ownItems(expected).firstWhere((i) => i.id == id).subject).join(',')}',
+            '${expected.subject}/members:${ownItems(expected).map((i) => i.subject).join(',')}/order:${priorityOrder.map((id) => ownItems(expected).firstWhere((i) => i.id == id).subject).join(',')}',
           ) ??
           false);
 }
@@ -378,6 +381,18 @@ class _MaintenanceViewState extends State<MaintenanceView> {
       if (i.id == selectedItem) return i;
     }
     return null;
+  }
+
+  VoidCallback boundEvent(VoidCallback callback) {
+    final originalScope = widget.scope;
+    final originalRequest = widget.requestId;
+    return () {
+      if (!mounted ||
+          !originalScope.matches(widget.scope) ||
+          originalRequest != widget.requestId)
+        return;
+      callback();
+    };
   }
 
   bool get normal => widget.phase == MaintenanceRequestPhase.idle && !sent;
@@ -474,7 +489,7 @@ class _MaintenanceViewState extends State<MaintenanceView> {
       ),
       label: label,
       primary: primary,
-      onActivate: available ? () => emit(action, target) : null,
+      onActivate: available ? boundEvent(() => emit(action, target)) : null,
     );
   }
 
@@ -567,11 +582,13 @@ class _MaintenanceViewState extends State<MaintenanceView> {
     label: primary
         ? 'Bu işin ayrıntısını aç'
         : '${target.title}\n${target.timingConfirmed(widget.scope, widget.requestId) ? target.timing.label : 'Bakım zamanı net değil'}',
-    onActivate: () => setState(() {
-      page = MaintenancePage.detail;
-      selectedItem = target.id;
-      sourceExpanded = false;
-    }),
+    onActivate: boundEvent(
+      () => setState(() {
+        page = MaintenancePage.detail;
+        selectedItem = target.id;
+        sourceExpanded = false;
+      }),
+    ),
   );
   List<Widget> planBody() {
     if (!planValid)
@@ -602,11 +619,13 @@ class _MaintenanceViewState extends State<MaintenanceView> {
       _MaintenanceAction(
         key: const ValueKey('maintenance-open-catchup'),
         label: 'Biriken işleri ve öncelikleri incele',
-        onActivate: () => setState(() {
-          page = MaintenancePage.catchUp;
-          selectedItem = null;
-          sourceExpanded = false;
-        }),
+        onActivate: boundEvent(
+          () => setState(() {
+            page = MaintenancePage.catchUp;
+            selectedItem = null;
+            sourceExpanded = false;
+          }),
+        ),
       ),
     ];
   }
@@ -679,7 +698,9 @@ class _MaintenanceViewState extends State<MaintenanceView> {
           label: sourceExpanded
               ? 'Kaynak ayrıntılarını kapat'
               : 'Kaynak ayrıntılarını göster',
-          onActivate: () => setState(() => sourceExpanded = !sourceExpanded),
+          onActivate: boundEvent(
+            () => setState(() => sourceExpanded = !sourceExpanded),
+          ),
         ),
         if (sourceExpanded)
           panel([
@@ -762,11 +783,13 @@ class _MaintenanceViewState extends State<MaintenanceView> {
   Widget returnPlan() => _MaintenanceAction(
     key: const ValueKey('maintenance-return-plan'),
     label: 'Tüm bakım planına dön',
-    onActivate: () => setState(() {
-      page = MaintenancePage.plan;
-      selectedItem = null;
-      sourceExpanded = false;
-    }),
+    onActivate: boundEvent(
+      () => setState(() {
+        page = MaintenancePage.plan;
+        selectedItem = null;
+        sourceExpanded = false;
+      }),
+    ),
   );
   List<Widget> catchUpBody() {
     final confirmed =

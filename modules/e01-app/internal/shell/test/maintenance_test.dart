@@ -78,7 +78,7 @@ MaintenanceItem _item({
   bool missingPermits = false,
   Map<MaintenanceAction, MaintenancePermit> overrides = const {},
 }) {
-  final subject = '$id/$revision';
+  final subject = '${Uri.encodeComponent(id)}/${Uri.encodeComponent(revision)}';
   return MaintenanceItem(
     scope: scope ?? _scope(),
     id: id,
@@ -142,7 +142,7 @@ MaintenancePlan _plan({
   final sorted = order ?? values.reversed.map((i) => i.id).toList();
   final own = scope ?? _scope();
   final subject =
-      '${own.subject}/${sorted.map((id) => values.firstWhere((i) => i.id == id).subject).join(',')}';
+      '${own.subject}/members:${values.where((i) => i.scope.matches(own)).map((i) => i.subject).join(',')}/order:${sorted.map((id) => values.firstWhere((i) => i.id == id).subject).join(',')}';
   return MaintenancePlan(
     scope: own,
     requestId: request,
@@ -453,6 +453,127 @@ Future<void> _prepareState(WidgetTester t, String name) async {
 }
 
 void main() {
+  test('R7 virgüllü kimlik eski öncelik kanıtını başka listeye taşıyamaz', () {
+    final original = _plan(
+      items: [_item(id: 'a', revision: 'b,c/d')],
+    );
+    final changed = _plan(
+      items: [
+        _item(id: 'a', revision: 'b'),
+        _item(id: 'c', revision: 'd'),
+      ],
+      order: ['a', 'c'],
+      priority: original.priorityAuthority,
+    );
+    expect(changed.priorityConfirmed(_scope(), _request), isFalse);
+    final fresh = _plan(items: changed.items, order: changed.priorityOrder);
+    expect(fresh.priorityConfirmed(_scope(), _request), isTrue);
+  });
+
+  testWidgets(
+    'R7 sıralanmamış üyelik değişince eski öncelik kanıtı reddedilir',
+    (t) async {
+      final original = _otherItemsPlan();
+      final variants = [
+        original.items.take(2).toList(),
+        [...original.items, _item(id: 'added-item')],
+        [
+          ...original.items.take(2),
+          _item(id: original.items.last.id, revision: 'new-revision'),
+        ],
+      ];
+      for (final values in variants) {
+        final changed = _plan(
+          items: values,
+          order: original.priorityOrder,
+          priority: original.priorityAuthority,
+        );
+        await _pump(t, _view(page: MaintenancePage.catchUp, plan: changed));
+        expect(find.text('Öncelik sırası henüz doğrulanmadı'), findsOneWidget);
+      }
+    },
+  );
+  testWidgets('R7 eski düğme yeni isteğin olumlu izinlerini kullanamaz', (
+    t,
+  ) async {
+    final sent = <MaintenanceIntent>[];
+    final action = MaintenanceAction.previewGuide;
+    await _pump(t, _view(record: sent.add));
+    final oldTap = t
+        .widget<GestureDetector>(
+          find
+              .descendant(
+                of: _action(action),
+                matching: find.byType(GestureDetector),
+              )
+              .first,
+        )
+        .onTap!;
+    const next = 'request-next';
+    final current = _item(
+      overrides: {
+        action: _permit(
+          action,
+          'item-example/item-r1',
+          overrides: {
+            for (final dimension in MaintenanceDimension.values)
+              dimension: _ref(
+                'maintenance-action:${action.name}',
+                'item-example/item-r1/${dimension.name}',
+                request: next,
+              ),
+          },
+        ),
+      },
+    );
+    final plan = _plan(
+      request: next,
+      items: [current],
+      catalog: _ref('maintenance-plan', _scope().subject, request: next),
+    );
+    await _pump(t, _view(request: next, plan: plan, record: sent.add));
+    expect(_enabled(t, action), isTrue);
+    oldTap();
+    await t.pumpAndSettle();
+    expect(sent, isEmpty);
+    await _tap(t, _action(action));
+    expect(sent.single.requestId, next);
+    await t.pumpWidget(const SizedBox());
+    oldTap();
+    expect(sent.length, 1);
+  });
+  testWidgets('R7 ayraç içeren farklı işlerin kaynak ve izinleri karışmaz', (
+    t,
+  ) async {
+    final sourceItem = _item(id: 'x/y', revision: 'z');
+    final other = _item(
+      id: 'x',
+      revision: 'y/z',
+      source: sourceItem.source,
+      timingRef: sourceItem.timing.authority,
+      historyRef: sourceItem.history.authority,
+      overrides: sourceItem.permits,
+    );
+    expect(other.sourceConfirmed(_scope(), _request), isFalse);
+    expect(other.historyConfirmed(_scope(), _request), isFalse);
+    expect(other.timingConfirmed(_scope(), _request), isFalse);
+    final sent = <MaintenanceIntent>[];
+    await _pump(
+      t,
+      _view(
+        plan: _plan(items: [other]),
+        selected: 'x',
+        record: sent.add,
+      ),
+    );
+    expect(find.text('Bakım zamanı net değil'), findsOneWidget);
+    for (final action in _gated) {
+      expect(_enabled(t, action), isFalse);
+      await _tap(t, _action(action));
+    }
+    expect(sent, isEmpty);
+  });
+
   WidgetController.hitTestWarningShouldBeFatal = true;
   testWidgets(
     'Plan ayrıntıya gider; rehber, kayıt ve erteleme farklı niyetlerdir',
