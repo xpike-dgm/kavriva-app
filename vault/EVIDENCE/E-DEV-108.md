@@ -3,11 +3,11 @@ test_id: E-DEV-108
 version: 1
 contract_id_version: "SCR-022..024; C1.5/F1.5.1/FL1.5.1 maintenance v1"
 subject_file: modules/e01-app/internal/shell/lib/maintenance.dart
-subject_digest: e20be1f3d0513ec2895ef0a21d349449462e78ec8e85cd277909bc7880812b9b
+subject_digest: 6c269179e8896dd98611cbcf81849dfae7a1caf9dcb200382319d03ef62cc71b
 result: "RECORDED bakım sunumu; bağımsız bütün kabul bekleniyor"
 evidence_links: [vault/PROFILES/maintenance-render.md, vault/PACKS/P-E1-010.md, vault/REGISTRY/T-E1-010.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-107-E10-GOVERNED-PATHS-FOR-T-E1-010.md.snapshot, modules/e01-app/internal/shell/lib/maintenance.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/fixtures/maintenance_reading_questions.json]
 gate_verdict: "RECORDED kaynak REVIEW; üretim/cihaz/yayın HELD"
-reviewer: "/root/e1010_full_review; eski kaynak CHANGES_REQUESTED, R7 yeniden inceleme beklenir"
+reviewer: "/root/e1010_full_review; 14b2 CHANGES_REQUESTED, R7 usage limit ile kesildi; R8 beklenir"
 timestamp: 2026-10-05
 purpose: Bakım planı, iş ayrıntısı ve önceliklerin kaynaklı sunumu
 domain: maintenance
@@ -786,3 +786,57 @@ PR E1 gerçek log: formatter24zero/analyze0issue/203PASS; E4 170PASS ve E9 9PASS
 ## R7 kayıt dondurma komutu — gerçek geçici hata
 
 İlk git diff --check ham biçimleme hatalı rapordaki son boşlukları reddetti; kaynak dondurma scripti commit öncesinde durdu. Aynı PowerShell çağrısının sonraki push komutu kod5c5a4ed başını PR110a gönderdi; tam kaynak/metadata kabulü değildir. Ham rapor trim edilmedi; kayıpsız base64 ile aynı byte korunarak diff-check onarıldı. Yeni tam kayıt commit ve aynı-kaynak CI bundan sonra alınır. Önceki run_all/strictlinks geçer; yeni arşiv biçimi için yeniden denetlenir.
+
+## R8 — güncel operatif kaynak, bağımsız yeniden hüküm beklenir
+
+Koddanönce873772a; güncelkod364aae613b35ad16da808ccb22da7af6b83e95eb. Root'un gerçek R8 regresyonu eski URIencoder ile0PASS/1FAIL: farklı malformedUTF16 ID başka kaydın güncel kaynak referansını kabul etti. Kayıpsız kimlik onarımı sonrası focusedGREEN1PASS; nihai aynı testte kendi kimliğinin doğru kaynağı/izinleri kabul edilir, diğer D800/D801/FFFD/literal%ud800 kimliklerinden gelen bütün izinler reddedilir. Source/history/timing/permit/priority bağlamları aynı ortak kayıpsız privateE1 kimlik gösterimini kullanır. GeçerliUnicode URIescaped, malformed kimlikte bütüncodeunits dörthexhaneyle ayrılmış%u namespace; normalURIçıktısında%u yok, literalpercent kaçırılır. Payload ID'leri veya üretim/publicsözleşme değişmez.
+
+Son tamR8 gerçek209PASS=208normal(178önceki+30yeni)+1native; strictformatter24zero/analyze0.31×9duyarlı/52hedef, önceki178test ve bütün R7 dört regressyon aynı tamkoşuda geçti. Güncel81R8PNG bütünSHA/byte/dimension bakımından root/ilkoku/tamreviewgerçek açılmışR6 ile eşittir; görünür metin/düzen ve15sabit soru değişmez. YeniR8dosyaları için yeni açma/ilkoku/insan/cihaz iddiası yoktur. R7current7053 actual16CI/T3 SUCCESS yalnız eski kaynağın başarısıdır; yeniR8CI/T3 beklenir. R7 bağımsız reviewer kullanım limitiyle kesildi; rapor yok, FULLPASS yok. Reviewer hatası aşağıda orijinal metniyle korunur. Profil/görevREVIEW/paketIN_PROGRESS/kanıtRECORDED; main96/110/206 ve bütün üretim/cihaz/yayınhelds değişmez.
+
+## R7 bağımsız reviewer turunun gerçek kesilme mesajı
+
+Agent errored: You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 6:33 PM.
+
+## R7 gerçek CI — tarihsel kaynak7053, bağımsız FULLPASS değildir
+
+## Gerçek r7_source CI makbuzu
+
+Exact kaynak 7053ddc1994bb710cec5a45a8d10af8bd1bd6e89; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111802487005: 5 başarılı adım/success.
+
+PR checks job111802487114: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807296 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807166 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807275 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807179 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807170 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807228 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807350 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321807198 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800549 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800660 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800599 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800612 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800501 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800603 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800605 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37321800723 — SUCCESS.
+
+PR E1 gerçek log: formatter24zero/analyze0issue/207PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+## R8 güncel kanıt kimlikleri
+
+- Temp/kavriva_e1010_r8_RED.log: 796byte; RAW SHA256 7ca40a187aa82d8a2cc90ac6efd248da754a1c73ac20018a4da8a229afbdbb38.
+- Temp/kavriva_e1010_r8_GREEN.log: 254byte; RAW SHA256 a6bae20342e1e307c4c729da2057d7c2ba86fee966f786a54bf8d76737e8b8d3.
+- Temp/kavriva_e1010_full_r8_tests.log: 49550byte; RAW SHA256 72a12f7a1054ed604d42316a05b93ec2cf6206d3072410394774fb255c02c27d.
+- Temp/kavriva_e1010_r8_format.log: 49byte; RAW SHA256 3c1c2f777db01491cfdd4b83db0bec4d4a5da08be5dfe410c5dbf5e20ff61b72.
+- Temp/kavriva_e1010_r8_analyze.log: 99byte; RAW SHA256 ec9a2a7df156b4a9c359cf2228f1f20a21f381cf2a54556fbc0993603c54edfe.
+- Temp/kavriva_e1010_images_r8.json: 25342byte; RAW SHA256 0b58b801f19732f8aa12f864487526bcba302ad29dff2f7402111f46effe4d51.
+- Temp/kavriva_e1010_r7_review_usage_error.txt: 192byte; RAW SHA256 f573152ac6b9d4b4a0cfbd18240c2e3dd260defcb6b5a029a66fd768d7455370.
+- Güncel vault/PROFILES/maintenance-render.md: LF SHA256 fbe9b7c49919ed0986facbc0b9d039aa7b62a4789548910cf9e4d1d11036ceb2.
+- Güncel modules/e01-app/internal/shell/lib/maintenance.dart: LF SHA256 6c269179e8896dd98611cbcf81849dfae7a1caf9dcb200382319d03ef62cc71b.
+- Güncel modules/e01-app/internal/shell/test/maintenance_test.dart: LF SHA256 76d4a2ac3d1883e752b416f14598c32b0e4de67eda13f1c9c51fbf894a4cd9b1.
+- Güncel modules/e01-app/internal/shell/test/fixtures/maintenance_reading_questions.json: LF SHA256 e408e3aa24229426fc26826fbeeadea799d39535d12814ef56a3e23ea81942e6.
+
+R8 ilk dondurma denemesi: run_all ve strictlink PTY oturumları hâlâ çalışırken logun final worst-exit satırı bulunamadığı için script assertion ile commit öncesinde durdu; bu tamamlanmış testin FAIL sonucu değildir. İki gerçek oturum tamamlandığında run_all12kontrol/42test/worst0 ve strict4655/exitzero doğrulandı; dondurma sonra yeniden uygulanır.

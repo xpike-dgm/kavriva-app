@@ -468,3 +468,7 @@ Bu kaynakta normal widget sayısı203=önceki178+yeni25; yerel native yakalama i
 ## R7 bakım sunumu — güncel operatif sayım
 
 207normal=178önceki+29yeni; yerel native dahil208PASS/24format0/analyze0. Eski203normal/204yerel kaynağı14b2 bağımsız üç bulguyla CHANGES_REQUESTED; tarihsel sayımdır. Güncel31durum×9/81native eskiR6 ile her dosya byteeşit;15sabitilkoku kanıtı aynı görünen metin/düzen için taşınır. Güncelkaynak CI/T3 ve tam bağımsız yeniden inceleme henüz beklenir. Testbaşarısı görevkabulü değildir.
+
+## R8 bakım sunumu — güncel operatif sayım
+
+208normal=178önceki+30yeni; nativeile209yerelPASS/24format0/analyze0.31×9durum/81R8PNG R6 ile tümbyteeşit,15sabitilkoku aynıgörünürUI kanıtı. R7normal207 ve16CI/T3 kaynak7053 için tarihçe; reviewerusageerror nedeniyle bağımsızPASS değildir. GüncelCI/T3 ve bütün bağımsızR8hüküm/son6metadata+sonCI beklenir; henüzDONE/merge yok.
