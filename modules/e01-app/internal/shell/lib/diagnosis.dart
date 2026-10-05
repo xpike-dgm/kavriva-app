@@ -402,6 +402,7 @@ class _DiagnosisViewState extends State<DiagnosisView> {
   final textFocus = FocusNode();
   DiagnosisSafety? answer;
   String? selected;
+  bool sourceExpanded = false;
   @override
   void initState() {
     super.initState();
@@ -415,6 +416,11 @@ class _DiagnosisViewState extends State<DiagnosisView> {
   @override
   void didUpdateWidget(DiagnosisView oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (!oldWidget.scope.matches(widget.scope) ||
+        oldWidget.requestId != widget.requestId ||
+        oldWidget.result != widget.result) {
+      sourceExpanded = false;
+    }
     if (!oldWidget.scope.matches(widget.scope) ||
         oldWidget.requestId != widget.requestId ||
         oldWidget.stage != widget.stage) {
@@ -491,10 +497,21 @@ class _DiagnosisViewState extends State<DiagnosisView> {
   Widget heading(String title) => Semantics(
     header: true,
     child: Padding(
-      padding: const EdgeInsets.only(top: 16, bottom: 8),
+      padding: const EdgeInsets.only(top: 28, bottom: 12),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        style: TextStyle(
+          fontSize:
+              title == 'Motorda ne oluyor?' ||
+                  title == widget.check?.question ||
+                  title == 'Bulgular bir yönü destekliyor' ||
+                  title == 'Belirtiyi açıklayacak sonucu henüz netleştiremedik'
+              ? 32
+              : 22,
+          height: 1.2,
+          fontWeight: FontWeight.w700,
+          letterSpacing: -.5,
+        ),
       ),
     ),
   );
@@ -503,7 +520,17 @@ class _DiagnosisViewState extends State<DiagnosisView> {
     children: [
       heading(title),
       if (values.isEmpty) Text(empty),
-      for (final v in values) Text('• $v'),
+      for (final v in values)
+        Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(bottom: 8),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF3F6FA),
+            borderRadius: BorderRadius.circular(14),
+          ),
+          child: Text('• $v'),
+        ),
     ],
   );
   @override
@@ -524,294 +551,359 @@ class _DiagnosisViewState extends State<DiagnosisView> {
         color: Color(0xFF172033),
       ),
       child: ColoredBox(
-        color: const Color(0xFFF7FAFC),
+        color: const Color(0xFFFFFFFF),
         child: SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-              key: const ValueKey('diagnosis-body'),
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (w.brand != null) w.brand!,
-                  Text('Motosikletim: ${w.scope.motorcycleLabel}'),
-                  if (w.busy)
-                    status(
-                      'İstek işleniyor. Yeni yanıt ve normal devam şu anda kapalı.',
-                    ),
-                  if (w.unknownRequest != null) ...[
-                    heading('İsteğin sonucu henüz belli değil'),
-                    if (w.unknownRequest!.matches(w.scope, w.requestId))
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 640),
+                child: Padding(
+                  key: const ValueKey('diagnosis-body'),
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (w.brand != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8, bottom: 16),
+                          child: w.brand!,
+                        ),
                       Text(
-                        '${w.unknownRequest!.kind.label} isteğinin sonucu bekleniyor.',
+                        'Motosikletim: ${w.scope.motorcycleLabel}',
+                        style: const TextStyle(
+                          color: Color(0xFF526079),
+                          fontSize: 15,
+                        ),
                       ),
-                    status(
-                      'Çevrimdışı kalmış veya yanıtı ulaşmamış bir istek başarı ya da başarısızlık sayılmaz. İşlem tekrar uygulanmaz; yeni yanıt ve normal ilerleme kapalı.',
-                    ),
-                    action(
-                      DiagnosisRequestKind.reconcile,
-                      'Önce aynı isteğin sonucunu kontrol et',
-                      primary: true,
-                      enabled:
-                          !w.busy &&
-                          w.unknownRequest!.matches(w.scope, w.requestId),
-                    ),
-                    if (!w.unknownRequest!.matches(w.scope, w.requestId))
-                      const Text(
-                        'Sonuç bilgisi bu bağlama veya isteğe ait değil. Yabancı istek yeniden kullanılmaz; güncel bilgi olmadan devam kapalı.',
-                      ),
-                  ] else if (w.error != null) ...[
-                    heading('Son isteğin sonucu doğrulanamadı'),
-                    status(
-                      w.error!.matches(w.scope, w.requestId)
-                          ? '${w.error!.kind.label} isteğinin sonucu doğrulanamadı: ${w.error!.message}. Bu hata mevcut kaynak değerlendirmesinin iptal edildiğini veya fiziksel işlemin yapıldığını ya da yapılmadığını kanıtlamaz.'
-                          : 'Hata bilgisi bu bağlama veya isteğe ait değil; eski veya yabancı ayrıntı gösterilmez.',
-                    ),
-                    action(
-                      DiagnosisRequestKind.reconcile,
-                      'Son isteğin sonucunu kontrol et',
-                      primary: true,
-                      enabled:
-                          !w.busy && w.error!.matches(w.scope, w.requestId),
-                    ),
-                  ],
-                  if (w.stage != DiagnosisStage.symptom && !observationSafe)
-                    status(
-                      'Güvenlik beyanı eksik, olumsuz veya bu bağlama ait değil. Tanıya devam kapalı; güvenli destek yolunu kullanabilirsin.',
-                    ),
-                  if (w.stage == DiagnosisStage.symptom) ...[
-                    heading('Motorda ne oluyor?'),
-                    const Text('Teknik terim kullanmadan anlatabilirsin.'),
-                    const SizedBox(height: 12),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xFF5E6E81)),
-                      ),
-                      constraints: const BoxConstraints(minHeight: 132),
-                      child: Semantics(
-                        label:
-                            'Motosiklette gördüğün veya duyduğun sorunu anlat',
-                        child: EditableText(
-                          key: const ValueKey('symptom-input'),
-                          controller: text,
-                          focusNode: textFocus,
-                          style: DefaultTextStyle.of(context).style.copyWith(
-                            fontSize: 18,
-                            color: const Color(0xFF172033),
+                      if (w.busy)
+                        status(
+                          'İstek işleniyor. Yeni yanıt ve normal devam şu anda kapalı.',
+                        ),
+                      if (w.unknownRequest != null) ...[
+                        heading('İsteğin sonucu henüz belli değil'),
+                        if (w.unknownRequest!.matches(w.scope, w.requestId))
+                          Text(
+                            '${w.unknownRequest!.kind.label} isteğinin sonucu bekleniyor.',
                           ),
-                          cursorColor: const Color(0xFF0E5BD8),
-                          backgroundCursorColor: const Color(0xFF5E6E81),
-                          maxLines: 5,
-                          readOnly: !normal,
+                        status(
+                          'Çevrimdışı kalmış veya yanıtı ulaşmamış bir istek başarı ya da başarısızlık sayılmaz. İşlem tekrar uygulanmaz; yeni yanıt ve normal ilerleme kapalı.',
                         ),
-                      ),
-                    ),
-                    heading('Şu anda güvenli mi?'),
-                    const Text(
-                      'Hayır veya emin değilsen tanıya devam etme; güvenli bir yerde dur. Emin olmadığın koşulu olumlu sayma.',
-                    ),
-                    for (final choice in DiagnosisSafety.values)
-                      _DiagnosisAction(
-                        key: ValueKey('safety-${choice.name}'),
-                        label: switch (choice) {
-                          DiagnosisSafety.yes => 'Evet, güvenli',
-                          DiagnosisSafety.no => 'Hayır',
-                          DiagnosisSafety.unsure => 'Emin değilim',
-                        },
-                        selected: answer == choice,
-                        onActivate: normal
-                            ? () => setState(() => answer = choice)
-                            : null,
-                      ),
-                    const Text(
-                      'Bu seçim kendi beyanındır; güvenliği kanıtlamaz veya motosikleti kullanma izni vermez.',
-                    ),
-                    action(
-                      DiagnosisRequestKind.symptom,
-                      'Gözlem sorusunu istemek için devam et',
-                      primary: true,
-                      enabled:
-                          normal &&
-                          answer == DiagnosisSafety.yes &&
-                          text.text.trim().isNotEmpty,
-                    ),
-                  ],
-                  if (w.stage == DiagnosisStage.check) ...[
-                    heading(
-                      checkValid
-                          ? w.check!.question
-                          : 'Güncel gözlem sorusu henüz doğrulanmadı',
-                    ),
-                    if (checkValid) ...[
-                      const Text(
-                        'Şu an yalnızca bu gözlemi seç. Emin değilim de geçerli bir yanıttır.',
-                      ),
-                      Text(w.check!.why),
-                      for (final choice in w.check!.choices)
-                        _DiagnosisAction(
-                          key: ValueKey('choice-${choice.id}'),
-                          label: choice.label,
-                          selected: selected == choice.id,
-                          onActivate: normal && observationSafe
-                              ? () => setState(() => selected = choice.id)
-                              : null,
+                        action(
+                          DiagnosisRequestKind.reconcile,
+                          'Önce aynı isteğin sonucunu kontrol et',
+                          primary: true,
+                          enabled:
+                              !w.busy &&
+                              w.unknownRequest!.matches(w.scope, w.requestId),
                         ),
-                      _DiagnosisAction(
-                        key: const ValueKey('choice-unsure'),
-                        label: 'Emin değilim',
-                        selected: selected == 'unsure',
-                        onActivate: normal && observationSafe
-                            ? () => setState(() => selected = 'unsure')
-                            : null,
-                      ),
-                      const Text(
-                        'Bu gözlem olasılıkları ayırmaya yardımcı olur. Seçim, kesin arıza veya tamir sonucu değildir.',
-                      ),
-                      action(
-                        DiagnosisRequestKind.observation,
-                        'Gözlem yanıtını gönder',
-                        primary: true,
-                        enabled:
-                            normal &&
-                            observationSafe &&
-                            selected != null &&
-                            (selected == 'unsure' ||
-                                w.check!.choices.any((v) => v.id == selected)),
-                      ),
-                      if (photoValid) ...[
-                        heading('Fotoğraf bu gözleme neden yardımcı olabilir?'),
-                        Text(photo!.reason),
-                        if (photo.evidenceAlreadyProvided)
+                        if (!w.unknownRequest!.matches(w.scope, w.requestId))
                           const Text(
-                            'Kaynak, bu gözleme ait önceki fotoğrafın mevcut olduğunu bildiriyor. Yeniden fotoğraf istenmiyor.',
-                          )
-                        else
-                          action(
-                            DiagnosisRequestKind.photo,
-                            'İstersen fotoğraf ekleme yolunu aç',
-                            enabled: normal && observationSafe,
+                            'Sonuç bilgisi bu bağlama veya isteğe ait değil. Yabancı istek yeniden kullanılmaz; güncel bilgi olmadan devam kapalı.',
                           ),
-                        const Text(
-                          'Fotoğraf isteğe bağlıdır; eklemek otomatik teşhis, fiziksel doğrulama veya devam izni değildir.',
+                      ] else if (w.error != null) ...[
+                        heading('Son isteğin sonucu doğrulanamadı'),
+                        status(
+                          w.error!.matches(w.scope, w.requestId)
+                              ? '${w.error!.kind.label} isteğinin sonucu doğrulanamadı: ${w.error!.message}. Bu hata mevcut kaynak değerlendirmesinin iptal edildiğini veya fiziksel işlemin yapıldığını ya da yapılmadığını kanıtlamaz.'
+                              : 'Hata bilgisi bu bağlama veya isteğe ait değil; eski veya yabancı ayrıntı gösterilmez.',
+                        ),
+                        action(
+                          DiagnosisRequestKind.reconcile,
+                          'Son isteğin sonucunu kontrol et',
+                          primary: true,
+                          enabled:
+                              !w.busy && w.error!.matches(w.scope, w.requestId),
                         ),
                       ],
-                    ] else
-                      const Text(
-                        'Eksik, eski veya başka motosiklete ait soru ile yanıt gönderilmez. Bir sonraki kontrol tahmin edilmez.',
-                      ),
-                  ],
-                  if (w.stage == DiagnosisStage.result) ...[
-                    if (resultValid &&
-                        (w.unknownRequest != null ||
-                            w.error != null ||
-                            w.busy)) ...[
-                      heading('Kaynağın güncel değerlendirmesi'),
-                      const Text(
-                        'Aşağıdaki kaynak bilgisi son isteğin başarı sonucu değildir. İsteğin sonucu doğrulanana kadar normal ilerleme kapalı.',
-                      ),
-                    ],
-                    if (w.proposal != null &&
-                        w.proposal!.current &&
-                        w.proposal!.scope.matches(w.scope) &&
-                        w.proposal!.requestId == w.requestId) ...[
-                      heading('Öneri, kesin sonuç değildir'),
-                      Text(w.proposal!.explanation),
-                      const Text(
-                        'AI önerisi tek başına onay veya güvenli kullanım izni vermez. Güncel kaynak değerlendirmesi ayrıca gereklidir.',
-                      ),
-                    ],
-                    heading(
-                      !resultValid
-                          ? 'Sonuç henüz doğrulanmadı'
-                          : switch (w.result!.outcome) {
-                              DiagnosisOutcome.supported =>
-                                'Bulgular bir yönü destekliyor',
-                              DiagnosisOutcome.unresolved => 'Belirtiyi açıklayacak sonucu henüz netleştiremedik',
-                              DiagnosisOutcome.held =>
-                                'Tanıya devam şu anda kapalı',
+                      if (w.stage != DiagnosisStage.symptom && !observationSafe)
+                        status(
+                          'Güvenlik beyanı eksik, olumsuz veya bu bağlama ait değil. Tanıya devam kapalı; güvenli destek yolunu kullanabilirsin.',
+                        ),
+                      if (w.stage == DiagnosisStage.symptom) ...[
+                        heading('Motorda ne oluyor?'),
+                        const Text('Teknik terim kullanmadan anlatabilirsin.'),
+                        const SizedBox(height: 12),
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          margin: const EdgeInsets.only(top: 20),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFFAFBFD),
+                            borderRadius: BorderRadius.circular(14),
+                            border: Border.all(color: const Color(0xFF8995AA)),
+                          ),
+                          constraints: const BoxConstraints(minHeight: 132),
+                          child: Semantics(
+                            label: 'Motosiklette gördüğün veya duyduğun sorunu anlat',
+                            child: EditableText(
+                              key: const ValueKey('symptom-input'),
+                              controller: text,
+                              focusNode: textFocus,
+                              style: DefaultTextStyle.of(context).style
+                                  .copyWith(
+                                    fontSize: 18,
+                                    color: const Color(0xFF172033),
+                                  ),
+                              cursorColor: const Color(0xFF0E5BD8),
+                              backgroundCursorColor: const Color(0xFF5E6E81),
+                              maxLines: 5,
+                              readOnly: !normal,
+                            ),
+                          ),
+                        ),
+                        heading('Şu anda güvenli mi?'),
+                        const Text(
+                          'Hayır veya emin değilsen tanıya devam etme; güvenli bir yerde dur. Emin olmadığın koşulu olumlu sayma.',
+                        ),
+                        for (final choice in DiagnosisSafety.values)
+                          _DiagnosisAction(
+                            key: ValueKey('safety-${choice.name}'),
+                            label: switch (choice) {
+                              DiagnosisSafety.yes => 'Evet, güvenli',
+                              DiagnosisSafety.no => 'Hayır',
+                              DiagnosisSafety.unsure => 'Emin değilim',
                             },
-                    ),
-                    if (resultValid) ...[
-                      Text(w.result!.explanation),
-                      const Text(
-                        'Bu ekran kesin arıza, yapılmış tamir veya güvenli sürüş garantisi vermez.',
-                      ),
-                      list(
-                        'Şu ana kadar bilinenler',
-                        w.result!.known,
-                        'Henüz doğrulanmış gözlem yok.',
-                      ),
-                      const Text(
-                        'Gözlem kayıtları tek başına güncel fiziksel durumun doğrulanması değildir.',
-                      ),
-                      list(
-                        'Henüz bilinmeyenler',
-                        w.result!.unknown,
-                        'Kaynak ek bir bilinmeyen alan bildirmedi; bu, tamir veya tamamlanma değildir.',
-                      ),
-                      list(
-                        'Diğer olasılıklar',
-                        w.result!.alternatives,
-                        'Kaynak başka bir olasılık bildirmedi; kesin arıza çıkarılmaz.',
-                      ),
-                      heading('Güncel kaynak kontrolü'),
-                      for (final d in DiagnosisDimension.values)
-                        Text(
-                          '${d.label}: ${w.result!.checks[d]?.confirmed(w.scope, 'diagnosis-${d.name}', w.result!.id, w.requestId) ?? false ? 'Bu sonuç için olumlu doğrulandı' : 'Olumlu doğrulanmadı; devam izni sayılmaz'}',
-                        ),
-                      if (w.result!.outcome == DiagnosisOutcome.supported) ...[
-                        action(
-                          DiagnosisRequestKind.preview,
-                          preview
-                              ? 'Rehber önizlemesini aç: ${w.result!.guideLabel}'
-                              : 'Rehber önizlemesi henüz açılamıyor',
-                          primary: true,
-                          enabled: normal && preview,
-                        ),
+                            selected: answer == choice,
+                            onActivate: normal
+                                ? () => setState(() => answer = choice)
+                                : null,
+                          ),
                         const Text(
-                          'Sıradaki yol rehberin önizlemesidir; doğrudan tamire başlama değildir. Uygulamadan önce motosiklete uygunluk ve hazırlık kendi güncel kontrolleriyle ayrıca ele alınır.',
-                        ),
-                      ] else ...[
-                        const Text(
-                          'Sonuç netleşmediyse rastgele parça değiştirme. Bilinen ve bilinmeyen bilgiler korunur; kesin sonuç tahmin edilmez.',
+                          'Bu seçim kendi beyanındır; güvenliği kanıtlamaz veya motosikleti kullanma izni vermez.',
                         ),
                         action(
-                          DiagnosisRequestKind.moreObservation,
-                          'Bir ek gözlem yolunu aç',
+                          DiagnosisRequestKind.symptom,
+                          answer == DiagnosisSafety.no ||
+                                  answer == DiagnosisSafety.unsure
+                              ? 'Gözlem yolu kapalı; güvenli destek yolunu kullan'
+                              : 'Gözlem sorusunu istemek için devam et',
                           primary: true,
                           enabled:
                               normal &&
-                              observationSafe &&
-                              w.result!.outcome == DiagnosisOutcome.unresolved,
+                              answer == DiagnosisSafety.yes &&
+                              text.text.trim().isNotEmpty,
                         ),
                       ],
+                      if (w.stage == DiagnosisStage.check) ...[
+                        heading(
+                          checkValid
+                              ? w.check!.question
+                              : 'Güncel gözlem sorusu henüz doğrulanmadı',
+                        ),
+                        if (checkValid) ...[
+                          const Text(
+                            'Şu an yalnızca bu gözlemi seç. Emin değilim de geçerli bir yanıttır.',
+                          ),
+                          Text(w.check!.why),
+                          for (final choice in w.check!.choices)
+                            _DiagnosisAction(
+                              key: ValueKey('choice-${choice.id}'),
+                              label: choice.label,
+                              selected: selected == choice.id,
+                              onActivate: normal && observationSafe
+                                  ? () => setState(() => selected = choice.id)
+                                  : null,
+                            ),
+                          _DiagnosisAction(
+                            key: const ValueKey('choice-unsure'),
+                            label: 'Emin değilim',
+                            selected: selected == 'unsure',
+                            onActivate: normal && observationSafe
+                                ? () => setState(() => selected = 'unsure')
+                                : null,
+                          ),
+                          const Text(
+                            'Bu gözlem olasılıkları ayırmaya yardımcı olur. Seçim, kesin arıza veya tamir sonucu değildir.',
+                          ),
+                          action(
+                            DiagnosisRequestKind.observation,
+                            'Gözlem yanıtını gönder',
+                            primary: true,
+                            enabled:
+                                normal &&
+                                observationSafe &&
+                                selected != null &&
+                                (selected == 'unsure' ||
+                                    w.check!.choices.any(
+                                      (v) => v.id == selected,
+                                    )),
+                          ),
+                          if (photoValid) ...[
+                            heading(
+                              'Fotoğraf bu gözleme neden yardımcı olabilir?',
+                            ),
+                            Text(photo!.reason),
+                            if (photo.evidenceAlreadyProvided)
+                              const Text(
+                                'Kaynak, bu gözleme ait önceki fotoğrafın mevcut olduğunu bildiriyor. Yeniden fotoğraf istenmiyor.',
+                              )
+                            else
+                              action(
+                                DiagnosisRequestKind.photo,
+                                'İstersen fotoğraf ekleme yolunu aç',
+                                enabled: normal && observationSafe,
+                              ),
+                            const Text(
+                              'Fotoğraf isteğe bağlıdır; eklemek otomatik teşhis, fiziksel doğrulama veya devam izni değildir.',
+                            ),
+                          ],
+                        ] else
+                          const Text(
+                            'Eksik, eski veya başka motosiklete ait soru ile yanıt gönderilmez. Bir sonraki kontrol tahmin edilmez.',
+                          ),
+                      ],
+                      if (w.stage == DiagnosisStage.result) ...[
+                        if (resultValid &&
+                            (w.unknownRequest != null ||
+                                w.error != null ||
+                                w.busy)) ...[
+                          heading('Kaynağın güncel değerlendirmesi'),
+                          const Text(
+                            'Aşağıdaki kaynak bilgisi son isteğin başarı sonucu değildir. İsteğin sonucu doğrulanana kadar normal ilerleme kapalı.',
+                          ),
+                        ],
+                        if (w.proposal != null &&
+                            w.proposal!.current &&
+                            w.proposal!.scope.matches(w.scope) &&
+                            w.proposal!.requestId == w.requestId) ...[
+                          heading('Öneri, kesin sonuç değildir'),
+                          Text(w.proposal!.explanation),
+                          const Text(
+                            'AI önerisi tek başına onay veya güvenli kullanım izni vermez. Güncel kaynak değerlendirmesi ayrıca gereklidir.',
+                          ),
+                        ],
+                        heading(
+                          !resultValid
+                              ? 'Sonuç henüz doğrulanmadı'
+                              : switch (w.result!.outcome) {
+                                  DiagnosisOutcome.supported =>
+                                    'Bulgular bir yönü destekliyor',
+                                  DiagnosisOutcome.unresolved => 'Belirtiyi açıklayacak sonucu henüz netleştiremedik',
+                                  DiagnosisOutcome.held =>
+                                    'Tanıya devam şu anda kapalı',
+                                },
+                        ),
+                        if (resultValid) ...[
+                          Text(w.result!.explanation),
+                          const Text(
+                            'Bu ekran kesin arıza, yapılmış tamir veya güvenli sürüş garantisi vermez.',
+                          ),
+                          list(
+                            'Şu ana kadar bilinenler',
+                            w.result!.known,
+                            'Henüz doğrulanmış gözlem yok.',
+                          ),
+                          const Text(
+                            'Gözlem kayıtları tek başına güncel fiziksel durumun doğrulanması değildir.',
+                          ),
+                          list(
+                            'Henüz bilinmeyenler',
+                            w.result!.unknown,
+                            'Kaynak ek bir bilinmeyen alan bildirmedi; bu, tamir veya tamamlanma değildir.',
+                          ),
+                          list(
+                            'Diğer olasılıklar',
+                            w.result!.alternatives,
+                            'Kaynak başka bir olasılık bildirmedi; kesin arıza çıkarılmaz.',
+                          ),
+                          heading('Güncel kaynak kontrolü'),
+                          const Padding(
+                            padding: EdgeInsets.only(bottom: 12),
+                            child: Text(
+                              'Bunlar kaynak değerlendirmesidir; motosikletin fiziksel olarak güvenli olduğu veya sürüş izni verildiği anlamına gelmez.',
+                              style: TextStyle(color: Color(0xFF526079)),
+                            ),
+                          ),
+                          for (final d in DiagnosisDimension.values)
+                            if (!(w.result!.checks[d]?.confirmed(
+                                  w.scope,
+                                  'diagnosis-${d.name}',
+                                  w.result!.id,
+                                  w.requestId,
+                                ) ??
+                                false))
+                              Text(
+                                '${d.label}: Olumlu doğrulanmadı; devam izni sayılmaz',
+                              ),
+                          if (w.result!.outcome ==
+                              DiagnosisOutcome.supported) ...[
+                            action(
+                              DiagnosisRequestKind.preview,
+                              preview
+                                  ? 'Rehber önizlemesini aç: ${w.result!.guideLabel}'
+                                  : 'Rehber önizlemesi henüz açılamıyor',
+                              primary: true,
+                              enabled: normal && preview,
+                            ),
+                            const Text(
+                              'Sıradaki yol rehberin önizlemesidir; doğrudan tamire başlama değildir. Uygulamadan önce motosiklete uygunluk ve hazırlık kendi güncel kontrolleriyle ayrıca ele alınır.',
+                            ),
+                          ] else ...[
+                            const Text(
+                              'Sonuç netleşmediyse rastgele parça değiştirme. Bilinen ve bilinmeyen bilgiler korunur; kesin sonuç tahmin edilmez.',
+                            ),
+                            action(
+                              DiagnosisRequestKind.moreObservation,
+                              'Bir ek gözlem yolunu aç',
+                              primary: true,
+                              enabled:
+                                  normal &&
+                                  observationSafe &&
+                                  w.result!.outcome ==
+                                      DiagnosisOutcome.unresolved,
+                            ),
+                          ],
+                          action(
+                            DiagnosisRequestKind.summary,
+                            'Tanı özetini görüntüle',
+                          ),
+                          const Text(
+                            'Özet yolu bilgileri görmeni ister; motosikleti tamir edilmiş veya işi tamamlanmış olarak kaydetmez.',
+                          ),
+                          _DiagnosisAction(
+                            key: const ValueKey('diagnosis-source-details'),
+                            label: sourceExpanded
+                                ? 'Kaynak ve kontrol ayrıntılarını kapat'
+                                : 'Kaynak ve kontrol ayrıntılarını göster',
+                            onActivate: () => setState(
+                              () => sourceExpanded = !sourceExpanded,
+                            ),
+                          ),
+                          if (sourceExpanded) ...[
+                            heading('Kaynak ayrıntısı'),
+                            for (final d in DiagnosisDimension.values)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: Text(
+                                  '${d.label}: ${w.result!.checks[d]?.confirmed(w.scope, 'diagnosis-${d.name}', w.result!.id, w.requestId) ?? false ? 'Kaynak bu sonuç için olumlu değerlendirme bildirdi; sürüş izni değildir' : 'Olumlu doğrulanmadı; devam izni sayılmaz'}',
+                                ),
+                              ),
+                            Text(
+                              '${w.result!.authority!.source} · ${w.result!.authority!.version} · ${w.result!.authority!.location}',
+                            ),
+                            Text(
+                              'Kontrol tarihi: ${w.result!.authority!.checkedAt}',
+                            ),
+                          ],
+                        ] else
+                          const Text(
+                            'Bir öneri veya kayıt bulunması olumlu doğrulama değildir. Eski, eksik veya yabancı sonuçla normal ilerleme kapalıdır.',
+                          ),
+                      ],
                       action(
-                        DiagnosisRequestKind.summary,
-                        'Tanı özetini görüntüle',
+                        DiagnosisRequestKind.safeSupport,
+                        'Güvenli destek yolunu aç',
                       ),
                       const Text(
-                        'Özet yolu bilgileri görmeni ister; motosikleti tamir edilmiş veya işi tamamlanmış olarak kaydetmez.',
+                        'Güvenli destek veya çıkış bilgisi ücret ve normal devam onayı gerektirmez. Bu yollar fiziksel olarak durduğunu veya işi bitirdiğini kaydetmez.',
                       ),
-                      heading('Kaynak ayrıntısı'),
-                      Text(
-                        '${w.result!.authority!.source} · ${w.result!.authority!.version} · ${w.result!.authority!.location}',
+                      action(
+                        DiagnosisRequestKind.exit,
+                        'Tanıdan çıkış yolunu aç',
                       ),
-                      Text('Kontrol tarihi: ${w.result!.authority!.checkedAt}'),
-                    ] else
-                      const Text(
-                        'Bir öneri veya kayıt bulunması olumlu doğrulama değildir. Eski, eksik veya yabancı sonuçla normal ilerleme kapalıdır.',
-                      ),
-                  ],
-                  action(
-                    DiagnosisRequestKind.safeSupport,
-                    'Güvenli destek yolunu aç',
+                    ],
                   ),
-                  const Text(
-                    'Güvenli destek veya çıkış bilgisi ücret ve normal devam onayı gerektirmez. Bu yollar fiziksel olarak durduğunu veya işi bitirdiğini kaydetmez.',
-                  ),
-                  action(DiagnosisRequestKind.exit, 'Tanıdan çıkış yolunu aç'),
-                ],
+                ),
               ),
             ),
           ),
@@ -843,54 +935,107 @@ class _DiagnosisActionState extends State<_DiagnosisAction> {
   Widget build(BuildContext context) {
     final enabled = widget.onActivate != null;
     final filled = widget.primary && enabled;
-    return FocusableActionDetector(
-      enabled: enabled,
-      onShowFocusHighlight: (value) => setState(() => focused = value),
-      shortcuts: const {
-        SingleActivator(LogicalKeyboardKey.enter): ActivateIntent(),
-        SingleActivator(LogicalKeyboardKey.space): ActivateIntent(),
-      },
-      actions: {
-        ActivateIntent: CallbackAction<ActivateIntent>(
-          onInvoke: (_) {
-            widget.onActivate?.call();
-            return null;
-          },
-        ),
-      },
-      child: Semantics(
-        button: widget.selected == null,
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: FocusableActionDetector(
         enabled: enabled,
-        checked: widget.selected,
-        inMutuallyExclusiveGroup: widget.selected != null,
-        onTap: widget.onActivate,
-        child: GestureDetector(
-          behavior: HitTestBehavior.opaque,
+        onShowFocusHighlight: (value) => setState(() => focused = value),
+        shortcuts: const {
+          SingleActivator(LogicalKeyboardKey.enter): ActivateIntent(),
+          SingleActivator(LogicalKeyboardKey.space): ActivateIntent(),
+        },
+        actions: {
+          ActivateIntent: CallbackAction<ActivateIntent>(
+            onInvoke: (_) {
+              widget.onActivate?.call();
+              return null;
+            },
+          ),
+        },
+        child: Semantics(
+          button: widget.selected == null,
+          enabled: enabled,
+          checked: widget.selected,
+          inMutuallyExclusiveGroup: widget.selected != null,
           onTap: widget.onActivate,
-          child: Container(
-            constraints: const BoxConstraints(minHeight: 52),
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-            decoration: BoxDecoration(
-              color: filled ? const Color(0xFF0E5BD8) : null,
-              border: Border.all(
-                color: focused
-                    ? filled
-                          ? const Color(0xFFFFFFFF)
-                          : const Color(0xFF0E5BD8)
-                    : const Color(0xFF5E6E81),
-                width: focused ? 3 : 1,
-              ),
-            ),
-            child: Text(
-              '${widget.selected == true ? 'Seçili: ' : ''}${widget.label}${enabled ? '' : ' — şu anda kapalı'}',
-              style: TextStyle(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: widget.onActivate,
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 52),
+              alignment: widget.primary
+                  ? Alignment.center
+                  : Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              decoration: BoxDecoration(
                 color: filled
-                    ? const Color(0xFFFFFFFF)
-                    : const Color(0xFF172033),
-                fontWeight: widget.primary
-                    ? FontWeight.w600
-                    : FontWeight.normal,
+                    ? const Color(0xFF0E5BD8)
+                    : widget.selected == true
+                    ? const Color(0xFFEDF4FF)
+                    : const Color(0xFFFFFFFF),
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(
+                  color: focused
+                      ? filled
+                            ? const Color(0xFFFFFFFF)
+                            : const Color(0xFF0E5BD8)
+                      : widget.selected == true
+                      ? const Color(0xFF0E5BD8)
+                      : widget.selected != null
+                      ? const Color(0xFFC5CFDF)
+                      : widget.primary
+                      ? const Color(0xFF8995AA)
+                      : const Color(0xFFFFFFFF),
+                  width: focused ? 3 : 1,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (widget.selected != null) ...[
+                    ExcludeSemantics(
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: widget.selected == true
+                                ? const Color(0xFF0E5BD8)
+                                : const Color(0xFF526079),
+                            width: 2,
+                          ),
+                        ),
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: widget.selected == true
+                                ? const Color(0xFF0E5BD8)
+                                : const Color(0xFFFFFFFF),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 14),
+                  ],
+                  Flexible(
+                    child: Text(
+                      '${widget.selected == true ? 'Seçili: ' : ''}${widget.label}${enabled ? '' : ' — şu anda kapalı'}',
+                      style: TextStyle(
+                        fontSize: widget.primary || widget.selected != null
+                            ? 18
+                            : 16,
+                        color: filled
+                            ? const Color(0xFFFFFFFF)
+                            : const Color(0xFF172033),
+                        fontWeight: widget.primary
+                            ? FontWeight.w600
+                            : FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

@@ -332,6 +332,7 @@ Map<String, DiagnosisView> _states() => {
     check: _check(scope: _scope(bike: 'other')),
   ),
   'supported': _view(result: _result()),
+  'supported-source-open': _view(result: _result()),
   'safety-unknown-result': _view(result: _result(), safe: false),
   'safety-no-check': _view(
     stage: DiagnosisStage.check,
@@ -377,6 +378,8 @@ Map<String, DiagnosisView> _states() => {
   ),
 };
 Future<void> _prepareState(WidgetTester t, String state) async {
+  if (state == 'supported-source-open')
+    await _tap(t, find.byKey(const ValueKey('diagnosis-source-details')));
   if (state.startsWith('symptom-') || state.startsWith('danger-')) {
     await t.enterText(
       find.byKey(const ValueKey('symptom-input')),
@@ -404,6 +407,38 @@ Future<void> _prepareState(WidgetTester t, String state) async {
 
 void main() {
   WidgetController.hitTestWarningShouldBeFatal = true;
+  testWidgets(
+    'Kaynak ayrıntısı açılır; eksik kritik boyut saklanmaz ve yeni sonuçta kapanır',
+    (t) async {
+      final result = _result();
+      await _pump(t, _view(result: result));
+      expect(find.text('Kaynak ayrıntısı'), findsNothing);
+      expect(
+        find.textContaining('sürüş izni verildiği anlamına gelmez'),
+        findsOneWidget,
+      );
+      await _tap(t, find.byKey(const ValueKey('diagnosis-source-details')));
+      expect(find.text('Kaynak ayrıntısı'), findsOneWidget);
+      expect(
+        find.textContaining(
+          'Kaynak bu sonuç için olumlu değerlendirme bildirdi; sürüş izni değildir',
+        ),
+        findsNWidgets(6),
+      );
+      await _pump(
+        t,
+        _view(result: _result(overrides: {DiagnosisDimension.readiness: null})),
+      );
+      expect(find.text('Kaynak ayrıntısı'), findsNothing);
+      expect(
+        find.text(
+          'Güvenlik ve hazırlık: Olumlu doğrulanmadı; devam izni sayılmaz',
+        ),
+        findsOneWidget,
+      );
+      expect(_enabled(t, DiagnosisRequestKind.preview), isFalse);
+    },
+  );
   testWidgets('Belirsiz istek uyarısı olumlu kaynak sonucundan önce görünür', (
     t,
   ) async {
