@@ -443,3 +443,7 @@ Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 12
 ## T-E1-009 R2 fotoğraf kapsamı
 
 142önceki+34yeni=176normalCI;177 yerelyakalamayla. Güncelaynısoru/kapsam/istek/amaç/konu bağlı maddiyararlılık kaynağı olmadan fotoğrafCTA yok; önceki fotoğraf yeniden istenmez.24responsive durum/43 nativePNG/14 kod öncesiilkoku; gerçekeskiG02RED0PASS1FAIL→aynıGREEN1 PASS, R4eskiisteğebağlımetinbeklentisiFAIL→pozitiffotoğraförneğinetaşınanaynıbeklenti. YeniCI/T3/bütünR2bağımsızhükümzorunlu. WorkflowYAML/SDK/lock/önceki 142 değişmedi.
+
+## T-E1-009 v3 görsel onarım
+
+142önceki+35yeni=177normalCI;178yerelnativeile.25responsive durum/55PNG/15kodöncesisoru. Görünür radio seçimi, ana/ikincil eylem ayrımı ve negatif kaynak boyutunu saklamayan açılır ayrıntı. SDK-lock-YAML ve eski142korunur. Aynı kaynak gerçekCI/T3 ve bütün bağımsızhüküm beklenir.
