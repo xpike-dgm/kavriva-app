@@ -354,18 +354,19 @@ class _MaintenanceViewState extends State<MaintenanceView> {
   @override
   void didUpdateWidget(MaintenanceView oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!oldWidget.scope.matches(widget.scope) ||
-        oldWidget.requestId != widget.requestId ||
+    final contextChanged =
+        !oldWidget.scope.matches(widget.scope) ||
+        oldWidget.requestId != widget.requestId;
+    final navigationChanged =
         oldWidget.initialItemId != widget.initialItemId ||
-        oldWidget.initialPage != widget.initialPage ||
-        !identical(oldWidget.plan, widget.plan)) {
+        oldWidget.initialPage != widget.initialPage;
+    if (contextChanged || navigationChanged) {
       page = widget.initialPage;
       selectedItem = widget.initialItemId;
       sourceExpanded = false;
-      if (!oldWidget.scope.matches(widget.scope) ||
-          oldWidget.requestId != widget.requestId)
-        sent = false;
     }
+    if (!identical(oldWidget.plan, widget.plan)) sourceExpanded = false;
+    if (contextChanged) sent = false;
   }
 
   bool get planValid =>
@@ -385,11 +386,22 @@ class _MaintenanceViewState extends State<MaintenanceView> {
     if (action == MaintenanceAction.previewGuide ||
         action == MaintenanceAction.recordEntry ||
         action == MaintenanceAction.postponeReminder) {
+      MaintenanceItem? currentTarget;
+      if (target != null && target.scope.matches(widget.scope)) {
+        for (final candidate in items) {
+          if (candidate.id == target.id &&
+              candidate.revision == target.revision) {
+            currentTarget = candidate;
+            break;
+          }
+        }
+      }
       if (!normal ||
           !planValid ||
-          target == null ||
-          !target.permit(action, widget.scope, widget.requestId))
+          currentTarget == null ||
+          !currentTarget.permit(action, widget.scope, widget.requestId))
         return;
+      target = currentTarget;
       if (action == MaintenanceAction.postponeReminder)
         setState(() => sent = true);
     }

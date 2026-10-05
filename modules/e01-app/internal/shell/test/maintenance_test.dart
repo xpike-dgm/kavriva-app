@@ -708,6 +708,48 @@ void main() {
     }
   });
   testWidgets(
+    'Gecikmiş eski düğme olayı güncel kapalı izni veya silinmiş işi kullanamaz',
+    (t) async {
+      final action = MaintenanceAction.postponeReminder;
+      final replacement = [
+        _plan(
+          items: [
+            _item(
+              overrides: {
+                action: _permit(
+                  action,
+                  'item-example/item-r1',
+                  overrides: {MaintenanceDimension.authorization: null},
+                ),
+              },
+            ),
+          ],
+        ),
+        _plan(items: [_item(revision: 'item-r2')]),
+        _plan(items: []),
+      ];
+      for (final currentPlan in replacement) {
+        await t.pumpWidget(const SizedBox());
+        final sent = <MaintenanceIntent>[];
+        await _pump(t, _view(record: sent.add));
+        final oldTap = t
+            .widget<GestureDetector>(
+              find
+                  .descendant(
+                    of: _action(action),
+                    matching: find.byType(GestureDetector),
+                  )
+                  .first,
+            )
+            .onTap!;
+        await _pump(t, _view(plan: currentPlan, record: sent.add));
+        oldTap();
+        await t.pumpAndSettle();
+        expect(sent, isEmpty);
+      }
+    },
+  );
+  testWidgets(
     'Erteleme kritik uyarıyı gizlemez ve aynı isteği tekrar göndermez',
     (t) async {
       final sent = <MaintenanceIntent>[];
@@ -867,6 +909,44 @@ void main() {
     expect(find.textContaining('Kaynak: Örnek bakım kaynağı'), findsNothing);
     expect(find.text('Bakım zamanı net değil'), findsOneWidget);
   });
+  testWidgets(
+    'Aynı bağlamdaki kaynak yenilenince seçili iş kalır; eski ayrıntı kapanır',
+    (t) async {
+      await _pump(t, _view(page: MaintenancePage.plan));
+      await _tap(
+        t,
+        find.byKey(const ValueKey('maintenance-item-item-example')),
+      );
+      await _tap(t, find.byKey(const ValueKey('maintenance-source-details')));
+      expect(
+        find.textContaining('Kaynak: Örnek bakım kaynağı'),
+        findsOneWidget,
+      );
+      await _pump(
+        t,
+        _view(
+          page: MaintenancePage.plan,
+          plan: _plan(items: [_item(missingSource: true)]),
+        ),
+      );
+      expect(find.text('Bakım zamanı net değil'), findsOneWidget);
+      expect(find.text('Fren kontrolü'), findsOneWidget);
+      expect(
+        find.byKey(const ValueKey('maintenance-return-plan')),
+        findsOneWidget,
+      );
+      expect(find.textContaining('Kaynak: Örnek bakım kaynağı'), findsNothing);
+      await _pump(
+        t,
+        _view(
+          page: MaintenancePage.plan,
+          scope: _scope(context: 'context-r2'),
+        ),
+      );
+      expect(find.text('Bakım planı'), findsOneWidget);
+      expect(find.textContaining('Fren kontrolü'), findsNothing);
+    },
+  );
   testWidgets('Yeni istek eski planı veya izni tekrar kullanamaz', (t) async {
     final sent = <MaintenanceIntent>[];
     await _pump(t, _view(record: sent.add));
