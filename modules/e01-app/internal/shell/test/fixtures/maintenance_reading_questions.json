@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "task": "T-E1-010",
+  "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
+  "profile": "Geçmişsiz bağımsız Luna Max okuyucu; yalnız güncel gerçek görüntüler ve sorular, kod/plan/cevap anahtarı/dış yardım yok. AI okuması insan veya telefon kanıtı değildir.",
+  "passRule": "Bütün sorular yardım olmadan anlamca doğru olmalı; yanlış/cevapsız/belirsiz yanıt CHANGES_REQUESTED, dar onarım ve yeni geçmişsiz okuma gerektirir.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bu bakım işini neden görüyorsun? Bunun nedenini ve dayandığı bilgiyi ekranda bulabiliyor musun?"
+    },
+    {
+      "id": 2,
+      "question": "Bakım zamanı için yeterli bilgi yoksa ekran kesin tarih veya gecikmiş bakım gösteriyor mu?"
+    },
+    {
+      "id": 3,
+      "question": "Kendi yazdığın bakım kaydı, yalnızca kaydedildiği için doğrulanmış bakım gerçeği sayılır mı?"
+    },
+    {
+      "id": 4,
+      "question": "Rehberi açmak, bakımın şimdi gerekli olduğunu veya doğrudan uygulamaya başlayabileceğini gösterir mi?"
+    },
+    {
+      "id": 5,
+      "question": "Rehber önizlemesinden sonra motosiklete uygunluk ve hazırlık koşulları ayrıca kontrol edilir mi?"
+    },
+    {
+      "id": 6,
+      "question": "Daha sonra hatırlat yolunu seçmek, bakımı yapılmış veya tamamlanmış olarak kaydeder mi?"
+    },
+    {
+      "id": 7,
+      "question": "Gerçekte yapılan bakımı kaydetme yolu ile rehberi inceleme ve hatırlatmayı erteleme yollarını ayırt edebiliyor musun?"
+    },
+    {
+      "id": 8,
+      "question": "Biriken bakım işlerinde en önce gösterilen işin neden öncelikli olduğunu anlayabiliyor musun? Sırf en çok geciktiği için mi önce?"
+    },
+    {
+      "id": 9,
+      "question": "İlk öncelikli iş gösterilirken kalan işleri ve tüm bakım planını da görebilir misin?"
+    },
+    {
+      "id": 10,
+      "question": "Bakım zamanı net değilse geçmiş kaydı ve uygulanabilir bakım kaynağını kontrol etmek için hangi yollar var?"
+    },
+    {
+      "id": 11,
+      "question": "Bağlantı kesilmiş bir isteğin sonucu doğrulanmadığında işlem başarılı sayılır mı veya tekrar bakım işlemi başlatılır mı?"
+    },
+    {
+      "id": 12,
+      "question": "Kaynak ya da geçmiş başka motosiklete aitse güncel bakım zamanını veya devam iznini doğrulayabilir mi?"
+    },
+    {
+      "id": 13,
+      "question": "Ekranın ana işini, sıradaki ana eylemini ve ikincil bilgi/çıkış yollarını görünümünden ayırt edebiliyor musun?"
+    },
+    {
+      "id": 14,
+      "question": "Rutin hatırlatmayı ertelemek, sürüş güvenliğiyle ilgili kritik uyarıyı da gizler veya sürüş izni verir mi?"
+    },
+    {
+      "id": 15,
+      "question": "Öncelikli konuda neden önce gösterildiğini, konu hakkında bilinen geçmişi ve sonraki kontrol yolunu ekranda ayırt edebiliyor musun? Bilgi eksikse uydurulmuş bir değer gösteriliyor mu?"
+    }
+  ]
+}
