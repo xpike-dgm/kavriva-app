@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080, V-E9-CHANGE-001, P-E9-005, E-DEV-081, V-E9-ALLOWED-001, P-E9-008, E-DEV-082, V-E9-NEVER-001, P-E9-009, E-DEV-083, V-E9-HOLD-001, P-E9-010, E-DEV-084, V-E9-DISCIPLINE-001, P-E9-011, E-DEV-085]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080, V-E9-CHANGE-001, P-E9-005, E-DEV-081, V-E9-ALLOWED-001, P-E9-008, E-DEV-082, V-E9-NEVER-001, P-E9-009, E-DEV-083, V-E9-HOLD-001, P-E9-010, E-DEV-084, V-E9-DISCIPLINE-001, P-E9-011, E-DEV-085, V-E1-DIAG-001, P-E1-009, E-DEV-107]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
   - "[[modules/e09-ai/MANIFEST.md#Public contract surface]]"
 internal_scope: "Model adapters (provider detail in adapter; version/change observed, re-evaluated), prompt inventory, least-privilege tool bindings (tool authority outside model output; AI-free safe continuation path), decision-layer logic up to — but never including — final authority."
-tasks: [T-E10-001, T-E10-006, T-E9-001, T-E9-002, T-E9-003, T-E9-004, T-E9-005, T-E9-008, T-E9-009, T-E9-010, T-E9-011]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py]
-evidence: [E-DEV-027]
+tasks: [T-E10-001, T-E10-006, T-E9-001, T-E9-002, T-E9-003, T-E9-004, T-E9-005, T-E9-008, T-E9-009, T-E9-010, T-E9-011, T-E1-009]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/diagnosis_test.dart]
+evidence: [E-DEV-027, E-DEV-107]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -122,3 +122,10 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E9-011 project-AI discipline reference
 
 `vault/PROFILES/project-ai-role-notice.md` applies existing E10independentroles/plainexternalnotice/parallelguards to E9 project work; owning E10sources unchanged, no duplicatedprotocol/runtimeedge. Context `vault/PACKS/P-E9-011.md`; proof `vault/EVIDENCE/E-DEV-085.md`. FreshFULL/currentCI pending/noexternalqualification-runtimeactivation. T006007 unchanged; E9proposes/E3verifies/E1renders.
+
+## Tanı sunumu tüketimi
+
+`modules/e01-app/internal/shell/lib/diagnosis.dart` yalnız SCR019..021 gösterir; E9 önerisi otorite değildir. E3 güncel olumlu sonuç ve altı boyut ayrı doğrulanır. Manifest tüketici/test/kanıt kaydı çalışma zamanı bağlantısı değildir. Gerçek üreticiler ve E3 uzlaştırma T-E4-011b/T-E3-004 HELD.
+
+
+`vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
