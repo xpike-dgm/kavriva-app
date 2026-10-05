@@ -4,10 +4,10 @@ version: 1
 contract_id_version: "SCR-019..021; C1.4/F1.4.1/FL1.4.1 diagnosis v1"
 subject_file: modules/e01-app/internal/shell/lib/diagnosis.dart
 subject_digest: 914d6e495043b63fd632954b5ceef1c4c9eed1ce82dfa5ab1be80fe299cddab3
-result: "RECORDED sürüm4; önceki retler korunur, yeni bağımsız kabul bekleniyor"
+result: "PASS E1 tanı sunumu; üretim/cihaz/yayın HELD"
 evidence_links: [vault/PROFILES/diagnosis-render.md, vault/PACKS/P-E1-009.md, vault/REGISTRY/T-E1-009.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-106-E10-GOVERNED-PATHS-FOR-T-E1-009.md.snapshot, modules/e01-app/internal/shell/lib/diagnosis.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/fixtures/diagnosis_reading_questions.json]
-gate_verdict: "RECORDED sürüm4 REVIEW; aynı kaynak CI ve tam bağımsız hüküm bekleniyor"
-reviewer: "/root/e1009_ui_r4_full_review; R4 CHANGES_REQUESTED, sürüm4 yeniden inceleme bekleniyor"
+gate_verdict: "PASS bütün kaynak sunum kabulü; son metadata incelemesi beklenir"
+reviewer: "/root/e1009_ui_r4_full_review; gpt-6-luna/max bağımsız tam inceleme"
 timestamp: 2026-10-05
 purpose: Belirti, tek gözlem ve desteklenmiş veya belirsiz tanı sonucunu sunmak
 domain: diagnosis
@@ -1209,3 +1209,107 @@ Root16yanıtın tamamını anlamca doğru değerlendirdi; yalnız58PNG ve16kodda
 - Temp kavriva_e1009_ui_v4-unresolved-0.png RAW SHA256 cdf886ee5afbfb22a85e069fabb89a149c63d409d612bc2a67f2276d3bd915c2 /69753byte/390×844
 - Temp kavriva_e1009_ui_v4-unresolved-1.png RAW SHA256 2f5c39074eb8b50d5ea0a2f7cece919e50235f0c725bf189d809bc3ac5fbfea3 /65855byte/390×844
 - Temp kavriva_e1009_ui_v4-unresolved-2.png RAW SHA256 33da0986ec1a7a573e90100bf6e44ccefde3327b950fa0c7e6fecf79f577aa82 /65891byte/390×844
+
+## Bütün bağımsız UIv4 kaynak hükmü — değiştirilmemiş rapor
+
+VERDICT: FULL PASS
+
+# T-E1-009 / PR109 — bağımsız tam kaynak incelemesi
+
+## Subject ve kapsam
+
+Bu hüküm, UI kapsamındaki T-E1-009 için exact kaynak `837b8b837bf628d430c97049e38c7c429cbeca3c` üzerinedir. Base `303f0de2beb0ec4933bb6d4f1302085ba2092c3b`, plan pini `fa914f013fdcd032faed876689092da245989459`. Gerçek checkout `C:\Users\Xpike\.codex\worktrees\e4-required-auto-transfer\kavriva-app`; HEAD 837’dir ve çalışma ağacı temizdir. PR109 GitHub’da OPEN/DRAFT, base `main` SHA 303f0de, head `codex/e1-diagnosis` SHA 837b8b8 ve `t3-privileged` etiketlidir.
+
+Base→837 değişen dosyalar P-E1-009’daki 15 izinli yolla birebir eşleşiyor. 16 base pin SHA’sını Git bloblarından bağımsız doğruladım: 16/16 doğru. SDK/pubspec lock dosyaları değişmemiş. Önceki 142 test, ham v73, M1/M9’un esas sözleşme gövdeleri ve izinli dosya sınırları korunmuş. P-E1-009, T-E1-009, CI_PLAN ve E-DEV-107 sürüm4’te güncel 16 soru, 26 durum, 58 PNG ve 178 normal test + 1 yerel yakalama sayımlarını bildiriyor. Registry’deki 12 soru başlangıç kaydı açıkça R1 tarihsel başlığı altına alınmış; güncel kayıt 16’dır. Önceki sayım bulgusu giderilmiştir.
+
+Koddan önce sabitlenen `c26217b` sürüm4 paket/görev/soru kaydıdır; UI kodu `a8db269` ile sonra gelmiştir. Güncel soru fixture’ında önceki 15 soru 5c kaynağıyla birebir aynı; eklenen 16. soru held sonuçta normal gözlem/önizleme ile bilgi, güvenli destek ve çıkış yollarını ayırıyor.
+
+## Önceki held bulgusunun kapanması
+
+R4 incelemesindeki P2 bulgusu, geçerli `DiagnosisOutcome.held` için ayrı ekran kanıtının bulunmamasıydı. 837 bu durumu `_states()` içine `result-held` olarak ekliyor. Kaynak başlığı 32 punto düzeyinde, bekleme nedenini açıklıyor ve “Devam izni verilmedi” diyor. Held sonuçta yeni gözlem/rehber önizlemesi düğmeleri render edilmiyor; unresolved’a ait “rastgele parça değiştirme” ve ek gözlem çağrısı da gösterilmiyor. Bunun yerine statik kapalı durum açıklaması ile mevcut özet, kaynak ayrıntısı, güvenli destek ve çıkış niyetleri kalıyor.
+
+Test factory held açıklamasını unresolved metninden ayırıyor. Yeni widget testi, altı kaynak boyutu olumlu olsa bile normal yolun açılmadığını, preview/moreObservation eylemlerinin bulunmadığını ve yalnız summary/support/exit niyetlerinin gönderildiğini doğruluyor. Eski held testi de devre dışı düğme beklentisinden, bu eylemin hiç bulunmaması beklentisine güçlendirilmiş.
+
+R4’e ait önceki 56 görüntünün her birinin güncel manifestte SHA-256’sı eşleşti; hiçbiri değişmemiş. İki yeni `result-held` görüntüsünü bu incelemede `view_image` ile açtım. Yeni ekranlarda kapanış başlığı, durma gerekçesi, bilgi yolları ve destek/çıkış ayrımı bütün kaydırma parçaları boyunca okunuyor. Ayrı CON-004 okuyucu raporu güncel 58 PNG’nin tamamını açtığını bildiriyor.
+
+## E10 tasarım kapıları — yedi karşılaştırma
+
+Bu eşleme, E10 DESIGN_GATE_CHECKLIST ve DESIGN_REGRESSION_EVIDENCE_RULE kaynaklarını T-E1-009 ekranlarına uyguluyor.
+
+1. **Onaylı kaynak ve değişiklik sınırı — PASS.** Plan pini altındaki G01..G04 gerçek görselleri daha önce açıldı ve pin Git bloblarıyla byte eşitliği doğrulandı. Üç ekran SCR-019..021 kapsamında kalıyor. Referanslar çalışma kaynağıdır; nihai varlık, teknik gerçek veya evrensel ekran şablonu sayılmıyor.
+
+2. **Bileşen ve etkileşim örüntüsü — PASS.** Radio seçeneklerinde şekil, seçili nokta, sınır/dolgu ve “Seçili:” metni birlikte görünüyor. Normal desteklenen yolda tek baskın dolu ana eylem korunuyor; ikincil eylemler sakin çerçeveli. Dekoratif `›` bağımsız semantics eylemi değil ve yalnız gerçek aksiyonlarda kullanılmış; G03’teki bilgi listeleri yanlışlıkla buton gibi gösterilmiyor. Yeni logo/font/token zorunlu kılınmıyor.
+
+3. **Görsel hiyerarşi, Türkçe kopya ve yerleşim — PASS.** Belirti, tek gözlem, desteklenen ve çözülemeyen sonuç akışları G01..G04 ile karşılaştırıldı. Ana başlık belirgin; bölüm ve gövde ölçekleri ayrışıyor. Bilinenler, bilinmeyenler ve olasılıklar ayrıdır. Güvenli sürüş/ fiziksel doğrulama garantisi verilmediği aynı bölgede açık; altı kaynak boyutundan olumlu doğrulanmayanlar gizli ayrıntıya saklanmıyor. Held ekranı da unresolved çağrısına karışmadan normal ilerlemenin kapalı olduğunu açıklıyor. Bilgi ve açıklama içeriği etkileşim gibi işaretlenmiyor.
+
+4. **Duyarlı düzen ve uzun Türkçe içerik — PASS, görev fixture kapsamıyla sınırlı.** 26 UI durumu 320/390/768 genişlik ve 1/2/3 yazı ölçeğinde gerçek kaydırma ve en az 52 hedef koşullarıyla test edilmiş. İçerik genişliği 640 ile sınırlı. PNG’ler 390×844 dilimleridir; 26×9’un tamamı için ayrı PNG veya gerçek telefon deneyi iddia edilmiyor.
+
+5. **Ekran ve durum sözleşmeleri — PASS.** Held, unresolved, provider-held ve bir kaynak boyutunun held olması ayrı fixture/davranış olarak korunuyor. Güvenlik hayır/belirsiz, yabancı/eski/yanlış kapsam ve revizyon, salt öneri, busy/hata, unknown istek, fotoğraf yararlılığı ve yeniden kullanım sınırları önceki kabul edilmiş UI durumlarıyla değişmemiş. `OUTCOME_UNKNOWN` yeniden işlem başlatmıyor; aynı request ID uzlaştırma niyeti korunuyor. Önceki fotoğraf tekrar istenmiyor.
+
+6. **Erişilebilirlik — PASS, otomatik widget kanıtı.** Tab/Enter/Space, disabled Semantics, değişen eylemde odak, live region, gerçek boyanmış metin/odak kontrastı ve hit-test uyarıları test ediliyor. Bunlar insan ekran okuyucu/telefon deneyi değildir ve böyle sunulmuyor.
+
+7. **Referanslar arası tutarlılık, önceki ekranlar ve shell — PASS.** Önceden kabul edilmiş E1 remap ekranlarından ilgili örneklerle açık zemin/koyu metin/ana mavi eylem ortaklığı kontrol edildi; tanı akışı kendi hiyerarşisini koruyor. Routing veya ortak shell davranışı değişmemiş; altbar, telefon/OS, nihai varlık ve üretim token/font kararları HELD.
+
+G01..G04 ve önceki remap karşılaştırmaları ile 56 byte-eşit R4 görüntüsü, R4 raporunda ayrıca kanıtlanmıştı; bu exact 837 incelemesinde bunların değişmediğini hash karşılaştırmasıyla doğruladım ve iki yeni held görüntüsünü doğrudan açtım.
+
+## Mimari ve güvenlik kapsamı
+
+E9 önerir, E1 gösterir, E3 doğrular. E1 yeni sonuç/teknik gerçek/kimlik/yetki/fiziksel doğrulama/kalıcılık/medya veya E3 uzlaştırması üretmiyor; E1↔E9 runtime döngüsü, provider, API veya DB eklenmemiş. Test ekranında `Kavriva · test örneği` ve örnek kullanıcı beyanı görünür; fixture üretim kaynağı gibi tanıtılmıyor. Yerel seçenek/reset koşulları, tam scope/request/revision, altı boyutun güncellik/amaç/konu/sahiplik kontrolleri ve private/foreign retleri korunuyor.
+
+E9/E3/E5/identity/API/DB/kalıcılık/medya, gerçek T-E4-011b/T-E3-004 uzlaştırması, fiziksel motosiklet/cihaz/yayın ve final logo/font/token/routing kararları HELD. Bu UI PASS, üretim hazırlığı, gerçek kullanıcı testi veya fiziksel güvenlik onayı değildir.
+
+## CON-004 ve doğrulama
+
+Sürüm4 için ayrı geçmişsiz okuyucu raporu 58/58 görüntüyü açtığını ve 16 sorunun tamamına cevap verdiğini bildiriyor. Q16 yanıtı held durumda yeni gözlem/rehber önizlemesinin kapalı olduğunu; özet, kaynak ayrıntısı, güvenli destek ve çıkış yollarının açık olduğunu doğru ayırıyor. Diğer yanıtlar güvenlik kapısı, emin değilim, desteklenen yön, belirsiz istek, fotoğraf ve önceki gözlem anlamlarını doğru okuyor. Bu bir AI ekran okumasıdır; insan kullanılabilirlik veya gerçek motosiklet/cihaz durumu kanıtı değildir.
+
+Exact source CI/T3 kanıtı:
+- PR109 base/head SHA ve OPEN/DRAFT/etiketini GitHub’dan doğruladım.
+- Güncel PR labelled T3 run `37302717285`: t3-gate 5/5 başarılı adım; checks job’ı 7/7 başarılı adım.
+- Exact 837 için push 8/8 ve PR 8/8 test/architecture aileleri başarılı. Eski push T3 skip’i güncel labelled PR T3 yerine sayılmadı.
+- PR E1 run `37302717300` ham logu: strict formatter 22 dosya/0 değişiklik, analyze 0 sorun, `+178: All tests passed!`; E4 170, E9 9 PASS.
+- Yerel toplam 179 PASS, bunun 178’i normal test ve 1’i native yakalamadır. `run_all` 12 kontrol +42 test / worst 0; strict links 4621; exact path/pin kontrolü başarılı. Mevcut kilitli dependency install exact PR E1 job’ında başarılıdır. Bu incelemede testleri yeniden çalıştırmadım.
+
+## Önceki retlerin korunması ve hükmün kapsamı
+
+R1 fotoğraf P2 reddi, R2 hiyerarşi reddi ve R3’ün exact `2cd8602941aef6293471c3f9e914c39c57a9665f` kaynağı için formal P2 ikincil etkileşim raporu tarihsel olarak korunmuştur. Önceki R4 reddi `5c5fc3e424ff0d11fa697cae0bda9149956eed95` için P2 held görsel kanıtı ve P3 sayım tutarsızlığıydı. Değiştirilmemiş R4 raporunun SHA-256’sı `d09f99375ff027a0693b5a92424ca29097058f081b3f3b39b592c06cc8a008cc`; R3 raporunun SHA-256’sı `514a572f62780699fcb31c5372e84b0d76b4f36615dfe1b73cd0e0447050f033`. R4 raporundaki iki bulgu bu exact 837 kaynağında kapandı; eski raporların metni veya CI sonuçları değiştirilmedi.
+
+**Karar: T-E1-009 UI kaynağı 837 için FULL PASS.** Bu yalnızca bu exact kaynak ve UI kapsamı için tam bağımsız source hükmüdür. Current CI_PLAN/E-DEV-107 sürüm4 metni 837 CI/T3 ve bağımsız kararı yazıldığı sırada bekliyor durumundaydı; sonradan alınmış exact-source CI receipt’i bu incelemede doğrulandı. Bu pending metadata satırlarının güncel CI/T3 ve bu hükümle uzlaştırılması, talep edilen ayrı son-altı-metadata incelemesinde yapılmalıdır; tarihsel R1/R2/R3/R4 metinlerini değiştirmeyin.
+
+PR109 açık taslak ve birleşmemiştir. Ayrı son-altı-metadata denetimi, onun exact-head CI/T3’ü, normal matched-head merge ve fetched-main8 gereklidir; bu rapor bu kapıları tamamlanmış saymaz. Ana dal sayaçları 95/111/206 olarak kalır; 99 aday ilerlemiş sayılmaz.
+
+
+## Gerçek ui_v4_source CI makbuzu
+
+Exact kaynak 837b8b837bf628d430c97049e38c7c429cbeca3c; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111739021650: 5 başarılı adım/success.
+
+PR checks job111739021877: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717285 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717300 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717198 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717247 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717226 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717260 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717209 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302717234 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709672 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709744 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709771 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709668 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709651 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709806 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709652 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37302709762 — SUCCESS.
+
+PR E1 gerçek log: formatter22zero/analyze0issue/178PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+## Bütün görsel sunum kapsamı kabul adayı
+
+Önceki sürüm4 tablosundaki CI/T3 ve bütün bağımsız hüküm bekleniyor satırları 837 kaynak kaydı yazıldığı andaki tarihsel durumdur. Aynı kaynağın aşağıdaki gerçek16CI/T3 makbuzu ve FULL PASS raporuyla bu iki bekleyen kayıt uzlaştırılmıştır; sayımlar178normal/179yerel/58görüntü/26durum/16soru aynıdır. CI_PLAN içindeki kaynak yazım anı korunur, yeni sonuç eski kaynaklara aktarılmaz.
+
+Bağımsız /root/e1009_ui_r4_full_review gpt-6-luna/max yalnız837b8b837bf628d430c97049e38c7c429cbeca3c tam kaynağını FULL PASS olarak inceledi. Önceki bütün ret ve düzeltme tarihçeleri korunur. Güncel179yerel/178normal/58gerçeknative/26×9responsive ve yalnız güncel58PNG/16kodöncesisoru ile yeni geçmişsiz okuma; yedi tasarım kapısı ve gerçek G01..04 görsel hiyerarşi karşılaştırması bu kaynağın kanıtıdır. AI okuması insan/telefon/fiziksel/motosiklet veya modelruntime tasdiki değildir.
+
+16/16aynı kaynak GitHubCI başarılı; PR T3jobs/steps/logs gerçek makbuzda doğrulanmıştır. ACTIVE/DONE yalnız E1 tanı sunum görev kapsamının kabul adayıdır. Altı son metadata dosyasının ayrı bağımsız incelemesi ve aynı sonCI/T3 henüz gereklidir. Henüz merge yok; gerçekmain95/111/206 değişmez. ÜretimE9/E3/E5/identity/API/DB/medya/kalıcılık/gerçekuzlaştırmaT4-011b-T3-004/fiziksel/cihaz/yayın/nihaitokenfontlogo-routing ve RET97/Supabase/E3R1held kapanmaz. Önceki142test/SDK-lock-YAML/rawv73/eski esas kanıt/sorular korunur. Bütün uygulamanın canlı kullanıma hazır olduğu iddia edilmez.
+
+Bağımsız rapor RAW SHA256 413c0809835bcbb6d8fdf481d2c4624698c6f7c3fa94e42110f8f6318696f991; ACTIVEprofilLF SHA256 f6a3207f28844bc735dae105b1c843c309d3d55981c1e23a5ed5816645cdcb9c.
