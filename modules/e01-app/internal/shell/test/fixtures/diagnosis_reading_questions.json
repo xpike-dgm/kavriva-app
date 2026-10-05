@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "task": "T-E1-009",
   "methodSource": "fa914f013fdcd032faed876689092da245989459:06_DELIVERY_PLANNING/ACCEPTANCE_MATRIX.md CON-004/F10.6.1",
   "profile": "Geçmişsiz bağımsız ilk okuyucu; yalnız gerçek görüntüler ve sorular. Kod, plan, cevap anahtarı veya dış yardım yok. AI okuması insan/telefon kullanılabilirliği kanıtı değildir.",
@@ -79,6 +79,11 @@
       "id": 15,
       "surface": "visual-hierarchy",
       "question": "Sorun anlatma, gözlem ve sonuç ekranlarında ana iş ve sıradaki eylem hangisi? Destek ve çıkış yollarını bu eylemden ayırabiliyor musun?"
+    },
+    {
+      "id": 16,
+      "surface": "result-held",
+      "question": "Tanıya devam şu anda kapalı sonucunda yeni gözlem veya rehber önizlemesi başlatabilir misin? Bilgileri incelemek ve güvenli destek veya çıkış için hangi yollar açık?"
     }
   ]
 }
