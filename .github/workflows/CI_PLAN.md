@@ -433,7 +433,7 @@ Aynı e1-tests.yml ve sabit SDK/lock/format/analyze/bütün testler. Önceki 122
 
 Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 122 önceki + 20 yeni = 142 normal CI; 143 yalnız yerel yakalamayla. On bir duyarlı durum, 38 R6 native görüntü; eski 31 görüntü byte eşit, yedi yeni hata/bekleme görüntüsü root tarafından açıldı. Gerçek eski kaynak regresyonu 0 PASS / 1 FAIL ve aynı onarılan beklenti 1 PASS. İlk ret korunur; yeni tam CI/T3 ve bütün bağımsız yeniden inceleme gerekir. Workflow YAML değişmedi.
 
-## Tanı sunumu test kapsamı
+## Tanı sunumu test kapsamı — ilk R1 tarihsel kayıt
 
 Önceki142+yeni30=normal CI172; yerel native yakalama ile173. Sabit SDK/locked pub get/strict format22/0/analyze0;20 durum×9 düzen/38 native PNG/52 hedef/gerçek klavye/kontrast/fatal pointer uyarıları. Kritik istek sırası gerçek RED→GREEN. Workflow YAML değişmedi. Ayrı12 soruluk ilk okuma, bütün kaynak ve ayrı son metadata hükmü, aynı kaynak ve son CI/T3 zorunlu. Yerel sonuç gerçek GitHub CI yerine geçmez.
 
@@ -447,3 +447,11 @@ Bağlamlı GuideRemapRequestError ve olumlu kaynak/son istek sonucu ayrımı: 12
 ## T-E1-009 v3 görsel onarım
 
 142önceki+35yeni=177normalCI;178yerelnativeile.25responsive durum/55PNG/15kodöncesisoru. Görünür radio seçimi, ana/ikincil eylem ayrımı ve negatif kaynak boyutunu saklamayan açılır ayrıntı. SDK-lock-YAML ve eski142korunur. Aynı kaynak gerçekCI/T3 ve bütün bağımsızhüküm beklenir.
+
+## T-E1-009 R4 ikincil eylem kapsamı — tarihsel
+
+5c5fc3e kaynağı için178yerel/177normal/56native/25duyarlıdurum/15kodöncesisoru; gerçek16CI/T3 yeşildi. Geçerli outcome-held için eksik nativekanıt ve operatif sayım tutarsızlığı bağımsız CHANGES_REQUESTED doğurdu; bu eski kabul değildir.
+
+## T-E1-009 güncel sürüm4 — tek operatif kabul sayımı
+
+16kodöncesisoru;26duyarlıdurum×9;58gerçeknativePNG.142önceki+36yeni=178normalCI; yerelnativeyakalamaile179PASS. Strictformatter22zero/analyze0; workflowYAML/SDK-lock/önceki142 değişmedi. Geçerli outcome-held ayrı rendering/native ve olumlu boyutlara rağmen normalyolun açılmaması/yalnız bilgi-destekniyetleri regresyonu mevcut. Önceki12/14/15soru,38/43/55/56PNG ve172/176/177CI rakamları tarihsel kaynak kimlikleriyle korunur; bu yeni sayım onların sonucunu değiştirmez. Güncel kaynağın GitHubCI/T3 ve bütün bağımsız hükmü henüz beklenir.

@@ -579,3 +579,27 @@ Yeni aynı kaynak GitHubCI/T3 ve bütün bağımsız görev hükmü beklenir. Es
 - Temp kavriva_e1009_ui_r4-unresolved-0.png RAW SHA256 cdf886ee5afbfb22a85e069fabb89a149c63d409d612bc2a67f2276d3bd915c2 /69753byte/390×844
 - Temp kavriva_e1009_ui_r4-unresolved-1.png RAW SHA256 2f5c39074eb8b50d5ea0a2f7cece919e50235f0c725bf189d809bc3ac5fbfea3 /65855byte/390×844
 - Temp kavriva_e1009_ui_r4-unresolved-2.png RAW SHA256 33da0986ec1a7a573e90100bf6e44ccefde3327b950fa0c7e6fecf79f577aa82 /65891byte/390×844
+
+## Güncel kabul girdisi — sürüm4, beklemedeki sonuç dahil
+
+Bu bölüm güncel kapsamı tanımlar; aşağıdaki R1/R2/R3/R4 sayımları yalnız tarihsel kaynaklara aittir. Precodec26217b03fa8e57e2d32302352763d745fd0b41c; koda8db269bb749e9bd61cb36c16ed4c3d74f415e26; kodLF SHA256914d6e495043b63fd632954b5ceef1c4c9eed1ce82dfa5ab1be80fe299cddab3; testLFdd20417bc8fc05ffa305daa3ca93466db3f8d82c71c548ea0816e511741036ba;16soruLF5caa22023c69c84e6a65ec19f069b5759715ce766027da7ae8b801026683e70a.
+
+| Güncel öğe | Gerçek yerel kanıt |
+|---|---|
+| Operatif soru seti | 16; önceki15 anlamı değişmedi |
+| Normal widget testleri | 178 = önceki142+yeni36 |
+| Yerel yakalama dahil | 179PASS =178normal+1native |
+| Duyarlı durum matrisi | 26durum×320/390/768×1/2/3; geçerli outcome-held dahil |
+| Native ekran parçaları | 58adet,390×844, düzenlenmemiş |
+| Format/analyze | 22dosya/0değişiklik;0sorun |
+| Yeni GitHubCI/T3 ve tam bağımsız hüküm | Henüz bekleniyor; yerel sonuç CI sonucu değildir |
+
+Geçerli beklemedeki sonuç diğer sonuçlarla aynı32pt önem düzeyinde ana başlık alır; yeni gözlem ve rehber önizlemesi başlatma eylemi yoktur. Çözülemeyen sonuca ait ek gözlem çağrısı ile karışmaz. Bilinen/bilinmeyen/alternatif içerik korunur; güncel kaynak açıklaması testte beklemedeki sonuca özgüdür. Özet/kaynak ayrıntısı/güvenli destek/çıkış mevcut okuma/niyet koşullarıyla korunur; fiziksel devam veya tamamlanma iddiası yoktur. Bütün kaynak boyutları olumlu olsa bile held sonucu normal yolu açmadığını ve yalnız bilgi/destek/çıkış niyetleri gönderildiğini sınayan yeni anlamlı test geçmiştir. Eski held testinin kapalı ek gözlem beklentisi artık eylemin bulunmaması olarak güçlendirilmiştir; önceki142 kabul edilmiş test değişmedi.
+
+Root iki yeni held PNGyi gerçekten açtı; kalan56güncelPNG daha önce rootun ayrı ayrı gerçekten açtığı R4PNGleriyle RAWhash byteeşitliği tek tek doğrulanarak karşılaştırıldı.58yeni dosyanın ayrı açıldığı iddia edilmez: güncel58içerik=2yeni gerçek açılış+56açılmış byteeşit görüntü. İlk okuyucu ise güncel58dosyanın tamamını ayrı açmıştır.26×9 kombinasyonun tümünün ayrı PNGsi veya gerçek cihaz deneyi iddia edilmez. Lockedpubget UIr3te başarılı; SDK/pubspec/lock değişmedi.
+
+E10 yedi karşılaştırma: önceki başlık/radio şekil-sınır-dolgu/ana-ikincil eylem onarımı aynı56görüntüde byteeşit korunur; geçerli held iki yeni tam kaydırma görüntüsüyle desteklenir. CanonicalG01..04 ve önceki remap karşılaştırması öncekiR4 bağımsız raporunda görsel hiyerarşi ve etkileşim açısından geçmiştir; bu yeni kaynakta yalnız aynıların byteeşitliği+ekheld karşılaştırması root değerlendirmesidir, yeni bütün bağımsız hükmün yerine geçmez. Negatif altı boyut ayrıntıya saklanmaz; olumlu ayrıntı yeni sonuç/kapsam/istekte kapanır. Aynı klavye/disabledSemantics/odak/liveRegion/kontrast/52hedef/fatalhitwarnings ve güvenlik/unknown/foreign/private/photo-usefulness-reuse sınırları korunur.
+
+Önceki retler ve gerçekCI tarihçesi korunur; aşağıdaki R3/R4 tam raporlar değiştirilmeden eklenir. Güncel same-sourceCI/T3 ve yeni tam bağımsız hüküm olmadan görevDONEdeğildir. Ana95/111/206 değişmez. E9/E3/E5/identity/API/DB/kalıcılık/medya/gerçekT4-011b-T3-004uzlaştırma/fiziksel/cihaz/yayın/nihaitokenfontlogo-routing/Supabase/RET97 HELD kalır.
+
+Yeni geçmişsiz16 ilk okumanın tam raporu ve RAWhash E-DEV-107de; root16yanıtın tamamını okudu, anlamca doğru. AI okuması insan/cihaz/gerçek motosiklet kanıtı değildir.
