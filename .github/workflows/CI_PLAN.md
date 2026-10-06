@@ -120,6 +120,8 @@ used_by:
   - "E-DEV-109"
   - "P-E1-012"
   - "E-DEV-110"
+  - "P-E1-013"
+  - "E-DEV-111"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -504,3 +506,10 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 
 
 `vault/PROFILES/record-dispute-render.md`; `vault/PACKS/P-E1-012.md`; `vault/REGISTRY/T-E1-012.md`; `vault/EVIDENCE/E-DEV-110.md`.
+
+## Kritik düzeltme sunum doğrulaması
+
+277normal=önceki262+yeni15, native1ayrıPASS. Format30/0-analyze0;31×9düzen/51native390×844/52hedef/gerçekklavye/actualbuttonSemantics/liveRegion/çizilmişkontrast/fatalpointer. AynıYAML/SDK/publock.12soru sabit; bağımsızilkoku/bütün hüküm ve ayrıson6metadata aynı gerçekCI-T3 beklemede.
+
+
+`vault/PROFILES/correction-reachback-render.md`; `vault/PACKS/P-E1-013.md`; `vault/REGISTRY/T-E1-013.md`; `vault/EVIDENCE/E-DEV-111.md`.

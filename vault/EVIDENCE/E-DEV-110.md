@@ -13,7 +13,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-06
 depends_on: [V-E1-RECORD-001]
-used_by: [V-E1-RECORD-001, P-E1-012, T-E1-012]
+used_by: [V-E1-RECORD-001, P-E1-012, T-E1-012, V-E1-REACHBACK-001, P-E1-013]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -771,3 +771,7 @@ PRrun37525156873/t3-gatejob112480168439: 5başarılıadım/success.
 - push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37525152140 — SUCCESS; hamlogRAW SHA256681b4c0c2f59b1ccf005f1228a27fc5c37a40bcc1df51607cbb7d931d15e096c/16976byte.
 
 E1gerçekhamlog: strictformat28/0-analyze0-262normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. PushT3SKIPPED0adım bağımsız kabul değildir; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
+
+## T013 tüketimi ve gerçek PR112 ikincil kabul makbuzu
+
+[PR112](https://github.com/xpike-dgm/kavriva-app/pull/112) MERGED@2026-10-06T20:51:58Z; kaynak14bc32f1cab1992faffbf116cd834e00fbb4b9ea bağımsız FULL PASS, son6551eba61c819a478b4a328bae8b90ed2d486ee7a ayrı PASS. Gerçeksource16/final16/main8 jobadımlogSUCCESS; normal eşleşen merge/fetchedmain4778c3bb8f29669c0b728ae1da7e2fa8c8a5df8f, treeequal. [Tam özgün hükümler](https://github.com/xpike-dgm/kavriva-app/pull/112#issuecomment-6025222795), [gerçek main8makbuzu](https://github.com/xpike-dgm/kavriva-app/pull/112#issuecomment-6025276431). Gerçek99DONE107kalan206; eski retler/ilkoku/ham rapor baytları ve esas gövdeler aynen korunur. Bu ek T013kabulü değildir.
