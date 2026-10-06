@@ -4,11 +4,11 @@ version: 1
 contract_id_version: "SCR-022..024; C1.5/F1.5.1/FL1.5.1 maintenance v1"
 subject_file: modules/e01-app/internal/shell/lib/maintenance.dart
 subject_digest: 6c269179e8896dd98611cbcf81849dfae7a1caf9dcb200382319d03ef62cc71b
-result: "RECORDED bakım sunumu; bağımsız bütün kabul bekleniyor"
+result: "PASS E1 bakım sunumu; üretim/cihaz/yayın HELD"
 evidence_links: [vault/PROFILES/maintenance-render.md, vault/PACKS/P-E1-010.md, vault/REGISTRY/T-E1-010.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-107-E10-GOVERNED-PATHS-FOR-T-E1-010.md.snapshot, modules/e01-app/internal/shell/lib/maintenance.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/fixtures/maintenance_reading_questions.json]
-gate_verdict: "RECORDED kaynak REVIEW; üretim/cihaz/yayın HELD"
-reviewer: "/root/e1010_full_review; 14b2 CHANGES_REQUESTED, R7 usage limit ile kesildi; R8 beklenir"
-timestamp: 2026-10-05
+gate_verdict: "PASS bütün kaynak sunum kabulü; son metadata incelemesi beklenir"
+reviewer: "/root/e1010_r8_recovery_whole_review; gpt-6-luna/max bağımsız tam inceleme"
+timestamp: 2026-10-06
 purpose: Bakım planı, iş ayrıntısı ve önceliklerin kaynaklı sunumu
 domain: maintenance
 module: e01-app
@@ -19,7 +19,7 @@ internal_scope: maintenance-presentation
 tasks: [T-E1-010]
 tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 superseded_by: []
-last_verified: 2026-10-05
+last_verified: 2026-10-06
 depends_on: [V-E1-MAINT-001]
 used_by: [V-E1-MAINT-001, P-E1-010, T-E1-010]
 evidence: []
@@ -840,3 +840,364 @@ PR E1 gerçek log: formatter24zero/analyze0issue/207PASS; E4 170PASS ve E9 9PASS
 - Güncel modules/e01-app/internal/shell/test/fixtures/maintenance_reading_questions.json: LF SHA256 e408e3aa24229426fc26826fbeeadea799d39535d12814ef56a3e23ea81942e6.
 
 R8 ilk dondurma denemesi: run_all ve strictlink PTY oturumları hâlâ çalışırken logun final worst-exit satırı bulunamadığı için script assertion ile commit öncesinde durdu; bu tamamlanmış testin FAIL sonucu değildir. İki gerçek oturum tamamlandığında run_all12kontrol/42test/worst0 ve strict4655/exitzero doğrulandı; dondurma sonra yeniden uygulanır.
+
+## Bütün bağımsız kaynak hükmü — değiştirilmemiş tam rapor
+
+Bağımsız raporun değişmemiş ham baytları aşağıdaki Base64 bloğunda tam olarak korunur. Okunabilir gösterimde yalnız Markdown başlık satırlarındaki iki boşlukla yapılan satır sonları eşdeğer HTML satır sonuyla gösterilir; içerik ve hüküm değişmez. Yetkili özgün rapor RAW SHA256 68419b95dad0d374a80d3f12cbff2672ae44c12d8e17ce15cf68ad30494138e9, 13104 bayttır.
+
+```base64
+IyBULUUxLTAxMCAvIFBSICMxMTAg4oCUIFI4IGJhxJ/EsW1zxLF6IHRhbSBrYXluYWsgaW5jZWxlbWVzaQoKVGFyaWg6IDIw
+MjYtMTAtMDYgIArEsG5jZWxlbmVuIGtheW5hazogUFIgaGVhZCBgNmVjYjA0M2NjMDVjOTliOWUwM2VjZTQ2ZDk4ZWJlZDJi
+ZWY5MzFhYmAgIApLYXluYWsga29kIGNvbW1pdCdpOiBgMzY0YWFlNjEzYjM1YWQxNmRhODA4Y2NiMjJkYTdhZjZiODNlOTVl
+YmAgIApLb2RkYW4gw7ZuY2UgUjggYnVsZ3Uga2F5ZMSxOiBgODczNzcyYTU3ZjY3YmY4ODJhNzk4OTMyZTE2MzI3YWQ3YTBk
+OTRjM2AgIApSNyBvbmFyxLFtIGtvZHU6IGA1YzVhNGVkNDllNWNiYzU0ZjJlMjg5MzY1OGJiNDk1MzA2ZjI1MTY5YCAgCsOW
+bmNla2kgYmHEn8SxbXPEsXogcmV0IGtheW5hxJ/EsTogYDE0YjJjZGFjZjRmZTI5OGJiYzE4NGZkZDA3NjQ0ZGM0ZjQ0NGM3
+ZDhgICAKUFI6IGh0dHBzOi8vZ2l0aHViLmNvbS94cGlrZS1kZ20va2F2cml2YS1hcHAvcHVsbC8xMTAgIApEYWw6IGBjb2Rl
+eC9lMS1tYWludGVuYW5jZWAgIApUYWJhbjogYGNhM2RmNmZiZWEyNjhmZjViNzIwYTVkMTUxOTNhNTBhMWYzZTFiZGFgICAK
+S2Fub25payBwbGFuIHBpbmk6IGBmYTkxNGYwMTNmZGNkMDMyZmFlZDg3NjY4OTA5MmRhMjQ1OTg5NDU5YAoKIyMgVkVSRElD
+VDogRlVMTCBQQVNTCgpSOCBrYXluYWsgaW5jZWxlbWVzaSB0YW1hbWxhbmTEsS4gw5ZuY2VraSBiYcSfxLFtc8SxeiBSNyBp
+bmNlbGVtZXNpbmluIMO8w6cgYnVsZ3VzdSB2ZSBSOCdkZSBzYXB0YW5hbiBtYWxmb3JtZWQgVVRGLTE2IGtpbWxpayDDp2Fr
+xLHFn21hc8SxIGtheW5hayBrb2R1IGlsZSByZWdyZXN5b24gdGVzdGxlcmluZGUga2FwYW5txLHFn3TEsXIuIFllbmkga2F5
+bmFrIGJ1bGd1c3UgYnVsbWFkxLFtLiBDYW5sxLEgR2l0SHViIGtvbnRyb2zDvG5kZSBheW7EsSBSOCBrYXluYcSfxLFuYSBh
+aXQgMTYvMTYgd29ya2Zsb3cgYmHFn2FyxLF5bGEgdGFtYW1sYW5txLHFnzsgem9ydW5sdSBnZXLDp2VrIFBSIFQzIGRlIGJh
+xZ9hcsSxbMSxZMSxci4KCkJ1IEZVTEwgUEFTUyB5YWxuxLF6IFBSICMxMTAnZGFraSBULUUxLTAxMCBrYXluYWsgaW5jZWxl
+bWUga2Fwc2FtxLFuYSBhaXR0aXIuIEfDtnJldiBrYWJ1bMO8L0RPTkUsIG1lcmdlLCDDvHJldGltIGVudGVncmFzeW9udSwg
+Zml6aWtzZWwgY2loYXogdmV5YSB5YXnEsW4gc29udWN1IGRlxJ9pbGRpci4gQnUgcmFwb3J1IHlhemFya2VuIHJlcG8sIGJy
+YW5jaCwgUFIgdmUgZ8O2cmV2IG1ldGFkYXRhJ3PEsW7EsSBkZcSfacWfdGlybWVkaW0uCgojIyBLYXluYWssIGl6aW5saSBr
+YXBzYW0gdmUga2F5xLF0IHR1dGFybMSxbMSxxJ/EsQoKw4dhbMSxxZ9tYSBhxJ9hY8SxIGBDOlxVc2Vyc1xYcGlrZVwuY29k
+ZXhcd29ya3RyZWVzXGU0LXJlcXVpcmVkLWF1dG8tdHJhbnNmZXJca2F2cml2YS1hcHBgLCBicmFuY2ggYGNvZGV4L2UxLW1h
+aW50ZW5hbmNlYCwgSEVBRCBgNmVjYjA0M2NjMDVjOTliOWUwM2VjZTQ2ZDk4ZWJlZDJiZWY5MzFhYmAgb2xhcmFrIGRvxJ9y
+dWxhbmTEsS4gxLBuY2VsZW1lIMO2bmNlc2kgdmUgc29ucmFzxLFuZGEgw6dhbMSxxZ9tYSBhxJ9hY8SxIHRlbWl6ZGlyLiBH
+aXRIdWIgUFIgQVBJJ3NpIFBSICMxMTAndSBhw6fEsWssIGRyYWZ0LCBtZXJnZSBlZGlsbWVtacWfOyBoZWFkIGA2ZWNiMDQz
+Li4uYCwgYmFzZSBgY2EzZGY2Zi4uLmAgb2xhcmFrIGfDtnN0ZXJpeW9yLgoKQmFzZSBpbGUgaGVhZCBhcmFzxLFuZGFraSAx
+NCBkZcSfacWfZW4geW9sLCBga2F2cml2YV9lMTAxMF9zY29wZS5qc29uYCBpemluIGxpc3Rlc2l5bGUgYmlyZWJpciBlxZ9s
+ZcWfaXlvci4gTWFuaWZlc3R0ZWtpIDIyIGJhc2UgcGluaW5pbiBTSEEtMjU2IGRlxJ9lcmxlcmkgR2l0IG5lc25lbGVyaW5k
+ZW4geWVuaWRlbiBoZXNhcGxhbmTEsTsgMjIvMjIgZcWfbGXFn3RpLiBTYWJpdCAxNSBzb3J1bHVrIGZpeHR1cmUgaGFzaCdp
+IGBlNDA4ZTNhYTI0MjI5NDI2ZmMyNjgyNmZiZWVhZGVhNzk5ZDM5NTM1ZDEyODE0ZWY1NmEzZTIzZWE4MTk0MmU2YCBvbGFy
+YWsgZcWfbGXFn3RpLiBIMDIvSDAzL0gwNCBnw7Zyc2VsbGVyaW5pbiBgZmE5MTRmLi4uYCBwbGFuIGNvbW1pdCdpbmRla2kg
+R2l0IGJsb2IgaGFzaCdsZXJpIGRlIHNjb3BlIG1hbmlmZXN0aW5kZWtpIGRlxJ9lcmxlcmxlIGXFn2xlxZ90aS4gS2Fub25p
+ayBwbGFuIGtheW5hxJ/EsW5kYSBULUUxLTAxMCB2ZSBDT04tMDA0L0YxMC42LjEga2FwxLFsYXLEsSBtZXZjdXQ7IERFQy0w
+MDY5IHNhaGlwIG9uYXlsxLEgaW5jZWxlbWUgeWV0a2lzaW5pIGtheWRlZGl5b3IuIERFQy0wMDcwIHBsYW4gUFI0IGJpcmxl
+xZ9tZW1pxZ90aXIgdmUgY2Fub25pY2FsIG1haW4gb2xhcmFrIGt1bGxhbsSxbG1hbcSxxZ90xLFyLgoKUjggc25hcHNob3Qg
+ZG9zeWFzxLEsIGtvZGRhbiDDtm5jZWtpIHY3NCBlbnZhbnRlciBiYXl0bGFyxLF5bGEgYXluxLFkxLFyOiAyMDUsMjQwIGJ5
+dGUsIFNIQS0yNTYgYGM0NWFkZGM5NzNiMjVjZjY4Nzk3NjEwMTA0NjczMjU4MDg4MGQ0OTE0MjM4NzBkMzE1YTU4OGFkNzVj
+NjJjYzdgLiBFLURFVi0xMDcnbmluIGJhc2Ugc8O8csO8bcO8bmRla2kgWUFNTCBkxLHFn8SxIGfDtnZkZSB5ZW5pIGRvc3lh
+ZGEgZGXEn2nFn21lZGVuIGJhxZ9sxLF5b3I7IGVrIHlhbG7EsXogNzE3IGJ5dGUndMSxci4gw5ZuY2VraSBga2F2cml2YV9l
+MTAxMF9yOF9yZXZpZXdfcGVuZGluZ19jaS50eHRgIHJhcG9ydSBkZcSfacWfdGlyaWxtZW1pxZ90aXI7IFNIQS0yNTYgYDg4
+ZDlhY2M3YjEzNWU3ODFiNjZmODc0MDliYjM0MTg1OTYxYmRkM2Q5ODM1MzhhMzVkZjJlMTlkZjc1YmI5ODlgLgoKR8O2cmV2
+IHZlIGfDtnLDvG7DvHJsw7xrIHN0YXTDvGxlcmkgc291cmNlIGhlYWQnZGUga2FzxLF0bMSxIG9sYXJhayBhw6fEsWt0xLFy
+OiBULUUxLTAxMCBgUkVWSUVXYCwgYFYtRTEtTUFJTlQtMDAxYCBgUkVWSUVXYCwgYFAtRTEtMDEwYCBgSU5fUFJPR1JFU1Ng
+LCBFLURFVi0xMDggYFJFQ09SREVEYDsgZ2VuZXJhdGVkIHJlZ2lzdHJ5IDEwMCBzYXTEsXJkxLFyIHZlIFQtRTEtMDEwIGBS
+RVZJRVdgLCByb3V0aW5nIGRlIGBSRVZJRVdgIGfDtnN0ZXJpci4gTWFpbiBzYXlhY8SxIDk2IERPTkUgLyAxMTAga2FsYW4g
+LyAyMDYgdG9wbGFtZMSxci4gRTNSMSBgUkVWSUVXYCwgRTUtMDAzIGBJTl9QUk9HUkVTU2AsIFN1cGFiYXNlIDQ3LzU3LzU5
+IHZlIFJFVDk3L8O8cmV0aW0vY2loYXoveWF5xLFuIHPEsW7EsXJsYXLEsSBrYXBhbm1hbcSxxZ90xLFyLgoKIyMgw5ZuY2Vr
+aSBidWxndWxhciB2ZSBSOCBrYXBhbsSxxZ/EsQoKw5ZuY2VraSBiYcSfxLFtc8SxeiBpbmNlbGVtZW5pbiAxNGIyY2RhYyBr
+YXluYcSfxLEgacOnaW4gw7zDpyBidWxndXN1IGtvcnVubXXFn3R1cjoKCjEuIMOWbmNlbGlrIGthbsSxdMSxIHPEsXJhbGFu
+bWFtxLHFnyBwbGFuIMO8eWVsacSfaSBpbGUgaXRlbSByZXZpc2lvbidsYXLEsW7EsSBiYcSfbGFtxLF5b3JkdS4KMi4gRXNr
+aSBhY3Rpb24gY2FsbGJhY2snaSBrZW5kaSBzY29wZS9yZXF1ZXN0IGJhxJ9sYW3EsW7EsSB5YWthbGFtYWTEscSfxLFuZGFu
+IGF5bsSxIGl0ZW0vcmV2aXNpb24gYWx0xLFuZGEgeWVuaSByZXF1ZXN0J2luIG9sdW1sdSBpemlubGVyaW5pIGt1bGxhbmFi
+aWxpeW9yZHUuCjMuIElEIHZlIHJldmlzaW9uJ8SxIHNsYXNoL2NvbW1hIGlsZSBiaXJsZcWfdGlybWVrIGZhcmtsxLEgdHVw
+bGUnbGFyxLEgYXluxLEgc3ViamVjdCdlIGTDvMWfw7xyZWJpbGl5b3JkdS4KClI3IGtheW5ha3RhIGBwcmlvcml0eUNvbmZp
+cm1lZGAsIGF5bsSxIHNjb3BlJ3Rha2kgdMO8bSBpdGVtIElEK1JFViBzdWJqZWN0J2xlcmluaSB2ZSBheXLEsSBzxLFyYWxh
+bWEgc3ViamVjdCdpbmkgYXV0aG9yaXR5J3llIGJhxJ9sYXIuIFPEsXJhbGFubWFtxLHFnyDDvHllbGlrIGVrbGVtZS/Dp8Sx
+a2FybWEgdmV5YSByZXZpc2lvbiBkZcSfacWfaWtsacSfaSBlc2tpIGthbsSxdMSxIGdlw6dlcnNpeiBrxLFsYXI7IGxpc3Rl
+ZGVraSBkacSfZXIgacWfbGVyIGVrcmFuZGEgZXJpxZ9pbGViaWxpciBrYWzEsXIuIEJlxZ8gYG9uQWN0aXZhdGVgIHlvbHUg
+ZGEgb2x1xZ90dXJ1bGR1xJ91IHNjb3BlL3JlcXVlc3QnaSB5YWthbGF5YW4gYGJvdW5kRXZlbnRgIGt1bGxhbsSxcjsgdW5t
+b3VudGVkLCBlc2tpIHNjb3BlIHZleWEgZXNraSByZXF1ZXN0IGR1cnVtdW5kYSDDp2FsxLHFn21hei4gR2F0ZWQgYGVtaXRg
+IGdlw6dlcmxpIHBsYW7EsSB5ZW5pZGVuIMOnw7Z6w7xwIGF5bsSxIElEK1JFViBpdGVtJ8SxbsSxIGJ1bHVyIHZlIGfDvG5j
+ZWwgaXppbiBib3l1dGxhcsSxbsSxIHRla3JhciBkb8SfcnVsYXIuIEtpbWxpayBhbGFubGFyxLEgYXlyYcOnbMSxIHN1Ympl
+Y3QnZSBnaXJtZWRlbiBheXLEsSBheXLEsSBrYcOnxLFyxLFsxLFyOyBzbGFzaCwgY29tbWEgdmUgbGl0ZXJhbCBwZXJjZW50
+IHR1cGxlIHPEsW7EsXJsYXLEsW5hIHPEsXptYXouCgpSOCBpw6dpbiBnZXLDp2VrIERhcnQgZGF2cmFuxLHFn8SxIGtvbnRy
+b2wgZWRpbGRpOiBgVXJpLmVuY29kZUNvbXBvbmVudGAsIGZhcmtsxLEgZcWfbGXFn21lbWnFnyBVVEYtMTYgRDgwMC9EODAx
+IGNvZGUgdW5pdCdsZXJpbmkgdmUgZ2XDp2VybGkgRkZGRCByZXBsYWNlbWVudCBjaGFyYWN0ZXInxLEgYXluxLEgYCVFRiVC
+RiVCRGAgw6fEsWt0xLFzxLFuYSBkw7Zuw7zFn3TDvHLDvHlvcmR1LiDDlnplbCBgX2lkZW50aXR5YCBoZWxwZXInxLEgVVRG
+LTE2IGNvZGVVbml0cyBkaXppc2luaSB0YXJhcjsgZcWfbGXFn21lbWnFnyBzdXJyb2dhdGUgdmFyc2EgdMO8bSBiaXJpbWxl
+cmkgc2FiaXQgZMO2cnQgaGV4IGhhbmUgdmUgYCV1YCBuYW1lc3BhY2UnaXlsZSBrYXnEsXBzxLF6IMO8cmV0aXIuIERhcnQg
+VVJJIGJpbGXFn2VuIGtvZGxhecSxY8Sxc8SxIGAldWAgw7xyZXRtZWRpxJ9pbmRlbiBuYW1lc3BhY2UgYXlyxLFkxLFyOyBp
+eWkgYmnDp2ltbGkgVW5pY29kZSBub3JtYWwgVVJJIGthw6fEscWfxLFuxLEga3VsbGFuxLFyLCBsaXRlcmFsIGAlYCBpc2Ug
+a2HDp8SxcsSxbMSxci4gUGxhbiwgaXRlbSwgaGlzdG9yeSwgbm90aWNlIHZlIHByaW9yaXR5IHN1YmplY3QnbGVyaSBvcnRh
+ayBoZWxwZXInxLEga3VsbGFuxLFyOyBnZXLDp2VrIGtpbWxpayBwYXlsb2FkJ2xhcsSxIHZlIGTEscWfL3B1YmxpYyBzw7Z6
+bGXFn21lIGRlxJ9pxZ90aXJpbG1lei4KClI4IHRlc3RpIGVza2kgZW5jb2RlciBpbGUgZ2Vyw6dlayBSRUQgMCBQQVNTIC8g
+MSBGQUlMOyBvbmFyxLFtZGFuIHNvbnJhIEdSRUVOIDEgUEFTUyBrYXlkZWRlci4gRDgwMCwgRDgwMSwgRkZGRCB2ZSBsaXRl
+cmFsIGAldWQ4MDBgIGF5bsSxIGtpbWxpxJ9pbiBrZW5kaSBrYXluYWsgdmUgaXppbmxlcml5bGUgZcWfbGXFn21lc2luaSwg
+ZmFya2zEsSBraW1saWtsZXJpbiBpc2UgYmHFn2thIGtheWTEsW4ga2FuxLF0xLFuxLEga3VsbGFuYW1hbWFzxLFuxLEga29u
+dHJvbCBlZGVyLiDDlm5jZWtpIHNsYXNoL2NvbW1hLCBzdGFsZSBjYWxsYmFjayB2ZSBwcmlvcml0eS1tZW1iZXJzaGlwIHJl
+Z3Jlc3lvbmxhcsSxIGRhIHRhbSB0ZXN0IGtvxZ91c3VuZGEga29ydW51ci4gS29kIGRpZmYnaSBSOCdkZSB5YWxuxLF6IGhl
+bHBlciB2ZSBidSByZWdyZXN5b24gdGVzdGluaSBla2xlcjsgYmFrxLFtIGVrcmFuxLFuxLFuIGfDtnLDvG7DvHIga29kdSBk
+ZcSfacWfbWV6LgoKIyMgRGF2cmFuxLHFnyB2ZSBzxLFuxLFybGFyCgpQbGFuIHlhbG7EsXogYXluxLEgbW90b3Npa2xldCwg
+YmHEn2xhbSByZXZpenlvbnUsIHBsYW4vcmV2aXNpb24gdmUgcmVxdWVzdCBpw6dpbiBnZcOnZXJsaWRpci4gQmFrxLFtIHph
+bWFuxLEgYW5jYWsgdXlndWxhbmFiaWxpciBnw7xuY2VsIGtheW5haywgZG/En3J1bGFubcSxxZ8gZ2XDp21pxZ8gdmUgYXlu
+xLEgaXRlbSByZXZpc2lvbifEsW5hIGJhxJ9sxLEgZGVzdGVrbGkgdGltaW5nIGJpcmxpa3RlIGRvxJ9ydWxhbsSxbmNhIGfD
+tnN0ZXJpbGlyLiBLdWxsYW7EsWPEsSBiZXlhbsSxIGRvxJ9ydWxhbm3EscWfIGJha8SxbSBzYXnEsWxtYXo7IHN0YWxlL2Zv
+cmVpZ24vaGVsZC91bmtub3duIMO2emVsIGHDp8Sxa2xhbWFsYXLEsSBnw7ZzdGVyaWxtZXogdmUgZWtzaWsgemFtYW4sIGtp
+bG9tZXRyZSwgZ2VjaWttZSB2ZXlhIHlhxZ8gdGFobWluIGVkaWxtZXouCgpSZWhiZXIgw7ZuaXpsZW1lc2ksIGZpaWxlbiB5
+YXDEsWxhbiBiYWvEsW3EsSBrYXlkZXRtZSB2ZSBydXRpbiBoYXTEsXJsYXRtYXnEsSBlcnRlbGVtZSBheXLEsSBuaXlldGxl
+cmRpci4gw5zDpyBnYXRlZCBhY3Rpb24gacOnaW4gbW90b3JjeWNsZS9zb3VyY2UvYXV0aG9yaXphdGlvbi9wb2xpY3kvb3Bl
+cmF0aW9uSW50ZW50L2F1ZGl0IGJveXV0bGFyxLFuxLFuIHRhbWFtxLEgZ8O8bmNlbCB2ZSBvbHVtbHUgb2xtYWzEsWTEsXIu
+IEVydGVsZW1lIHlhbG7EsXogeWVyZWwgZ8O2bmRlcmltIGtpbGlkaW5pIGtveWFyOyBjb21wbGV0aW9uLCB5ZW5pIHRhcmlo
+IHZleWEga3JpdGlrIHV5YXLEsW7EsW4ga2FsZMSxcsSxbG1hc8SxbsSxIMO8cmV0bWV6LiBCdXN5L2Vycm9yL2hhbmRsZXIg
+eW9rbHXEn3Ugbm9ybWFsIGV0a2l5aSBrYXBhdMSxci4gT1VUQ09NRV9VTktOT1dOIGJhxZ9hcsSxL2JhxZ9hcsSxc8SxemzE
+sWsgZGXEn2lsZGlyIHZlIGF5bsSxIHJlcXVlc3QgSUQgaWxlIHJlY29uY2lsZSB5b2x1IHN1bmFyOyB5ZW5pZGVuIGfDtm5k
+ZXJpbSB5YXDEsWxtYXouIENhdGNoLXVwIGlsayBpxZ9pbmkgRTEgaGVzYXBsYW1hejogYXluxLEga2Fwc2FtxLFuIMO8eWVs
+aWsgdmUgb3JkZXIgYXV0aG9yaXR5J3NpIHlva3NhIMO2bmNlbGlrIHNlw6dpbG1lei4gU8SxcmYgZ2VjaWttZSB2ZXlhIGZy
+ZW4gYWTEsSBpbGsgacWfIGRlbWVrIGRlxJ9pbGRpcjsgc8SxcmFsYW1hIGTEscWfxLFuZGEga2FsYW4gacWfbGVyIGVyacWf
+aWxpci4KCkUxIHlhbG7EsXoga2F5bmFrbMSxIHN1bnVtIHZlIG5peWV0IMO8cmV0aXIuIFByb3ZpZGVyLCBEQi9TdXBhYmFz
+ZS9hdXRoLCBwcm9kdWN0aW9uIHdyaXRlciwgZ2Vyw6dlayByZW1pbmRlciwga2Fub25payBjb21wbGV0aW9uIHZleWEgZ2Vy
+w6dlayB1emxhxZ90xLFybWEgYmHEn2xhbnTEsXPEsSBidSBrYXluYcSfxLFuIHBhcsOnYXPEsSBkZcSfaWxkaXIuIEdlcsOn
+ZWsgd3JpdGVyJ2RhIEUzL0U1IGtvbnRyb2xsZXJpIHllbmlkZW4gdXlndWxhbm1hbMSxZMSxci4KCiMjIFllcmVsIGthbsSx
+dCwgZ8O2cnNlbGxlciB2ZSBpbGsgb2t1bWEKClI4IHllcmVsIHRhbSBrb8WfdSBoYW0gbG9ndSA0OSw1NTAgYnl0ZSAvIFNI
+QS0yNTYgYDcyYTEyZjdhMTA1NGVkNjA0ZDQyMzE2YTA1YjkzZWMyY2Y2MjA2ZDMwNzI0MTAzOTQ3NzRmYjI1NWMwMmMyN2Rg
+OyAyMDggbm9ybWFsICsgMSBuYXRpdmUgY2FwdHVyZSA9IDIwOSBQQVNTLiDDlm5jZWtpIDE3OCBub3JtYWwgdGVzdCBheW7E
+sSBrb8WfdWRhIGdlw6dtacWfdGlyLiBGb3JtYXQgbG9ndSAyNCBkb3N5YSAvIDAgZGXEn2nFn2lrbGlrLCBTSEEtMjU2IGAz
+YzFjMmY3NzdkYjAxNDkxY2ZkZDRiODNkYjBiZWM0ZDRhNWRhMDhiZTVkZmU0MTBjNWRiZjVlMjBmZjYxYjcyYDsgYW5hbHl6
+ZSBsb2d1IOKAnE5vIGlzc3VlcyBmb3VuZOKAnSwgU0hBLTI1NiBgZWM5YTJhN2RmMTU2YjRhOWMzNTljZjIyMjhmMWYyMGEy
+MWYzODFjZjJhNTQ1NTZmYmMwOTkzNjAzYzU0ZWRmZWAuIFJFRCBsb2d1IFNIQS0yNTYgYDdjYTQwYTE4N2FhODJkOGEyY2M5
+MGFjNmVmZDI0OGRhNzU0YTFjNzNhYzIwMDE4YTRkYThhMjI5YWZiZGJiMzhgOyBHUkVFTiBsb2d1IGBhNmJhZTIwMzQyZTFl
+MzA3YzRjNzI5ZGEyMDU3ZDdjMmJhODZmZWU5NjZmNzg2YTU0YmY4ZDc2NzM3ZThiOGQzYC4gYHJ1bl9hbGxgIDEyIGtvbnRy
+b2wgKyA0MiBwcmVzZXJ2YXRpb24gdGVzdGluaSB3b3JzdCBleGl0IDAgaWxlOyBzdHJpY3QgbGlua3MgNCw2NTUgZWRnZSdp
+IGV4aXQgMCBpbGUgdGFtYW1sYWTEsS4KCjMxIHN0YXRlIMOXIDMyMC8zOTAvNzY4IGdlbmnFn2xpayDDlyAxLzIvMyBUw7xy
+a8OnZSB5YXrEsSDDtmzDp2XEn2ksIHRhbSBrYXlkxLFybWEgdmUgZW4gYXogNTIgcHggaGVkZWZsZXIgdGVzdCBlZGlsbWnF
+n3RpcjsgMjc5IGtvbWJpbmFzeW9uIGnDp2luIGVrcmFuIGfDtnLDvG50w7xzw7wgdmV5YSBmaXppa3NlbCBjaWhheiBpZGRp
+YXPEsSB5b2t0dXIuIFI4IGfDtnJzZWwgbWFuaWZlc3RpIDI1LDM0MiBieXRlIC8gU0hBLTI1NiBgMGI1OGI4MDFmMTk3MzJm
+OGFhMTJmODY0NDg3NTI2YmNiYTMwMmFkMjlkZmYyZjc0MDIxMTFmNDZlZmZlNGQ1MWA7IGxpc3RlbGVuZW4gODEgUE5HJ25p
+biBieXRlJ8SxLCBoYXNoJ2kgdmUgMzkww5c4NDQgw7Zsw6fDvHPDvCBSNiBrYXLFn8SxbMSxxJ/EsXlsYSA4MS84MSBlxZ9s
+ZcWfdGkuIMOWbmNla2kgcm9vdCBpbmNlbGVtZXNpIFI2IFBORydsZXJpbmluIDgxJ2luaSBnZXLDp2VrdGVuIGHDp23EscWf
+dMSxcjsgYnUgUjggaW5jZWxlbWVzaSB5ZW5pIGVrcmFuIGHDp21hIHZleWEgeWVuaSBpbGstb2t1bWEgeWFwdMSxxJ/EsW7E
+sSBpZGRpYSBldG1lei4gSDAxIGhhcmljaSBSMDItQmFraW0gcmVmZXJhbnPEsWTEsXI7IEdpdCBwaW4gYnl0ZSBlxZ9pdGxp
+xJ9pIHlva3R1ci4gSDAyLUgwNCBwaW5sZXJpIGRvxJ9ydWxhbmTEsS4KCkZpeHR1cmUnZGFraSAxNSBzYWJpdCBzb3J1bnVu
+IFNIQSdzxLEgZGXEn2nFn21lbWnFn3Rpci4gw5ZuY2VraSBga2F2cml2YV9lMTAxMF9maXJzdF9yZWFkaW5nLnR4dGAgcmFw
+b3J1IDE1IHlhbsSxdMSxIGFubGFtY2EgZG/En3J1IGJ1bHVyOyB5YW5sxLHFnyBkaWxiaWxnaXNpIMWfw7xwaGVzaW5pIGdl
+csOnZWsgUE5HJ2RlIHllbmlkZW4gb2t1eXVwIGdlcmkgw6dla21pxZ90aXIuIEJ1LCBnZcOnbWnFn3NpeiBBSSBla3JhbiBv
+a3VtYXPEsWTEsXI7IGluc2FuLCB0ZWxlZm9uIHZleWEgZ2Vyw6dlayBiYWvEsW0gZG/En3J1bGFtYXPEsSBkZcSfaWxkaXIu
+IFI4IGnDp2luIHllbmkgQUkvaW5zYW4gaWxrLW9rdW1hIHlhcMSxbGTEscSfxLEgaWRkaWEgZWRpbG1lei4KCsOWbmNla2kg
+eWVyZWwgaGF0YSB0YXJpaMOnZXNpIHNpbGlubWVtacWfdGlyOiBpbGsgdGFtIGtvxZ91ZGFraSA1IFBBU1MgLyAxNiBGQUlM
+OyBSMSdpbiBlc2tpIG1ldGluIGJla2xlbnRpc2kgaGF0YXPEsTsgUjcgc3RhbGUtY2FsbGJhY2sgUkVEL0dSRUVOIHZlIHRh
+bSB0ZXN0IHNvbnXDp2xhcsSxOyBSOCBlbmNvZGVyIFJFRCBzb251Y3Ugc2FrbGFuxLFyLiBSNyBiYcSfxLFtc8SxeiBpbmNl
+bGVtZXNpIGt1bGxhbsSxbSBsaW1pdGkgaGF0YXPEsXlsYSBrZXNpbG1pxZ90aXI7IFI3IGnDp2luIHJhcG9yIHZleWEgRlVM
+TCBQQVNTIHlva3R1ci4KCiMjIFNhbWUtaGVhZCBHaXRIdWIgQ0kgdmUgZ2Vyw6dlayBUMwoKR2l0SHViIEFQSSdkZW4gUFIg
+IzExMCB2ZSBheW7EsSBoZWFkJ2UgYmHEn2zEsSBydW4vam9iL3N0ZXAvbG9nIGthecSxdGxhcsSxbsSxIHllbmlkZW4gb2t1
+ZHVtLiBQUiA4LzggdmUgcHVzaCA4Lzggb2xtYWsgw7x6ZXJlIDE2IGZhcmtsxLEgcnVuJ8SxbiBzb24gZHVydW11IGBjb21w
+bGV0ZWQgLyBzdWNjZXNzYCwgaGVwc2luaW4gaGVhZCBTSEEnc8SxIGA2ZWNiMDQzY2MwNWM5OWI5ZTAzZWNlNDZkOThlYmVk
+MmJlZjkzMWFiYCdkxLFyLiBQUiB2ZSBwdXNoIGxvZ2xhcsSxIGNoZWNrb3V0IFNIQSdzxLFuxLEgZG/En3J1bGFyLiBIZXIg
+w6dhbMSxxZ90xLFyxLFsbcSxxZ8gam9iIHZlIGFkxLFtIHN1Y2Nlc3MndGlyOyBwdXNoIGFyY2hpdGVjdHVyZSBydW4nxLFu
+ZGFraSBUMyBhbHQtam9iJ3UgcHVzaCBvbGF5xLEgacOnaW4gYHNraXBwZWRgJ2lyIHZlIFBSIFQzIHllcmluZSBzYXnEsWxt
+YW3EscWfdMSxci4KCnwgT2xheSB8IFdvcmtmbG93IHwgUnVuIElEIHwgU29uIGR1cnVtIHwKfC0tLXwtLS18LS0tOnwtLS18
+CnwgUFIgfCBhcmNoaXRlY3R1cmUtY2hlY2tzIC8gVDMgfCAzNzM2NzEwMzQxMSB8IFNVQ0NFU1MgfAp8IFBSIHwgZTEtc2hl
+bGwtd2lkZ2V0LXRlc3RzIHwgMzczNjY5NzgyMTQgfCBTVUNDRVNTIHwKfCBQUiB8IGUzLWNvbW1pdC1hdXRob3JpemF0aW9u
+LXRlc3RzIHwgMzczNjcwOTEzMjQgfCBTVUNDRVNTIHwKfCBQUiB8IGUzLWxpdmUtYXV0aC10ZXN0cyB8IDM3MzY2OTc4MTU2
+IHwgU1VDQ0VTUyB8CnwgUFIgfCBlNC1vZmZsaW5lLWNvbXBvc2l0aW9uLXRlc3RzIHwgMzczNjY5NzgxODIgfCBTVUNDRVNT
+IHwKfCBQUiB8IGU1LWN1cnJlbnQtYXV0aG9yaXR5LXRlc3RzIHwgMzczNjY5NzgyMDIgfCBTVUNDRVNTIHwKfCBQUiB8IGU2
+LXJlbGVhc2UtcG9saWN5LXRlc3RzIHwgMzczNjY5NzgxMzAgfCBTVUNDRVNTIHwKfCBQUiB8IGU5LWJvdW5kZWQtcHJvcG9z
+YWwtdGVzdHMgfCAzNzM2Njk3ODE2NiB8IFNVQ0NFU1MgfAp8IHB1c2ggfCBhcmNoaXRlY3R1cmUtY2hlY2tzIHwgMzczNjY5
+NzI2NDUgfCBTVUNDRVNTIHwKfCBwdXNoIHwgZTEtc2hlbGwtd2lkZ2V0LXRlc3RzIHwgMzczNjY5NzI3MzggfCBTVUNDRVNT
+IHwKfCBwdXNoIHwgZTMtY29tbWl0LWF1dGhvcml6YXRpb24tdGVzdHMgfCAzNzM2Njk3Mjc2MyB8IFNVQ0NFU1MgfAp8IHB1
+c2ggfCBlMy1saXZlLWF1dGgtdGVzdHMgfCAzNzM2NzA5NjA5OCB8IFNVQ0NFU1MgfAp8IHB1c2ggfCBlNC1vZmZsaW5lLWNv
+bXBvc2l0aW9uLXRlc3RzIHwgMzczNjY5NzI2NDggfCBTVUNDRVNTIHwKfCBwdXNoIHwgZTUtY3VycmVudC1hdXRob3JpdHkt
+dGVzdHMgfCAzNzM2Njk3MjY3NyB8IFNVQ0NFU1MgfAp8IHB1c2ggfCBlNi1yZWxlYXNlLXBvbGljeS10ZXN0cyB8IDM3MzY2
+OTcyNjM4IHwgU1VDQ0VTUyB8CnwgcHVzaCB8IGU5LWJvdW5kZWQtcHJvcG9zYWwtdGVzdHMgfCAzNzM2Njk3MjY2MiB8IFNV
+Q0NFU1MgfAoKR2Vyw6dlayBQUiBUMyBydW4gYDM3MzY3MTAzNDExYCwgYXR0ZW1wdCAyOiBgdDMtZ2F0ZWAgam9iIGAxMTE5
+NjEwNjkxMjhgIGJlxZ8gYmHFn2FyxLFsxLEgYWTEsW07IGBjaGVja3NgIGpvYiBgMTExOTYxMDY5NTI3YCB5ZWRpIGJhxZ9h
+csSxbMSxIGFkxLFtLiBIYW0gVDMgbG9ndSBgMjIyZGVhZTlmYWIxZWM3MTcyNDBjMWI5MTU5MzFhZjQ2NTlmZDIzNmAgbWVy
+Z2UgY2hlY2tvdXQndW51biBgNmVjYjA0My4uLmAgaGVhZCdpbmkgYGNhM2RmNmYuLi5gIGJhc2UnZSBhbGTEscSfxLFuxLE7
+IGNvbmZvcm1hbmNlJ8SxbiAxMDcgZXZpZGVuY2Uga2F5ZMSxLCBpZGVudGl0eSBrb250cm9sw7xuw7xuIDM0NSBJRCAvIDQz
+OSBmaWxlIHRhcmFkxLHEn8SxbsSxIGfDtnN0ZXJpci4gUHVzaCBhcmNoaXRlY3R1cmUgw7x6ZXJpbmRla2kgVDMgc2tpcHBl
+ZCBhZMSxbcSxIGJ1IGdlcsOnZWsgUFIgVDMnw7xuIHllcmluaSB0dXRtYXouCgpQUiBFMSBsb2d1IDIwOCB0ZXN0LCBmb3Jt
+YXR0ZXIgMjQvMCB2ZSBhbmFseXplIDAgaXNzdWU7IEUzIGNvbW1pdCBhdXRob3JpemF0aW9uIDEwNzsgRTMgbGl2ZSBhdXRo
+IGl6b2xhc3lvbmx1IHRlc3RsZXJpOyBFNCAxNzA7IEU1IDU5OyBFNiA1MDsgRTkgOTsgYXJjaGl0ZWN0dXJlIDQyIHRlc3Qg
+dmUgZ2VuZXJhdGVkLWluZGV4L3NlY3JldC1zY2FuIGFkxLFtbGFyxLFuxLEgYmHFn2FyxLF5bGEgZ8O2c3RlcmlyLiBCdW5s
+YXIgZ2Vyw6dlayBDSSBrYXDEsWxhcsSxZMSxcjsgw7xyZXRpbSBhdXRoL1N1cGFiYXNlL0RCIHZleWEgcHJvZHVjdGlvbiB3
+cml0ZXIgZG/En3J1bGFtYXPEsSBkZcSfaWxkaXIuCgrDlm5jZWtpIGdlcsOnZWsgYWx0eWFwxLEgaXB0YWxsZXJpIGHDp8Sx
+a8OnYSBrb3J1bm11xZ90dXIuIMSwbGsgZGVuZW1lZGUgNSBzdWNjZXNzIC8gMTEgaG9zdGVkLXJ1bm5lciBhY3F1aXNpdGlv
+biBmYWlsdXJlOyBpa2luY2kgZGVuZW1lZGUgMTAgc3VjY2VzcyAvIDYgaG9zdGVkLXJ1bm5lciBhY3F1aXNpdGlvbiBmYWls
+dXJlIHZhcmTEsS4gQW5ub3RhdGlvbidsYXIgcnVubmVyIGF0YW5hbWFkxLHEn8SxbsSxIHZlIHPEsWbEsXIgc3RlcCDDp2Fs
+xLHFn3TEscSfxLFuxLEgZ8O2c3RlcmlyOyBidW5sYXIga2F5bmFrIHRlc3QgRkFJTCdpIGRlxJ9pbGRpciB2ZSBiYcWfYXLE
+sSBkYSBzYXnEsWxtYW3EscWfdMSxci4gw4fDtnrDvGxlbiBydW5uZXIgb2xhecSxIHNvbnJhc8SxbmRhIGFsdMSxIGthbGFu
+IHJ1biDDvMOnw7xuY8O8IGRlbmVtZWRlIGJhxZ9hcsSxeWxhIHRhbWFtbGFubcSxxZ87IGfDvG5jZWwgc29uIGfDtnLDvG7D
+vG0gMTYvMTYgc3VjY2VzcyBvbG11xZ90dXIuIEF0dGVtcHQtMSBDSS9qb2IgYXLFn2l2bGVyaSBTSEEtMjU2IGBhNDA0MDlh
+YzY2MjYwNWI2MjIyNzZhNDE5MDNmZjEwYWYyOGU5MGEwMzBjOWIyNjU4YmZjZTM3MDY1YTEyNWZjYCB2ZSBgZWFhZGNlN2Q4
+YzE4ZjUyOWM2MTFhNzMyMzA5N2E0MTA0N2ZmZjc1YzBlNzQzOGQ4ZThlM2I4MWRkZDZkMjY5ZmA7IGF0dGVtcHQtMiBhcsWf
+aXZsZXJpIGA0OWQ2YjFhZTBiZTUzYWZmYTg5ODQ1OWIxYmUxZmNiYWRkOWU5NThhOTg4ZGIwMGY5OGZhZDRlNjQzNGMwNzcw
+YCB2ZSBgODVmNmU5OGNlZmJjNjQ2ZGNiMjVmYzYwNDg1YWZkOTRiNjQ3ODc1NzA2MWNmNWZkNDA3MzExMDRlNzBkMGY4NGAg
+b2xhcmFrIGtvcnVubXXFn3R1ci4KCiMjIEthcHNhbSBzb251CgpULUUxLTAxMCBgUkVWSUVXYDsgcHJvZmlsZSBgUkVWSUVX
+YDsgcGFjayBgSU5fUFJPR1JFU1NgOyBldmlkZW5jZSBgUkVDT1JERURgOyBtYWluIDk2IERPTkUgLyAxMTAga2FsYW4gLyAy
+MDYgb2xhcmFrIGthbMSxci4gQXlyxLEgc29uLWFsdMSxLW1ldGFkYXRhIGluY2VsZW1lc2ksIGJ1bnVuIGnDp2luIHNvbiBD
+SS9UMywgbm9ybWFsIG1hdGNoZWQgbWVyZ2UgdmUgZmV0Y2hlZCBtYWluIDggam9iL3N0ZXAvbG9nIGtvbnRyb2zDvCBoZW7D
+vHogc29ucmFraSBhxZ9hbWFsYXJkxLFyLiBCdSByYXBvciBvbmxhcsSxIHRhbWFtbGFubcSxxZ8gc2F5bWF6LgoKw5xyZXRp
+bSBFMy9FNS9pZGVudGl0eS9EQi9TdXBhYmFzZSwgZ2Vyw6dlayByZW1pbmRlci9yZWNvbmNpbGUsIGZpemlrc2VsIGJha8Sx
+bSwgY2loYXogdmV5YSBnZXLDp2VrIE9TIGVrcmFuIG9rdXl1Y3UsIG5paGFpIGxvZ28vZm9udC9uYXZpZ2F0aW9uL21lZGlh
+IHZhcmzEsWtsYXLEsSwgc3RvcmUvcmVsZWFzZSB2ZSBtYWluIG1lcmdlIGJ1IGtheW5hayBGVUxMIFBBU1MnaW5pbiBrYXBz
+YW3EsSBkxLHFn8SxbmRhZMSxciB2ZSBIRUxEIGthbMSxci4gUmFwb3JsYW5hbiB0ZXN0bGVyIGdlcsOnZWsgY2loYXogdmV5
+YSB0w7xtIHV5Z3VsYW1hbsSxbiBjYW5sxLEga3VsbGFuxLFtIGhhesSxciBvbGR1xJ91IGlkZGlhc8SxIGRlxJ9pbGRpci4K
+```
+
+### Tam raporun okunabilir gösterimi
+
+# T-E1-010 / PR #110 — R8 bağımsız tam kaynak incelemesi
+
+Tarih: 2026-10-06<br>
+İncelenen kaynak: PR head `6ecb043cc05c99b9e03ece46d98ebed2bef931ab`<br>
+Kaynak kod commit'i: `364aae613b35ad16da808ccb22da7af6b83e95eb`<br>
+Koddan önce R8 bulgu kaydı: `873772a57f67bf882a798932e16327ad7a0d94c3`<br>
+R7 onarım kodu: `5c5a4ed49e5cbc54f2e2893658bb495306f25169`<br>
+Önceki bağımsız ret kaynağı: `14b2cdacf4fe298bbc184fdd07644dc4f444c7d8`<br>
+PR: https://github.com/xpike-dgm/kavriva-app/pull/110<br>
+Dal: `codex/e1-maintenance`<br>
+Taban: `ca3df6fbea268ff5b720a5d15193a50a1f3e1bda`<br>
+Kanonik plan pini: `fa914f013fdcd032faed876689092da245989459`
+
+## VERDICT: FULL PASS
+
+R8 kaynak incelemesi tamamlandı. Önceki bağımsız R7 incelemesinin üç bulgusu ve R8'de saptanan malformed UTF-16 kimlik çakışması kaynak kodu ile regresyon testlerinde kapanmıştır. Yeni kaynak bulgusu bulmadım. Canlı GitHub kontrolünde aynı R8 kaynağına ait 16/16 workflow başarıyla tamamlanmış; zorunlu gerçek PR T3 de başarılıdır.
+
+Bu FULL PASS yalnız PR #110'daki T-E1-010 kaynak inceleme kapsamına aittir. Görev kabulü/DONE, merge, üretim entegrasyonu, fiziksel cihaz veya yayın sonucu değildir. Bu raporu yazarken repo, branch, PR ve görev metadata'sını değiştirmedim.
+
+## Kaynak, izinli kapsam ve kayıt tutarlılığı
+
+Çalışma ağacı `C:\Users\Xpike\.codex\worktrees\e4-required-auto-transfer\kavriva-app`, branch `codex/e1-maintenance`, HEAD `6ecb043cc05c99b9e03ece46d98ebed2bef931ab` olarak doğrulandı. İnceleme öncesi ve sonrasında çalışma ağacı temizdir. GitHub PR API'si PR #110'u açık, draft, merge edilmemiş; head `6ecb043...`, base `ca3df6f...` olarak gösteriyor.
+
+Base ile head arasındaki 14 değişen yol, `kavriva_e1010_scope.json` izin listesiyle birebir eşleşiyor. Manifestteki 22 base pininin SHA-256 değerleri Git nesnelerinden yeniden hesaplandı; 22/22 eşleşti. Sabit 15 soruluk fixture hash'i `e408e3aa24229426fc26826fbeeadea799d39535d12814ef56a3e23ea81942e6` olarak eşleşti. H02/H03/H04 görsellerinin `fa914f...` plan commit'indeki Git blob hash'leri de scope manifestindeki değerlerle eşleşti. Kanonik plan kaynağında T-E1-010 ve CON-004/F10.6.1 kapıları mevcut; DEC-0069 sahip onaylı inceleme yetkisini kaydediyor. DEC-0070 plan PR4 birleşmemiştir ve canonical main olarak kullanılmamıştır.
+
+R8 snapshot dosyası, koddan önceki v74 envanter baytlarıyla aynıdır: 205,240 byte, SHA-256 `c45addc973b25cf687976101046732580880d491423870d315a588ad75c62cc7`. E-DEV-107'nin base sürümündeki YAML dışı gövde yeni dosyada değişmeden başlıyor; ek yalnız 717 byte'tır. Önceki `kavriva_e1010_r8_review_pending_ci.txt` raporu değiştirilmemiştir; SHA-256 `88d9acc7b135e781b66f87409bb34185961bdd3d983538a35df2e19df75bb989`.
+
+Görev ve görünürlük statüleri source head'de kasıtlı olarak açıktır: T-E1-010 `REVIEW`, `V-E1-MAINT-001` `REVIEW`, `P-E1-010` `IN_PROGRESS`, E-DEV-108 `RECORDED`; generated registry 100 satırdır ve T-E1-010 `REVIEW`, routing de `REVIEW` gösterir. Main sayacı 96 DONE / 110 kalan / 206 toplamdır. E3R1 `REVIEW`, E5-003 `IN_PROGRESS`, Supabase 47/57/59 ve RET97/üretim/cihaz/yayın sınırları kapanmamıştır.
+
+## Önceki bulgular ve R8 kapanışı
+
+Önceki bağımsız incelemenin 14b2cdac kaynağı için üç bulgusu korunmuştur:
+
+1. Öncelik kanıtı sıralanmamış plan üyeliği ile item revision'larını bağlamıyordu.
+2. Eski action callback'i kendi scope/request bağlamını yakalamadığından aynı item/revision altında yeni request'in olumlu izinlerini kullanabiliyordu.
+3. ID ve revision'ı slash/comma ile birleştirmek farklı tuple'ları aynı subject'e düşürebiliyordu.
+
+R7 kaynakta `priorityConfirmed`, aynı scope'taki tüm item ID+REV subject'lerini ve ayrı sıralama subject'ini authority'ye bağlar. Sıralanmamış üyelik ekleme/çıkarma veya revision değişikliği eski kanıtı geçersiz kılar; listedeki diğer işler ekranda erişilebilir kalır. Beş `onActivate` yolu da oluşturulduğu scope/request'i yakalayan `boundEvent` kullanır; unmounted, eski scope veya eski request durumunda çalışmaz. Gated `emit` geçerli planı yeniden çözüp aynı ID+REV item'ını bulur ve güncel izin boyutlarını tekrar doğrular. Kimlik alanları ayraçlı subject'e girmeden ayrı ayrı kaçırılır; slash, comma ve literal percent tuple sınırlarına sızmaz.
+
+R8 için gerçek Dart davranışı kontrol edildi: `Uri.encodeComponent`, farklı eşleşmemiş UTF-16 D800/D801 code unit'lerini ve geçerli FFFD replacement character'ı aynı `%EF%BF%BD` çıktısına dönüştürüyordu. Özel `_identity` helper'ı UTF-16 codeUnits dizisini tarar; eşleşmemiş surrogate varsa tüm birimleri sabit dört hex hane ve `%u` namespace'iyle kayıpsız üretir. Dart URI bileşen kodlayıcısı `%u` üretmediğinden namespace ayrıdır; iyi biçimli Unicode normal URI kaçışını kullanır, literal `%` ise kaçırılır. Plan, item, history, notice ve priority subject'leri ortak helper'ı kullanır; gerçek kimlik payload'ları ve dış/public sözleşme değiştirilmez.
+
+R8 testi eski encoder ile gerçek RED 0 PASS / 1 FAIL; onarımdan sonra GREEN 1 PASS kaydeder. D800, D801, FFFD ve literal `%ud800` aynı kimliğin kendi kaynak ve izinleriyle eşleşmesini, farklı kimliklerin ise başka kaydın kanıtını kullanamamasını kontrol eder. Önceki slash/comma, stale callback ve priority-membership regresyonları da tam test koşusunda korunur. Kod diff'i R8'de yalnız helper ve bu regresyon testini ekler; bakım ekranının görünür kodu değişmez.
+
+## Davranış ve sınırlar
+
+Plan yalnız aynı motosiklet, bağlam revizyonu, plan/revision ve request için geçerlidir. Bakım zamanı ancak uygulanabilir güncel kaynak, doğrulanmış geçmiş ve aynı item revision'ına bağlı destekli timing birlikte doğrulanınca gösterilir. Kullanıcı beyanı doğrulanmış bakım sayılmaz; stale/foreign/held/unknown özel açıklamaları gösterilmez ve eksik zaman, kilometre, gecikme veya yaş tahmin edilmez.
+
+Rehber önizlemesi, fiilen yapılan bakımı kaydetme ve rutin hatırlatmayı erteleme ayrı niyetlerdir. Üç gated action için motorcycle/source/authorization/policy/operationIntent/audit boyutlarının tamamı güncel ve olumlu olmalıdır. Erteleme yalnız yerel gönderim kilidini koyar; completion, yeni tarih veya kritik uyarının kaldırılmasını üretmez. Busy/error/handler yokluğu normal etkiyi kapatır. OUTCOME_UNKNOWN başarı/başarısızlık değildir ve aynı request ID ile reconcile yolu sunar; yeniden gönderim yapılmaz. Catch-up ilk işini E1 hesaplamaz: aynı kapsamın üyelik ve order authority'si yoksa öncelik seçilmez. Sırf gecikme veya fren adı ilk iş demek değildir; sıralama dışında kalan işler erişilir.
+
+E1 yalnız kaynaklı sunum ve niyet üretir. Provider, DB/Supabase/auth, production writer, gerçek reminder, kanonik completion veya gerçek uzlaştırma bağlantısı bu kaynağın parçası değildir. Gerçek writer'da E3/E5 kontrolleri yeniden uygulanmalıdır.
+
+## Yerel kanıt, görseller ve ilk okuma
+
+R8 yerel tam koşu ham logu 49,550 byte / SHA-256 `72a12f7a1054ed604d42316a05b93ec2cf6206d3072410394774fb255c02c27d`; 208 normal + 1 native capture = 209 PASS. Önceki 178 normal test aynı koşuda geçmiştir. Format logu 24 dosya / 0 değişiklik, SHA-256 `3c1c2f777db01491cfdd4b83db0bec4d4a5da08be5dfe410c5dbf5e20ff61b72`; analyze logu “No issues found”, SHA-256 `ec9a2a7df156b4a9c359cf2228f1f20a21f381cf2a54556fbc0993603c54edfe`. RED logu SHA-256 `7ca40a187aa82d8a2cc90ac6efd248da754a1c73ac20018a4da8a229afbdbb38`; GREEN logu `a6bae20342e1e307c4c729da2057d7c2ba86fee966f786a54bf8d76737e8b8d3`. `run_all` 12 kontrol + 42 preservation testini worst exit 0 ile; strict links 4,655 edge'i exit 0 ile tamamladı.
+
+31 state × 320/390/768 genişlik × 1/2/3 Türkçe yazı ölçeği, tam kaydırma ve en az 52 px hedefler test edilmiştir; 279 kombinasyon için ekran görüntüsü veya fiziksel cihaz iddiası yoktur. R8 görsel manifesti 25,342 byte / SHA-256 `0b58b801f19732f8aa12f864487526bcba302ad29dff2f7402111f46effe4d51`; listelenen 81 PNG'nin byte'ı, hash'i ve 390×844 ölçüsü R6 karşılığıyla 81/81 eşleşti. Önceki root incelemesi R6 PNG'lerinin 81'ini gerçekten açmıştır; bu R8 incelemesi yeni ekran açma veya yeni ilk-okuma yaptığını iddia etmez. H01 harici R02-Bakim referansıdır; Git pin byte eşitliği yoktur. H02-H04 pinleri doğrulandı.
+
+Fixture'daki 15 sabit sorunun SHA'sı değişmemiştir. Önceki `kavriva_e1010_first_reading.txt` raporu 15 yanıtı anlamca doğru bulur; yanlış dilbilgisi şüphesini gerçek PNG'de yeniden okuyup geri çekmiştir. Bu, geçmişsiz AI ekran okumasıdır; insan, telefon veya gerçek bakım doğrulaması değildir. R8 için yeni AI/insan ilk-okuma yapıldığı iddia edilmez.
+
+Önceki yerel hata tarihçesi silinmemiştir: ilk tam koşudaki 5 PASS / 16 FAIL; R1'in eski metin beklentisi hatası; R7 stale-callback RED/GREEN ve tam test sonuçları; R8 encoder RED sonucu saklanır. R7 bağımsız incelemesi kullanım limiti hatasıyla kesilmiştir; R7 için rapor veya FULL PASS yoktur.
+
+## Same-head GitHub CI ve gerçek T3
+
+GitHub API'den PR #110 ve aynı head'e bağlı run/job/step/log kayıtlarını yeniden okudum. PR 8/8 ve push 8/8 olmak üzere 16 farklı run'ın son durumu `completed / success`, hepsinin head SHA'sı `6ecb043cc05c99b9e03ece46d98ebed2bef931ab`'dır. PR ve push logları checkout SHA'sını doğrular. Her çalıştırılmış job ve adım success'tir; push architecture run'ındaki T3 alt-job'u push olayı için `skipped`'ir ve PR T3 yerine sayılmamıştır.
+
+| Olay | Workflow | Run ID | Son durum |
+|---|---|---:|---|
+| PR | architecture-checks / T3 | 37367103411 | SUCCESS |
+| PR | e1-shell-widget-tests | 37366978214 | SUCCESS |
+| PR | e3-commit-authorization-tests | 37367091324 | SUCCESS |
+| PR | e3-live-auth-tests | 37366978156 | SUCCESS |
+| PR | e4-offline-composition-tests | 37366978182 | SUCCESS |
+| PR | e5-current-authority-tests | 37366978202 | SUCCESS |
+| PR | e6-release-policy-tests | 37366978130 | SUCCESS |
+| PR | e9-bounded-proposal-tests | 37366978166 | SUCCESS |
+| push | architecture-checks | 37366972645 | SUCCESS |
+| push | e1-shell-widget-tests | 37366972738 | SUCCESS |
+| push | e3-commit-authorization-tests | 37366972763 | SUCCESS |
+| push | e3-live-auth-tests | 37367096098 | SUCCESS |
+| push | e4-offline-composition-tests | 37366972648 | SUCCESS |
+| push | e5-current-authority-tests | 37366972677 | SUCCESS |
+| push | e6-release-policy-tests | 37366972638 | SUCCESS |
+| push | e9-bounded-proposal-tests | 37366972662 | SUCCESS |
+
+Gerçek PR T3 run `37367103411`, attempt 2: `t3-gate` job `111961069128` beş başarılı adım; `checks` job `111961069527` yedi başarılı adım. Ham T3 logu `222deae9fab1ec717240c1b915931af4659fd236` merge checkout'unun `6ecb043...` head'ini `ca3df6f...` base'e aldığını; conformance'ın 107 evidence kaydı, identity kontrolünün 345 ID / 439 file taradığını gösterir. Push architecture üzerindeki T3 skipped adımı bu gerçek PR T3'ün yerini tutmaz.
+
+PR E1 logu 208 test, formatter 24/0 ve analyze 0 issue; E3 commit authorization 107; E3 live auth izolasyonlu testleri; E4 170; E5 59; E6 50; E9 9; architecture 42 test ve generated-index/secret-scan adımlarını başarıyla gösterir. Bunlar gerçek CI kapılarıdır; üretim auth/Supabase/DB veya production writer doğrulaması değildir.
+
+Önceki gerçek altyapı iptalleri açıkça korunmuştur. İlk denemede 5 success / 11 hosted-runner acquisition failure; ikinci denemede 10 success / 6 hosted-runner acquisition failure vardı. Annotation'lar runner atanamadığını ve sıfır step çalıştığını gösterir; bunlar kaynak test FAIL'i değildir ve başarı da sayılmamıştır. Çözülen runner olayı sonrasında altı kalan run üçüncü denemede başarıyla tamamlanmış; güncel son görünüm 16/16 success olmuştur. Attempt-1 CI/job arşivleri SHA-256 `a40409ac662605b622276a41903ff10af28e90a030c9b2658bfce37065a125fc` ve `eaadce7d8c18f529c611a7323097a41047fff75c0e7438d8e8e3b81ddd6d269f`; attempt-2 arşivleri `49d6b1ae0be53affa898459b1be1fcbadd9e958a988db00f98fad4e6434c0770` ve `85f6e98cefbc646dcb25fc60485afd94b6478757061cf5fd40731104e70d0f84` olarak korunmuştur.
+
+## Kapsam sonu
+
+T-E1-010 `REVIEW`; profile `REVIEW`; pack `IN_PROGRESS`; evidence `RECORDED`; main 96 DONE / 110 kalan / 206 olarak kalır. Ayrı son-altı-metadata incelemesi, bunun için son CI/T3, normal matched merge ve fetched main 8 job/step/log kontrolü henüz sonraki aşamalardır. Bu rapor onları tamamlanmış saymaz.
+
+Üretim E3/E5/identity/DB/Supabase, gerçek reminder/reconcile, fiziksel bakım, cihaz veya gerçek OS ekran okuyucu, nihai logo/font/navigation/media varlıkları, store/release ve main merge bu kaynak FULL PASS'inin kapsamı dışındadır ve HELD kalır. Raporlanan testler gerçek cihaz veya tüm uygulamanın canlı kullanım hazır olduğu iddiası değildir.
+
+## Gerçek r8_source CI makbuzu
+
+Exact kaynak 6ecb043cc05c99b9e03ece46d98ebed2bef931ab; 16/16 gerçek SUCCESS; push8/PR8 ve ilk label architecture varsa ayrı olay. Bütün job ve adımlar tek tek başarıyla doğrulandı.
+
+PR t3-gate job111961069128: 5 başarılı adım/success.
+
+PR checks job111961069527: 7 başarılı adım/success.
+- pull_request architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37367103411 — SUCCESS.
+- pull_request e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978214 — SUCCESS.
+- pull_request e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37367091324 — SUCCESS.
+- pull_request e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978156 — SUCCESS.
+- pull_request e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978182 — SUCCESS.
+- pull_request e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978202 — SUCCESS.
+- pull_request e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978130 — SUCCESS.
+- pull_request e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366978166 — SUCCESS.
+- push architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972645 — SUCCESS.
+- push e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972738 — SUCCESS.
+- push e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972763 — SUCCESS.
+- push e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37367096098 — SUCCESS.
+- push e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972648 — SUCCESS.
+- push e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972677 — SUCCESS.
+- push e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972638 — SUCCESS.
+- push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37366972662 — SUCCESS.
+
+PR E1 gerçek log: formatter24zero/analyze0issue/208PASS; E4 170PASS ve E9 9PASS. Push veya ilk opened PR T3 SKIPPED/0 adım bağımsız kabul değildir; yukarıdaki gerçek labelled PR T3 SUCCESS ayrı doğrulandı. CI bağımsız reviewer hükmünün yerine geçmez.
+
+## Bütün kaynak sunum kabul adayı
+
+Kaynak6ecb043cc05c99b9e03ece46d98ebed2bef931ab için /root/e1010_r8_recovery_whole_review bağımsız gpt-6-luna/max FULL PASS ve gerçek16CIjobsstepslogs/PRT3 başarılıdır. EVID/CI_PLANdaki henüz bekleniyor cümleleri kaynak kayıt anındaki durumdur; yeni sonuç aşağıdaki makbuz ve değiştirilmemiş raporla uzlaştırılır. R8 kod/test/15soru son bütün kaynak incelemesinden sonra değişmedi:208normal209yerel/31×9responsive/81gerçeknative(R6ilebyteeşit)/format24zero/analyze0/15geçmişsizilkoku. Yedi tasarım karşılaştırması kaynak kapsamında incelendi; AIokuması insan/telefon/fiziksel/üretim tasdiki değildir.
+
+Sahibin doğrudan sürekli konuşma yetkisi ve LunaMax ikinci göz kabulü, kanonikmainDEC0069 biçimiyle kayıtlıdır. DEC0070planPR4henüz birleşmediği için canonicalmainkararı veya GitHubkoruma aşma yetkisi sayılmaz. NormalPR+yeşilCI+bağımsızhüküm yolu korunur. ACTIVE/DONE yalnız T-E1-010 E1sunum kabul adayıdır; ayrı altı sonmetadata incelemesi/aynısonCI-T3/normalmatchedmerge/fetchedmain8 zorunludur. Henüz merge yok, main96/110/206 ilerlemez. ÜretimE3/E5/kimlik/DB/Supabase/kalıcılık/medya/hatırlatma/gerçekuzlaştırmaT4-011b-T3-004/fiziksel/cihaz/yayın/nihaiasset-font-token-routing/RET97 ve E3R1REVIEW-E5IN_PROGRESS kapanmaz. Önceki178normaltest/SDK-lock-YAML/rawv74/eskiesasgövdeler korunur.
+
+TamraporRAW SHA256 68419b95dad0d374a80d3f12cbff2672ae44c12d8e17ce15cf68ad30494138e9; ACTIVEprofilLF SHA256 ccaeed1c3a59871e12a0b88d182f17382529df18340fc384f6f66a238e1d49ea.
+
+## R8 gerçek ilk CI denemesi — altyapı iptalleri korunur
+
+Aynı kaynakta ilk16 workflow5SUCCESS/11FAIL oldu; başarısız jobların tümü0adım/atanmamışrunner/cancelled ve hostedrunner atanamadı anotasyonu taşır. Kodtestleri bu joblarda başlamamıştır. Resmî GitHub Actions olay kaydı2026-10-05 19:11/19:15UTC: https://www.githubstatus.com/incidents/3q1yb5m7ltvb . Yalnız11failed aynıhead --failed ile attempt2 bir kez tekrarlandı; ilkFAIL geçmişi yeniSUCCESS ile silinmez. Aşağıdaki güncelCI makbuzu gerçek son job/adımları/logları doğrular.
+- Temp/kavriva_e1010_r8_runner_failure_attempt1_ci.json: 3629byte; RAW SHA256 a40409ac662605b622276a41903ff10af28e90a030c9b2658bfce37065a125fc.
+- Temp/kavriva_e1010_r8_runner_failure_attempt1_jobs_annotations.json: 217198byte; RAW SHA256 eaadce7d8c18f529c611a7323097a41047fff75c0e7438d8e8e3b81ddd6d269f.
+- İlk attempt1 pull_request architecture-checks run37367103411: job111954793987 cancelled/0adım/runneratanmadı, job111954794281 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 push e3-live-auth-tests run37367096098: job111954771784 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 pull_request e5-current-authority-tests run37366978202: job111954413354 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 pull_request e6-release-policy-tests run37366978130: job111954413221 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 pull_request e3-live-auth-tests run37366978156: job111954413139 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 pull_request e9-bounded-proposal-tests run37366978166: job111954413173 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 pull_request e4-offline-composition-tests run37366978182: job111954413199 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 push e5-current-authority-tests run37366972677: job111954396733 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 push e3-commit-authorization-tests run37366972763: job111954397100 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 push e1-shell-widget-tests run37366972738: job111954397231 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İlk attempt1 push e9-bounded-proposal-tests run37366972662: job111954396758 cancelled/0adım/runneratanmadı; FAIL altyapı.
+
+## R8 gerçek ikinci CI denemesi — altyapı iptalleri korunur
+
+İkinci gerçek deneme16workflow10SUCCESS/6FAIL oldu. Altı başarısız job yine0adım/runneratanmadı/cancelled idi; bağımsız ikinci göz arşivi ve gerçek PR T3SUCCESS sonucunu doğruladı. Bu deneme tam yeşil sayılmaz; resmî arıza sürerken üçüncü deneme başlatılmadı. Sonraki gerçek yeşil makbuz önceki iptalleri silmez.
+- Temp/kavriva_e1010_r8_runner_failure_attempt2_ci.json: 3933byte; RAW SHA256 49d6b1ae0be53affa898459b1be1fcbadd9e958a988db00f98fad4e6434c0770.
+- Temp/kavriva_e1010_r8_runner_failure_attempt2_jobs_annotations.json: 117151byte; RAW SHA256 85f6e98cefbc646dcb25fc60485afd94b6478757061cf5fd40731104e70d0f84.
+- İkinci attempt2 push e3-live-auth-tests run37367096098: job111961077680 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İkinci attempt2 pull_request e5-current-authority-tests run37366978202: job111961085051 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İkinci attempt2 pull_request e6-release-policy-tests run37366978130: job111961094363 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İkinci attempt2 pull_request e4-offline-composition-tests run37366978182: job111961117387 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İkinci attempt2 push e1-shell-widget-tests run37366972738: job111961144526 cancelled/0adım/runneratanmadı; FAIL altyapı.
+- İkinci attempt2 push e5-current-authority-tests run37366972677: job111961126394 cancelled/0adım/runneratanmadı; FAIL altyapı.
+
+## GitHub arızasının giderilmesi ve sınırlı üçüncü deneme
+
+Resmî olay 2026-10-05T22:49:42UTC (6Ekim01:49Türkiye) resolved oldu; Actions21:54UTC itibarıyla normal bildirilmiştir. Aynı6ec kaynakta yalnız ikinci denemenin6runneriptali --failed ile attempt3 yeniden çalıştırıldı. Önceki10başarı korunur; resmî durumAPI zarfının ilk okunmasındaki KeyError nedeniyle ilk komut hiçbir retry başlatmadan durdu, düzeltilmiş okuyucu gerçekresolved kontrolünden sonra6isteği bir kez başlattı. Yeni reviewer /root/e1010_r8_recovery_whole_review aynı kaynak bütün incelemesini bağımsız sürdürür. ÖncekiCIbekleyenraporFULLPASSdeğildir ve aynen korunur.
+- Temp/kavriva_e1010_r8_review_pending_ci.txt: 19311byte; RAW SHA256 88d9acc7b135e781b66f87409bb34185961bdd3d983538a35df2e19df75bb989.
+- Temp/kavriva_e1010_r8_github_incident_resolved.json: 11409byte; RAW SHA256 7138a343f0fafb5f39cbb2b61e387abaeeffa1c6640c104cd782d1d486d00a00.
+- Temp/kavriva_e1010_r8_retry3_request.json: 1742byte; RAW SHA256 f5d5d685d22add7ec057a57f99e774407e06ce2e4a66c78fa3265d435e8122cf.
+
+## Son kayıt denetiminde durdurulan komutlar
+
+İlk son kayıt donma denemesi commit oluşturmadan durdu: uygulama dosyasının çalışma kopyası CRLF, Git nesnesi LF olduğundan ham bayt eşitliği denetimi uyuşmadı. Git farkı ve LF içerik eşitliği kodun değişmediğini doğrular. Ayrıca özgün inceleme raporunun dokuz Markdown satır sonu git diff --check tarafından sondaki boşluk olarak işaretlendi. Özgün rapor değiştirilmeden ham Base64 arşivinde tutuldu; okunabilir sunum satır sonlarını eşdeğer HTML ile korur. Bu iki komut hatası ürün test hatası veya yeni kod değişikliği değildir. Son kayıt ve bütün kontroller düzeltmeden sonra tekrar yürütülür.
