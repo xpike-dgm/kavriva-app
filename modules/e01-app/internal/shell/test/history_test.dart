@@ -423,6 +423,20 @@ String _allText(WidgetTester tester) => tester
     .map((w) => w.data ?? w.textSpan?.toPlainText() ?? '')
     .join('\n');
 
+Future<void> _prepareCase(WidgetTester tester, String state) async {
+  if (state != 'export-sent') return;
+  await _tap(tester, 'history-export');
+  expect(_allText(tester), contains('İstek gönderildi; sonuç bekleniyor'));
+  expect(_allText(tester), contains('Bu ekran dosya oluştuğunu söylemez'));
+  expect(_callback(tester, 'history-export'), isNull);
+  expect(
+    tester
+        .widgetList<Semantics>(find.byType(Semantics))
+        .any((s) => s.properties.liveRegion == true),
+    isTrue,
+  );
+}
+
 Map<String, HistoryView> _cases() {
   final reported = _record(), corrected = _record(corrected: true);
   final private = _record(corrected: true, privateRevision: true);
@@ -511,6 +525,7 @@ Map<String, HistoryView> _cases() {
       snapshot: _snapshot(inactive: true),
     ),
     'export-ready': _view(page: HistoryPage.exportScope),
+    'export-sent': _view(page: HistoryPage.exportScope),
     'export-corrected': _view(
       page: HistoryPage.exportScope,
       snapshot: _snapshot(records: [corrected]),
@@ -1113,6 +1128,7 @@ void main() {
       for (final phase in HistoryRequestPhase.values.where(
         (p) => p != HistoryRequestPhase.idle,
       )) {
+        final before = intents.length;
         await _pump(
           tester,
           _view(
@@ -1123,10 +1139,14 @@ void main() {
           ),
         );
         expect(_callback(tester, 'history-export'), isNull);
-        if (phase == HistoryRequestPhase.outcomeUnknown) {
+        if (phase == HistoryRequestPhase.outcomeUnknown ||
+            phase == HistoryRequestPhase.failed) {
           await _tap(tester, 'history-reconcile');
-          expect(intents.single.action, HistoryAction.reconcile);
-          expect(intents.single.requestId, _request);
+          expect(intents, hasLength(before + 1));
+          expect(intents.last.action, HistoryAction.reconcile);
+          expect(intents.last.requestId, _request);
+        } else {
+          expect(intents, hasLength(before));
         }
       }
       await _pump(
@@ -1143,6 +1163,66 @@ void main() {
         intents.where((i) => i.action == HistoryAction.exportCopy),
         isEmpty,
       );
+    },
+  );
+  testWidgets(
+    'hata ekranı aynı isteği kontrol eder; eski kontrol yeni istekte veya idle çalışmaz',
+    (tester) async {
+      final intents = <HistoryIntent>[];
+      await _pump(
+        tester,
+        _view(
+          page: HistoryPage.exportScope,
+          phase: HistoryRequestPhase.failed,
+          record: intents.add,
+        ),
+      );
+      expect(find.byKey(const ValueKey('history-reconcile')), findsOneWidget);
+      expect(_callback(tester, 'history-export'), isNull);
+      final old = _callback(tester, 'history-reconcile')!;
+      await _tap(tester, 'history-reconcile');
+      expect(intents, hasLength(1));
+      expect(intents.single.action, HistoryAction.reconcile);
+      expect(intents.single.requestId, _request);
+      expect(intents.single.scope.matches(_scope()), isTrue);
+      expect(intents.single.exportPlanId, isNull);
+      await _pump(
+        tester,
+        _view(page: HistoryPage.exportScope, record: intents.add),
+      );
+      old();
+      expect(intents, hasLength(1));
+      const next = 'new-request';
+      await _pump(
+        tester,
+        _view(
+          page: HistoryPage.exportScope,
+          request: next,
+          phase: HistoryRequestPhase.failed,
+          snapshot: _snapshot(
+            request: next,
+            records: [_record(request: next)],
+          ),
+          record: intents.add,
+        ),
+      );
+      old();
+      expect(intents, hasLength(1));
+      await _tap(tester, 'history-reconcile');
+      expect(intents, hasLength(2));
+      expect(intents.last.requestId, next);
+      expect(intents.every((i) => i.action == HistoryAction.reconcile), isTrue);
+      await _pump(
+        tester,
+        _view(
+          key: const ValueKey('failed-without-handler'),
+          page: HistoryPage.exportScope,
+          phase: HistoryRequestPhase.failed,
+          noHandler: true,
+        ),
+      );
+      expect(_callback(tester, 'history-reconcile'), isNull);
+      expect(_callback(tester, 'history-export'), isNull);
     },
   );
   testWidgets(
@@ -1167,6 +1247,13 @@ void main() {
       );
       expect(_callback(tester, 'history-export'), isNull);
       expect(intents, hasLength(1));
+      expect(_allText(tester), contains('İstek gönderildi; sonuç bekleniyor'));
+      expect(
+        tester
+            .widgetList<Semantics>(find.byType(Semantics))
+            .any((s) => s.properties.liveRegion == true),
+        isTrue,
+      );
     },
   );
   testWidgets('eski kopya düğmesi yeni isteğin olumlu iznini ödünç alamaz', (
@@ -1461,6 +1548,7 @@ void main() {
               width: width,
               scale: scale,
             );
+            await _prepareCase(tester, entry.key);
             final scroll = tester.state<ScrollableState>(
               find
                   .descendant(
@@ -1513,6 +1601,7 @@ void main() {
             KeyedSubtree(key: ValueKey(entry.key), child: entry.value),
             font: 'KavrivaHistoryNative',
           );
+          await _prepareCase(tester, entry.key);
           if (entry.key == 'detail-corrected' ||
               entry.key == 'detail-private-version')
             await _tap(tester, 'history-versions');

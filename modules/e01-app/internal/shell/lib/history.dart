@@ -552,7 +552,8 @@ class _HistoryViewState extends State<HistoryView> {
         return;
       setState(() => sent = true);
     } else if (action == HistoryAction.reconcile &&
-        widget.phase != HistoryRequestPhase.outcomeUnknown) {
+        widget.phase != HistoryRequestPhase.outcomeUnknown &&
+        widget.phase != HistoryRequestPhase.failed) {
       return;
     }
     widget.onIntent!(
@@ -633,6 +634,14 @@ class _HistoryViewState extends State<HistoryView> {
           heading('İstek sonucu kontrol edilmeli'),
           text(
             'Hata mesajı kopyanın oluşmadığını kanıtlamaz. Yeni gönderim kapalı; güncel sonucu kontrol et.',
+          ),
+          button(
+            'Aynı isteğin sonucunu kontrol et',
+            widget.onIntent == null
+                ? null
+                : bound(() => emit(HistoryAction.reconcile)),
+            keyId: 'history-reconcile',
+            primary: true,
           ),
         ], caution: true),
       ),
