@@ -116,6 +116,8 @@ used_by:
   - "E-DEV-107"
   - "P-E1-010"
   - "E-DEV-108"
+  - "P-E1-011"
+  - "E-DEV-109"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -472,3 +474,10 @@ Bu kaynakta normal widget sayısı203=önceki178+yeni25; yerel native yakalama i
 ## R8 bakım sunumu — güncel operatif sayım
 
 208normal=178önceki+30yeni; nativeile209yerelPASS/24format0/analyze0.31×9durum/81R8PNG R6 ile tümbyteeşit,15sabitilkoku aynıgörünürUI kanıtı. R7normal207 ve16CI/T3 kaynak7053 için tarihçe; reviewerusageerror nedeniyle bağımsızPASS değildir. GüncelCI/T3 ve bütün bağımsızR8hüküm/son6metadata+sonCI beklenir; henüzDONE/merge yok.
+
+## Güncel geçmiş sunumu doğrulama kapsamı
+
+Normal widget240=eski208+yeni32; yerel native1ayrıPASS (241tekkoşu iddiası yok). Strictformat26/0-analyze0;30×9düzen/64native390×844/52hedef/gerçekklavye/disabledSemantics/liveRegion/boyanmışkontrast/fatalpointer. SabitSDK/publock/workflowYAML değişmez. Gönüllü17ilkoku sorusu koddanönce sabittir, bağımsız geçmişsiz LunaMax64görüntüyü açıp tamamına doğru yanıt vermiştir; ortak güvenli hata mesajları sınırlaması raporda korunur. Bütün kaynak ve ayrı son6metadata bağımsız hükümleri ile gerçek aynı CI/T3 zorunludur. Yerel başarı CI değil, AI okuması insan/telefon kanıtı değil. Önceki sayılar kendi tarihsel kapsamlarına aittir.
+
+
+`vault/PROFILES/history-render.md`; `vault/PACKS/P-E1-011.md`; `vault/REGISTRY/T-E1-011.md`; `vault/EVIDENCE/E-DEV-109.md`.

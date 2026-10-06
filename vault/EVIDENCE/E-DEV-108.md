@@ -21,7 +21,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-06
 depends_on: [V-E1-MAINT-001]
-used_by: [V-E1-MAINT-001, P-E1-010, T-E1-010]
+used_by: [V-E1-MAINT-001, P-E1-010, T-E1-010, V-E1-HISTORY-001, P-E1-011]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -1201,3 +1201,7 @@ Resmî olay 2026-10-05T22:49:42UTC (6Ekim01:49Türkiye) resolved oldu; Actions21
 ## Son kayıt denetiminde durdurulan komutlar
 
 İlk son kayıt donma denemesi commit oluşturmadan durdu: uygulama dosyasının çalışma kopyası CRLF, Git nesnesi LF olduğundan ham bayt eşitliği denetimi uyuşmadı. Git farkı ve LF içerik eşitliği kodun değişmediğini doğrular. Ayrıca özgün inceleme raporunun dokuz Markdown satır sonu git diff --check tarafından sondaki boşluk olarak işaretlendi. Özgün rapor değiştirilmeden ham Base64 arşivinde tutuldu; okunabilir sunum satır sonlarını eşdeğer HTML ile korur. Bu iki komut hatası ürün test hatası veya yeni kod değişikliği değildir. Son kayıt ve bütün kontroller düzeltmeden sonra tekrar yürütülür.
+
+## T-E1-011 tüketimi ve gerçek PR110 ikincil kabul makbuzu
+
+PR110 https://github.com/xpike-dgm/kavriva-app/pull/110 MERGED@2026-10-06T14:22:42Z; bütünkaynak6ecb043cc05c99b9e03ece46d98ebed2bef931ab bağımsız FULL PASS; son6kayıt02b0649ced4145f92a6975cdc7d3c5065e02f104 ayrı bağımsız FULL PASS. Normal eşleşen birleştirme94d0f963ff7fe2c93bdaf43b398fcdf95724cf37; fetchedmain/sonğaçbireşit; gerçeksource16/final16/main8job-adım-günlükSUCCESS. SourceT3run37367103411/finalT3run37476922551. Tam son rapor PR110yorum6018351147; gerçek ana dal makbuzu yorum6018411358. Ürün kapsamlı97DONE/109kalan/206. Eski gövde/retler/hamraporlar/runneriptalleri aynen korunur. Bu ek T-E1-011 kabulü değildir.
