@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "task": "T-E1-011",
+  "methodSource": "T-E1-011 operatif pakette gönüllü sabit ilk okuma yöntemi; CON-004 zorunlu aile kapsamı iddiası yok",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max okuyucu; yalnız güncel gerçek görüntüler ve sabit sorular. Kod/plan/cevap anahtarı/dış yardım yok. AI okuması insan veya telefon kanıtı değildir.",
+  "passRule": "Bütün sorular yardım olmadan anlamca doğru olmalı; yanlış/cevapsız/belirsiz yanıt dar onarım ve yeni geçmişsiz okuma gerektirir.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bu kayıt bugün neyi doğruluyor? Hangi bilgiler hâlâ bilinmiyor?"
+    },
+    {
+      "id": 2,
+      "question": "Kaydı bir servis veya profesyonel yazdığı için otomatik olarak doğrulanmış sayılır mı?"
+    },
+    {
+      "id": 3,
+      "question": "Bakımın bildirilen sonucu, kimin yazdığı ve kanıtın durumu ayrı ayrı anlaşılabiliyor mu?"
+    },
+    {
+      "id": 4,
+      "question": "Kaydın hangi motosiklete ait olduğunu, tarihini ve dayandığı kaynağı bulabiliyor musun?"
+    },
+    {
+      "id": 5,
+      "question": "Bir kayıt düzeltilince önceki bilgiler korunuyor mu? Son yazılan bilgi kendiliğinden kesin doğru sayılır mı?"
+    },
+    {
+      "id": 6,
+      "question": "Kanıt geri çekilince eski iz ile bugün geçerli değerlendirme nasıl ayrılıyor?"
+    },
+    {
+      "id": 7,
+      "question": "İtiraz veya çelişki çözülmediyse ekran bir tarafı kesin doğru gösteriyor mu?"
+    },
+    {
+      "id": 8,
+      "question": "Güvenlik açısından önemli kayıtta iddia, kanıt, inceleyen kişi ve bilinmeyenler açıkça görünüyor mu?"
+    },
+    {
+      "id": 9,
+      "question": "Kaynak ve değişikliklerin ayrıntısını gerektiğinde açabiliyor musun?"
+    },
+    {
+      "id": 10,
+      "question": "Geçmişte ilgili kaydı nasıl bulup ayrıntısını açarsın?"
+    },
+    {
+      "id": 11,
+      "question": "Motosiklet pasif olsa veya ücretli paket değişse temel geçmişin erişimi kapanır mı?"
+    },
+    {
+      "id": 12,
+      "question": "Dışarı aktarılacak kopya hangi motosikleti, kayıtları ve bilgileri içeriyor? Neler dışarıda kalıyor?"
+    },
+    {
+      "id": 13,
+      "question": "Geçmişi görme izni, dışarı aktarma izni de veriyor mu?"
+    },
+    {
+      "id": 14,
+      "question": "Kopya oluşturmak asıl kayıtları değiştirir veya siler mi?"
+    },
+    {
+      "id": 15,
+      "question": "Bir paylaşım bağlantısını iptal etmek daha önce indirilen veya gönderilen kopyaları da geri alır mı?"
+    },
+    {
+      "id": 16,
+      "question": "Dışarı aktarma sonucunun bilinmediği durumda tekrar gönderim mi, aynı isteğin sonucunu kontrol etme mi sunuluyor?"
+    },
+    {
+      "id": 17,
+      "question": "Başka motosiklete ait, eski veya eksik kaynak özel kayıt içeriğini ve işlem iznini açıyor mu?"
+    }
+  ]
+}
