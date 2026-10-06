@@ -67,3 +67,11 @@ Geçmişsiz GPT6LunaMax R1ilkoku alt ajanı kullanım sınırı hatasıyla durdu
 
 
 `vault/PROFILES/record-dispute-render.md`; `vault/PACKS/P-E1-012.md`; `vault/REGISTRY/T-E1-012.md`; `vault/EVIDENCE/E-DEV-110.md`.
+
+## Güncel R2 ilk okuma tamamlandı — önceki bekleme kaydından sonraki aşama
+
+Yeni geçmişsiz /root/e1012_record_r2_blind_reading GPT6LunaMax yalnız sabit17soruyu ve güncelR2manifest121PNG'yi aldı;121dosyanın tamamını original açıp40durumun bütün kaydırma parçalarını okudu. Önceki R1 kullanım sınırı girişimi için rapor oluşmadığı kaydı aynen korunur; bu yeni R2 raporu gerçek ayrı girişimdir.
+
+Root8066bayt tam raporu okudu;17ana anlam doğru. Q2 yalnız örnek etiketli seçili motosiklet ve tarih alanının okunmasını kanıtlar; gerçek araç plaka/model/kimliğinin görüntülerden belirlenemediği sınırı korunur. MotorbikeLabel test girdisidir; üretim araç kimliği veya insan/telefon kanıtı sayılmaz. Q13 raporunda “önceki izin” sözcüğü bir yazım belirsizliği taşır; tam yanıtın diğer kayıt/geçmiş/kopya anlamı eski izin üretmeksizin korunmuştur. Özgün rapor düzeltilmedi. Bütün kod incelemecisi bu sınırları bağımsız değerlendirmelidir. İlk görüntü okuması kodun tamamı, üretim bağlantısı veya görev DONE hükmü değildir.
+
+Yerel R2normal260/ayrınative1/40durum121PNG, strictformat28zero/analyze0, run_all12+42worst0 ve strictlinks4721 geçerlidir. Prepared f1181ac başında gerçek17CIrun(push8/PR9opened-labelarchitectureayrı)/herjob-adım-hamlog başarılı; PR T3 iki gerçek koşuda5vechecks7adım başarılı. Önceki prepared CI yeşili yeni bütün kaynak başının CI kanıtı değildir; yeni başta tekrar gerçek CI/T3 alınacaktır. Bütün bağımsız hüküm henüz yoktur; REVIEW kabul değildir,98DONE/108kalan/206 değişmez.
