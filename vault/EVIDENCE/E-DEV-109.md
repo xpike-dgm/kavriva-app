@@ -13,7 +13,7 @@ tests: [modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks
 superseded_by: []
 last_verified: 2026-10-06
 depends_on: [V-E1-HISTORY-001]
-used_by: [V-E1-HISTORY-001, P-E1-011, T-E1-011]
+used_by: [V-E1-HISTORY-001, P-E1-011, T-E1-011, V-E1-RECORD-001, P-E1-012]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -747,3 +747,7 @@ R2 whole-source hükmüm **FULL PASS**’tır; açık bulgu yoktur. Bu hüküm P
 ## Son kayıt aşaması gerçek bağlantı hatası ve dar onarım
 
 İlk son kayıt run_all worst1: bağımsız raporun geçici CI makbuzu adı Markdown backtick içinde depo dosyası sanıldı, dangling reference verdi. Özgün bağımsız rapor ve Base64 tam bayt arşivi değişmedi; yalnız okunabilir kopyadaki bu geçici yerel ad HTML code biçimine çevrildi, anlamı ve içerik korunur. Yeni depo adresi veya gate istisnası eklenmedi. Ham FAIL günlüğü kavriva_e1011_R2_final_dangling_link_FAIL.log / RAW SHA256 47da41bc688887488f8aabed3ed62c951b2ac89cb39381fbae552b0d304e1b2d korunur. Yeniden aynı yapısal kontrollerin gerçek sonucu ayrıca denetlenecek.
+
+## T-E1-012 tüketimi ve gerçek PR111 ikincil kabul makbuzu
+
+[PR111](https://github.com/xpike-dgm/kavriva-app/pull/111) MERGED@2026-10-06T16:23:01Z; kaynakc06f2f19fedb31fd4bca6d34ecb13fa5ecf8b334 ayrı FULL PASS; son6kayıtbb31ce5f2447fb1ae9eb29e727e14d0bbd30e9f9 ayrı PASS. Gerçeksource16/final16/main8workflow-job-adım-hamlogSUCCESS; sourceT3run37490494307/finalT3run37493677764. Normal eşleşen merge/fetchedmain 2c104afed8d438dcd1d0c4ef12ef82537d623f91; son ağacı birebir eşit. [Tam hükümler](https://github.com/xpike-dgm/kavriva-app/pull/111#issuecomment-6020641930), [ana dal makbuzu](https://github.com/xpike-dgm/kavriva-app/pull/111#issuecomment-6020691655). Ana dal98DONE/108kalan/206. R1 ret ve tüm eski gövdeler/hamraporlar aynen korunur. Bu ek T-E1-012 kabulü değildir.
