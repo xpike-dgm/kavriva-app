@@ -750,7 +750,7 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
           switch (a) {
             RecordActor.self => 'Kendim',
             RecordActor.hobby => 'Hobi desteği',
-            RecordActor.service => 'Dış servis',
+            RecordActor.service => 'Ücretli dış servis',
           },
           editing ? bound(() => changed(actor: a), input: true) : null,
           'record-actor-${a.name}',
@@ -965,7 +965,7 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
       ),
       heading('Kanıtı geri çekme'),
       text(
-        'Yalnız kendi kanıtını ve güncel izin verilen kapsamı geri çekebilirsin. Bu, diğer tarafın kaydını veya önceki izi silmez. Önceden bağımsızlaşmış kopyalar kendiliğinden geri alınmaz.',
+        'Yalnız kendi kanıtını ve güncel izin verilen kapsamı geri çekebilirsin. Bu, diğer tarafın kaydını veya kayıt geçmişini silmez. Önceden bağımsızlaşmış kopyalar kendiliğinden geri alınmaz.',
       ),
       if (data.evidence.isEmpty)
         text('Bu kaynakta geri çekilecek kanıt sunulmadı.'),

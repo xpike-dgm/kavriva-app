@@ -18,7 +18,7 @@ HistoryScope _scope({
   contextRevision: 'context-r1',
   catalogId: 'record-catalog',
   catalogRevision: revision,
-  motorcycleLabel: 'Örnek motosiklet · kullanıcı beyanı',
+  motorcycleLabel: 'Örnek motosiklet A · kullanıcı beyanı',
 );
 HistoryReference _ref(
   String purpose,

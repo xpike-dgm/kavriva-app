@@ -19,8 +19,8 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR-027/028; C1.6/F1.6.1/FL1.6.2 record-dispute v1"
 subject_file: modules/e01-app/internal/shell/lib/record_dispute.dart
-subject_digest: 75354fef8ad3a5c3367a494376cc2a45d43d2d8ff80857191b64e72fbff259ab
-result: "R3 yerel262normal; iki ret bulgusu düzeltildi, yeniden bağımsız inceleme/CI bekleniyor"
+subject_digest: 998613c34555c2f714262192801a7e1b3397249a0e01332cc6ff9b23f6e2a77a
+result: "R4 yerel262normal/1native; yeni ilkoku ve bütün kaynak kabulü bekleniyor"
 gate_verdict: "RECORDED yerel kanıt; bağımsız inceleme bekleniyor, kabul değil"
 reviewer: none
 timestamp: 2026-10-06
@@ -562,3 +562,9 @@ PRrun37523500866/checksjob112474556072: 7başarılıadım/success.
 E1gerçekhamlog: strictformat28/0-analyze0-262normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. PushT3SKIPPED0adım bağımsız kabul değildir; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
 
 Başarısız girişim korunur: push live-auth37523494581 attempt1 başlangıç adımında FAILED, iki doğrulama adımı SKIPPED. İlk girişim log/job ayrı attempt1 arşivinde. Aynı run attempt2 gerçek tekrar bütün job/adımlar SUCCESS; yukarıdaki son başarılı log attempt2. Başlangıç hatasının kök nedeni gizli tanı günlüğü olmadan belirlenemedi; bu bir kod düzeltmesi veya üretim doğrulaması değildir.
+
+## R4 yerel açıklık onarımı
+
+Ücretli dış servis seçeneği açıkça adlandırıldı. Yalnız fixture dış motosiklet etiketi Örnek motosiklet A olarak ayırt edilir; gerçek marka/model/plaka/kimlik uydurulmadı. Kaydı geri çekme açıklaması kayıt geçmişini silmez diye sadeleşti. Güncel kod LF SHA256 998613c34555c2f714262192801a7e1b3397249a0e01332cc6ff9b23f6e2a77a; test LF SHA256 9e748849f258f005cc90e8c2b2b40c17da4afd59ada1b726da95d1fe5d07001b.
+
+Bütün normal262/262, ayrı native1/1;40durum123PNG. R3 ile36PNG ham bayt aynı; değişen87PNG tamamı root original açıldı. Analyze0/strictformat28zero;320/390/768×1/2/3 yazı ve tam kaydırma, gerçek klavye/semantics/kontrast testleri normal kümededir. AI/fixture/native kanıt gerçek araç kimliği, telefon/OS veya fiziksel iş değildir. Yeni geçmişsiz ilkoku henüz bekliyor; önceki R3 belirsizlik raporu ve ilk bütün kaynak reddi korunur. Yeni bütün inceleme/aynıCI-T3 tamamlanmadan kabul yok;98DONE/108kalan/206 değişmez.
