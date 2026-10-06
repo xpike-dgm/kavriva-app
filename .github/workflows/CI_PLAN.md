@@ -118,6 +118,8 @@ used_by:
   - "E-DEV-108"
   - "P-E1-011"
   - "E-DEV-109"
+  - "P-E1-012"
+  - "E-DEV-110"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -495,3 +497,10 @@ Root67güncel görüntü içeriğini beş yeni/değişen dosyayı original açı
 Yedi tasarım kapısının R2 karşılığı: bütün ekran67içerik/sonuna erişim; ekranlararası kabul edilmiş T010referansı ve aynı tipografi/52hedef; durum31vegerçeksent; duyarlı279kombinasyon; erişilebilirlik/liveRegion/odak/kapalıdüğme/fatalpointer; eski208regresyon/28pin/hamv75/önceki esasgövdeler; R04/I02/I06gerçekpin ve kapsamlı hiyerarşi. R1 eşit görüntüleri farklı tasarım diye sunulmaz. Nihai font/token/router/cihaz/yayın ile üretim E3/E5/kimlik/dosya bağlantıları HELD kalır.
 
 KodLF SHA256 af6f17b67132ef24eafb292ea136f6ddda422db4e1796712b973e6164d140a94; testLF SHA256 ff78edc930f7ba48e7040430755a9cb91c4aeeff5d563b27977b4acacbbc0bf0; sorularLF SHA256 2a5e7f768549f02bdc3071dddb0ec78715a63264651e895b82330215e421f2a8. Güncel manifest RAW SHA256 477a81763e151cbf57f3673c6af5ddd855d4957b649a1258d06bd2c2e592c154. R2 tam bağımsız kaynak incelemesi, aynı GitHub CI/T3 ve ayrı son6kayıt incelemesi henüz beklenir; REVIEW kabul değildir. Ana dal97DONE/109kalan/206 değişmez.
+
+## Kayıt ve itiraz doğrulama kapsamı
+
+Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40×9düzen/121native390×844/52hedef/gerçekTab-Enter-Space/disabledSemantics/liveRegion/boyanmışkontrast/fatalpointer. Aynı workflowYAML/SDK/publock; üretim bağlantısı yok.17soru koddan önce sabit, bağımsız ilkoku henüz yok; kullanım sınırı PASS değildir. Bütün bağımsız hüküm ve ayrı son6metadata hükmü/aynı gerçek CI-T3 zorunlu.
+
+
+`vault/PROFILES/record-dispute-render.md`; `vault/PACKS/P-E1-012.md`; `vault/REGISTRY/T-E1-012.md`; `vault/EVIDENCE/E-DEV-110.md`.
