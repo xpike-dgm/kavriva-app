@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-011, T-E1-011, E-DEV-109]
 evidence: [E-DEV-109]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Bakım geçmişi, kayıt anlamı ve kopya kapsamı
@@ -77,3 +77,7 @@ Root67güncel görüntü içeriğini beş yeni/değişen dosyayı original açı
 Yedi tasarım kapısının R2 karşılığı: bütün ekran67içerik/sonuna erişim; ekranlararası kabul edilmiş T010referansı ve aynı tipografi/52hedef; durum31vegerçeksent; duyarlı279kombinasyon; erişilebilirlik/liveRegion/odak/kapalıdüğme/fatalpointer; eski208regresyon/28pin/hamv75/önceki esasgövdeler; R04/I02/I06gerçekpin ve kapsamlı hiyerarşi. R1 eşit görüntüleri farklı tasarım diye sunulmaz. Nihai font/token/router/cihaz/yayın ile üretim E3/E5/kimlik/dosya bağlantıları HELD kalır.
 
 KodLF SHA256 af6f17b67132ef24eafb292ea136f6ddda422db4e1796712b973e6164d140a94; testLF SHA256 ff78edc930f7ba48e7040430755a9cb91c4aeeff5d563b27977b4acacbbc0bf0; sorularLF SHA256 2a5e7f768549f02bdc3071dddb0ec78715a63264651e895b82330215e421f2a8. Güncel manifest RAW SHA256 477a81763e151cbf57f3673c6af5ddd855d4957b649a1258d06bd2c2e592c154. R2 tam bağımsız kaynak incelemesi, aynı GitHub CI/T3 ve ayrı son6kayıt incelemesi henüz beklenir; REVIEW kabul değildir. Ana dal97DONE/109kalan/206 değişmez.
+
+## Gerçek bütün kaynak incelemesi ve son kayıt adayı
+
+Exact c06f2f19fedb31fd4bca6d34ecb13fa5ecf8b334 bağımsız FULL PASS; gerçek aynı kaynak CI/T3 makbuzu aşağıda. Bu değişiklik yalnız altı son kayıt adresindedir, kod/test/17soru/67görüntü/hamv75/önceki esas gövdeler değişmez. GörevDONE bu inceleme kapsamının adayıdır; ayrı son6hüküm/sonCI-T3/normaleşleşenbirleştirme/fetchedmain8 olmadan ana dal sayımı97/109 ilerlemez. Üretim E3/E5/kimlik/dosya/cihaz/yayın engelleri kapanmaz.
