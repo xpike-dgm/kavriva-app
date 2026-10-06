@@ -360,6 +360,7 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
     for (final k in ['title', 'date', 'odometer', 'note', 'service'])
       k: FocusNode(),
   };
+  final fieldBindings = <String, Object>{};
   RecordDraft? local;
   bool sent = false, dirty = false, versionsOpen = false;
   String? error;
@@ -369,7 +370,10 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
   bool get disputeReadable =>
       widget.snapshot?.disputeReadable(widget.scope, widget.requestId) ?? false;
   bool get editing =>
-      draftReadable && !sent && widget.phase == RecordPhase.idle;
+      widget.page == RecordPage.standalone &&
+      draftReadable &&
+      !sent &&
+      widget.phase == RecordPhase.idle;
   @override
   void initState() {
     super.initState();
@@ -626,7 +630,17 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
     bool numeric = false,
     bool multiline = false,
   }) {
-    final scope = widget.scope, request = widget.requestId, source = binding;
+    final fieldBinding = Object();
+    fieldBindings[name] = fieldBinding;
+    var inputSubject = local?.subject;
+    final onChange = bound(() {
+      if (fieldBindings[name] != fieldBinding || inputSubject != local?.subject)
+        return;
+      changed();
+      // Aynı canlı alandaki bir sonraki yazı olayı güncel taslağı izler.
+      // Yeniden çizilmiş alanın eski callbacki ise kendi bağını kaybeder.
+      inputSubject = local?.subject;
+    });
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -670,13 +684,7 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
                 textInputAction: multiline
                     ? TextInputAction.newline
                     : TextInputAction.next,
-                onChanged: (_) {
-                  if (mounted &&
-                      scope.matches(widget.scope) &&
-                      request == widget.requestId &&
-                      source == binding)
-                    changed();
-                },
+                onChanged: (_) => onChange(),
               ),
             ),
           ),
@@ -847,12 +855,11 @@ class _RecordDisputeViewState extends State<RecordDisputeView> {
           text(
             'Güncel değerlendirme kaynağı eksik; son yazılan bilgi kesin doğru sayılmaz.',
           ),
-        if (!evaluated ||
-            targetRecord.meaning == HistoryMeaning.disputed ||
-            targetRecord.meaning == HistoryMeaning.unresolved)
-          text(
-            'Çözülmemiş tamamlanma iddiası bakım sayacını veya sonraki rehberi doğrulanmış bilgi gibi ilerletmez.',
-          ),
+        // Geri çekilme veya bir değerlendirme etiketi çelişkiyi çözmez.
+        // Bu genel sınır bir sonuç seçmez ve sayaç/rehber etkisi üretmez.
+        text(
+          'Çözülmemiş tamamlanma iddiası bakım sayacını veya sonraki rehberi doğrulanmış bilgi gibi ilerletmez.',
+        ),
       ], caution: true),
       heading('Ne uyuşmuyor?'),
       text(targetRecord.values[HistoryField.title]!),

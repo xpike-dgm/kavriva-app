@@ -966,6 +966,75 @@ void main() {
     },
   );
   testWidgets(
+    'eski metin callbacki sayfa ve taslak girdisi değişince kapanır',
+    (t) async {
+      final changes = <RecordDraftChange>[];
+      final field = find.byKey(const ValueKey('record-field-title'));
+      await _pump(t, _view(change: changes.add));
+      final oldPage = t.widget<EditableText>(field).onChanged!;
+      await _pump(t, _view(page: RecordPage.dispute, change: changes.add));
+      oldPage('Eski sayfadan gelen değişiklik');
+      await t.pumpAndSettle();
+      expect(changes, isEmpty);
+      await _pump(t, _view(change: changes.add));
+      final oldInput = t.widget<EditableText>(field).onChanged!;
+      await t.ensureVisible(field);
+      await t.enterText(field, 'Güncel kullanıcı işi');
+      await t.pumpAndSettle();
+      expect(changes, hasLength(1));
+      oldInput('Eski taslaktan gelen değişiklik');
+      await t.pumpAndSettle();
+      expect(changes, hasLength(1));
+      expect(changes.single.draft.title, 'Güncel kullanıcı işi');
+      final liveField = t.widget<EditableText>(field);
+      liveField.controller.text = 'Hızlı ilk';
+      liveField.onChanged!('Hızlı ilk');
+      liveField.controller.text = 'Hızlı ikinci';
+      liveField.onChanged!('Hızlı ikinci');
+      expect(changes, hasLength(3));
+      expect(changes.last.draft.title, 'Hızlı ikinci');
+      await t.pumpAndSettle();
+      liveField.onChanged!('Yeniden çizimden önceki olay');
+      expect(changes, hasLength(3));
+    },
+  );
+  testWidgets(
+    'geri çekilme değerlendirme olsa da sayaç rehber sınırını kaldırmaz',
+    (t) async {
+      for (final meaning in [
+        HistoryMeaning.withdrawn,
+        HistoryMeaning.reviewed,
+      ]) {
+        await _pump(
+          t,
+          _view(
+            page: RecordPage.dispute,
+            snapshot: _snapshot(
+              dispute: _dispute(row: _row(meaning: meaning)),
+            ),
+          ),
+        );
+        expect(
+          _text(t),
+          contains(
+            'Çözülmemiş tamamlanma iddiası bakım sayacını veya sonraki rehberi doğrulanmış bilgi gibi ilerletmez.',
+          ),
+        );
+        expect(_text(t), contains('İşlem kısmi kaldı.'));
+        expect(_text(t), contains('İşlem tamamlandı diye bildirildi.'));
+        expect(
+          _text(t),
+          contains(
+            meaning == HistoryMeaning.withdrawn
+                ? 'Kanıt geri çekildi'
+                : 'Bugünkü kayıt durumu',
+          ),
+        );
+        expect(_text(t), isNot(contains('Kesin doğru')));
+      }
+    },
+  );
+  testWidgets(
     'yalnız güncel kendi kanıtı geri çekilebilir; eski ownership ödünç alınamaz',
     (t) async {
       final intents = <RecordIntent>[];
