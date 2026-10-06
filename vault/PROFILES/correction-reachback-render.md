@@ -29,7 +29,7 @@ HistoryScope/Reference/Record kabul edilmiş E1history kaynağından değişmede
 
 Pasif motosiklet ve paket değişimi mevcut izinli düzeltme/temel geçmiş erişimini geriye dönük ücret kapısına taşımaz; geçerli iznin yokluğunu aşmaz. Yeni kontrol/sorgu için ayrı altı motorcycle/source/authorization/policy/operationIntent/audit bağı gerekir. Handler varlığı ALLOW değildir. Çevrimdışı yeni niyet kapalıdır; eski bilgi güncel kontrol veya riskin geçtiği anlamına gelmez. Aynı scope/request için gönderim kilidi, içerik değişse veya idle girdi yeniden gelse de kendiliğinden kalkmaz; çift gönderim engellenir. Eski callback güncel scope/request/subject/phase ve tıklama anındaki izinleri yeniden denetler. Failed/unknown/kanıtsızreceived yalnız aynıistek sorgusu sunar; çift sorgu da kilitlidir. Makbuz yalnız exact scope/request/subject ve correction-recheck-receipt amacıyla isteğin alındığını anlatır; çıplakALLOW, fiziksel yeniden kontrol veya güvenlik değildir. Typed niyet router/DB/üretim işlemi yürütmez.
 
-## Gerçek yerel kanıt
+## Gerçek yerel kanıt — tarihsel R1
 
 Kodöncesi 346be75cfccea600785f4844a9e1048edd6a69ca; kod 6621c3349b7791d3a296d0c811b105c4023f86c3. Kilitli pubget başarılı. Strictformat30/0, analyze0. Önceki262 normal korunarak toplam277normalPASS (yeni15). Native çizim ayrıca1PASS; tek278normal koşu iddiası yok. 31durum×320/390/768×1/2/3 =279 gerçek tam kaydırma düzeni,52hedef/fatalpointer/sonaÇık; gerçek TabEnterSpace, görünür birincil/ikincil odak/metin4.5odak3, kapalıbuttonSemantics/liveRegion/gizlilik. Native51PNG390×844 tam kaydırma:34benzersizoriginal Root tarafından açıldı; kalan17RAW SHA aynı açılmış görüntülerle eşleşir. Root51yeni görüntüyü ayrıca açtı iddiası yoktur. Sabit SDKRoboto test fontu nihai ürün fontu değildir. I05gerçek887×1774original ve kabul edilmiş T012dispute-unresolved0 ayrıca karşılaştırıldı.
 
@@ -37,7 +37,7 @@ Kodöncesi 346be75cfccea600785f4844a9e1048edd6a69ca; kod 6621c3349b7791d3a296d0c
 
 İlk test dosyası Python yazıcısında bozukUnicode örneğini literal surrogate üretince UTF8 encode hatası aldı; test dosyası boş kaldı. Aynı görevin komut kaydından yalnız test-yazıcı geri alındı ve Dart'a literalUnicode escape geçirildi; uygulama kodu etkilenmedi. İlk15öncesi14hedef koşuda12PASS/2FAIL yalnız SemanticsHandle test bitiminde bırakılmasıydı. Dispose gerçek finally'e alındı; R2hedef15PASS. İlk analyze2deprecatedinfo gerçekSemanticsFinder/flagsCollection ile giderildi, uyarı bastırılmadı. R3tam277denemede276PASS/1FAIL: ebeveyn Focus Semantics nodesi Tristate.none döndürdü. Test gerçek button Semantics alt nodesine yöneltildi; disabledFALSE beklentisi gevşetilmedi. Hedefklavye1PASS, R4bütün277PASS/analyze0/format30-0. Özgün başarısız günlükler korunur; ret veya üretim hatası diye uydurulmaz.
 
-## Yedi E10 tasarım kapısı
+## Yedi E10 tasarım kapısı — tarihsel R1
 
 | Kapı | Gerçek kapsam |
 |---|---|
@@ -49,7 +49,7 @@ Kodöncesi 346be75cfccea600785f4844a9e1048edd6a69ca; kod 6621c3349b7791d3a296d0c
 | Regresyon |Önceki262 aynı277koşuda başarılı;41basepin/hamv77/eski esas gövde/SDK/YAML/deps korunur. |
 | Kaynak/varyasyon |I05refinedv2 RAW SHA eşit; tek etki/tek kayıt/tek baskın kontrol, pasif erişim açık; logo/ikon/nihai font/token/nav/router/device/release HELD. |
 
-## Bağımsız kabul beklemede
+## Bağımsız kabul beklemede — tarihsel R1
 
 12soru koddan önce sabit. Yeni geçmişsiz gpt-6-luna/max yalnız güncel51PNG ve12soruyu okumakta; henüz rapor/hüküm yok. AI insan/telefon değildir. Bütün görev bağımsız kabul ve aynı gerçek CI/T3, sonra ayrı son6metadata/aynısonCI-T3 ve normalmerge/fetchedmain8 olmadan DONE/ana100sayım yok. DEC0069 ve sahip sürekli yetkisi geçerli; birleşmemiş DEC0070 kullanılmaz. E3R1REVIEW/E5IN_PROGRESS/Supabase47-57-59/RET97/cihaz/yayın engelleri korunur. Üretim olumlu durumları açık fixture; yeni DB/Supabase/publicseam/YAML/SDK/bağımlılık/router değişmedi.
 

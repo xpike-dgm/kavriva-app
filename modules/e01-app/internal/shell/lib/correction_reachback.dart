@@ -257,17 +257,20 @@ class _CorrectionReachbackState extends State<CorrectionReachbackView> {
     final n = s.readable ? s.notice! : null;
     Widget line(String value, {int level = 0}) => Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: Text(
-        value,
-        style: TextStyle(
-          fontSize: level == 2
-              ? 32
-              : level == 1
-              ? 22
-              : 16,
-          height: 1.4,
-          fontWeight: level > 0 ? FontWeight.w700 : FontWeight.w400,
-          color: const Color(0xFF172033),
+      child: Semantics(
+        header: level > 0,
+        child: Text(
+          value,
+          style: TextStyle(
+            fontSize: level == 2
+                ? 32
+                : level == 1
+                ? 22
+                : 16,
+            height: 1.4,
+            fontWeight: level > 0 ? FontWeight.w700 : FontWeight.w400,
+            color: const Color(0xFF172033),
+          ),
         ),
       ),
     );

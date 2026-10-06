@@ -19,7 +19,7 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR-029 C1.6/F1.6.1/FL1.6.3 correction-reachback v1"
 subject_file: modules/e01-app/internal/shell/lib/correction_reachback.dart
-subject_digest: 1a8b538919fdc9c71a7a5d19e3b67fbaaa0d042d953757e77000d28597e33ffb
+subject_digest: 8c7706905170ca3ca0756cd831515eaceea056db51574074bebdf39c9631900d
 result: "Yerel277 normal ve ayrı1 native PASS; R3 ilk okuma12/12; bütün kaynak ve aynıCI-T3 bekleniyor"
 gate_verdict: "FAIL bütün kaynak R1; başlık semantiği ve tarihsel sayım onarımı bekleniyor"
 reviewer: "/root/e1013_whole_review; requested gpt-6-luna/max"

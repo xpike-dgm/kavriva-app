@@ -823,6 +823,17 @@ void main() {
       try {
         final intents = <CorrectionIntent>[];
         await _pump(t, _view(handler: intents.add));
+        expect(
+          t
+              .getSemantics(find.text('Bu kayıt yeniden kontrol edilmeli'))
+              .flagsCollection
+              .isHeader,
+          isTrue,
+        );
+        expect(
+          t.getSemantics(find.text('Etkilenen kayıt')).flagsCollection.isHeader,
+          isTrue,
+        );
         await t.sendKeyEvent(LogicalKeyboardKey.tab);
         await t.pumpAndSettle();
         await t.sendKeyEvent(LogicalKeyboardKey.enter);
@@ -855,6 +866,16 @@ void main() {
               ),
           isTrue,
         );
+        await t.ensureVisible(find.byKey(const ValueKey('correction-details')));
+        await t.tap(find.byKey(const ValueKey('correction-details')));
+        await t.pumpAndSettle();
+        expect(
+          t
+              .getSemantics(find.text('Değişen bilgi ve korunan iz'))
+              .flagsCollection
+              .isHeader,
+          isTrue,
+        );
         await t.pumpWidget(const SizedBox());
         await _pump(
           t,
@@ -869,6 +890,23 @@ void main() {
         await t.sendKeyEvent(LogicalKeyboardKey.space);
         await t.pumpAndSettle();
         expect(intents.last.action, CorrectionAction.openRecord);
+        expect(
+          t
+              .getSemantics(find.text('Bu kaydın anlatımı güncellendi'))
+              .flagsCollection
+              .isHeader,
+          isTrue,
+        );
+        await t.pumpWidget(const SizedBox());
+        await _pump(t, _cases()['source-missing']!);
+        expect(
+          t
+              .getSemantics(find.text('Düzeltme bilgisi şu an açılamıyor'))
+              .flagsCollection
+              .isHeader,
+          isTrue,
+        );
+        expect(find.text('Etkilenen kayıt'), findsNothing);
       } finally {
         semantics.dispose();
       }
