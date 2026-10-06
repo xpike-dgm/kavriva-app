@@ -714,6 +714,72 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-010",
+   "version": "1",
+   "flow_feature": "FL1.5.1/F1.5.1",
+   "objective": "Bakım planı, ayrıntısı ve yetişme sunumu",
+   "context_pack": "P-E1-010",
+   "acceptance": "Verified source; snooze≠completion; catch-up path; novice-comprehensible copy (CON-004; verified at F10.6.1 gate)",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-05",
+   "purpose": "Bakım planı, iş ayrıntısı ve önceliklerin kaynaklı sunumu",
+   "domain": "maintenance",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-008",
+    "C1.5",
+    "F1.5.1",
+    "SCR-022",
+    "SCR-023",
+    "SCR-024",
+    "BR-024",
+    "BR-025",
+    "BR-026",
+    "BR-055",
+    "BR-056",
+    "BR-095",
+    "BR-096",
+    "BR-097",
+    "BR-104",
+    "BR-124",
+    "BR-125",
+    "CON-001",
+    "CON-002",
+    "CON-003",
+    "CON-004",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "maintenance-presentation",
+   "tasks": [
+    "T-E1-010"
+   ],
+   "tests": [
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-06",
+   "depends_on": [
+    "T-E1-001"
+   ],
+   "used_by": [
+    "V-E1-MAINT-001",
+    "T-E1-010",
+    "E-DEV-108"
+   ],
+   "evidence": "E-DEV-108",
+   "supersedes": "planning TASK_INDEX T-E1-010",
+   "status": "DONE"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
