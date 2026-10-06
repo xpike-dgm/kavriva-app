@@ -19,7 +19,7 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR-029 C1.6/F1.6.1/FL1.6.3 correction-reachback v1"
 subject_file: modules/e01-app/internal/shell/lib/correction_reachback.dart
-subject_digest: 5adcdf94a050732aa6fd9dc1b1b07fec3298f72312cb6df479b3fd3338efdf36
+subject_digest: 1a8b538919fdc9c71a7a5d19e3b67fbaaa0d042d953757e77000d28597e33ffb
 result: "Yerel277normal/1native PASS; ilkoku ve bağımsız kabul/aynıCI-T3 bekleniyor"
 gate_verdict: "RECORDED"
 reviewer: none
@@ -201,57 +201,109 @@ Görsel sayımı ve ham SHA/byte bilgisi
 - Aşağıda manifestteki her görselin durum etiketi, yolu, ham PNG boyutu ve SHA-256 değeri yer alır.
 
 Durum | Yol | PNG bayt | SHA-256
+
 safety | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-safety-0.png | 67439 | feab1dd99a3c099bf8e456088194564c77c6cb14422196a258d597a4f6abd298
+
 safety | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-safety-1.png | 64135 | d4a194fac4e6b64c1d957bb674dc06f8e44d7c07bbeca596e449c97c808daadf
+
 technical-value | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-technical-value-0.png | 66711 | cadd86a760865dca761e957430459daec61ba0b86dad25a5d38fb8899136aad2
+
 technical-value | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-technical-value-1.png | 63366 | 59dd98941b7815287ed863c959925a35bae22963e768d876bf4276e7166a6675
+
 critical-step | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-critical-step-0.png | 66548 | 108fc84f7e0c069be1b4dc072b53666ee190890b631d25e628a5cb80f7b4ef23
+
 critical-step | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-critical-step-1.png | 63201 | 3275ff9a8dfa3430c3d982479b6b942f538ba7c78be9fe86df9e97313062d4de
+
 narrative | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-narrative-0.png | 59300 | f1e0574ba2cac3d1a43cb1db3e28ff211ed4465bd9adf9771a75f3fdbe7c682c
+
 inactive | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-inactive-0.png | 71017 | 8eef21135e7bf663eaf49d4b5653eac999a012c385f3d3ef044ea8ff31dfaef5
+
 inactive | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-inactive-1.png | 63303 | efb01329bc36e2e49553f2babab86e714356f40d36cfc48c749b832d16d8ff74
+
 entitlement-changed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-entitlement-changed-0.png | 72498 | a4461656e343ecbff7976948db5aad6f46f08883b4ad89e143de6ee0b21d9044
+
 entitlement-changed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-entitlement-changed-1.png | 64774 | ae57f7cdc8d8800a009de1afd9d8314ee0a8a4c1465b352bc71c2e4268e9adee
+
 inactive-entitlement | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-inactive-entitlement-0.png | 76339 | 7f3eeb6950d3f25f846258f2642a2ad7930a884c2cabfc9170747f0626b3cd63
+
 inactive-entitlement | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-inactive-entitlement-1.png | 66985 | f2dfc0d59d1d55d4a7497cf067797431fea126497a3a644b306b07605f165115
+
 offline | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-offline-0.png | 76006 | e6c360842f3376d3882de80768dd0b62b3944d1200bf9a964f387867a197f16e
+
 offline | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-offline-1.png | 65946 | f4fa84f5724667a6a31d817484829c208b798e0b48ed89440494bab4cf74a04d
+
 details | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-0.png | 76082 | 3ec5a26efa1af93a6b74795b8fbf626d1b8dbdcf1c3c85c5bac7e55876ee0e31
+
 details | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-1.png | 64639 | 1702df27f1eb70a38ff29a3a27802de8ec725a5caa4de424a1e44d42fa7e04df
+
 details-inactive | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-inactive-0.png | 78095 | 09881b3eecc2998088d6adb9bed188922f6e01ff7adb486f1743f49585fc62e6
+
 details-inactive | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-inactive-1.png | 67194 | ed6b8ddb2a7f5ce41de0af8509c89a6e75f3c8fa75ecd41c708bfc05ec6ea9fd
+
 details-inactive | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-inactive-2.png | 65277 | b12345aec99eb222736048037e2093447d64e93c233dfdb636a84e190132942e
+
 details-long | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-long-0.png | 76885 | 5e0e68bfd8e4924cad05a5431d94eb54ec48281e4f627c12c850ea62dd494cd7
+
 details-long | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-details-long-1.png | 64639 | 1702df27f1eb70a38ff29a3a27802de8ec725a5caa4de424a1e44d42fa7e04df
+
 missing | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-missing-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 source-missing | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-source-missing-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 source-stale | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-source-stale-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 source-held | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-source-held-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 source-unknown | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-source-unknown-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 foreign-source | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-foreign-source-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 private-record | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-private-record-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 private-correction | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-private-correction-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 classification-missing | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-classification-missing-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 reviewer-missing | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-reviewer-missing-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 uncertainty-missing | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-uncertainty-missing-0.png | 26801 | 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7
+
 no-handler | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-no-handler-0.png | 72525 | fedd65f5ff9609d211a0c3c67dd27a486a1fce7152da43d9196b551d8bd68081
+
 no-handler | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-no-handler-1.png | 65561 | fba92e3fc7324997ba51cc5883180fc4ae631aa310829963270b7c2125d7999d
+
 operation-held | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-operation-held-0.png | 72521 | d1863c2efc3f01205f251c1eb1bace0c05be11d5f450256e04904501e5036af9
+
 operation-held | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-operation-held-1.png | 65553 | 5c685865c56e6a40f6aee1ec17f0f876bd7de9bfa272db73b2e7577acb2e6345
+
 busy | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-busy-0.png | 70504 | 2873ab1820b77a4baba081c8243824ac2b9c17f5640fc3b7d55603e91f3b12a3
+
 busy | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-busy-1.png | 62695 | ae2121d7b760e7dc599bd7ae312fb33bb2872bc4437b39aa8868ecc64efeb099
+
 sent | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-sent-0.png | 70504 | 2873ab1820b77a4baba081c8243824ac2b9c17f5640fc3b7d55603e91f3b12a3
+
 sent | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-sent-1.png | 62695 | ae2121d7b760e7dc599bd7ae312fb33bb2872bc4437b39aa8868ecc64efeb099
+
 failed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-failed-0.png | 74348 | c49f2148656fa719dfd9640cd367d479ad9f6ac38abde40ca285a3876ca1cfa8
+
 failed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-failed-1.png | 66648 | 674e7e0116b5d4c87e412b22b58d1ed0f56120aedcd946c7017fa45b3ef7b558
+
 unknown | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-unknown-0.png | 74348 | c49f2148656fa719dfd9640cd367d479ad9f6ac38abde40ca285a3876ca1cfa8
+
 unknown | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-unknown-1.png | 66648 | 674e7e0116b5d4c87e412b22b58d1ed0f56120aedcd946c7017fa45b3ef7b558
+
 unknown-querying | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-unknown-querying-0.png | 73000 | 94eef641256925aa9c683a7d88e9ec8cf3e7b9d30ecdb0ca3937969ef6835567
+
 unknown-querying | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-unknown-querying-1.png | 65222 | d0a36e154f008b2b167accffe1094e373630b26661af886e8b00852156a6f653
+
 received-unproven | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-received-unproven-0.png | 74348 | c49f2148656fa719dfd9640cd367d479ad9f6ac38abde40ca285a3876ca1cfa8
+
 received-unproven | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-received-unproven-1.png | 66648 | 674e7e0116b5d4c87e412b22b58d1ed0f56120aedcd946c7017fa45b3ef7b558
+
 received-confirmed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-received-confirmed-0.png | 71541 | b1abc98dd82f0294d189583604087bb0e2f857be4b153f1ea0edaa386b0297fa
+
 received-confirmed | C:/Users/Xpike/AppData/Local/Temp/kavriva_e1013_native_R1-received-confirmed-1.png | 63868 | ce9789c61f37cae782cae3ef332d48c0286673e1a3535b5380969d36bbf26d76
+
 
 
 ## Özgün ilk okuma ham baytları
@@ -263,3 +315,144 @@ VC1FMS0wMTMg4oCUIMSwbGsgZ8O2cnNlbCBva3VtYQoKWcO2bnRlbSB2ZSBzxLFuxLFyCi0gU2FiaXQg
 ## Q12 dar onarım kapsamı — koddan önce
 
 Özgün R1ilkoku Q12kısmi; kabul edilmedi. Kaydı/ayrıntıları okumanın yeni bakım işlemi başlatmadığı kullanıcı cümlesi açıklaştırılacak. Aynı15testte gerçek ayrıntı/recordtap yalnız openRecord niyeti, recheck yok doğrulanacak.12soru/41tabanpin/izinli14adres değişmez. Yeni native ve bütün testler/format/analyze/graph, yeni geçmişsiz okuma zorunlu; R1 özgün rapor/RAWBase64 korunur. Kayıt yazıcı ilk denemede dış/iş gövdesi üçlü string sınırı yüzünden SyntaxError aldı; dosya değişmedi. Dış tırnak düzeltilince kayıtlar yazıldı. Graph kapalıverdict listesi IN_PROGRESS kabul etmedi; EVID RECORDED düzeltildi, görev IN_PROGRESS kaldı.
+
+## Güncel Q12 dar onarımı ve gerçek R2 kanıtı
+
+Kod 7c2be3552df9f8623230e1f33da77384ab786eae; öncekiR1kod 6621c3349b7791d3a296d0c811b105c4023f86c3 ve R1ilkokuQ12kısmi özgün/RAWBase64 korunur. Kullanıcı cümlesi kayda/ayrıntıya bakmanın bakım işlemi başlatmadığını açık söyler. Aynı15testte gerçek ayrıntı/recordtap yalnız openRecordniyeti, recheckyok doğrulanır. R5bütün277normalPASS, ayrınativeR2 1PASS; analyze0/format30-0. Güncel31durum/52PNG tam390×844: Root33değişmişbenzersizoriginal açtı;12parça R1açılmışRAWhashlerle eşit, kalan7yeni tekrarlı parça aynıR2açılanRAWhashlere eşit.52R2PNGherbiri ayrı açıldı iddiası yok. 279gerçek dar/geniş/büyükyazı düzeni.12soruLF 3c1664de5fe51a6a28bfae7d34181c25a96cf6c757cb4ef79d932ce5f3277098 değişmez. Yeni geçmişsiz R2okuyucu bütün52PNG/12soruyu okuyor; henüz kabul yok. Ana99DONE107kalan206 korunur.
+
+## Güncel R2 kod test ve native kimlikleri
+
+KodLF SHA256 1a8b538919fdc9c71a7a5d19e3b67fbaaa0d042d953757e77000d28597e33ffb; testLF SHA256 3be071a9ce8889ebb6f17b1050501065952f9b4684745e1f9ef342c88d2d631f
+
+- kavriva_e1013_native_R2-safety-0.png / safety / RAW SHA256 c69be262be3c39883d1db5077c6c9fe503e6f5a1d261faa99a96cf35b7da844c / 70091byte /offset 0.0/end 73.0
+- kavriva_e1013_native_R2-safety-1.png / safety / RAW SHA256 19e8339515b2e2911b301300586e681c17367400a96a5aa97cffcfdf419c6154 / 64059byte /offset 73.0/end 73.0
+- kavriva_e1013_native_R2-technical-value-0.png / technical-value / RAW SHA256 a3364abd3b24d2c0635fcc33b325d97b22f794761da9bd2ad8768da2b0b02f8e / 69377byte /offset 0.0/end 73.0
+- kavriva_e1013_native_R2-technical-value-1.png / technical-value / RAW SHA256 fe6c746d3d5b7877038d03f400cbe982587b62a48c71750ba34238dfcbdb603a / 63303byte /offset 73.0/end 73.0
+- kavriva_e1013_native_R2-critical-step-0.png / critical-step / RAW SHA256 0ec9178e11836e5b954ae6a2e0f2aa26f3b02ce17fd457c9d36b4ced7e4e1c6e / 69213byte /offset 0.0/end 73.0
+- kavriva_e1013_native_R2-critical-step-1.png / critical-step / RAW SHA256 5a913e2afea96c92fad520161d326bfcf4298aaf47a32686ffe66a5a6bac0d01 / 63146byte /offset 73.0/end 73.0
+- kavriva_e1013_native_R2-narrative-0.png / narrative / RAW SHA256 f4244771e74bd617c5ccfcbf1c007da35b8f9e228fdc63f10b8f9d8ad0baa0b8 / 62832byte /offset 0.0/end 9.0
+- kavriva_e1013_native_R2-narrative-1.png / narrative / RAW SHA256 51ebc564da370fc062813e983419204a4249f927340b52f99da0224fa188109f / 62823byte /offset 9.0/end 9.0
+- kavriva_e1013_native_R2-inactive-0.png / inactive / RAW SHA256 b61298cd93e3447882c3276f524ab267b5b810feadf9aefeee266fcc0fb6598e / 73373byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-inactive-1.png / inactive / RAW SHA256 4494ba886488c8fa850e3d7d87cd83d742ce605e55c42d11fbe4b1990d2e1538 / 66820byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-entitlement-changed-0.png / entitlement-changed / RAW SHA256 8fe81ce7aa4a43e5c610ddf6bb23f5970dba436d06a25cad1ecb706d359cb7fb / 74937byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-entitlement-changed-1.png / entitlement-changed / RAW SHA256 3c142ed82e0a0ee34f60907fe5f4ee829508564ce7112371871bf1c598aace7a / 68284byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-inactive-entitlement-0.png / inactive-entitlement / RAW SHA256 430cc477bcdc0cef5d798490953d4089afa3350c5d45d82b9ad023b06b62ddeb / 78596byte /offset 0.0/end 185.0
+- kavriva_e1013_native_R2-inactive-entitlement-1.png / inactive-entitlement / RAW SHA256 051998ed14f23d3e6b45b26ad8d2edc5a4df95b92d4bcfc4e4637cb50ac1840c / 67782byte /offset 185.0/end 185.0
+- kavriva_e1013_native_R2-offline-0.png / offline / RAW SHA256 97393c90b66a4375ba756862221c4154ad3660c62c4e933ca7a68f392c1b35aa / 79213byte /offset 0.0/end 229.0
+- kavriva_e1013_native_R2-offline-1.png / offline / RAW SHA256 9a35022ff51fa8ecdb0653a50013b00efb3b65bfc741b3ac98965128db8b112f / 66545byte /offset 229.0/end 229.0
+- kavriva_e1013_native_R2-details-0.png / details / RAW SHA256 4b3ba2dadc3672d6123d11eea7e0a7733255000b6fc2c172f71ea584d188b7e4 / 78689byte /offset 0.0/end 542.0
+- kavriva_e1013_native_R2-details-1.png / details / RAW SHA256 e74cd3ba183d4512d53618d0bab94d2aab59a447f80cbd2fb76de15869dc900c / 65195byte /offset 542.0/end 542.0
+- kavriva_e1013_native_R2-details-inactive-0.png / details-inactive / RAW SHA256 8d5754a40b483c2843d797e8b44a84849b8961aaa4a76c8d423c4fd81d726c85 / 80700byte /offset 0.0/end 654.0
+- kavriva_e1013_native_R2-details-inactive-1.png / details-inactive / RAW SHA256 152651009f780cb5e211000d9e357560a0ba4541e3be67993b2062e5718a6a4e / 69284byte /offset 620.0/end 654.0
+- kavriva_e1013_native_R2-details-inactive-2.png / details-inactive / RAW SHA256 b12345aec99eb222736048037e2093447d64e93c233dfdb636a84e190132942e / 65277byte /offset 654.0/end 654.0
+- kavriva_e1013_native_R2-details-long-0.png / details-long / RAW SHA256 f69b758cdb4d8f5179bf7df545050e560c5c4c242071a6fd209f103954b40c63 / 79829byte /offset 0.0/end 608.0
+- kavriva_e1013_native_R2-details-long-1.png / details-long / RAW SHA256 e74cd3ba183d4512d53618d0bab94d2aab59a447f80cbd2fb76de15869dc900c / 65195byte /offset 608.0/end 608.0
+- kavriva_e1013_native_R2-missing-0.png / missing / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-source-missing-0.png / source-missing / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-source-stale-0.png / source-stale / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-source-held-0.png / source-held / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-source-unknown-0.png / source-unknown / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-foreign-source-0.png / foreign-source / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-private-record-0.png / private-record / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-private-correction-0.png / private-correction / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-classification-missing-0.png / classification-missing / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-reviewer-missing-0.png / reviewer-missing / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-uncertainty-missing-0.png / uncertainty-missing / RAW SHA256 5c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 / 26801byte /offset 0.0/end 0.0
+- kavriva_e1013_native_R2-no-handler-0.png / no-handler / RAW SHA256 8bee5a139544b72ddd6a3241b9002292dfd60f448bccdb21c917bd7f241e42a6 / 75580byte /offset 0.0/end 151.0
+- kavriva_e1013_native_R2-no-handler-1.png / no-handler / RAW SHA256 690f1f5ce89ff2e821499f004cacf6ffaaac104d563930b4ff302b1bee364dbe / 66137byte /offset 151.0/end 151.0
+- kavriva_e1013_native_R2-operation-held-0.png / operation-held / RAW SHA256 b85fdf93b1f1eaf8d29a2aa445413b7e6aacb36de9be586adebf426fe69e434f / 75582byte /offset 0.0/end 151.0
+- kavriva_e1013_native_R2-operation-held-1.png / operation-held / RAW SHA256 53b243488b6fa32383c2e0fbbcb0aeeab2d565ca5e2ca50798baa8f5db492f6a / 66131byte /offset 151.0/end 151.0
+- kavriva_e1013_native_R2-busy-0.png / busy / RAW SHA256 0ea29e9590c4d9c17e1c3702192aad76cb7e50c2b9352c22e17bc3563fd301cd / 72767byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-busy-1.png / busy / RAW SHA256 11d8b9fb96992693e2870b379b0e768ad2bbab279fbfe8bf7e09713913e7a9cc / 66201byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-sent-0.png / sent / RAW SHA256 0ea29e9590c4d9c17e1c3702192aad76cb7e50c2b9352c22e17bc3563fd301cd / 72767byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-sent-1.png / sent / RAW SHA256 11d8b9fb96992693e2870b379b0e768ad2bbab279fbfe8bf7e09713913e7a9cc / 66201byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-failed-0.png / failed / RAW SHA256 8be1ef67822bd744ccdb5329eaec7659a7c3df537794fb145cdfc73289a0e8ae / 76833byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-failed-1.png / failed / RAW SHA256 d6e477c59516364063945149e34941696476229f94429d204dafa01724c5dab8 / 70056byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-unknown-0.png / unknown / RAW SHA256 8be1ef67822bd744ccdb5329eaec7659a7c3df537794fb145cdfc73289a0e8ae / 76833byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-unknown-1.png / unknown / RAW SHA256 d6e477c59516364063945149e34941696476229f94429d204dafa01724c5dab8 / 70056byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-unknown-querying-0.png / unknown-querying / RAW SHA256 358540b314f2dff7ffa9d014521408905853c4621a39d172c0b0c94bd843cbc7 / 75386byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-unknown-querying-1.png / unknown-querying / RAW SHA256 05d00d5e4ee0a54c29215317e753ecdf19bed926ab6736cc852164c06f31babc / 68789byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-received-unproven-0.png / received-unproven / RAW SHA256 8be1ef67822bd744ccdb5329eaec7659a7c3df537794fb145cdfc73289a0e8ae / 76833byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-received-unproven-1.png / received-unproven / RAW SHA256 d6e477c59516364063945149e34941696476229f94429d204dafa01724c5dab8 / 70056byte /offset 129.0/end 129.0
+- kavriva_e1013_native_R2-received-confirmed-0.png / received-confirmed / RAW SHA256 b2c4ff3a15becbf24cdac365cc3d333f3dd2f7d2be2f7f39f77828a7e3ae791c / 73997byte /offset 0.0/end 129.0
+- kavriva_e1013_native_R2-received-confirmed-1.png / received-confirmed / RAW SHA256 1b5c980e5cbaa5fb06dc5b5d1b4ba1aed2776aab2b735a41314b193d802cbcf8 / 67342byte /offset 129.0/end 129.0
+
+- kavriva_e1013_R5_full_tests.log RAW SHA256 19afac1237f8ff3d31b9c532767b962bc21fc2245221ef8d026bb0227fd3423c / 60587byte
+- kavriva_e1013_native_R2.log RAW SHA256 8b7993b31f793f127b80cb587c333b4050a47a3b64a2d3831d333dcf87b56c65 / 270byte
+- kavriva_e1013_R4_analyze.log RAW SHA256 9c19c5fdc29e847862aafef9d1e355a755d9dcca35aaf92b6430c0c38b9b752d / 99byte
+- kavriva_e1013_R3_format.log RAW SHA256 da7aac0bd612f90e6c0ac9219633a27bd2afab391d600bd7004c9f5af5b101a6 / 49byte
+
+## R2 ilk okuma — özgün kısmi hüküm korunur
+
+Root özgün7628bayt raporun tamamını okudu;Q8veQ10kısmi, geçişkuralı sağlanmadı. Raporda bazı PNGler boş olarak yorumlandı. Root aynı source-stale/foreign-source/private-record R2 dosyalarını original yeniden açtı: metin ve kapalı erişim görünümü var; RAW SHA2565c6b130c23fc19d47226c06c23d18b52c77ce389ca0ddf531e5034268607bba7 R1açılmış aynı görüntüye eşit. Rapor düzeltilip PASSa yükseltilmez; ürün değişikliği yapılmadan kaynaklar aynı kalır, yeni geçmişsiz görsel okuma gerekir.
+
+RAW SHA256 c3f9305ac76f4c708d2c0c25737e92f133361e9b319fede70df4f54a639df1b0
+
+KAVRIVA E1-013 — R2 BAĞIMSIZ İLK EKRAN OKUMASI
+
+Yöntem ve sınır
+Yalnızca belirtilen native R2 manifesti, kavriva_e1013_R2_images.json, 12 sabit soruluk fixture ve bu eşlemedeki 52 PNG kullanıldı. Görseller manifest sırasıyla ve özgün çözünürlükte tek tek açıldı: 52 PNG, 31 durum. Kod, plan, pack, önceki rapor, cevap anahtarı veya dış yardım kullanılmadı.
+
+Bu, AI tarafından PNG ekran görüntülerinin okunmasıdır. Görüntüler gerçek insanın, telefonun, işletim sisteminin, üretim ortamının, işlemin, kimliğin veya fiziksel işin kanıtı değildir. Ekranlardaki “örnek” ve “test verisi” ifadeleri gerçek motosiklet/işlem kanıtı oluşturmaz.
+
+12 sabit soruya yanıt
+
+1. Bu ekran hangi sonradan yapılan düzeltmeyi ve hangi önceki kaydı etkilediğini söylüyor?
+Yanıt: Temel güvenlik ekranı, sonradan yapılan düzeltmenin bu kayıtta kullanılan örnek güvenlik bilgisini etkilediğini söylüyor. Etkilenen kayıt “Fren balatası kontrolü · örnek kayıt”; ekranda Örnek motosiklet A · kullanıcı beyanı ile 04.10.2026 örnek bakım tarihi yazıyor. Görsel kümesindeki ayrı varyantlar kullanılan teknik değeri, uygulanmış önemli adımı ve yalnız anlatımı etkileyen düzeltme örneklerini de gösteriyor.
+Değerlendirme: Net.
+
+2. Etki yalnız anlatım düzeltmesi mi, kullanılmış teknik değer veya güvenlik uyarısı mı? Önem derecesini neye göre anlarsın?
+Yanıt: Temel ekran yalnız anlatım düzeltmesi değil; “Güvenlik uyarısını etkileyen düzeltme” ve kayıtta kullanılan örnek güvenlik bilgisini etkilediğini açıkça söylüyor. Diğer ekran varyantları teknik değer ve önemli adım etkisini ayrıca adlandırıyor. Yalnız anlatım varyantı ise kaynağın değişikliği anlatım düzeltmesi olarak bildirdiğini ve anlatımın daha açık yazıldığını söylüyor. Etki türü, ekran üzerindeki bu açık sınıflandırma ve önceki kayıtta neyin kullanılmış olduğuna göre anlaşılır; fiziksel riskin sonucu kesinleşmiş değildir.
+Değerlendirme: Net.
+
+3. Hangi motosikletin hangi kaydı etkilenmiş, örnek kaynak ve zaman nerede görülüyor?
+Yanıt: Örnek Motosiklet A’nın kullanıcı beyanı altındaki Fren balatası kontrolü örnek kaydı etkilenmiş; örnek bakım tarihi 04.10.2026. Ayrıntılar açıkken “Değişen bilgi ve korunan iz” bölümünde zaman 06.10.2026 örnek düzeltme zamanı; gerekçe örnek kaynağın kapsamının sonradan değişmesi; kaynak “Örnek bilgi kaynağı · sürüm 2 · örnek bölüm” olarak görünüyor.
+Değerlendirme: Net. Bunlar ekranda örnek/test verisi olarak sunuluyor.
+
+4. Devam etmeden önce senden beklenen tek temel adım nedir?
+Yanıt: Etkilenen kaydın mevcut duruma etkisini yeniden değerlendirmek; ekrandaki ana eylem “Yeniden kontrol et”.
+Değerlendirme: Net.
+
+5. Yeniden kontrol düğmesini görmek veya basmak fiziksel işi yapılmış veya güvenliği kesinleşmiş sayar mı?
+Yanıt: Hayır. Ekran, kayda/ayrıntılara bakmanın bakım işlemi başlatmadığını; mesajı veya düğmeye basmanın bakımın yeniden kontrol edildiğini ya da motosikletin güvenli olduğunu kanıtlamadığını açıkça belirtiyor. Kontrol isteğinin alındığı bildirilen varyantta bile fiziksel kontrol ve güvenlik sonucu henüz doğrulanmamış.
+Değerlendirme: Net.
+
+6. Motosiklet pasif olduğunda veya ücretli paket değiştiğinde bu düzeltmeyi okuyabilir misin?
+Yanıt: Evet. Pasif motosiklet ekranı düzeltmenin ve izinli kayıt geçmişinin okunabileceğini söylüyor. Paket değişikliği ekranı, düzeltme ve izinli kayıt geçmişinin ücret kapsamına alınmadığını belirtiyor.
+Değerlendirme: Net.
+
+7. Düzeltme önceki kayıt veya kanıt izini sessizce silmiş ya da bir iddiayı otomatik kazanan seçmiş mi?
+Yanıt: Hayır. Ayrıntılar paneli düzeltmenin önceki kaydı ve bağımsız kanıt izini silmediğini; bir iddiayı kendiliğinden kazanan veya tamamlanmayı doğrulanmış yapmadığını söylüyor.
+Değerlendirme: Net.
+
+8. Güncel kaynak eksik/eski veya başka motosiklete aitse özel kayıt ve gerçek işlem izinleri açılıyor mu?
+Yanıt: Okunabilen erişim ekranı güncel kayıt ve erişim bilgisinin gerektiğini, özel ayrıntıların kapalı olduğunu ve bilgi yokluğunun düzeltmenin önemsiz olduğu anlamına gelmediğini söylüyor. Okunabilen eylem durumlarında da güncel işlem izni/bağlantı yokken istek açılamıyor. Bu yüzden görünen akış, özel kaydın veya gerçek işlemin otomatik açıldığını göstermiyor. Ancak source-stale, foreign-source ve private-record dahil bazı ilgili PNG’ler görsel olarak bütünüyle boş; bu kaynak türlerinin her birine özgü izin davranışı bu görsellerden doğrulanamıyor.
+Değerlendirme: Kısmi; okunabilir genel ekran kapalı erişim diyor, bazı ilgili varyantlar boş olduğundan her alt durum için kesin yanıt verilemiyor.
+
+9. Düzeltmenin kaynağı, etkilediği iddia, inceleyen ve açık kalan belirsizlikler nerede görülüyor?
+Yanıt: “Düzeltmenin ayrıntıları” açılınca “Değişen bilgi ve korunan iz” bölümünde Önce/Şimdi, Zaman, Gerekçe, Kaynak, İnceleyen ve Açık kalan alanları görünüyor. Örnek ekranda kaynak “Örnek bilgi kaynağı · sürüm 2 · örnek bölüm”, inceleyen “Örnek inceleyen · test verisi”; açık kalan konu mevcut fiziksel durum ve işçilik sonucunun kesinleşmemesi. Etkilenen kayıt ana ekranda ayrıca gösteriliyor.
+Değerlendirme: Net.
+
+10. Çevrimdışı veya eski bilgi söz konusuysa güncel kontrol yapıldığı varsayılıyor mu?
+Yanıt: Çevrimdışı durumda hayır. Ekran eski bilginin güncel kontrol veya riskin geçtiği anlamına gelmediğini, yeni kontrol isteğinin kapalı olduğunu ve güncel işlem izni ile bağlantı gerektiğini söylüyor. Eski kaynak varyantını temsil eden PNG ise görsel olarak boş olduğundan, o alt ekranın kendi metni okunamadı.
+Değerlendirme: Çevrimdışı durum için net “hayır”; eski kaynak varyantının özgül metni için kısmi.
+
+11. Bir kontrol isteğinin sonucu belirsizse aynı işi yeniden göndermeden ne yapmalısın?
+Yanıt: Yeni istek göndermeden aynı isteğin sonucunu sorgulamak. Ekran “Aynı isteğin sonucunu sorgula” eylemini gösteriyor; sonuç sorgulanırken yeni kontrol isteği gönderilmediğini belirtiyor. İstek gönderiliyor durumunda aynı isteğin tekrar gönderilemeyeceğini de söylüyor.
+Değerlendirme: Net.
+
+12. Ayrıntılara veya eski kayda bakmak seni otomatik olarak uygulamaya başlatır mı?
+Yanıt: Hayır. Ekran kayda veya ayrıntılara bakmanın bakım işlemi başlatmadığını açıkça söylüyor. “Etkilenen kayda bak” ve ayrıntıları açma/kapama kontrolleri, fiziksel işin başladığı veya yapıldığı kanıtı olarak sunulmuyor.
+Değerlendirme: Net.
+
+İlk okuma sonucu
+12 sorudan 10’una net yanıt verilebildi. 8. soru kısmi kaldı; 10. soruda çevrimdışı alt durumu net, eski kaynak varyantının metni okunamadı. Bu görsel okuma, fixture’daki “12 yanıtın tamamı anlamca doğru” geçiş kuralını karşılayan tam bir sonuç değildir; belirsiz alt durumlar için yeni geçmişsiz okuma gerekir.
+
+Görsel okunabilirliği notu
+Tüm 52 PNG açıldı. Bir kısım kaynak/izin hata ekranında genel kapalı erişim metni görünürken, bazı dosyalar (özellikle source-stale, source-held, foreign-source, private-record, classification-missing ve reviewer-missing varyantları) boş/açık metinsiz görüntü verdi. Boş görüntülerden içerik çıkarımı yapılmadı.
+
+## Özgün R2ilkoku ham baytları
+
+```base64
+S0FWUklWQSBFMS0wMTMg4oCUIFIyIEJBxJ5JTVNJWiDEsExLIEVLUkFOIE9LVU1BU0kKClnDtm50ZW0gdmUgc8SxbsSxcgpZYWxuxLF6Y2EgYmVsaXJ0aWxlbiBuYXRpdmUgUjIgbWFuaWZlc3RpLCBrYXZyaXZhX2UxMDEzX1IyX2ltYWdlcy5qc29uLCAxMiBzYWJpdCBzb3J1bHVrIGZpeHR1cmUgdmUgYnUgZcWfbGVtZWRla2kgNTIgUE5HIGt1bGxhbsSxbGTEsS4gR8O2cnNlbGxlciBtYW5pZmVzdCBzxLFyYXPEsXlsYSB2ZSDDtnpnw7xuIMOnw7Z6w7xuw7xybMO8a3RlIHRlayB0ZWsgYcOnxLFsZMSxOiA1MiBQTkcsIDMxIGR1cnVtLiBLb2QsIHBsYW4sIHBhY2ssIMO2bmNla2kgcmFwb3IsIGNldmFwIGFuYWh0YXLEsSB2ZXlhIGTEscWfIHlhcmTEsW0ga3VsbGFuxLFsbWFkxLEuCgpCdSwgQUkgdGFyYWbEsW5kYW4gUE5HIGVrcmFuIGfDtnLDvG50w7xsZXJpbmluIG9rdW5tYXPEsWTEsXIuIEfDtnLDvG50w7xsZXIgZ2Vyw6dlayBpbnNhbsSxbiwgdGVsZWZvbnVuLCBpxZ9sZXRpbSBzaXN0ZW1pbmluLCDDvHJldGltIG9ydGFtxLFuxLFuLCBpxZ9sZW1pbiwga2ltbGnEn2luIHZleWEgZml6aWtzZWwgacWfaW4ga2FuxLF0xLEgZGXEn2lsZGlyLiBFa3JhbmxhcmRha2kg4oCcw7ZybmVr4oCdIHZlIOKAnHRlc3QgdmVyaXNp4oCdIGlmYWRlbGVyaSBnZXLDp2VrIG1vdG9zaWtsZXQvacWfbGVtIGthbsSxdMSxIG9sdcWfdHVybWF6LgoKMTIgc2FiaXQgc29ydXlhIHlhbsSxdAoKMS4gQnUgZWtyYW4gaGFuZ2kgc29ucmFkYW4geWFwxLFsYW4gZMO8emVsdG1leWkgdmUgaGFuZ2kgw7ZuY2VraSBrYXlkxLEgZXRraWxlZGnEn2luaSBzw7Z5bMO8eW9yPwpZYW7EsXQ6IFRlbWVsIGfDvHZlbmxpayBla3JhbsSxLCBzb25yYWRhbiB5YXDEsWxhbiBkw7x6ZWx0bWVuaW4gYnUga2F5xLF0dGEga3VsbGFuxLFsYW4gw7ZybmVrIGfDvHZlbmxpayBiaWxnaXNpbmkgZXRraWxlZGnEn2luaSBzw7Z5bMO8eW9yLiBFdGtpbGVuZW4ga2F5xLF0IOKAnEZyZW4gYmFsYXRhc8SxIGtvbnRyb2zDvCDCtyDDtnJuZWsga2F5xLF04oCdOyBla3JhbmRhIMOWcm5layBtb3Rvc2lrbGV0IEEgwrcga3VsbGFuxLFjxLEgYmV5YW7EsSBpbGUgMDQuMTAuMjAyNiDDtnJuZWsgYmFrxLFtIHRhcmloaSB5YXrEsXlvci4gR8O2cnNlbCBrw7xtZXNpbmRla2kgYXlyxLEgdmFyeWFudGxhciBrdWxsYW7EsWxhbiB0ZWtuaWsgZGXEn2VyaSwgdXlndWxhbm3EscWfIMO2bmVtbGkgYWTEsW3EsSB2ZSB5YWxuxLF6IGFubGF0xLFtxLEgZXRraWxleWVuIGTDvHplbHRtZSDDtnJuZWtsZXJpbmkgZGUgZ8O2c3Rlcml5b3IuCkRlxJ9lcmxlbmRpcm1lOiBOZXQuCgoyLiBFdGtpIHlhbG7EsXogYW5sYXTEsW0gZMO8emVsdG1lc2kgbWksIGt1bGxhbsSxbG3EscWfIHRla25payBkZcSfZXIgdmV5YSBnw7x2ZW5saWsgdXlhcsSxc8SxIG3EsT8gw5ZuZW0gZGVyZWNlc2luaSBuZXllIGfDtnJlIGFubGFyc8Sxbj8KWWFuxLF0OiBUZW1lbCBla3JhbiB5YWxuxLF6IGFubGF0xLFtIGTDvHplbHRtZXNpIGRlxJ9pbDsg4oCcR8O8dmVubGlrIHV5YXLEsXPEsW7EsSBldGtpbGV5ZW4gZMO8emVsdG1l4oCdIHZlIGthecSxdHRhIGt1bGxhbsSxbGFuIMO2cm5layBnw7x2ZW5saWsgYmlsZ2lzaW5pIGV0a2lsZWRpxJ9pbmkgYcOnxLFrw6dhIHPDtnlsw7x5b3IuIERpxJ9lciBla3JhbiB2YXJ5YW50bGFyxLEgdGVrbmlrIGRlxJ9lciB2ZSDDtm5lbWxpIGFkxLFtIGV0a2lzaW5pIGF5csSxY2EgYWRsYW5kxLFyxLF5b3IuIFlhbG7EsXogYW5sYXTEsW0gdmFyeWFudMSxIGlzZSBrYXluYcSfxLFuIGRlxJ9pxZ9pa2xpxJ9pIGFubGF0xLFtIGTDvHplbHRtZXNpIG9sYXJhayBiaWxkaXJkacSfaW5pIHZlIGFubGF0xLFtxLFuIGRhaGEgYcOnxLFrIHlhesSxbGTEscSfxLFuxLEgc8O2eWzDvHlvci4gRXRraSB0w7xyw7wsIGVrcmFuIMO8emVyaW5kZWtpIGJ1IGHDp8SxayBzxLFuxLFmbGFuZMSxcm1hIHZlIMO2bmNla2kga2F5xLF0dGEgbmV5aW4ga3VsbGFuxLFsbcSxxZ8gb2xkdcSfdW5hIGfDtnJlIGFubGHFn8SxbMSxcjsgZml6aWtzZWwgcmlza2luIHNvbnVjdSBrZXNpbmxlxZ9tacWfIGRlxJ9pbGRpci4KRGXEn2VybGVuZGlybWU6IE5ldC4KCjMuIEhhbmdpIG1vdG9zaWtsZXRpbiBoYW5naSBrYXlkxLEgZXRraWxlbm1pxZ8sIMO2cm5layBrYXluYWsgdmUgemFtYW4gbmVyZWRlIGfDtnLDvGzDvHlvcj8KWWFuxLF0OiDDlnJuZWsgTW90b3Npa2xldCBB4oCZbsSxbiBrdWxsYW7EsWPEsSBiZXlhbsSxIGFsdMSxbmRha2kgRnJlbiBiYWxhdGFzxLEga29udHJvbMO8IMO2cm5layBrYXlkxLEgZXRraWxlbm1pxZ87IMO2cm5layBiYWvEsW0gdGFyaWhpIDA0LjEwLjIwMjYuIEF5csSxbnTEsWxhciBhw6fEsWtrZW4g4oCcRGXEn2nFn2VuIGJpbGdpIHZlIGtvcnVuYW4gaXrigJ0gYsO2bMO8bcO8bmRlIHphbWFuIDA2LjEwLjIwMjYgw7ZybmVrIGTDvHplbHRtZSB6YW1hbsSxOyBnZXJla8OnZSDDtnJuZWsga2F5bmHEn8SxbiBrYXBzYW3EsW7EsW4gc29ucmFkYW4gZGXEn2nFn21lc2k7IGtheW5hayDigJzDlnJuZWsgYmlsZ2kga2F5bmHEn8SxIMK3IHPDvHLDvG0gMiDCtyDDtnJuZWsgYsO2bMO8beKAnSBvbGFyYWsgZ8O2csO8bsO8eW9yLgpEZcSfZXJsZW5kaXJtZTogTmV0LiBCdW5sYXIgZWtyYW5kYSDDtnJuZWsvdGVzdCB2ZXJpc2kgb2xhcmFrIHN1bnVsdXlvci4KCjQuIERldmFtIGV0bWVkZW4gw7ZuY2Ugc2VuZGVuIGJla2xlbmVuIHRlayB0ZW1lbCBhZMSxbSBuZWRpcj8KWWFuxLF0OiBFdGtpbGVuZW4ga2F5ZMSxbiBtZXZjdXQgZHVydW1hIGV0a2lzaW5pIHllbmlkZW4gZGXEn2VybGVuZGlybWVrOyBla3JhbmRha2kgYW5hIGV5bGVtIOKAnFllbmlkZW4ga29udHJvbCBldOKAnS4KRGXEn2VybGVuZGlybWU6IE5ldC4KCjUuIFllbmlkZW4ga29udHJvbCBkw7zEn21lc2luaSBnw7ZybWVrIHZleWEgYmFzbWFrIGZpemlrc2VsIGnFn2kgeWFwxLFsbcSxxZ8gdmV5YSBnw7x2ZW5sacSfaSBrZXNpbmxlxZ9tacWfIHNheWFyIG3EsT8KWWFuxLF0OiBIYXnEsXIuIEVrcmFuLCBrYXlkYS9heXLEsW50xLFsYXJhIGJha21hbsSxbiBiYWvEsW0gacWfbGVtaSBiYcWfbGF0bWFkxLHEn8SxbsSxOyBtZXNhasSxIHZleWEgZMO8xJ9tZXllIGJhc21hbsSxbiBiYWvEsW3EsW4geWVuaWRlbiBrb250cm9sIGVkaWxkacSfaW5pIHlhIGRhIG1vdG9zaWtsZXRpbiBnw7x2ZW5saSBvbGR1xJ91bnUga2FuxLF0bGFtYWTEscSfxLFuxLEgYcOnxLFrw6dhIGJlbGlydGl5b3IuIEtvbnRyb2wgaXN0ZcSfaW5pbiBhbMSxbmTEscSfxLEgYmlsZGlyaWxlbiB2YXJ5YW50dGEgYmlsZSBmaXppa3NlbCBrb250cm9sIHZlIGfDvHZlbmxpayBzb251Y3UgaGVuw7x6IGRvxJ9ydWxhbm1hbcSxxZ8uCkRlxJ9lcmxlbmRpcm1lOiBOZXQuCgo2LiBNb3Rvc2lrbGV0IHBhc2lmIG9sZHXEn3VuZGEgdmV5YSDDvGNyZXRsaSBwYWtldCBkZcSfacWfdGnEn2luZGUgYnUgZMO8emVsdG1leWkgb2t1eWFiaWxpciBtaXNpbj8KWWFuxLF0OiBFdmV0LiBQYXNpZiBtb3Rvc2lrbGV0IGVrcmFuxLEgZMO8emVsdG1lbmluIHZlIGl6aW5saSBrYXnEsXQgZ2XDp21pxZ9pbmluIG9rdW5hYmlsZWNlxJ9pbmkgc8O2eWzDvHlvci4gUGFrZXQgZGXEn2nFn2lrbGnEn2kgZWtyYW7EsSwgZMO8emVsdG1lIHZlIGl6aW5saSBrYXnEsXQgZ2XDp21pxZ9pbmluIMO8Y3JldCBrYXBzYW3EsW5hIGFsxLFubWFkxLHEn8SxbsSxIGJlbGlydGl5b3IuCkRlxJ9lcmxlbmRpcm1lOiBOZXQuCgo3LiBEw7x6ZWx0bWUgw7ZuY2VraSBrYXnEsXQgdmV5YSBrYW7EsXQgaXppbmkgc2Vzc2l6Y2Ugc2lsbWnFnyB5YSBkYSBiaXIgaWRkaWF5xLEgb3RvbWF0aWsga2F6YW5hbiBzZcOnbWnFnyBtaT8KWWFuxLF0OiBIYXnEsXIuIEF5csSxbnTEsWxhciBwYW5lbGkgZMO8emVsdG1lbmluIMO2bmNla2kga2F5ZMSxIHZlIGJhxJ/EsW1zxLF6IGthbsSxdCBpemluaSBzaWxtZWRpxJ9pbmk7IGJpciBpZGRpYXnEsSBrZW5kaWxpxJ9pbmRlbiBrYXphbmFuIHZleWEgdGFtYW1sYW5tYXnEsSBkb8SfcnVsYW5txLHFnyB5YXBtYWTEscSfxLFuxLEgc8O2eWzDvHlvci4KRGXEn2VybGVuZGlybWU6IE5ldC4KCjguIEfDvG5jZWwga2F5bmFrIGVrc2lrL2Vza2kgdmV5YSBiYcWfa2EgbW90b3Npa2xldGUgYWl0c2Ugw7Z6ZWwga2F5xLF0IHZlIGdlcsOnZWsgacWfbGVtIGl6aW5sZXJpIGHDp8SxbMSxeW9yIG11PwpZYW7EsXQ6IE9rdW5hYmlsZW4gZXJpxZ9pbSBla3JhbsSxIGfDvG5jZWwga2F5xLF0IHZlIGVyacWfaW0gYmlsZ2lzaW5pbiBnZXJla3RpxJ9pbmksIMO2emVsIGF5csSxbnTEsWxhcsSxbiBrYXBhbMSxIG9sZHXEn3VudSB2ZSBiaWxnaSB5b2tsdcSfdW51biBkw7x6ZWx0bWVuaW4gw7ZuZW1zaXogb2xkdcSfdSBhbmxhbcSxbmEgZ2VsbWVkacSfaW5pIHPDtnlsw7x5b3IuIE9rdW5hYmlsZW4gZXlsZW0gZHVydW1sYXLEsW5kYSBkYSBnw7xuY2VsIGnFn2xlbSBpem5pL2JhxJ9sYW50xLEgeW9ra2VuIGlzdGVrIGHDp8SxbGFtxLF5b3IuIEJ1IHnDvHpkZW4gZ8O2csO8bmVuIGFrxLHFnywgw7Z6ZWwga2F5ZMSxbiB2ZXlhIGdlcsOnZWsgacWfbGVtaW4gb3RvbWF0aWsgYcOnxLFsZMSxxJ/EsW7EsSBnw7ZzdGVybWl5b3IuIEFuY2FrIHNvdXJjZS1zdGFsZSwgZm9yZWlnbi1zb3VyY2UgdmUgcHJpdmF0ZS1yZWNvcmQgZGFoaWwgYmF6xLEgaWxnaWxpIFBOR+KAmWxlciBnw7Zyc2VsIG9sYXJhayBiw7x0w7xuw7x5bGUgYm/FnzsgYnUga2F5bmFrIHTDvHJsZXJpbmluIGhlciBiaXJpbmUgw7Z6Z8O8IGl6aW4gZGF2cmFuxLHFn8SxIGJ1IGfDtnJzZWxsZXJkZW4gZG/En3J1bGFuYW3EsXlvci4KRGXEn2VybGVuZGlybWU6IEvEsXNtaTsgb2t1bmFiaWxpciBnZW5lbCBla3JhbiBrYXBhbMSxIGVyacWfaW0gZGl5b3IsIGJhesSxIGlsZ2lsaSB2YXJ5YW50bGFyIGJvxZ8gb2xkdcSfdW5kYW4gaGVyIGFsdCBkdXJ1bSBpw6dpbiBrZXNpbiB5YW7EsXQgdmVyaWxlbWl5b3IuCgo5LiBEw7x6ZWx0bWVuaW4ga2F5bmHEn8SxLCBldGtpbGVkacSfaSBpZGRpYSwgaW5jZWxleWVuIHZlIGHDp8SxayBrYWxhbiBiZWxpcnNpemxpa2xlciBuZXJlZGUgZ8O2csO8bMO8eW9yPwpZYW7EsXQ6IOKAnETDvHplbHRtZW5pbiBheXLEsW50xLFsYXLEseKAnSBhw6fEsWzEsW5jYSDigJxEZcSfacWfZW4gYmlsZ2kgdmUga29ydW5hbiBpeuKAnSBiw7Zsw7xtw7xuZGUgw5ZuY2UvxZ5pbWRpLCBaYW1hbiwgR2VyZWvDp2UsIEtheW5haywgxLBuY2VsZXllbiB2ZSBBw6fEsWsga2FsYW4gYWxhbmxhcsSxIGfDtnLDvG7DvHlvci4gw5ZybmVrIGVrcmFuZGEga2F5bmFrIOKAnMOWcm5layBiaWxnaSBrYXluYcSfxLEgwrcgc8O8csO8bSAyIMK3IMO2cm5layBiw7Zsw7xt4oCdLCBpbmNlbGV5ZW4g4oCcw5ZybmVrIGluY2VsZXllbiDCtyB0ZXN0IHZlcmlzaeKAnTsgYcOnxLFrIGthbGFuIGtvbnUgbWV2Y3V0IGZpemlrc2VsIGR1cnVtIHZlIGnFn8OnaWxpayBzb251Y3VudW4ga2VzaW5sZcWfbWVtZXNpLiBFdGtpbGVuZW4ga2F5xLF0IGFuYSBla3JhbmRhIGF5csSxY2EgZ8O2c3RlcmlsaXlvci4KRGXEn2VybGVuZGlybWU6IE5ldC4KCjEwLiDDh2V2cmltZMSxxZ/EsSB2ZXlhIGVza2kgYmlsZ2kgc8O2eiBrb251c3V5c2EgZ8O8bmNlbCBrb250cm9sIHlhcMSxbGTEscSfxLEgdmFyc2F5xLFsxLF5b3IgbXU/CllhbsSxdDogw4dldnJpbWTEscWfxLEgZHVydW1kYSBoYXnEsXIuIEVrcmFuIGVza2kgYmlsZ2luaW4gZ8O8bmNlbCBrb250cm9sIHZleWEgcmlza2luIGdlw6d0acSfaSBhbmxhbcSxbmEgZ2VsbWVkacSfaW5pLCB5ZW5pIGtvbnRyb2wgaXN0ZcSfaW5pbiBrYXBhbMSxIG9sZHXEn3VudSB2ZSBnw7xuY2VsIGnFn2xlbSBpem5pIGlsZSBiYcSfbGFudMSxIGdlcmVrdGnEn2luaSBzw7Z5bMO8eW9yLiBFc2tpIGtheW5hayB2YXJ5YW50xLFuxLEgdGVtc2lsIGVkZW4gUE5HIGlzZSBnw7Zyc2VsIG9sYXJhayBib8WfIG9sZHXEn3VuZGFuLCBvIGFsdCBla3JhbsSxbiBrZW5kaSBtZXRuaSBva3VuYW1hZMSxLgpEZcSfZXJsZW5kaXJtZTogw4dldnJpbWTEscWfxLEgZHVydW0gacOnaW4gbmV0IOKAnGhhecSxcuKAnTsgZXNraSBrYXluYWsgdmFyeWFudMSxbsSxbiDDtnpnw7xsIG1ldG5pIGnDp2luIGvEsXNtaS4KCjExLiBCaXIga29udHJvbCBpc3RlxJ9pbmluIHNvbnVjdSBiZWxpcnNpenNlIGF5bsSxIGnFn2kgeWVuaWRlbiBnw7ZuZGVybWVkZW4gbmUgeWFwbWFsxLFzxLFuPwpZYW7EsXQ6IFllbmkgaXN0ZWsgZ8O2bmRlcm1lZGVuIGF5bsSxIGlzdGXEn2luIHNvbnVjdW51IHNvcmd1bGFtYWsuIEVrcmFuIOKAnEF5bsSxIGlzdGXEn2luIHNvbnVjdW51IHNvcmd1bGHigJ0gZXlsZW1pbmkgZ8O2c3Rlcml5b3I7IHNvbnXDpyBzb3JndWxhbsSxcmtlbiB5ZW5pIGtvbnRyb2wgaXN0ZcSfaSBnw7ZuZGVyaWxtZWRpxJ9pbmkgYmVsaXJ0aXlvci4gxLBzdGVrIGfDtm5kZXJpbGl5b3IgZHVydW11bmRhIGF5bsSxIGlzdGXEn2luIHRla3JhciBnw7ZuZGVyaWxlbWV5ZWNlxJ9pbmkgZGUgc8O2eWzDvHlvci4KRGXEn2VybGVuZGlybWU6IE5ldC4KCjEyLiBBeXLEsW50xLFsYXJhIHZleWEgZXNraSBrYXlkYSBiYWttYWsgc2VuaSBvdG9tYXRpayBvbGFyYWsgdXlndWxhbWF5YSBiYcWfbGF0xLFyIG3EsT8KWWFuxLF0OiBIYXnEsXIuIEVrcmFuIGtheWRhIHZleWEgYXlyxLFudMSxbGFyYSBiYWttYW7EsW4gYmFrxLFtIGnFn2xlbWkgYmHFn2xhdG1hZMSxxJ/EsW7EsSBhw6fEsWvDp2Egc8O2eWzDvHlvci4g4oCcRXRraWxlbmVuIGtheWRhIGJha+KAnSB2ZSBheXLEsW50xLFsYXLEsSBhw6dtYS9rYXBhbWEga29udHJvbGxlcmksIGZpemlrc2VsIGnFn2luIGJhxZ9sYWTEscSfxLEgdmV5YSB5YXDEsWxkxLHEn8SxIGthbsSxdMSxIG9sYXJhayBzdW51bG11eW9yLgpEZcSfZXJsZW5kaXJtZTogTmV0LgoKxLBsayBva3VtYSBzb251Y3UKMTIgc29ydWRhbiAxMOKAmXVuYSBuZXQgeWFuxLF0IHZlcmlsZWJpbGRpLiA4LiBzb3J1IGvEsXNtaSBrYWxkxLE7IDEwLiBzb3J1ZGEgw6dldnJpbWTEscWfxLEgYWx0IGR1cnVtdSBuZXQsIGVza2kga2F5bmFrIHZhcnlhbnTEsW7EsW4gbWV0bmkgb2t1bmFtYWTEsS4gQnUgZ8O2cnNlbCBva3VtYSwgZml4dHVyZeKAmWRha2kg4oCcMTIgeWFuxLF0xLFuIHRhbWFtxLEgYW5sYW1jYSBkb8SfcnXigJ0gZ2XDp2nFnyBrdXJhbMSxbsSxIGthcsWfxLFsYXlhbiB0YW0gYmlyIHNvbnXDpyBkZcSfaWxkaXI7IGJlbGlyc2l6IGFsdCBkdXJ1bWxhciBpw6dpbiB5ZW5pIGdlw6dtacWfc2l6IG9rdW1hIGdlcmVraXIuCgpHw7Zyc2VsIG9rdW5hYmlsaXJsacSfaSBub3R1ClTDvG0gNTIgUE5HIGHDp8SxbGTEsS4gQmlyIGvEsXPEsW0ga2F5bmFrL2l6aW4gaGF0YSBla3JhbsSxbmRhIGdlbmVsIGthcGFsxLEgZXJpxZ9pbSBtZXRuaSBnw7Zyw7xuw7xya2VuLCBiYXrEsSBkb3N5YWxhciAow7Z6ZWxsaWtsZSBzb3VyY2Utc3RhbGUsIHNvdXJjZS1oZWxkLCBmb3JlaWduLXNvdXJjZSwgcHJpdmF0ZS1yZWNvcmQsIGNsYXNzaWZpY2F0aW9uLW1pc3NpbmcgdmUgcmV2aWV3ZXItbWlzc2luZyB2YXJ5YW50bGFyxLEpIGJvxZ8vYcOnxLFrIG1ldGluc2l6IGfDtnLDvG50w7wgdmVyZGkuIEJvxZ8gZ8O2csO8bnTDvGxlcmRlbiBpw6dlcmlrIMOnxLFrYXLEsW3EsSB5YXDEsWxtYWTEsS4=
+```
