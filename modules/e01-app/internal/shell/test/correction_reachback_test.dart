@@ -771,7 +771,12 @@ void main() {
   testWidgets('düzeltme kaynağı ve eskiyeni iz yalnız ayrıntıda ayrı sunulur', (
     t,
   ) async {
-    await _pump(t, _view());
+    final intents = <CorrectionIntent>[];
+    await _pump(t, _view(handler: intents.add));
+    expect(
+      _text(t),
+      contains('Kayda veya ayrıntılara bakmak bir bakım işlemi başlatmaz.'),
+    );
     expect(_text(t), isNot(contains('Önceki örnek bilgi')));
     await _tap(t, 'correction-details');
     expect(_text(t), contains('Önceki örnek bilgi'));
@@ -779,6 +784,9 @@ void main() {
     expect(_text(t), contains('İnceleyen:'));
     expect(_text(t), contains('Açık kalan:'));
     expect(_text(t), contains('izini silmez'));
+    await _tap(t, 'correction-openRecord');
+    expect(intents.single.action, CorrectionAction.openRecord);
+    expect(intents.any((v) => v.action == CorrectionAction.recheck), isFalse);
     final old = _callback(t, 'correction-details')!;
     await _pump(
       t,

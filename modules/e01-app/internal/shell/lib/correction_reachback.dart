@@ -339,7 +339,7 @@ class _CorrectionReachbackState extends State<CorrectionReachbackView> {
                           : 'Devam etmeden önce bu kaydın mevcut duruma etkisi yeniden değerlendirilmeli.',
                     ),
                     line(
-                      'Bu mesaj veya düğmeye basmak, bakımın yeniden kontrol edildiğini ya da motosikletin güvenli olduğunu kanıtlamaz.',
+                      'Kayda veya ayrıntılara bakmak bir bakım işlemi başlatmaz. Bu mesaj veya düğmeye basmak, bakımın yeniden kontrol edildiğini ya da motosikletin güvenli olduğunu kanıtlamaz.',
                     ),
                     if (s.inactive)
                       line(
