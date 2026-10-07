@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "task": "T-E1-013",
+  "methodSource": "Gönüllü kodöncesi sabit ilk okuma; CON004 kapsamı genişletilmez",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max yalnız güncel native PNG ve soruları okur; AI insan/telefon değildir",
+  "passRule": "12 yanıtın tamamı yardım olmadan anlamca doğru; belirsizlik dar onarım ve yeni geçmişsiz okuma gerektirir",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bu ekran hangi sonradan yapılan düzeltmeyi ve hangi önceki kaydı etkilediğini söylüyor?"
+    },
+    {
+      "id": 2,
+      "question": "Etki yalnız anlatım düzeltmesi mi, kullanılmış teknik değer veya güvenlik uyarısı mı? Önem derecesini neye göre anlarsın?"
+    },
+    {
+      "id": 3,
+      "question": "Hangi motosikletin hangi kaydı etkilenmiş, örnek kaynak ve zaman nerede görülüyor?"
+    },
+    {
+      "id": 4,
+      "question": "Devam etmeden önce senden beklenen tek temel adım nedir?"
+    },
+    {
+      "id": 5,
+      "question": "Yeniden kontrol düğmesini görmek veya basmak fiziksel işi yapılmış veya güvenliği kesinleşmiş sayar mı?"
+    },
+    {
+      "id": 6,
+      "question": "Motosiklet pasif olduğunda veya ücretli paket değiştiğinde bu düzeltmeyi okuyabilir misin?"
+    },
+    {
+      "id": 7,
+      "question": "Düzeltme önceki kayıt veya kanıt izini sessizce silmiş ya da bir iddiayı otomatik kazanan seçmiş mi?"
+    },
+    {
+      "id": 8,
+      "question": "Güncel kaynak eksik/eski veya başka motosiklete aitse özel kayıt ve gerçek işlem izinleri açılıyor mu?"
+    },
+    {
+      "id": 9,
+      "question": "Düzeltmenin kaynağı, etkilediği iddia, inceleyen ve açık kalan belirsizlikler nerede görülüyor?"
+    },
+    {
+      "id": 10,
+      "question": "Çevrimdışı veya eski bilgi söz konusuysa güncel kontrol yapıldığı varsayılıyor mu?"
+    },
+    {
+      "id": 11,
+      "question": "Bir kontrol isteğinin sonucu belirsizse aynı işi yeniden göndermeden ne yapmalısın?"
+    },
+    {
+      "id": 12,
+      "question": "Ayrıntılara veya eski kayda bakmak seni otomatik olarak uygulamaya başlatır mı?"
+    }
+  ]
+}
