@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "task": "T-E1-015",
+  "methodSource": "REVIEW assignment; ilk okuma gerçek kişi/cihaz/üretim kanıtı değildir",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max yalnız native ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tümü yardım olmadan anlamca doğru; belirsizlik onarım ve yeni ilk okuma gerektirir",
+  "questions": [
+    "Profil oluşturmak zorunlu mu; bunu erteleyince hangi güvenli yolu kullanabilirsin?",
+    "Profil oluşturmadan mevcut yerel kullanıma devam edebilir misin?",
+    "Dil, ölçü birimleri ve erişilebilirlik için hesap açman gerekiyor mu?",
+    "Bu ekranda profil oluşturma isteği göndermek hesabın zaten oluşturulduğunu kanıtlıyor mu?",
+    "Kayıtları taşımadan önce nelerin taşınacağı görülebiliyor mu?",
+    "İki kayıt arasında çakışma varsa kaynağı, zamanı ve farkı nasıl anlarsın?",
+    "Çakışmada uygulama kendiliğinden bir kaydı kazanan seçip diğerinin üstüne yazar mı?",
+    "Kısmi taşıma, tamamlanmış taşıma anlamına gelir mi?",
+    "Taşıma başarısızsa veya geri dönülüyorsa yerel kayıtların kullanımı hakkında ne söyleniyor?",
+    "Taşımayı iptal etmek veya yerel kullanıma dönmek kayıtları silmek anlamına mı gelir?",
+    "İnceleme ya da taşıma isteği göndermek, taşımanın güvenle tamamlandığı anlamına gelir mi?",
+    "Motosiklet sahibi ile davet edilmiş yardımcı bu ekranda aynı şey mi?",
+    "Yardımcı veya servis etiketi, kişinin katkısının doğrulanmış gerçek olduğunu kanıtlıyor mu?",
+    "Paylaşılan motosiklet bilgileri ile kişisel özel bilgiler aynı erişim alanı mı?",
+    "Bir yardımcıya ne kadar erişim verildiğini ve katkıyı kimin ne zaman yaptığını nerede görürsün?",
+    "Bir kişinin erişimini kaldırmak önceki katkılarını ve kayıt geçmişini siler mi?",
+    "Erişimi kaldırmak, o kişinin gelecekteki erişimi için ne anlama geliyor?",
+    "Güncel izin veya kaynak doğrulanamıyorsa özel bilgiler ve paylaşım işlemleri kendiliğinden açılır mı?",
+    "Bu ekrandaki davet veya erişimi kaldırma isteği, gerçek işlemin zaten tamamlandığını kanıtlıyor mu?",
+    "Bu ekranlarda bilginin kaynağı ve güncel durumu görülebiliyor mu; yalnız görünmesi doğru veya tamamlanmış olduğunu gösterir mi?"
+  ]
+}
