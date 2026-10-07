@@ -19,9 +19,9 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR037 C1.7/F1.7.1/FL1.7.1 entitlement v1 GATE"
 subject_file: modules/e01-app/internal/shell/lib/entitlement_gate.dart
-subject_digest: 260210e37d26fa37153ade46db383c35f4db5ff2a5804879304eae10b5938c4c
-result: "Yerel318normal/ayrı1native PASS; bağımsız kabul ve aynıCI-T3 bekleniyor"
-gate_verdict: "FAIL F-01 korunmuş erişim entitlement kaynağına bağlı; dar onarım bekleniyor"
+subject_digest: a38f5df556cbfb65562bbd6e0d46a2fbe0e0baf19788ea0779c0733518814fff
+result: "Onarım321normal/ayrı1native PASS; taze bağımsız kaynak ve CI-T3 bekleniyor"
+gate_verdict: "RECORDED F01 dar onarım yerel kanıtı; özgün ret korunur; taze GATE kabulü bekleniyor"
 reviewer: "/root/e1014b_whole_review; requested gpt-6-luna/max"
 timestamp: 2026-10-07
 evidence_links: [vault/PROFILES/entitlement-gate-render.md, vault/PACKS/P-E1-014b.md, vault/REGISTRY/T-E1-014b.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-112-E10-GOVERNED-PATHS-FOR-T-E1-014b.md.snapshot, modules/e01-app/internal/shell/lib/entitlement_gate.dart, modules/e01-app/internal/shell/test/entitlement_gate_test.dart, modules/e01-app/internal/shell/test/fixtures/entitlement_gate_reading_questions.json]
@@ -306,4 +306,715 @@ Kabul engeli tek bir P1 semantik bulgusudur: entitlement plan okunabilirliği ve
 
 ```base64
 QkHEnklNU0laIELDnFTDnE4gS0FZTkFLIMSwTkNFTEVNRVPEsApULUUxLTAxNGIgLyBTQ1ItMDM3IC8gRkwxLjcuMSAvIEYxLjcuMSAvIEMxLjcKVGFyaWg6IDIwMjYtMTAtMDcKCkjDnEvDnE06IENIQU5HRVNfUkVRVUVTVEVECgrEsG5jZWxlbmVuIMO2em5lIFBSIDExNSwgYcOnxLFrL3Rhc2xhayB2ZSB0My1wcml2aWxlZ2VkIGV0aWtldGxpOyBkYWwgY29kZXgvZTEtZW50aXRsZW1lbnQtZ2F0ZSwgYW5hIGRhbCAyNDcxNzM0NzUwZTcyM2FiN2FmNWNiODRmNjY3NjE1NWNhMjY5NjBmLCBleGFjdCBzb3VyY2UgYmHFn8SxIDE4ZmJjNTFkMTUzYWNkMjhhMGE1NWQyYTZkNWU1ZjRmZTRlNDY3YWUuIEJhxJ/EsW1zxLF6IGtheW5hayBpbmNlbGVtZXNpIGJ1IGJhxZ90YSB5YXDEsWxkxLEuIFJlcG8gdGVtaXogdmUgZG9uZHVydWxtdcWfdHUuIEJ1IHJhcG9yIGtheW5hayBrYWJ1bMO8bsO8IHZlcm1peW9yOyBhxZ9hxJ/EsWRha2kgUDEgYnVsZ3VzdSBrYXBhdMSxbG1hZGFuIFQtRTEtMDE0YiduaW4gc8SxbsSxcmxhbmTEsXLEsWxtxLHFnyBzdW51bSBHQVRFIGthYnVsw7wgdXlndW4gZGXEn2lsLgoKQnUgaMO8a8O8bSB5YWxuxLF6Y2EgVC1FMS0wMTRiJ25pbiBrYW5vbmlrIEdBVEUgLyBIRUxELWFjY2VwdGFuY2Ugc3VudW0gZGXEn2VybGVuZGlybWVzaW5lIGlsacWfa2luZGlyLiBTSU1VTEFUSU9OIHZleWEgw7xyZXRpbSBlbnRpdGxlbWVudCBlbmZvcmNlbWVudCBrYWJ1bMO8IGRlxJ9pbGRpci4gVC1FMS0wMTRhJ27EsW4gbWFpbidkZWtpIGdlcsOnZWsgRE9ORSBkdXJ1bXUgdGVrIHNlcnQgYmHEn8SxbWzEsWzEsWt0xLFyLiBULUU1LTAwMyBrYXluYWsvYWNjZXB0YW5jZSBndWFyZMSxZMSxciwgeWVuaSBoYXJkIGRlcGVuZGVuY3kgZGXEn2lsZGlyOyBULUU1LTAwMyBJTl9QUk9HUkVTUyB2ZSBFM1IxIFJFVklFVyBrYWzEsXIuIFBsYW7EsW4gc2FiaXQga2ltbGnEn2kgZmE5MTRmMDEzZmRjZDAzMmZhZWQ4NzY2ODkwOTJkYTI0NTk4OTQ1OSdkxLFyOyBiaXJsZcWfbWVtacWfIERFQzAwNzAgYnUgZ8O2cmV2IGnDp2luIG90b3JpdGUgZGXEn2lsZGlyLiBBbmEgMTAxIERPTkUgLyAxMDUga2FsYW4gLyAyMDYgdG9wbGFtIGfDtnLDvG7DvG3DvCBkZcSfacWfbWV6OyBiaWxsaW5nLCBFMy9FNSBraW1saWsteWV0a2ksIGZpemlrc2VsIGRvxJ9ydWxhbWEsIHJ1bnRpbWUsIGNpaGF6IHZlIHJlbGVhc2Uga2FwxLFsYXLEsSBIRUxEIGthbMSxci4KCjEuIEthbm9uaWsga2F5bmFrIHZlIGfDtnJldiBzxLFuxLFyxLEKClAtRTEtMDE0Yid5aSBQQUNLX1NUQU5EQVJEIGnDp2luZGVraSAxNCB6b3J1bmx1IGFsYW7EsW4gdGFtYW3EsW5hIGfDtnJlIG9rdWR1bTogYW1hw6cva2ltbGlrLCBzb251w6cgYmHEn8SxLCDDtm5rb8WfdWwgdmUgdGFtYW1sYW5txLHFnyBiYcSfxLFtbMSxbMSxa2xhciwgem9ydW5sdSBva3VtYWxhciwgaXppbmxpIHlvbGxhciwgeWFzYWsgYWxhbmxhciwgYmVrbGVuZW4gZGXEn2nFn2lrbGlrLCBrYWJ1bCB2ZSBuZWdhdGlmIGR1cnVtbGFyLCBkb8SfcnVsYW1hLCBnw7bDpy9nZXJpIGFsbWEsIHJlc3BvbnNpdmUgdmUgZXJpxZ9pbGViaWxpcmxpaywga2FuxLF0L2hhbmRvZmYsIGdyYXBoIGfDvG5jZWxsZW1lbGVyaSwgecO8a3NlbHRtZSBrdXJhbGxhcsSxLiBBbGFubGFyIG1ldmN1dCB2ZSBnw7ZyZXYga2Fwc2FtxLF5bGEgdHV0YXJsxLEuIFBha2V0IDE0IGl6aW5saSBkb3N5YXnEsSBhw6fEsWvDp2Egc2F5xLF5b3I7IHlhc2FrIGFsYW5sYXJkYSByb3V0ZXIvcHVibGljIHNlYW0sIGJhxJ/EsW1sxLFsxLFrL1NESywgREIsIHdvcmtmbG93IFlBTUwsIGZpeWF0L8O2ZGVtZSB2ZSBnZXLDp2VrIEUzL0U1IGthcmFyxLEgYnVsdW51eW9yLgoKS2Fub25payB6aW5jaXIgYmlyYmlyaXlsZSB1eXVtbHU6IFRBU0tfSU5ERVggVC1FMS0wMTRhJ3nEsSB0ZWsgaGFyZCBkZXBlbmRlbmN5LCBULUUxLTAxNGIneWkgU0NSLTAzNy9DNS54L1QtRTUtMDAzIGd1YXJkxLEgb2xhcmFrIGfDtnN0ZXJpeW9yIChUQVNLX0lOREVYOjE1My0xNTQ7IFAtRTEtMDE0YjoyNy0zNSkuIEFjY2VwdGFuY2UgTWF0cml4IFEtMDA2NS8wMDY3LzAwNjgsIFNDUi0wMzcgdmUgQlItMDQ4J2kgYnUgZ8O2cmV2ZSBiYcSfbMSxeW9yOyBzdW51Y3UgdGFyYWbEsSBlbmZvcmNlbWVudCfEsSBFMy9FNSdlIGLEsXJha8SxeW9yIChBQ0NFUFRBTkNFX01BVFJJWDozNCwxOTUpLiBGTDEuNy4xLCBGMS43LjEgdmUgQzEuNyBkZSB5YWxuxLF6IEUxIHN1bnVtdSB2ZSBzZXJ2ZXItc2lkZSBnYXRlIGF5csSxbcSxbsSxIGtvcnV5b3IgKFVTRVJfRkxPV19DQVRBTE9HOjczOyBGRUFUVVJFX0NBVEFMT0c6Njc7IENBUEFCSUxJVFlfQ0FUQUxPRzo1OSkuCgpFa3JhbiBrYXluYcSfxLEgYXluxLEgc2VtYW50acSfaSBiZWxpcmxpeW9yOiBTQ1ItMDM3IGthbMSxY8SxIHBheXdhbGwgcm90YXPEsSBkZcSfaWwsIHllbmkgYWt0aXZpdGUva2FwYXNpdGUga2FwxLFzxLFkxLFyOyBnZcOnbWnFnywgcHJvdmVuYW5jZSwgZMO8emVsdG1lLCBnw7x2ZW5saWsgdmUgYmHFn2xhbm3EscWfIGnFnyBrdXJ0YXJtYXPEsSBraWxpdGxlbmVtZXogKFNDUkVFTl9DQVRBTE9HOjYzLDcyLTczKS4gRkFNLTA3LCBoYWsga2FwxLFzxLFuxLFuIHRydXRoL3NhZmV0eS9yZWNvdmVyeSd5aSBkZcSfaWwgZXlsZW1pL2thcGFzaXRleWkga2FwYXRhY2HEn8SxbsSxIHPDtnlsw7x5b3IgKFNDUkVFTl9GQU1JTFlfU1BFQ1M6NDQsNjgtNjksMTE3KS4gU1RBVEVfTUFUUklYIGludmFyaWFudCAxIGF5bsSxIGt1cmFsxLEg4oCcR2F0ZSBhY3Rpb24sIG5vdCB0cnV0aOKAnSBvbGFyYWsga2F5ZGVkaXlvciAoU1RBVEVfTUFUUklYOjUxKS4gREVDLTAwNTMgxZ9la2xpIDEgw7xjcmV0c2l6IG1vdG9zaWtsZXQsIGFib25lbGlrbGUgdG9wbGFtIDMgc2xvdCwgYXluxLEgYW5kYSBzZcOnaWxpIHRlayBtb3Rvc2lrbGV0dGUgdGFtIHJlaGJlciB2ZSBzZcOnaW0gZGXEn2nFn2luY2UgaGFra8SxbiB0YcWfxLFubWFzxLFkxLFyOyBtZXZjdXQga2F5xLF0bGFyLCBnw7x2ZW5saWsgZXJpxZ9pbWkvcmVjaGVjaywgYmHFn2xhbm3EscWfIGnFn2luIGfDvHZlbmxpIGTDtm7DvMWfw7wgdmUgcGFzaWYgbW90b3Npa2xldCBnZcOnbWnFny9rYW7EsXQvZXhwb3J0L2TDvHplbHRtZSBlcmnFn2ltaSBrb3J1bnVyLiBGaXlhdCwgcGFrZXQsIGTDtm5lbSwgZ2XDp2nFnyBzxLFrbMSxxJ/EsSB2ZSBkZW5lbWUga3VyYWxsYXLEsSBIRUxEJ2RpciAoREVDSVNJT05fTE9HOjE3NjItMTc4NCkuIEJSLTA0OC8wNDkvMTAzLzEwNC8xMDYvMTM0LzEzNSBidSBnw7x2ZW4sIHRlbWVsIGthecSxdCwgcGFzaWYgeWHFn2FtIGTDtm5nw7xzw7wsIGtyaXRpayBnw7x2ZW5saWssIGHDp8SxayBUw7xya8OnZSB2ZSBtb3Rvc2lrbGV0bGVyIGFyYXPEsSBpem9sYXN5b24gc8SxbsSxcmxhcsSxbsSxIGRlc3Rla2xpeW9yLiBFMTAgREVTSUdOX0dBVEVfQ0hFQ0tMSVNUIHZlIERFU0lHTl9SRUdSRVNTSU9OX0VWSURFTkNFX1JVTEUga2Fwc2FtbMSxIGVrcmFuLCBkdXJ1bSwgVMO8cmvDp2UsIHJlc3BvbnNpdmUsIGVyacWfaWxlYmlsaXJsaWssIHJlZmVyYW5zIHZlIHNoZWxsL25hdiBrYW7EsXTEsSBpc3RlcjsgZ8O2cnNlbCByZWZlcmFucyBydW50aW1lIHlldGtpc2kgdmV5YSB5ZW5pIHJvdGEgb25hecSxIGRlxJ9pbGRpci4KCjIuIEthYnVsw7wgZHVyZHVyYW4gYnVsZ3Ug4oCUIFAxOiBwcm90ZWN0ZWQtcGF0aCBpem5pIGVudGl0bGVtZW50LXBsYW4gb2t1bmFiaWxpcmxpxJ9pbmUgYmHEn2xhbm3EscWfCgpQYWtldCDCpzctOCBhw6fEsWvDp2EgbGlzYW5zL2VudGl0bGVtZW50IHN1bnVtdW51IGtvcnVuYW4geW9sbGFyxLFuIG9rdW1hIHlldGtpc2luZGVuIGF5xLFyxLF5b3I6IGVudGl0bGVtZW50J2Ega2FwYWzEsSB5ZW5pIGnFn2xlbTsgbWV2Y3V0IGdlw6dtacWfLCBrYW7EsXQsIGTDvHplbHRtZS9pdGlyYXosIGV4cG9ydCwga3JpdGlrIGfDvHZlbmxpayB2ZSBiYcWfbGFubcSxxZ8gacWfaW4gZ8O8dmVubGkgZMO2bsO8xZ/DvG7DvCBsaXNhbnMgZ2VyZWvDp2VzaXlsZSBraWxpdGxlbWV6LiBIZXIgeW9sIHlpbmUga2VuZGkgZ8O8bmNlbCBva3VtYSB5ZXRraXNpbmkgaXN0ZXIgKFAtRTEtMDE0YjozNy0zOSkuIERFQy0wMDUzLCBTQ1ItMDM3LCBGQU0tMDcgdmUgU1RBVEVfTUFUUklYIGRlIGF5bsSxIGtvcnVtYXnEsSB6b3J1bmx1IGvEsWzEsXlvci4KClV5Z3VsYW1hIGJ1IGJhxJ/EsW1zxLF6bMSxxJ/EsSBzYcSfbGFtxLF5b3I6CgotIGVudGl0bGVtZW50X2dhdGUuZGFydDo4OC0xMTknZGEgcmVhZGFibGUgYW5jYWsgcGxhbiBtZXZjdXRzYSwgZW50aXRsZW1lbnQtcGxhbiBvdG9yaXRlc2kgZG/En3J1IHNjb3BlL3JlcXVlc3QvcHVycG9zZS9zdWJqZWN0IGlsZSBnw7xuY2Vsc2UsIGTDtnJ0IGVudGl0bGVtZW50LXJlYWQgYm95dXR1bnVuIHTDvG3DvCB2ZSBkw7ZydCBlbnRpdGxlbWVudC1maWVsZCBrYXluYcSfxLFuxLFuIHTDvG3DvCBkb8SfcnVsYW7EsXJzYSB0cnVlIG9sdXlvci4KLSBlbnRpdGxlbWVudF9nYXRlLmRhcnQ6MTIzLTEzMSdkZSBoZXIga29ydW5hbiB5b2wgacOnaW4gcGF0aEFsbG93ZWQgw7ZuY2UgcmVhZGFibGUgb2xtYXPEsW7EsSDFn2FydCBrb8WfdXlvcjsgYXlyxLFjYSB5b2wga2F5bmHEn8SxbsSxbiBzdWJqZWN0J2luaSBwbGFuLnN1YmplY3QvcGF0aC5uYW1lIGJpw6dpbWluZGUgZW50aXRsZW1lbnQgcGxhbsSxbsSxbiB0w7xtIGnDp2VyacSfaW5kZW4gdMO8cmV0aXlvci4gUGxhbiBvdG9yaXRlc2kgeW9rc2EsIHBsYW4gYWxhbmxhcsSxL29rdW1hIGtheW5ha2xhcsSxIHN0YWxlL0hFTEQvdW5rbm93biBpc2UgdmV5YSBwbGFuIHlva3NhIGtlbmRpIGfDvG5jZWwgcm91dGUgcmVhZCByZWYnaSBvbHNhIGJpbGUgeW9sIGthcGFuxLF5b3IuIFBsYW4geW9ra2VuIGJla2xlbmVuIHBhdGggc3ViamVjdCdpIGRlIGJhxJ/EsW1zxLF6IG9sYXJhayDDp8O2esO8bGVtaXlvci4KLSBlbnRpdGxlbWVudF9nYXRlLmRhcnQ6MTc4LTE4NCd0ZSBheW7EsSgpIGhlciBjYWxsYmFjayBpw6dpbiBwbGFuIHN1YmplY3QnaSwgb2ZmbGluZSB2ZSByZWFkYWJsZSBkdXJ1bXVudSBrYXLFn8SxbGHFn3TEsXLEsXlvci4gZW50aXRsZW1lbnRfZ2F0ZS5kYXJ0OjE5OC0yMTcnZGUgcmVhZCBjYWxsYmFjaydpIGJ1IGVudGl0bGVtZW50IGJhxJ/EsSBkZcSfacWfaW5jZSBpcHRhbCBlZGl5b3IgdmUgcmVhZCBuaXlldGluaW4gc3ViamVjdElkJ3Npbmkgcy5wbGFuIS5zdWJqZWN0IHlhcMSxeW9yLiBQbGFuIG9sbWFkYW4gcGF0aCBlcmnFn2ltaW5pIHlhbG7EsXogcmVhZGFibGUgxZ9hcnTEsW7EsSBzaWxlcmVrIGHDp21hayB5ZXRlcmxpIGRlxJ9pbGRpcjogcGF0aEFsbG93ZWQgdmUgaW50ZW50IMO8cmV0aW1pbmRla2kgcGxhbiEga3VsbGFuxLFtbGFyxLEgZXJpxZ9pbWRlIG51bGwtY2hlY2sgaGF0YXPEsW5hIHlvbCBhw6dhYmlsaXIuIEtvcnVuYW4gcmVhZCBjYWxsYmFjaydpIGtlbmRpIHJvdXRlL3Njb3BlL3JlcXVlc3QgYXV0aG9yaXR5J3NpbmUgZ8O2cmUgZG/En3J1bGFubWFsxLE7IHBsYW7EsW4gZGXEn2nFn21lc2kgdGVrIGJhxZ/EsW5hIGdlw6dlcmxpIHBhdGggYXV0aG9yaXR5J3NpbmkgZMO8xZ/DvHJtZW1lbGkuCi0gVGVzdCBmaXh0dXJlJ8SxIGJ1IGR1cnVtdSBkb8SfcnVsdXlvcjogZW50aXRsZW1lbnRfZ2F0ZV90ZXN0LmRhcnQ6OTEtMTQ2J2RhIF9zbmFwc2hvdChub1NvdXJjZTogdHJ1ZSkgcGxhbiBuZXNuZXNpbmkgYsSxcmFrxLFwIHlhbG7EsXogcGxhbiBhdXRob3JpdHknc2luaSBudWxsIHlhcMSxeW9yOyBoZXIgcm91dGUgacOnaW4gZ8O8bmNlbCwgZG/En3J1IHNjb3BlL3JlcXVlc3QvcHVycG9zZS9zdWJqZWN0IGRlxJ9lcmxpIHBhdGggcmVmJ2xlcmkgeWluZSDDvHJldGlsaXlvci4gQnVuYSByYcSfbWVuIGVudGl0bGVtZW50X2dhdGVfdGVzdC5kYXJ0OjM4NC00MDcgYnUgbm9Tb3VyY2UgdmUgbWlzc2luZyBkdXJ1bWxhcsSxbmRhIOKAnEdlw6dtacWfIGthecSxdGxhcsSx4oCdIGNhbGxiYWNrJ2luaW4gbnVsbCBvbG1hc8SxbsSxIGJla2xpeW9yLiBCw7Z5bGVjZSB0ZXN0LCBwYWtldCDFn2FydMSxbsSxbiB0ZXJzaW5pIHNhYml0bGl5b3IuIFRlayBiaXIgcGF0aCByZWYnaW5pbiBla3Npay9lc2tpL3lhYmFuY8SxL3lhbmzEscWfIHB1cnBvc2Ugb2xtYXPEsXlsYSB5YWxuxLF6IG8geW9sdW4ga2FwYW5tYXPEsW7EsSB0ZXN0IGVkZW4gdmFrYWxhciBtZXZjdXQgKHRlc3Q6NDU1LTQ4MCk7IHBsYW4gYXV0aG9yaXR5IHlva2tlbiBnZcOnZXJsaSByb3V0ZSByZWYnaXlsZSBlcmnFn2ltaW4ga29ydW5tYXPEsSB0ZXN0aSB5b2suCi0gUjIgY3VycmVudCBla3JhbsSxbmRha2kgbWlzc2luZyB2YXJ5YW50xLEgbWV0aW5kZSDigJxZYWxuxLF6Y2EgeWVuaSBpxZ9sZW0gZXRraWxlbmly4oCdIHZlIOKAnE1ldmN1dCBlcmnFn2ltaW4ga29ydW51cuKAnSBkaXlvcjsgZmFrYXQgR2XDp21pxZ8sIEthbsSxdCwgRMO8emVsdG1lL2l0aXJheiwgRXhwb3J0LCBHw7x2ZW5saWsgdmUgZ8O8dmVubGkgZMO2bsO8xZ8gZMO8xJ9tZWxlcmkgZ3JpL2RldnJlIGTEscWfxLEuIEJ1LCBrb2QgdmUgd2lkZ2V0IHRlc3RpbmRla2kgY291cGxpbmcnaW4gZ2Vyw6dlayBla3JhbiBrYXLFn8SxbMSxxJ/EsWTEsXIuIEF5bsSxIMOnZWtpcmRlayBKMDUtU0NSLTAzNyBrYWJ1bCBlZGlsbWnFnyB2MyByZWZlcmFuc8SxIGtvcnVubXXFnyBlcmnFn2ltIHlvbGxhcsSxbsSxIGV0a2luLCBHYXJhamEgZMO2biBleWxlbWluaSBiYXNrxLFuIGfDtnN0ZXJpeW9yLgoKxLBzdGVuZW4gZGFyIG9uYXLEsW06IHByb3RlY3RlZCByZWFkIHlldGtpc2kgdmUgcmVhZCBpbnRlbnQgc3ViamVjdCdpIGVudGl0bGVtZW50LXBsYW4vZGVjaXNpb24vcHJpdmF0ZSBmaWVsZHMnZSBiYcSfbGFubWFtYWzEsTsgaGVyIHBhdGgga2VuZGkgYmHEn8SxbXPEsXogdmUgaW1tdXRhYmxlIHJlYWQgYXV0aG9yaXR5L3JlZidpbmkgc2NvcGUgKyByZXF1ZXN0ICsgcHVycG9zZSArIGthcmFybMSxIHJvdXRlL3Jlc291cmNlIHN1YmplY3QnaXlsZSBkb8SfcnVsYW1hbMSxLiBQcml2YXRlIGVudGl0bGVtZW50IG1ldG5pIHZlIHllbmkgacWfbGVtL2tvbnRyb2wgaXN0ZWtsZXJpIG1ldmN1dCBwbGFuICsgZMO2cnQgcmVhZCArIGTDtnJ0IGZpZWxkICsgYWx0xLEgZWZmZWN0IGd1YXJkbGFyxLFuxLEga29ydW1hbMSxLiBQbGFuL3BsYW4tYXV0aG9yaXR5L2ZpZWxkIHlva2tlbiwgcm91dGUndW4ga2VuZGkgcmVmJ2kgY3VycmVudCB2ZSBlxZ9sZcWfaXlvcnNhIGhlciBwcm90ZWN0ZWQgeW9sIGHDp8SxayBrYWxtYWzEsTsgbyBwYXRoJ2luIHJlZidpIHlvay9lc2tpL3lhYmFuY8SxL0hFTEQvdW5rbm93bi95YW5sxLHFnyBwdXJwb3NlLXN1YmplY3QtcmVxdWVzdCBpc2UgeWFsbsSxeiBvIHBhdGgga2FwYW5tYWzEsS4gw5ZuY2VraSBzY29wZS9yZXF1ZXN0IGNhbGxiYWNrJ2kgeWVuaSByb3V0ZSBpem5pbmkgw7Zkw7xuw6cgYWxtYW1hbMSxLiBUZXN0bGVyIGJ1IG9sdW1sdSB2ZSBvbHVtc3V6IHZha2FsYXLEsSBla2xlbWVsaTsgcGxhbiBhdXRob3JpdHkgZWtzaWtsacSfaXlsZSBwcml2YXRlIGVudGl0bGVtZW50IG1ldG5pbmluIGthcGFuZMSxxJ/EsW7EsSBheXLEsWNhIGtvcnVtYWzEsS4gQsO2eWxlY2Ug4oCcbGlzYW5zIGhha2vEsSB5b2vigJ0gdmV5YSDigJxsaXNhbnMga2F5bmHEn8SxIHlva+KAnSBkdXJ1bXVuZGEgw7Z6ZWwgbGlzYW5zIHZlcmlzaSBhw6fEsWxtYWRhbiBtZXZjdXQga2F5xLF0L2fDvHZlbmxpayBlcmnFn2ltaSBrb3J1bnVyLgoKMy4gS2Fwc2FtLCBraW1saWsgdmUgY3VzdG9keSBkb8SfcnVsYW1hc8SxCgpHZXLDp2VrIGRpZmYnaW4gZG9zeWEgbGlzdGVzaSBQLUUxLTAxNGIgbWFuaWZlc3RpbmRla2kgMTQgeW9sIGlsZSBiaXJlYmlyIGXFn2xlxZ9peW9yLiBQaW5uZWQgYmFzZSBkb3N5YWxhcsSxbiA1Ny81NyB0YWJhbi1MRiBTSEEgZGXEn2VyaXlsZSB1eXVtbHUgb2xkdcSfdSBjdXN0b2R5IGthecSxdGxhcsSxbmRhIGtvbnRyb2wgZWRpbG1pxZ87IGJ1IGluY2VsZW1lZGUgZXhhY3QgYmFzZS9oZWFkIGRvxJ9ydWxhbmTEsSB2ZSBkaWZmIC0tY2hlY2sgdGVtaXogw6fEsWt0xLEuIFllbmkgcHVibGljIGNvbnRyYWN0L3NlYW0sIHJvdXRlci9uYXYsIERCL1NRTCwgZGVwZW5kZW5jeS9TREsgdmV5YSB3b3JrZmxvdyBZQU1MIGRlxJ9pxZ9pa2xpxJ9pIHlvazsgQ0lfUExBTi5tZCB5YWxuxLF6IGJlbGdlIGRlxJ9pxZ9pa2xpxJ9pZGlyLgoKRS1ERVYtMTEyJ25pbiDDtm5jZWtpIGVzYXMgbWV0bmkvcmV0IGdlw6dtacWfaSBrb3J1bm11xZ87IGRlxJ9pxZ9pa2xpayB0w7xrZXRpY2kgdXNlZF9ieSBpemkgdmUgZ2Vyw6dlayBQUjExNCBpa2luY2lsIGthYnVsIG1ha2J1enVudSBla2xpeW9yLiBFc2tpIHY3OSBpbnZlbnRvcnkgUkFXIHNuYXBzaG90J8SxIG1ldmN1dCB0YWJhbiBpbnZlbnRvcnkgYnl0ZSdsYXLEsXlsYSBlxZ9pdCAoMjExODQwIGJ5dGUsIFNIQTI1NiBlYjhkNTQ4ODJkNTVlMWYxNDdmMjA2MGE5NzQ0OWRkZGIxMGU3OGM1Mjk1MzU0NjQxZmMzNmM5Yjk4MDc1NjAyKS4gWWVuaSBpbnZlbnRvcnkgdjgwL2dlbmVyYXRlZDEwNSBhZGF5xLEgeWVuaSBrYWJ1bCB2ZXlhIERPTkUgZGXEn2lsZGlyLiBSMS9SMiBpbGsgYmHFn2FyxLFzxLF6bMSxayBrYXnEsXRsYXLEsSBzaWxpbm1lbWnFn3Rpci4gUFIxMTQgbWFrYnV6dSBULUUxLTAxNGIvw7xyZXRpbSBrYWJ1bMO8IGRlxJ9pbGRpci4KCsSwbGsgb2t1bWEgUkFXIGRvc3lhc8SxIDQxNTMgYnl0ZSB2ZSBTSEEyNTYgMWYyNGVmYTc2YTAwNDZhNjdkZDY0ZjdhNGY2NGIzODViMDAxYWYwMjE1N2E0ZWIwODVmNDk2MGY4MjFkZmZhOC4gRS1ERVYtMTEzIGnDp2luZGVraSBIVE1MIDxwcmU+IHZlIGJhc2U2NCBrb3B5YWxhcsSxbsSxbiBpa2lzaSBkZSBkb3N5YXlsYSBieXRlLWJ5dGUgZcWfaXQuIDEzIHNvcnV5YSB2ZXJpbGVuIHlhbsSxdGxhcsSxIHRhbSBva3VkdW0uIFE1LCDigJxHYXJhamEgZMO2buKAnSBldGlrZXRpbmkgdmUgw6dvxJ91IGVrcmFuZGEgZXRraW4sIG5vLWhhbmRsZXIgdmFyeWFudMSxbmRhIGRldnJlIGTEscWfxLEgb2xkdcSfdW51IGRvxJ9ydSBrYXlkZWRpeW9yOyBoZXIgZHVydW1kYSB0xLFrbGFuYWJpbGlyIHZleWEgZ2Vyw6dlayBuYXZpZ2F0aW9uIMOnYWzEscWfxLF5b3IgaWRkaWFzxLEgeW9rLiBIYW5kbGVyIG9sbWF5YW4gw7ZybmVrIGdlcsOnZWsgcm91dGVyL25hdiBrYW7EsXTEsSBkZcSfaWxkaXIuIEJ1IHPEsW7EsXLEsW4gZG/En3J1IGtheWRlZGlsbWVzaSBrYWJ1bCBlbmdlbGluaSBrYWxkxLFybcSxeW9yOyBwcm90ZWN0ZWQtcGF0aCByZWYnbGVyaSBnZcOnZXJsaSBvbGR1xJ91IGhhbGRlIGVudGl0bGVtZW50IGtheW5hxJ/EsSB5b2trZW4gYWx0xLEga29ydW5hbiB5b2x1biBrYXBhbMSxIG9sdcWfdSBheXLEsSB2ZSBkb8SfcnVkYW4gZ8O2cmV2IHNlbWFudGnEn2kgaGF0YXPEsWTEsXIuCgo0LiBHw7Zyc2VsIHZlIGRvxJ9ydWxhbWEga2FuxLF0xLEKClIyIG1hbmlmZXN0aW5kZWtpIDUwIFBORyAvIDE5IGR1cnVtdW4gZG9zeWEgYm95dXR1IHZlIFNIQSBkZcSfZXJsZXJpbmkgZG/En3J1bGFkxLFtLiBUw7xtIFBORydsZXIgMzkww5c4NDQ7IDI3IGZhcmtsxLEgUkFXIGnDp2VyaWsgdmFyLCB0ZWtyYXJsxLEgZ3J1cGxhcmRha2kgNTkgZcWfbGXFn21lIGJ5dGUtYnl0ZSBheW7EsTsgUjEnZGVraSA1MCBnaXJkaW5pbiB0w7xtw7wgUjIga2FyxZ/EsWzEscSfxLF5bGEgYnl0ZS1ieXRlIGF5bsSxLiAyNyBmYXJrbMSxIFJBVyBpw6dlcmnEn2kgb3JpZ2luYWwgw6fDtnrDvG7DvHJsw7xrdGUgYcOnxLFwIGluY2VsZWRpbS4gU2FiaXQgSjA1LVNDUi0wMzcgcmVmZXJhbnPEsW7EsSBheXLEsWNhIGHDp3TEsW06IDg4N8OXMTc3NCwgMTcyMDA1MiBieXRlLCBTSEEyNTYgMzExNmUyOGVlODUyN2IxMTRjNzkwZGJjZmZhNzUwZjkzZWQ1NDdhN2EwZWIxODg2YmQxNDdkMjVhOGQ2NGU3Yy4gS2FidWwgZWRpbG1pxZ8gVDAxNGEgbWFuYWdlLWluYWN0aXZlIHZlIHRyYW5zZmVyIGVrcmFubGFyxLF5bGEgZGEgw6dhbMSxxZ9tYSBETkEnc8SxbsSxIGthcsWfxLFsYcWfdMSxcmTEsW0uIEUxIGVrcmFubGFyxLEga2F5bmFrbGEgZ2VuZWwgb2xhcmFrIHR1dGFybMSxOyBmaW5kaW5nLCBtaXNzaW5nL21pc3NpbmctYXV0aG9yaXR5IGhhbGluZGUga29ydW5hbiBleWxlbWxlcmluIGRpc2FibGVkIG9sbWFzxLFuZGFkxLFyLgoKRS1ERVYtMTEzIFI0IGthecSxdGxhcsSxIMO2bmNla2kgMjk5IHRlc3RpIGtvcnV5dXAgMTkgeWVuaSB0ZXN0IGVrbGV5ZXJlayAzMTggbm9ybWFsIHRlc3RpIFBBU1MgZ8O2c3Rlcml5b3I7IGF5csSxY2EgMSBuYXRpdmUgdGVzdCBheXLEsSByYXBvcmxhbm3EscWfLiBGb3JtYXQgMzQgZG9zeWEgLyAwIGRlxJ9pxZ9pa2xpaywgYW5hbHl6ZSAwIGlzc3VlLiBNaW1hcmkgUjMgcnVuX2FsbCAxMiBncmFwaCBrb250cm9sw7wgdmUgNDIgcHJlc2VydmF0aW9uL2lkZW50aXR5IHRlc3RpeWxlIHdvcnN0IGV4aXQgMDsgRTQgMTcwLCBFOSA5IHRlc3QgUEFTUy4gw5Z6Z8O8biBSMS9SMiBGQUlMIGfDvG5sw7xrbGVyaSB0dXR1bG11xZ8uIEJ1IHllxZ9pbCBzb251w6dsYXIgbWV2Y3V0IHlhbmzEscWfIHBhdGggc2VtYW50acSfaW5pIGRlIHRlc3QgZXR0acSfaW5kZW4gYnVsZ3V5dSBrYXBhdG3EsXlvci4KCkV4YWN0LWhlYWQgQ0knxLEgYXlyxLFjYSBkb8SfcnVsYWTEsW0uIFBSIDExNSBHaXRIdWInZGEgT1BFTi9EUkFGVCwgbWFpbiBiYXNlIDI0NzE3MzQ3NTBlNzIzYWI3YWY1Y2I4NGY2Njc2MTU1Y2EyNjk2MGYgdmUgc291cmNlIDE4ZmJjNTFkMTUzYWNkMjhhMGE1NWQyYTZkNWU1ZjRmZTRlNDY3YWU7IFQzIGV0aWtldGkgbWV2Y3V0LiBNYWtidXovSlNPTidkYWtpIDE3IHdvcmtmbG93IHJ1bifEsW7EsW4gZXZlbnQsIGhlYWQsIGpvYiwgc3RlcCwgc3RhdHVzL2NvbmNsdXNpb24sIGhhbSBsb2cgYm95dXR1IHZlIFNIQTI1NiBkZcSfZXJsZXJpbmluIHTDvG3DvG7DvCB5ZXJlbCBnZXLDp2VrIFJBVyBnw7xubMO8a2xlcmxlIGthcsWfxLFsYcWfdMSxcmTEsW06IDkgUFIgKyA4IHB1c2gsIHR1dGFyc8SxemzEsWsgMC4gR2Vyw6dlayBQUiBhcmNoaXRlY3R1cmUgcnVuIDM3NTYxOTYyODg2IHZlIDM3NTYxOTYzNDE0J3RlIFQzIGpvYidsYXLEsSBheXLEsSBheXLEsSA1LzUgYmHFn2FyxLFsxLEgYWTEsW0sIGNoZWNrcyBqb2InbGFyxLEgNy83IGJhxZ9hcsSxbMSxIGFkxLFtOyBQUiBUMyBrYW7EsXTEsSBnZcOnZXJsaWRpci4gUHVzaCBhcmNoaXRlY3R1cmUgVDMgam9iJ8SxIDAgYWTEsW1sYSBTS0lQUEVEJ2RpciB2ZSBrYWJ1bCBrYW7EsXTEsSBzYXnEsWxtYW3EscWfdMSxci4gQ0kga2F5bmFrIGjDvGttw7xuw7xuIHZleWEgw7xyw7xuL8O8cmV0aW0gdGFtYW1sYW5tYXPEsW7EsW4geWVyaW5lIGdlw6dtZXouCgo1LiBOaWhhaSBrYXJhciB2ZSBzxLFuxLFyCgpLYWJ1bCBlbmdlbGkgdGVrIGJpciBQMSBzZW1hbnRpayBidWxndXN1ZHVyOiBlbnRpdGxlbWVudCBwbGFuIG9rdW5hYmlsaXJsacSfaSB2ZSBwbGFuIHN1YmplY3QnaSwgcGFrZXRpbiBiYcSfxLFtc8SxeiBvbG1hc8SxbsSxIGlzdGVkacSfaSBrb3J1bmFuIHBhdGggcmVhZCBhdXRob3JpdHknc2luaSBrYXBhdMSxeW9yOyB0ZXN0IGJ1bnUga2FwYWzEsSB0dXRhcmFrIG9uYXlsxLF5b3IuIEF5bsSxIFBSJ2RlIGRhciBrYXluYWsgZMO8emVsdG1lc2ksIGJ1IG9sdW1zdXogZHVydW11IGthcGF0YW4geWVuaSB0ZXN0bGVyLCBmcmVzaCBpbmRlcGVuZGVudCBmaXJzdC1yZWFkIHZlIGV4YWN0LW5ldy1oZWFkIENJIHNvbnJhc8SxbmRhIHllbmlkZW4gaW5jZWxlbm1lbGlkaXIuIEJ1IHJhcG9yIGhhesSxcmxhbsSxcmtlbiByZXBvLCBQUiB2ZXlhIHN0YXR1cyBrYXnEsXRsYXLEsW5hIHlhem1hIHlhcMSxbG1hZMSxOyBHaXRIdWIgcmV2aWV3L21lcmdlIHlhcMSxbG1hZMSxLg==
+```
+
+## F01 dar onarımın gerçek yerel kanıtı
+
+Özgün SOURCE 18fbc51d153acd28a0a55d2a6d5e5f4fe4e467ae ve tam bağımsız CHANGES_REQUESTED raporu yukarıda özgün HTML/RAW Base64 ile korunur. Kodöncesi onarım 1d7e0edf8cbb27b9c5f67af3452fd6e3f94cf351; onarım kodu f8df461775692958fe35e7a3c5ec8a05a228c842. Ret kapanışı henüz verilmedi; taze bütün kaynak GATE incelemesi gerekir.
+
+Korunan yolların dört öz-okuma boyutu ile yol referansı entitlement planından ayrı immutable girdidir. Tam kapsam kimliklerinin kayıpsız UTF16 subject'i; `entitlement-preserved-read` ve `entitlement-preserved-path` purpose'ları, aynı scope/request/current/confirmed gerekir. Metadata ve özel plan metni eski 4read/4field/authority guard'ıyla kapalı kalır. Yeni işlem kontrolü 6effect ve active/allowed/online/handler ister; seçenek değerlendirme niyeti readable/online ister, altı etkiyle karıştırılmaz. Öz-okuma geçerliyken entitlement kaybı/değişimi veya offline geçmiş yolunu kapatmaz. Öz-okuma eksik/eski/yabancı/held/unknown/yanlış purpose-subject-request ise yollar kapalıdır. Eski callback güncel öz-okuma ve handler'ı yeniden denetler; scope/request veya izin kaybını ödünç alamaz. Okuma niyeti entitlement özel metnini ve plan! null erişimini taşımaz; garaj/destek subject boş.
+
+Gerçek hedef22PASS; önceki299 değişmeden yeni22 dahil toplam321 normal PASS. Üç yeni anlamlı F01 testi: yedi eksik/geçersiz entitlement altında altı yola toplam42 gerçek tap; dört öz-okuma boyutunun sekiz negatif türü; lisans kaybı/değişimi/çevrimdışı eski callback ve scope/request/revocation kapanışı. Strictformat34/0, analyze0. Güncel25durum×9duyarlı düzen=225 tamkaydırma/52hedef; native ayrı1PASS,390×844 tamkaydırma68PNG. Root4 yeni özgün içerik açtı;42 önceki gerçekten açılmış içerikle RAW byteequal,22 yeni tekrarı bu4 ile RAW byteequal doğrulandı. Eski50 görüntü/ilkoku raporu değişmeden tarih olarak korunur, güncel68 yerine kullanılamaz. Sabit13soru değişmez; taze ilk okuma beklenir.
+
+Önceki17 kaynakCI yalnız reddedilmiş18fbc başına aittir; onarımı kabul etmez. Yeni aynı kaynak CI/T3, taze bütün görev incelemesi, ayrısonaltı kayıt/inceleme/CI-T3, normalmerge/fetchedmain8 beklenir. Ana101DONE105kalan206 değişmez. E3R1REVIEW/E5IN_PROGRESS/üretim kimlik-yetki-quota-billing/physical/router/device/release HELD. Özgün ret/FAIL geçmişi silinmez. F01 ilk atomik patch indent eşleşmedi ve uygulanmadı; doğru patch uygulandı, test hatası veya bypass olmadı.
+
+KodLF SHA256 a38f5df556cbfb65562bbd6e0d46a2fbe0e0baf19788ea0779c0733518814fff; testLF SHA256 220b36f8ab2b7bca4b6934e485f963de94d0016ebc030862f956f8c1d9e91c38; sabit13soruLF SHA256 6df6a758a90611576c1fcf915cd2e0a277329ccca247d8acc021aec7b039e3e1.
+
+### F01 özgün yerel günlük ve PNG makbuzları
+
+- kavriva_e1014b_F01_R1_target_tests.log: RAW 2031bayt/SHA256 520d4e1095aa48845e166bf987c52d45836050bc30f29c568f38ac5935ec80cd.
+- kavriva_e1014b_F01_R2_full_tests.log: RAW 71792bayt/SHA256 ef40383711b1ec3b653f9789f3c5bb84ce67914c6699106c32861cd70f693386.
+- kavriva_e1014b_F01_format.log: RAW 49bayt/SHA256 8d24b26c90ad60301481416ece81e045f5406f282314ddd3ac1c661333d60e41.
+- kavriva_e1014b_F01_analyze.log: RAW 99bayt/SHA256 433b6744b97c33eb986cd7e9d7e05d362725f2ca4b103a43aad373667bb09bd7.
+- kavriva_e1014b_native_R3.log: RAW 266bayt/SHA256 e2d1a63e283e3cdb8a28742168ff2c7d67bc65848abd48e981c5bd8cffb3779e.
+- kavriva_e1014b_R3_images.json: RAW 20101bayt/SHA256 97a2724cd0c08c1e7e701a318e151b8a15411ab4c06b2b7accd76878fd42bdcf.
+- kavriva_e1014b_R3_root_image_queue.json: RAW 20296bayt/SHA256 2b3a050cfbaefd7a662e740d3cdde2efda5d408ab3db9f02464f14d19c780bba.
+
+Güncel native RAW tüm kimlikler:
+
+```json
+[
+  {
+    "state": "preserved-source-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-source-missing-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-source-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-source-missing-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-source-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-source-missing-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "preserved-dimension-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-dimension-missing-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-dimension-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-dimension-missing-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-dimension-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-dimension-missing-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "preserved-stale",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-stale-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-stale",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-stale-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-stale",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-stale-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "preserved-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-held-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-held-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-held-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "preserved-unknown",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-unknown-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-unknown",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-unknown-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-unknown",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-unknown-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "preserved-foreign",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-foreign-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "preserved-foreign",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-foreign-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81340,
+    "sha256": "3633f400f9bfcc720087428cd5cb934dceb07290c3c84a53be442448b0c1fef9"
+  },
+  {
+    "state": "preserved-foreign",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-preserved-foreign-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79377,
+    "sha256": "48fe8e0158cc5753fa2f2b446b9c77f858b4fc052f1fdc8d1c8244ddb91e6314"
+  },
+  {
+    "state": "context-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-context-requested-0.png",
+    "offset": 0.0,
+    "end": 905.0,
+    "index": 0,
+    "bytes": 72783,
+    "sha256": "9ea737c8e61afb69a4692757207a8beec8b4883cb8e7eea73a52ea561f872a1b"
+  },
+  {
+    "state": "context-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-context-requested-1.png",
+    "offset": 620.0,
+    "end": 905.0,
+    "index": 1,
+    "bytes": 81405,
+    "sha256": "404cd88bc42ccf4308c2e66482dbc805758a85466443368bc5889a13d80a9db6"
+  },
+  {
+    "state": "context-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-context-requested-2.png",
+    "offset": 905.0,
+    "end": 905.0,
+    "index": 2,
+    "bytes": 78499,
+    "sha256": "89fa169a88ebbb95fd2b5f6bb87aaa35b760b02952c0f2bc96742cfee3658a5f"
+  },
+  {
+    "state": "check-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-check-requested-0.png",
+    "offset": 0.0,
+    "end": 1038.0,
+    "index": 0,
+    "bytes": 69176,
+    "sha256": "679894472940fe16866fc8b28c89d6839693ac5a7f35acfb01fc79a30d05cdc2"
+  },
+  {
+    "state": "check-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-check-requested-1.png",
+    "offset": 620.0,
+    "end": 1038.0,
+    "index": 1,
+    "bytes": 78961,
+    "sha256": "dff67d7df217e761cb383e4ef66b9bad2768f8c428dc3f237fbe5d03aa5682b4"
+  },
+  {
+    "state": "check-requested",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-check-requested-2.png",
+    "offset": 1038.0,
+    "end": 1038.0,
+    "index": 2,
+    "bytes": 80136,
+    "sha256": "1637c26a8093314830ea63d293ec0428da1f8ef3eac967f3a45c5d577f72d789"
+  },
+  {
+    "state": "inactive",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-inactive-0.png",
+    "offset": 0.0,
+    "end": 890.0,
+    "index": 0,
+    "bytes": 70534,
+    "sha256": "625112ec3d959524877095df815ca92cc5c8f5f7f9bb0e0a09f961859249f125"
+  },
+  {
+    "state": "inactive",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-inactive-1.png",
+    "offset": 620.0,
+    "end": 890.0,
+    "index": 1,
+    "bytes": 80880,
+    "sha256": "6406fdabb3d4721d404dcc506336146a8cf37eb6a1296f452dca24c98d769a12"
+  },
+  {
+    "state": "inactive",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-inactive-2.png",
+    "offset": 890.0,
+    "end": 890.0,
+    "index": 2,
+    "bytes": 76890,
+    "sha256": "9c2d31ce035da73692386816bc433b41ddd6905a7205da5cd5fc46de22083d42"
+  },
+  {
+    "state": "denied",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-denied-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72783,
+    "sha256": "9ea737c8e61afb69a4692757207a8beec8b4883cb8e7eea73a52ea561f872a1b"
+  },
+  {
+    "state": "denied",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-denied-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81408,
+    "sha256": "e4ba87ff94e2ccb2a938ee19d582d93d0700d56670ebe35d6d998521a0ffb268"
+  },
+  {
+    "state": "denied",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-denied-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79400,
+    "sha256": "9765a6c8df8a3b69011ac6bfa71e138f80289b2683096d071ca208ce9fe61bd3"
+  },
+  {
+    "state": "held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-held-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 71557,
+    "sha256": "383b8aab4b6a15c2cea9ee2883f65860138adc08454cf58cc475b3e79bfa03e5"
+  },
+  {
+    "state": "held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-held-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81408,
+    "sha256": "e4ba87ff94e2ccb2a938ee19d582d93d0700d56670ebe35d6d998521a0ffb268"
+  },
+  {
+    "state": "held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-held-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79400,
+    "sha256": "9765a6c8df8a3b69011ac6bfa71e138f80289b2683096d071ca208ce9fe61bd3"
+  },
+  {
+    "state": "allowed",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-allowed-0.png",
+    "offset": 0.0,
+    "end": 980.0,
+    "index": 0,
+    "bytes": 69176,
+    "sha256": "679894472940fe16866fc8b28c89d6839693ac5a7f35acfb01fc79a30d05cdc2"
+  },
+  {
+    "state": "allowed",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-allowed-1.png",
+    "offset": 620.0,
+    "end": 980.0,
+    "index": 1,
+    "bytes": 78961,
+    "sha256": "dff67d7df217e761cb383e4ef66b9bad2768f8c428dc3f237fbe5d03aa5682b4"
+  },
+  {
+    "state": "allowed",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-allowed-2.png",
+    "offset": 980.0,
+    "end": 980.0,
+    "index": 2,
+    "bytes": 78331,
+    "sha256": "7fc2c7f308a7606c9f0f4da31d302c0cd693ddd775166735a814c1088378632e"
+  },
+  {
+    "state": "started",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-started-0.png",
+    "offset": 0.0,
+    "end": 971.0,
+    "index": 0,
+    "bytes": 70534,
+    "sha256": "625112ec3d959524877095df815ca92cc5c8f5f7f9bb0e0a09f961859249f125"
+  },
+  {
+    "state": "started",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-started-1.png",
+    "offset": 620.0,
+    "end": 971.0,
+    "index": 1,
+    "bytes": 77766,
+    "sha256": "d23278f1e3601ed651da61b62b504bb46a2a87b0123b53ecb00172c574761172"
+  },
+  {
+    "state": "started",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-started-2.png",
+    "offset": 971.0,
+    "end": 971.0,
+    "index": 2,
+    "bytes": 77649,
+    "sha256": "2464897526b9e389cf672b5313116d4fdffaa459ea3950e85d2b2a14c2719546"
+  },
+  {
+    "state": "offline",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-offline-0.png",
+    "offset": 0.0,
+    "end": 1038.0,
+    "index": 0,
+    "bytes": 68483,
+    "sha256": "acde49c429589cded2168bc17095ffe02cb8789ce70a6f278109457c10cd323e"
+  },
+  {
+    "state": "offline",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-offline-1.png",
+    "offset": 620.0,
+    "end": 1038.0,
+    "index": 1,
+    "bytes": 76113,
+    "sha256": "282d8173a5a83b0ba5961e24ac8b4d1da7be8022794456a38e0027d25b0b7805"
+  },
+  {
+    "state": "offline",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-offline-2.png",
+    "offset": 1038.0,
+    "end": 1038.0,
+    "index": 2,
+    "bytes": 78280,
+    "sha256": "b9cddd1c7bbf3cefc59e5d4dedf1369b335b0d3930287ba956b956d33af42f56"
+  },
+  {
+    "state": "missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-missing-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-missing-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "source-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-source-missing-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "source-missing",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-source-missing-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "stale",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-stale-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "stale",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-stale-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "authority-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-authority-held-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "authority-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-authority-held-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "authority-unknown",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-authority-unknown-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "authority-unknown",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-authority-unknown-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "foreign",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-foreign-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "foreign",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-foreign-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "field-private",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-field-private-0.png",
+    "offset": 0.0,
+    "end": 550.0,
+    "index": 0,
+    "bytes": 75865,
+    "sha256": "271bd934a38a6e213cce0860a43d0523c9274157e98ba8f8446aade2076da80f"
+  },
+  {
+    "state": "field-private",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-field-private-1.png",
+    "offset": 550.0,
+    "end": 550.0,
+    "index": 1,
+    "bytes": 80830,
+    "sha256": "cd1c9ce4bd9800df55287a7c599c0745290d336af3f8bf789e16126177f97221"
+  },
+  {
+    "state": "path-private",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-path-private-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72838,
+    "sha256": "478783ad548d12c4efc3ceb00f970e9456e31ad22d41d1295ff9458abef821c0"
+  },
+  {
+    "state": "path-private",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-path-private-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81408,
+    "sha256": "e4ba87ff94e2ccb2a938ee19d582d93d0700d56670ebe35d6d998521a0ffb268"
+  },
+  {
+    "state": "path-private",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-path-private-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79400,
+    "sha256": "9765a6c8df8a3b69011ac6bfa71e138f80289b2683096d071ca208ce9fe61bd3"
+  },
+  {
+    "state": "effect-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-effect-held-0.png",
+    "offset": 0.0,
+    "end": 980.0,
+    "index": 0,
+    "bytes": 69176,
+    "sha256": "679894472940fe16866fc8b28c89d6839693ac5a7f35acfb01fc79a30d05cdc2"
+  },
+  {
+    "state": "effect-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-effect-held-1.png",
+    "offset": 620.0,
+    "end": 980.0,
+    "index": 1,
+    "bytes": 78961,
+    "sha256": "dff67d7df217e761cb383e4ef66b9bad2768f8c428dc3f237fbe5d03aa5682b4"
+  },
+  {
+    "state": "effect-held",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-effect-held-2.png",
+    "offset": 980.0,
+    "end": 980.0,
+    "index": 2,
+    "bytes": 78346,
+    "sha256": "d0be377d5f31318fe1803529c951a2a0228d3ad11598ad7cecf98fb3164588f3"
+  },
+  {
+    "state": "no-handler",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-no-handler-0.png",
+    "offset": 0.0,
+    "end": 847.0,
+    "index": 0,
+    "bytes": 72732,
+    "sha256": "c396dc67f06761b1128deac18a68f9fd0ae2dec1a85a4c127d4a01cea0fae031"
+  },
+  {
+    "state": "no-handler",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-no-handler-1.png",
+    "offset": 620.0,
+    "end": 847.0,
+    "index": 1,
+    "bytes": 81339,
+    "sha256": "fe04257dbcf0bff93b7c96a605541b0e8f40a0215a6ec2dd7c7c924f0fa99055"
+  },
+  {
+    "state": "no-handler",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-no-handler-2.png",
+    "offset": 847.0,
+    "end": 847.0,
+    "index": 2,
+    "bytes": 79264,
+    "sha256": "6c01486f2c24eac7358df3df0137e63ecedab0b182ba832e4f3997db31122f02"
+  },
+  {
+    "state": "long",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-long-0.png",
+    "offset": 0.0,
+    "end": 1123.0,
+    "index": 0,
+    "bytes": 82710,
+    "sha256": "1fac4d0080312945eb37603ee8a2da10320b103b857dd830535565d00a8ecbbc"
+  },
+  {
+    "state": "long",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-long-1.png",
+    "offset": 620.0,
+    "end": 1123.0,
+    "index": 1,
+    "bytes": 75089,
+    "sha256": "48e07e32a23e218ed0006ae45755f0f22f5bb07217d8732a462f7bcc87eafb7e"
+  },
+  {
+    "state": "long",
+    "path": "C:/Users/Xpike/AppData/Local/Temp/kavriva_e1014b_native_R3-long-2.png",
+    "offset": 1123.0,
+    "end": 1123.0,
+    "index": 2,
+    "bytes": 79400,
+    "sha256": "9765a6c8df8a3b69011ac6bfa71e138f80289b2683096d071ca208ce9fe61bd3"
+  }
+]
+```
+
+## F01 sonrası taze ilk okuma ve bütün GATE kaynağı
+
+/root/e1014b_r2_first_reading geçmişsiz bağımsız bağlam, istenen gpt-6-luna/max; yalnız güncel68nativePNG ve değişmeyen13soru. Root özgün raporun tamamını okudu; 6393bayt RAW SHA256 3a94dad4668fa55b9d52412d3d115aecdd96ee5ca039f19a693eeafa19efc348. Anlamlar doğru; nohandler/garaj kapalı gerçek sınırı korunur. AI anlam okuması canlı ürün/insan/OS/cihaz veya bütün görev kabulü değildir. Özgün önceki ilkoku ve CHANGES_REQUESTED tam raporları değiştirilmedi.
+
+F01 yerel321normal/34format0/analyze0/68native25durum/225duyarlı düzen PASS; mimari12kontrol+42izkoruma worst0. Görev REVIEW onarım adayı; özgün ret history kalır. Taze bütün bağımsız GATE hükmü ve gerçek bu başın CI/T3 beklenir. Eski18fbc kaynak17CI yeni başa sayılmaz. AynıPR115; ana101DONE105kalan206, üretim kapıları HELD. Ayrısonaltı inceleme/CI-T3/normalmerge/fetchedmain8 olmadan kabul sayılmaz.
+
+## F01 sonrası özgün ilk okuma tam raporu
+
+<pre>E01-014b — Native ekranlardan bağımsız ilk okuma
+
+Kapsam ve görsel bütünlük
+- Yalnız sabit soru dosyası ile verilen ekran manifesti ve o manifestteki PNG’ler kullanıldı.
+- Manifestte 68 görüntü kaydı ve 25 durum var. Her dosyanın gerçek bayt uzunluğu ve ham SHA-256 manifestteki değerle eşleşti; 68/68 dosya PNG imzası taşıyor ve boyutu 390 × 844.
+- Tam bayt/SHA-256 eşitliğiyle tekilleştirince 29 farklı görüntü kaldı. Bu 29 özgün görüntünün tamamını açıp inceledim; kalan 39 kayıt bu görüntülerden biriyle bayt düzeyinde aynıydı.
+- Görseller etkileşim testi değildir. Düğme rengi ve metni görülebilir; tıklama sonucu, kimlik/izin doğrulaması, fiziksel durum veya gerçek işlem davranışı bu ekranlardan doğrulanamaz.
+
+İlk okuma özeti
+Ekran, “Yeni işlem kapalı” veya bazı durumlarda “Yeni bakım kapalı” diyerek yeni bakım/işlemi sınırlandırıyor. Metin açıkça mevcut kayıtların korunacağını ve yeni işlem sınırının geçmişi silmediğini söylüyor. Geçmiş, kanıt/kaynak, düzeltme/itiraz ve dışa aktarma yollarının paket satın almaya bağlı olmadığı; her biri için güncel kimlik ve okuma izni gerektiği belirtilmiş. Kritik güvenlik bilgisi ve başlanmış işin güvenli dönüşü de paket nedeniyle kapatılmıyor. Normal kapalı ekranlarda mavi “Garaja dön” düğmesi görülüyor.
+
+Sabit 13 soruya yanıtlar
+
+1. Bu ekran hangi işlemi kapatıyor; geçmiş kayıtlarını siliyor mu?
+Yalnız yeni bakım/yeni işlem etkileniyor. Geçmişi silmiyor; ekranda “Mevcut kayıtlar korunur” ve “Yeni işlem sınırı geçmişini silmez” deniyor. Belirsizlik: Bu, metnin beyanıdır; kayıtların arka uçtaki durumu görselden doğrulanamaz.
+
+2. Geçmiş, kanıt ve kaynak bilgisi yeni bakım kapalıyken nereye gider?
+Ekran dört yolu sayıyor: “Geçmiş kayıtları”, “Kanıt ve kaynak bilgisi”, “Düzeltme ve itiraz” ve “Kayıtları dışa aktar”. Bunların paket satın almaya bağlı olmadığı, her birinin güncel kimlik ve okuma izni gerektirdiği yazıyor. Belirsizlik: Durum ekranlarında düğmelerin görünümü değişiyor; metin plan bağımsızlığını söylese de tüm durumlarda fiilen açık oldukları yalnız görüntüden doğrulanamıyor.
+
+3. Düzeltme, itiraz ve dışa aktarma paket nedeniyle kaybolur mu?
+Hayır. Metin bu yolların paket satın almaya bağlı olmadığını söylüyor; erişim için yine güncel kimlik ve okuma izni gerekiyor.
+
+4. Kritik güvenlik bilgisi ve başlanmış işin güvenli dönüşü paket satın almaya bağlı mı?
+Hayır. Metin kritik güvenlik bilgisinin ve başlanmış işin güvenli dönüşünün paket nedeniyle kapatılmadığını söylüyor. Önceki izinler işi sürdürmeye yetmiyor; güncel fiziksel durum ayrıca değerlendirilmelidir.
+
+5. Yeni bakım kapalıyken bu ekrandan hangi güvenli ana eylemi seçebilirsin?
+Normal kapalı ekranlarda mavi “Garaja dön” düğmesi güvenli ana eylem olarak sunuluyor. “no-handler” durumunun görüntülerinde bu düğme gri ve diğer eylemler de gri görünüyor; o varyantta güvenli dönüş ekranda seçilebilir görünmüyor. Görüntü, gerçek tıklama davranışını veya düğmenin neden pasif olduğunu kanıtlamıyor.
+
+6. Ücretsiz kaç motosiklet; abonelikle toplam kaç; aynı anda kaçında tam rehber var?
+Ücretsiz 1 motosiklet; abonelikle toplam 3 motosiklet. Aynı anda yalnız seçili 1 motosiklette tam rehber var.
+
+7. Tam rehber için başka motosiklet seçmek önceki hakkın üstüne ek hak yaratır mı?
+Hayır. Hak başka motosiklet seçilince taşınıyor; önceki hakkın üstüne eklenmiyor. Her motosikletin kayıtları ayrı kalıyor.
+
+8. Ücret veya abonelik motosikletin fiziksel uygunluğunu veya bakımın doğruluğunu kanıtlar mı?
+Hayır. Ekran, hak veya aboneliğin bakımın doğruluğunu ya da motosikletin güncel fiziksel uygunluğunu kanıtlamadığını söylüyor. Yeniden etkinleştirme de fiziksel kontrolün yerine geçmiyor.
+
+9. Mevcut kayıtlarına erişim korunuyor demek kimlik ve okuma izni olmadan özel veriye erişebilirsin demek mi?
+Hayır. Her yol için güncel kimlik ve okuma izni gerektiği yazıyor. İzin bilgisi alınamayan görünümde özel motosiklet ve izin bilgilerinin gösterilmediği de belirtilmiş.
+
+10. Güncel izin alınamıyorsa veya çevrimdışıysan yeni bakım kendiliğinden açılır mı?
+Hayır. Bekleyen durumda güncel kararın beklendiği ve yeni işleme izin verilmediği yazıyor. Çevrimdışı görünüm güncel sunucu kontrolünün gerektiğini söylüyor; kontrol olmadan kendiliğinden açılma beyanı yok.
+
+11. Bu ekrandaki yeni işlem kontrolü isteği bakımın başlaması ya da tamamlanması anlamına gelir mi?
+Hayır. Bu, güncel değerlendirme isteği. Ekran isteğin ödeme yapmadığını, hak vermediğini ve bakımı başlatmadığını söylüyor; kontrol isteği iletilmiş görünümde güncel sonuç doğrulanmadı ve işlemin başlamadığı açıkça yazıyor.
+
+12. Bu ekranda fiyat, ödeme veya seçimi değiştirme sıklığı kesinleştirilmiş mi?
+Hayır. Fiyat, ödeme, seçim değiştirme sıklığı ve deneme koşullarının burada kesinleştirilmediği açıkça yazıyor.
+
+13. Motosiklet etkin değilse yeniden etkinleştirmek güncel fiziksel durumun uygun olduğunu kanıtlar mı?
+Hayır. Yeniden etkinleştirmenin fiziksel kontrolün yerine geçmediği yazıyor; güncel fiziksel uygunluk ayrıca değerlendirilmelidir.
+
+Açık/kapalı yollar ve belirsizlik
+Metinsel ayrım anlaşılır: yeni bakım/işlem kapalı olabilirken geçmiş ve güvenlik yolları paket nedeniyle kapatılmıyor; bu yollar güncel kimlik ve okuma iznine bağlı. Ekranlar arasındaki görsel sunum ise tutarlı değil: bazı örneklerde geçmiş yolları beyaz konturlu, bazılarında gri; özel yol görünümünde yalnız geçmiş düğmesi gri; “no-handler” görüntülerinde “Garaja dön” dâhil bütün düğmeler gri. Bu yüzden “paketten bağımsız” ifadesini “her durumda ekrandan kullanılabilir” diye okumak güvenli değil. Özellikle “no-handler” varyantında güvenli dönüşün görünür bir eylem olarak sunulmadığını not ediyorum. Bu ilk okuma yalnız ekran metni ve görünümüne dayanır; kod, gerçek kişi/cihaz kanıtı veya üretim kabulü hakkında iddia içermez.
+</pre>
+
+## F01 sonrası özgün ilk okuma RAW Base64
+
+```base64
+RTAxLTAxNGIg4oCUIE5hdGl2ZSBla3JhbmxhcmRhbiBiYcSfxLFtc8SxeiBpbGsgb2t1bWEKCkthcHNhbSB2ZSBnw7Zyc2VsIGLDvHTDvG5sw7xrCi0gWWFsbsSxeiBzYWJpdCBzb3J1IGRvc3lhc8SxIGlsZSB2ZXJpbGVuIGVrcmFuIG1hbmlmZXN0aSB2ZSBvIG1hbmlmZXN0dGVraSBQTkfigJlsZXIga3VsbGFuxLFsZMSxLgotIE1hbmlmZXN0dGUgNjggZ8O2csO8bnTDvCBrYXlkxLEgdmUgMjUgZHVydW0gdmFyLiBIZXIgZG9zeWFuxLFuIGdlcsOnZWsgYmF5dCB1enVubHXEn3UgdmUgaGFtIFNIQS0yNTYgbWFuaWZlc3R0ZWtpIGRlxJ9lcmxlIGXFn2xlxZ90aTsgNjgvNjggZG9zeWEgUE5HIGltemFzxLEgdGHFn8SxeW9yIHZlIGJveXV0dSAzOTAgw5cgODQ0LgotIFRhbSBiYXl0L1NIQS0yNTYgZcWfaXRsacSfaXlsZSB0ZWtpbGxlxZ90aXJpbmNlIDI5IGZhcmtsxLEgZ8O2csO8bnTDvCBrYWxkxLEuIEJ1IDI5IMO2emfDvG4gZ8O2csO8bnTDvG7DvG4gdGFtYW3EsW7EsSBhw6fEsXAgaW5jZWxlZGltOyBrYWxhbiAzOSBrYXnEsXQgYnUgZ8O2csO8bnTDvGxlcmRlbiBiaXJpeWxlIGJheXQgZMO8emV5aW5kZSBheW7EsXlkxLEuCi0gR8O2cnNlbGxlciBldGtpbGXFn2ltIHRlc3RpIGRlxJ9pbGRpci4gRMO8xJ9tZSByZW5naSB2ZSBtZXRuaSBnw7Zyw7xsZWJpbGlyOyB0xLFrbGFtYSBzb251Y3UsIGtpbWxpay9pemluIGRvxJ9ydWxhbWFzxLEsIGZpemlrc2VsIGR1cnVtIHZleWEgZ2Vyw6dlayBpxZ9sZW0gZGF2cmFuxLHFn8SxIGJ1IGVrcmFubGFyZGFuIGRvxJ9ydWxhbmFtYXouCgrEsGxrIG9rdW1hIMO2emV0aQpFa3Jhbiwg4oCcWWVuaSBpxZ9sZW0ga2FwYWzEseKAnSB2ZXlhIGJhesSxIGR1cnVtbGFyZGEg4oCcWWVuaSBiYWvEsW0ga2FwYWzEseKAnSBkaXllcmVrIHllbmkgYmFrxLFtL2nFn2xlbWkgc8SxbsSxcmxhbmTEsXLEsXlvci4gTWV0aW4gYcOnxLFrw6dhIG1ldmN1dCBrYXnEsXRsYXLEsW4ga29ydW5hY2HEn8SxbsSxIHZlIHllbmkgacWfbGVtIHPEsW7EsXLEsW7EsW4gZ2XDp21pxZ9pIHNpbG1lZGnEn2luaSBzw7Z5bMO8eW9yLiBHZcOnbWnFnywga2FuxLF0L2theW5haywgZMO8emVsdG1lL2l0aXJheiB2ZSBkxLHFn2EgYWt0YXJtYSB5b2xsYXLEsW7EsW4gcGFrZXQgc2F0xLFuIGFsbWF5YSBiYcSfbMSxIG9sbWFkxLHEn8SxOyBoZXIgYmlyaSBpw6dpbiBnw7xuY2VsIGtpbWxpayB2ZSBva3VtYSBpem5pIGdlcmVrdGnEn2kgYmVsaXJ0aWxtacWfLiBLcml0aWsgZ8O8dmVubGlrIGJpbGdpc2kgdmUgYmHFn2xhbm3EscWfIGnFn2luIGfDvHZlbmxpIGTDtm7DvMWfw7wgZGUgcGFrZXQgbmVkZW5peWxlIGthcGF0xLFsbcSxeW9yLiBOb3JtYWwga2FwYWzEsSBla3JhbmxhcmRhIG1hdmkg4oCcR2FyYWphIGTDtm7igJ0gZMO8xJ9tZXNpIGfDtnLDvGzDvHlvci4KClNhYml0IDEzIHNvcnV5YSB5YW7EsXRsYXIKCjEuIEJ1IGVrcmFuIGhhbmdpIGnFn2xlbWkga2FwYXTEsXlvcjsgZ2XDp21pxZ8ga2F5xLF0bGFyxLFuxLEgc2lsaXlvciBtdT8KWWFsbsSxeiB5ZW5pIGJha8SxbS95ZW5pIGnFn2xlbSBldGtpbGVuaXlvci4gR2XDp21pxZ9pIHNpbG1peW9yOyBla3JhbmRhIOKAnE1ldmN1dCBrYXnEsXRsYXIga29ydW51cuKAnSB2ZSDigJxZZW5pIGnFn2xlbSBzxLFuxLFyxLEgZ2XDp21pxZ9pbmkgc2lsbWV64oCdIGRlbml5b3IuIEJlbGlyc2l6bGlrOiBCdSwgbWV0bmluIGJleWFuxLFkxLFyOyBrYXnEsXRsYXLEsW4gYXJrYSB1w6d0YWtpIGR1cnVtdSBnw7Zyc2VsZGVuIGRvxJ9ydWxhbmFtYXouCgoyLiBHZcOnbWnFnywga2FuxLF0IHZlIGtheW5hayBiaWxnaXNpIHllbmkgYmFrxLFtIGthcGFsxLF5a2VuIG5lcmV5ZSBnaWRlcj8KRWtyYW4gZMO2cnQgeW9sdSBzYXnEsXlvcjog4oCcR2XDp21pxZ8ga2F5xLF0bGFyxLHigJ0sIOKAnEthbsSxdCB2ZSBrYXluYWsgYmlsZ2lzaeKAnSwg4oCcRMO8emVsdG1lIHZlIGl0aXJheuKAnSB2ZSDigJxLYXnEsXRsYXLEsSBkxLHFn2EgYWt0YXLigJ0uIEJ1bmxhcsSxbiBwYWtldCBzYXTEsW4gYWxtYXlhIGJhxJ9sxLEgb2xtYWTEscSfxLEsIGhlciBiaXJpbmluIGfDvG5jZWwga2ltbGlrIHZlIG9rdW1hIGl6bmkgZ2VyZWt0aXJkacSfaSB5YXrEsXlvci4gQmVsaXJzaXpsaWs6IER1cnVtIGVrcmFubGFyxLFuZGEgZMO8xJ9tZWxlcmluIGfDtnLDvG7DvG3DvCBkZcSfacWfaXlvcjsgbWV0aW4gcGxhbiBiYcSfxLFtc8SxemzEscSfxLFuxLEgc8O2eWxlc2UgZGUgdMO8bSBkdXJ1bWxhcmRhIGZpaWxlbiBhw6fEsWsgb2xkdWtsYXLEsSB5YWxuxLF6IGfDtnLDvG50w7xkZW4gZG/En3J1bGFuYW3EsXlvci4KCjMuIETDvHplbHRtZSwgaXRpcmF6IHZlIGTEscWfYSBha3Rhcm1hIHBha2V0IG5lZGVuaXlsZSBrYXlib2x1ciBtdT8KSGF5xLFyLiBNZXRpbiBidSB5b2xsYXLEsW4gcGFrZXQgc2F0xLFuIGFsbWF5YSBiYcSfbMSxIG9sbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3I7IGVyacWfaW0gacOnaW4geWluZSBnw7xuY2VsIGtpbWxpayB2ZSBva3VtYSBpem5pIGdlcmVraXlvci4KCjQuIEtyaXRpayBnw7x2ZW5saWsgYmlsZ2lzaSB2ZSBiYcWfbGFubcSxxZ8gacWfaW4gZ8O8dmVubGkgZMO2bsO8xZ/DvCBwYWtldCBzYXTEsW4gYWxtYXlhIGJhxJ9sxLEgbcSxPwpIYXnEsXIuIE1ldGluIGtyaXRpayBnw7x2ZW5saWsgYmlsZ2lzaW5pbiB2ZSBiYcWfbGFubcSxxZ8gacWfaW4gZ8O8dmVubGkgZMO2bsO8xZ/DvG7DvG4gcGFrZXQgbmVkZW5peWxlIGthcGF0xLFsbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIMOWbmNla2kgaXppbmxlciBpxZ9pIHPDvHJkw7xybWV5ZSB5ZXRtaXlvcjsgZ8O8bmNlbCBmaXppa3NlbCBkdXJ1bSBheXLEsWNhIGRlxJ9lcmxlbmRpcmlsbWVsaWRpci4KCjUuIFllbmkgYmFrxLFtIGthcGFsxLF5a2VuIGJ1IGVrcmFuZGFuIGhhbmdpIGfDvHZlbmxpIGFuYSBleWxlbWkgc2XDp2ViaWxpcnNpbj8KTm9ybWFsIGthcGFsxLEgZWtyYW5sYXJkYSBtYXZpIOKAnEdhcmFqYSBkw7Zu4oCdIGTDvMSfbWVzaSBnw7x2ZW5saSBhbmEgZXlsZW0gb2xhcmFrIHN1bnVsdXlvci4g4oCcbm8taGFuZGxlcuKAnSBkdXJ1bXVudW4gZ8O2csO8bnTDvGxlcmluZGUgYnUgZMO8xJ9tZSBncmkgdmUgZGnEn2VyIGV5bGVtbGVyIGRlIGdyaSBnw7Zyw7xuw7x5b3I7IG8gdmFyeWFudHRhIGfDvHZlbmxpIGTDtm7DvMWfIGVrcmFuZGEgc2XDp2lsZWJpbGlyIGfDtnLDvG5tw7x5b3IuIEfDtnLDvG50w7wsIGdlcsOnZWsgdMSxa2xhbWEgZGF2cmFuxLHFn8SxbsSxIHZleWEgZMO8xJ9tZW5pbiBuZWRlbiBwYXNpZiBvbGR1xJ91bnUga2FuxLF0bGFtxLF5b3IuCgo2LiDDnGNyZXRzaXoga2HDpyBtb3Rvc2lrbGV0OyBhYm9uZWxpa2xlIHRvcGxhbSBrYcOnOyBheW7EsSBhbmRhIGthw6fEsW5kYSB0YW0gcmVoYmVyIHZhcj8Kw5xjcmV0c2l6IDEgbW90b3Npa2xldDsgYWJvbmVsaWtsZSB0b3BsYW0gMyBtb3Rvc2lrbGV0LiBBeW7EsSBhbmRhIHlhbG7EsXogc2XDp2lsaSAxIG1vdG9zaWtsZXR0ZSB0YW0gcmVoYmVyIHZhci4KCjcuIFRhbSByZWhiZXIgacOnaW4gYmHFn2thIG1vdG9zaWtsZXQgc2XDp21layDDtm5jZWtpIGhha2vEsW4gw7xzdMO8bmUgZWsgaGFrIHlhcmF0xLFyIG3EsT8KSGF5xLFyLiBIYWsgYmHFn2thIG1vdG9zaWtsZXQgc2XDp2lsaW5jZSB0YcWfxLFuxLF5b3I7IMO2bmNla2kgaGFra8SxbiDDvHN0w7xuZSBla2xlbm1peW9yLiBIZXIgbW90b3Npa2xldGluIGthecSxdGxhcsSxIGF5csSxIGthbMSxeW9yLgoKOC4gw5xjcmV0IHZleWEgYWJvbmVsaWsgbW90b3Npa2xldGluIGZpemlrc2VsIHV5Z3VubHXEn3VudSB2ZXlhIGJha8SxbcSxbiBkb8SfcnVsdcSfdW51IGthbsSxdGxhciBtxLE/CkhhecSxci4gRWtyYW4sIGhhayB2ZXlhIGFib25lbGnEn2luIGJha8SxbcSxbiBkb8SfcnVsdcSfdW51IHlhIGRhIG1vdG9zaWtsZXRpbiBnw7xuY2VsIGZpemlrc2VsIHV5Z3VubHXEn3VudSBrYW7EsXRsYW1hZMSxxJ/EsW7EsSBzw7Z5bMO8eW9yLiBZZW5pZGVuIGV0a2lubGXFn3Rpcm1lIGRlIGZpemlrc2VsIGtvbnRyb2zDvG4geWVyaW5lIGdlw6dtaXlvci4KCjkuIE1ldmN1dCBrYXnEsXRsYXLEsW5hIGVyacWfaW0ga29ydW51eW9yIGRlbWVrIGtpbWxpayB2ZSBva3VtYSBpem5pIG9sbWFkYW4gw7Z6ZWwgdmVyaXllIGVyacWfZWJpbGlyc2luIGRlbWVrIG1pPwpIYXnEsXIuIEhlciB5b2wgacOnaW4gZ8O8bmNlbCBraW1saWsgdmUgb2t1bWEgaXpuaSBnZXJla3RpxJ9pIHlhesSxeW9yLiDEsHppbiBiaWxnaXNpIGFsxLFuYW1heWFuIGfDtnLDvG7DvG1kZSDDtnplbCBtb3Rvc2lrbGV0IHZlIGl6aW4gYmlsZ2lsZXJpbmluIGfDtnN0ZXJpbG1lZGnEn2kgZGUgYmVsaXJ0aWxtacWfLgoKMTAuIEfDvG5jZWwgaXppbiBhbMSxbmFtxLF5b3JzYSB2ZXlhIMOnZXZyaW1kxLHFn8SxeXNhbiB5ZW5pIGJha8SxbSBrZW5kaWxpxJ9pbmRlbiBhw6fEsWzEsXIgbcSxPwpIYXnEsXIuIEJla2xleWVuIGR1cnVtZGEgZ8O8bmNlbCBrYXJhcsSxbiBiZWtsZW5kacSfaSB2ZSB5ZW5pIGnFn2xlbWUgaXppbiB2ZXJpbG1lZGnEn2kgeWF6xLF5b3IuIMOHZXZyaW1kxLHFn8SxIGfDtnLDvG7DvG0gZ8O8bmNlbCBzdW51Y3Uga29udHJvbMO8bsO8biBnZXJla3RpxJ9pbmkgc8O2eWzDvHlvcjsga29udHJvbCBvbG1hZGFuIGtlbmRpbGnEn2luZGVuIGHDp8SxbG1hIGJleWFuxLEgeW9rLgoKMTEuIEJ1IGVrcmFuZGFraSB5ZW5pIGnFn2xlbSBrb250cm9sw7wgaXN0ZcSfaSBiYWvEsW3EsW4gYmHFn2xhbWFzxLEgeWEgZGEgdGFtYW1sYW5tYXPEsSBhbmxhbcSxbmEgZ2VsaXIgbWk/CkhhecSxci4gQnUsIGfDvG5jZWwgZGXEn2VybGVuZGlybWUgaXN0ZcSfaS4gRWtyYW4gaXN0ZcSfaW4gw7ZkZW1lIHlhcG1hZMSxxJ/EsW7EsSwgaGFrIHZlcm1lZGnEn2luaSB2ZSBiYWvEsW3EsSBiYcWfbGF0bWFkxLHEn8SxbsSxIHPDtnlsw7x5b3I7IGtvbnRyb2wgaXN0ZcSfaSBpbGV0aWxtacWfIGfDtnLDvG7DvG1kZSBnw7xuY2VsIHNvbnXDpyBkb8SfcnVsYW5tYWTEsSB2ZSBpxZ9sZW1pbiBiYcWfbGFtYWTEscSfxLEgYcOnxLFrw6dhIHlhesSxeW9yLgoKMTIuIEJ1IGVrcmFuZGEgZml5YXQsIMO2ZGVtZSB2ZXlhIHNlw6dpbWkgZGXEn2nFn3Rpcm1lIHPEsWtsxLHEn8SxIGtlc2lubGXFn3RpcmlsbWnFnyBtaT8KSGF5xLFyLiBGaXlhdCwgw7ZkZW1lLCBzZcOnaW0gZGXEn2nFn3Rpcm1lIHPEsWtsxLHEn8SxIHZlIGRlbmVtZSBrb8WfdWxsYXLEsW7EsW4gYnVyYWRhIGtlc2lubGXFn3RpcmlsbWVkacSfaSBhw6fEsWvDp2EgeWF6xLF5b3IuCgoxMy4gTW90b3Npa2xldCBldGtpbiBkZcSfaWxzZSB5ZW5pZGVuIGV0a2lubGXFn3Rpcm1layBnw7xuY2VsIGZpemlrc2VsIGR1cnVtdW4gdXlndW4gb2xkdcSfdW51IGthbsSxdGxhciBtxLE/CkhhecSxci4gWWVuaWRlbiBldGtpbmxlxZ90aXJtZW5pbiBmaXppa3NlbCBrb250cm9sw7xuIHllcmluZSBnZcOnbWVkacSfaSB5YXrEsXlvcjsgZ8O8bmNlbCBmaXppa3NlbCB1eWd1bmx1ayBheXLEsWNhIGRlxJ9lcmxlbmRpcmlsbWVsaWRpci4KCkHDp8Sxay9rYXBhbMSxIHlvbGxhciB2ZSBiZWxpcnNpemxpawpNZXRpbnNlbCBheXLEsW0gYW5sYcWfxLFsxLFyOiB5ZW5pIGJha8SxbS9pxZ9sZW0ga2FwYWzEsSBvbGFiaWxpcmtlbiBnZcOnbWnFnyB2ZSBnw7x2ZW5saWsgeW9sbGFyxLEgcGFrZXQgbmVkZW5peWxlIGthcGF0xLFsbcSxeW9yOyBidSB5b2xsYXIgZ8O8bmNlbCBraW1saWsgdmUgb2t1bWEgaXpuaW5lIGJhxJ9sxLEuIEVrcmFubGFyIGFyYXPEsW5kYWtpIGfDtnJzZWwgc3VudW0gaXNlIHR1dGFybMSxIGRlxJ9pbDogYmF6xLEgw7ZybmVrbGVyZGUgZ2XDp21pxZ8geW9sbGFyxLEgYmV5YXoga29udHVybHUsIGJhesSxbGFyxLFuZGEgZ3JpOyDDtnplbCB5b2wgZ8O2csO8bsO8bcO8bmRlIHlhbG7EsXogZ2XDp21pxZ8gZMO8xJ9tZXNpIGdyaTsg4oCcbm8taGFuZGxlcuKAnSBnw7Zyw7xudMO8bGVyaW5kZSDigJxHYXJhamEgZMO2buKAnSBkw6JoaWwgYsO8dMO8biBkw7zEn21lbGVyIGdyaS4gQnUgecO8emRlbiDigJxwYWtldHRlbiBiYcSfxLFtc8SxeuKAnSBpZmFkZXNpbmkg4oCcaGVyIGR1cnVtZGEgZWtyYW5kYW4ga3VsbGFuxLFsYWJpbGly4oCdIGRpeWUgb2t1bWFrIGfDvHZlbmxpIGRlxJ9pbC4gw5Z6ZWxsaWtsZSDigJxuby1oYW5kbGVy4oCdIHZhcnlhbnTEsW5kYSBnw7x2ZW5saSBkw7Zuw7zFn8O8biBnw7Zyw7xuw7xyIGJpciBleWxlbSBvbGFyYWsgc3VudWxtYWTEscSfxLFuxLEgbm90IGVkaXlvcnVtLiBCdSBpbGsgb2t1bWEgeWFsbsSxeiBla3JhbiBtZXRuaSB2ZSBnw7Zyw7xuw7xtw7xuZSBkYXlhbsSxcjsga29kLCBnZXLDp2VrIGtpxZ9pL2NpaGF6IGthbsSxdMSxIHZleWEgw7xyZXRpbSBrYWJ1bMO8IGhha2vEsW5kYSBpZGRpYSBpw6dlcm1lei4K
 ```

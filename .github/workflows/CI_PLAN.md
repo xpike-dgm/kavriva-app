@@ -531,3 +531,7 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 
 
 `vault/PROFILES/entitlement-gate-render.md`; `vault/PACKS/P-E1-014b.md`; `vault/REGISTRY/T-E1-014b.md`; `vault/EVIDENCE/E-DEV-113.md`.
+
+## T-E1-014b F01 güncel kaynak kanıtı
+
+321normalPASS/strictformat34-0/analyze0;25durum225duyarlı düzen/68native. Korunan dört öz-okuma ve altı yol entitlement metadata kaynağından ayrıldı. Önceki318/19durum/50native reddedilmiş kaynağın tarihidir; taze bağımsız GATE hükmü ve exactsourceCI-T3 beklenir. Üretim enforcement/kimlik/billing/cihaz HELD; ana101/105 değişmez.
