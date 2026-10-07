@@ -66,12 +66,15 @@ class EntitlementSnapshot {
     required this.plan,
     this.authority,
     required Map<HistoryReadDimension, HistoryReference?> readDimensions,
+    required Map<HistoryReadDimension, HistoryReference?>
+    preservedReadDimensions,
     required Map<EntitlementField, HistoryReference?> fields,
     required Map<EntitlementPath, HistoryReference?> paths,
     required Map<EntitlementEffectDimension, HistoryReference?> effects,
     this.offline = false,
   }) : requestId = _required(requestId),
        readDimensions = Map.unmodifiable(readDimensions),
+       preservedReadDimensions = Map.unmodifiable(preservedReadDimensions),
        fields = Map.unmodifiable(fields),
        paths = Map.unmodifiable(paths),
        effects = Map.unmodifiable(effects);
@@ -80,6 +83,7 @@ class EntitlementSnapshot {
   final EntitlementPlan? plan;
   final HistoryReference? authority;
   final Map<HistoryReadDimension, HistoryReference?> readDimensions;
+  final Map<HistoryReadDimension, HistoryReference?> preservedReadDimensions;
   final Map<EntitlementField, HistoryReference?> fields;
   final Map<EntitlementPath, HistoryReference?> paths;
   final Map<EntitlementEffectDimension, HistoryReference?> effects;
@@ -118,15 +122,29 @@ class EntitlementSnapshot {
         );
   }
 
-  // Korunan erişimin lisans kararıyla ilgisi yok. Her yol kendi güncel
-  // okuma yetkisini ister; etiketin görünmesi özel veriye izin değildir.
+  // Kararlı hedef yalnız kapsam kimlikleri; lisans kararı veya özel metin yok.
+  String get preservedSubject =>
+      '${_identity(scope.motorcycleId)}/${_identity(scope.contextRevision)}/'
+      '${_identity(scope.catalogId)}/${_identity(scope.catalogRevision)}';
+
+  // Korunan erişim kendi kaynak/kimlik/politika ve yol izniyle doğrulanır.
+  // Lisans planı eksik olabilir; etiketi görmek özel veriye izin değildir.
   bool pathAllowed(EntitlementPath path) =>
-      readable &&
+      HistoryReadDimension.values.every(
+        (d) =>
+            preservedReadDimensions[d]?.confirmed(
+              scope,
+              requestId,
+              'entitlement-preserved-read',
+              '$preservedSubject/${d.name}',
+            ) ??
+            false,
+      ) &&
       (paths[path]?.confirmed(
             scope,
             requestId,
-            'entitlement-path',
-            '${plan!.subject}/${path.name}',
+            'entitlement-preserved-path',
+            '$preservedSubject/${path.name}',
           ) ??
           false);
 
@@ -184,6 +202,10 @@ class _EntitlementGateState extends State<EntitlementGateView> {
         old.readable == s.readable;
   }
 
+  bool sameScope(EntitlementSnapshot old) =>
+      old.scope.matches(widget.snapshot.scope) &&
+      old.requestId == widget.snapshot.requestId;
+
   VoidCallback? callback(EntitlementAction action, {EntitlementPath? path}) {
     final old = widget.snapshot, capturedHandler = widget.onIntent;
     bool allowed(EntitlementSnapshot s) => switch (action) {
@@ -197,7 +219,13 @@ class _EntitlementGateState extends State<EntitlementGateView> {
     if (capturedHandler == null || !allowed(old)) return null;
     return () {
       final s = widget.snapshot;
-      if (!same(old) || widget.onIntent != capturedHandler || !allowed(s))
+      final independentRead =
+          action == EntitlementAction.read ||
+          action == EntitlementAction.garage ||
+          action == EntitlementAction.support;
+      if ((independentRead ? !sameScope(old) : !same(old)) ||
+          widget.onIntent != capturedHandler ||
+          !allowed(s))
         return;
       if (action == EntitlementAction.requestContext) {
         setState(() => requested.add(keyFor(s)));
@@ -210,11 +238,11 @@ class _EntitlementGateState extends State<EntitlementGateView> {
           scope: s.scope,
           requestId: s.requestId,
           path: path,
-          subjectId:
-              action == EntitlementAction.garage ||
-                  action == EntitlementAction.support
-              ? ''
-              : s.plan!.subject,
+          subjectId: switch (action) {
+            EntitlementAction.garage || EntitlementAction.support => '',
+            EntitlementAction.read => '${s.preservedSubject}/${path!.name}',
+            _ => s.plan!.subject,
+          },
         ),
       );
     };

@@ -80,14 +80,26 @@ EntitlementSnapshot _snapshot({
   HistoryReferenceState state = HistoryReferenceState.confirmed,
   HistoryReference? authority,
   HistoryReadDimension? deniedRead,
+  HistoryReadDimension? deniedPreservedRead,
   EntitlementField? deniedField,
   EntitlementPath? deniedPath,
   EntitlementEffectDimension? deniedEffect,
   Map<EntitlementField, HistoryReference?>? fields,
+  Map<HistoryReadDimension, HistoryReference?>? preservedRead,
   Map<EntitlementPath, HistoryReference?>? paths,
   Map<EntitlementEffectDimension, HistoryReference?>? effects,
 }) {
   final p = plan ?? _plan(), s = scope ?? _scope();
+  final ownRead = EntitlementSnapshot(
+    scope: s,
+    requestId: request,
+    plan: null,
+    readDimensions: const {},
+    preservedReadDimensions: const {},
+    fields: const {},
+    paths: const {},
+    effects: const {},
+  ).preservedSubject;
   return EntitlementSnapshot(
     scope: s,
     requestId: request,
@@ -115,6 +127,19 @@ EntitlementSnapshot _snapshot({
                 request: request,
               ),
     },
+    preservedReadDimensions:
+        preservedRead ??
+        {
+          for (final d in HistoryReadDimension.values)
+            d: d == deniedPreservedRead
+                ? null
+                : _ref(
+                    'entitlement-preserved-read',
+                    '$ownRead/${d.name}',
+                    scope: s,
+                    request: request,
+                  ),
+        },
     fields:
         fields ??
         {
@@ -135,8 +160,8 @@ EntitlementSnapshot _snapshot({
             a: a == deniedPath
                 ? null
                 : _ref(
-                    'entitlement-path',
-                    '${p.subject}/${a.name}',
+                    'entitlement-preserved-path',
+                    '$ownRead/${a.name}',
                     scope: s,
                     request: request,
                   ),
@@ -229,6 +254,58 @@ Future<void> _pump(
 }
 
 Map<String, Widget> _cases() => {
+  'preserved-source-missing': _view(
+    snapshot: _snapshot(preservedRead: const {}),
+  ),
+  'preserved-dimension-missing': _view(
+    snapshot: _snapshot(
+      deniedPreservedRead: HistoryReadDimension.authorization,
+    ),
+  ),
+  'preserved-stale': _view(
+    snapshot: _snapshot(
+      preservedRead: {
+        HistoryReadDimension.motorcycle: _ref(
+          'entitlement-preserved-read',
+          '${_snapshot().preservedSubject}/motorcycle',
+          current: false,
+        ),
+      },
+    ),
+  ),
+  'preserved-held': _view(
+    snapshot: _snapshot(
+      paths: {
+        EntitlementPath.safety: _ref(
+          'entitlement-preserved-path',
+          '${_snapshot().preservedSubject}/safety',
+          state: HistoryReferenceState.held,
+        ),
+      },
+    ),
+  ),
+  'preserved-unknown': _view(
+    snapshot: _snapshot(
+      paths: {
+        EntitlementPath.safety: _ref(
+          'entitlement-preserved-path',
+          '${_snapshot().preservedSubject}/safety',
+          state: HistoryReferenceState.unknown,
+        ),
+      },
+    ),
+  ),
+  'preserved-foreign': _view(
+    snapshot: _snapshot(
+      paths: {
+        EntitlementPath.history: _ref(
+          'entitlement-preserved-path',
+          '${_snapshot().preservedSubject}/history',
+          scope: _scope(bike: 'B'),
+        ),
+      },
+    ),
+  ),
   'context-requested': _view(),
   'check-requested': _view(
     snapshot: _snapshot(plan: _plan(decision: EntitlementDecision.allowed)),
@@ -322,6 +399,140 @@ Future<void> _prepare(WidgetTester t, String state) async {
 
 void main() {
   testWidgets(
+    'F01 lisans planı yokken altı kendi izinli okuma yolu gerçek tap ve private lisans kapalı',
+    (t) async {
+      final calls = <EntitlementIntent>[];
+      final labels = [
+        'Geçmiş kayıtları',
+        'Kanıt ve kaynak bilgisi',
+        'Düzeltme ve itiraz',
+        'Kayıtları dışa aktar',
+        'Kritik güvenlik bilgisi',
+        'Başlanmış işin güvenli dönüşü',
+      ];
+      for (final s in [
+        _snapshot(missing: true),
+        _snapshot(noSource: true),
+        _snapshot(current: false),
+        _snapshot(state: HistoryReferenceState.held),
+        _snapshot(state: HistoryReferenceState.unknown),
+        _snapshot(deniedField: EntitlementField.reason),
+        _snapshot(deniedRead: HistoryReadDimension.authorization),
+      ]) {
+        await _pump(t, _view(snapshot: s, handler: calls.add));
+        expect(_text(t), isNot(contains('Örnek motosiklet özel A')));
+        expect(_cb(t, _context), isNull);
+        expect(_cb(t, _check), isNull);
+        for (var i = 0; i < labels.length; i++) {
+          await _tap(t, labels[i]);
+          expect(calls.last.action, EntitlementAction.read);
+          expect(calls.last.path, EntitlementPath.values[i]);
+          expect(
+            calls.last.subjectId,
+            '${s.preservedSubject}/${EntitlementPath.values[i].name}',
+          );
+          expect(calls.last.subjectId, isNot(contains(_plan().subject)));
+          expect(t.takeException(), isNull);
+        }
+      }
+      expect(calls.length, 42);
+    },
+  );
+  testWidgets(
+    'F01 kendi dört okuma boyutunda eksik stale foreign held unknown purpose subject request kapanır',
+    (t) async {
+      final target = _snapshot().preservedSubject;
+      for (final d in HistoryReadDimension.values) {
+        final good = {
+          for (final x in HistoryReadDimension.values)
+            x: _ref('entitlement-preserved-read', '$target/${x.name}'),
+        };
+        for (final bad in [
+          null,
+          _ref('ALLOW', '$target/${d.name}'),
+          _ref(
+            'entitlement-preserved-read',
+            '$target/${d.name}',
+            request: 'old',
+          ),
+          _ref(
+            'entitlement-preserved-read',
+            '$target/${d.name}',
+            scope: _scope(bike: 'B'),
+          ),
+          _ref('entitlement-preserved-read', 'wrong'),
+          _ref(
+            'entitlement-preserved-read',
+            '$target/${d.name}',
+            current: false,
+          ),
+          _ref(
+            'entitlement-preserved-read',
+            '$target/${d.name}',
+            state: HistoryReferenceState.held,
+          ),
+          _ref(
+            'entitlement-preserved-read',
+            '$target/${d.name}',
+            state: HistoryReferenceState.unknown,
+          ),
+        ]) {
+          final s = _snapshot(missing: true, preservedRead: {...good, d: bad});
+          expect(EntitlementPath.values.any(s.pathAllowed), isFalse);
+          await _pump(t, _view(snapshot: s));
+          expect(_cb(t, 'Geçmiş kayıtları'), isNull);
+          expect(_cb(t, 'Kritik güvenlik bilgisi'), isNull);
+          expect(_cb(t, 'Garaja dön'), isNotNull);
+        }
+      }
+    },
+  );
+  testWidgets(
+    'F01 eski read callback lisans değişiminde geçerli own izinle çalışır scope request revoketa kapanır',
+    (t) async {
+      final calls = <EntitlementIntent>[];
+      final handler = calls.add;
+      for (final s in [
+        _snapshot(missing: true),
+        _snapshot(noSource: true),
+        _snapshot(
+          plan: _plan(revision: 'new', decision: EntitlementDecision.allowed),
+          offline: true,
+        ),
+      ]) {
+        await t.pumpWidget(const SizedBox());
+        await _pump(t, _view(handler: handler));
+        final cb = _cb(t, 'Geçmiş kayıtları')!;
+        await _pump(t, _view(snapshot: s, handler: handler));
+        cb();
+        expect(calls.last.subjectId, '${s.preservedSubject}/history');
+        expect(t.takeException(), isNull);
+      }
+      expect(calls.length, 3);
+      for (final s in [
+        _snapshot(scope: _scope(bike: 'B')),
+        _snapshot(request: 'new'),
+        _snapshot(deniedPreservedRead: HistoryReadDimension.policy),
+        _snapshot(deniedPath: EntitlementPath.history),
+      ]) {
+        await t.pumpWidget(const SizedBox());
+        await _pump(t, _view(handler: handler));
+        final cb = _cb(t, 'Geçmiş kayıtları')!;
+        await _pump(t, _view(snapshot: s, handler: handler));
+        cb();
+        expect(calls.length, 3);
+      }
+      expect(
+        () => _snapshot().preservedReadDimensions.clear(),
+        throwsUnsupportedError,
+      );
+      expect(
+        _snapshot(scope: _scope(revision: 'new')).preservedSubject,
+        isNot(_snapshot().preservedSubject),
+      );
+    },
+  );
+  testWidgets(
     'DEC0053 hak şekli fiziksel gerçeklik değil ve güvenli çıkış baskın',
     (t) async {
       await _pump(t, _view());
@@ -404,7 +615,7 @@ void main() {
     ]) {
       await _pump(t, _view(snapshot: s));
       expect(_text(t), isNot(contains('Örnek motosiklet özel A')));
-      expect(_cb(t, 'Geçmiş kayıtları'), isNull);
+      expect(_cb(t, 'Geçmiş kayıtları'), isNotNull);
       expect(_cb(t, 'Garaja dön'), isNotNull);
     }
   });
@@ -414,7 +625,7 @@ void main() {
     for (final d in HistoryReadDimension.values) {
       await _pump(t, _view(snapshot: _snapshot(deniedRead: d)));
       expect(_text(t), isNot(contains('Örnek motosiklet özel A')));
-      expect(_cb(t, 'Düzeltme ve itiraz'), isNull);
+      expect(_cb(t, 'Düzeltme ve itiraz'), isNotNull);
     }
     for (final f in EntitlementField.values) {
       await _pump(t, _view(snapshot: _snapshot(deniedField: f)));
@@ -454,19 +665,19 @@ void main() {
   testWidgets(
     'path eski request purpose scope subject ve held izin ödünç alamaz',
     (t) async {
-      final p = _plan();
+      final subject = _snapshot().preservedSubject;
       for (final bad in [
-        _ref('entitlement-path', '${p.subject}/history', request: 'old'),
+        _ref('entitlement-preserved-path', '$subject/history', request: 'old'),
         _ref(
-          'entitlement-path',
-          '${p.subject}/history',
+          'entitlement-preserved-path',
+          '$subject/history',
           scope: _scope(bike: 'B'),
         ),
-        _ref('ALLOW', '${p.subject}/history'),
-        _ref('entitlement-path', 'wrong'),
+        _ref('ALLOW', '$subject/history'),
+        _ref('entitlement-preserved-path', 'wrong'),
         _ref(
-          'entitlement-path',
-          '${p.subject}/history',
+          'entitlement-preserved-path',
+          '$subject/history',
           state: HistoryReferenceState.held,
         ),
       ]) {
