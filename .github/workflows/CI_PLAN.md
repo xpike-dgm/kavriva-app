@@ -124,6 +124,8 @@ used_by:
   - "E-DEV-111"
   - "P-E1-014a"
   - "E-DEV-112"
+  - "P-E1-014b"
+  - "E-DEV-113"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -522,3 +524,10 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 
 
 `vault/PROFILES/lifecycle-render.md`; `vault/PACKS/P-E1-014a.md`; `vault/REGISTRY/T-E1-014a.md`; `vault/EVIDENCE/E-DEV-112.md`.
+
+## Yeni işlem erişimi sunum kapısı doğrulaması
+
+318normal=önceki299+yeni19; nativeayrı1PASS. Format34/0-analyze0.19×9tamkaydırma/50native390×844/52hedef/gerçekklavye/header/disabled/liveRegion/metin4.5iki odak3/fatalpointer. AynıYAML/SDK/deps. GATE üretimHELD tutar;13soru sabit; bağımsızilkoku/bütünhüküm/gerçeksame-headCI/T3 ve ayrıson6metadata beklenir.
+
+
+`vault/PROFILES/entitlement-gate-render.md`; `vault/PACKS/P-E1-014b.md`; `vault/REGISTRY/T-E1-014b.md`; `vault/EVIDENCE/E-DEV-113.md`.
