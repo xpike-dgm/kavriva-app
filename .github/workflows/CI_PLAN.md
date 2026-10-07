@@ -126,6 +126,8 @@ used_by:
   - "E-DEV-112"
   - "P-E1-014b"
   - "E-DEV-113"
+  - "P-E1-015"
+  - "E-DEV-114"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -535,3 +537,22 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 ## T-E1-014b F01 güncel kaynak kanıtı
 
 321normalPASS/strictformat34-0/analyze0;25durum225duyarlı düzen/68native. Korunan dört öz-okuma ve altı yol entitlement metadata kaynağından ayrıldı. Önceki318/19durum/50native reddedilmiş kaynağın tarihidir; taze bağımsız GATE hükmü ve exactsourceCI-T3 beklenir. Üretim enforcement/kimlik/billing/cihaz HELD; ana101/105 değişmez.
+
+## Profil ve paylaşım doğrulaması
+
+345 normal = önceki321 + yeni24; native ayrı1 PASS. Format36/0, analyze0. 23×9 duyarlı düzen, 38 native PNG, tam kaydırma ve gerçek çıkış, klavye/başlık/disabled/liveRegion/kontrast. YAML/SDK/deps değişmedi. Kanonik REVIEW; 20 soru sabit. Bağımsız ilk okuma ve bütün görev hükmü, gerçek aynı CI/T3 ve ayrı son inceleme bekleniyor.
+
+
+`vault/PROFILES/profile-collaboration-render.md`; `vault/PACKS/P-E1-015.md`; `vault/REGISTRY/T-E1-015.md`; `vault/EVIDENCE/E-DEV-114.md`.
+
+## F01 dar onarımı — güncel aday, taze kabul bekleniyor
+
+Özgün kaynak `408aaec7b857bebf77869f02d44c14ef8aa3738d` F01 nedeniyle CHANGES_REQUESTED; başarılı özgün17 CI kabul değildir. Ret raporu 10787 bayt / SHA256 89bda5b1e3b88e15aaa11db7ddfd7b77ad765d8b6a61b7416d49785eadff9f62 aynen korunur. Koddan önce dar onarım `f9fc67cb81368fb9cb06f93990142d10fef96da7`; onarılmış kod `f417d2b9ae39c5a43e52118195025f74ec4cf2cc`.
+
+`_required` artık yalnız boş/yalnız boşluk girdiyi reddeder; geçerli girdiyi trim etmez, bütün karakterleri aynen saklar. Yerel/hesap/motosiklet kimliği, request, hedef, belge alan anahtarı/değeri ve kayıt kimliği/etiketi/kaynağı/tarihi/açıklaması kayıpsızdır. Belirsiz yinelenen alan veya kayıt kimliği normalize edilmiş karşılaştırmayla ayrıca reddedilir; saklanan girdi değiştirilmez. Özgün kenar boşluğu veya satır sonu değişiminde tam subject değişir ve eski izin ödünç alınamaz.
+
+Üç yeni F01 testi: kenar boşluğu/satır sonu/kapsam/anahtar içerik farkları ve boş girdi reddi; yalnız boşluk değişmiş belgenin eski okuma/işlem referanslarını devralamaması; eski callback'in yeni içeriğe istek göndermemesi. Güncel normal toplam 321 önceki +27 yeni =348 PASS. F01 hedef3 PASS; strict format36/0 ve analyze0. Önceki321 ve sabit20 soru değişmedi.
+
+Güncel native R3 ayrı1 PASS; aynı23 durum/207 duyarlı düzen/38 PNG. R3'ün her dosyası, aynı offset/end/indexte ilk okuyucunun R2 dosyasıyla RAW bayt/SHA256 eşit. Root bu onarımda sıfır yeni orijinal görüntü açtı; 38 eşitlik kanıtı kullandı. R2'de gerçekten açılan30 farklı içerik ve sekiz eşit alias, ilk okuma14526 bayt raporu değişmeden korunur. R3 bütün byte eşitliği yeni sahte ilk okuma raporu değildir. Kodun currentness onarımı taze bütün REVIEW ile ayrıca incelenmelidir.
+
+Yerel düzeltme F01'in bağımsız kapanışı değildir. Güncel kaynak CI/T3 ve geçmişsiz bütün R2 inceleme beklenir; henüz DONE veya ana sayı ilerlemesi yok. Sınırlı E1 sunumu; üretim kimlik/yetki/taşıma/paylaşım yazıcıları, Supabase47/57/59, RET97, gerçek cihaz/nav/fiziksel iş ve yayın HELD. Aynı PR116 korunur.

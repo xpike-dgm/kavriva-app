@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e01-app"
 owner: "E1"
 depends_on: [M-E3-001, M-E5-001, M-E4-001]
-used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-MAINT-001, P-E1-010, E-DEV-108, V-E1-HISTORY-001, P-E1-011, E-DEV-109, V-E1-RECORD-001, P-E1-012, E-DEV-110, V-E1-REACHBACK-001, P-E1-013, E-DEV-111, V-E1-LIFECYCLE-001, P-E1-014a, E-DEV-112, V-E1-ENTITLEMENT-001, P-E1-014b, E-DEV-113]
+used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-MAINT-001, P-E1-010, E-DEV-108, V-E1-HISTORY-001, P-E1-011, E-DEV-109, V-E1-RECORD-001, P-E1-012, E-DEV-110, V-E1-REACHBACK-001, P-E1-013, E-DEV-111, V-E1-LIFECYCLE-001, P-E1-014a, E-DEV-112, V-E1-ENTITLEMENT-001, P-E1-014b, E-DEV-113, V-E1-PROFILE-001, P-E1-015, E-DEV-114]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E1"
 public_contracts:
   - "[[modules/e01-app/MANIFEST.md#Public contract surface (only this is usable across boundaries)]]"
 internal_scope: "Flutter widget tree, navigation state, caches, offline reads of E4 packages, in-flight UI state. No direct database access; no Supabase service_role; no signing keys; no canonical truth stored here."
-tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009, T-E1-010, T-E1-011, T-E1-012, T-E1-013, T-E1-014a, T-E1-014b]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/history_test.dart, modules/e01-app/internal/shell/test/record_dispute_test.dart, modules/e01-app/internal/shell/test/correction_reachback_test.dart, modules/e01-app/internal/shell/test/lifecycle_test.dart, modules/e01-app/internal/shell/test/entitlement_gate_test.dart]
-evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107, E-DEV-108, E-DEV-109, E-DEV-110, E-DEV-111, E-DEV-112, E-DEV-113]
+tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009, T-E1-010, T-E1-011, T-E1-012, T-E1-013, T-E1-014a, T-E1-014b, T-E1-015]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/history_test.dart, modules/e01-app/internal/shell/test/record_dispute_test.dart, modules/e01-app/internal/shell/test/correction_reachback_test.dart, modules/e01-app/internal/shell/test/lifecycle_test.dart, modules/e01-app/internal/shell/test/entitlement_gate_test.dart, modules/e01-app/internal/shell/test/profile_collaboration_test.dart]
+evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107, E-DEV-108, E-DEV-109, E-DEV-110, E-DEV-111, E-DEV-112, E-DEV-113, E-DEV-114]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -198,3 +198,22 @@ Kısmi beyan null/yabancı providerresult olmadan güncel scope ile niyet üreti
 ## T-E1-014b F01 güncel kaynak kanıtı
 
 321normalPASS/strictformat34-0/analyze0;25durum225duyarlı düzen/68native. Korunan dört öz-okuma ve altı yol entitlement metadata kaynağından ayrıldı. Önceki318/19durum/50native reddedilmiş kaynağın tarihidir; taze bağımsız GATE hükmü ve exactsourceCI-T3 beklenir. Üretim enforcement/kimlik/billing/cihaz HELD; ana101/105 değişmez.
+
+## Profil, taşıma ve paylaşım
+
+`modules/e01-app/internal/shell/lib/profile_collaboration.dart` özel E1 sunumudur. Profil isteğe bağlı; yerel devam veri taşımayan ayrı niyettir. Taşıma kapsamı ve fark, kısmi/başarısız/geri dönüş ayrımı ve katkı izi korunur. Güncel kaynak/alan/eylem/etki referansları, eski callback ve tekrar gönderim engeli vardır. Gerçek hesap/taşıma/paylaşım yazıcısı veya router eklenmedi.
+
+
+`vault/PROFILES/profile-collaboration-render.md`; `vault/PACKS/P-E1-015.md`; `vault/REGISTRY/T-E1-015.md`; `vault/EVIDENCE/E-DEV-114.md`.
+
+## F01 dar onarımı — güncel aday, taze kabul bekleniyor
+
+Özgün kaynak `408aaec7b857bebf77869f02d44c14ef8aa3738d` F01 nedeniyle CHANGES_REQUESTED; başarılı özgün17 CI kabul değildir. Ret raporu 10787 bayt / SHA256 89bda5b1e3b88e15aaa11db7ddfd7b77ad765d8b6a61b7416d49785eadff9f62 aynen korunur. Koddan önce dar onarım `f9fc67cb81368fb9cb06f93990142d10fef96da7`; onarılmış kod `f417d2b9ae39c5a43e52118195025f74ec4cf2cc`.
+
+`_required` artık yalnız boş/yalnız boşluk girdiyi reddeder; geçerli girdiyi trim etmez, bütün karakterleri aynen saklar. Yerel/hesap/motosiklet kimliği, request, hedef, belge alan anahtarı/değeri ve kayıt kimliği/etiketi/kaynağı/tarihi/açıklaması kayıpsızdır. Belirsiz yinelenen alan veya kayıt kimliği normalize edilmiş karşılaştırmayla ayrıca reddedilir; saklanan girdi değiştirilmez. Özgün kenar boşluğu veya satır sonu değişiminde tam subject değişir ve eski izin ödünç alınamaz.
+
+Üç yeni F01 testi: kenar boşluğu/satır sonu/kapsam/anahtar içerik farkları ve boş girdi reddi; yalnız boşluk değişmiş belgenin eski okuma/işlem referanslarını devralamaması; eski callback'in yeni içeriğe istek göndermemesi. Güncel normal toplam 321 önceki +27 yeni =348 PASS. F01 hedef3 PASS; strict format36/0 ve analyze0. Önceki321 ve sabit20 soru değişmedi.
+
+Güncel native R3 ayrı1 PASS; aynı23 durum/207 duyarlı düzen/38 PNG. R3'ün her dosyası, aynı offset/end/indexte ilk okuyucunun R2 dosyasıyla RAW bayt/SHA256 eşit. Root bu onarımda sıfır yeni orijinal görüntü açtı; 38 eşitlik kanıtı kullandı. R2'de gerçekten açılan30 farklı içerik ve sekiz eşit alias, ilk okuma14526 bayt raporu değişmeden korunur. R3 bütün byte eşitliği yeni sahte ilk okuma raporu değildir. Kodun currentness onarımı taze bütün REVIEW ile ayrıca incelenmelidir.
+
+Yerel düzeltme F01'in bağımsız kapanışı değildir. Güncel kaynak CI/T3 ve geçmişsiz bütün R2 inceleme beklenir; henüz DONE veya ana sayı ilerlemesi yok. Sınırlı E1 sunumu; üretim kimlik/yetki/taşıma/paylaşım yazıcıları, Supabase47/57/59, RET97, gerçek cihaz/nav/fiziksel iş ve yayın HELD. Aynı PR116 korunur.
