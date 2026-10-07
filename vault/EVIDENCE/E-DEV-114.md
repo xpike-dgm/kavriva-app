@@ -19,10 +19,10 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR006 SCR007 SCR034 C1.8/F1.8.1/FL1.8.1 profile v1 REVIEW"
 subject_file: modules/e01-app/internal/shell/lib/profile_collaboration.dart
-subject_digest: a2389d55edcffd0887ae1ca801373e96f56791e60e7513c35f061727c38069da
-result: "Kaynak345 normal ve CI başarılı; F01 nedeniyle kabul reddedildi"
-gate_verdict: "FAIL F01 - bağımsız kaynak CHANGES_REQUESTED; dar onarım bekleniyor"
-reviewer: "/root/e1015_whole_review; requested gpt-6-luna/max"
+subject_digest: 6ae4bd04e5a5a08f38f2d780176e245c095a51e89fc9cd7989d496bebfffa19d
+result: "Onarım348 normal ve ayrı1 native PASS; taze bağımsız REVIEW bekleniyor"
+gate_verdict: "RECORDED F01 yerel onarım - bağımsız kapanış ve yeni CI/T3 bekleniyor"
+reviewer: "R2 bağımsız hüküm bekleniyor; özgün /root/e1015_whole_review CHANGES_REQUESTED korunur"
 timestamp: 2026-10-07
 evidence_links: [vault/PROFILES/profile-collaboration-render.md, vault/PACKS/P-E1-015.md, vault/REGISTRY/T-E1-015.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-113-E10-GOVERNED-PATHS-FOR-T-E1-015.md.snapshot, modules/e01-app/internal/shell/lib/profile_collaboration.dart, modules/e01-app/internal/shell/test/profile_collaboration_test.dart, modules/e01-app/internal/shell/test/fixtures/profile_collaboration_reading_questions.json]
 ---
@@ -414,3 +414,76 @@ PRrun37606754816/t3-gatejob112743999779: 0başarılıadım/skipped.
 - push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37606747153 — SUCCESS; hamlogRAW SHA2567b66d8803d67c1698743f4ecd59120e88d51d25a6c365005aaf2fbcfce810a56/17079byte.
 
 E1gerçekhamlog: strictformat36/0-analyze0-345normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. Push ve ilk labelsiz PR T3SKIPPED0adım bağımsız kabul değildir; etiket sonrası aynı başın PR T3 gerçek adımlarla doğrulandı; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
+
+## F01 dar onarımı — güncel aday, taze kabul bekleniyor
+
+Özgün kaynak `408aaec7b857bebf77869f02d44c14ef8aa3738d` F01 nedeniyle CHANGES_REQUESTED; başarılı özgün17 CI kabul değildir. Ret raporu 10787 bayt / SHA256 89bda5b1e3b88e15aaa11db7ddfd7b77ad765d8b6a61b7416d49785eadff9f62 aynen korunur. Koddan önce dar onarım `f9fc67cb81368fb9cb06f93990142d10fef96da7`; onarılmış kod `f417d2b9ae39c5a43e52118195025f74ec4cf2cc`.
+
+`_required` artık yalnız boş/yalnız boşluk girdiyi reddeder; geçerli girdiyi trim etmez, bütün karakterleri aynen saklar. Yerel/hesap/motosiklet kimliği, request, hedef, belge alan anahtarı/değeri ve kayıt kimliği/etiketi/kaynağı/tarihi/açıklaması kayıpsızdır. Belirsiz yinelenen alan veya kayıt kimliği normalize edilmiş karşılaştırmayla ayrıca reddedilir; saklanan girdi değiştirilmez. Özgün kenar boşluğu veya satır sonu değişiminde tam subject değişir ve eski izin ödünç alınamaz.
+
+Üç yeni F01 testi: kenar boşluğu/satır sonu/kapsam/anahtar içerik farkları ve boş girdi reddi; yalnız boşluk değişmiş belgenin eski okuma/işlem referanslarını devralamaması; eski callback'in yeni içeriğe istek göndermemesi. Güncel normal toplam 321 önceki +27 yeni =348 PASS. F01 hedef3 PASS; strict format36/0 ve analyze0. Önceki321 ve sabit20 soru değişmedi.
+
+Güncel native R3 ayrı1 PASS; aynı23 durum/207 duyarlı düzen/38 PNG. R3'ün her dosyası, aynı offset/end/indexte ilk okuyucunun R2 dosyasıyla RAW bayt/SHA256 eşit. Root bu onarımda sıfır yeni orijinal görüntü açtı; 38 eşitlik kanıtı kullandı. R2'de gerçekten açılan30 farklı içerik ve sekiz eşit alias, ilk okuma14526 bayt raporu değişmeden korunur. R3 bütün byte eşitliği yeni sahte ilk okuma raporu değildir. Kodun currentness onarımı taze bütün REVIEW ile ayrıca incelenmelidir.
+
+Yerel düzeltme F01'in bağımsız kapanışı değildir. Güncel kaynak CI/T3 ve geçmişsiz bütün R2 inceleme beklenir; henüz DONE veya ana sayı ilerlemesi yok. Sınırlı E1 sunumu; üretim kimlik/yetki/taşıma/paylaşım yazıcıları, Supabase47/57/59, RET97, gerçek cihaz/nav/fiziksel iş ve yayın HELD. Aynı PR116 korunur.
+
+### Güncel LF kimlikleri
+
+Kod SHA256 6ae4bd04e5a5a08f38f2d780176e245c095a51e89fc9cd7989d496bebfffa19d; test SHA256 e3deb4dedeb2feb8f393ac26c83d0d9fd8704cd7f313507ead6c57315935f263; sabit20 soru SHA256 f667cbbcc647756a3b152af76494b5f7a1925ddf9039389ba49adadaafe3c3ae.
+
+### Güncel R3 RAW kimlikler ve ilk okuma eşitliği
+
+- kavriva_e1015_native_R3-intro-requested-0.png / RAW SHA256 489663acd27836512fd4497e1aebe29f8b7c5ea5d06d3fbaa80d433be0f53e6f / 68163 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-requested-0.png
+- kavriva_e1015_native_R3-collaboration-expanded-0.png / RAW SHA256 320412e9c9845a7b7237091d5f60443e294dd8dbd6b71130db746f8a34c708df / 68249 bayt /390×844 /offset 0.0 /end 505.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-expanded-0.png
+- kavriva_e1015_native_R3-collaboration-expanded-1.png / RAW SHA256 fa0f6b31b3edd44f0f974ca2ea31da89491cdec557375c35dfba73d2324c4b08 / 63101 bayt /390×844 /offset 505.0 /end 505.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-expanded-1.png
+- kavriva_e1015_native_R3-intro-ready-0.png / RAW SHA256 743a641b3dd55000a2063b4f76a0b36f4039e05f96e44258bc96ed199fd64d5c / 62334 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-ready-0.png
+- kavriva_e1015_native_R3-intro-unknown-0.png / RAW SHA256 984df0772beb1bc2c8c9c46160bc39d88ffea2700040e243e213ec544ff1f338 / 59502 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-unknown-0.png
+- kavriva_e1015_native_R3-intro-stale-0.png / RAW SHA256 984df0772beb1bc2c8c9c46160bc39d88ffea2700040e243e213ec544ff1f338 / 59502 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-stale-0.png
+- kavriva_e1015_native_R3-intro-offline-0.png / RAW SHA256 1930fb3c2fb57a6d8e40d32808fa63b84355a9303eb1b24acab20a7058be713d / 69171 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-offline-0.png
+- kavriva_e1015_native_R3-intro-private-held-0.png / RAW SHA256 6818de271a768712d0498e6acc6aafe703daf7c4f3371349a0eecbb327bba0fe / 59102 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-intro-private-held-0.png
+- kavriva_e1015_native_R3-migration-ready-0.png / RAW SHA256 c0e85ad3ef731ff4a43adac31b2a6ae582a37064fcb53403f8d79102e04bdf28 / 71910 bayt /390×844 /offset 0.0 /end 184.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-ready-0.png
+- kavriva_e1015_native_R3-migration-ready-1.png / RAW SHA256 e45a0dc8a23e7f08cbe6d65ac239a7db90112b0c39f4531a31dc47557f0a1924 / 69351 bayt /390×844 /offset 184.0 /end 184.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-ready-1.png
+- kavriva_e1015_native_R3-migration-unknown-0.png / RAW SHA256 1f20748daa81853dd26d62ac212411caa1ae54a7b51db9354465c2c2b1513775 / 56158 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-unknown-0.png
+- kavriva_e1015_native_R3-migration-stale-0.png / RAW SHA256 1f20748daa81853dd26d62ac212411caa1ae54a7b51db9354465c2c2b1513775 / 56158 bayt /390×844 /offset 0.0 /end 0.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-stale-0.png
+- kavriva_e1015_native_R3-migration-offline-0.png / RAW SHA256 e6d4e210180e6bd9aae1129fc0c127367b6b1c466aade232d184936ebcac033d / 71893 bayt /390×844 /offset 0.0 /end 242.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-offline-0.png
+- kavriva_e1015_native_R3-migration-offline-1.png / RAW SHA256 bdf828fcdf467b3a4203c85d23bf116137e3c2cf825218921fb0e4a634d09c74 / 70153 bayt /390×844 /offset 242.0 /end 242.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-offline-1.png
+- kavriva_e1015_native_R3-migration-private-held-0.png / RAW SHA256 54def6bf73e6f632ed7a583ba5f83127da442fe4a3efd5384e12634aaa8ae10e / 70574 bayt /390×844 /offset 0.0 /end 149.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-private-held-0.png
+- kavriva_e1015_native_R3-migration-private-held-1.png / RAW SHA256 6212dba9bc09afefb4298a60dac67f8e7a0aa69db80a8a18a47dfdbe6c2b819a / 68933 bayt /390×844 /offset 149.0 /end 149.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-private-held-1.png
+- kavriva_e1015_native_R3-collaboration-ready-0.png / RAW SHA256 325fabcd89dcf689f065bb42c1487d6a66adb00f3ca928178db2186154c51859 / 67358 bayt /390×844 /offset 0.0 /end 351.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-ready-0.png
+- kavriva_e1015_native_R3-collaboration-ready-1.png / RAW SHA256 0708b07ee7c92b8ff59e87c0f7cff8454ec8f77f24b6d104f88b3f2a671defef / 64903 bayt /390×844 /offset 351.0 /end 351.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-ready-1.png
+- kavriva_e1015_native_R3-collaboration-unknown-0.png / RAW SHA256 798108d735015d4e36cb82d165e7376999865e3b4b086abcb9a30891cc150ec5 / 66922 bayt /390×844 /offset 0.0 /end 56.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-unknown-0.png
+- kavriva_e1015_native_R3-collaboration-unknown-1.png / RAW SHA256 84e8733eaaab7fd53201c4d29ef4859a7bb4e1a1c706401ed7f20bdfb59fa9b1 / 64549 bayt /390×844 /offset 56.0 /end 56.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-unknown-1.png
+- kavriva_e1015_native_R3-collaboration-stale-0.png / RAW SHA256 798108d735015d4e36cb82d165e7376999865e3b4b086abcb9a30891cc150ec5 / 66922 bayt /390×844 /offset 0.0 /end 56.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-stale-0.png
+- kavriva_e1015_native_R3-collaboration-stale-1.png / RAW SHA256 84e8733eaaab7fd53201c4d29ef4859a7bb4e1a1c706401ed7f20bdfb59fa9b1 / 64549 bayt /390×844 /offset 56.0 /end 56.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-stale-1.png
+- kavriva_e1015_native_R3-collaboration-offline-0.png / RAW SHA256 6c30f8c869b6080afeec4b4a089242f8105a6ba82051095ea772c3481bbba180 / 67418 bayt /390×844 /offset 0.0 /end 409.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-offline-0.png
+- kavriva_e1015_native_R3-collaboration-offline-1.png / RAW SHA256 9d6228371555bf61fbcd4e903bb02df4917e6c9ea6350817449f3fa3cef8a1b5 / 64692 bayt /390×844 /offset 409.0 /end 409.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-offline-1.png
+- kavriva_e1015_native_R3-collaboration-private-held-0.png / RAW SHA256 b6395eeafcae8915312578a21da62de7ed15f6f726be116b69a6c3496373f8ca / 66413 bayt /390×844 /offset 0.0 /end 316.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-private-held-0.png
+- kavriva_e1015_native_R3-collaboration-private-held-1.png / RAW SHA256 aa327beecfda6efd7e22b37d683ba4b6f1eeefe791ac6d88bc95dfc6e1a46201 / 65002 bayt /390×844 /offset 316.0 /end 316.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-private-held-1.png
+- kavriva_e1015_native_R3-migration-conflict-0.png / RAW SHA256 e55b58ee6d4221ca2215f3ddc5adca7b86e8def1c0c0717aaa6c24b4e94908b9 / 69112 bayt /390×844 /offset 0.0 /end 317.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-conflict-0.png
+- kavriva_e1015_native_R3-migration-conflict-1.png / RAW SHA256 e573bab2d589b617b65268c8f8f7091257688e9fc464a2ead5746091a3f05b85 / 65770 bayt /390×844 /offset 317.0 /end 317.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-conflict-1.png
+- kavriva_e1015_native_R3-migration-partial-0.png / RAW SHA256 088a96709c48c7b882523742ff833ca63f0d314806d02c95bc2a87039b82c1cb / 67738 bayt /390×844 /offset 0.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-partial-0.png
+- kavriva_e1015_native_R3-migration-partial-1.png / RAW SHA256 e573bab2d589b617b65268c8f8f7091257688e9fc464a2ead5746091a3f05b85 / 65770 bayt /390×844 /offset 271.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-partial-1.png
+- kavriva_e1015_native_R3-migration-failed-0.png / RAW SHA256 990c363d0cafe721cf60456af5ce9178111ad983dfd89fe295eaf63fff5e16bb / 68841 bayt /390×844 /offset 0.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-failed-0.png
+- kavriva_e1015_native_R3-migration-failed-1.png / RAW SHA256 e573bab2d589b617b65268c8f8f7091257688e9fc464a2ead5746091a3f05b85 / 65770 bayt /390×844 /offset 271.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-failed-1.png
+- kavriva_e1015_native_R3-migration-rollback-0.png / RAW SHA256 9b19553957d5c498f4e7c771fc35d0702bb925026f6b9bc5c3d207466db11359 / 70852 bayt /390×844 /offset 0.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-rollback-0.png
+- kavriva_e1015_native_R3-migration-rollback-1.png / RAW SHA256 e573bab2d589b617b65268c8f8f7091257688e9fc464a2ead5746091a3f05b85 / 65770 bayt /390×844 /offset 271.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-rollback-1.png
+- kavriva_e1015_native_R3-migration-completed-0.png / RAW SHA256 1bcbe0054365222356941a78adfa18fcb33bc138318df09ed315b476b3e81e4d / 68536 bayt /390×844 /offset 0.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-completed-0.png
+- kavriva_e1015_native_R3-migration-completed-1.png / RAW SHA256 6d1a35f7158c07856e2cd9f5ab0d9b1d4f096d07c08eb5904f68ca268bd9f94a / 63933 bayt /390×844 /offset 271.0 /end 271.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-migration-completed-1.png
+- kavriva_e1015_native_R3-collaboration-revoked-0.png / RAW SHA256 a658ede6e9cf67dc826e273dfdf636e3655cf5f75c8095035c8aee245e6ea507 / 69501 bayt /390×844 /offset 0.0 /end 397.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-revoked-0.png
+- kavriva_e1015_native_R3-collaboration-revoked-1.png / RAW SHA256 aa327beecfda6efd7e22b37d683ba4b6f1eeefe791ac6d88bc95dfc6e1a46201 / 65002 bayt /390×844 /offset 397.0 /end 397.0 /ilk okuma R2 dosyasına bayt eşit: kavriva_e1015_native_R2-collaboration-revoked-1.png
+
+### Onarım ham günlükleri
+
+- kavriva_e1015_f01_analyze_R1.log /RAW SHA256 bb82cf4af1a9221349dff4819f19f9af7597bcd3df5fdc0c9f2b257bf8fd80e4 /385 bayt
+- kavriva_e1015_f01_format_R1.log /RAW SHA256 ab1f2db8138dfbabff7f6141c3225d8c99f5b6e9276763f0fefb0aa7162c2361 /49 bayt
+- kavriva_e1015_f01_full_R1.log /RAW SHA256 9677f4055159de02bb8b6d43a890805a04bca5ea34b9571f04b653fd29e90e36 /77554 bayt
+- kavriva_e1015_f01_target_R1.log /RAW SHA256 a0f94222017d6e6ab551bfa03a9f2c7d1839878e344819e882a9298bc9ec72ef /760 bayt
+- kavriva_e1015_native_R3.log /RAW SHA256 b0e3b2d040047f2239fade7ec8c5e2f670edbe2f7a01b355b828544b483f7c57 /552 bayt
+
+Onarım run_all R1, task metnindeki ayrı HELD etiketi için Markdown içinde kanıt bağlantısı bulunmadığını bildirdi. Task gövdesine mevcut E-DEV-114 ve P-E1-015 bağları açıkça eklendi; yeni otorite veya bağımlılık yaratılmadı. Özgün R1 günlük korunur.
+
+R2 denemesinde yalnız kayıt kimlikleri kullanılması dosya bağlantısı sayılmadı. R3 görev gövdesindeki bağları gerçek .md adresleriyle yazar; R1/R2 günlükleri korunur.
+
+## Bütün kaynak incelemesine hazırlık
+
+R3 run_all: 12 kontrol ve 42 koruma/iz testi PASS, worst0. Özgün F01 bağımsız ret ve onarım R1/R2 kayıt bağlantısı hataları korunur. 348 normal, format36/0, analyze0, ayrı native1 PASS ve 20 yanıt ilk okuma kaydedildi. Görev REVIEW; bütün bağımsız hüküm ve gerçek aynı kaynak CI/T3 bekleniyor. Ana 102 DONE/104 kalan/206 değişmez.
