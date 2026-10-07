@@ -1104,7 +1104,7 @@
    ],
    "evidence": "E-DEV-113",
    "supersedes": "planning TASK_INDEX T-E1-014b",
-   "status": "REVIEW"
+   "status": "CHANGES_REQUESTED"
   },
   {
    "task_id": "T-E10-001",
