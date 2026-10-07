@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "task": "T-E1-014a",
+  "methodSource": "GATE: HELD-acceptance evaluation; gönüllü sabit ekran ilk okuması insan/telefon kanıtı değildir",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max yalnız native ekranlar ve soruları okur",
+  "passRule": "17 yanıtın tümü yardım olmadan anlamca doğru; belirsizlik dar onarım ve yeni bağımsız ilk okuma gerektirir",
+  "questions": [
+    "Etkin değil yapmak ile silmek aynı şey mi? Geçmişe ne olur?",
+    "Geçmişi aktarmak motosiklette bakımın doğru yapıldığını kanıtlar mı?",
+    "Aktarılan kapsam motosikletin bütün geçmişi mi? Seçilmeyen dönemlere ne olur?",
+    "Özel notlar ve hassas görseller aktarım kapsamına giriyor mu?",
+    "Kaynak, önceki katkı, düzeltme ve uyuşmazlık izleri aktarımda ne olur?",
+    "Silme isteği başka kişilerin bağımsız kanıtlarını ve daha önce aktarılmış kopyaları kaldırır mı?",
+    "Silmeden önce hangi kapsamı kontrol etmelisin ve hangi açık onay gerekli?",
+    "Silmek istemezsen geçmişi koruyan hangi seçenek var?",
+    "İnaktif bir motosiklette geçmiş, kritik düzeltme ve başlamış işin güvenli dönüşü pakete bağlanır mı?",
+    "Bir motosikleti yeniden etkinleştirmek bakımın güncel fiziksel uygunluğunu kendiliğinden doğrular mı?",
+    "Ücretsiz kaç motosiklet, abonelikle toplam kaç motosiklet ve aynı anda kaç motosiklette tam rehber var?",
+    "Rehber için başka motosiklet seçmek önceki hakkın üstüne ek hak yaratır mı?",
+    "Güncel kapsam veya okuma izni alınamadığında özel verileri görebilir ya da silme isteğini gönderebilir misin?",
+    "Çevrimdışı veya sonucu kesinleşmemiş bir işlemde aynı silme/aktarım isteğini yeniden göndermek doğru mu?",
+    "Ekranda isteğin alındığı yazması silmenin veya aktarımın tamamlandığını kanıtlar mı?",
+    "Saklama, yedekler ve hukuk konularında kesin sonuç bu ekrandan çıkarılabilir mi?",
+    "Aktarım kapsamını onaylamak hedef kişiyi seçmek veya aktarımı tamamlamak mı?"
+  ]
+}
