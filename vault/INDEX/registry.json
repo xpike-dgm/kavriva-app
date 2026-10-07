@@ -1170,6 +1170,72 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-016",
+   "version": "2",
+   "flow_feature": "FL1.9.1/F1.9.1",
+   "objective": "Açık topluluk paylaşımı ve resmî rehberden ayrı inceleme sunumu",
+   "context_pack": "P-E1-016",
+   "acceptance": "Opt-in flows; decisions in E2; REVIEW assignment",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-07",
+   "purpose": "Topluluk deneyimlerini resmî rehberden ayıran açık paylaşım ve inceleme sunumu",
+   "domain": "community",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-001",
+    "ADR-004",
+    "ADR-005",
+    "ADR-008",
+    "C1.9",
+    "F1.9.1",
+    "SCR-035",
+    "SCR-036",
+    "SCR-038",
+    "BR-065",
+    "BR-066",
+    "BR-067",
+    "BR-069",
+    "BR-089",
+    "BR-090",
+    "BR-091",
+    "BR-092",
+    "CON-001",
+    "CON-002",
+    "CON-003",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "community-presentation",
+   "tasks": [
+    "T-E1-016"
+   ],
+   "tests": [
+    "modules/e01-app/internal/shell/test/community_test.dart",
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-07",
+   "depends_on": [
+    "T-E1-001"
+   ],
+   "used_by": [
+    "V-E1-COMMUNITY-001",
+    "T-E1-016",
+    "E-DEV-115"
+   ],
+   "evidence": "E-DEV-115",
+   "supersedes": "planning TASK_INDEX T-E1-016",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
