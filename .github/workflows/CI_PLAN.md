@@ -126,6 +126,8 @@ used_by:
   - "E-DEV-112"
   - "P-E1-014b"
   - "E-DEV-113"
+  - "P-E1-015"
+  - "E-DEV-114"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -535,3 +537,10 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 ## T-E1-014b F01 güncel kaynak kanıtı
 
 321normalPASS/strictformat34-0/analyze0;25durum225duyarlı düzen/68native. Korunan dört öz-okuma ve altı yol entitlement metadata kaynağından ayrıldı. Önceki318/19durum/50native reddedilmiş kaynağın tarihidir; taze bağımsız GATE hükmü ve exactsourceCI-T3 beklenir. Üretim enforcement/kimlik/billing/cihaz HELD; ana101/105 değişmez.
+
+## Profil ve paylaşım doğrulaması
+
+345 normal = önceki321 + yeni24; native ayrı1 PASS. Format36/0, analyze0. 23×9 duyarlı düzen, 38 native PNG, tam kaydırma ve gerçek çıkış, klavye/başlık/disabled/liveRegion/kontrast. YAML/SDK/deps değişmedi. Kanonik REVIEW; 20 soru sabit. Bağımsız ilk okuma ve bütün görev hükmü, gerçek aynı CI/T3 ve ayrı son inceleme bekleniyor.
+
+
+`vault/PROFILES/profile-collaboration-render.md`; `vault/PACKS/P-E1-015.md`; `vault/REGISTRY/T-E1-015.md`; `vault/EVIDENCE/E-DEV-114.md`.

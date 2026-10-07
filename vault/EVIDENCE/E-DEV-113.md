@@ -13,7 +13,7 @@ tests: [modules/e01-app/internal/shell/test/entitlement_gate_test.dart, modules/
 superseded_by: []
 last_verified: 2026-10-07
 depends_on: [V-E1-ENTITLEMENT-001]
-used_by: [V-E1-ENTITLEMENT-001, P-E1-014b, T-E1-014b]
+used_by: [V-E1-ENTITLEMENT-001, P-E1-014b, T-E1-014b, V-E1-PROFILE-001, P-E1-015]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -1154,3 +1154,121 @@ PRrun37564366277/t3-gatejob112608604940: 5başarılıadım/success.
 - push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37564362884 — SUCCESS; hamlogRAW SHA256bf14cdad5acc98ac4599602cfeb12bcd7addc7b43702db9f16c65cfd88e4633c/17046byte.
 
 E1gerçekhamlog: strictformat34/0-analyze0-321normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. PushT3SKIPPED0adım bağımsız kabul değildir; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
+
+## T015 tüketimi ve gerçek PR115 ikincil kabul makbuzu
+
+[PR115](https://github.com/xpike-dgm/kavriva-app/pull/115) normal eşleşen başla birleşti. Kaynak `21d1485157777b0b6d4d8a1a78596abaa8c680e1` bağımsız FULL PASS; son `749aa2c033668b88e467bce32175fbecfbb9e38c` ayrı PASS. Gerçek kaynak16, son16 ve ana8 workflow/job/adım/ham günlük başarılı. Merge ve fetched main `9f02dc013bff0d49256dcbb030a9d68d94603085`, tree eşit. Gerçek ana 102 sınırlı DONE /104 kalan /206. T014b sınırlı sunum GATE kabulüdür; üretim kapanışı veya bu T015 görevinin kabulü değildir. Özgün ret, rapor ve eski kanıt gövdesi korunur.
+
+### Özgün bağımsız son rapor, değiştirilmeden
+
+RAW 6910 bayt / SHA256 20014c28c249f747719dc3b64d3efd97c4cdefb7774c6b6a3848f132abdd60f9
+
+<pre>BAĞIMSIZ SON METADATA KABUL İNCELEMESİ — PASS
+T-E1-014b / SCR-037 / C1.7 / F1.7.1 / FL1.7.1
+Tarih: 2026-10-07
+İncelemeci: /root/e1014b_final_metadata_review — implementer Root’tan ayrı reviewer
+İstenen inceleme bağlamı: gpt-6-luna/max
+
+HÜKÜM
+PASS — yalnızca aşağıdaki FINAL başındaki altı dosyalı metadata adayı ve sınırlı E1 sunum GATE kaydı için. Bu hüküm ana dala kabul/merge, gerçek görev sayımında ilerleme veya üretim/entitlement enforcement onayı değildir. Bu incelemede bu kapsam içinde kabulü durduran bulgu bulmadım.
+
+1. Özne ve otorite
+
+Repo: C:\Users\Xpike\.codex\worktrees\e4-required-auto-transfer\kavriva-app
+PR: https://github.com/xpike-dgm/kavriva-app/pull/115
+Kabul edilmiş main/base: 2471734750e723ab7af5cb84f6676155ca26960f
+SOURCE: 21d1485157777b0b6d4d8a1a78596abaa8c680e1
+İncelenen FINAL: 749aa2c033668b88e467bce32175fbecfbb9e38c
+Plan pimi: C:\Users\Xpike\Desktop\Kavriva-plan, fa914f013fdcd032faed876689092da245989459
+Kanonik yöntem: GATE / HELD-acceptance evaluation; SIMULATION veya production enforcement değildir.
+
+Sabit planın DEC-0068/0069, PACK_STANDARD, TASK_INDEX, DEPENDENCY_GRAPH, ACCEPTANCE_MATRIX ve PHASE_GATES kayıtlarıyla karşılaştırdım. DEC-0069, ayrı ve sahibi tarafından kabul edilen delegated review’un T3 second-eye olmasına izin verir; reviewer hükmü tek başına task’ı DONE yapmaz. P-E1-014b:49 görev kabulünün exact-head review/CI ve main8 doğrulamasından sonra sayılacağını, üretim yetki GATE’inin HELD kaldığını söyler.
+
+2. Metadata diff’i ve status sınırı
+
+SOURCE→FINAL gerçek diff’i tam altı dosyadır:
+
+- vault/PROFILES/entitlement-gate-render.md
+- vault/PACKS/P-E1-014b.md
+- vault/REGISTRY/T-E1-014b.md
+- vault/EVIDENCE/E-DEV-113.md
+- vault/INDEX/registry.json
+- vault/INDEX/routing.json
+
+Diff’in kalan içeriği beklenen status ve E-DEV-113 kanıt kaydı eklerinden oluşur. Profile status ACTIVE (line 19), pack status ACTIVE (line 20), task status DONE (line 25; generated registry line 1107 ve routing line 21) olarak adaylanmış; E-DEV-113 status RECORDED kalmıştır. Kod, test, sabit 13 soru fixture’ı, native görüntüler, SDK/dependency, workflow YAML, E3/E5 kayıtları veya önceki ret gövdeleri bu SOURCE→FINAL farkında değişmemiştir. Worktree temizdir; git diff --check temizdir.
+
+Bu status değerleri unmerged PR dalındaki önerilen registry görünümüdür. Canlı main/base 2471734 içinde T-E1-014b task satırı yoktur. E-DEV-113:1028, task’ın DONE/main sayımı olmadığını; normal merge ve fetched-main8 olmadan genel sayımın 101 DONE / 105 kalan / 206 toplam olarak kalacağını; E3R1 REVIEW ve E5 IN_PROGRESS ile üretim kapılarının HELD olduğunu açıkça sınırlar. Bu nedenle DONE dal adayı main kabulü veya ana sayım artışı olarak sunulmamıştır. Merge ve main8 koşulu beklemededir.
+
+Önceki bağımsız R2 whole-source raporunun FULL PASS’ı sadece SOURCE 21d1485 üzerindeki dar E1 sunum GATE’ine ilişkindir. E-DEV-113:1022’de kaynak bulgusu olmadığını kaydeder; aynı dosya:1024-1028 üretim enforcement ve ana görev tamamlanması iddiasını dışlar. Önceki 18fbc ret hükmü geri alınmamış, eski F-01/P1 geçmişi korunmuştur.
+
+3. Kanıt custody
+
+E-DEV-113 içindeki dört tam raporun HTML içeriği HTML entity decode sonrası özgün Temp dosyalarına karakter karakter eşittir. Dört Base64 bloğu özgün ham dosyaların boyut/SHA-256 değerleriyle eşleşir:
+
+- İlk bağımsız okuma: 4.153 bayt, SHA-256 1f24efa76a0046a67dd64f7a4f64b385b001af02157a4eb085f4960f821dffa8
+- Önceki reddedilmiş whole-source raporu: 11.890 bayt, SHA-256 726c1908467c4aff5b25e57adce4fd589a45685980fa8edf2ac800f6367e7285
+- R2 ilk okuma: 6.393 bayt, SHA-256 3a94dad4668fa55b9d52412d3d115aecdd96ee5ca039f19a693eeafa19efc348
+- R2 whole-source raporu: 14.639 bayt, SHA-256 7e8f88d0848a9a81ef83884d51c3b8de77a4c0525c560d7cdabb8b370d5182ee
+
+Önceki ret ve ilk okuma içerikleri değiştirilmemiştir. R2 raporunun hükmü ve sınırları burada kaynak kabulünün yerine geçirilmemiştir.
+
+4. FINAL aynı-baş CI/T3 ve canlı GitHub
+
+PR 115’i canlı olarak kontrol ettim: OPEN, Draft; headRefOid FINAL 749aa2c033668b88e467bce32175fbecfbb9e38c ile eşleşiyor. Merge yapılmamış. gh run list --commit FINAL 16 tamamlanmış run gösteriyor: 8 push ve 8 pull_request; tamamı exact FINAL head ve SUCCESS.
+
+- PR architecture run 37565655150: checks job 112612640156 SUCCESS; 7 gerçek adım. T3 job 112612639963 SUCCESS; 5 gerçek adım, “T3 conformance + identity gate” dahil.
+- PR E1 run 37565655141: job 112612639470 SUCCESS; 7/7 gerçek adım. Ham log 321 normal test PASS, format 34 dosya / 0 değişiklik ve analyze 0 issue kaydediyor.
+- Final architecture günlük çıktısı run-all: worst exit = 0; koruma/kimlik testleri 42/42 PASS.
+- Push architecture run 37565651533 içindeki T3 job SKIPPED ve sıfır adımlıdır; T3 kanıtı olarak sayılmamıştır. PR run’ındaki beş gerçek T3 adımı başarıyla tamamlanmıştır.
+
+kavriva_e1014b_final_jobs_logs.json içindeki 16 run kaydının exact head/event/status/conclusion bilgilerini canlı GitHub ile karşılaştırdım. JSON’un işaret ettiği 16 ham logun her birinde gerçek dosya uzunluğu ve SHA-256 tekrar eşleşti; 18 job kaydında başarısızlık yok ve yukarıdaki push T3 skip’i beklenen tek istisnadır. Makbuz 4.016 bayt / SHA-256 0055b3f15a5f3ee1d28511841ce3abd8c54f718048f277132b1621f25c48f37d; jobs/log JSON 49.140 bayt / SHA-256 723ba1c3cbb26f55dbaecf7e695407d880b6b5bf0f0cf38835913a9807b9025d. Bu CI, bağımsız reviewer hükmü yerine geçmez ve üretim kabulü değildir.
+
+FINAL commit açıklamasındaki “son inceleme/CI bekleniyor” cümleleri commit oluşturulurken bekleyen durumun zaman damgalı kaydıdır. Bu rapor ve FINAL CI/T3 makbuzu sonraki review olaylarını doğrular. İnceleme sırasında repo değiştirilmemiştir.
+
+5. Bulgular ve açık sınırlar
+
+Altı dosyalı metadata adayı, status sınırı, generated registry/routing uyumu, E-DEV-113 rapor custody’si ve aynı-baş CI/T3 kanıtı için kabulü durduran bulgu yoktur.
+
+Canlı PR sayfasının ilk okumasında eski bekleyen-review/CI açıklaması görünüyordu. Sonraki canlı tekrar kontrolde açıklama ve yorum 6030166611 exact FINAL CI/T3 makbuzunu içeriyor; review’un sürmekte olduğunu belirtiyor. Bu gözlem zaman damgalı tutulmuştur. En son görülen PR durumu OPEN/Draft ve aynı FINAL başıdır. Bu rapor PR’ı onaylamaz veya merge etmez.
+
+Bu hüküm gerçek uygulamada entitlement/yetki, E3/E5, identity, quota/billing, gerçek router/navigation, fiziksel durum/recovery, cihaz/OS/screen reader veya release/production kabulü sağlamaz. Bunlar HELD kalır. Genel main sayımı 101/105/206 olarak kalır; normal merge ve fetched-main8 bu incelemeden sonra yapılacak ayrı koşullardır.
+</pre>
+
+```text
+QkHEnklNU0laIFNPTiBNRVRBREFUQSBLQUJVTCDEsE5DRUxFTUVTxLAg4oCUIFBBU1MKVC1FMS0wMTRiIC8gU0NSLTAzNyAvIEMxLjcgLyBGMS43LjEgLyBGTDEuNy4xClRhcmloOiAyMDI2LTEwLTA3CsSwbmNlbGVtZWNpOiAvcm9vdC9lMTAxNGJfZmluYWxfbWV0YWRhdGFfcmV2aWV3IOKAlCBpbXBsZW1lbnRlciBSb2904oCZdGFuIGF5csSxIHJldmlld2VyCsSwc3RlbmVuIGluY2VsZW1lIGJhxJ9sYW3EsTogZ3B0LTYtbHVuYS9tYXgKCkjDnEvDnE0KUEFTUyDigJQgeWFsbsSxemNhIGHFn2HEn8SxZGFraSBGSU5BTCBiYcWfxLFuZGFraSBhbHTEsSBkb3N5YWzEsSBtZXRhZGF0YSBhZGF5xLEgdmUgc8SxbsSxcmzEsSBFMSBzdW51bSBHQVRFIGtheWTEsSBpw6dpbi4gQnUgaMO8a8O8bSBhbmEgZGFsYSBrYWJ1bC9tZXJnZSwgZ2Vyw6dlayBnw7ZyZXYgc2F5xLFtxLFuZGEgaWxlcmxlbWUgdmV5YSDDvHJldGltL2VudGl0bGVtZW50IGVuZm9yY2VtZW50IG9uYXnEsSBkZcSfaWxkaXIuIEJ1IGluY2VsZW1lZGUgYnUga2Fwc2FtIGnDp2luZGUga2FidWzDvCBkdXJkdXJhbiBidWxndSBidWxtYWTEsW0uCgoxLiDDlnpuZSB2ZSBvdG9yaXRlCgpSZXBvOiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcd29ya3RyZWVzXGU0LXJlcXVpcmVkLWF1dG8tdHJhbnNmZXJca2F2cml2YS1hcHAKUFI6IGh0dHBzOi8vZ2l0aHViLmNvbS94cGlrZS1kZ20va2F2cml2YS1hcHAvcHVsbC8xMTUKS2FidWwgZWRpbG1pxZ8gbWFpbi9iYXNlOiAyNDcxNzM0NzUwZTcyM2FiN2FmNWNiODRmNjY3NjE1NWNhMjY5NjBmClNPVVJDRTogMjFkMTQ4NTE1Nzc3N2IwYjZkNGQ4YTFhNzg1OTZhYmFhOGM2ODBlMQrEsG5jZWxlbmVuIEZJTkFMOiA3NDlhYTJjMDMzNjY4Yjg4ZTQ2N2JjZTMyMTc1ZmJlY2ZiYjllMzhjClBsYW4gcGltaTogQzpcVXNlcnNcWHBpa2VcRGVza3RvcFxLYXZyaXZhLXBsYW4sIGZhOTE0ZjAxM2ZkY2QwMzJmYWVkODc2Njg5MDkyZGEyNDU5ODk0NTkKS2Fub25payB5w7ZudGVtOiBHQVRFIC8gSEVMRC1hY2NlcHRhbmNlIGV2YWx1YXRpb247IFNJTVVMQVRJT04gdmV5YSBwcm9kdWN0aW9uIGVuZm9yY2VtZW50IGRlxJ9pbGRpci4KClNhYml0IHBsYW7EsW4gREVDLTAwNjgvMDA2OSwgUEFDS19TVEFOREFSRCwgVEFTS19JTkRFWCwgREVQRU5ERU5DWV9HUkFQSCwgQUNDRVBUQU5DRV9NQVRSSVggdmUgUEhBU0VfR0FURVMga2F5xLF0bGFyxLF5bGEga2FyxZ/EsWxhxZ90xLFyZMSxbS4gREVDLTAwNjksIGF5csSxIHZlIHNhaGliaSB0YXJhZsSxbmRhbiBrYWJ1bCBlZGlsZW4gZGVsZWdhdGVkIHJldmlld+KAmXVuIFQzIHNlY29uZC1leWUgb2xtYXPEsW5hIGl6aW4gdmVyaXI7IHJldmlld2VyIGjDvGttw7wgdGVrIGJhxZ/EsW5hIHRhc2vigJnEsSBET05FIHlhcG1hei4gUC1FMS0wMTRiOjQ5IGfDtnJldiBrYWJ1bMO8bsO8biBleGFjdC1oZWFkIHJldmlldy9DSSB2ZSBtYWluOCBkb8SfcnVsYW1hc8SxbmRhbiBzb25yYSBzYXnEsWxhY2HEn8SxbsSxLCDDvHJldGltIHlldGtpIEdBVEXigJlpbmluIEhFTEQga2FsZMSxxJ/EsW7EsSBzw7Z5bGVyLgoKMi4gTWV0YWRhdGEgZGlmZuKAmWkgdmUgc3RhdHVzIHPEsW7EsXLEsQoKU09VUkNF4oaSRklOQUwgZ2Vyw6dlayBkaWZm4oCZaSB0YW0gYWx0xLEgZG9zeWFkxLFyOgoKLSB2YXVsdC9QUk9GSUxFUy9lbnRpdGxlbWVudC1nYXRlLXJlbmRlci5tZAotIHZhdWx0L1BBQ0tTL1AtRTEtMDE0Yi5tZAotIHZhdWx0L1JFR0lTVFJZL1QtRTEtMDE0Yi5tZAotIHZhdWx0L0VWSURFTkNFL0UtREVWLTExMy5tZAotIHZhdWx0L0lOREVYL3JlZ2lzdHJ5Lmpzb24KLSB2YXVsdC9JTkRFWC9yb3V0aW5nLmpzb24KCkRpZmbigJlpbiBrYWxhbiBpw6dlcmnEn2kgYmVrbGVuZW4gc3RhdHVzIHZlIEUtREVWLTExMyBrYW7EsXQga2F5ZMSxIGVrbGVyaW5kZW4gb2x1xZ91ci4gUHJvZmlsZSBzdGF0dXMgQUNUSVZFIChsaW5lIDE5KSwgcGFjayBzdGF0dXMgQUNUSVZFIChsaW5lIDIwKSwgdGFzayBzdGF0dXMgRE9ORSAobGluZSAyNTsgZ2VuZXJhdGVkIHJlZ2lzdHJ5IGxpbmUgMTEwNyB2ZSByb3V0aW5nIGxpbmUgMjEpIG9sYXJhayBhZGF5bGFubcSxxZ87IEUtREVWLTExMyBzdGF0dXMgUkVDT1JERUQga2FsbcSxxZ90xLFyLiBLb2QsIHRlc3QsIHNhYml0IDEzIHNvcnUgZml4dHVyZeKAmcSxLCBuYXRpdmUgZ8O2csO8bnTDvGxlciwgU0RLL2RlcGVuZGVuY3ksIHdvcmtmbG93IFlBTUwsIEUzL0U1IGthecSxdGxhcsSxIHZleWEgw7ZuY2VraSByZXQgZ8O2dmRlbGVyaSBidSBTT1VSQ0XihpJGSU5BTCBmYXJrxLFuZGEgZGXEn2nFn21lbWnFn3Rpci4gV29ya3RyZWUgdGVtaXpkaXI7IGdpdCBkaWZmIC0tY2hlY2sgdGVtaXpkaXIuCgpCdSBzdGF0dXMgZGXEn2VybGVyaSB1bm1lcmdlZCBQUiBkYWzEsW5kYWtpIMO2bmVyaWxlbiByZWdpc3RyeSBnw7Zyw7xuw7xtw7xkw7xyLiBDYW5sxLEgbWFpbi9iYXNlIDI0NzE3MzQgacOnaW5kZSBULUUxLTAxNGIgdGFzayBzYXTEsXLEsSB5b2t0dXIuIEUtREVWLTExMzoxMDI4LCB0YXNr4oCZxLFuIERPTkUvbWFpbiBzYXnEsW3EsSBvbG1hZMSxxJ/EsW7EsTsgbm9ybWFsIG1lcmdlIHZlIGZldGNoZWQtbWFpbjggb2xtYWRhbiBnZW5lbCBzYXnEsW3EsW4gMTAxIERPTkUgLyAxMDUga2FsYW4gLyAyMDYgdG9wbGFtIG9sYXJhayBrYWxhY2HEn8SxbsSxOyBFM1IxIFJFVklFVyB2ZSBFNSBJTl9QUk9HUkVTUyBpbGUgw7xyZXRpbSBrYXDEsWxhcsSxbsSxbiBIRUxEIG9sZHXEn3VudSBhw6fEsWvDp2Egc8SxbsSxcmxhci4gQnUgbmVkZW5sZSBET05FIGRhbCBhZGF5xLEgbWFpbiBrYWJ1bMO8IHZleWEgYW5hIHNhecSxbSBhcnTEscWfxLEgb2xhcmFrIHN1bnVsbWFtxLHFn3TEsXIuIE1lcmdlIHZlIG1haW44IGtvxZ91bHUgYmVrbGVtZWRlZGlyLgoKw5ZuY2VraSBiYcSfxLFtc8SxeiBSMiB3aG9sZS1zb3VyY2UgcmFwb3J1bnVuIEZVTEwgUEFTU+KAmcSxIHNhZGVjZSBTT1VSQ0UgMjFkMTQ4NSDDvHplcmluZGVraSBkYXIgRTEgc3VudW0gR0FUReKAmWluZSBpbGnFn2tpbmRpci4gRS1ERVYtMTEzOjEwMjLigJlkZSBrYXluYWsgYnVsZ3VzdSBvbG1hZMSxxJ/EsW7EsSBrYXlkZWRlcjsgYXluxLEgZG9zeWE6MTAyNC0xMDI4IMO8cmV0aW0gZW5mb3JjZW1lbnQgdmUgYW5hIGfDtnJldiB0YW1hbWxhbm1hc8SxIGlkZGlhc8SxbsSxIGTEscWfbGFyLiDDlm5jZWtpIDE4ZmJjIHJldCBow7xrbcO8IGdlcmkgYWzEsW5tYW3EscWfLCBlc2tpIEYtMDEvUDEgZ2XDp21pxZ9pIGtvcnVubXXFn3R1ci4KCjMuIEthbsSxdCBjdXN0b2R5CgpFLURFVi0xMTMgacOnaW5kZWtpIGTDtnJ0IHRhbSByYXBvcnVuIEhUTUwgacOnZXJpxJ9pIEhUTUwgZW50aXR5IGRlY29kZSBzb25yYXPEsSDDtnpnw7xuIFRlbXAgZG9zeWFsYXLEsW5hIGthcmFrdGVyIGthcmFrdGVyIGXFn2l0dGlyLiBEw7ZydCBCYXNlNjQgYmxvxJ91IMO2emfDvG4gaGFtIGRvc3lhbGFyxLFuIGJveXV0L1NIQS0yNTYgZGXEn2VybGVyaXlsZSBlxZ9sZcWfaXI6CgotIMSwbGsgYmHEn8SxbXPEsXogb2t1bWE6IDQuMTUzIGJheXQsIFNIQS0yNTYgMWYyNGVmYTc2YTAwNDZhNjdkZDY0ZjdhNGY2NGIzODViMDAxYWYwMjE1N2E0ZWIwODVmNDk2MGY4MjFkZmZhOAotIMOWbmNla2kgcmVkZGVkaWxtacWfIHdob2xlLXNvdXJjZSByYXBvcnU6IDExLjg5MCBiYXl0LCBTSEEtMjU2IDcyNmMxOTA4NDY3YzRhZmY1YjI1ZTU3YWRjZTRmZDU4OWE0NTY4NTk4MGZhOGVkZjJhYzgwMGY2MzY3ZTcyODUKLSBSMiBpbGsgb2t1bWE6IDYuMzkzIGJheXQsIFNIQS0yNTYgM2E5NGRhZDQ2NjhmYTU1YjlkNTI0MTJkM2QxMTVhZWNkZDk2ZWU1Y2EwMzlmMTlhNjkzZWVhZmExOWVmYzM0OAotIFIyIHdob2xlLXNvdXJjZSByYXBvcnU6IDE0LjYzOSBiYXl0LCBTSEEtMjU2IDdlOGY4OGQwODQ4YTlhODFlZjgzODg0ZDUxYzNiOGRlNzdhNGMwNTI1YzU2MGQ3Y2RhYmI4YjM3MGQ1MTgyZWUKCsOWbmNla2kgcmV0IHZlIGlsayBva3VtYSBpw6dlcmlrbGVyaSBkZcSfacWfdGlyaWxtZW1pxZ90aXIuIFIyIHJhcG9ydW51biBow7xrbcO8IHZlIHPEsW7EsXJsYXLEsSBidXJhZGEga2F5bmFrIGthYnVsw7xuw7xuIHllcmluZSBnZcOnaXJpbG1lbWnFn3Rpci4KCjQuIEZJTkFMIGF5bsSxLWJhxZ8gQ0kvVDMgdmUgY2FubMSxIEdpdEh1YgoKUFIgMTE14oCZaSBjYW5sxLEgb2xhcmFrIGtvbnRyb2wgZXR0aW06IE9QRU4sIERyYWZ0OyBoZWFkUmVmT2lkIEZJTkFMIDc0OWFhMmMwMzM2NjhiODhlNDY3YmNlMzIxNzVmYmVjZmJiOWUzOGMgaWxlIGXFn2xlxZ9peW9yLiBNZXJnZSB5YXDEsWxtYW3EscWfLiBnaCBydW4gbGlzdCAtLWNvbW1pdCBGSU5BTCAxNiB0YW1hbWxhbm3EscWfIHJ1biBnw7ZzdGVyaXlvcjogOCBwdXNoIHZlIDggcHVsbF9yZXF1ZXN0OyB0YW1hbcSxIGV4YWN0IEZJTkFMIGhlYWQgdmUgU1VDQ0VTUy4KCi0gUFIgYXJjaGl0ZWN0dXJlIHJ1biAzNzU2NTY1NTE1MDogY2hlY2tzIGpvYiAxMTI2MTI2NDAxNTYgU1VDQ0VTUzsgNyBnZXLDp2VrIGFkxLFtLiBUMyBqb2IgMTEyNjEyNjM5OTYzIFNVQ0NFU1M7IDUgZ2Vyw6dlayBhZMSxbSwg4oCcVDMgY29uZm9ybWFuY2UgKyBpZGVudGl0eSBnYXRl4oCdIGRhaGlsLgotIFBSIEUxIHJ1biAzNzU2NTY1NTE0MTogam9iIDExMjYxMjYzOTQ3MCBTVUNDRVNTOyA3LzcgZ2Vyw6dlayBhZMSxbS4gSGFtIGxvZyAzMjEgbm9ybWFsIHRlc3QgUEFTUywgZm9ybWF0IDM0IGRvc3lhIC8gMCBkZcSfacWfaWtsaWsgdmUgYW5hbHl6ZSAwIGlzc3VlIGtheWRlZGl5b3IuCi0gRmluYWwgYXJjaGl0ZWN0dXJlIGfDvG5sw7xrIMOnxLFrdMSxc8SxIHJ1bi1hbGw6IHdvcnN0IGV4aXQgPSAwOyBrb3J1bWEva2ltbGlrIHRlc3RsZXJpIDQyLzQyIFBBU1MuCi0gUHVzaCBhcmNoaXRlY3R1cmUgcnVuIDM3NTY1NjUxNTMzIGnDp2luZGVraSBUMyBqb2IgU0tJUFBFRCB2ZSBzxLFmxLFyIGFkxLFtbMSxZMSxcjsgVDMga2FuxLF0xLEgb2xhcmFrIHNhecSxbG1hbcSxxZ90xLFyLiBQUiBydW7igJnEsW5kYWtpIGJlxZ8gZ2Vyw6dlayBUMyBhZMSxbcSxIGJhxZ9hcsSxeWxhIHRhbWFtbGFubcSxxZ90xLFyLgoKa2F2cml2YV9lMTAxNGJfZmluYWxfam9ic19sb2dzLmpzb24gacOnaW5kZWtpIDE2IHJ1biBrYXlkxLFuxLFuIGV4YWN0IGhlYWQvZXZlbnQvc3RhdHVzL2NvbmNsdXNpb24gYmlsZ2lsZXJpbmkgY2FubMSxIEdpdEh1YiBpbGUga2FyxZ/EsWxhxZ90xLFyZMSxbS4gSlNPTuKAmXVuIGnFn2FyZXQgZXR0acSfaSAxNiBoYW0gbG9ndW4gaGVyIGJpcmluZGUgZ2Vyw6dlayBkb3N5YSB1enVubHXEn3UgdmUgU0hBLTI1NiB0ZWtyYXIgZcWfbGXFn3RpOyAxOCBqb2Iga2F5ZMSxbmRhIGJhxZ9hcsSxc8SxemzEsWsgeW9rIHZlIHl1a2FyxLFkYWtpIHB1c2ggVDMgc2tpcOKAmWkgYmVrbGVuZW4gdGVrIGlzdGlzbmFkxLFyLiBNYWtidXogNC4wMTYgYmF5dCAvIFNIQS0yNTYgMDA1NWIzZjE1YTVmM2VlMWQyODUxMTg0MWNlM2FiZDhjNTRmNzE4MDQ4ZjI3NzEzMmIxNjIxZjI1YzQ4ZjM3ZDsgam9icy9sb2cgSlNPTiA0OS4xNDAgYmF5dCAvIFNIQS0yNTYgNzIzYmExYzNjYmIyNmY1NWRiYWVjZjdlNjk1NDA3ZDg4MGI2YjViZjBmMGNmMzg4MzU5MTNhOTgwN2I5MDI1ZC4gQnUgQ0ksIGJhxJ/EsW1zxLF6IHJldmlld2VyIGjDvGttw7wgeWVyaW5lIGdlw6dtZXogdmUgw7xyZXRpbSBrYWJ1bMO8IGRlxJ9pbGRpci4KCkZJTkFMIGNvbW1pdCBhw6fEsWtsYW1hc8SxbmRha2kg4oCcc29uIGluY2VsZW1lL0NJIGJla2xlbml5b3LigJ0gY8O8bWxlbGVyaSBjb21taXQgb2x1xZ90dXJ1bHVya2VuIGJla2xleWVuIGR1cnVtdW4gemFtYW4gZGFtZ2FsxLEga2F5ZMSxZMSxci4gQnUgcmFwb3IgdmUgRklOQUwgQ0kvVDMgbWFrYnV6dSBzb25yYWtpIHJldmlldyBvbGF5bGFyxLFuxLEgZG/En3J1bGFyLiDEsG5jZWxlbWUgc8SxcmFzxLFuZGEgcmVwbyBkZcSfacWfdGlyaWxtZW1pxZ90aXIuCgo1LiBCdWxndWxhciB2ZSBhw6fEsWsgc8SxbsSxcmxhcgoKQWx0xLEgZG9zeWFsxLEgbWV0YWRhdGEgYWRhecSxLCBzdGF0dXMgc8SxbsSxcsSxLCBnZW5lcmF0ZWQgcmVnaXN0cnkvcm91dGluZyB1eXVtdSwgRS1ERVYtMTEzIHJhcG9yIGN1c3RvZHnigJlzaSB2ZSBheW7EsS1iYcWfIENJL1QzIGthbsSxdMSxIGnDp2luIGthYnVsw7wgZHVyZHVyYW4gYnVsZ3UgeW9rdHVyLgoKQ2FubMSxIFBSIHNheWZhc8SxbsSxbiBpbGsgb2t1bWFzxLFuZGEgZXNraSBiZWtsZXllbi1yZXZpZXcvQ0kgYcOnxLFrbGFtYXPEsSBnw7Zyw7xuw7x5b3JkdS4gU29ucmFraSBjYW5sxLEgdGVrcmFyIGtvbnRyb2xkZSBhw6fEsWtsYW1hIHZlIHlvcnVtIDYwMzAxNjY2MTEgZXhhY3QgRklOQUwgQ0kvVDMgbWFrYnV6dW51IGnDp2VyaXlvcjsgcmV2aWV34oCZdW4gc8O8cm1la3RlIG9sZHXEn3VudSBiZWxpcnRpeW9yLiBCdSBnw7Z6bGVtIHphbWFuIGRhbWdhbMSxIHR1dHVsbXXFn3R1ci4gRW4gc29uIGfDtnLDvGxlbiBQUiBkdXJ1bXUgT1BFTi9EcmFmdCB2ZSBheW7EsSBGSU5BTCBiYcWfxLFkxLFyLiBCdSByYXBvciBQUuKAmcSxIG9uYXlsYW1heiB2ZXlhIG1lcmdlIGV0bWV6LgoKQnUgaMO8a8O8bSBnZXLDp2VrIHV5Z3VsYW1hZGEgZW50aXRsZW1lbnQveWV0a2ksIEUzL0U1LCBpZGVudGl0eSwgcXVvdGEvYmlsbGluZywgZ2Vyw6dlayByb3V0ZXIvbmF2aWdhdGlvbiwgZml6aWtzZWwgZHVydW0vcmVjb3ZlcnksIGNpaGF6L09TL3NjcmVlbiByZWFkZXIgdmV5YSByZWxlYXNlL3Byb2R1Y3Rpb24ga2FidWzDvCBzYcSfbGFtYXouIEJ1bmxhciBIRUxEIGthbMSxci4gR2VuZWwgbWFpbiBzYXnEsW3EsSAxMDEvMTA1LzIwNiBvbGFyYWsga2FsxLFyOyBub3JtYWwgbWVyZ2UgdmUgZmV0Y2hlZC1tYWluOCBidSBpbmNlbGVtZWRlbiBzb25yYSB5YXDEsWxhY2FrIGF5csSxIGtvxZ91bGxhcmTEsXIuCg==
+```
+
+### Ayrı adım sayısı açıklaması
+
+## Özgün son inceleme adım sayısına ayrı açıklama
+
+Özgün6910bayt/SHA256 20014c28c249f747719dc3b64d3efd97c4cdefb7774c6b6a3848f132abdd60f9 rapor değiştirilmedi. İncelemeci ayrı mesajında PR E1 job112612639470 için 7/7 sayımının Complete job satırını hariç tuttuğunu, Post Checkout’u içerdiğini açıkladı. API’deki gerçek8/8adım SUCCESS; Root da sekiz adımın tamamını doğruladı. Bu ayrı sayı açıklaması özgün PASS veya rapor içeriğini yeniden yazmaz.
+
+### Ana günlük yakalama hata geçmişi
+
+R1 main8 gerçek workflow/job/adım sonuçları SUCCESS, fakat yerel write_text Windows CRLF dönüşümüyle kaydedilmiş RAWlog ile receipt LFhash eşleşmedi. Root main_record guardı durdurdu; acceptedmain guardı da durdu, mainCIReceiptRead/acceptedMainDone/count ilerlemedi. Özgün11 R1dosya ve helper korundu. Collector gerçek capturedUTF8 baytlarını write_bytes ile kaydedecek; aynıhead gerçek loglar yeniden alınacak, test yeniden çalıştırma veya PASS uydurma yok. Kaynak/son bağımsızraporlar/commit/sourceCI/finalCI değişmedi.
+
+### Gerçek ana kontroller makbuzu
+
+## Gerçek birleşmiş main kontrolleri
+
+Exact 9f02dc013bff0d49256dcbb030a9d68d94603085; sekiz push workflow ve bütün uygulanabilir job/adımlar SUCCESS. PushT3skipped, kaynak/finalPR bağımsızreview/T3 yerine geçirilmez.
+
+- e3-commit-authorization-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241736 — SUCCESS.
+- e6-release-policy-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241797 — SUCCESS.
+- e4-offline-composition-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241676 — SUCCESS.
+- e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241679 — SUCCESS.
+- e5-current-authority-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241766 — SUCCESS.
+- architecture-checks: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241755 — SUCCESS.
+- e3-live-auth-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241913 — SUCCESS.
+- e1-shell-widget-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37603241695 — SUCCESS.
+
+
+- e3-commit-authorization-tests RAW SHA256 91522f99aaf810a548ff2fadb6037866eff809eee900bf8b4b25816f295b34f0 / 63419 bayt
+- e6-release-policy-tests RAW SHA256 7184391f2329649d7aff26e10fecf8bb33e47ce16cec3268a1b6b703102d94e7 / 26500 bayt
+- e4-offline-composition-tests RAW SHA256 ebd9ce36c1da6ce5bb35718e0a1b7a726c24c2db721be5d41152f7562fd77180 / 54706 bayt
+- e9-bounded-proposal-tests RAW SHA256 84811b613b1c150ea4d0c15474cc34f2039be70478254e9e29ab3664183b4bb2 / 16840 bayt
+- e5-current-authority-tests RAW SHA256 0bca3c844bd27641dc7cdc278281144992c9f310918ee3082bb94c6be2235ed3 / 34055 bayt
+- architecture-checks RAW SHA256 3ee2e612432fc437f694cbfde71a266e7c1aa111f3fa1d00905cfb379f038773 / 30667 bayt
+- e3-live-auth-tests RAW SHA256 a1df1b18413ac577adcdfdd4ca3dc6423f9b026905da36e08bc84463e1ec808f / 24079 bayt
+- e1-shell-widget-tests RAW SHA256 7125e38e0dc5ceee3fe33d94c86ce3dd11dae8d8a62182162fc94e2688954f47 / 121260 bayt
