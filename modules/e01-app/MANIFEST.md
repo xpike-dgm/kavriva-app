@@ -6,15 +6,15 @@ domain: "module-contract"
 module: "e01-app"
 owner: "E1"
 depends_on: [M-E3-001, M-E5-001, M-E4-001]
-used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-MAINT-001, P-E1-010, E-DEV-108, V-E1-HISTORY-001, P-E1-011, E-DEV-109, V-E1-RECORD-001, P-E1-012, E-DEV-110, V-E1-REACHBACK-001, P-E1-013, E-DEV-111]
+used_by: [M-E9-001, I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E1-SHELL-001, P-E1-001, E-DEV-097, V-E1-GARAGE-001, P-E1-002, E-DEV-098, V-E1-FIRSTUSE-001, P-E1-003, E-DEV-099, V-E1-VARIANT-001, P-E1-004, E-DEV-100, V-E1-DISCOVERY-001, P-E1-005a, E-DEV-101, V-E1-READINESS-001, P-E1-005b, E-DEV-102, V-E1-TEACHING-001, P-E1-005c, E-DEV-103, V-E1-EXECUTION-001, P-E1-006, E-DEV-104, V-E1-RESUME-001, P-E1-007, E-DEV-105, V-E1-REMAP-001, P-E1-008, E-DEV-106, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-MAINT-001, P-E1-010, E-DEV-108, V-E1-HISTORY-001, P-E1-011, E-DEV-109, V-E1-RECORD-001, P-E1-012, E-DEV-110, V-E1-REACHBACK-001, P-E1-013, E-DEV-111, V-E1-LIFECYCLE-001, P-E1-014a, E-DEV-112]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E1"
 public_contracts:
   - "[[modules/e01-app/MANIFEST.md#Public contract surface (only this is usable across boundaries)]]"
 internal_scope: "Flutter widget tree, navigation state, caches, offline reads of E4 packages, in-flight UI state. No direct database access; no Supabase service_role; no signing keys; no canonical truth stored here."
-tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009, T-E1-010, T-E1-011, T-E1-012, T-E1-013]
-tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/history_test.dart, modules/e01-app/internal/shell/test/record_dispute_test.dart, modules/e01-app/internal/shell/test/correction_reachback_test.dart]
-evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107, E-DEV-108, E-DEV-109, E-DEV-110, E-DEV-111]
+tasks: [T-E10-001, T-E10-006, T-E1-001, T-E1-002, T-E1-003, T-E1-004, T-E1-005a, T-E1-005b, T-E1-005c, T-E1-006, T-E1-007, T-E1-008, T-E1-009, T-E1-010, T-E1-011, T-E1-012, T-E1-013, T-E1-014a]
+tests: [modules/e10-graph/checks/check_manifests.py, modules/e10-graph/checks/check_identity.py, modules/e01-app/internal/shell/test/shell_test.dart, modules/e01-app/internal/shell/test/garage_context_test.dart, modules/e01-app/internal/shell/test/first_use_test.dart, modules/e01-app/internal/shell/test/variant_resolution_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/preparation_readiness_test.dart, modules/e01-app/internal/shell/test/teaching_only_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e01-app/internal/shell/test/resume_revalidation_test.dart, modules/e01-app/internal/shell/test/guide_change_remap_test.dart, modules/e01-app/internal/shell/test/diagnosis_test.dart, modules/e01-app/internal/shell/test/maintenance_test.dart, modules/e01-app/internal/shell/test/history_test.dart, modules/e01-app/internal/shell/test/record_dispute_test.dart, modules/e01-app/internal/shell/test/correction_reachback_test.dart, modules/e01-app/internal/shell/test/lifecycle_test.dart]
+evidence: [E-DEV-027, E-DEV-097, E-DEV-098, E-DEV-099, E-DEV-100, E-DEV-101, E-DEV-102, E-DEV-103, E-DEV-104, E-DEV-105, E-DEV-106, E-DEV-107, E-DEV-108, E-DEV-109, E-DEV-110, E-DEV-111, E-DEV-112]
 supersedes: []
 superseded_by: []
 status: INSTALLED
@@ -180,3 +180,10 @@ Kısmi beyan null/yabancı providerresult olmadan güncel scope ile niyet üreti
 
 
 `vault/PROFILES/correction-reachback-render.md`; `vault/PACKS/P-E1-013.md`; `vault/REGISTRY/T-E1-013.md`; `vault/EVIDENCE/E-DEV-111.md`.
+
+## Motosiklet yaşam döngüsü sunumu
+
+`modules/e01-app/internal/shell/lib/lifecycle.dart` yalnız SCR031032033; SCR008 korunur. Immutable tamkapsam/4read/10field/6effect ve explicitack/same-request ayrı. Typedniyet gerçek silme/aktarım/DB/router değil; üretim gateHELD.
+
+
+`vault/PROFILES/lifecycle-render.md`; `vault/PACKS/P-E1-014a.md`; `vault/REGISTRY/T-E1-014a.md`; `vault/EVIDENCE/E-DEV-112.md`.

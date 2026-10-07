@@ -980,6 +980,71 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-014a",
+   "version": "1",
+   "flow_feature": "FL1.7.1/F1.7.1",
+   "objective": "Pasifleştirme aktarım ve silme kapsamını açık sunmak",
+   "context_pack": "P-E1-014a",
+   "acceptance": "States shown; excl SCR008; DEC0053 shape; GATE HELD-acceptance evaluation",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-07",
+   "purpose": "Motosiklet pasifleştirme aktarım ve silme kapsamını açık sunmak",
+   "domain": "motorcycle-lifecycle",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-001",
+    "ADR-004",
+    "ADR-005",
+    "C1.7",
+    "F1.7.1",
+    "SCR-031",
+    "SCR-032",
+    "SCR-033",
+    "BR-103",
+    "BR-111",
+    "BR-117",
+    "BR-118",
+    "BR-134",
+    "BR-135",
+    "BR-136",
+    "BR-137",
+    "CON-001",
+    "CON-002",
+    "CON-003",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "lifecycle-presentation",
+   "tasks": [
+    "T-E1-014a"
+   ],
+   "tests": [
+    "modules/e01-app/internal/shell/test/lifecycle_test.dart",
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-07",
+   "depends_on": [
+    "T-E1-001"
+   ],
+   "used_by": [
+    "V-E1-LIFECYCLE-001",
+    "T-E1-014a",
+    "E-DEV-112"
+   ],
+   "evidence": "E-DEV-112",
+   "supersedes": "planning TASK_INDEX T-E1-014a",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
