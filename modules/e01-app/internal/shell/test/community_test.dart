@@ -46,8 +46,30 @@ CommunityDocument document(
     'sharedScope':
         'Yalnız gösterilen anlatım ve seçilen açıklama; isteğe bağlı fotoğraf',
     'review': 'İnceleme örneği · teknik doğrulama değil',
-    'reason': 'Örnek anlatımın kaynağı açıklanmamış; şu anda yayınlanamıyor.',
-    'repair': 'Anlatımın kaynağını açıklayıp yeniden inceleme isteyebilirsin.',
+    'reason': switch (state ??
+        (screen == CommunityScreen.discovery
+            ? CommunityState.accepted
+            : screen == CommunityScreen.review
+            ? CommunityState.needsRevision
+            : CommunityState.ready)) {
+      CommunityState.accepted => 'Örnek topluluk incelemesinin sonucu ayrı güncel sonuçla gösterilir; teknik doğrulama değildir.',
+      CommunityState.withdrawn => 'Geri çekme değerlendirmesi yalnız gelecekteki görünürlük içindir; bağlı geçmiş korunur.',
+      CommunityState.pending =>
+        'İnceleme sonucu henüz gelmedi. Yayın kabulü varsayılmaz.',
+      CommunityState.held =>
+        'Örnek katkı daha fazla kaynak incelemesi için bekletiliyor.',
+      CommunityState.dangerous => 'Örnek katkı tehlikeli uygulama riski taşıyor; anlatım normal bakım adımı olarak gösterilmez.',
+      CommunityState.failed => 'Örnek gönderme isteği tamamlanmadı; başarı veya yayın kabulü varsayılmaz.',
+      _ => 'Örnek anlatımın kaynağı açıklanmamış; şu anda yayınlanamıyor.',
+    },
+    'repair': switch (state) {
+      CommunityState.accepted || CommunityState.withdrawn =>
+        'Kaynak ve bağlı geçmişi inceleyebilirsin; destek seçenekleri açıktır.',
+      CommunityState.pending =>
+        'Güncel sonucu kontrol et veya izin varsa katkıyı geri çekmeyi iste.',
+      CommunityState.held || CommunityState.dangerous => 'Kaynak açıklamasını incele; desteklenen itiraz ve geri çekme yollarını kullanabilirsin.',
+      _ => 'Anlatımın kaynağını açıklayıp yeniden inceleme isteyebilirsin.',
+    },
   },
   privateValues: {
     'privateScope': 'Kişisel bakım notları ve hesap bilgileri özel kalır.',
@@ -985,4 +1007,31 @@ void main() {
     await t.pump();
     expect(events, isEmpty);
   });
+  testWidgets(
+    'accepted pending and held reasons remain distinct and truthful',
+    (t) async {
+      for (final state in [
+        CommunityState.accepted,
+        CommunityState.pending,
+        CommunityState.held,
+        CommunityState.dangerous,
+        CommunityState.withdrawn,
+      ]) {
+        await t.pumpWidget(
+          host(
+            CommunityScreen.review,
+            snapshot(
+              CommunityScreen.review,
+              doc: document(CommunityScreen.review, state: state),
+            ),
+            handler: (_) {},
+          ),
+        );
+        expect(find.textContaining('şu anda yayınlanamıyor'), findsNothing);
+        expect(find.byKey(const ValueKey('community-opt-in')), findsNothing);
+        if (state == CommunityState.accepted)
+          expect(find.text('Toplulukta yayınlandı'), findsOneWidget);
+      }
+    },
+  );
 }

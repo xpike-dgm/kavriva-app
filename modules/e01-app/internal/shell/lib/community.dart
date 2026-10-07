@@ -512,6 +512,8 @@ class _CommunityViewState extends State<CommunityView> {
       CommunityScreen.review => switch (d?.state) {
         CommunityState.needsRevision => 'Düzeltme gerekiyor',
         CommunityState.pending => 'İnceleme bekleniyor',
+        CommunityState.held => 'Katkı inceleme için bekletiliyor',
+        CommunityState.dangerous => 'Riskli anlatım gösterilmiyor',
         CommunityState.accepted when s.resultConfirmed(screen) =>
           'Toplulukta yayınlandı',
         CommunityState.withdrawn when s.resultConfirmed(screen) =>
@@ -534,7 +536,13 @@ class _CommunityViewState extends State<CommunityView> {
           'Güncel kaynak ve okuma izni alınamadı. Özel bilgiler gösterilmiyor; paylaşım ve inceleme işlemleri kapalı.',
         ),
       );
-    if (screen != CommunityScreen.discovery && readable) {
+    if (readable &&
+        (screen == CommunityScreen.contribution ||
+            (screen == CommunityScreen.review &&
+                {
+                  CommunityState.needsRevision,
+                  CommunityState.failed,
+                }.contains(d?.state)))) {
       final intended = screen == CommunityScreen.contribution
           ? CommunityAction.publish
           : CommunityAction.resubmit;
@@ -554,7 +562,7 @@ class _CommunityViewState extends State<CommunityView> {
       ]);
       if (d?.state == CommunityState.empty)
         children.add(text('Henüz gösterilecek deneyim yok.'));
-      if (blockedContent)
+      if (blockedContent && d?.state != CommunityState.empty)
         children.add(
           notice(
             'Bu içerik şu anda normal bir bakım adımı olarak gösterilmiyor. Güncel yayın ve inceleme durumunu kontrol et.',
@@ -659,7 +667,11 @@ class _CommunityViewState extends State<CommunityView> {
         ),
         ...field('sharedScope', 'Paylaşım kapsamı'),
         ...field('privateScope', 'Özel kalacak', private: true),
-        if (readable)
+        if (readable &&
+            {
+              CommunityState.needsRevision,
+              CommunityState.failed,
+            }.contains(d?.state))
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
             child: _CommunityButton(
