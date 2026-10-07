@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-016",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max yalnız native ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tümü yardım olmadan anlamca doğru; belirsizlik onarım ve yeni ilk okuma gerektirir",
+  "questions": [
+    "Bu bölümdeki kullanıcı deneyimi resmî Kavriva bakım rehberi mi?",
+    "Bir deneyimin yayınlanması teknik doğruluğunun doğrulandığını gösterir mi?",
+    "İçeriğin kaynağını, motosiklet bağlamını, inceleme durumunu ve tarihini nerede görürsün?",
+    "Kişisel notlar kendiliğinden herkese açık topluluk paylaşımına dönüşür mü?",
+    "Paylaşım niyeti vermeden önce nelerin paylaşılacağını ve nelerin özel kalacağını görebilir misin?",
+    "Fotoğraf eklemek zorunlu mu ve teknik doğrulama kanıtı mı?",
+    "Toplulukla paylaş düğmesini kullanmak içeriğin zaten yayınlandığını kanıtlar mı?",
+    "Vazgeçmek kişisel kaydını silmek veya yayınlamak anlamına mı gelir?",
+    "İçerik şu anda yayınlanamıyorsa sebebi ve yapılabilecek düzeltme nasıl gösteriliyor?",
+    "Düzeltme veya yeniden gönderme isteği hemen yayına kabul edildiğin anlamına gelir mi?",
+    "İnceleme kararına katılmıyorsan hangi yolu kullanabilirsin?",
+    "Katkıyı geri çekmek geçmişte ona bağlı katkı ve kanıt izlerini sessizce siler mi?",
+    "Geri çekme isteği göndermek gelecekteki görünürlüğün gerçekten değiştiğini kanıtlar mı?",
+    "İzin veya güncel kaynak yoksa özel notlar ve yayın işlemleri açılır mı?",
+    "Bir rol, fotoğraf, popülerlik veya inceleme durumu resmî teknik uygulama yetkisi verir mi?",
+    "Tehlikeli veya incelenmesi gereken içerik normal bir uygulanabilir bakım adımı gibi gösteriliyor mu?",
+    "Bu bölüm resmî rehber adımlarına benzeyen numaralı tamir talimatı mı sunuyor?",
+    "Topluluk deneyimini okumak için paylaşım yapman zorunlu mu?",
+    "Sorunu bildirmek içerik hakkında teknik karar verdiğin veya onu kaldırdığın anlamına mı gelir?",
+    "Ekranda bir paylaşım veya inceleme örneğinin görünmesi gerçek kullanıcı, gerçek yayın veya güncel izin kanıtı mı?"
+  ]
+}
