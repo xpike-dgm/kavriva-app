@@ -391,7 +391,10 @@ void main() {
     },
   );
   test('unknown held stale wrong-purpose and foreign refs fail closed', () {
-    final s = scope(), d = document(CommunityScreen.contribution);
+    final valid = snapshot(CommunityScreen.contribution),
+        s = valid.scope,
+        d = valid.document!;
+    expect(valid.readableFor(CommunityScreen.contribution), true);
     for (final r in [
       reference(s, 'request-A', 'community-read', d.subject, current: false),
       reference(
@@ -403,6 +406,13 @@ void main() {
       ),
       reference(s, 'request-A', 'wrong', d.subject),
       reference(scope(account: 'B'), 'request-A', 'community-read', d.subject),
+      reference(
+        s,
+        'request-A',
+        'community-read',
+        d.subject,
+        state: CommunityReferenceState.unknown,
+      ),
     ]) {
       expect(
         CommunitySnapshot(
@@ -410,11 +420,136 @@ void main() {
           requestId: 'request-A',
           document: d,
           authority: r,
+          reads: valid.reads,
+          fields: valid.fields,
+          actions: valid.actions,
+          effects: valid.effects,
+          outcome: valid.outcome,
         ).readableFor(CommunityScreen.contribution),
         false,
       );
     }
   });
+  test('each read dimension rejects its own wrong binding independently', () {
+    final valid = snapshot(CommunityScreen.contribution), d = valid.document!;
+    expect(valid.readableFor(CommunityScreen.contribution), true);
+    for (final dimension in CommunityReadDimension.values) {
+      final subject = '${d.subject}/${dimension.name}';
+      for (final invalid in [
+        reference(valid.scope, valid.requestId, 'wrong', subject),
+        reference(
+          valid.scope,
+          'another-request',
+          'community-read-dimension',
+          subject,
+        ),
+        reference(
+          scope(account: 'another-account'),
+          valid.requestId,
+          'community-read-dimension',
+          subject,
+        ),
+        reference(
+          valid.scope,
+          valid.requestId,
+          'community-read-dimension',
+          'another-subject',
+        ),
+        reference(
+          valid.scope,
+          valid.requestId,
+          'community-read-dimension',
+          subject,
+          current: false,
+        ),
+        reference(
+          valid.scope,
+          valid.requestId,
+          'community-read-dimension',
+          subject,
+          state: CommunityReferenceState.unknown,
+        ),
+        reference(
+          valid.scope,
+          valid.requestId,
+          'community-read-dimension',
+          subject,
+          state: CommunityReferenceState.held,
+        ),
+      ]) {
+        final changed = CommunitySnapshot(
+          scope: valid.scope,
+          requestId: valid.requestId,
+          document: d,
+          authority: valid.authority,
+          reads: {...valid.reads, dimension: invalid},
+          fields: valid.fields,
+          actions: valid.actions,
+          effects: valid.effects,
+          outcome: valid.outcome,
+        );
+        expect(changed.readableFor(CommunityScreen.contribution), false);
+        expect(
+          changed.fieldAllowed(
+            CommunityScreen.contribution,
+            'private/${identity('privateScope')}',
+          ),
+          false,
+        );
+        expect(
+          changed.actionAllowed(
+            CommunityScreen.contribution,
+            CommunityAction.publish,
+          ),
+          false,
+        );
+      }
+    }
+  });
+  testWidgets(
+    'offline current-marked refs cannot show private data or retain consent',
+    (t) async {
+      final events = <CommunityIntent>[], key = GlobalKey();
+      await t.pumpWidget(
+        host(
+          CommunityScreen.contribution,
+          snapshot(CommunityScreen.contribution),
+          handler: events.add,
+          key: key,
+        ),
+      );
+      expect(find.textContaining('Özel kalacak:'), findsOneWidget);
+      await press(t, 'opt-in');
+      expect(find.text('Paylaşım seçildi · seçimi kaldır'), findsOneWidget);
+      await t.pumpWidget(
+        host(
+          CommunityScreen.contribution,
+          snapshot(CommunityScreen.contribution, offline: true),
+          handler: events.add,
+          key: key,
+        ),
+      );
+      expect(find.textContaining('Özel kalacak:'), findsNothing);
+      expect(find.textContaining('Kişisel bakım notları'), findsNothing);
+      expect(find.text('Paylaşım seçildi · seçimi kaldır'), findsNothing);
+      await press(t, 'opt-in');
+      await press(t, 'Toplulukla paylaş');
+      expect(events, isEmpty);
+      await t.pumpWidget(
+        host(
+          CommunityScreen.contribution,
+          snapshot(CommunityScreen.contribution),
+          handler: events.add,
+          key: key,
+        ),
+      );
+      await press(t, 'Toplulukla paylaş');
+      expect(events, isEmpty);
+      await press(t, 'opt-in');
+      await press(t, 'Toplulukla paylaş');
+      expect(events.single.action, CommunityAction.publish);
+    },
+  );
   test(
     'missing private scope prevents publication, public read can remain',
     () {
@@ -647,6 +782,14 @@ void main() {
       await press(t, 'Vazgeç · yerel kullanıma dön');
       expect(events.single.scope, isNull);
       expect(events.single.subjectId, isEmpty);
+      expect(events.single.localSubject, isEmpty);
+      expect(events.single.requestId, isEmpty);
+      await press(t, 'Destek seçenekleri');
+      expect(events.last.action, CommunityAction.support);
+      expect(events.last.scope, isNull);
+      expect(events.last.subjectId, isEmpty);
+      expect(events.last.localSubject, isEmpty);
+      expect(events.last.requestId, isEmpty);
     },
   );
   testWidgets('no handler disables actions, including safe route', (t) async {

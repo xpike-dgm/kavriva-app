@@ -192,7 +192,8 @@ class CommunitySnapshot {
       ref?.confirms(scope, requestId, purpose, subject) ?? false;
   bool readableFor(CommunityScreen screen) {
     final d = document;
-    return d != null &&
+    return !offline &&
+        d != null &&
         d.screen == screen &&
         _confirmed(authority, 'community-read', d.subject) &&
         CommunityReadDimension.values.every(
@@ -370,6 +371,7 @@ class _CommunityViewState extends State<CommunityView> {
   void didUpdateWidget(covariant CommunityView old) {
     super.didUpdateWidget(old);
     if (old.screen != widget.screen ||
+        old.snapshot.offline != widget.snapshot.offline ||
         old.snapshot.scope.subject != widget.snapshot.scope.subject ||
         old.snapshot.requestId != widget.snapshot.requestId ||
         old.snapshot.document?.subject != widget.snapshot.document?.subject) {
@@ -408,8 +410,8 @@ class _CommunityViewState extends State<CommunityView> {
       handler(
         CommunityIntent(
           action: a,
-          localSubject: s.scope.localSubject,
-          requestId: s.requestId,
+          localSubject: safe(a) ? '' : s.scope.localSubject,
+          requestId: safe(a) ? '' : s.requestId,
           subjectId: safe(a) ? '' : '${s.document!.subject}/${a.name}',
           scope: safe(a) ? null : s.scope,
         ),
