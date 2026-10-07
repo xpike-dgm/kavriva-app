@@ -224,3 +224,7 @@ Yerel düzeltme F01'in bağımsız kapanışı değildir. Güncel kaynak CI/T3 v
 
 
 Kanıt/paket adresleri: `vault/PROFILES/community-render.md`, `vault/PACKS/P-E1-016.md`, `vault/REGISTRY/T-E1-016.md`, `vault/EVIDENCE/E-DEV-115.md`, `vault/EVIDENCE/SNAPSHOTS/E-DEV-114-E10-GOVERNED-PATHS-FOR-T-E1-016.md.snapshot`.
+
+## Topluluk R2/R3 tarihçesi ve güncel R4 kanıtı
+
+Önceki375/261/60 notu R2 tarihçesidir. R3 376/270/62 ilk okuma geçti, ancak SOURCE e670d25 bağımsız üç bulgu nedeniyle CHANGES_REQUESTED oldu;17CI bunu kapatmadı. Güncel R4 kod c52f036726ce5d3cf6d7869da7ca0e7804a3556b;378normal/format38zero/analyze0/270layout/native61; Root6yeniopen55RAWreuse. Offlineözelalan/seçimkapalı, safepayloadboş ve izolenegatifler gerçekkontrolle doğrulandı. Yeni ilkoku/bütünkaynakCI-T3/ayrıfinal/main8 beklenir; henüz yeni bağımsız kabul yok. YAML/SDK/deps/diğerürünmodülleri ve eski348 değişmez. Kanıt `vault/EVIDENCE/E-DEV-115.md`, paket `vault/PACKS/P-E1-016.md`.

@@ -19,10 +19,10 @@ supersedes: []
 status: RECORDED
 contract_id_version: "SCR035 SCR036 SCR038 C1.9/F1.9.1/FL1.9.1 community v1 REVIEW"
 subject_file: modules/e01-app/internal/shell/lib/community.dart
-subject_digest: 7922577ac3052d1429f954f3ca2cd904d83fd31f72adb3e72e38c43674004767
-result: "Kaynak376 normal ve CI başarılı; bağımsız üç bulgu nedeniyle kabul reddedildi"
-gate_verdict: "FAIL bağımsız kaynak CHANGES_REQUESTED; R4 dar onarım bekleniyor"
-reviewer: "/root/e1016_whole_review; requested gpt-6-luna/max"
+subject_digest: a4b79bcc09160725de073ed48b291bb38a915325bf273c4536a74a9bc03b1d56
+result: "Yerel378 normal ve ayrı1native PASS; bağımsız ret kapanışı bekleniyor"
+gate_verdict: "RECORDED R4 yerel düzeltme; bağımsız bütün kabul bekleniyor"
+reviewer: none
 timestamp: 2026-10-07
 evidence_links: [vault/PROFILES/community-render.md, vault/PACKS/P-E1-016.md, vault/REGISTRY/T-E1-016.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-114-E10-GOVERNED-PATHS-FOR-T-E1-016.md.snapshot, modules/e01-app/internal/shell/lib/community.dart, modules/e01-app/internal/shell/test/community_test.dart, modules/e01-app/internal/shell/test/fixtures/community_reading_questions.json]
 ---
@@ -723,3 +723,203 @@ PRrun37618274262/t3-gatejob112781835391: 0başarılıadım/skipped.
 - push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37618264345 — SUCCESS; hamlogRAW SHA256627582f81563331629b5a5bda218cff6a864a228fe65a94c85b3feaa9c36f871/16994byte.
 
 E1gerçekhamlog: strictformat38/0-analyze0-376normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. Push veya ilk labelsiz PR T3SKIPPED0adım olay tarihçesidir ve kabul değildir; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
+
+## Güncel R4 yerel onarım — ret kapanışı henüz bağımsız incelenmedi
+
+R3 SOURCE e670d25f1e0f01b7be7c848437a15b17cec77428 özgün bütün CHANGES_REQUESTED raporu ve17CI geçmişi aynen korunur; mevcut kaynak kabulü değildir. Koddan önce dar onarım c7b03caaf68f91e7a272911cdba54f1df390969c; güncel kod c52f036726ce5d3cf6d7869da7ca0e7804a3556b. F01 offline readableFor/alan/yerel seçim ve dış yazı niyeti kapalı. Offline geçişte önceki opt-in sıfırlanır; online dönüşte yeni seçim olmadan yayın niyeti verilmez. Çevrimdışı özel kapsam/veri current işaretli test referansıyla bile açılmaz. Güvenli çıkış/destek kalır; diğer history/teaching ekranları değişmedi.
+
+F02 cancel/support dış payload localSubject/requestId/subjectId boş, scope null. Dahili stale local/request/handler kontrolü korunur. Her iki gerçek button callback payload'ı veri taşımadığı widget testinde doğrulandı.
+
+F03 önce bütün current/confirmed referanslı kontrol okunabilir; yalnız authority stale/held/unknown/wrongpurpose/foreign ile değiştirilince okunamaz. Ayrı dört read dimension her yanlış purpose/request/scope/subject/stale/unknown/held bağda reddedilir; diğer referanslar geçerli kalır. Başka eksik boyutla maskelenen eski test onarıldı. İki geçici mutation denemesinde ayrı authority ve dimension guard kaldırıldığında ilgili test beklenenfalse/actualtrue ile gerçekten başarısız oldu; kaynak orijinal RAWbaytına finally ile geri kondu. Bu intentional mutation ret günlükleri normal başarılı test toplamına eklenmez.
+
+Gerçek hedefR8 30PASS; normal378 =348önceki+30yeni PASS; format38/0, analyze0. Ayrı native1PASS normal toplamına eklenmez.30durum/270gerçekduyarlıfullscroll/52hedef/fatalpointer/sonçıkış/TabEnterSpace/header/disabled/liveRegion/contrast mevcut. NativeR4 gerçek61PNG390×844/52unique9alias. Root6yeni offline originaldosyayı gerçekten açtı;55dosya öncekiRootR3 kapsamına RAWbyte/SHAeşit. Bütün61kaydırma parçaları kapsamda;61yeni açım iddiası yok. Güncel görüntüde özel bilgi yok ve seçim disabled; çıkış/destek görünür. Fresh geçmişsiz ilk okuyucu52uniqueactualopens9alias ile yeni20anlamı kontrol eder; R3 raporu yeni aday yerine kabul edilmez. SDKRoboto finalfont/token değildir.
+
+Güncel kodLF SHA256 a4b79bcc09160725de073ed48b291bb38a915325bf273c4536a74a9bc03b1d56; testLF 66277ebf3ac089270ea0c7605221ac345db6e597fe6cc05c30372a840f279bb0; sabit20soruLF e41ce72a2e7823c9b7419b260802614922b49500fb127c633b65b1a4d0724bbc değişmez. RAWv81snapshot/71basepins/exact14/YAML/SDK/deps/eski348 korunur; generated107/inventory82 aday. İlk bağımsız ret bu yerel düzeltmeyle otomatik kapanmış sayılmaz; taze bütün exactSOURCE REVIEW/aynıbaşCI-T3/ayrıFINALreview-CI/normalmerge-fetchedmain8 beklenir. Gerçekana103DONE/103kalan/206 değişmez. E3R1REVIEW/E5IN_PROGRESS/Supabase47/57/59/RET97/gerçekkimlik-yayın-moderasyon-kaldırmawriter/router/device/releaseHELD.
+
+### R4 güncel native RAW kimlikler
+
+- kavriva_e1016_native_R4-discovery-reported-0.png / discovery-reported / SHA2567e204dfe04ee2e0eef82b31f473bbe2918ca8cf0f22c55fb9ff5f6127d02825b / 68958bayt / offset0.0/end378.0 / previousRAW=kavriva_e1016_native_R3-discovery-reported-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-reported-1.png / discovery-reported / SHA25652e7970c9496aafdf3fa287b9295bfe35de6e21d2580a8fa4b4835064429ede2 / 67486bayt / offset378.0/end378.0 / previousRAW=kavriva_e1016_native_R3-discovery-reported-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-selected-0.png / contribution-selected / SHA25631c9808ec556536f82bf0d75b8a6fd94d7014b9b99f3440fb2dc381917e00058 / 79657bayt / offset0.0/end266.0 / previousRAW=kavriva_e1016_native_R3-contribution-selected-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-selected-1.png / contribution-selected / SHA256ba4c9346245d54339fc8f590d0625679928013bab52f414a3368569278f4c68d / 75916bayt / offset266.0/end266.0 / previousRAW=kavriva_e1016_native_R3-contribution-selected-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-requested-0.png / contribution-requested / SHA25699db7568b4b2c97c4990d7c612ad505ef520bc0065faca726365176869429eda / 79764bayt / offset0.0/end324.0 / previousRAW=kavriva_e1016_native_R3-contribution-requested-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-requested-1.png / contribution-requested / SHA256cd805dbdd4b8df3b57bde60352926c843bc078ccba63cb33b24e229f729df29d / 73688bayt / offset324.0/end324.0 / previousRAW=kavriva_e1016_native_R3-contribution-requested-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-selected-0.png / review-selected / SHA2561998efcfb81b39b40933ada9e105060b9841fe90516969bab91edc507976b1aa / 70453bayt / offset0.0/end437.0 / previousRAW=kavriva_e1016_native_R3-review-selected-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-selected-1.png / review-selected / SHA25627428d0b6be5cbc6b1dbb53457c4dfc7942660350cc86e2733bff5c7f0d6970e / 63532bayt / offset437.0/end437.0 / previousRAW=kavriva_e1016_native_R3-review-selected-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-ready-0.png / discovery-ready / SHA2560219237b6e4758f387023eea239453c7826701480a233c9e0945812680143530 / 68984bayt / offset0.0/end320.0 / previousRAW=kavriva_e1016_native_R3-discovery-ready-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-ready-1.png / discovery-ready / SHA2563615a54c283384b07ef3458b26c3fcbd1aefa5c1b7c109745a6fb7fdfc89e01e / 64783bayt / offset320.0/end320.0 / previousRAW=kavriva_e1016_native_R3-discovery-ready-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-unknown-0.png / discovery-unknown / SHA256bb27a753f7d5889f6676e681ada9fb3e9ba532ad425e3a548a93cc77e195060b / 64966bayt / offset0.0/end137.0 / previousRAW=kavriva_e1016_native_R3-discovery-stale-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-unknown-1.png / discovery-unknown / SHA256d680b3f77a06df31532e19f4cdf69646dc0217aedcaa13a82e8d75f7b2531453 / 64483bayt / offset137.0/end137.0 / previousRAW=kavriva_e1016_native_R3-discovery-stale-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-stale-0.png / discovery-stale / SHA256bb27a753f7d5889f6676e681ada9fb3e9ba532ad425e3a548a93cc77e195060b / 64966bayt / offset0.0/end137.0 / previousRAW=kavriva_e1016_native_R3-discovery-stale-0.png / currentRAWalias=kavriva_e1016_native_R4-discovery-unknown-0.png
+- kavriva_e1016_native_R4-discovery-stale-1.png / discovery-stale / SHA256d680b3f77a06df31532e19f4cdf69646dc0217aedcaa13a82e8d75f7b2531453 / 64483bayt / offset137.0/end137.0 / previousRAW=kavriva_e1016_native_R3-discovery-stale-1.png / currentRAWalias=kavriva_e1016_native_R4-discovery-unknown-1.png
+- kavriva_e1016_native_R4-discovery-offline-0.png / discovery-offline / SHA256f5ac7229309f3c7e5864f629144b9e7b7304cef0606bcc2224af46b8ae8b56d4 / 67368bayt / offset0.0/end195.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-offline-1.png / discovery-offline / SHA256b168572e416b47b855abf40b17b0314724c41654b21faa7048dfab33ea69d984 / 65624bayt / offset195.0/end195.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-field-held-0.png / discovery-field-held / SHA2567af3bf3af0d8665c5d260bb2d992f80d7fe0752280be5b325ee29ca912a9343f / 68326bayt / offset0.0/end262.0 / previousRAW=kavriva_e1016_native_R3-discovery-field-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-field-held-1.png / discovery-field-held / SHA25606051055eb97f4f6d02e435b96670df7d3b5dd69e18a326b318670e924696646 / 64748bayt / offset262.0/end262.0 / previousRAW=kavriva_e1016_native_R3-discovery-field-held-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-ready-0.png / contribution-ready / SHA256c5ecac03bbb409fd83c26a93a699226b3a89aac753103ccc7cf6f611977362c2 / 80826bayt / offset0.0/end266.0 / previousRAW=kavriva_e1016_native_R3-contribution-ready-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-ready-1.png / contribution-ready / SHA25662ac75ee6dff9e57ee2d49ef74733c48aff3a54ffa26017161cfb3470c1445f4 / 77153bayt / offset266.0/end266.0 / previousRAW=kavriva_e1016_native_R3-contribution-field-held-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-unknown-0.png / contribution-unknown / SHA256e38fd480a5b14d04fccdacd68f4bb5d61b0aa5651215a710319ae09a46bb6184 / 73037bayt / offset0.0/end4.0 / previousRAW=kavriva_e1016_native_R3-contribution-stale-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-unknown-1.png / contribution-unknown / SHA25686d19f0631f34156028d013d9a40f557c0d3bbc140e6c4f9c01d5bd0269a2743 / 73033bayt / offset4.0/end4.0 / previousRAW=kavriva_e1016_native_R3-contribution-stale-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-stale-0.png / contribution-stale / SHA256e38fd480a5b14d04fccdacd68f4bb5d61b0aa5651215a710319ae09a46bb6184 / 73037bayt / offset0.0/end4.0 / previousRAW=kavriva_e1016_native_R3-contribution-stale-0.png / currentRAWalias=kavriva_e1016_native_R4-contribution-unknown-0.png
+- kavriva_e1016_native_R4-contribution-stale-1.png / contribution-stale / SHA25686d19f0631f34156028d013d9a40f557c0d3bbc140e6c4f9c01d5bd0269a2743 / 73033bayt / offset4.0/end4.0 / previousRAW=kavriva_e1016_native_R3-contribution-stale-1.png / currentRAWalias=kavriva_e1016_native_R4-contribution-unknown-1.png
+- kavriva_e1016_native_R4-contribution-offline-0.png / contribution-offline / SHA256f775622345ae702e548efc314cd68d0b8d15110a89fffa5a99d27e69347b8a30 / 76843bayt / offset0.0/end62.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-offline-1.png / contribution-offline / SHA256f33b73e439496442ff3f1e4b0ae43c3439e939727a5c1da8af88c7d18b299af0 / 73527bayt / offset62.0/end62.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-field-held-0.png / contribution-field-held / SHA256f639500ca632aa7733e3b9278d3535f572dfba9d10e8dbb4417e82e45febed9b / 82950bayt / offset0.0/end387.0 / previousRAW=kavriva_e1016_native_R3-contribution-field-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-field-held-1.png / contribution-field-held / SHA25662ac75ee6dff9e57ee2d49ef74733c48aff3a54ffa26017161cfb3470c1445f4 / 77153bayt / offset387.0/end387.0 / previousRAW=kavriva_e1016_native_R3-contribution-field-held-1.png / currentRAWalias=kavriva_e1016_native_R4-contribution-ready-1.png
+- kavriva_e1016_native_R4-review-ready-0.png / review-ready / SHA256bf85fc8b1544d72f1a32ea5b782b6c08b15bb6525b80237ad3858544d4f841d4 / 71448bayt / offset0.0/end437.0 / previousRAW=kavriva_e1016_native_R3-review-ready-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-ready-1.png / review-ready / SHA256051bccbe472411c7763efe3115c7d00b30008b22bf9211d606af0c1552c9caad / 64501bayt / offset437.0/end437.0 / previousRAW=kavriva_e1016_native_R3-review-ready-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-unknown-0.png / review-unknown / SHA256988e830c8b021231dd2a0715991f53ed930f85aeee84404d04bf1b13fe38d6e8 / 64913bayt / offset0.0/end134.0 / previousRAW=kavriva_e1016_native_R3-review-stale-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-unknown-1.png / review-unknown / SHA25670c5fe2e68a78900d1d9eb6fb38cbe511f29766263c297566f6ec3d8302dc526 / 64248bayt / offset134.0/end134.0 / previousRAW=kavriva_e1016_native_R3-review-stale-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-stale-0.png / review-stale / SHA256988e830c8b021231dd2a0715991f53ed930f85aeee84404d04bf1b13fe38d6e8 / 64913bayt / offset0.0/end134.0 / previousRAW=kavriva_e1016_native_R3-review-stale-0.png / currentRAWalias=kavriva_e1016_native_R4-review-unknown-0.png
+- kavriva_e1016_native_R4-review-stale-1.png / review-stale / SHA25670c5fe2e68a78900d1d9eb6fb38cbe511f29766263c297566f6ec3d8302dc526 / 64248bayt / offset134.0/end134.0 / previousRAW=kavriva_e1016_native_R3-review-stale-1.png / currentRAWalias=kavriva_e1016_native_R4-review-unknown-1.png
+- kavriva_e1016_native_R4-review-offline-0.png / review-offline / SHA2569010c3f4d3819c465fe3917937b3c4ad2486a347f05535e29a086cceea789558 / 67908bayt / offset0.0/end192.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-review-offline-1.png / review-offline / SHA256a94e5673f8f87d9f92d6001db2e64c476db66a1f8c97f28ed28b5679f2924e50 / 63977bayt / offset192.0/end192.0 / previousRAW=none / currentRAWalias=none
+- kavriva_e1016_native_R4-review-field-held-0.png / review-field-held / SHA2564091c875be99b422137b6a7c9adeb263e89ce1cba26fd66b17fd94d9f10b71d5 / 77132bayt / offset0.0/end558.0 / previousRAW=kavriva_e1016_native_R3-review-field-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-field-held-1.png / review-field-held / SHA256ef11365f60f68785160c26f03aa78f9d63cc3c6bc0ec01d11ec63da09dbce845 / 64410bayt / offset558.0/end558.0 / previousRAW=kavriva_e1016_native_R3-review-field-held-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-pending-0.png / review-pending / SHA25694bafceef752c376f50b71c76249cce5e8df1210dc4449a68ed580fa136bbed9 / 72629bayt / offset0.0/end373.0 / previousRAW=kavriva_e1016_native_R3-review-pending-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-pending-1.png / review-pending / SHA25627f7ce17f915db53a92f513b3a0b5d8999221cd70e750c33b7cb9ac9cd1d5f9f / 65195bayt / offset373.0/end373.0 / previousRAW=kavriva_e1016_native_R3-review-accepted-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-held-0.png / review-held / SHA256e39463adf467dd178c24f34efaf96ec989037087e81d32db8d4bc30c18e19ef7 / 69860bayt / offset0.0/end442.0 / previousRAW=kavriva_e1016_native_R3-review-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-held-1.png / review-held / SHA256a6987ba83c82c250d59e978f3e3ddbce51190eb532ebcdb1b4e4218d80488b34 / 65213bayt / offset442.0/end442.0 / previousRAW=kavriva_e1016_native_R3-review-dangerous-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-dangerous-0.png / review-dangerous / SHA256858af279688a792a8f3848f4dd7e87e2bd00fd5b102b5285fd963359827b60cf / 69927bayt / offset0.0/end465.0 / previousRAW=kavriva_e1016_native_R3-review-dangerous-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-dangerous-1.png / review-dangerous / SHA256a6987ba83c82c250d59e978f3e3ddbce51190eb532ebcdb1b4e4218d80488b34 / 65213bayt / offset465.0/end465.0 / previousRAW=kavriva_e1016_native_R3-review-dangerous-1.png / currentRAWalias=kavriva_e1016_native_R4-review-held-1.png
+- kavriva_e1016_native_R4-review-accepted-0.png / review-accepted / SHA256ffff6303fc0fbc72f8d425a7853ae62e98541aeffa98b4ad71dda44bf2fbd444 / 72381bayt / offset0.0/end396.0 / previousRAW=kavriva_e1016_native_R3-review-accepted-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-accepted-1.png / review-accepted / SHA25627f7ce17f915db53a92f513b3a0b5d8999221cd70e750c33b7cb9ac9cd1d5f9f / 65195bayt / offset396.0/end396.0 / previousRAW=kavriva_e1016_native_R3-review-accepted-1.png / currentRAWalias=kavriva_e1016_native_R4-review-pending-1.png
+- kavriva_e1016_native_R4-review-withdrawn-0.png / review-withdrawn / SHA25631a457ef97dbab388d00e69b5324f357791589fec25775cd19c74bfc4b6de6ff / 73466bayt / offset0.0/end442.0 / previousRAW=kavriva_e1016_native_R3-review-withdrawn-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-withdrawn-1.png / review-withdrawn / SHA256c6b023c94ab2776fed12e8e1c28ffb6292133a4a03532393abc0ad0c48b0a9fa / 65164bayt / offset442.0/end442.0 / previousRAW=kavriva_e1016_native_R3-review-withdrawn-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-failed-0.png / review-failed / SHA2561510e94138eb11b0286b4ffb60d35cd977c5e5248e2034126e6b0e65c464a86f / 69270bayt / offset0.0/end460.0 / previousRAW=kavriva_e1016_native_R3-review-failed-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-review-failed-1.png / review-failed / SHA2561b0c0f39d82f4997bf3cbe0d2ea52ae4c15d5d0b1ef5617f68fb540f46b661ce / 64441bayt / offset460.0/end460.0 / previousRAW=kavriva_e1016_native_R3-review-failed-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-empty-0.png / discovery-empty / SHA256c113fde536a2b172ba4b41a4b1a7d033ec012e0dc3eeca964ca3332cbe54fd2a / 69535bayt / offset0.0/end92.0 / previousRAW=kavriva_e1016_native_R3-discovery-empty-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-empty-1.png / discovery-empty / SHA25652264f3106593a73783278d541269631eaa461204817ef620dfe5c06e8e32fe5 / 69231bayt / offset92.0/end92.0 / previousRAW=kavriva_e1016_native_R3-discovery-empty-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-dangerous-0.png / discovery-dangerous / SHA256364ac546755699454a04194a1d02b9865a5d605db5c6afbf4523d38b43cafd99 / 67080bayt / offset0.0/end190.0 / previousRAW=kavriva_e1016_native_R3-discovery-dangerous-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-dangerous-1.png / discovery-dangerous / SHA256618ec3664d86c4fd04201425aec9203e52a8ac251837090d39e642fda43b03b1 / 64390bayt / offset190.0/end190.0 / previousRAW=kavriva_e1016_native_R3-discovery-dangerous-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-outcome-held-0.png / discovery-outcome-held / SHA25663b57195c225314b83d4884bbe90fdabbd48002baee8a4233834262e08f60529 / 67062bayt / offset0.0/end190.0 / previousRAW=kavriva_e1016_native_R3-discovery-outcome-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-discovery-outcome-held-1.png / discovery-outcome-held / SHA25694f635fbc1c28dda7c1dd38833ecc7acf68765a8a6906f988b17b9210317f14f / 64383bayt / offset190.0/end190.0 / previousRAW=kavriva_e1016_native_R3-discovery-outcome-held-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-private-held-0.png / contribution-private-held / SHA25637e6f830ebc2a233848e8de62d95fa058a621edc84d5ef056fada726b32d7309 / 82095bayt / offset0.0/end387.0 / previousRAW=kavriva_e1016_native_R3-contribution-private-held-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-private-held-1.png / contribution-private-held / SHA256b5d223f0dd9d642d97cbcb10affade0a447739eca3aa0d1debf4fdeed101183d / 72966bayt / offset387.0/end387.0 / previousRAW=kavriva_e1016_native_R3-contribution-private-held-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-long-0.png / contribution-long / SHA2569ed08632a2d3f53e0cd096bbbbb0481b6ac2e69d2c0c29bc28a42d1243c95c99 / 99389bayt / offset0.0/end979.0 / previousRAW=kavriva_e1016_native_R3-contribution-long-0.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-long-1.png / contribution-long / SHA256411e482e2a5e217d25aa98c8dd1c16dd9b8302a0cfcde87f62907d62e3cd5ea2 / 99312bayt / offset620.0/end979.0 / previousRAW=kavriva_e1016_native_R3-contribution-long-1.png / currentRAWalias=none
+- kavriva_e1016_native_R4-contribution-long-2.png / contribution-long / SHA256eab8c0c36915dac016706c490d10964c0cd7b7e9a675910abb8f924ac9eef83b / 77072bayt / offset979.0/end979.0 / previousRAW=kavriva_e1016_native_R3-contribution-long-2.png / currentRAWalias=none
+
+### R4 izole negatif mutation kontrolü
+
+```json
+{
+  "results": [
+    {
+      "removedGuard": "authority",
+      "result": "test rejected removed guard as expected",
+      "exit": 1,
+      "logBytes": 1045,
+      "logSHA256": "87f6e069d838d60f8903c8598f54bc2b7ae2f330c000193a6785bf979499414e"
+    },
+    {
+      "removedGuard": "dimension",
+      "result": "test rejected removed guard as expected",
+      "exit": 1,
+      "logBytes": 1051,
+      "logSHA256": "62df93e11b9231ba5cfb9681298bed668e2a9ca885638ed755abda47d56786c5"
+    }
+  ],
+  "restoredOriginalBytes": true,
+  "restoredSHA256": "a4b79bcc09160725de073ed48b291bb38a915325bf273c4536a74a9bc03b1d56"
+}
+```
+
+## Güncel R4 geçmişsiz bağımsız ilk okuma ve özgün yazım düzeltmesi
+
+/root/e1016_r4_first_reading, istenen gpt-6-luna/max;52currentunique gerçek dosyadan açım ve9RAWalias byte/SHAeşitliği,61manifestkimliği doğrulandı. Sabit20soru ekranlardan anlamca yanıtlandı. Root özgün6217bayt raporun tamamını okuyup 18. yanıtta ilk sözcük Evet ile okumak için paylaşım gerekmez dayanağının çeliştiğini buldu. Ekran ve sabit soru değişmedi; Root özgün raporu düzeltmedi. Bağımsız okuyucu aynı soruyu ve güncel görüntüyü tekrar okuyarak bunun kendi rapor yazım hatası olduğunu ve doğru yanıtın Hayır olduğunu585bayt ayrı ek raporda kaydetti. Her iki RAW rapor aynen korunur. Özgün dayanak zaten paylaşımın gerekli olmadığını söylüyordu; ek rapor görünür anlamı değiştirmedi, ilk sözcük hatasını açıkladı. Root her iki raporu tam okuyup hash/byte doğruladı;20yanıtın tüm anlamı ek kayıtla açık. AIilkoku insan/cihaz/canlıişlem veya üretim kaynağı kanıtı değildir. R1/R2/R3 raporlar ve bütün kaynak RET değiştirilmez.
+
+Görev REVIEW; yerel F01/F02/F03 onarımı otomatik bağımsız kapanış değildir. Taze bütün exactSOURCE REVIEW/CI-T3/ayrıFINALreview-CI/normalmerge-fetchedmain8 henüz gerekir. Ana103DONE/103kalan/206 değişmez.
+
+### Güncel R4 özgün ilk okuma
+
+RAW 6217 bayt / SHA256 c9eb8e1857cd12fa25e788648ee41601a0592faf3bb48021adfcd506f003a789
+
+<pre>Kavriva E1016 — Bağımsız ilk ekran okuması (R4)
+
+Kapsam ve yöntem
+- Yalnızca sabit 20 soruluk fixture ve R4 manifestindeki güncel PNG dosyaları okundu.
+- Manifestteki 61 kaydın tamamının dosya boyutu ve SHA-256 değeri gerçek dosyalardan hesaplandı; manifest metadata’sıyla tümü eşleşti.
+- 52 benzersiz R4 görselinin her biri gerçek dosya yolundan tools.view_image ile açılıp incelendi. Kalan 9 kayıt alias hedefiyle ham bayt düzeyinde karşılaştırıldı; 9/9 eşleşti.
+- Görseller kaydırma parçaları halinde birlikte okundu. Soru seti değiştirilmedi.
+
+Sabit sorulara yanıtlar
+
+1. Yanıt: Hayır. Dayanak: Ekran, bunun topluluk deneyimi olduğunu ve resmî Kavriva rehberi ya da doğrulanmış bakım talimatı olmadığını söylüyor. Belirsizlik: Yok.
+
+2. Yanıt: Hayır. Dayanak: Yayınlanmanın teknik doğruluğu doğrulamadığı açıkça yazıyor. Belirsizlik: Yok.
+
+3. Yanıt: Deneyim kartı/detayında kaynak, motosiklet bağlamı, inceleme durumu ve kontrol zamanı/tarihi gösteriliyor. Dayanak: Ekranlarda “Kaynak”, “Motosiklet bağlamı”, “İnceleme durumu” ve “Kontrol zamanı” etiketleri var. Belirsizlik: Yok.
+
+4. Yanıt: Hayır. Dayanak: “Kişisel notlar kendiliğinden topluluğa açılmaz” ve paylaşım kapsamı seçilmeden notların özel kalacağı belirtiliyor. Belirsizlik: Yok.
+
+5. Yanıt: Evet. Dayanak: “Paylaşmadan önce kapsamı incele” ekranı toplulukta görünecek anlatımı/seçilen açıklamayı ve isteğe bağlı fotoğrafı, özel kalacak kişisel notlar ve hesap bilgilerinden ayırıyor. Belirsizlik: Yok.
+
+6. Yanıt: Fotoğraf zorunlu değil; teknik doğrulama kanıtı da değil. Dayanak: Fotoğrafın isteğe bağlı olduğu ve teknik doğrulama sağlamadığı yazıyor. Belirsizlik: Yok.
+
+7. Yanıt: Hayır. Dayanak: “Toplulukla paylaş” paylaşım talebi düğmesi; ayrı durum ekranları inceleme beklediğini veya yayın durumunu gösteriyor. İstek ekranı tek başına yayın kanıtı değil. Belirsizlik: Yok.
+
+8. Yanıt: Hayır. Dayanak: Ekran, vazgeçmenin kişisel kaydı silmek veya yayınlamak olmadığını söylüyor. Belirsizlik: Yok.
+
+9. Yanıt: Evet; mevcut engel/gerekçe ve yapılabilecek düzeltme açıklanıyor. Dayanak: Örnek gerekçe, anlatımın kaynağının açıklanmamış olması; öneri kaynağı açıklayıp yeniden inceleme istemek. Belirsizlik: Yok.
+
+10. Yanıt: Hayır. Dayanak: Düzeltme, yeniden gönderme ve itirazın birer istek olduğu, yayına kabul anlamına gelmediği açıkça yazıyor. Belirsizlik: Yok.
+
+11. Yanıt: “İtiraz et” yolunu kullanabilirsin. Dayanak: İnceleme durumlarında bu eylem gösteriliyor; ekran, yalnızca desteklenen güncel izinle açılabileceğini belirtiyor. Belirsizlik: Yok.
+
+12. Yanıt: Hayır. Dayanak: Geri çekme gelecekteki kullanım ve görünürlüğü değiştirir; geçmiş katkı, kaynak ve bağlı kanıt izleri sessizce silinmez. Belirsizlik: Yok.
+
+13. Yanıt: Hayır. Dayanak: İstek iletildi ekranı, güncel sonucun doğrulanmadığını ve değişikliğin tamamlanmış sayılmadığını söylüyor. Tamamlanmış geri çekme durumu ayrı olarak gelecekteki görünürlüğün değiştiğini belirtiyor. Belirsizlik: Yok.
+
+14. Yanıt: Hayır. Dayanak: Güncel kaynak ve okuma izni yoksa özel bilgiler gösterilmiyor; paylaşım ve inceleme işlemleri kapalı. Belirsizlik: Yok.
+
+15. Yanıt: Hayır. Dayanak: Rol, fotoğraf veya inceleme etiketi teknik uygulama izni sağlamıyor; ayrıca bölüm sosyal puan veya popülerlik sıralaması sunmuyor. Belirsizlik: Yok.
+
+16. Yanıt: Hayır. Dayanak: Tehlikeli içerik için “normal bir bakım adımı olarak gösterilmiyor” uyarısı var; riskli inceleme durumunda da anlatımın normal adım olarak sunulmadığı belirtiliyor. Belirsizlik: Yok.
+
+17. Yanıt: Hayır. Dayanak: Ekranlarda numaralı tamir adımları yok; içerik kişisel/topluluk deneyimi diye etiketleniyor ve resmî ya da doğrulanmış talimat olmadığı belirtiliyor. Belirsizlik: Yok.
+
+18. Yanıt: Evet. Dayanak: “Okumak için paylaşım yapman gerekmez” açıkça yazıyor. Belirsizlik: Yok.
+
+19. Yanıt: Hayır. Dayanak: Sorun bildirimi yalnızca inceleme isteği; teknik karar vermez ve içeriği kendiliğinden kaldırmaz. Belirsizlik: Yok.
+
+20. Yanıt: Hayır. Dayanak: Ekranlarda “Örnek” kaynak/anlatım ve inceleme durumu kullanılıyor; bunlar gerçek kullanıcıyı, gerçek yayını veya güncel izni kanıtlamıyor. Belirsizlik: Yok.
+
+Verdict: PASS
+Sabit soruların 20’si de görünen ekran metinleriyle anlamca yanıtlanabiliyor; ilk okumada onarım gerektiren bir belirsizlik bulunmadı.
+
+Kanıt sınırı
+Bu rapor statik PNG’lerin model tarafından okunmasıdır. Gerçek bir insan kullanıcının, cihaz davranışının, canlı izin/yayın/inceleme işleminin veya gerçek dünyada teknik doğruluğun kanıtı değildir.
+
+Ham bayt alias doğrulamaları
+- R4-discovery-stale-0.png = R4-discovery-unknown-0.png (64,966 bayt; SHA-256 bb27a753f7d5889f6676e681ada9fb3e9ba532ad425e3a548a93cc77e195060b)
+- R4-discovery-stale-1.png = R4-discovery-unknown-1.png (64,483 bayt; SHA-256 d680b3f77a06df31532e19f4cdf69646dc0217aedcaa13a82e8d75f7b2531453)
+- R4-contribution-stale-0.png = R4-contribution-unknown-0.png (73,037 bayt; SHA-256 e38fd480a5b14d04fccdacd68f4bb5d61b0aa5651215a710319ae09a46bb6184)
+- R4-contribution-stale-1.png = R4-contribution-unknown-1.png (73,033 bayt; SHA-256 86d19f0631f34156028d013d9a40f557c0d3bbc140e6c4f9c01d5bd0269a2743)
+- R4-contribution-field-held-1.png = R4-contribution-ready-1.png (77,153 bayt; SHA-256 62ac75ee6dff9e57ee2d49ef74733c48aff3a54ffa26017161cfb3470c1445f4)
+- R4-review-stale-0.png = R4-review-unknown-0.png (64,913 bayt; SHA-256 988e830c8b021231dd2a0715991f53ed930f85aeee84404d04bf1b13fe38d6e8)
+- R4-review-stale-1.png = R4-review-unknown-1.png (64,248 bayt; SHA-256 70c5fe2e68a78900d1d9eb6fb38cbe511f29766263c297566f6ec3d8302dc526)
+- R4-review-dangerous-1.png = R4-review-held-1.png (65,213 bayt; SHA-256 a6987ba83c82c250d59e978f3e3ddbce51190eb532ebcdb1b4e4218d80488b34)
+- R4-review-accepted-1.png = R4-review-pending-1.png (65,195 bayt; SHA-256 27f7ce17f915db53a92f513b3a0b5d8999221cd70e750c33b7cb9ac9cd1d5f9f)</pre>
+
+```base64
+S2F2cml2YSBFMTAxNiDigJQgQmHEn8SxbXPEsXogaWxrIGVrcmFuIG9rdW1hc8SxIChSNCkKCkthcHNhbSB2ZSB5w7ZudGVtCi0gWWFsbsSxemNhIHNhYml0IDIwIHNvcnVsdWsgZml4dHVyZSB2ZSBSNCBtYW5pZmVzdGluZGVraSBnw7xuY2VsIFBORyBkb3N5YWxhcsSxIG9rdW5kdS4KLSBNYW5pZmVzdHRla2kgNjEga2F5ZMSxbiB0YW1hbcSxbsSxbiBkb3N5YSBib3l1dHUgdmUgU0hBLTI1NiBkZcSfZXJpIGdlcsOnZWsgZG9zeWFsYXJkYW4gaGVzYXBsYW5kxLE7IG1hbmlmZXN0IG1ldGFkYXRh4oCZc8SxeWxhIHTDvG3DvCBlxZ9sZcWfdGkuCi0gNTIgYmVuemVyc2l6IFI0IGfDtnJzZWxpbmluIGhlciBiaXJpIGdlcsOnZWsgZG9zeWEgeW9sdW5kYW4gdG9vbHMudmlld19pbWFnZSBpbGUgYcOnxLFsxLFwIGluY2VsZW5kaS4gS2FsYW4gOSBrYXnEsXQgYWxpYXMgaGVkZWZpeWxlIGhhbSBiYXl0IGTDvHpleWluZGUga2FyxZ/EsWxhxZ90xLFyxLFsZMSxOyA5LzkgZcWfbGXFn3RpLgotIEfDtnJzZWxsZXIga2F5ZMSxcm1hIHBhcsOnYWxhcsSxIGhhbGluZGUgYmlybGlrdGUgb2t1bmR1LiBTb3J1IHNldGkgZGXEn2nFn3RpcmlsbWVkaS4KClNhYml0IHNvcnVsYXJhIHlhbsSxdGxhcgoKMS4gWWFuxLF0OiBIYXnEsXIuIERheWFuYWs6IEVrcmFuLCBidW51biB0b3BsdWx1ayBkZW5leWltaSBvbGR1xJ91bnUgdmUgcmVzbcOuIEthdnJpdmEgcmVoYmVyaSB5YSBkYSBkb8SfcnVsYW5txLHFnyBiYWvEsW0gdGFsaW1hdMSxIG9sbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgoyLiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogWWF5xLFubGFubWFuxLFuIHRla25payBkb8SfcnVsdcSfdSBkb8SfcnVsYW1hZMSxxJ/EsSBhw6fEsWvDp2EgeWF6xLF5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgozLiBZYW7EsXQ6IERlbmV5aW0ga2FydMSxL2RldGF5xLFuZGEga2F5bmFrLCBtb3Rvc2lrbGV0IGJhxJ9sYW3EsSwgaW5jZWxlbWUgZHVydW11IHZlIGtvbnRyb2wgemFtYW7EsS90YXJpaGkgZ8O2c3RlcmlsaXlvci4gRGF5YW5hazogRWtyYW5sYXJkYSDigJxLYXluYWvigJ0sIOKAnE1vdG9zaWtsZXQgYmHEn2xhbcSx4oCdLCDigJzEsG5jZWxlbWUgZHVydW114oCdIHZlIOKAnEtvbnRyb2wgemFtYW7EseKAnSBldGlrZXRsZXJpIHZhci4gQmVsaXJzaXpsaWs6IFlvay4KCjQuIFlhbsSxdDogSGF5xLFyLiBEYXlhbmFrOiDigJxLacWfaXNlbCBub3RsYXIga2VuZGlsacSfaW5kZW4gdG9wbHVsdcSfYSBhw6fEsWxtYXrigJ0gdmUgcGF5bGHFn8SxbSBrYXBzYW3EsSBzZcOnaWxtZWRlbiBub3RsYXLEsW4gw7Z6ZWwga2FsYWNhxJ/EsSBiZWxpcnRpbGl5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgo1LiBZYW7EsXQ6IEV2ZXQuIERheWFuYWs6IOKAnFBheWxhxZ9tYWRhbiDDtm5jZSBrYXBzYW3EsSBpbmNlbGXigJ0gZWtyYW7EsSB0b3BsdWx1a3RhIGfDtnLDvG5lY2VrIGFubGF0xLFtxLEvc2XDp2lsZW4gYcOnxLFrbGFtYXnEsSB2ZSBpc3RlxJ9lIGJhxJ9sxLEgZm90b8SfcmFmxLEsIMO2emVsIGthbGFjYWsga2nFn2lzZWwgbm90bGFyIHZlIGhlc2FwIGJpbGdpbGVyaW5kZW4gYXnEsXLEsXlvci4gQmVsaXJzaXpsaWs6IFlvay4KCjYuIFlhbsSxdDogRm90b8SfcmFmIHpvcnVubHUgZGXEn2lsOyB0ZWtuaWsgZG/En3J1bGFtYSBrYW7EsXTEsSBkYSBkZcSfaWwuIERheWFuYWs6IEZvdG/En3JhZsSxbiBpc3RlxJ9lIGJhxJ9sxLEgb2xkdcSfdSB2ZSB0ZWtuaWsgZG/En3J1bGFtYSBzYcSfbGFtYWTEscSfxLEgeWF6xLF5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgo3LiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazog4oCcVG9wbHVsdWtsYSBwYXlsYcWf4oCdIHBheWxhxZ/EsW0gdGFsZWJpIGTDvMSfbWVzaTsgYXlyxLEgZHVydW0gZWtyYW5sYXLEsSBpbmNlbGVtZSBiZWtsZWRpxJ9pbmkgdmV5YSB5YXnEsW4gZHVydW11bnUgZ8O2c3Rlcml5b3IuIMSwc3RlayBla3JhbsSxIHRlayBiYcWfxLFuYSB5YXnEsW4ga2FuxLF0xLEgZGXEn2lsLiBCZWxpcnNpemxpazogWW9rLgoKOC4gWWFuxLF0OiBIYXnEsXIuIERheWFuYWs6IEVrcmFuLCB2YXpnZcOnbWVuaW4ga2nFn2lzZWwga2F5ZMSxIHNpbG1layB2ZXlhIHlhecSxbmxhbWFrIG9sbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgo5LiBZYW7EsXQ6IEV2ZXQ7IG1ldmN1dCBlbmdlbC9nZXJla8OnZSB2ZSB5YXDEsWxhYmlsZWNlayBkw7x6ZWx0bWUgYcOnxLFrbGFuxLF5b3IuIERheWFuYWs6IMOWcm5layBnZXJla8OnZSwgYW5sYXTEsW3EsW4ga2F5bmHEn8SxbsSxbiBhw6fEsWtsYW5tYW3EscWfIG9sbWFzxLE7IMO2bmVyaSBrYXluYcSfxLEgYcOnxLFrbGF5xLFwIHllbmlkZW4gaW5jZWxlbWUgaXN0ZW1lay4gQmVsaXJzaXpsaWs6IFlvay4KCjEwLiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogRMO8emVsdG1lLCB5ZW5pZGVuIGfDtm5kZXJtZSB2ZSBpdGlyYXrEsW4gYmlyZXIgaXN0ZWsgb2xkdcSfdSwgeWF5xLFuYSBrYWJ1bCBhbmxhbcSxbmEgZ2VsbWVkacSfaSBhw6fEsWvDp2EgeWF6xLF5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgoxMS4gWWFuxLF0OiDigJzEsHRpcmF6IGV04oCdIHlvbHVudSBrdWxsYW5hYmlsaXJzaW4uIERheWFuYWs6IMSwbmNlbGVtZSBkdXJ1bWxhcsSxbmRhIGJ1IGV5bGVtIGfDtnN0ZXJpbGl5b3I7IGVrcmFuLCB5YWxuxLF6Y2EgZGVzdGVrbGVuZW4gZ8O8bmNlbCBpemlubGUgYcOnxLFsYWJpbGVjZcSfaW5pIGJlbGlydGl5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgoxMi4gWWFuxLF0OiBIYXnEsXIuIERheWFuYWs6IEdlcmkgw6dla21lIGdlbGVjZWt0ZWtpIGt1bGxhbsSxbSB2ZSBnw7Zyw7xuw7xybMO8xJ/DvCBkZcSfacWfdGlyaXI7IGdlw6dtacWfIGthdGvEsSwga2F5bmFrIHZlIGJhxJ9sxLEga2FuxLF0IGl6bGVyaSBzZXNzaXpjZSBzaWxpbm1lei4gQmVsaXJzaXpsaWs6IFlvay4KCjEzLiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogxLBzdGVrIGlsZXRpbGRpIGVrcmFuxLEsIGfDvG5jZWwgc29udWN1biBkb8SfcnVsYW5tYWTEscSfxLFuxLEgdmUgZGXEn2nFn2lrbGnEn2luIHRhbWFtbGFubcSxxZ8gc2F5xLFsbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIFRhbWFtbGFubcSxxZ8gZ2VyaSDDp2VrbWUgZHVydW11IGF5csSxIG9sYXJhayBnZWxlY2VrdGVraSBnw7Zyw7xuw7xybMO8xJ/DvG4gZGXEn2nFn3RpxJ9pbmkgYmVsaXJ0aXlvci4gQmVsaXJzaXpsaWs6IFlvay4KCjE0LiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogR8O8bmNlbCBrYXluYWsgdmUgb2t1bWEgaXpuaSB5b2tzYSDDtnplbCBiaWxnaWxlciBnw7ZzdGVyaWxtaXlvcjsgcGF5bGHFn8SxbSB2ZSBpbmNlbGVtZSBpxZ9sZW1sZXJpIGthcGFsxLEuIEJlbGlyc2l6bGlrOiBZb2suCgoxNS4gWWFuxLF0OiBIYXnEsXIuIERheWFuYWs6IFJvbCwgZm90b8SfcmFmIHZleWEgaW5jZWxlbWUgZXRpa2V0aSB0ZWtuaWsgdXlndWxhbWEgaXpuaSBzYcSfbGFtxLF5b3I7IGF5csSxY2EgYsO2bMO8bSBzb3N5YWwgcHVhbiB2ZXlhIHBvcMO8bGVybGlrIHPEsXJhbGFtYXPEsSBzdW5tdXlvci4gQmVsaXJzaXpsaWs6IFlvay4KCjE2LiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogVGVobGlrZWxpIGnDp2VyaWsgacOnaW4g4oCcbm9ybWFsIGJpciBiYWvEsW0gYWTEsW3EsSBvbGFyYWsgZ8O2c3RlcmlsbWl5b3LigJ0gdXlhcsSxc8SxIHZhcjsgcmlza2xpIGluY2VsZW1lIGR1cnVtdW5kYSBkYSBhbmxhdMSxbcSxbiBub3JtYWwgYWTEsW0gb2xhcmFrIHN1bnVsbWFkxLHEn8SxIGJlbGlydGlsaXlvci4gQmVsaXJzaXpsaWs6IFlvay4KCjE3LiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogRWtyYW5sYXJkYSBudW1hcmFsxLEgdGFtaXIgYWTEsW1sYXLEsSB5b2s7IGnDp2VyaWsga2nFn2lzZWwvdG9wbHVsdWsgZGVuZXlpbWkgZGl5ZSBldGlrZXRsZW5peW9yIHZlIHJlc23DriB5YSBkYSBkb8SfcnVsYW5txLHFnyB0YWxpbWF0IG9sbWFkxLHEn8SxIGJlbGlydGlsaXlvci4gQmVsaXJzaXpsaWs6IFlvay4KCjE4LiBZYW7EsXQ6IEV2ZXQuIERheWFuYWs6IOKAnE9rdW1hayBpw6dpbiBwYXlsYcWfxLFtIHlhcG1hbiBnZXJla21leuKAnSBhw6fEsWvDp2EgeWF6xLF5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgoxOS4gWWFuxLF0OiBIYXnEsXIuIERheWFuYWs6IFNvcnVuIGJpbGRpcmltaSB5YWxuxLF6Y2EgaW5jZWxlbWUgaXN0ZcSfaTsgdGVrbmlrIGthcmFyIHZlcm1leiB2ZSBpw6dlcmnEn2kga2VuZGlsacSfaW5kZW4ga2FsZMSxcm1hei4gQmVsaXJzaXpsaWs6IFlvay4KCjIwLiBZYW7EsXQ6IEhhecSxci4gRGF5YW5hazogRWtyYW5sYXJkYSDigJzDlnJuZWvigJ0ga2F5bmFrL2FubGF0xLFtIHZlIGluY2VsZW1lIGR1cnVtdSBrdWxsYW7EsWzEsXlvcjsgYnVubGFyIGdlcsOnZWsga3VsbGFuxLFjxLF5xLEsIGdlcsOnZWsgeWF5xLFuxLEgdmV5YSBnw7xuY2VsIGl6bmkga2FuxLF0bGFtxLF5b3IuIEJlbGlyc2l6bGlrOiBZb2suCgpWZXJkaWN0OiBQQVNTClNhYml0IHNvcnVsYXLEsW4gMjDigJlzaSBkZSBnw7Zyw7xuZW4gZWtyYW4gbWV0aW5sZXJpeWxlIGFubGFtY2EgeWFuxLF0bGFuYWJpbGl5b3I7IGlsayBva3VtYWRhIG9uYXLEsW0gZ2VyZWt0aXJlbiBiaXIgYmVsaXJzaXpsaWsgYnVsdW5tYWTEsS4KCkthbsSxdCBzxLFuxLFyxLEKQnUgcmFwb3Igc3RhdGlrIFBOR+KAmWxlcmluIG1vZGVsIHRhcmFmxLFuZGFuIG9rdW5tYXPEsWTEsXIuIEdlcsOnZWsgYmlyIGluc2FuIGt1bGxhbsSxY8SxbsSxbiwgY2loYXogZGF2cmFuxLHFn8SxbsSxbiwgY2FubMSxIGl6aW4veWF5xLFuL2luY2VsZW1lIGnFn2xlbWluaW4gdmV5YSBnZXLDp2VrIGTDvG55YWRhIHRla25payBkb8SfcnVsdcSfdW4ga2FuxLF0xLEgZGXEn2lsZGlyLgoKSGFtIGJheXQgYWxpYXMgZG/En3J1bGFtYWxhcsSxCi0gUjQtZGlzY292ZXJ5LXN0YWxlLTAucG5nID0gUjQtZGlzY292ZXJ5LXVua25vd24tMC5wbmcgKDY0LDk2NiBiYXl0OyBTSEEtMjU2IGJiMjdhNzUzZjdkNTg4OWY2Njc2ZTY4MWFkYTlmYjNlOWJhNTMyYWQ0MjVlM2E1NDhhOTNjYzc3ZTE5NTA2MGIpCi0gUjQtZGlzY292ZXJ5LXN0YWxlLTEucG5nID0gUjQtZGlzY292ZXJ5LXVua25vd24tMS5wbmcgKDY0LDQ4MyBiYXl0OyBTSEEtMjU2IGQ2ODBiM2Y3N2EwNmRmMzE1MzJlMTlmNGNkZjY5NjQ2ZGMwMjE3YWVkY2FhMTNhODJlOGQ3NWY3YjI1MzE0NTMpCi0gUjQtY29udHJpYnV0aW9uLXN0YWxlLTAucG5nID0gUjQtY29udHJpYnV0aW9uLXVua25vd24tMC5wbmcgKDczLDAzNyBiYXl0OyBTSEEtMjU2IGUzOGZkNDgwYTViMTRkMDRmY2NkYWNkNjhmNGJiNWQ2MWIwYWE1NjUxMjE1YTcxMDMxOWFlMDlhNDZiYjYxODQpCi0gUjQtY29udHJpYnV0aW9uLXN0YWxlLTEucG5nID0gUjQtY29udHJpYnV0aW9uLXVua25vd24tMS5wbmcgKDczLDAzMyBiYXl0OyBTSEEtMjU2IDg2ZDE5ZjA2MzFmMzQxNTYwMjhkMDEzZDlhNDBmNTU3YzBkM2JiYzE0MGU2YzRmOWMwMWQ1YmQwMjY5YTI3NDMpCi0gUjQtY29udHJpYnV0aW9uLWZpZWxkLWhlbGQtMS5wbmcgPSBSNC1jb250cmlidXRpb24tcmVhZHktMS5wbmcgKDc3LDE1MyBiYXl0OyBTSEEtMjU2IDYyYWM3NWVlNmRmZjllNTdlZTJkNDllZjc0NzMzYzQ4YWZmM2E1NGZmYTI2MDE3MTYxY2ZiMzQ3MGMxNDQ1ZjQpCi0gUjQtcmV2aWV3LXN0YWxlLTAucG5nID0gUjQtcmV2aWV3LXVua25vd24tMC5wbmcgKDY0LDkxMyBiYXl0OyBTSEEtMjU2IDk4OGU4MzBjOGIwMjEyMzFkZDJhMDcxNTk5MWY1M2VkOTMwZjg1YWVlZTg0NDA0ZDA0YmYxYjEzZmUzOGQ2ZTgpCi0gUjQtcmV2aWV3LXN0YWxlLTEucG5nID0gUjQtcmV2aWV3LXVua25vd24tMS5wbmcgKDY0LDI0OCBiYXl0OyBTSEEtMjU2IDcwYzVmZTJlNjhhNzg5MDBkMWQ5ZWI2ZmIzOGNiZTUxMWYyOTc2NjI2M2MyOTc1NjZmNmVjM2Q4MzAyZGM1MjYpCi0gUjQtcmV2aWV3LWRhbmdlcm91cy0xLnBuZyA9IFI0LXJldmlldy1oZWxkLTEucG5nICg2NSwyMTMgYmF5dDsgU0hBLTI1NiBhNjk4N2JhODNjODJjMjUwZDU5ZTk3OGYzZTNkZGJjZTUxMTkwZWI1MzJlYmNkYjFiNGU0MjE4ZDgwNDg4YjM0KQotIFI0LXJldmlldy1hY2NlcHRlZC0xLnBuZyA9IFI0LXJldmlldy1wZW5kaW5nLTEucG5nICg2NSwxOTUgYmF5dDsgU0hBLTI1NiAyN2Y3Y2UxN2Y5MTVkYjUzYTkyZjUxM2IzYTBiNWQ4OTk5MjIxY2Q3MGU3NTBjMzNiN2NiOWFjOWNkMWQ1ZjlmKQ==
+```
+
+### Güncel R4 bağımsız okuyucunun ayrı yazım ek kaydı
+
+RAW 585 bayt / SHA256 52faee53c10fc7f24d02c5284a07b05bcd50838606190a34bfa372f07cc95bf3
+
+<pre>Kavriva E1016 — İlk okuma ek düzeltmesi
+
+Sabit soru 18: “Topluluk deneyimini okumak için paylaşım yapman zorunlu mu?”
+
+Önceki rapordaki 18. yanıt “Evet” diye başlıyor; bu, kendi dayanağı olan “Okumak için paylaşım yapman gerekmez” ifadesiyle çelişiyor. Bu bir rapor yazım hatasıdır.
+
+Doğru yanıt: Hayır, topluluk deneyimini okumak için paylaşım yapmak zorunlu değil. Güncel R4 topluluk ekranında açıkça “Okumak için paylaşım yapman gerekmez” yazıyor.
+
+Ekran belirsizliği: Yok. Soru ve ekran metni bu yanıtı doğrudan destekliyor.</pre>
+
+```base64
+S2F2cml2YSBFMTAxNiDigJQgxLBsayBva3VtYSBlayBkw7x6ZWx0bWVzaQoKU2FiaXQgc29ydSAxODog4oCcVG9wbHVsdWsgZGVuZXlpbWluaSBva3VtYWsgacOnaW4gcGF5bGHFn8SxbSB5YXBtYW4gem9ydW5sdSBtdT/igJ0KCsOWbmNla2kgcmFwb3JkYWtpIDE4LiB5YW7EsXQg4oCcRXZldOKAnSBkaXllIGJhxZ9sxLF5b3I7IGJ1LCBrZW5kaSBkYXlhbmHEn8SxIG9sYW4g4oCcT2t1bWFrIGnDp2luIHBheWxhxZ/EsW0geWFwbWFuIGdlcmVrbWV64oCdIGlmYWRlc2l5bGUgw6dlbGnFn2l5b3IuIEJ1IGJpciByYXBvciB5YXrEsW0gaGF0YXPEsWTEsXIuCgpEb8SfcnUgeWFuxLF0OiBIYXnEsXIsIHRvcGx1bHVrIGRlbmV5aW1pbmkgb2t1bWFrIGnDp2luIHBheWxhxZ/EsW0geWFwbWFrIHpvcnVubHUgZGXEn2lsLiBHw7xuY2VsIFI0IHRvcGx1bHVrIGVrcmFuxLFuZGEgYcOnxLFrw6dhIOKAnE9rdW1hayBpw6dpbiBwYXlsYcWfxLFtIHlhcG1hbiBnZXJla21leuKAnSB5YXrEsXlvci4KCkVrcmFuIGJlbGlyc2l6bGnEn2k6IFlvay4gU29ydSB2ZSBla3JhbiBtZXRuaSBidSB5YW7EsXTEsSBkb8SfcnVkYW4gZGVzdGVrbGl5b3Iu
+```
