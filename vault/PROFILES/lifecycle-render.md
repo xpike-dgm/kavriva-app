@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-014a, T-E1-014a, E-DEV-112]
 evidence: [E-DEV-112]
 supersedes: []
-status: REVIEW
+status: CHANGES_REQUESTED
 ---
 
 # Motosiklet pasiflik, aktarım ve silme kapsamı
@@ -73,3 +73,12 @@ Kodöncesi c5e5411ea96957a8534780c9346452fcde383cf6; kod d1916bc7b9149f21156a922
 ## Güncel kayıt kontrolü ve bağımsız ilk okuma
 
 R2run_all 12kontrol/42koruma-iztesti PASS/worst0; RAW SHA256 50a5a5d321e31b2d12f1a8ed735488626bc6ffd8a92ab24acefa2b64817220f9. İlkR1graphFAIL ve onarımı EDEV112 içinde korunur. Geçmişsiz R1ilkoku /root/e1014a_first_reading 48original/17soru ALL CLEAR; Root özgün3727bayt raporun tamamını okudu, RAW SHA256 3420814a18da4d712b212eda8bcc2ddec6d2d07ce88a4f9c2dfca40226becbbc. Bütün bağımsız kaynakGATE hükmü ve aynıCI-T3 henüz yok; görevREVIEW,100DONE106kalan206.
+
+
+## Bağımsız bütün kaynak R1 reddi ve F-01 kodöncesi düzeltme kapsamı
+
+2026-10-07 /root/e1014a_whole_review; istenen gpt-6-luna/max, geçmişsiz bağımsız inceleme. Kaynak f9c7eb7db299d0653b55a5e44d4f2deb4b5d1cfa, PR114. Hüküm CHANGES REQUESTED; tek kabul engeli F-01: alternatif SCR031 seçimi dış üreticiye yeni işlem bağlamı talebi iletmiyor. Root özgün raporun tamamını okudu; RAW 11372bayt SHA256 74cf98c0b0bf01dab42c554e3613bba0079ef094ab69f43db4b85e6410b68397. Önceki kaynak16CI/gerçek PR-T3 yeşil olması bu reddi kapatmaz. Ana100DONE106kalan206; görev CHANGES_REQUESTED.
+
+Dar düzeltme önceden tanımlanır: aynı14adres/50tabanpin/17soru korunur. Yeni yalnız-okuma bağlam talebi niyeti, seçilen işlemi mevcut scope/request/plan subject ile dış üreticiye iletir; mutasyon veya yeni yetki üretmez. Mevcut işlemden farklı seçimde yeni güncel bağlam gelene kadar mutasyon kapalıdır. Talep callback'i eski scope/request/plan/phase/seçim, kaybolmuş okuma, offline veya eksik handler altında çalışamaz; aynı bağlam/seçim için çift talep engellenir. Silme ekranındaki koruyan alternatif de kendi pasiflik bağlamını ister. Eşleşen yeni request/operation ve bütün güncel okuma/altı etki bağı gelmeden işlem açılmaz; yeni bağlam açık silme onayını sıfırlar. Eksik/eski/yabancı yeni bağlam kapalı kalır. Testler gerçek seçim→talep→dışarıdan yeni bağlam→ayrı açık işlem niyetini ve eski callback/çift talep/handler yok negatiflerini göstermelidir. Kaynak/PNG/ilkoku ve aynı-yeni-head CI/T3 sonrası taze bağımsız bütün inceleme gerekir.
+
+Sorgu kilidi ikinci ret bulgusu değildir: bağımsız rapor mevcut tek-sorgu sözleşmesini açıkça korur. Belirsiz sonucun gerçek üreticide çözülmesi kanıtlanmamış üretim recovery sınırıdır; yeniden sorgu/resend protokolü bu F-01 düzeltmesinde genişletilmez. Gerçek lifecycle writer/kimlik/yetki/hukuk/saklama/yedek/cihaz/yayın HELD kalır; SCR037 ayrı görevdir.
