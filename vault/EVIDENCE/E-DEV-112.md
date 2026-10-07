@@ -13,7 +13,7 @@ tests: [modules/e01-app/internal/shell/test/lifecycle_test.dart, modules/e10-gra
 superseded_by: []
 last_verified: 2026-10-07
 depends_on: [V-E1-LIFECYCLE-001]
-used_by: [V-E1-LIFECYCLE-001, P-E1-014a, T-E1-014a]
+used_by: [V-E1-LIFECYCLE-001, P-E1-014a, T-E1-014a, V-E1-ENTITLEMENT-001, P-E1-014b]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -645,3 +645,7 @@ PRrun37558230563/t3-gatejob112589324294: 5başarılıadım/success.
 - push e9-bounded-proposal-tests: https://github.com/xpike-dgm/kavriva-app/actions/runs/37558228144 — SUCCESS; hamlogRAW SHA2563b4c650c6df2bda030f7a4b3120e59cae4d58629952f645b3ca883bfeebf5ae5/16983byte.
 
 E1gerçekhamlog: strictformat32/0-analyze0-299normalPASS; E4 170PASS/E9 9PASS; mimarirun_allworst0. PushT3SKIPPED0adım bağımsız kabul değildir; yukarıdaki PR T3 gerçek adımlarla başarılıdır. CI bağımsız incelemeci hükmünün yerine geçmez; CI görev tamamlanma hükmü değildir.
+
+## T014b tüketimi ve gerçek PR114 ikincil kabul makbuzu
+
+[PR114](https://github.com/xpike-dgm/kavriva-app/pull/114) MERGED@2026-10-07T02:04:20Z; kaynakb4cebbb004485e14137d4ce2af82a5d2924fdfcc bağımsız FULLPASS, son60ccfb0b2d25c97751a2fb083f016692d026a491d ayrıPASS. Gerçeksource16/final16/main8 workflow/job/adım/hamlogSUCCESS. Normal eşleşen merge/fetchedmain2471734750e723ab7af5cb84f6676155ca26960f, treeequal; [son özgün hüküm](https://github.com/xpike-dgm/kavriva-app/pull/114#issuecomment-6029329694), [gerçek main8](https://github.com/xpike-dgm/kavriva-app/pull/114#issuecomment-6029378341). Gerçek101 sınırlıDONE105kalan206; özgün ret ve rapor baytları/esasgövde korunur. Bu ek T014b veya üretimGATE kabulü değildir.

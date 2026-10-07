@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "task": "T-E1-014b",
+  "methodSource": "GATE HELD-acceptance evaluation; AI ilk okuma insan/cihaz kanıtı değildir",
+  "profile": "Geçmişsiz bağımsız gpt-6-luna/max yalnız native ekranlar ve sabit sorular",
+  "passRule": "13 yanıtın tümü yardım olmadan anlamca doğru; belirsizlik onarım ve yeni ilk okuma gerektirir",
+  "questions": [
+    "Bu ekran hangi işlemi kapatıyor; geçmiş kayıtlarını siliyor mu?",
+    "Geçmiş, kanıt ve kaynak bilgisi yeni bakım kapalıyken nereye gider?",
+    "Düzeltme, itiraz ve dışa aktarma paket nedeniyle kaybolur mu?",
+    "Kritik güvenlik bilgisi ve başlanmış işin güvenli dönüşü paket satın almaya bağlı mı?",
+    "Yeni bakım kapalıyken bu ekrandan hangi güvenli ana eylemi seçebilirsin?",
+    "Ücretsiz kaç motosiklet; abonelikle toplam kaç; aynı anda kaçında tam rehber var?",
+    "Tam rehber için başka motosiklet seçmek önceki hakkın üstüne ek hak yaratır mı?",
+    "Ücret veya abonelik motosikletin fiziksel uygunluğunu veya bakımın doğruluğunu kanıtlar mı?",
+    "Mevcut kayıtlarına erişim korunuyor demek kimlik ve okuma izni olmadan özel veriye erişebilirsin demek mi?",
+    "Güncel izin alınamıyorsa veya çevrimdışıysan yeni bakım kendiliğinden açılır mı?",
+    "Bu ekrandaki yeni işlem kontrolü isteği bakımın başlaması ya da tamamlanması anlamına gelir mi?",
+    "Bu ekranda fiyat, ödeme veya seçimi değiştirme sıklığı kesinleştirilmiş mi?",
+    "Motosiklet etkin değilse yeniden etkinleştirmek güncel fiziksel durumun uygun olduğunu kanıtlar mı?"
+  ]
+}
