@@ -21,6 +21,7 @@ enum LifecycleOperation {
 }
 
 enum LifecycleAction {
+  requestContext,
   deactivate,
   reactivate,
   confirmTransferScope,
@@ -210,6 +211,7 @@ class _LifecycleState extends State<LifecycleView> {
   late LifecycleOperation selected;
   bool reviewed = false, acknowledged = false;
   final Set<String> sent = {}, queried = {};
+  final Set<String> contextRequests = {}, contextOrigins = {};
   @override
   void initState() {
     super.initState();
@@ -260,6 +262,7 @@ class _LifecycleState extends State<LifecycleView> {
           ? _uncertain(s) && !queried.contains(_request(s))
           : s.phase == LifecyclePhase.idle &&
                 selected == s.operation &&
+                !contextOrigins.contains(_request(s)) &&
                 !sent.contains(_request(s)) &&
                 (selected != LifecycleOperation.deleteOwnScope ||
                     acknowledged) &&
@@ -297,6 +300,65 @@ class _LifecycleState extends State<LifecycleView> {
         ),
       );
     };
+  }
+
+  /// Yalnız yeni okuma bağlamı ister; mevcut işlem iznini taşımaz.
+  VoidCallback? _review(
+    LifecycleSnapshot captured,
+    LifecycleOperation operation,
+  ) {
+    final page = screen, choice = selected;
+    final wasReviewed = reviewed;
+    return captured.readable
+        ? () {
+            final now = widget.snapshot;
+            if (!_same(captured) ||
+                screen != page ||
+                selected != choice ||
+                reviewed != wasReviewed ||
+                !now.readable ||
+                now.phase != captured.phase ||
+                now.phase != LifecyclePhase.idle ||
+                sent.contains(_request(now)))
+              return;
+            // Yönetim seçimi değişmişse eski gözden-geçir callback'i geçersizdir.
+            if (screen == LifecycleScreen.manage &&
+                (reviewed || selected != operation))
+              return;
+            final key = '${_request(now)}/${operation.name}';
+            final request =
+                (operation != now.operation ||
+                    contextOrigins.contains(_request(now))) &&
+                !now.offline &&
+                widget.onIntent != null &&
+                !contextRequests.contains(key);
+            setState(() {
+              selected = operation;
+              reviewed = true;
+              acknowledged = false;
+              screen = switch (operation) {
+                LifecycleOperation.confirmTransferScope =>
+                  LifecycleScreen.transfer,
+                LifecycleOperation.deleteOwnScope => LifecycleScreen.delete,
+                _ => LifecycleScreen.manage,
+              };
+              if (request) {
+                contextRequests.add(key);
+                contextOrigins.add(_request(now));
+              }
+            });
+            if (request)
+              widget.onIntent?.call(
+                LifecycleIntent(
+                  now.scope,
+                  now.requestId,
+                  now.plan!.subject,
+                  operation,
+                  LifecycleAction.requestContext,
+                ),
+              );
+          }
+        : null;
   }
 
   VoidCallback? _local(LifecycleSnapshot captured, VoidCallback callback) =>
@@ -440,15 +502,7 @@ class _LifecycleState extends State<LifecycleView> {
           rows.add(
             _button(
               'Seçilen işlemi gözden geçir',
-              _local(s, () {
-                reviewed = true;
-                screen = switch (selected) {
-                  LifecycleOperation.confirmTransferScope =>
-                    LifecycleScreen.transfer,
-                  LifecycleOperation.deleteOwnScope => LifecycleScreen.delete,
-                  _ => LifecycleScreen.manage,
-                };
-              }),
+              _review(s, selected),
               primary: true,
             ),
           );
@@ -507,12 +561,7 @@ class _LifecycleState extends State<LifecycleView> {
           rows.add(
             _button(
               'Geçmişi korumak için etkin değil yap',
-              _local(s, () {
-                selected = LifecycleOperation.deactivate;
-                screen = LifecycleScreen.manage;
-                reviewed = true;
-                acknowledged = false;
-              }),
+              _review(s, LifecycleOperation.deactivate),
             ),
           );
           rows.add(
@@ -529,6 +578,15 @@ class _LifecycleState extends State<LifecycleView> {
         }
       }
       rows.add(_line('Açık kalan: ${p.values[LifecycleField.uncertainty]}'));
+      if (contextOrigins.contains(_request(s)))
+        rows.add(
+          Semantics(
+            liveRegion: true,
+            child: _line(
+              'Seçilen işlem için güncel kapsam ve izin kontrolü istendi. Yeni yanıt gelene kadar işlem gönderilemez.',
+            ),
+          ),
+        );
       if (waiting || uncertain || s.receiptConfirmed) {
         rows.add(
           Semantics(

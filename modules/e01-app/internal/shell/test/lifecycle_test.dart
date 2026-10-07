@@ -285,6 +285,8 @@ Map<String, LifecycleView> _cases() => {
   'manage-inactive': _view(snapshot: _snapshot(inactive: true)),
   'deactivation-review': _view(),
   'reactivation-review': _view(snapshot: _snapshot(inactive: true)),
+  'transfer-context-requested': _view(),
+  'delete-context-requested': _view(),
   'transfer': _view(snapshot: _snapshot(screen: LifecycleScreen.transfer)),
   'transfer-long': _view(
     snapshot: _snapshot(
@@ -388,6 +390,16 @@ Map<String, LifecycleView> _cases() => {
   ),
 };
 Future<void> _prepare(WidgetTester t, String state) async {
+  if (state == 'transfer-context-requested' ||
+      state == 'delete-context-requested') {
+    await _press(
+      t,
+      state == 'transfer-context-requested'
+          ? 'Geçmişi aktar'
+          : 'Motosikleti sil',
+    );
+    await _press(t, 'Seçilen işlemi gözden geçir');
+  }
   if (state == 'deactivation-review' || state == 'reactivation-review')
     await _press(t, 'Seçilen işlemi gözden geçir');
   if (state == 'delete-acknowledged') await _press(t, _ack);
@@ -425,7 +437,10 @@ void main() {
     await _pump(t, _view(handler: calls.add));
     await _press(t, 'Geçmişi aktar');
     await _press(t, 'Seçilen işlemi gözden geçir');
-    expect(calls, isEmpty);
+    expect(calls.single.action, LifecycleAction.requestContext);
+    expect(calls.single.operation, LifecycleOperation.confirmTransferScope);
+    expect(calls.single.requestId, _request);
+    expect(calls.single.subject, _plan().subject);
     expect(_text(t), contains('Kısmi geçmiş'));
     expect(_cb(t, 'Aktarım kapsamını onayla'), isNull);
     expect(_text(t), contains('Bu işlem için güncel kapsam'));
@@ -457,6 +472,139 @@ void main() {
       expect(calls.single.action, LifecycleAction.confirmTransferScope);
       expect(calls.single.subject, _plan().subject);
       expect(_text(t), contains('Aynı istek tekrar gönderilemez'));
+    },
+  );
+  testWidgets(
+    'alternatif seçim yalnız yeni bağlam ister yeni izin sonra açılır',
+    (t) async {
+      for (final operation in [
+        LifecycleOperation.confirmTransferScope,
+        LifecycleOperation.deleteOwnScope,
+      ]) {
+        final calls = <LifecycleIntent>[];
+        await t.pumpWidget(const SizedBox());
+        await _pump(t, _view(handler: calls.add));
+        final transfer = operation == LifecycleOperation.confirmTransferScope;
+        await _press(t, transfer ? 'Geçmişi aktar' : 'Motosikleti sil');
+        final preview = _cb(t, 'Seçilen işlemi gözden geçir')!;
+        preview();
+        preview();
+        await t.pump();
+        expect(calls.single.action, LifecycleAction.requestContext);
+        expect(calls.single.operation, operation);
+        expect(calls.single.scope.matches(_scope()), isTrue);
+        expect(calls.single.requestId, _request);
+        final label = transfer ? 'Aktarım kapsamını onayla' : _delete;
+        if (!transfer) await _press(t, _ack);
+        expect(_cb(t, label), isNull);
+        expect(_text(t), contains('Yeni yanıt gelene kadar'));
+        final screen = transfer
+            ? LifecycleScreen.transfer
+            : LifecycleScreen.delete;
+        // Eski request'e farklı operation yazmak yeni bağlam değildir.
+        await _pump(
+          t,
+          _view(
+            snapshot: _snapshot(screen: screen),
+            handler: calls.add,
+          ),
+        );
+        if (!transfer) await _press(t, _ack);
+        expect(_cb(t, label), isNull);
+        for (final denied in [
+          _snapshot(
+            screen: screen,
+            request: 'new-context',
+            deniedField: LifecycleField.period,
+          ),
+          _snapshot(
+            screen: screen,
+            request: 'new-context',
+            deniedEffect: LifecycleEffectDimension.authorization,
+          ),
+          _snapshot(
+            screen: screen,
+            request: 'new-context',
+            authOverride: _ref('lifecycle-plan', _plan().subject),
+          ),
+        ]) {
+          await _pump(t, _view(snapshot: denied, handler: calls.add));
+          if (denied.readable) {
+            expect(_cb(t, label), isNull);
+          } else {
+            expect(find.byKey(ValueKey('lifecycle-$label')), findsNothing);
+            expect(_text(t), isNot(contains('Örnek seçilen dönem')));
+          }
+        }
+        await _pump(
+          t,
+          _view(
+            snapshot: _snapshot(screen: screen, request: 'fresh-context'),
+            handler: calls.add,
+          ),
+        );
+        if (!transfer) {
+          expect(_cb(t, _delete), isNull);
+          await _press(t, _ack);
+        }
+        await _press(t, label);
+        expect(calls.length, 2);
+        expect(calls.last.requestId, 'fresh-context');
+        expect(calls.last.operation, operation);
+        expect(
+          calls.last.action,
+          transfer
+              ? LifecycleAction.confirmTransferScope
+              : LifecycleAction.deleteOwnScope,
+        );
+      }
+    },
+  );
+  testWidgets(
+    'bağlam talebi eski seçim kapsam faz ve handler altında kapanır',
+    (t) async {
+      final calls = <LifecycleIntent>[];
+      for (final next in [
+        _snapshot(scope: _scope(bike: 'bike-B')),
+        _snapshot(request: 'new-request'),
+        _snapshot(plan: _plan(revision: 'new-plan')),
+        _snapshot(phase: LifecyclePhase.submitting),
+        _snapshot(deniedRead: HistoryReadDimension.authorization),
+        _snapshot(offline: true),
+      ]) {
+        await t.pumpWidget(const SizedBox());
+        await _pump(t, _view(handler: calls.add));
+        await _press(t, 'Motosikleti sil');
+        final stale = _cb(t, 'Seçilen işlemi gözden geçir')!;
+        await _pump(t, _view(snapshot: next, handler: calls.add));
+        stale();
+        await t.pump();
+        expect(calls, isEmpty);
+      }
+      await t.pumpWidget(const SizedBox());
+      await _pump(t, _view(handler: calls.add));
+      await _press(t, 'Geçmişi aktar');
+      final stale = _cb(t, 'Seçilen işlemi gözden geçir')!;
+      await _press(t, 'Motosikleti sil');
+      stale();
+      await t.pump();
+      expect(calls, isEmpty);
+      await _pump(t, _view(noHandler: true));
+      await _press(t, 'Seçilen işlemi gözden geçir');
+      expect(calls, isEmpty);
+      expect(_cb(t, _delete), isNull);
+      await t.pumpWidget(const SizedBox());
+      await _pump(t, _view(handler: calls.add));
+      await _press(t, 'Motosikleti sil');
+      await _press(t, 'Seçilen işlemi gözden geçir');
+      await _press(t, 'Geçmişi korumak için etkin değil yap');
+      expect(calls.length, 2);
+      expect(
+        calls.every((x) => x.action == LifecycleAction.requestContext),
+        isTrue,
+      );
+      expect(calls.last.operation, LifecycleOperation.deactivate);
+      expect(_cb(t, 'Etkin değil yapma isteğini gönder'), isNull);
     },
   );
   testWidgets('silme açık kendi kapsam onayı olmadan gönderilemez', (t) async {
@@ -493,10 +641,23 @@ void main() {
       await _press(t, _confirmedAck);
       expect(_cb(t, _delete), isNull);
       await _press(t, 'Geçmişi korumak için etkin değil yap');
-      expect(calls, isEmpty);
+      expect(calls.single.action, LifecycleAction.requestContext);
+      expect(calls.single.operation, LifecycleOperation.deactivate);
       expect(_text(t), contains('Etkin değil yapmadan önce'));
       expect(_text(t), isNot(contains('Silme kapsamını ve geri')));
       expect(_cb(t, 'Etkin değil yapma isteğini gönder'), isNull);
+      await _pump(
+        t,
+        _view(
+          snapshot: _snapshot(request: 'preservation-context'),
+          handler: calls.add,
+        ),
+      );
+      await _press(t, 'Seçilen işlemi gözden geçir');
+      await _press(t, 'Etkin değil yapma isteğini gönder');
+      expect(calls.length, 2);
+      expect(calls.last.action, LifecycleAction.deactivate);
+      expect(calls.last.requestId, 'preservation-context');
     },
   );
   testWidgets(
