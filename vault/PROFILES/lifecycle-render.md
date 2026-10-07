@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, M-E5-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-014a, T-E1-014a, E-DEV-112]
 evidence: [E-DEV-112]
 supersedes: []
-status: CHANGES_REQUESTED
+status: REVIEW
 ---
 
 # Motosiklet pasiflik, aktarım ve silme kapsamı
@@ -91,3 +91,8 @@ Kodöncesi ret/düzeltme kapsamı 1fdab3f. requestContext yalnız seçilen opera
 Güncel kod LF SHA256 63e782afa5d3ea55f6b04a50d9930c998dfed848b147c752fb2c2b570d3db72c; test LF SHA256 7c9c6453b32bdcc9369b1c29fcc708205a85b347d605efdb190724377a977f51. Önceki277 normal değiştirilmeden ilk20 ve iki yeni davranış testiyle299 normal aynı son koşuda PASS. Strictformat32/0, analyze0; ayrı native1PASS. 30durum×3genişlik×3metinölçeği=270tamkaydırma düzeni. Native53PNG; Root yeni5 farklıoriginal gerçekten açtı,48RAW birebir daha önce okunmuş içeriklere eş doğrulandı;53 yenioriginal açıldı iddiası yok. 17soru aynı LFhash, yeni geçmişsiz ilkokuma ve bütün kaynakGATE/aynı-yeni-headCI-T3 henüz bekleniyor. GörevCHANGES_REQUESTED, ana100DONE106kalan206.
 
 F01ilk hedef22test21PASS1FAIL: özel okuma tümü kapalı olduğunda olmayan CTA'yı test helper aradı. Negatif test gerçek ürün durumunu denetleyecek biçimde unreadable→CTA yok/özelmetin yok, readable-etkikapalı→callbacknull olarak düzeltildi; uygulama kapısı gevşetilmedi. F01R2hedef22PASS. İlkF01graph1 kısa plan adlarını danglinglink gördü; tam raporun HTML karakter sunumu+değişmeyenRAWBase64 arşivi ile giderildi. F01graph2 yalnız yeni kodun henüz eski kanıt subjectdigest'i olduğunu reddetti; aşağıdaki güncel özet açık onarım kaydıdır. R1ret/ilkoku/eski16CI/başarısızloglar korunur; hiçbiri yeni kaynak kabulü yerine kullanılmaz. Sorgu tek-istek kilidi değiştirilmedi; gerçek recovery sonucu halen kanıtlanmadı. Üretimkimlik/yetki/lifecycle/saklama/hukuk/yedek/cihaz/yayın HELD.
+
+
+## F-01 sonrası bağımsız ilk okuma ve REVIEW
+
+/root/e1014a_r2_first_reading geçmişsiz bağımsız bağlam; istenen gpt-6-luna/max. Yalnız R2native53PNG/30durum ve aynı sabit17soru okundu; bütün17cevap anlamca doğru. Root özgün raporun tamamını okudu; RAW 7127bayt SHA256b57cebfb1e5eb57a834a07321fa86ba01aa9607e8afe0084f6b9f212ed022561. R3 güncel kod 7fb400f74172c6f31222750a1fd1c220983edce3 native1PASS/53görüntü R2ilkoku53ile bayt eş; R3normal299PASS, format32-0/analyze0. R3graph12kontrol+42koruma/iztestiPASSworst0. R1ret ve ilkoku korunur; bu yeni ekranokuma R1bütünretini tek başına kapatmaz. F-01 yeni bütün kaynakGATE/aynıCI-T3 ve ayrıson6/sonCI-T3/main8 beklenir. GörevREVIEW; ana100DONE106kalan206; üretimHELD. AI ilkoku insan/gerçekcihaz/üretim kabulü değildir; gizli runtime modeli doğrulandı iddiası yok.
