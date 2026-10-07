@@ -2,9 +2,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 String _required(String value) {
-  final result = value.trim();
-  if (result.isEmpty) throw ArgumentError('Bağlam veya açıklama boş olamaz.');
-  return result;
+  if (value.trim().isEmpty) {
+    throw ArgumentError('Bağlam veya açıklama boş olamaz.');
+  }
+  // Doğrulama kaynağın hiçbir karakterini değiştirmez. Kenar boşlukları da
+  // tam konu kimliğinin parçasıdır; farklı içerik eski izni devralamaz.
+  return value;
 }
 
 String _identity(String? value) => value == null
@@ -167,8 +170,10 @@ class ProfileDocument {
          values.map((k, v) => MapEntry(_required(k), _required(v))),
        ),
        entries = List.unmodifiable(entries) {
-    if (this.values.length != values.length ||
-        this.entries.map((e) => e.id).toSet().length != this.entries.length) {
+    if (this.values.keys.map((k) => k.trim()).toSet().length !=
+            this.values.length ||
+        this.entries.map((e) => e.id.trim()).toSet().length !=
+            this.entries.length) {
       throw ArgumentError('Kayıt kimliği tekrarlanamaz.');
     }
   }

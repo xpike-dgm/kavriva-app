@@ -248,6 +248,116 @@ Future<void> prepare(WidgetTester t, String name) async {
 }
 
 void main() {
+  test('F01 kaynağın bütün karakterleri saklanır; boşluk ve satır sonu farklı subject üretir', () {
+    ProfileDocument content(String text) => ProfileDocument(
+      id: ' d ',
+      revision: ' r ',
+      screen: ProfileScreen.intro,
+      state: ProfileState.ready,
+      targetId: ' target ',
+      values: {' key ': text},
+      entries: [
+        ProfileEntry(
+          id: ' entry ',
+          label: text,
+          source: ' source ',
+          date: ' date\n',
+          detail: text,
+        ),
+      ],
+    );
+    final plain = content('abc');
+    for (final value in [' abc ', 'abc\n', '\tabc', 'abc\r\n']) {
+      final d = content(value);
+      expect(d.values[' key '], value);
+      expect(d.entries.single.label, value);
+      expect(d.entries.single.detail, value);
+      expect(d.entries.single.source, ' source ');
+      expect(d.entries.single.date, ' date\n');
+      expect(d.entries.single.id, ' entry ');
+      expect(d.id, ' d ');
+      expect(d.revision, ' r ');
+      expect(d.targetId, ' target ');
+      expect(d.subject, isNot(plain.subject));
+    }
+    expect(() => content(' \n\t '), throwsArgumentError);
+    expect(
+      ProfileLocalScope(id: 'local ', revision: 'r').subject,
+      isNot(ProfileLocalScope(id: 'local', revision: 'r').subject),
+    );
+    expect(scope(account: 'account-A ').subject, isNot(scope().subject));
+    final a = content('abc'),
+        b = ProfileDocument(
+          id: a.id,
+          revision: a.revision,
+          screen: a.screen,
+          state: a.state,
+          targetId: a.targetId,
+          values: {'key': 'abc'},
+          entries: a.entries,
+        );
+    expect(a.subject, isNot(b.subject));
+  });
+  test('F01 yalnız boşluk değişmiş belge eski kaynak okuma ve işlem iznini devralamaz', () {
+    final old = snapshot(ProfileScreen.collaboration), d = old.document!;
+    final next = ProfileDocument(
+      id: d.id,
+      revision: d.revision,
+      screen: d.screen,
+      state: d.state,
+      targetId: d.targetId,
+      values: {...d.values, 'owner': '${d.values['owner']} '},
+      entries: d.entries,
+    );
+    final held = ProfileSnapshot(
+      scope: old.scope,
+      requestId: old.requestId,
+      document: next,
+      authority: old.authority,
+      reads: old.reads,
+      fields: old.fields,
+      actions: old.actions,
+      effects: old.effects,
+    );
+    expect(next.subject, isNot(d.subject));
+    expect(held.readableFor(d.screen), isFalse);
+    expect(held.allPrivateReadable, isFalse);
+    expect(held.actionAllowed(d.screen, ProfileAction.revoke), isFalse);
+    expect(held.actionAllowed(d.screen, ProfileAction.localContinue), isTrue);
+  });
+  testWidgets(
+    'F01 boşluk değişiminden önceki callback yeni içeriğe istek göndermez',
+    (t) async {
+      final calls = <ProfileIntent>[],
+          old = snapshot(ProfileScreen.collaboration);
+      final handler = calls.add;
+      await t.pumpWidget(
+        view(ProfileScreen.collaboration, old, handler: handler),
+      );
+      final callback = press(t, 'Erişimi kaldır')!;
+      final d = old.document!;
+      final next = ProfileDocument(
+        id: d.id,
+        revision: d.revision,
+        screen: d.screen,
+        state: d.state,
+        targetId: d.targetId,
+        values: {...d.values, 'person': '${d.values['person']}\n'},
+        entries: d.entries,
+      );
+      await t.pumpWidget(
+        view(
+          ProfileScreen.collaboration,
+          snapshot(ProfileScreen.collaboration, doc: next),
+          handler: handler,
+        ),
+      );
+      callback();
+      expect(calls, isEmpty);
+      press(t, 'Erişimi kaldır')!();
+      expect(calls.single.subjectId, '${next.subject}/revoke');
+    },
+  );
   test('Yabancı kapsam istek amaç konu ve HELD referansları okunamaz', () {
     final d = document(ProfileScreen.collaboration), s = scope();
     final good = snapshot(d.screen);
