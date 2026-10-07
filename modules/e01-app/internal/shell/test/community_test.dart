@@ -200,6 +200,7 @@ Future<void> press(WidgetTester t, String label) async {
 }
 
 Map<String, CommunitySnapshot> cases() => {
+  'discovery-reported': snapshot(CommunityScreen.discovery),
   'contribution-selected': snapshot(CommunityScreen.contribution),
   'contribution-requested': snapshot(CommunityScreen.contribution),
   'review-selected': snapshot(CommunityScreen.review),
@@ -282,6 +283,11 @@ Future<void> pumpSized(
 ScrollPosition position(WidgetTester t) =>
     t.state<ScrollableState>(find.byType(Scrollable).first).position;
 Future<void> prepare(WidgetTester t, String name) async {
+  if (name == 'discovery-reported') {
+    await press(t, 'Sorunu bildir');
+    position(t).jumpTo(0);
+    await t.pumpAndSettle();
+  }
   if (name == 'contribution-selected' ||
       name == 'contribution-requested' ||
       name == 'review-selected') {
@@ -701,6 +707,14 @@ void main() {
     await t.sendKeyEvent(LogicalKeyboardKey.enter);
     await t.pump();
     expect(events.single.action, CommunityAction.contribute);
+    await t.sendKeyEvent(LogicalKeyboardKey.tab);
+    await t.pumpAndSettle();
+    await t.sendKeyEvent(LogicalKeyboardKey.space);
+    await t.pump();
+    expect(events.map((e) => e.action), [
+      CommunityAction.contribute,
+      CommunityAction.report,
+    ]);
     expect(
       find.byWidgetPredicate(
         (w) => w is Semantics && w.properties.header == true,
@@ -708,6 +722,28 @@ void main() {
       findsWidgets,
     );
     semantics.dispose();
+  });
+  testWidgets('report requests review without deciding or removing content', (
+    t,
+  ) async {
+    final events = <CommunityIntent>[];
+    await t.pumpWidget(
+      host(
+        CommunityScreen.discovery,
+        snapshot(CommunityScreen.discovery),
+        handler: events.add,
+      ),
+    );
+    const explanation =
+        'Bildirim yalnızca inceleme isteğidir; teknik karar vermez ve içeriği kendiliğinden kaldırmaz.';
+    expect(find.text(explanation), findsOneWidget);
+    await press(t, 'Sorunu bildir');
+    expect(events.single.action, CommunityAction.report);
+    expect(find.text(explanation), findsOneWidget);
+    expect(find.textContaining('Kullanıcı anlatımı:'), findsOneWidget);
+    await press(t, 'Sorunu bildir');
+    expect(events, hasLength(1));
+    expect(t.takeException(), isNull);
   });
   testWidgets(
     'visible search never searches private or denied fields and resets across scope',

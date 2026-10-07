@@ -628,6 +628,9 @@ class _CommunityViewState extends State<CommunityView> {
           primary: true,
         ),
         button('Sorunu bildir', CommunityAction.report),
+        text(
+          'Bildirim yalnızca inceleme isteğidir; teknik karar vermez ve içeriği kendiliğinden kaldırmaz.',
+        ),
       ]);
     } else if (screen == CommunityScreen.contribution) {
       children.addAll([
