@@ -128,6 +128,8 @@ used_by:
   - "E-DEV-113"
   - "P-E1-015"
   - "E-DEV-114"
+  - "P-E1-016"
+  - "E-DEV-115"
 implements:
   - "ADR-015 Decision3 record registration"
 public_contracts: []
@@ -556,3 +558,14 @@ Yerel R2normal260=eski241+yeni19; native1ayrıPASS. Strictformat28/0-analyze0;40
 Güncel native R3 ayrı1 PASS; aynı23 durum/207 duyarlı düzen/38 PNG. R3'ün her dosyası, aynı offset/end/indexte ilk okuyucunun R2 dosyasıyla RAW bayt/SHA256 eşit. Root bu onarımda sıfır yeni orijinal görüntü açtı; 38 eşitlik kanıtı kullandı. R2'de gerçekten açılan30 farklı içerik ve sekiz eşit alias, ilk okuma14526 bayt raporu değişmeden korunur. R3 bütün byte eşitliği yeni sahte ilk okuma raporu değildir. Kodun currentness onarımı taze bütün REVIEW ile ayrıca incelenmelidir.
 
 Yerel düzeltme F01'in bağımsız kapanışı değildir. Güncel kaynak CI/T3 ve geçmişsiz bütün R2 inceleme beklenir; henüz DONE veya ana sayı ilerlemesi yok. Sınırlı E1 sunumu; üretim kimlik/yetki/taşıma/paylaşım yazıcıları, Supabase47/57/59, RET97, gerçek cihaz/nav/fiziksel iş ve yayın HELD. Aynı PR116 korunur.
+
+## Topluluk doğrulaması
+
+375normal = önceki348+yeni27, format38/0/analyze0, ayrı1nativePASS;261fullscroll/60PNG/currentRoot11new+49RAW. Kaynak ve son actualCI/T3 ve bağımsız REVIEW bekleniyor; YAML/SDK/deps değişmez.
+
+
+Kanıt/paket adresleri: `vault/PROFILES/community-render.md`, `vault/PACKS/P-E1-016.md`, `vault/REGISTRY/T-E1-016.md`, `vault/EVIDENCE/E-DEV-115.md`, `vault/EVIDENCE/SNAPSHOTS/E-DEV-114-E10-GOVERNED-PATHS-FOR-T-E1-016.md.snapshot`.
+
+## Topluluk R2/R3 tarihçesi ve güncel R4 kanıtı
+
+Önceki375/261/60 notu R2 tarihçesidir. R3 376/270/62 ilk okuma geçti, ancak SOURCE e670d25 bağımsız üç bulgu nedeniyle CHANGES_REQUESTED oldu;17CI bunu kapatmadı. Güncel R4 kod c52f036726ce5d3cf6d7869da7ca0e7804a3556b;378normal/format38zero/analyze0/270layout/native61; Root6yeniopen55RAWreuse. Offlineözelalan/seçimkapalı, safepayloadboş ve izolenegatifler gerçekkontrolle doğrulandı. Yeni ilkoku/bütünkaynakCI-T3/ayrıfinal/main8 beklenir; henüz yeni bağımsız kabul yok. YAML/SDK/deps/diğerürünmodülleri ve eski348 değişmez. Kanıt `vault/EVIDENCE/E-DEV-115.md`, paket `vault/PACKS/P-E1-016.md`.
