@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import 'duration_range.dart';
 import 'variant_resolution.dart';
 
 String _required(String value) {
@@ -259,7 +258,6 @@ class GuideScopePreview extends StatelessWidget {
     required this.onDistinctionRequested,
     required this.onTeachingRequested,
     required this.onEditRequested,
-    this.duration,
   });
   final VariantContext context;
   final GuideScope? scope;
@@ -270,7 +268,6 @@ class GuideScopePreview extends StatelessWidget {
   final ValueChanged<VariantContext>? onDistinctionRequested;
   final ValueChanged<VariantContext>? onTeachingRequested;
   final ValueChanged<VariantContext>? onEditRequested;
-  final DurationRangePresentation? duration;
   @override
   Widget build(BuildContext context) {
     final s = scope;
@@ -295,12 +292,6 @@ class GuideScopePreview extends StatelessWidget {
         ] else
           const Text(
             'Bu motosiklet ve rehberin kapsam bilgisi eksik. Ayrımı ve bilgileri yeniden kontrol et.',
-          ),
-        if (duration != null)
-          DurationRangeView(
-            context: this.context,
-            presentation: duration!,
-            scopeCurrent: matches && s.current && !busy && errorMessage == null,
           ),
         MotorcycleFitView(
           context: this.context,

@@ -2,10 +2,10 @@
 test_id: E-DEV-101
 version: 1
 contract_id_version: "SCR-009/010; C1.2/F1.2.1/FL1.2.1 discovery v1"
-subject_file: modules/e01-app/internal/shell/lib/guide_discovery.dart
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-101-GUIDE-DISCOVERY-FOR-T-E1-018.dart.snapshot
 subject_digest: 7f20cae9a4055961a6d69a56c282f5030db6d5a5cafcb3b8156bf9ad2dbac3b4
 result: "PASS tam discovery sunumu ve CON004 okuma yöntemi; üretim/cihaz/yayın HELD"
-evidence_links: [vault/PROFILES/guide-discovery-render.md, vault/PACKS/P-E1-005a.md, vault/REGISTRY/T-E1-005a.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-100-E10-GOVERNED-PATHS-FOR-T-E1-005a.md.snapshot, modules/e01-app/internal/shell/lib/guide_discovery.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/fixtures/discovery_reading_questions.json]
+evidence_links: [vault/PROFILES/guide-discovery-render.md, vault/PACKS/P-E1-005a.md, vault/REGISTRY/T-E1-005a.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-100-E10-GOVERNED-PATHS-FOR-T-E1-005a.md.snapshot, modules/e01-app/internal/shell/lib/guide_discovery.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/fixtures/discovery_reading_questions.json, vault/EVIDENCE/SNAPSHOTS/E-DEV-101-GUIDE-DISCOVERY-FOR-T-E1-018.dart.snapshot]
 gate_verdict: "PASS tam kaynak sunum kabulü; üretim/cihaz/yayın HELD"
 reviewer: "/root/e1005a_discovery_full_review; gpt-6-luna/max ayrı görevlendirme"
 timestamp: 2026-10-04
@@ -174,3 +174,7 @@ Son altı metadata adayı: build_index93/routingDONEcandidate; run_all12+42PASS 
 ## T-E1-005b tüketimi ve actualPR103 ikincil makbuzu
 
 PR103 https://github.com/xpike-dgm/kavriva-app/pull/103 MERGED@2026-10-04T06:31:23Z normalmatchedfinal5afb32ea779ba6512bf10f03937257e8c0251899 merge ae1e7413e4f650317396bda5e834cb920eeb2d22; fetchedorigin/main eşit. Source30b95de8a8b126405cad3875cb0a10798642af59 FULLPASS/no findings ve ayrıfinalmetadataPASS/no findings; source17/final16/main8actualSUCCESS/actualPRT3five/checksseven. CON004 firstreaderprofile insanşartı belirtmiyor, ayrıAI9correctscopedmeasure/human-deviceproofdeğil. Previousprimarybody/subjecthash/verdict/readingmethod/failhistory korunur; accepted90/kalan116/206, yeni hazırlık kabulü yok.
+
+## T018 tarihsel kaynak adresi koruması
+
+Eski ürün kabulünün aynı subject_digest/reviewer/result/timestamp ve gövdesi korunur. Canlı guide_discovery.dart artık T018 opsiyonel salt bilgi alanı taşır; bu eski PASS yeni kodu kabul etmez. subject_file eski BASEcbfc954d09f808ee8e43369312843144befc5d3e Gitblob RAW12687bayt/SHA256 7f20cae9a4055961a6d69a56c282f5030db6d5a5cafcb3b8156bf9ad2dbac3b4 olan `vault/EVIDENCE/SNAPSHOTS/E-DEV-101-GUIDE-DISCOVERY-FOR-T-E1-018.dart.snapshot` adresine taşındı. Normalleştirilmiş özet eski7f20cae ile aynıdır. Yeni kod ve bütün inceleme `vault/EVIDENCE/E-DEV-117.md` ve `vault/PACKS/P-E1-018.md` tarafından izlenir; yeni üretim/fit/hazırlık veya keşif kapsamı kabulü verilmez.
