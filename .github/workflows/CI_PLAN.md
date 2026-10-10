@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-AIENTRY-001"
+  - "P-E1-017"
+  - "E-DEV-116"
   - "E-PR-002"
   - "E-PR-003"
   - "I-E10-REGISTRATION-BASELINE"
@@ -569,3 +572,11 @@ Kanıt/paket adresleri: `vault/PROFILES/community-render.md`, `vault/PACKS/P-E1-
 ## Topluluk R2/R3 tarihçesi ve güncel R4 kanıtı
 
 Önceki375/261/60 notu R2 tarihçesidir. R3 376/270/62 ilk okuma geçti, ancak SOURCE e670d25 bağımsız üç bulgu nedeniyle CHANGES_REQUESTED oldu;17CI bunu kapatmadı. Güncel R4 kod c52f036726ce5d3cf6d7869da7ca0e7804a3556b;378normal/format38zero/analyze0/270layout/native61; Root6yeniopen55RAWreuse. Offlineözelalan/seçimkapalı, safepayloadboş ve izolenegatifler gerçekkontrolle doğrulandı. Yeni ilkoku/bütünkaynakCI-T3/ayrıfinal/main8 beklenir; henüz yeni bağımsız kabul yok. YAML/SDK/deps/diğerürünmodülleri ve eski348 değişmez. Kanıt `vault/EVIDENCE/E-DEV-115.md`, paket `vault/PACKS/P-E1-016.md`.
+
+## AI Usta A1 giriş tüketimi
+
+`vault/PROFILES/ai-entry-render.md`, `vault/PACKS/P-E1-017.md`, `vault/REGISTRY/T-E1-017.md`, `vault/EVIDENCE/E-DEV-116.md`, `vault/EVIDENCE/SNAPSHOTS/E-DEV-115-E10-GOVERNED-PATHS-FOR-T-E1-017.md.snapshot`. E1 iki seçenekli kökü sunar; E9 öneri/E3 doğrulama ayrı kalır. Kamu sözleşmesi/ürün kodu/router/provider/YAML/dependency değişmez.26hedef404normal/40formatzero/analyze0/20durum180fullscroll/58PNG27unique31alias; bağımsız REVIEW ve gerçek CI/T3 henüz beklenir. Ana104DONE102kalan206; gerçek üretim ve releaseHELD.
+
+## AI Usta güncel R3 makbuzu
+
+Önceki58/27 R1tarihçedir; güncel59PNG/28unique31alias,20durum180fullscroll,404normal/40formatzero/analyze0. Q5 yer adları ve nohandler/ack mesajları onarıldı; özgün ilkokuma ve eki korunur. Taze bağımsız ilkoku/bütün REVIEW ve exactheadCI-T3/FINAL/main8 beklenir. `vault/EVIDENCE/E-DEV-116.md`. Ana104DONE102kalan206/üretimHELD.

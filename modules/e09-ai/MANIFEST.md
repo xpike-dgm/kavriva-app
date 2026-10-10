@@ -6,7 +6,7 @@ domain: "module-contract"
 module: "e09-ai"
 owner: "E9"
 depends_on: [M-E3-001, M-E1-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080, V-E9-CHANGE-001, P-E9-005, E-DEV-081, V-E9-ALLOWED-001, P-E9-008, E-DEV-082, V-E9-NEVER-001, P-E9-009, E-DEV-083, V-E9-HOLD-001, P-E9-010, E-DEV-084, V-E9-DISCIPLINE-001, P-E9-011, E-DEV-085, V-E1-DIAG-001, P-E1-009, E-DEV-107]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E9-PROPOSAL-001, P-E9-001, E-DEV-077, V-E9-VERIFY-001, P-E9-002, E-DEV-079, V-E9-ECONOMY-001, P-E9-003, E-DEV-078, V-E9-ADAPTER-001, P-E9-004, E-DEV-080, V-E9-CHANGE-001, P-E9-005, E-DEV-081, V-E9-ALLOWED-001, P-E9-008, E-DEV-082, V-E9-NEVER-001, P-E9-009, E-DEV-083, V-E9-HOLD-001, P-E9-010, E-DEV-084, V-E9-DISCIPLINE-001, P-E9-011, E-DEV-085, V-E1-DIAG-001, P-E1-009, E-DEV-107, V-E1-AIENTRY-001, P-E1-017, E-DEV-116]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E9"
 public_contracts:
@@ -129,3 +129,11 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 
 
 `vault/PROFILES/diagnosis-render.md`; `vault/PACKS/P-E1-009.md`; `vault/REGISTRY/T-E1-009.md`; `vault/EVIDENCE/E-DEV-107.md`.
+
+## AI Usta A1 giriş tüketimi
+
+`vault/PROFILES/ai-entry-render.md`, `vault/PACKS/P-E1-017.md`, `vault/REGISTRY/T-E1-017.md`, `vault/EVIDENCE/E-DEV-116.md`, `vault/EVIDENCE/SNAPSHOTS/E-DEV-115-E10-GOVERNED-PATHS-FOR-T-E1-017.md.snapshot`. E1 iki seçenekli kökü sunar; E9 öneri/E3 doğrulama ayrı kalır. Kamu sözleşmesi/ürün kodu/router/provider/YAML/dependency değişmez.26hedef404normal/40formatzero/analyze0/20durum180fullscroll/58PNG27unique31alias; bağımsız REVIEW ve gerçek CI/T3 henüz beklenir. Ana104DONE102kalan206; gerçek üretim ve releaseHELD.
+
+## AI Usta güncel R3 makbuzu
+
+Önceki58/27 R1tarihçedir; güncel59PNG/28unique31alias,20durum180fullscroll,404normal/40formatzero/analyze0. Q5 yer adları ve nohandler/ack mesajları onarıldı; özgün ilkokuma ve eki korunur. Taze bağımsız ilkoku/bütün REVIEW ve exactheadCI-T3/FINAL/main8 beklenir. `vault/EVIDENCE/E-DEV-116.md`. Ana104DONE102kalan206/üretimHELD.
