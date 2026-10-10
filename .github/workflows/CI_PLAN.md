@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-RANGE-001"
+  - "P-E1-018"
+  - "E-DEV-117"
   - "V-E1-AIENTRY-001"
   - "P-E1-017"
   - "E-DEV-116"
@@ -588,3 +591,7 @@ R3 ilkoku ret ve bütün eski makbuz korunur. Kod öncesi8d7d404; güncel27hedef
 ## Güncel R5 status kapısı
 
 SOURCE8654b41 bağımsızRET/17CI tarihçedir; canRequest güncelstatusu gerektirir. DokuzREADYstatusnegatifi gerçek model/iki düğmede ve iki yeni statusdurumu ile22durum198responsive gösterildi;27hedef405normal/40formatzero/analyze0;65native49unique16alias,49orijinalR4RAWbyteeşit. Eski kabul yeni sourceCI/whole yerine geçmez; actualmain104/102/206/üretimHELD. `vault/EVIDENCE/E-DEV-116.md`; `vault/PACKS/P-E1-017.md`.
+
+## Kaynaklı süre aralığı tüketimi
+
+`vault/PACKS/P-E1-018.md`; `vault/EVIDENCE/E-DEV-117.md`. Mevcut SCR010 salt bilgi alanı, yeni screen/router/katalog/production/publicseam/YAML yok. Yerel415/42format0/analyze0; bağımsız kabul beklenir.105DONE101kalan206 ve üretimHELD.

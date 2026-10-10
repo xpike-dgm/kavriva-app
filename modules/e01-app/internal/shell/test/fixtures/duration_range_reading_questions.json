@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-018",
+  "profile": "Geçmişsiz gpt-6-luna/max yalnız gerçek ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tümü yardım olmadan anlamca açık; belirsizlik varsa dar onarım ve yeni okuma gerekir",
+  "questions": [
+    "Bu alanda gösterilen bilgi ne için kullanılabilir?",
+    "Süre tek bir kesin sayı mı, bir aralık mı?",
+    "Gösterilen aralık hangi deneyim bilgisine aittir?",
+    "Bilginin hangi tarihe ait olduğunu nereden anlarsın?",
+    "Bu süre kesin bir bitiş sözü veriyor mu?",
+    "Deneyim bilgisi yoksa sana bir seviye atanmış mı?",
+    "Süre kaynağı yoksa ekranda bir sayı hesaplanıyor mu?",
+    "Eski veya başka motosiklete ait tahmin güncel bilgi olarak gösteriliyor mu?",
+    "Rehber veya bağlam değişince önceki tahmin kullanılabilir mi?",
+    "Deneyim bilgisi değişince önceki aralık geçerli sayılıyor mu?",
+    "Çevrimdışı eski bilgiyle güncel tahmin varmış gibi davranılıyor mu?",
+    "Bilgi yüklenirken süre hazırmış gibi gösteriliyor mu?",
+    "Bilgi alınamazsa bu işin tamamlandığı söyleniyor mu?",
+    "Süre aralığı motosikletin uygunluğunu kanıtlıyor mu?",
+    "Süreyi görmek hazırlık kontrollerini atlamana izin veriyor mu?",
+    "Bu alan teknik uygulama adımları veya parça değiştirme önerisi veriyor mu?",
+    "Bu bilgi için hesap açman gerekiyor mu?",
+    "Örnek ekranın değerleri gerçek motosiklet için doğrulanmış tahmin mi?",
+    "Alt çubukta hangi bölümler var; ayrı bir süre sekmesi var mı?",
+    "Bir süre bilinmiyorsa ne eksik ve bu belirsizlik görünür mü?"
+  ]
+}
