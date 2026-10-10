@@ -176,6 +176,7 @@ class AiEntrySnapshot {
 
   bool canRequest(AiEntryPath path) =>
       contextReadable &&
+      statusReadable &&
       state == AiEntryState.ready &&
       AiEntryPath.values.every(
         (p) => routes[p]?.matches(this, 'ai-entry:${p.target}') ?? false,

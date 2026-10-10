@@ -109,6 +109,8 @@ Map<String, AiEntrySnapshot> cases() => {
   'absent-context': snapshot(absent: true),
   'offline': snapshot(offline: true),
   'stale-context': snapshot(badDimension: 'context', defect: 'stale'),
+  'missing-status': snapshot(badDimension: 'status', defect: 'missing'),
+  'stale-status': snapshot(badDimension: 'status', defect: 'stale'),
   'missing-task-route': snapshot(badDimension: 'knownTask', defect: 'missing'),
   'unknown-symptom-route': snapshot(badDimension: 'symptom', defect: 'unknown'),
   'safety-explained': snapshot(state: AiEntryState.safetyHold, stop: true),
@@ -296,7 +298,7 @@ void main() {
       for (final p in AiEntryPath.values) {
         expect(valid.canRequest(p), isTrue);
       }
-      for (final dimension in ['context', 'knownTask', 'symptom']) {
+      for (final dimension in ['context', 'status', 'knownTask', 'symptom']) {
         for (final defect in [
           'missing',
           'scope',
@@ -377,6 +379,7 @@ void main() {
       scope: s.scope,
       motorcycleLabel: s.motorcycleLabel,
       contextReference: s.contextReference,
+      statusReference: s.statusReference,
       routes: routes,
     );
     routes.clear();
@@ -450,7 +453,7 @@ void main() {
     t,
   ) async {
     final events = <AiEntryIntent>[];
-    for (final dimension in ['context', 'knownTask', 'symptom']) {
+    for (final dimension in ['context', 'status', 'knownTask', 'symptom']) {
       for (final defect in [
         'missing',
         'scope',
