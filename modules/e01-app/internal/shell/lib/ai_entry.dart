@@ -306,6 +306,39 @@ class _AiEntryViewState extends State<AiEntryView> {
         s.state != AiEntryState.ready ||
         !s.contextReadable ||
         AiEntryPath.values.any((p) => !s.canRequest(p));
+    final blockedTitle = handler == null || !s.statusReadable
+        ? 'Giriş şu anda açılamıyor'
+        : switch (s.state) {
+            AiEntryState.loading => 'Giriş bilgisi kontrol ediliyor',
+            AiEntryState.held => 'Giriş değerlendirmesi bekletiliyor',
+            AiEntryState.failed => 'Giriş bilgisi alınamadı',
+            AiEntryState.unknown => 'Giriş durumu doğrulanmadı',
+            AiEntryState.safetyHold =>
+              s.completeStop
+                  ? 'Güvenlik nedeniyle duruldu'
+                  : 'Güvenlik açıklaması henüz tamamlanmadı',
+            AiEntryState.ready => 'Giriş şu anda açılamıyor',
+          };
+    final blockedDescription = handler == null
+        ? 'Bu girişte seçim şu anda gönderilemiyor. Garaj ve destek geçişleri de burada kapalı.'
+        : s.offline
+        ? 'Çevrimdışıyken güncel yönlendirme doğrulanamaz.'
+        : !s.statusReadable
+        ? 'Bağlam veya yönlendirme için güncel kaynak yok.'
+        : switch (s.state) {
+            AiEntryState.loading => 'Kontrol tamamlanmadan seçim gönderilmez.',
+            AiEntryState.held =>
+              'Bekletme henüz kaldırılmadı; yeni değerlendirme sonucu gerekir.',
+            AiEntryState.failed =>
+              'Bilgi alma işlemi tamamlanmadı; başarılı sonuç varsayılmaz.',
+            AiEntryState.unknown =>
+              'Güncel giriş durumu bilinmiyor; seçim gönderilmez.',
+            AiEntryState.safetyHold => 'Sebep ve yeniden giriş koşullarının güncel açıklaması eksik. İşleme başlama.',
+            AiEntryState.ready =>
+              !s.contextReadable
+                  ? 'Motosiklet bağlamı güncel olarak doğrulanamadı.'
+                  : 'Seçeneklerin güncel yönlendirmesi doğrulanamadı.',
+          };
     return ColoredBox(
       color: const Color(0xFFF8FAFC),
       child: SafeArea(
@@ -329,7 +362,9 @@ class _AiEntryViewState extends State<AiEntryView> {
                             : 'Motosiklet bağlamı yeniden doğrulanmalı.',
                       ),
                       _EntryButton(
-                        label: 'Bağlamı Garaj’da yönet',
+                        label: handler == null
+                            ? 'Garaj geçişi burada kapalı'
+                            : 'Bağlamı Garaj’da yönet',
                         quiet: true,
                         onPressed: handler == null
                             ? null
@@ -360,13 +395,7 @@ class _AiEntryViewState extends State<AiEntryView> {
                       ],
                       if (blocked) ...[
                         const SizedBox(height: 8),
-                        _text(
-                          s.state == AiEntryState.safetyHold && s.completeStop
-                              ? 'Güvenlik nedeniyle duruldu'
-                              : 'Giriş şu anda açılamıyor',
-                          heading: true,
-                          size: 22,
-                        ),
+                        _text(blockedTitle, heading: true, size: 22),
                         const SizedBox(height: 8),
                         if (s.completeStop) ...[
                           _text('Sebep: ${s.reason}'),
@@ -374,19 +403,17 @@ class _AiEntryViewState extends State<AiEntryView> {
                           _text('Şimdi: ${s.immediateAction}'),
                           _text('Yeniden giriş: ${s.reentry}'),
                         ] else ...[
+                          _text(blockedDescription),
                           _text(
                             handler == null
-                                ? 'Bu girişte seçim şu anda gönderilemiyor.'
-                                : s.offline
-                                ? 'Çevrimdışıyken güncel yönlendirme doğrulanamaz.'
-                                : 'Bağlam veya yönlendirme için güncel kaynak yok.',
-                          ),
-                          _text(
-                            'Normal iş akışı açılmaz. Garaj’da bağlamı değerlendir veya destek yolunu kullan; sonra güncel kaynakla yeniden dene.',
+                                ? 'Normal iş akışı açılmaz. Giriş yeniden kullanılabilir olduğunda güncel bilgilerle tekrar dene.'
+                                : 'Normal iş akışı açılmaz. Garaj’da bağlamı değerlendir veya destek yolunu kullan; sonra güncel kaynakla yeniden dene.',
                           ),
                         ],
                         _EntryButton(
-                          label: 'Destek yoluna git',
+                          label: handler == null
+                              ? 'Destek geçişi burada kapalı'
+                              : 'Destek yoluna git',
                           quiet: true,
                           onPressed: handler == null
                               ? null

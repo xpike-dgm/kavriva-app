@@ -49,7 +49,7 @@ AiEntrySnapshot snapshot({
 }) {
   final s = absent ? null : scope(revision: bikeRevision);
   final label = long
-      ? List.filled(12, 'Örnek motosiklet · kullanıcı beyanı').join(' ')
+      ? 'Örnek motosiklet · kullanıcı beyanı — uzun model ve donanım adıyla kayıtlı, ek tanımlayıcı metni bulunan yerel motosiklet bağlamı; bu ad kimlik veya uygunluk doğrulaması değildir.'
       : 'Örnek motosiklet · kullanıcı beyanı';
   AiEntrySnapshot build({
     AiEntryReference? context,
@@ -64,7 +64,9 @@ AiEntrySnapshot snapshot({
     offline: offline,
     scope: s,
     motorcycleLabel: absent ? null : label,
-    reason: stop && missingStop != 'reason' ? 'Örnek güvenlik bulgusu' : null,
+    reason: stop && missingStop != 'reason'
+        ? 'Örnek: güncel güvenlik değerlendirmesi bekliyor; işe başlama koşulları doğrulanmadı.'
+        : null,
     consequence: stop && missingStop != 'consequence'
         ? 'Normal akış açılmaz.'
         : null,
@@ -496,12 +498,12 @@ void main() {
     (t) async {
       await pumpSized(t, snapshot(state: AiEntryState.held));
       expect(
-        find.text('Bu girişte seçim şu anda gönderilemiyor.'),
+        find.textContaining('Garaj ve destek geçişleri de burada kapalı'),
         findsOneWidget,
       );
       for (final label in [
-        'Bağlamı Garaj’da yönet',
-        'Destek yoluna git',
+        'Garaj geçişi burada kapalı',
+        'Destek geçişi burada kapalı',
         ...AiEntryPath.values.map((p) => p.label),
       ]) {
         final g = t.widget<GestureDetector>(
@@ -549,9 +551,52 @@ void main() {
       handler: (_) {},
     );
     expect(find.text('Güvenlik nedeniyle duruldu'), findsNothing);
-    expect(find.textContaining('Örnek güvenlik bulgusu'), findsNothing);
+    expect(
+      find.textContaining('işe başlama koşulları doğrulanmadı'),
+      findsNothing,
+    );
     expect(find.textContaining('güncel kaynakla yeniden dene'), findsOneWidget);
   });
+  testWidgets(
+    'ayrı bekleme ve hata metni yalnız güncel durum kaynağından okunur',
+    (t) async {
+      final labels = {
+        AiEntryState.loading: 'Giriş bilgisi kontrol ediliyor',
+        AiEntryState.held: 'Giriş değerlendirmesi bekletiliyor',
+        AiEntryState.failed: 'Giriş bilgisi alınamadı',
+        AiEntryState.unknown: 'Giriş durumu doğrulanmadı',
+        AiEntryState.safetyHold: 'Güvenlik açıklaması henüz tamamlanmadı',
+      };
+      for (final entry in labels.entries) {
+        await t.pumpWidget(const SizedBox());
+        await pumpSized(t, snapshot(state: entry.key), handler: (_) {});
+        expect(find.text(entry.value), findsOneWidget);
+        for (final defect in [
+          'missing',
+          'scope',
+          'request',
+          'subject',
+          'purpose',
+          'stale',
+          'unknown',
+          'held',
+          'unconfirmed',
+        ]) {
+          await pumpSized(
+            t,
+            snapshot(state: entry.key, badDimension: 'status', defect: defect),
+            handler: (_) {},
+          );
+          expect(
+            find.text(entry.value),
+            findsNothing,
+            reason: '${entry.key}/$defect',
+          );
+          expect(find.text('Giriş şu anda açılamıyor'), findsOneWidget);
+        }
+      }
+    },
+  );
   for (final change in [
     'document',
     'bike',
