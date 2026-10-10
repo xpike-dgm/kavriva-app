@@ -52,3 +52,7 @@ Root 18 farklı doğal Flutter PNG orijinalini gerçekten açtı; diğer20alias 
 ## Güncel yerel mimari onarım kanıtı
 
 Graph-r2 bütün12kontrol ve42test PASS/worst0; eski graph-r1 FAIL tarihçesi korunur. RAW7960bayt/SHA256 0e1ef3a273d3a58c638d13b43db6424b9b102d7b17009cfcc1f37d43714a5ac9. Eski EDEV101 subject payload gerçek BASE RAWsnapshot ile korundu; yeni kod eski PASS ile kabul edilmedi. Tam17adres bağımsız ilkokuma/whole ve gerçekCI-T3 henüz beklenir; yerel415/42formatzero/analyze0/native1/19durum171fullscroll/38PNG18unique20alias. Gerçek105/101/206 ve üretimHELD. `vault/EVIDENCE/E-DEV-117.md`; `vault/PACKS/P-E1-018.md`.
+
+## Bağımsız ilk ekran okuması — SOURCE adayı
+
+Geçmişsiz `/root/e1018_blind_reading`, sahibin istediği gpt-6-luna/max, yalnız sabit20soru ve doğal38PNG/19durum ham makbuzu. Kod/plan/pack/cevapanahtarı verilmedi. Özgün rapor Root tarafından tümüyle okundu; 20 anlam için sınırlı PASS, gerçek insan/cihaz/ürün kabulü değildir. Kod0ea177804bc82eed8ed00831fd0d1339b1abfb67. RAW11887bayt/SHA256 133931e3cc484c9c2e0b26365a61dabaf9c9dbf55019cd599753218f71e9d712. Bütün görev incelemesi, aynıSOURCECI-T3/FINAL6freshreviewCI/normalmerge-main8 bekleniyor. Gerçek105/101/206 değişmedi; üretim ve ayrıSCR-TBD HELD. `vault/EVIDENCE/E-DEV-117.md`; `vault/PACKS/P-E1-018.md`.
