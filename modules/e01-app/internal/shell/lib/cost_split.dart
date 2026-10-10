@@ -201,6 +201,10 @@ class CostSplitView extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Semantics(liveRegion: true, child: Text(message)),
+        const SizedBox(height: 8),
+        const Text(
+          'Motosiklet, rehber veya deneyim bilgisi değişirse önceki fiyat tahmini geçersiz olur. Yeni bilgiler için güncel kaynak kontrol edilmeden eski tahmini kullanma.',
+        ),
         for (final category in CostCategory.values) ...[
           const SizedBox(height: 8),
           Text(

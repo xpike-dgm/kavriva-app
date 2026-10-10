@@ -484,6 +484,10 @@ void main() {
       expect(find.text('Parça: 250,00–350,00 TL'), findsOneWidget);
       await existing.pump(t, preview(frame(doc: 'd2')));
       expect(find.text('Parça: 250,00–350,00 TL'), findsNothing);
+      expect(
+        find.textContaining('önceki fiyat tahmini geçersiz olur'),
+        findsOneWidget,
+      );
       final e = existing.experience(
         id: 'other',
         rev: 'e2',
@@ -491,6 +495,7 @@ void main() {
       );
       await existing.pump(t, preview(frame(exp: e)));
       expect(find.text('Parça: 250,00–350,00 TL'), findsNothing);
+      expect(find.textContaining('eski tahmini kullanma'), findsOneWidget);
       await existing.pump(
         t,
         preview(
