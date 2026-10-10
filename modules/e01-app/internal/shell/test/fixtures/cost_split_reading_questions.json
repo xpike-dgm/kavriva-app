@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-019a",
+  "profile": "Geçmişsiz gpt-6-luna/max yalnız gerçek ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tümü yardım olmadan anlamca açık; belirsizlik varsa dar onarım ve yeni okuma gerekir",
+  "questions": [
+    "Maliyet bilgisi hangi amaçla gösteriliyor?",
+    "Parça, sarf malzemesi, alet ve işçilik ayrı mı?",
+    "Bu tutarlar kesin bir ödeme veya toplam gider sözü mü?",
+    "Bilinmeyen tutar sıfır veya bedava sayılıyor mu?",
+    "Kaynakta olmayan tutar hesaplanıp dolduruluyor mu?",
+    "Tahmine dahil olmayan giderleri nereden anlarsın?",
+    "Hariç tutulan gider bilgisi yoksa tüm giderler dahil sayılıyor mu?",
+    "Hariç tutulanlar listesi boşsa bu bütün giderlerin dahil olduğu garantisi mi?",
+    "Fiyatın hangi güne ait olduğunu nereden anlarsın?",
+    "Kaynak adı ve sürümü nerede gösteriliyor?",
+    "Bu fiyatları uygulama mı üretiyor, kaynaktan mı gösteriyor?",
+    "Çevrimdışı eski fiyat güncel bilgi olarak sunuluyor mu?",
+    "Motosiklet veya rehber değişince eski fiyatlar kullanılabilir mi?",
+    "Deneyim bilgisi değişirse eski tahmin güncel sayılıyor mu?",
+    "Yükleme veya hata durumunda maliyet hazırmış gibi sunuluyor mu?",
+    "Örnek tutarlar gerçek motosiklet için doğrulanmış fiyat mı?",
+    "Maliyet bilgisi motosiklete uygunluğu veya bakım iznini kanıtlıyor mu?",
+    "Bu alanda satın alma veya ödeme işlemi başlatılıyor mu?",
+    "Bu bilgiyi okumak için hesap açman gerekiyor mu?",
+    "Alt çubukta hangi bölümler var; ayrı bir maliyet sekmesi var mı?"
+  ]
+}
