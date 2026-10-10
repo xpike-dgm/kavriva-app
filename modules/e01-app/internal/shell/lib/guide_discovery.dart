@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import 'cost_split.dart';
 import 'duration_range.dart';
 import 'variant_resolution.dart';
 
@@ -260,6 +261,7 @@ class GuideScopePreview extends StatelessWidget {
     required this.onTeachingRequested,
     required this.onEditRequested,
     this.duration,
+    this.cost,
   });
   final VariantContext context;
   final GuideScope? scope;
@@ -271,6 +273,7 @@ class GuideScopePreview extends StatelessWidget {
   final ValueChanged<VariantContext>? onTeachingRequested;
   final ValueChanged<VariantContext>? onEditRequested;
   final DurationRangePresentation? duration;
+  final CostSplitPresentation? cost;
   @override
   Widget build(BuildContext context) {
     final s = scope;
@@ -300,6 +303,12 @@ class GuideScopePreview extends StatelessWidget {
           DurationRangeView(
             context: this.context,
             presentation: duration!,
+            scopeCurrent: matches && s.current && !busy && errorMessage == null,
+          ),
+        if (cost != null)
+          CostSplitView(
+            context: this.context,
+            presentation: cost!,
             scopeCurrent: matches && s.current && !busy && errorMessage == null,
           ),
         MotorcycleFitView(
