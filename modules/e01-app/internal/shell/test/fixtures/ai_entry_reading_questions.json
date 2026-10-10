@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-017",
+  "profile": "Geçmişsiz bağımsız GPT6LunaMax yalnız gerçek ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tümü yardım olmadan anlamca açık; belirsiz ekran onarım ve yeni okuma gerektirir",
+  "questions": [
+    "Bu ekranın ana sorusu ve iki seçeneği nedir?",
+    "Yapacağın işi biliyorsan hangi seçeneği kullanırsın?",
+    "Bir ses, belirti veya arıza şüphen varsa hangi seçeneği kullanırsın?",
+    "Bir iş seçmek doğrudan motosiklette tamire başlama izni verir mi?",
+    "İş yolunda uygunluk ve hazırlık değerlendirmesi nerede yapılır?",
+    "Belirti yolunu seçmek kesin teşhis veya parça değiştirme kararı mı verir?",
+    "Yetersiz kanıtla kesin bir teşhis yoksa belirsiz sonuç mümkün mü?",
+    "Bu girişte serbest metin sohbet kutusu veya teknik cevap bulunuyor mu?",
+    "Hangi motosiklet bağlamında olduğunu nereden anlarsın?",
+    "Motosiklet bağlamını değiştirme işi hangi bölümdedir?",
+    "İki seçenekten emin değilsen yardım nasıl açılır; üçüncü eşit bir yol mu?",
+    "Bu ekran yapay zekâ cevabını doğrulanmış resmî rehber gibi sunuyor mu?",
+    "Bağlam veya güncel yönlendirme kaynağı eksikse normal seçim açılır mı?",
+    "Çevrimdışı ya da eski yönlendirme güncel uygulama izni yerine geçer mi?",
+    "Güvenlik nedeniyle durulduğunda sebep, sonucu, yapılabilecek iş ve yeniden giriş açıklanıyor mu?",
+    "Bir seçim isteği gönderildi mesajı sonraki işlemin tamamlandığını mı gösterir?",
+    "Bu giriş için hesap veya profil zorunlu mu?",
+    "Alt bölüm çubuğunda hangi beş bölüm var ve hangisi seçili?",
+    "Bu ekranda bakım, geçmiş, topluluk özetleri veya popüler öneri listesi var mı?",
+    "Bir örnek ekran gerçek motosiklet uygunluğunu, güncel üretim iznini veya canlı AI bağlantısını kanıtlar mı?"
+  ]
+}
