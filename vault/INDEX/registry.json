@@ -1418,6 +1418,69 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-019b",
+   "version": "1",
+   "flow_feature": "FL1.2.2/F1.2.2",
+   "objective": "Kaynak varsayımlarını göstermek ve bilinmeyen bilgiyi uydurmamak",
+   "context_pack": "P-E1-019b",
+   "acceptance": "Assumptions shown; unknown never invented; BR063/064 REVIEW validation method",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-12",
+   "purpose": "Kaynak varsayımlarını göstermek ve bilinmeyen planlama bilgisini uydurmadan korumak",
+   "domain": "cost-assumptions",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-001",
+    "ADR-004",
+    "ADR-005",
+    "ADR-008",
+    "ADR-014",
+    "C1.2",
+    "F1.2.2",
+    "FL1.2.2",
+    "SCR-010",
+    "BR-063",
+    "BR-064",
+    "BR-007",
+    "CON-004",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-011",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "cost-assumptions-presentation",
+   "tasks": [
+    "T-E1-019b"
+   ],
+   "tests": [
+    "modules/e01-app/internal/shell/test/cost_assumptions_test.dart",
+    "modules/e01-app/internal/shell/test/cost_split_test.dart",
+    "modules/e01-app/internal/shell/test/duration_range_test.dart",
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-12",
+   "depends_on": [
+    "T-E1-019a"
+   ],
+   "used_by": [
+    "V-E1-ASSUMPTIONS-001",
+    "T-E1-019b",
+    "E-DEV-119"
+   ],
+   "evidence": "E-DEV-119",
+   "supersedes": "planning TASK_INDEX T-E1-019b",
+   "status": "DONE"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",

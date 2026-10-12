@@ -13,19 +13,19 @@ tests: [modules/e01-app/internal/shell/test/cost_split_test.dart, modules/e01-ap
 superseded_by: []
 last_verified: 2026-10-12
 depends_on: [V-E1-COST-001]
-used_by: [V-E1-COST-001, P-E1-019a, T-E1-019a]
+used_by: [V-E1-COST-001, P-E1-019a, T-E1-019a, V-E1-ASSUMPTIONS-001, P-E1-019b, E-DEV-119]
 evidence: []
 supersedes: []
 status: RECORDED
 
 contract_id_version: "C1.2 F1.2.2 FL1.2.2 BR063/064 v1 REVIEW validation method"
-subject_file: modules/e01-app/internal/shell/lib/cost_split.dart
+subject_file: vault/EVIDENCE/SNAPSHOTS/E-DEV-118-COST-SPLIT-FOR-T-E1-019b.dart.snapshot
 subject_digest: 503889de30e99f9e33e572140019d27239686b50294cc003fa617d4a5fde287c
 result: "Bağımsız bütün SOURCE PASS; ayrı FINAL kabulü bekleniyor"
 gate_verdict: "PASS sınırlı maliyet ayrımı; üretim kapıları HELD"
 reviewer: "/root/e1019a_source_whole_review; requested gpt-6-luna/max"
 timestamp: 2026-10-12
-evidence_links: [vault/PROFILES/cost-split-render.md, vault/PACKS/P-E1-019a.md, vault/REGISTRY/T-E1-019a.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-117-E10-GOVERNED-PATHS-FOR-T-E1-019a.md.snapshot, modules/e01-app/internal/shell/lib/cost_split.dart, modules/e01-app/internal/shell/test/cost_split_test.dart, modules/e01-app/internal/shell/test/fixtures/cost_split_reading_questions.json, modules/e01-app/internal/shell/lib/guide_discovery.dart]
+evidence_links: [vault/PROFILES/cost-split-render.md, vault/PACKS/P-E1-019a.md, vault/REGISTRY/T-E1-019a.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-117-E10-GOVERNED-PATHS-FOR-T-E1-019a.md.snapshot, modules/e01-app/internal/shell/lib/cost_split.dart, modules/e01-app/internal/shell/test/cost_split_test.dart, modules/e01-app/internal/shell/test/fixtures/cost_split_reading_questions.json, modules/e01-app/internal/shell/lib/guide_discovery.dart, vault/EVIDENCE/SNAPSHOTS/E-DEV-118-E10-GOVERNED-PATHS-FOR-T-E1-019b.md.snapshot, vault/EVIDENCE/SNAPSHOTS/E-DEV-118-COST-SPLIT-FOR-T-E1-019b.dart.snapshot]
 ---
 
 # Kaynaklı maliyet ayrımı — sınırlı SCR010 sunumu
@@ -595,3 +595,175 @@ RAWBase64: IyBULUUxLTAxOWEgU09VUkNFIGJhZ2ltc2l6IGluY2VsZW1lIHJhcG9ydQoKVGFyaWg6I
   - e1-shell-tests job114901564347: success; Set up job:success, Checkout kavriva-app:success, Install exact Flutter source and verify effective SDK:success, Resolve only locked widget dependencies:success, Verify Dart format and analyze presentation:success, Run headless shell behavior and accessibility checks:success, Post Checkout kavriva-app:success, Complete job:success.
 
 PR120 sohbet eki araç sınırı nedeniyle eklenemedi: thread attachment identity count exceeds 100. PR/kanıt bağlantıları korunur; önceki ekler silinmedi.
+
+## PR120 gerçek son kabul ve eski öznenin RAW taşıması
+
+PR120 normalmerge 3d5eff3567ac1e694d7518f509220079dc264348; approvedFINAL 5f01ad77ddf95ed83786ee5f48e39cce3e33b3ca. Fetchedmain tree=FINAL ve gerçekmain8/FINAL16 başarılı. Özgün ayrı gpt6luna/max scopedPASS ve sürekli sahip kabulü. Önceki gövde/FAIL/RET/digest/reviewer/result/tarih aynen korunur; subject_file yalnız eski kaynak kodunun bayteş snapshot adresine taşınır. Yeni cost uyarısının kanıtı EDEV119, eski kabul genişletilmez. Gerçek107/99/206; üretim kapılarıHELD.
+
+RAW7662bayt/SHA256 e9b87c452c3f4bf929c6d98d7f8b0163f917d27bedfbce3387887603c5ec3de9.
+
+<pre># T-E1-019a — exact FINAL bağımsız son inceleme
+
+Tarih: 2026-10-12
+İnceleyen: DEC0069 kapsamında istenen geçmişsiz gpt-6-luna/max ikinci göz
+Hüküm: PASS — yalnız sınırlı kaynaklı maliyet sunum dal adayı
+
+## Kapsam ve karar
+
+İncelenen exact commit: FINAL 5f01ad77ddf95ed83786ee5f48e39cce3e33b3ca
+Önceki kaynak: SOURCE 4728c275c42be8e7e9643430112c3288423fd1fe
+Taban: BASE b9cb56529fece0b84e2901294a79b4d0de3e5f7a
+Plan: fa914f013fdcd032faed876689092da245989459
+
+Bu bağımsız son tur, implementasyon veya kaynak-kod incelemesi değildir. Exact SOURCE whole-review raporunu ve kayıtlarını, SOURCE→FINAL metadata farkını, semantic durum/count iddialarını ve aynı FINAL’e ait canlı CI/RAW makbuzlarını doğruladım. FINAL başı ve temiz worktree doğrulandı; commit hash’i değişmedi.
+
+## Kaynak inceleme kayıtları
+
+E-DEV-118 içindeki exact SOURCE whole-review HTML metni ve RAW Base64 gömüsü, dıştaki source-whole-review.txt ile tam bayt eşleşmesiyle doğrulanmıştır. Dış rapor 5.944 bayt, SHA-256 c559eb253cfd10e775f38e3f2e2097a235b9ef320e19eae7032848f9c2c65c40. İlk r1 RET raporu 23.560 bayt / e2d167ace6d6467084b16ab06c0225e5cffa0da8cf12f0d12fcdbe7352910dcc olarak; daraltılmış ifadeler sonrası r2 PASS raporu 14.913 bayt / 3c3c466efb72b6426603384f61a95af0e7d0e9073d04fdc98dc077f4d8643d26 olarak korunmuştur. RET geçmişi üstüne yazılmamıştır. E-DEV-118’deki iki ham Base64 eki katı çözümleme ve tam bayt karşılaştırmasıyla doğrulanmıştır.
+
+E-DEV-118 frontmatter’ındaki reviewer/result ve bekleyen FINAL kabul ifadesi, exact SOURCE için üretilmiş kaynak inceleme makbuzunun tarihsel içeriğidir. Exact FINAL ve onun sonrasındaki bağımsız hükmü aynı commit’e yazmak commit kimliğini değiştirerek tekrar inceleme döngüsü yaratır. Protokolde son FINAL hükmü bu ayrı state raporunda, uzak PR sonucu ise rapor hazır olduktan sonra güncellenir. scope.json içindeki “FINAL review/CI pending” phase değeri de hazırlık anının kaydıdır; aşağıdaki exact FINAL makbuzları ve bu rapor güncel sonucu belirler.
+
+## SOURCE→FINAL farkı ve metadata
+
+SOURCE ile FINAL arasında yalnız altı kayıt dosyası değişmiştir:
+
+- vault/EVIDENCE/E-DEV-118.md
+- vault/INDEX/registry.json
+- vault/INDEX/routing.json
+- vault/PACKS/P-E1-019a.md
+- vault/PROFILES/cost-split-render.md
+- vault/REGISTRY/T-E1-019a.md
+
+Kod, test, test fixture, SDK, bağımlılık, YAML veya kaynak sorular değişmemiştir. 97 BASE pin kaydı korunmuştur. 97 pin kapsamındaki içeriklerden 95’i SOURCE→FINAL arasında byte-identical; farklı olan yalnız status geçişi için üretilen registry.json ve routing.json’dır. RAWv84 snapshot’ı BASE E10 governed inventory dosyasının tam kopyasıdır; SHA-256 ee4c0a8efc8e28b6c5a5df1f31870df4e5f559ba76f7f2919224655535871832. E-DEV-117, SOURCE ve FINAL arasında aynıdır; önceki subject, reviewer, tarih, code ve body korunmuş, BASE→SOURCE ekleri append-only kalmıştır.
+
+Registry gerçek 110 task row içerir; T-E1-019a satırı DONE’dur. Eski 113 forecast açıkça geri çekilmiştir ve gerçek sayı gibi kullanılmaz. Routing eligible listesi boştur; T-E1-019a DONE durumu nedeniyle excluded_by_status içindedir. Profile ve pack ACTIVE, E-DEV-118 RECORDED durumundadır. T-E1-019a DONE yalnız bu dalın sınırlı maliyet sunum kabul adayı olduğunu ifade eder.
+
+Gerçek ana sayaç 106 DONE / 100 kalan / 206 toplamdır. Bu sayaç korumalı normal merge ve fetched main sekiz başarılı koşuldan önce ilerlemez; PR açık ve taslaktır. T-E1-019b ayrı ve tamamlanmamıştır. Üretim fiyat feed’i/üreticisi, ayrı SCR-TBD, production runtime, kimlik/yetki/router, insan, cihaz, fiziksel kullanım ve release kabulü HELD’dir. E3 R1 REVIEW ve E5 IN_PROGRESS kalır.
+
+## Exact FINAL CI
+
+final-ci.json 62.461 bayt, SHA-256 8cc733d7675a0f5052ddcf79770e2235494a806ae2c49508352240f24464b90e. Makbuzdaki 16 run için GitHub canlı run ve jobs API kayıtlarını bağımsız aldım. Her birinin canlı head_sha’sı exact FINAL; run status completed ve conclusion success. Her run’ın job status/conclusion’ı ve adım sonuçları incelendi. 16 RAW log dosyasının her birinde yerel byte uzunluğu ve SHA-256, final-ci.json içindeki beklenen değerlerle birebir eşleşti.
+
+| Aile | PR run | Push run |
+|---|---:|---:|
+| E6 release policy | 38277199599 | 38277190928 |
+| E9 bounded proposal | 38277199519 | 38277190904 |
+| E4 offline composition | 38277199751 | 38277190910 |
+| E3 commit authorization | 38277199622 | 38277190914 |
+| Architecture | 38277199554 | 38277190939 |
+| E5 current authority | 38277199509 | 38277190879 |
+| E3 live auth | 38277199773 | 38277190906 |
+| E1 shell/widget | 38277199804 | 38277190930 |
+
+PR architecture run 38277199554’te T3 conformance + identity işi beş gerçek başarılı adıma sahiptir; ham gövdede 117 evidence kaydı, 375 ID ve 479 dosya taraması görülür. Aynı run’daki architecture işi 42 test ve worst exit 0 verir. Push architecture run’ındaki T3 işi skipped ve sıfır adımlıdır; T3 başarı kanıtı olarak sayılmamıştır.
+
+PR E1 run 38277199804’ün gerçek sonucu 427 test geçti, 44 dosya format kontrolü/0 değişiklik ve analyze 0 issue’dur. final-ci-root-read.json tüm canlı head/job/step ve sonuç makbuzlarının okunduğunu; her runner boilerplate satırının görsel olarak okunduğu iddiası olmadığını kaydeder. Ben ayrıca 16 RAW uzunluğu/hash eşleşmesini ve run/job/step sonuçlarını doğrudan doğruladım; Flutter veya repo testlerini yeniden çalıştırmadım.
+
+## PR açıklaması bulguları ve kapanışları
+
+İlk canlı PR #120 açıklaması SOURCE whole-review ve aynı SOURCE CI/T3 henüz bekleniyor diyordu. O metin source whole-review ve SOURCE CI tamamlandıktan sonra eskimişti. Özgün metin pr-body-source-original.md içinde korunmuştur (1.258 bayt; SHA-256 0316df99eeba6c22c6b458370a1ef2a599cf8c2ed0f920b342e60a04717a5d17). Açıklama daha sonra SOURCE PASS, 17 gerçek SOURCE CI koşusu ve PR T3 durumunu ayıracak şekilde düzeltildi. Güncel canlı gövde SOURCE PASS ve kaynak makbuzlarını doğru bildiriyor; ilk bulgu kapandı.
+
+FINAL CI tamamlandıktan sonra alınmış ara PR gövdesi aynı FINAL CI’nin hâlâ beklediğini söylüyordu. Bu eski gövde pr-body-final-ci-pending-original.md içinde korunmuştur (1.645 bayt; SHA-256 7310ca5d6e428243c2b906a861a3e789f03457d3d9e4220247d83c5fe9ec2894). Canlı açıklama daha sonra aynı FINAL 16 CI ailesi ile PR T3 başarılarını bildirecek şekilde düzeltildi. Son canlı fetch’te PR #120 OPEN/draft, head exact FINAL; CI-pending cümlesi yok ve CI-success cümlesi mevcut. İkinci bulgu kapandı.
+
+Bu rapordan hemen önceki canlı gövde, bağımsız FINAL son hükmünün beklendiğini söylüyordu; o fetch anında ifade doğruydu. Bu rapor PASS hükmünü verdiğinden, uzak PR açıklaması bu rapora göre güncellenecektir. Bu açıklama güncellemesi commit’i değiştirmez.
+
+## Nihai hüküm ve sınırlar
+
+FINAL’in altı dosyalı metadata geçişi, status/count anlatımı ve exact-head gerçek CI/RAW makbuzları tutarlıdır. PR açıklamasındaki iki zaman aşımı bulgusu düzeltilmiş ve canlı fetch ile kapanmıştır. Düzeltme gerektiren açık bir FINAL metadata veya CI bulgusu bulmadım.
+
+T-E1-019a için PASS veriyorum; bu hüküm yalnız sınırlı SCR-010 maliyet sunumu dal adayı ile exact FINAL kanıtlarına aittir. Gerçek 106/100/206 sayaçlarını, T-E1-019b’yi, üretim/kimlik/runtime, insan/cihaz/fiziksel doğrulama veya release kabulünü ilerletmez.</pre>
+
+RAWBase64: IyBULUUxLTAxOWEg4oCUIGV4YWN0IEZJTkFMIGJhxJ/EsW1zxLF6IHNvbiBpbmNlbGVtZQoKVGFyaWg6IDIwMjYtMTAtMTIgIArEsG5jZWxleWVuOiBERUMwMDY5IGthcHNhbcSxbmRhIGlzdGVuZW4gZ2XDp21pxZ9zaXogZ3B0LTYtbHVuYS9tYXggaWtpbmNpIGfDtnogIApIw7xrw7xtOiBQQVNTIOKAlCB5YWxuxLF6IHPEsW7EsXJsxLEga2F5bmFrbMSxIG1hbGl5ZXQgc3VudW0gZGFsIGFkYXnEsQoKIyMgS2Fwc2FtIHZlIGthcmFyCgrEsG5jZWxlbmVuIGV4YWN0IGNvbW1pdDogRklOQUwgNWYwMWFkNzdkZGY5NWVkODM3ODZlZTVmNDhlMzljY2UzZTMzYjNjYSAgCsOWbmNla2kga2F5bmFrOiBTT1VSQ0UgNDcyOGMyNzVjNDJiZThlN2U5NjQzNDMwMTEyYzMyODg0MjNmZDFmZSAgClRhYmFuOiBCQVNFIGI5Y2I1NjUyOWZlY2UwYjg0ZTI5MDEyOTRhNzliNGQwZGUzZTVmN2EgIApQbGFuOiBmYTkxNGYwMTNmZGNkMDMyZmFlZDg3NjY4OTA5MmRhMjQ1OTg5NDU5CgpCdSBiYcSfxLFtc8SxeiBzb24gdHVyLCBpbXBsZW1lbnRhc3lvbiB2ZXlhIGtheW5hay1rb2QgaW5jZWxlbWVzaSBkZcSfaWxkaXIuIEV4YWN0IFNPVVJDRSB3aG9sZS1yZXZpZXcgcmFwb3J1bnUgdmUga2F5xLF0bGFyxLFuxLEsIFNPVVJDReKGkkZJTkFMIG1ldGFkYXRhIGZhcmvEsW7EsSwgc2VtYW50aWMgZHVydW0vY291bnQgaWRkaWFsYXLEsW7EsSB2ZSBheW7EsSBGSU5BTOKAmWUgYWl0IGNhbmzEsSBDSS9SQVcgbWFrYnV6bGFyxLFuxLEgZG/En3J1bGFkxLFtLiBGSU5BTCBiYcWfxLEgdmUgdGVtaXogd29ya3RyZWUgZG/En3J1bGFuZMSxOyBjb21taXQgaGFzaOKAmWkgZGXEn2nFn21lZGkuCgojIyBLYXluYWsgaW5jZWxlbWUga2F5xLF0bGFyxLEKCkUtREVWLTExOCBpw6dpbmRla2kgZXhhY3QgU09VUkNFIHdob2xlLXJldmlldyBIVE1MIG1ldG5pIHZlIFJBVyBCYXNlNjQgZ8O2bcO8c8O8LCBkxLHFn3Rha2kgc291cmNlLXdob2xlLXJldmlldy50eHQgaWxlIHRhbSBiYXl0IGXFn2xlxZ9tZXNpeWxlIGRvxJ9ydWxhbm3EscWfdMSxci4gRMSxxZ8gcmFwb3IgNS45NDQgYmF5dCwgU0hBLTI1NiBjNTU5ZWIyNTNjZmQxMGU3NzVmMzhlM2YyZTIwOTdhMjM1YjllZjMyMGUxOWVhZTcwMzI4NDhmOWMyYzY1YzQwLiDEsGxrIHIxIFJFVCByYXBvcnUgMjMuNTYwIGJheXQgLyBlMmQxNjdhY2U2ZDY0NjcwODRiMTZhYjA2YzAyMjVlNWNmZmEwZGE4Y2YxMmYwZDEyZmNkYmU3MzUyOTEwZGNjIG9sYXJhazsgZGFyYWx0xLFsbcSxxZ8gaWZhZGVsZXIgc29ucmFzxLEgcjIgUEFTUyByYXBvcnUgMTQuOTEzIGJheXQgLyAzYzNjNDY2ZWZiNzJiNjQyNjYwMzM4NGY2MWE5NWFmMGU3ZDBlOTA3M2QwNGZkYzk4ZGMwNzdmNGQ4NjQzZDI2IG9sYXJhayBrb3J1bm11xZ90dXIuIFJFVCBnZcOnbWnFn2kgw7xzdMO8bmUgeWF6xLFsbWFtxLHFn3TEsXIuIEUtREVWLTExOOKAmWRla2kgaWtpIGhhbSBCYXNlNjQgZWtpIGthdMSxIMOnw7Z6w7xtbGVtZSB2ZSB0YW0gYmF5dCBrYXLFn8SxbGHFn3TEsXJtYXPEsXlsYSBkb8SfcnVsYW5txLHFn3TEsXIuCgpFLURFVi0xMTggZnJvbnRtYXR0ZXLigJnEsW5kYWtpIHJldmlld2VyL3Jlc3VsdCB2ZSBiZWtsZXllbiBGSU5BTCBrYWJ1bCBpZmFkZXNpLCBleGFjdCBTT1VSQ0UgacOnaW4gw7xyZXRpbG1pxZ8ga2F5bmFrIGluY2VsZW1lIG1ha2J1enVudW4gdGFyaWhzZWwgacOnZXJpxJ9pZGlyLiBFeGFjdCBGSU5BTCB2ZSBvbnVuIHNvbnJhc8SxbmRha2kgYmHEn8SxbXPEsXogaMO8a23DvCBheW7EsSBjb21taXTigJllIHlhem1hayBjb21taXQga2ltbGnEn2luaSBkZcSfacWfdGlyZXJlayB0ZWtyYXIgaW5jZWxlbWUgZMO2bmfDvHPDvCB5YXJhdMSxci4gUHJvdG9rb2xkZSBzb24gRklOQUwgaMO8a23DvCBidSBheXLEsSBzdGF0ZSByYXBvcnVuZGEsIHV6YWsgUFIgc29udWN1IGlzZSByYXBvciBoYXrEsXIgb2xkdWt0YW4gc29ucmEgZ8O8bmNlbGxlbmlyLiBzY29wZS5qc29uIGnDp2luZGVraSDigJxGSU5BTCByZXZpZXcvQ0kgcGVuZGluZ+KAnSBwaGFzZSBkZcSfZXJpIGRlIGhhesSxcmzEsWsgYW7EsW7EsW4ga2F5ZMSxZMSxcjsgYcWfYcSfxLFkYWtpIGV4YWN0IEZJTkFMIG1ha2J1emxhcsSxIHZlIGJ1IHJhcG9yIGfDvG5jZWwgc29udWN1IGJlbGlybGVyLgoKIyMgU09VUkNF4oaSRklOQUwgZmFya8SxIHZlIG1ldGFkYXRhCgpTT1VSQ0UgaWxlIEZJTkFMIGFyYXPEsW5kYSB5YWxuxLF6IGFsdMSxIGthecSxdCBkb3N5YXPEsSBkZcSfacWfbWnFn3RpcjoKCi0gdmF1bHQvRVZJREVOQ0UvRS1ERVYtMTE4Lm1kCi0gdmF1bHQvSU5ERVgvcmVnaXN0cnkuanNvbgotIHZhdWx0L0lOREVYL3JvdXRpbmcuanNvbgotIHZhdWx0L1BBQ0tTL1AtRTEtMDE5YS5tZAotIHZhdWx0L1BST0ZJTEVTL2Nvc3Qtc3BsaXQtcmVuZGVyLm1kCi0gdmF1bHQvUkVHSVNUUlkvVC1FMS0wMTlhLm1kCgpLb2QsIHRlc3QsIHRlc3QgZml4dHVyZSwgU0RLLCBiYcSfxLFtbMSxbMSxaywgWUFNTCB2ZXlhIGtheW5hayBzb3J1bGFyIGRlxJ9pxZ9tZW1pxZ90aXIuIDk3IEJBU0UgcGluIGtheWTEsSBrb3J1bm11xZ90dXIuIDk3IHBpbiBrYXBzYW3EsW5kYWtpIGnDp2VyaWtsZXJkZW4gOTXigJlpIFNPVVJDReKGkkZJTkFMIGFyYXPEsW5kYSBieXRlLWlkZW50aWNhbDsgZmFya2zEsSBvbGFuIHlhbG7EsXogc3RhdHVzIGdlw6dpxZ9pIGnDp2luIMO8cmV0aWxlbiByZWdpc3RyeS5qc29uIHZlIHJvdXRpbmcuanNvbuKAmWTEsXIuIFJBV3Y4NCBzbmFwc2hvdOKAmcSxIEJBU0UgRTEwIGdvdmVybmVkIGludmVudG9yeSBkb3N5YXPEsW7EsW4gdGFtIGtvcHlhc8SxZMSxcjsgU0hBLTI1NiBlZTRjMGE4ZWZjOGUyOGI2YzVhNWRmMWYzMTg3MGRmNGU1ZjU1OWJhNzZmN2YyOTE5MjI0NjU1NTM1ODcxODMyLiBFLURFVi0xMTcsIFNPVVJDRSB2ZSBGSU5BTCBhcmFzxLFuZGEgYXluxLFkxLFyOyDDtm5jZWtpIHN1YmplY3QsIHJldmlld2VyLCB0YXJpaCwgY29kZSB2ZSBib2R5IGtvcnVubXXFnywgQkFTReKGklNPVVJDRSBla2xlcmkgYXBwZW5kLW9ubHkga2FsbcSxxZ90xLFyLgoKUmVnaXN0cnkgZ2Vyw6dlayAxMTAgdGFzayByb3cgacOnZXJpcjsgVC1FMS0wMTlhIHNhdMSxcsSxIERPTkXigJlkdXIuIEVza2kgMTEzIGZvcmVjYXN0IGHDp8Sxa8OnYSBnZXJpIMOnZWtpbG1pxZ90aXIgdmUgZ2Vyw6dlayBzYXnEsSBnaWJpIGt1bGxhbsSxbG1hei4gUm91dGluZyBlbGlnaWJsZSBsaXN0ZXNpIGJvxZ90dXI7IFQtRTEtMDE5YSBET05FIGR1cnVtdSBuZWRlbml5bGUgZXhjbHVkZWRfYnlfc3RhdHVzIGnDp2luZGVkaXIuIFByb2ZpbGUgdmUgcGFjayBBQ1RJVkUsIEUtREVWLTExOCBSRUNPUkRFRCBkdXJ1bXVuZGFkxLFyLiBULUUxLTAxOWEgRE9ORSB5YWxuxLF6IGJ1IGRhbMSxbiBzxLFuxLFybMSxIG1hbGl5ZXQgc3VudW0ga2FidWwgYWRhecSxIG9sZHXEn3VudSBpZmFkZSBlZGVyLgoKR2Vyw6dlayBhbmEgc2F5YcOnIDEwNiBET05FIC8gMTAwIGthbGFuIC8gMjA2IHRvcGxhbWTEsXIuIEJ1IHNheWHDpyBrb3J1bWFsxLEgbm9ybWFsIG1lcmdlIHZlIGZldGNoZWQgbWFpbiBzZWtpeiBiYcWfYXLEsWzEsSBrb8WfdWxkYW4gw7ZuY2UgaWxlcmxlbWV6OyBQUiBhw6fEsWsgdmUgdGFzbGFrdMSxci4gVC1FMS0wMTliIGF5csSxIHZlIHRhbWFtbGFubWFtxLHFn3TEsXIuIMOccmV0aW0gZml5YXQgZmVlZOKAmWkvw7xyZXRpY2lzaSwgYXlyxLEgU0NSLVRCRCwgcHJvZHVjdGlvbiBydW50aW1lLCBraW1saWsveWV0a2kvcm91dGVyLCBpbnNhbiwgY2loYXosIGZpemlrc2VsIGt1bGxhbsSxbSB2ZSByZWxlYXNlIGthYnVsw7wgSEVMROKAmWRpci4gRTMgUjEgUkVWSUVXIHZlIEU1IElOX1BST0dSRVNTIGthbMSxci4KCiMjIEV4YWN0IEZJTkFMIENJCgpmaW5hbC1jaS5qc29uIDYyLjQ2MSBiYXl0LCBTSEEtMjU2IDhjYzczM2Q3Njc1YTBmNTA1MmRkY2Y3OTc3MGUyMjM1NDk0YTgwNmFlMmM0OTUwODM1MjI0MGYyNDQ2NGI5MGUuIE1ha2J1emRha2kgMTYgcnVuIGnDp2luIEdpdEh1YiBjYW5sxLEgcnVuIHZlIGpvYnMgQVBJIGthecSxdGxhcsSxbsSxIGJhxJ/EsW1zxLF6IGFsZMSxbS4gSGVyIGJpcmluaW4gY2FubMSxIGhlYWRfc2hh4oCZc8SxIGV4YWN0IEZJTkFMOyBydW4gc3RhdHVzIGNvbXBsZXRlZCB2ZSBjb25jbHVzaW9uIHN1Y2Nlc3MuIEhlciBydW7igJnEsW4gam9iIHN0YXR1cy9jb25jbHVzaW9u4oCZxLEgdmUgYWTEsW0gc29udcOnbGFyxLEgaW5jZWxlbmRpLiAxNiBSQVcgbG9nIGRvc3lhc8SxbsSxbiBoZXIgYmlyaW5kZSB5ZXJlbCBieXRlIHV6dW5sdcSfdSB2ZSBTSEEtMjU2LCBmaW5hbC1jaS5qc29uIGnDp2luZGVraSBiZWtsZW5lbiBkZcSfZXJsZXJsZSBiaXJlYmlyIGXFn2xlxZ90aS4KCnwgQWlsZSB8IFBSIHJ1biB8IFB1c2ggcnVuIHwKfC0tLXwtLS06fC0tLTp8CnwgRTYgcmVsZWFzZSBwb2xpY3kgfCAzODI3NzE5OTU5OSB8IDM4Mjc3MTkwOTI4IHwKfCBFOSBib3VuZGVkIHByb3Bvc2FsIHwgMzgyNzcxOTk1MTkgfCAzODI3NzE5MDkwNCB8CnwgRTQgb2ZmbGluZSBjb21wb3NpdGlvbiB8IDM4Mjc3MTk5NzUxIHwgMzgyNzcxOTA5MTAgfAp8IEUzIGNvbW1pdCBhdXRob3JpemF0aW9uIHwgMzgyNzcxOTk2MjIgfCAzODI3NzE5MDkxNCB8CnwgQXJjaGl0ZWN0dXJlIHwgMzgyNzcxOTk1NTQgfCAzODI3NzE5MDkzOSB8CnwgRTUgY3VycmVudCBhdXRob3JpdHkgfCAzODI3NzE5OTUwOSB8IDM4Mjc3MTkwODc5IHwKfCBFMyBsaXZlIGF1dGggfCAzODI3NzE5OTc3MyB8IDM4Mjc3MTkwOTA2IHwKfCBFMSBzaGVsbC93aWRnZXQgfCAzODI3NzE5OTgwNCB8IDM4Mjc3MTkwOTMwIHwKClBSIGFyY2hpdGVjdHVyZSBydW4gMzgyNzcxOTk1NTTigJl0ZSBUMyBjb25mb3JtYW5jZSArIGlkZW50aXR5IGnFn2kgYmXFnyBnZXLDp2VrIGJhxZ9hcsSxbMSxIGFkxLFtYSBzYWhpcHRpcjsgaGFtIGfDtnZkZWRlIDExNyBldmlkZW5jZSBrYXlkxLEsIDM3NSBJRCB2ZSA0NzkgZG9zeWEgdGFyYW1hc8SxIGfDtnLDvGzDvHIuIEF5bsSxIHJ1buKAmWRha2kgYXJjaGl0ZWN0dXJlIGnFn2kgNDIgdGVzdCB2ZSB3b3JzdCBleGl0IDAgdmVyaXIuIFB1c2ggYXJjaGl0ZWN0dXJlIHJ1buKAmcSxbmRha2kgVDMgacWfaSBza2lwcGVkIHZlIHPEsWbEsXIgYWTEsW1sxLFkxLFyOyBUMyBiYcWfYXLEsSBrYW7EsXTEsSBvbGFyYWsgc2F5xLFsbWFtxLHFn3TEsXIuCgpQUiBFMSBydW4gMzgyNzcxOTk4MDTigJnDvG4gZ2Vyw6dlayBzb251Y3UgNDI3IHRlc3QgZ2XDp3RpLCA0NCBkb3N5YSBmb3JtYXQga29udHJvbMO8LzAgZGXEn2nFn2lrbGlrIHZlIGFuYWx5emUgMCBpc3N1ZeKAmWR1ci4gZmluYWwtY2ktcm9vdC1yZWFkLmpzb24gdMO8bSBjYW5sxLEgaGVhZC9qb2Ivc3RlcCB2ZSBzb251w6cgbWFrYnV6bGFyxLFuxLFuIG9rdW5kdcSfdW51OyBoZXIgcnVubmVyIGJvaWxlcnBsYXRlIHNhdMSxcsSxbsSxbiBnw7Zyc2VsIG9sYXJhayBva3VuZHXEn3UgaWRkaWFzxLEgb2xtYWTEscSfxLFuxLEga2F5ZGVkZXIuIEJlbiBheXLEsWNhIDE2IFJBVyB1enVubHXEn3UvaGFzaCBlxZ9sZcWfbWVzaW5pIHZlIHJ1bi9qb2Ivc3RlcCBzb251w6dsYXLEsW7EsSBkb8SfcnVkYW4gZG/En3J1bGFkxLFtOyBGbHV0dGVyIHZleWEgcmVwbyB0ZXN0bGVyaW5pIHllbmlkZW4gw6dhbMSxxZ90xLFybWFkxLFtLgoKIyMgUFIgYcOnxLFrbGFtYXPEsSBidWxndWxhcsSxIHZlIGthcGFuxLHFn2xhcsSxCgrEsGxrIGNhbmzEsSBQUiAjMTIwIGHDp8Sxa2xhbWFzxLEgU09VUkNFIHdob2xlLXJldmlldyB2ZSBheW7EsSBTT1VSQ0UgQ0kvVDMgaGVuw7x6IGJla2xlbml5b3IgZGl5b3JkdS4gTyBtZXRpbiBzb3VyY2Ugd2hvbGUtcmV2aWV3IHZlIFNPVVJDRSBDSSB0YW1hbWxhbmTEsWt0YW4gc29ucmEgZXNraW1pxZ90aS4gw5Z6Z8O8biBtZXRpbiBwci1ib2R5LXNvdXJjZS1vcmlnaW5hbC5tZCBpw6dpbmRlIGtvcnVubXXFn3R1ciAoMS4yNTggYmF5dDsgU0hBLTI1NiAwMzE2ZGY5OWVlYmE2YzIyYzZiNDU4MzcwYTFlZjJhNTk5Y2Y4YzJlZDBmOTIwYjM0MmU2MGEwNDcxN2E1ZDE3KS4gQcOnxLFrbGFtYSBkYWhhIHNvbnJhIFNPVVJDRSBQQVNTLCAxNyBnZXLDp2VrIFNPVVJDRSBDSSBrb8WfdXN1IHZlIFBSIFQzIGR1cnVtdW51IGF5xLFyYWNhayDFn2VraWxkZSBkw7x6ZWx0aWxkaS4gR8O8bmNlbCBjYW5sxLEgZ8O2dmRlIFNPVVJDRSBQQVNTIHZlIGtheW5hayBtYWtidXpsYXLEsW7EsSBkb8SfcnUgYmlsZGlyaXlvcjsgaWxrIGJ1bGd1IGthcGFuZMSxLgoKRklOQUwgQ0kgdGFtYW1sYW5kxLFrdGFuIHNvbnJhIGFsxLFubcSxxZ8gYXJhIFBSIGfDtnZkZXNpIGF5bsSxIEZJTkFMIENJ4oCZbmluIGjDomzDoiBiZWtsZWRpxJ9pbmkgc8O2eWzDvHlvcmR1LiBCdSBlc2tpIGfDtnZkZSBwci1ib2R5LWZpbmFsLWNpLXBlbmRpbmctb3JpZ2luYWwubWQgacOnaW5kZSBrb3J1bm11xZ90dXIgKDEuNjQ1IGJheXQ7IFNIQS0yNTYgNzMxMGNhNWQ2ZTQyODI0M2MyYjkwNmE4NjFhM2U3ODlmMDM0NTdkM2Q5ZTQyMjAyNDdkODNjNWZlOWVjMjg5NCkuIENhbmzEsSBhw6fEsWtsYW1hIGRhaGEgc29ucmEgYXluxLEgRklOQUwgMTYgQ0kgYWlsZXNpIGlsZSBQUiBUMyBiYcWfYXLEsWxhcsSxbsSxIGJpbGRpcmVjZWsgxZ9la2lsZGUgZMO8emVsdGlsZGkuIFNvbiBjYW5sxLEgZmV0Y2jigJl0ZSBQUiAjMTIwIE9QRU4vZHJhZnQsIGhlYWQgZXhhY3QgRklOQUw7IENJLXBlbmRpbmcgY8O8bWxlc2kgeW9rIHZlIENJLXN1Y2Nlc3MgY8O8bWxlc2kgbWV2Y3V0LiDEsGtpbmNpIGJ1bGd1IGthcGFuZMSxLgoKQnUgcmFwb3JkYW4gaGVtZW4gw7ZuY2VraSBjYW5sxLEgZ8O2dmRlLCBiYcSfxLFtc8SxeiBGSU5BTCBzb24gaMO8a23DvG7DvG4gYmVrbGVuZGnEn2luaSBzw7Z5bMO8eW9yZHU7IG8gZmV0Y2ggYW7EsW5kYSBpZmFkZSBkb8SfcnV5ZHUuIEJ1IHJhcG9yIFBBU1MgaMO8a23DvG7DvCB2ZXJkacSfaW5kZW4sIHV6YWsgUFIgYcOnxLFrbGFtYXPEsSBidSByYXBvcmEgZ8O2cmUgZ8O8bmNlbGxlbmVjZWt0aXIuIEJ1IGHDp8Sxa2xhbWEgZ8O8bmNlbGxlbWVzaSBjb21taXTigJlpIGRlxJ9pxZ90aXJtZXouCgojIyBOaWhhaSBow7xrw7xtIHZlIHPEsW7EsXJsYXIKCkZJTkFM4oCZaW4gYWx0xLEgZG9zeWFsxLEgbWV0YWRhdGEgZ2XDp2nFn2ksIHN0YXR1cy9jb3VudCBhbmxhdMSxbcSxIHZlIGV4YWN0LWhlYWQgZ2Vyw6dlayBDSS9SQVcgbWFrYnV6bGFyxLEgdHV0YXJsxLFkxLFyLiBQUiBhw6fEsWtsYW1hc8SxbmRha2kgaWtpIHphbWFuIGHFn8SxbcSxIGJ1bGd1c3UgZMO8emVsdGlsbWnFnyB2ZSBjYW5sxLEgZmV0Y2ggaWxlIGthcGFubcSxxZ90xLFyLiBEw7x6ZWx0bWUgZ2VyZWt0aXJlbiBhw6fEsWsgYmlyIEZJTkFMIG1ldGFkYXRhIHZleWEgQ0kgYnVsZ3VzdSBidWxtYWTEsW0uCgpULUUxLTAxOWEgacOnaW4gUEFTUyB2ZXJpeW9ydW07IGJ1IGjDvGvDvG0geWFsbsSxeiBzxLFuxLFybMSxIFNDUi0wMTAgbWFsaXlldCBzdW51bXUgZGFsIGFkYXnEsSBpbGUgZXhhY3QgRklOQUwga2FuxLF0bGFyxLFuYSBhaXR0aXIuIEdlcsOnZWsgMTA2LzEwMC8yMDYgc2F5YcOnbGFyxLFuxLEsIFQtRTEtMDE5YuKAmXlpLCDDvHJldGltL2tpbWxpay9ydW50aW1lLCBpbnNhbi9jaWhhei9maXppa3NlbCBkb8SfcnVsYW1hIHZleWEgcmVsZWFzZSBrYWJ1bMO8bsO8IGlsZXJsZXRtZXou
+
+## PR120 aynıFINAL16 gerçekCI
+
+Gerçek baş 5f01ad77ddf95ed83786ee5f48e39cce3e33b3ca. RAW bayt/özet, iş/adım ve aile sonuçları doğrulandı; Root ilgili mimari/T3/yerel kimlik gövdelerini okudu. Her runner satırının görsel olarak okunduğu iddia edilmez.
+
+38277199599 e6-release-policy-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199599 RAW 28050 SHA256 cfc4c94174c0fb99d20bd5036ca21e09fea6eb8607b50628b542f8d1f9bef78e
+- 114905462855 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277199519 e9-bounded-proposal-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199519 RAW 18383 SHA256 8b2f02b0b2a12c44f2fcabad8d0d86ab941dd02dd4200c873881ceeccf4357a4
+- 114905462841 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277199751 e4-offline-composition-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199751 RAW 56249 SHA256 dbea13c31626544a472a0a0849d31de4553b224fc48e768cbdcce835250079fb
+- 114905463188 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277199622 e3-commit-authorization-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199622 RAW 66812 SHA256 7e3baacb795e6a698da28577d66b2a00b8f66e3f4d48221dba295bd10247074c
+- 114905462713 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38277199554 architecture-checks pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199554 RAW 47522 SHA256 9e39e9349fde330ea133640b73024717dd79775a1e60da5023a5240500af5d8f
+- 114905462575 t3-gate success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:T3 conformance + identity gate=success, 6:Post Checkout kavriva-app=success, 7:Complete job=success
+- 114905462998 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+
+38277199509 e5-current-authority-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199509 RAW 35654 SHA256 c0b1010967d31e909fe6306692b35d440521959390132b7dbd797e265afcc665
+- 114905462990 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38277199773 e3-live-auth-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199773 RAW 25637 SHA256 e7b275bcc2794b8f78aa14e938004dbe4ba246ccca02fb42d16f008a73f06081
+- 114905463337 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+38277199804 e1-shell-widget-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38277199804 RAW 156790 SHA256 399cf5277721c241fc7323ae1a017e38b76e7f07d05068a9be113587dfc70b43
+- 114905463435 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+38277190904 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190904 RAW 17001 SHA256 c3e962faeac3d255dffd871a618db91dbe0c1df3e1d2fa70b1db03b4f80769e6
+- 114905434116 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277190939 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190939 RAW 30927 SHA256 d36277460750634b2825b23f2cd84e5476d7eed778e19a6b23dc03a5dda86ed1
+- 114905434150 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+- 114905436118 t3-gate skipped;
+
+38277190910 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190910 RAW 54865 SHA256 bc3bea3712a8e4379bb4d6f79685edc7865ee307546fb4c198c648df54284618
+- 114905434420 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277190914 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190914 RAW 64238 SHA256 25b894b02b2546d1d9f44fd4eb7019e62b0edc04a18e500a2b6e92ae82179e1c
+- 114905434363 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38277190879 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190879 RAW 34211 SHA256 426851ab43fe792cd5f99cf5a9e68ca134af59d61153d8e7ef29c2abfb6f6c4b
+- 114905434504 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38277190928 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190928 RAW 26660 SHA256 ab4cf972511ed9daa6f5a796a537999eb51b5365d5de1eae754f94292c6879f1
+- 114905434557 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38277190906 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190906 RAW 24241 SHA256 7a5144ee622b4a7523b970c7adc877e5cbbfddd0f11646a9e7961efd182a674b
+- 114905434203 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+38277190930 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38277190930 RAW 154140 SHA256 ff3fc1ad9f59953d1abfb018dd315955ca5ba12983595dddfaab68cca93339ef
+- 114905434339 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+## PR120 gerçek fetchedmain8CI
+
+Gerçek baş 3d5eff3567ac1e694d7518f509220079dc264348. RAW bayt/özet, iş/adım ve aile sonuçları doğrulandı; Root ilgili mimari/T3/yerel kimlik gövdelerini okudu. Her runner satırının görsel olarak okunduğu iddia edilmez.
+
+38278864780 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864780 RAW 64122 SHA256 b3bf87c4566274ab9b1d338cae87575fc9ea3414e68fc713f243d309508be3d8
+- 114910939525 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38278864718 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864718 RAW 16904 SHA256 3ca715ae1bd498738690813fafbc9ffe807a54b049ca84f9f23f48523e3d8f29
+- 114910939556 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38278864568 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864568 RAW 54759 SHA256 7dfce654f7d6d87ea23ae1ed52dfe4e3e2b00a552115d221055cb4168209b3aa
+- 114910939323 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38278864593 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864593 RAW 30830 SHA256 339f90b5bb7ab9a040d85bba0b7df86df2c9168667a57db474127b6781dc618b
+- 114910939462 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+- 114910941390 t3-gate skipped;
+
+38278864561 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864561 RAW 26563 SHA256 f1381f34f9e4d7110d29ec9546a1526a90e159bd5f2609135347be15118e8762
+- 114910939092 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38278864580 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864580 RAW 34112 SHA256 9f5cfbf51b99e61948f70e15699bd6fc50abe7e019a51aaa151ee2b53a3e2e06
+- 114910939285 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38278864538 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864538 RAW 24137 SHA256 064093adc91e05112c9b0f063b9f2e750b5cb9f61adf8c66b958a82a3dfadb7a
+- 114910938839 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+38278864573 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38278864573 RAW 155126 SHA256 547e94ec5c12db9b1af7227fc60bfb7b0b8ceca0c95366bfb8f6b81852b7fefd
+- 114910939070 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+Özgün son inceleme/CI https://github.com/xpike-dgm/kavriva-app/pull/120#issuecomment-6128500334 . Eski inventory öznesi RAWv85snapshot; eski cost öznesi ayrıRAWsnapshot.
+
+## 2026-10-12 — eski raporun HTML bayt eşliği iddiasına açık düzeltme
+
+Önceki özgün rapor içinde “exact SOURCE whole-review HTML metni ve RAW Base64 gömüsü, dıştaki source-whole-review.txt ile tam bayt eşleşmesi” ifadesi yer alır. Bu iddianın HTML görüntüsü için olan kısmı geri çekilmiştir. Tam bayt/SHA256 eşliği yalnız RAWBase64 çözümü ile özgün TXT dosyasına aittir. Eski rapor gövdesi, hükmü, tarihi, subject_digest ve Base64 payloadı değiştirilmez.
+
+Root dört gerçek pre/Base64 çiftini çözerek boyut ve karakter farklarını doğruladı. İlk RET RAW23560/HTML23457: CRLF→LF ve son CRLF kırpılması. İlk okuma R2 RAW14913/HTML14912: son LF kırpılması. SOURCE whole-review RAW5944/HTML5943: tek son LF kırpılması (ASCII boşluk değildir), RAW SHA256 c559eb253cfd10e775f38e3f2e2097a235b9ef320e19eae7032848f9c2c65c40. FINAL RAW7662/HTML7652: 5satırdaki2'şer sonboşluk, RAW SHA256 e9b87c452c3f4bf929c6d98d7f8b0163f917d27bedfbce3387887603c5ec3de9. Dört metin splitlines ve her satır rstrip ile eşleşir; bu bir görüntü karşılaştırmasıdır, özgün byte eşliği değildir. Okunabilir HTML sunumu newline/sonboşlukları düzenleyebilir; değişmez özgün kanıt RAWBase64 ve kalıcı dosyadır.
+
+Bu düzeltme önceki T019a ürün kodu kabulünü genişletmez ve önceki rapor metnini yeniden yazmaz. T019b SOURCE R1 belge kabulü CHANGES_REQUESTED; taze bütün SOURCE incelemesi ve aynı yeni SOURCE CI/T3/FINAL kabulü beklenir. `vault/EVIDENCE/E-DEV-119.md`; `vault/PACKS/P-E1-019b.md`.

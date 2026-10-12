@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-ASSUMPTIONS-001"
+  - "P-E1-019b"
+  - "E-DEV-119"
   - "V-E1-COST-001"
   - "P-E1-019a"
   - "E-DEV-118"
@@ -602,3 +605,7 @@ SOURCE8654b41 bağımsızRET/17CI tarihçedir; canRequest güncelstatusu gerekti
 ## Kaynaklı maliyet ayrımı tüketimi
 
 `vault/PACKS/P-E1-019a.md`; `vault/EVIDENCE/E-DEV-118.md`. MevcutSCR010 salt bilgi alanı; yeni screen/router/katalog/production/publicseam/YAML yok. Yerel427/44format0/analyze0; bağımsız kabul beklenir. Gerçek106DONE100kalan206; üretimHELD.
+
+## Kaynak varsayımları tüketimi
+
+`vault/PACKS/P-E1-019b.md`; `vault/EVIDENCE/E-DEV-119.md`. MevcutSCR010 saltbilgi; yeni screen/router/katalog/production/publicseam/YAML yok. Yerel437/45format0/analyze0; bağımsız kabul beklenir. Gerçek107DONE99kalan206; üretimHELD.
