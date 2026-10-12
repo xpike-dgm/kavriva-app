@@ -61,3 +61,9 @@ E3R1 REVIEW/E5 IN_PROGRESS ve47/57/59/RET97/productionidentity/feed/analytics/ro
 ## Gerçek mimari tekrar kontrolü
 
 Doğru --plan-root ile code-graph-r2:42 test başarılı, bütün12kontrol worst exit0; gerçek index112 ve routingT020REVIEW. İlk desteklenmeyen --ci komutFAIL özgün olarak korunur. Bu yerel kontrol bağımsız kabul değildir.
+
+## Root gerçek görsel kontrolü ve bağımsız ilk okuma
+
+Root19benzersiz doğalPNG ve approvedD02 gerçekten açtı;43RAW/24bayteşalias/20durum tamkaydırma. Fit önce, yardımcı reklam bilgisi sonra; bütün metinler ve kabuk5 okunur. Kenarda kısmen görünen satırlar komşu kaydırma parçasında tam okunur; kalıcı taşma gözlenmedi. D02 bu yardımcı kaynak metnini çizmez, tam pixel/order/device kabulü iddia edilmez.
+
+Geçmişsiz /root/e1020_blind_r1, istenen gpt-6-luna/max, yalnız sabit20soru ve doğal43PNG/20durum makbuzu aldı. Tam özgün rapor Root tarafından okundu ve byte/SHA doğrulandı;20anlam için dar PASS. Kod 8911f7ba6bd5bfe193aa77f245a3de10d6c682d7; özgün6217bayt/SHA256 3359b530aedf11e925067c4596fa0766316dc31389b4c99f0afd6ff505f36be2. Gerçek insan/cihaz/üretim kabulü değildir. Yerel447/47format0/analyze0/42graphworst0/180tamkaydırma/native11; tam15/113BASEpin/RAWv86snapshot/index112 korunur. İlk native font yolu FAIL ve desteklenmeyen --ci komutFAIL saklanmıştır. Bütün SOURCE ve aynı gerçek CI-T3/FINAL6 taze review-CI/olağanmerge-main8 gerekir; gerçek108/98/206 değişmez.
