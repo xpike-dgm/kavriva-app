@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-021",
+  "profile": "Geçmişsiz istenen gpt-6-luna/max; yalnız doğal ekranlar ve sabit20",
+  "passRule": "Yirmi anlam yardım olmadan açık; belirsizlikte dar onarım ve taze ilk okuma",
+  "questions": [
+    "Rehber ve ticari liste hangi amaçlarla gösteriliyor?",
+    "Liste bakım rehberinin yerini alabilir mi?",
+    "Uygunluk bilgisi ticari seçeneklerden önce mi?",
+    "Sponsor veya ücretli sıra uygunluğu değiştirir mi?",
+    "Satış hedefi rehberi veya teknik sonucu değiştirebilir mi?",
+    "Davranış veya satış ölçümleri teknik seçimin girdisi mi?",
+    "Rehberin yerine sunulmaya çalışan listeye ne oluyor?",
+    "Satış hedefli yönlendirme gösteriliyor mu?",
+    "Ticari teknik sıralama isteğine ne oluyor?",
+    "Amacı bilinmeyen listede ticari isimler gösteriliyor mu?",
+    "Engellenen liste rehberi de gizliyor mu?",
+    "Engelde uygunluk bilgisi ve mevcut yollar korunuyor mu?",
+    "Sponsorlu ve sponsor olmayan seçenekler ayrı etiketli mi?",
+    "Sponsor bilgisi eksik seçenek reklamsız mı?",
+    "Alternatif bilgisi yoksa bütün pazar hakkında sonuç çıkarılabilir mi?",
+    "Motosiklet/rehber/sürüm değişince eski liste kullanılır mı?",
+    "Yükleme/hata/çevrimdışında eski liste gösterilir mi?",
+    "Bu alanda satın alma/ödeme/rezervasyon veya izin başlatılır mı?",
+    "Bunlar gerçek satıcı veya üretimde doğrulanmış kararlar mı?",
+    "Alt çubuktaki bölümler ne; alışveriş sekmesi var mı?"
+  ]
+}
