@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-SPONSOR-001"
+  - "P-E1-020"
+  - "E-DEV-120"
   - "V-E1-ASSUMPTIONS-001"
   - "P-E1-019b"
   - "E-DEV-119"
@@ -609,3 +612,7 @@ SOURCE8654b41 bağımsızRET/17CI tarihçedir; canRequest güncelstatusu gerekti
 ## Kaynak varsayımları tüketimi
 
 `vault/PACKS/P-E1-019b.md`; `vault/EVIDENCE/E-DEV-119.md`. MevcutSCR010 saltbilgi; yeni screen/router/katalog/production/publicseam/YAML yok. Yerel437/45format0/analyze0; bağımsız kabul beklenir. Gerçek107DONE99kalan206; üretimHELD.
+
+## Sponsor bilgisinin kaynak tüketimi
+
+`vault/PACKS/P-E1-020.md`; `vault/EVIDENCE/E-DEV-120.md`. Mevcut SCR010 içinde fit sonrası salt metin; yeni commercehome/catalog/route/production/publicseam/YAML yok. Yerel447/47format0/analyze0, bağımsız kabul beklenir. Gerçek108DONE98kalan206.
