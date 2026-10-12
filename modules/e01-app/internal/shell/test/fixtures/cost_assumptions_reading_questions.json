@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-019b",
+  "profile": "Geçmişsiz gpt-6-luna/max; yalnız doğal ekranlar ve sabit sorular",
+  "passRule": "20 yanıtın tamamı yardım olmadan anlamca açık olmalı; belirsizlik dar onarım ve taze okumaya gider",
+  "questions": [
+    "Kaynağın varsayımları hangi koşulları anlatıyor?",
+    "Bu koşulları uygulama kendi başına mı belirliyor?",
+    "Verilmiş varsayımları nereden okuyabilirsin?",
+    "Kaynakta varsayım bilgisi yoksa ne gösteriliyor?",
+    "Boş varsayım listesi koşulların değişmeyeceği garantisi mi?",
+    "Fiyat biliniyorsa eksik varsayımlar otomatik dolduruluyor mu?",
+    "Bir tutar bilinmiyorsa kaynakta olmayan fiyat hesaplanıyor mu?",
+    "Motosiklet veya rehber değişince eski varsayımlar kullanılabilir mi?",
+    "Deneyim bilgisi değişince eski koşulları taşımak doğru mu?",
+    "Deneyim bilgisi yoksa sana otomatik bir seviye atanıyor mu?",
+    "Çevrimdışıyken eski fiyat güncel tahmin sayılıyor mu?",
+    "Yükleme veya hata durumunda varsayımlar hazırmış gibi gösteriliyor mu?",
+    "Kaynağı henüz doğrulanmamış bilgi kullanılabilir kabul ediliyor mu?",
+    "Fiyatın tarihi, kaynak adı ve sürümü nerede?",
+    "Örnek koşullar ve tutarlar gerçek motosiklet için doğrulanmış mı?",
+    "Bilinmeyen tutar sıfır veya bedava anlamına geliyor mu?",
+    "Hariç giderler bilinmiyorsa bütün giderler dahil mi?",
+    "Bu planlama bilgisi motosiklete uygunluğu veya bakım iznini kanıtlıyor mu?",
+    "Bu alan ödeme veya bakım adımı başlatıyor mu; okumak hesap gerektiriyor mu?",
+    "Alt çubukta hangi bölümler var; ayrı bir varsayımlar sekmesi var mı?"
+  ]
+}
