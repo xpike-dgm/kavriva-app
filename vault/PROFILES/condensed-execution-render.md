@@ -74,3 +74,10 @@ Kod/test/fixture tam paket14yolu içinde. Mevcut ikincil eylemin yazısı çağ�
 ## SOURCE öncesi bağımsız ilk okuma
 
 CODE 1ec004b7a489a02f4e4e47bac0962c883a39428d donduruldu. Koddan habersiz bağımsız okuyucu, önceden sabitlenen 20 sorunun tamamını 25 özgün örnek ekran görüntüsünden cevapladı: PASS. 55 yüzeyin boyut/byte/SHA ve 30 tam byte eşinin doğrulaması mevcut. İnsan katılımcı, gerçek cihaz, üretim veya çalışma zamanı/model doğrulaması değildir. R1 rapor kimliğindeki son karakter yazım hatası R2 ile düzeltilmiş; cevap ve hüküm değişmemiştir. SOURCE/FINAL bütün inceleme ve gerçek CI henüz bekleniyor; görev REVIEW, gerçek sayaç 110/96/206.
+
+
+## Bağımsız SOURCE ret hükmü ve kod öncesi düzeltme planı
+
+SOURCE 032db044edda49331ba5ee216b477b9c3cd1d42e / CODE 1ec004b7a489a02f4e4e47bac0962c883a39428d bağımsız bütün incelemede CHANGES_REQUESTED: üstteki uzun mod/açıklama alanı fiziksel adımı aşağıya itiyor; U04/SCR014 görev-önce sırası bozulmuş. Yeşil CI17 bu semantik RET bulgusunu kapatmaz. Gerçek sayaç110/96/206, REVIEW devam eder. Özgün rapor bütünü aşağıda; rapordaki first-reader R2 SHA ve ölçüm açıklaması kronoloji yazımı için incelemeciden özgünR1 korunarak R2 düzeltmesi istendi. Hüküm ve P2 bulgusu geçerlidir.
+
+Düzeltme kapsamı koddan önce sabit: aynı14izinli dosya/150BASEpin, active_execution.dart ve eski testler değişmez. Üstte yalnız kompakt mod etiketi ve kullanıcı seçimi kalır; uzun açıklamalar fiziksel adımın ardından gelir. Güvenlik açıklamaları iki biçimde de scroll ağacında korunur. 390×844 ilk görünümde adım başlığı/görsel/talimat sırasını doğrulayan anlamlı regresyon eklenir. Sabit20 soru değişmez; yeni doğal bütün kaydırma görüntüleri, güncel yerel tümtest/analyze/format/graph, yeni geçmişsiz kör ilk okuma ve yeni bütünSOURCE bağımsız inceleme/aynıCI yapılır. T022b sticky/E4 ve üst üretim/cihaz/fiziksel/sürüş/yayın HELD. Aynı PR124 üzerinden yürür, yeni parça PR açılmaz.
