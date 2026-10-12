@@ -230,6 +230,9 @@ class CostSplitView extends StatelessWidget {
           for (final item in exclusions) Text('Dahil değil: $item'),
         const SizedBox(height: 8),
         Semantics(header: true, child: const Text('Kaynağın varsayımları')),
+        const Text(
+          'Kaynakta olmayan bir varsayım eklenmez. Motosiklet, rehber veya deneyim bilgisi değişince eski kaynağın varsayımlarını kullanma.',
+        ),
         if (assumptions == null)
           const Text(
             'Varsayımlar bilinmiyor; kaynakta bu bilgi yok veya henüz kullanılamıyor.',
