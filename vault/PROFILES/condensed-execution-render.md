@@ -1,0 +1,71 @@
+---
+record_id: V-E1-CONDENSED-001
+version: 1
+purpose: Kısa anlatımda zorunlu adımları ve güvenliği korumak
+domain: first-use
+module: e01-app
+owner: E1
+implements: [ADR-008, C1.3, F1.3.2, FL1.3.4, SCR-014, BR-074, CON-004, R-001, R-003, R-004, R-007, R-009, R-011, R-012, R-013, R-014]
+public_contracts: []
+internal_scope: condensed-execution-presentation
+tasks: [T-E1-022a]
+tests: [modules/e01-app/internal/shell/test/condensed_execution_test.dart, modules/e01-app/internal/shell/test/active_execution_test.dart, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
+superseded_by: []
+last_verified: 2026-10-13
+depends_on: [M-E1-001, M-E3-001, V-E1-EXECUTION-001, I-E10-PATHS-001, V-CI-001]
+used_by: [P-E1-022a, T-E1-022a, E-DEV-122]
+evidence: [E-DEV-122]
+supersedes: []
+status: REVIEW
+---
+
+# Kısa anlatım — aynı fiziksel adımın sınırlı sunumu
+
+Plan fa914f013fdcd032faed876689092da245989459; BASE 439d9aa9ad38d7f72fc3e9a403a4a178b81c0242; PRECODE 3e7cc1a085ec94901711ca3d1dfef2d1526d9297; M-CONDENSED-01 v2 açıklama başı 478b1be97fdda5f65ff25270493b10f6bde46f76. T006 sınırlıDONE; PR123 normal merge/main8 bağımsızSource/Final kabulü. Gerçek110DONE96kalan206; yeni aday bu sayacı ilerletmez.
+
+`vault/PACKS/P-E1-022a.md`; `vault/REGISTRY/T-E1-022a.md`; `vault/EVIDENCE/E-DEV-122.md`.
+
+## Uygulama ve kaynak sınırı
+
+SCR014/E01/U04 tek fiziksel adımın mevcut ActiveStepView sunumu korunur. Yeni CondensedExecutionView yalnız E1 iç sarıcıdır; tam varsayılan, kısa kullanıcı isteğiyle açılır ve tam geri döner. Sağlayıcının sameScope/step/currentcontent proof referansı olan, tamdan gerçekten daha kısa instruction girdisini kabul eder; teknik özet üretmez. Aynı physical step number/count, görsel, safetyChecks, full detail, proof ve callback nesneleri korunur. İç ActiveStepView guardları değişmez; short proof yetki değildir. Scope/adım/full source/short source nesnesi değişiminde seçim sıfırlanır. Busy/error/nullhandler rapor veya yeni izin üretmez. Canonical current/data/operation provider, auth/E4runtime/roadside router/üretim giriş bağları burada kurulmaz. T022b ayrı banner/E4seam görevidir; bu metin o görevi DONE yapmaz.
+
+## Gerçek yerel doğrulama
+
+150 BASE pin dış kapsamda aynı; eski ActiveStepView/EDEV104 subject ve bütün454 önceki test kodu korunur. Yeni9 anlamlı test; normal463. Native10 ayrı koşu (9normal+1isteğe bağlıcapture), normal toplama eklenmez. Boş kimlik/metin reddi; actualshorttoggle full/short stepcount9/number4, visual/safety/proof kimlikleri ve aynıcallbackscope; shortmissing/stale/wrongpurpose/all foreign context axes/nullproof/equal-or-longertext negatifleri; active guard/safety/fit/readiness/current/visual/busy/error/nullhandler; scope/replacement reset; realTabEnterSpace/52hit/semantics;4durum×3genişlik×3scale×2form=72tamkaydırma/uzunTürkçe; gözlenen header-reset açıklaması dar metin düzeltmesi. Yerel analyze0;51format dosyası. Capture21durum/55PNG/25benzersiz/30bytealias,390×844/fullscroll≤600step; Root tüm25 gerçekgörüntüyü veE01 kaynağını açtı, sonraki r4 görüntülerinin tamamının açılmışr3byteeşliğini doğruladı. Gerçek insan/cihaz/screenreader kabulü yok.
+
+## Ölçüm yöntemi ve yorum sınırı
+
+M-CONDENSED-01 v1 PRECODE içinde durur; kısa kullanıcı seçimi ile açıldığından v2 test kodundan önce açıklama commitinde donduruldu. Aynıinput/headless390×844/scale1/sabitSDK ve testharness varsayılan font, herform1ısınma; sonra3eşli full→short/short→full tester.tap→tester.pump pointer/build/layout/paint/harness gerçekWall mikro saniye samples. ensureVisible ve ilk mount zaman dışıdır. Nativecapture ayrıcaRoboto yükler; bu ölçüm onu yüklemeden çalışır. Kaynak ve mevcut step number/count/instructionchar gerçektir. Hız veya başarı eşiği yok, boundsHELD. Bu cihaz/GPU/fizikselhız veya gerçekroadsideperformans kabulü değildir; samplerunlar birbirinin aynısıymış gibi yazılmaz.
+
+## Özgün denemeler korunur
+
+Başlangıç helperJS literalbacktick SyntaxError hiç çalışmadı, repo değiştirmedi. İlk target-r1 constSemantics derlemeFAIL; darconst düzeltmesi. target-r2 8PASS1FAIL semanticsHandle kaynak kapanmadı; stdout cp1254 log basımı ayrıca FAIL fakat gerçek hamtestlog kaydedilmişti. Tester test sonunda try/finally disposal; target-r3 9PASS. analyze-r1 beşunused fixturelabelwarnFAIL; yalnız yeni kopyalanmış kullanılmayan labels temizlendi. analyze-r2/3/4/5/6 gerçek0. İlk capture20/52/22/30; uzun tam metin coverage için21/55/25/30; helperprefix AssertionError dosya yazmadan bitti. Root R2görüntülerde scope-reset açıklamasını yetersiz gördü, fixed20 korunup dar metin eklendi. Native-r3 gerçek25tamgörüntü açıldı. Native stale-safety ilk fixture ayrıca yanlışsubject taşıyordu; r4 ve yeni targeted stale negatif doğru safety-a kimliği/currentfalse ile tekbaşına eskimeyi denetler. Önceki güncel r1/r2/r3 test ve resim makbuzları korunur; current r4/full-r3 ayrı gerçek sonuçlar. Hiçbir eskiFAIL yeniPASS olarak değiştirilmez.
+
+## Tasarım — yedi gerçek karşılaştırma
+
+| Kapsam | Yapılan karşılaştırma | Sınır |
+|---|---|---|
+| Tam ekran | Gerçek21durum/55scrollparça, sameSCR014 active body ve mode header | E01 mevcut canonicalheader görüntüsünde mode alanı yok; finalpixelHELD |
+| Komşu ekran | Eski SCR014/015/018 kod/test150pin korunur; yeni wrapper full ve short aynı childguards | Router/roadsideSCR-TBD ve diğer yeni ekran yok |
+| Durum | Missing/stale/foreign/held/safety/busy/error/handler/long, açık reason/closedprogress | Gerçek provider/data yok |
+| Responsive |72tamkaydırma320390768×1/2/3×fullshort/uzunTürkçe | Gerçekcihaz/window matrix yok |
+| Erişilebilirlik | RealTabEnterSpace/semantics/52control/inheritedactive focus; mevcutbluefocus/secondary font | Gerçekscreenreader ve finaltokens yok |
+| Kaynak | Root E01 gerçekPNG/origin-mainbyteeşliği, U04tekphysicalamaç/activevisual/safety/detail/recovery | Yeni header mevcut kısıtlı adaptation; fullrefpixel/sourceheldflow kabulü değil |
+| Regresyon |454eski+9yeni/150BASEpin; EDEV104subjectsame; oldcode/noYAML/sdk/deps | Üst bütünfeature/releaseHELD |
+
+## On kapanış katmanı
+
+1. görev: T022a yalnız sunum, bağımsızreviewbekler.
+2. feature: F1.3.2 üretim acceptanceHELD.
+3. flow: FL1.3.4PROPOSED/SCR-TBDHELD.
+4. requirement: BR074sunum/stepcount/gerçekmethodsamples; prodproviderHELD.
+5. design:7headlessboundedcomparison; finaltokens/insan/cihazHELD.
+6. architecture: E1render; no new publicseam/E4private/auth/provider; E3R1REVIEW/E5IN_PROGRESS.
+7. data: veri veya şema göçü yok, source/oldhistories korunur.
+8. release: henüz bu görevinPR/CI/T3/final/main8 yok; ürün yayınıHELD.
+9. product scenario: sentetik step/media/proof/callback, gerçek fizikselbakım yok.
+10. gaps: gerçekcontent/identity/authority/E4current/roadside/router/device/qualified/human/release boşlukları açık.
+
+## Dondurma öncesi açık doğrulama sınırı
+
+Kod/test/fixture tam paket14yolu içinde. Mevcut ikincil eylemin yazısı çağıranın DefaultTextStyle değerini devralır; paketteki20type ifadesi yeni sabit font seçimi değildir. Testharness16gövde, aktifbaşlık28/talimat22 korunur; wrapper kendi font/token seçmez. Mode ve belirsizlik açıklaması iki formda ve scroll ağacında bulunur; sabit viewport/sticky T022b kapsamı ve E4seam burada kapatılmaz. Son strict format-r7 51zero, analyze-r6 0, full-r3 463PASS, native-r4 10PASS, graph-r1 42/worst0/index114. r4 bütün55PNG açılmışr3baytlarıyla aynı; Root25benzersiz/güncel21durum tamokuma. Yeni PR/bağımsızfirstread/wholeSOURCE/actualCI/T3/FINAL/main8 henüz yok. EskiPR123arkivediki yeni skippedCIreceipt satırındaki whitespace yalnız appendtailde düzeltildi; eski gövde korunur.110DONE96kalan206 değişmez.
