@@ -759,3 +759,11 @@ Gerçek baş 3d5eff3567ac1e694d7518f509220079dc264348. RAW bayt/özet, iş/adım
 - 114910939070 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
 
 Özgün son inceleme/CI https://github.com/xpike-dgm/kavriva-app/pull/120#issuecomment-6128500334 . Eski inventory öznesi RAWv85snapshot; eski cost öznesi ayrıRAWsnapshot.
+
+## 2026-10-12 — eski raporun HTML bayt eşliği iddiasına açık düzeltme
+
+Önceki özgün rapor içinde “exact SOURCE whole-review HTML metni ve RAW Base64 gömüsü, dıştaki source-whole-review.txt ile tam bayt eşleşmesi” ifadesi yer alır. Bu iddianın HTML görüntüsü için olan kısmı geri çekilmiştir. Tam bayt/SHA256 eşliği yalnız RAWBase64 çözümü ile özgün TXT dosyasına aittir. Eski rapor gövdesi, hükmü, tarihi, subject_digest ve Base64 payloadı değiştirilmez.
+
+Root dört gerçek pre/Base64 çiftini çözerek boyut ve karakter farklarını doğruladı. İlk RET RAW23560/HTML23457: CRLF→LF ve son CRLF kırpılması. İlk okuma R2 RAW14913/HTML14912: son LF kırpılması. SOURCE whole-review RAW5944/HTML5943: tek son LF kırpılması (ASCII boşluk değildir), RAW SHA256 c559eb253cfd10e775f38e3f2e2097a235b9ef320e19eae7032848f9c2c65c40. FINAL RAW7662/HTML7652: 5satırdaki2'şer sonboşluk, RAW SHA256 e9b87c452c3f4bf929c6d98d7f8b0163f917d27bedfbce3387887603c5ec3de9. Dört metin splitlines ve her satır rstrip ile eşleşir; bu bir görüntü karşılaştırmasıdır, özgün byte eşliği değildir. Okunabilir HTML sunumu newline/sonboşlukları düzenleyebilir; değişmez özgün kanıt RAWBase64 ve kalıcı dosyadır.
+
+Bu düzeltme önceki T019a ürün kodu kabulünü genişletmez ve önceki rapor metnini yeniden yazmaz. T019b SOURCE R1 belge kabulü CHANGES_REQUESTED; taze bütün SOURCE incelemesi ve aynı yeni SOURCE CI/T3/FINAL kabulü beklenir. `vault/EVIDENCE/E-DEV-119.md`; `vault/PACKS/P-E1-019b.md`.
