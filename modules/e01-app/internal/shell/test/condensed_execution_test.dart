@@ -353,6 +353,43 @@ void main() {
   );
 
   testWidgets(
+    'Task title visual and instruction precede explanations in the first phone viewport',
+    (tester) async {
+      tester.view.devicePixelRatio = 1;
+      tester.view.physicalSize = const Size(390, 844);
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final step = _step();
+      final short = _short();
+      await tester.pumpWidget(
+        _app(
+          _view(
+            full: _active(step: step),
+            short: short,
+          ),
+        ),
+      );
+      for (final instruction in [step.instruction, short.instruction]) {
+        final titleRect = tester.getRect(find.text(step.title));
+        final visualRect = tester.getRect(find.byType(RawImage));
+        final instructionRect = tester.getRect(find.text(instruction));
+        expect(titleRect.top, greaterThanOrEqualTo(0));
+        expect(titleRect.bottom, lessThan(visualRect.top));
+        expect(visualRect.bottom, lessThan(instructionRect.top));
+        expect(instructionRect.bottom, lessThanOrEqualTo(844));
+        expect(
+          tester.getRect(find.textContaining('Anlatım kısalır')).top,
+          greaterThan(instructionRect.bottom),
+        );
+        if (instruction == step.instruction) {
+          await _tap(tester, 'Kısa anlatımı aç');
+        }
+      }
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
     'Missing stale wrong-purpose or foreign short source never replaces full instruction',
     (tester) async {
       final step = _step();

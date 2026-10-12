@@ -108,18 +108,35 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Semantics(
+                    liveRegion: true,
+                    child: Text(short ? 'Kısa anlatım' : 'Tam anlatım'),
+                  ),
+                ),
+                Flexible(
+                  child: _ModeAction(
+                    label: short ? 'Tam anlatıma dön' : 'Kısa anlatımı aç',
+                    onActivate: short || available
+                        ? () => setState(() => requested = !short)
+                        : null,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          short ? _shortView() : widget.full,
+          Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Semantics(
-                  liveRegion: true,
-                  child: Text(short ? 'Kısa anlatım' : 'Tam anlatım'),
-                ),
-                const SizedBox(height: 8),
                 const Text(
                   'Anlatım kısalır; zorunlu bakım adımları atlanmaz. '
-                  'Güvenlik koşulları ve durma uyarıları aşağıda görünür kalır. '
+                  'Güvenlik koşulları ve durma uyarıları korunur. '
                   'Motosiklet, rehber, adım ya da güncel durum değişirse '
                   'yeniden tam anlatımdan başlanır.',
                 ),
@@ -139,16 +156,9 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
                     'başka motosiklete ait metin gösterilmez; tam anlatımın '
                     'mevcut güvenlik kontrolleri korunur.',
                   ),
-                _ModeAction(
-                  label: short ? 'Tam anlatıma dön' : 'Kısa anlatımı aç',
-                  onActivate: short || available
-                      ? () => setState(() => requested = !short)
-                      : null,
-                ),
               ],
             ),
           ),
-          short ? _shortView() : widget.full,
         ],
       ),
     );
