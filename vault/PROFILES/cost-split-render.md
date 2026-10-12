@@ -11,12 +11,12 @@ internal_scope: cost-split-presentation
 tasks: [T-E1-019a]
 tests: [modules/e01-app/internal/shell/test/cost_split_test.dart, modules/e01-app/internal/shell/test/guide_discovery_test.dart, modules/e01-app/internal/shell/test/duration_range_test.dart, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
 superseded_by: []
-last_verified: 2026-10-10
+last_verified: 2026-10-12
 depends_on: [M-E1-001, M-E3-001, V-E1-DISCOVERY-001, V-E1-RANGE-001, I-E10-PATHS-001, V-CI-001]
 used_by: [P-E1-019a, T-E1-019a, E-DEV-118]
 evidence: [E-DEV-118]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Kaynaklı maliyet ayrımı — sınırlı SCR010 sunumu
@@ -66,3 +66,9 @@ Geçmişsiz gpt-6-luna/max okuyucu 65 RAW/34 benzersiz ekranı açtı; sabit20 s
 Geçmişsiz /root/e1019a_blind_r2, sahibin istediği gpt-6-luna/max, yalnız sabit20soru ve65PNG/22durum ham makbuzu. Kod/plan/pack/cevapanahtarı verilmedi. Özgün rapor Root tarafından tümüyle okundu;20anlam için sınırlı PASS, gerçek çalışma/insan/cihaz/ürün kabulü değildir. Kod4cc71ceb42ac5bcac24085f28318dac9f8059ec5; RAW14913bayt/SHA256 3c3c466efb72b6426603384f61a95af0e7d0e9073d04fdc98dc077f4d8643d26. Root34orijinal+D02 ve bağımsız okuyucunun gerçek görsel açımı raporda ayrı kayıtlıdır;31byteeşalias ayrı ekran sayılmaz. Yerel427/44format0/analyze0/42graphworst0/198duyarlı/native1; geri çekilen ilkindex113tahmini yerine gerçek110 ve97BASEpin/tam15/sabit20 korunur. Bütün SOURCE incelemesi, aynıSOURCECI-T3/FINAL6freshreviewCI/normalmerge-main8 beklenir. Gerçek106/100/206 değişmedi. Üretim ve ayrıSCR-TBD HELD; ayrı T019b görevi henüz yapılmadı. `vault/PACKS/P-E1-019a.md`; `vault/EVIDENCE/E-DEV-118.md`.
 
 İlk r1 RET özgün raporu yukarıda korunur; yeni r2 görüşü önceki RET tarihini silmez. Root tüm34r2 özgün görseli açtı; r2 tam427/44format0/analyze0/native1 ve kod-r2graph42worst0 doğrulandı.
+
+## Bağımsız bütün SOURCE kabulü — sınırlı FINAL adayı
+
+2026-10-12. SOURCE 4728c275c42be8e7e9643430112c3288423fd1fe; gerçek ana taban b9cb56529fece0b84e2901294a79b4d0de3e5f7a. Sahip tarafından kabul edilen bağımsız /root/e1019a_source_whole_review, istenen gpt-6-luna/max, tam15 kapsamı, 97BASEpin ve izinli güncel değişiklikleri, geçmiş EDEV117 özgün süre kodunu ve v84 inventory RAW kaydını, kod/test/sabit20/ilk okuma/native/tasarım sınırlarını PASS değerlendirdi. Root özgün tam raporu okudu ve RAW bayt/özetini doğruladı. İlk ekran okuması r1 RET raporu ve 65 r1 görsel makbuzu aynen korunur; 13/14 bulgusu açık geçersizlik uyarısıyla giderilip geçmişsiz r2 okuyucu tarafından yeniden incelenir; sabit20 soru değiştirilmez. Aynı SOURCE gerçek GitHub CI aileleri ve PR T3 gerçek adımları başarılı. Normal427=415korunan+12yeni;44format0/analyze0;graph42/worst0. Ayrı native1 normal toplama eklenmez;22durum198tamkaydırma65PNG34benzersiz31alias; Root ve bağımsız r2 okuyucu34özgün açtı.
+
+FINAL yalnız6kayıt dosyasıdır. Kod/test/sabit20/RAWv84/eskiGuideRAW/97BASEpin/korunan415/YAML/SDK/deps değişmez. Profil/paket ACTIVE; T-E1-019a DONE yalnız dalın sınırlı kaynaklı maliyet sunum kabul adayıdır. Ayrı bağımsız FINAL incelemesi, aynı FINAL gerçek CI/T3, normal merge ve fetchedmain8 olmadan gerçek ana sayımı106DONE100kalan206 değişmez. Üretim tahmin üreticisi/feed, ayrıSCR-TBD, gerçek kimlik/yetki/router/physical/device/release HELD; E3R1 REVIEW/E5 IN_PROGRESS korunur. `vault/EVIDENCE/E-DEV-118.md`; `vault/PACKS/P-E1-019a.md`.
