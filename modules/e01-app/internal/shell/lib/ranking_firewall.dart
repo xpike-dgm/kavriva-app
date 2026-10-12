@@ -56,7 +56,7 @@ class RankingFirewallView extends StatelessWidget {
           }),
           const SizedBox(height: 8),
           const Text(
-            'Bu engel rehberi ve motosiklete uygunluk bilgisini gizlemez. Yukarıdaki bilgileri okuyabilirsin; satın alma veya yeni bir uygulama izni başlatılmaz.',
+            'Bu engel rehberi ve motosiklete uygunluk bilgisini gizlemez. Önceden kullanılabilen rehber yolları bu engelle kapanmaz; kullanılamayan bir yol da bu listeyle açılmaz. Yukarıdaki bilgileri okuyabilirsin; satın alma veya yeni bir uygulama izni başlatılmaz.',
           ),
         ],
       ],

@@ -20,7 +20,7 @@ status: RECORDED
 
 contract_id_version: "C1.9 F1.9.2 FL1.9.2 BR070071073 v1 REVIEW validation method"
 subject_file: modules/e01-app/internal/shell/lib/ranking_firewall.dart
-subject_digest: 1142d1485cf37b144b82db502bd635576e78ea91d21f1b2291f19d24db606de2
+subject_digest: 03514fbdef7b2b643b19a3e840411d38abd41062bcbf34e20866c986bdd4c863
 result: "Yerel454 PASS; bağımsız REVIEW bekleniyor"
 gate_verdict: "RECORDED yerel test; bağımsız REVIEW ve üretim HELD"
 reviewer: none
@@ -290,3 +290,144 @@ C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r2.log RAW 1160 SHA 553c5a
 |technicalRanking|1|420.0/420.0|71864|fff3f7f5aa74ac74d6cdc17b8cf37ebac6ad2bf91f28a452c1106ee43c59ca88|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r3-technicalRanking-1.png|
 |unknown|0|0.0/420.0|70043|1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r3-unknown-0.png|
 |unknown|1|420.0/420.0|71807|f7e6303366bff4dbf386b0e4557d7d089e79fe7e5db21b289cd555bd97639217|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r3-unknown-1.png|
+
+## İkinci ilk okuma ret bulgusu ve dar ürün metni düzeltmesi
+
+R2 yalnız soru12 için CHANGES_REQUESTED. Sabit soru değiştirilmedi. Engellenen ticari alanda, önceden kullanılabilen rehber yollarının kapanmadığı ve kullanılamayan yolun ticari listeyle açılmadığı açıklandı. Fit, rehber hedefi ve callback davranışı değişmedi. Önceki CODE a7d9b356c88f407f40fa3f35db4ddef66b7b03a6 tarihsel adaydır; yeni kod ayrı başla doğrulanır. Target-r4 7/full-r3 454/format49zero/native-r4 8 PASS. Native 51/22/29; taze geçmişsiz ilk okuma beklenir. EDEV121 eski subject özeti önceki adayındı, son metnin LF SHA 03514fbdef7b2b643b19a3e840411d38abd41062bcbf34e20866c986bdd4c863 olarak ayrı güncellendi; eski gövde/raporlar saklanır. Ana109/97/206 değişmez.
+
+Tam özgün R2 raporu7108bayt/SHA 91d684130e91cbcaa4e0bbb1de0dd028f1f5fb88cf27c36315525a16a0388660. HTML normalize gösterim; tam bayt TXT/Base64.
+<pre>Bağımsız kör ilk okuma — R2
+Karar: CHANGES_REQUESTED
+
+Kapsam ve yöntem
+Yalnızca izin verilen JSON kayıtları, sabit 20 soru ve onlarda belirtilen PNG dosyaları kullanıldı. unique-images-r3.json içindeki 22 PNG&#x27;nin her biri view_image ile ayrı ayrı açıldı. Kod, plan, paket, görev metni veya önceki değerlendirme okunmadı. Bu görsel ilk okuma üretim doğrulaması ya da insan/cihaz kabulü değildir.
+
+Model etiketi
+İstenen gpt-6-luna/max etiketi bu oturumun görünür çalışma zamanı bilgisinden bağımsız biçimde doğrulanamıyor. Bu rapor model/efor etiketinin doğrulandığını iddia etmez.
+
+Ham dosya doğrulaması
+native-r3-proof.json toplam 51 dosya kaydı ve 20 vaka bildiriyor. 51 dosyanın gerçek bayt uzunluğu, PNG IHDR piksel boyutu ve dosya SHA-256 özeti kayıttaki değerlerle eşleşti. Hesaplanan farklı SHA-256 sayısı 22; unique-images-r3.json da 22 kayıt içeriyor. Beş tekrar grubundaki dosyalar aynı SHA değerine ek olarak gerçek içerik byte dizisi bakımından da eşit. 29 takma kayıt doğrulandı. Uyumsuzluk yok.
+
+Benzersiz PNG&#x27;ler: dosya — gerçek bayt — piksel boyutu — SHA-256
+native-r3-mixed-0.png — 67762 — 390×844 — 551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58
+native-r3-mixed-1.png — 75881 — 390×844 — 8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e
+native-r3-mixed-2.png — 82242 — 390×844 — 093216cb5686a1bd1138a6cee8d2ba18849b61e8ee687065abebb9f3cf426484
+native-r3-only-sponsored-2.png — 79445 — 390×844 — d31630678118334caba9e42daebc2dc5d78cc0f17374d8ba75f7681ffcfa20b8
+native-r3-unknown-disclosure-2.png — 81479 — 390×844 — d3fa2a8e68812a138d9f911fe78d68eac25ea54dbb87395d716782caf6974c3b
+native-r3-missing-alternatives-2.png — 79433 — 390×844 — f41be991427f0fdc4577b45d633e1a1d1eb84e9a452b21a33fbaefa98718a8a9
+native-r3-empty-2.png — 79438 — 390×844 — 973f9383423f45b495c8a47f4b9f4bf59d9ab2a010ad0ce1e390e4d0c1600767
+native-r3-loading-1.png — 70580 — 390×844 — 9e1cb9cbd3c8b525ca70aafb215c3344a9199b293335bd0c509499c10faa4a7a
+native-r3-failed-1.png — 71019 — 390×844 — 02bb5a64e3dea66b2fcd8ccdabd931bff90eed36c5dad480a7aa7ca613bf29d8
+native-r3-held-1.png — 71765 — 390×844 — be68eb89753e6edb61dd1c7c0253d126bbd62fc3e8615f8105ab9752ac399e80
+native-r3-missing-source-1.png — 74745 — 390×844 — 871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40
+native-r3-missing-source-2.png — 74501 — 390×844 — 869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65
+native-r3-offline-1.png — 72178 — 390×844 — e99986e00520a868bb85da73737fcc94bae4e69177b88d6843dada9419c3ef58
+native-r3-stale-scope-0.png — 69394 — 390×844 — 2631815c59e5677970338e4b833e9030fcc20a169e8f9713afef0daa5424ffb8
+native-r3-stale-scope-1.png — 75564 — 390×844 — 97d9dea389dd57a9e47959301cf5f56559616aeb383be3af12dfc7d1164ca9c1
+native-r3-long-2.png — 87048 — 390×844 — edeead84df36930cbf4eb1eaf404576b65f25b4ef2a5c95c866d648d591f5a3e
+native-r3-previous-default-1.png — 63384 — 390×844 — 644e1d68c45857c5c4514e40d95c05ecc5f5dda5e0a1f3c9154b90caacd03c9b
+native-r3-replaceGuide-0.png — 70043 — 390×844 — 1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3
+native-r3-replaceGuide-1.png — 71385 — 390×844 — 9d3778ef113a59183d2e30c0d86f500ef05437d9988b52c2164dcf3cf5e8e52b
+native-r3-salesTarget-1.png — 70882 — 390×844 — bcd5112bb583962117a9521edb538217ad25aff644876e97892a3731f694da56
+native-r3-technicalRanking-1.png — 71864 — 390×844 — fff3f7f5aa74ac74d6cdc17b8cf37ebac6ad2bf91f28a452c1106ee43c59ca88
+native-r3-unknown-1.png — 71807 — 390×844 — f7e6303366bff4dbf386b0e4557d7d089e79fe7e5db21b289cd555bd97639217
+
+Byte eşitliği doğrulanan tekrar grupları (dosya sayısı)
+551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58 — 15
+8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e — 6
+869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65 — 5
+871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40 — 4
+1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3 — 4
+
+Sabit 20 soruya görsellerden yanıt
+1. Rehber örnek bakım konusunun kapsamını tanıtır; uygulama adımı değildir. Ticari bölüm, kaynaktaki örnek seçenekleri ve reklam bilgisini gösterir; gerçek satıcı veya teklif değildir.
+2. Hayır. Ticari liste rehberin yerini almaz.
+3. Evet. Ekran önce yukarıdaki motosiklet uygunluğu bilgisini okumayı söylüyor.
+4. Hayır. Ücret veya sponsor desteği teknik uygunluğu değiştirmez.
+5. Hayır. Satış hedefi rehberi değiştirmez.
+6. Hayır. Davranış ve satış ölçümleri teknik uygunluk seçimine katılmaz.
+7. Rehber yerine sunulmaya çalışılan listenin ticari ayrıntıları gösterilmez; rehber ve uygunluk bilgisi görünür kalır.
+8. Hayır. Satış artırma amacı taşıyan yönlendirme gösterilmediği yazıyor.
+9. Ticari sıralama teknik uygunluk kararı gibi sunulamaz; ticari ayrıntılar gösterilmez.
+10. Hayır. Amaç netleşmeden ticari ayrıntılar gösterilmez.
+11. Hayır. Engelleme rehberi ve motosiklet uygunluğu bilgisini gizlemiyor.
+12. Rehber ve uygunluk bilgisi yukarıda okunabilir. Ancak “mevcut yollar”ın tamamının işlevsel kaldığı açık değil; ekranda ayrım kontrolünün açılamadığı da yazıyor. Ayrıntı aşağıdaki belirsizlikte.
+13. Evet. Örnek sponsorlu seçenek ücretli reklam diye; sponsor desteği olmayan örnek seçenek ayrı etiketle gösteriliyor.
+14. Hayır. Sponsor durumu bilinmeyen seçenek reklamsız sayılmıyor; açıklama gelene kadar adı ve ticari ayrıntısı gösterilmiyor.
+15. Hayır. Kaynağın alternatifleri bildirmemesi, başka alternatif bulunmadığını göstermez.
+16. Hayır. Motosiklet, rehber veya bilgi değişince eski liste kullanılmamalı; kaynak yeniden kontrol edilmeli.
+17. Hayır. Yüklemede eski liste güncelmiş gibi gösterilmiyor; hata ve çevrimdışında kaynak yeniden kontrol edilene kadar eski liste güncel teklif sayılmıyor.
+18. Hayır. Satın alma, ödeme, servis rezervasyonu veya yeni uygulama izni başlatılmıyor.
+19. Hayır. Gösterim örnek; gerçek satıcı/teklif ya da gerçek motosiklete verilmiş karar değil.
+20. Alt çubuk: Garaj, Bakım, AI Usta, Geçmiş, Topluluk. Alışveriş sekmesi görünmüyor.
+
+Somut belirsizlik ve dar onarım
+12. soru iki ayrı iddiayı tekleştiriyor: uygunluk bilgisinin okunabilir kalması ve “mevcut yollar”ın korunması. Görsel, bilginin gizlenmediğini ve okunabileceğini açıkça söylüyor; fakat tüm işlem yollarının çalışır kaldığını doğrulamıyor. “Ayrım kontrolü şu anda açılamıyor” yazısı bir yolun kullanılamadığını gösteriyor. Soruyu yalnızca uygunluk bilgisinin görünürlüğü/okunabilirliği hakkında daraltın veya hangi mevcut işlemlerin kullanılabilir kaldığını ekranda açıkça belirtin. Bu nedenle geçiş kararı CHANGES_REQUESTED.
+
+Rapor kodlaması
+UTF-8, BOM yok, satır sonları LF olarak kaydedildi.</pre>
+RAWBase64 QmHEn8SxbXPEsXoga8O2ciBpbGsgb2t1bWEg4oCUIFIyCkthcmFyOiBDSEFOR0VTX1JFUVVFU1RFRAoKS2Fwc2FtIHZlIHnDtm50ZW0KWWFsbsSxemNhIGl6aW4gdmVyaWxlbiBKU09OIGthecSxdGxhcsSxLCBzYWJpdCAyMCBzb3J1IHZlIG9ubGFyZGEgYmVsaXJ0aWxlbiBQTkcgZG9zeWFsYXLEsSBrdWxsYW7EsWxkxLEuIHVuaXF1ZS1pbWFnZXMtcjMuanNvbiBpw6dpbmRla2kgMjIgUE5HJ25pbiBoZXIgYmlyaSB2aWV3X2ltYWdlIGlsZSBheXLEsSBheXLEsSBhw6fEsWxkxLEuIEtvZCwgcGxhbiwgcGFrZXQsIGfDtnJldiBtZXRuaSB2ZXlhIMO2bmNla2kgZGXEn2VybGVuZGlybWUgb2t1bm1hZMSxLiBCdSBnw7Zyc2VsIGlsayBva3VtYSDDvHJldGltIGRvxJ9ydWxhbWFzxLEgeWEgZGEgaW5zYW4vY2loYXoga2FidWzDvCBkZcSfaWxkaXIuCgpNb2RlbCBldGlrZXRpCsSwc3RlbmVuIGdwdC02LWx1bmEvbWF4IGV0aWtldGkgYnUgb3R1cnVtdW4gZ8O2csO8bsO8ciDDp2FsxLHFn21hIHphbWFuxLEgYmlsZ2lzaW5kZW4gYmHEn8SxbXPEsXogYmnDp2ltZGUgZG/En3J1bGFuYW3EsXlvci4gQnUgcmFwb3IgbW9kZWwvZWZvciBldGlrZXRpbmluIGRvxJ9ydWxhbmTEscSfxLFuxLEgaWRkaWEgZXRtZXouCgpIYW0gZG9zeWEgZG/En3J1bGFtYXPEsQpuYXRpdmUtcjMtcHJvb2YuanNvbiB0b3BsYW0gNTEgZG9zeWEga2F5ZMSxIHZlIDIwIHZha2EgYmlsZGlyaXlvci4gNTEgZG9zeWFuxLFuIGdlcsOnZWsgYmF5dCB1enVubHXEn3UsIFBORyBJSERSIHBpa3NlbCBib3l1dHUgdmUgZG9zeWEgU0hBLTI1NiDDtnpldGkga2F5xLF0dGFraSBkZcSfZXJsZXJsZSBlxZ9sZcWfdGkuIEhlc2FwbGFuYW4gZmFya2zEsSBTSEEtMjU2IHNhecSxc8SxIDIyOyB1bmlxdWUtaW1hZ2VzLXIzLmpzb24gZGEgMjIga2F5xLF0IGnDp2VyaXlvci4gQmXFnyB0ZWtyYXIgZ3J1YnVuZGFraSBkb3N5YWxhciBheW7EsSBTSEEgZGXEn2VyaW5lIGVrIG9sYXJhayBnZXLDp2VrIGnDp2VyaWsgYnl0ZSBkaXppc2kgYmFrxLFtxLFuZGFuIGRhIGXFn2l0LiAyOSB0YWttYSBrYXnEsXQgZG/En3J1bGFuZMSxLiBVeXVtc3V6bHVrIHlvay4KCkJlbnplcnNpeiBQTkcnbGVyOiBkb3N5YSDigJQgZ2Vyw6dlayBiYXl0IOKAlCBwaWtzZWwgYm95dXR1IOKAlCBTSEEtMjU2Cm5hdGl2ZS1yMy1taXhlZC0wLnBuZyDigJQgNjc3NjIg4oCUIDM5MMOXODQ0IOKAlCA1NTFlZGE1MzMyMGFiMjJjZDQ1NzI5MWI3NTk5YjhmOTM3MDJiODg1ODQxMjA3MDBjNTBiYmQzMjVlZGFmZjU4Cm5hdGl2ZS1yMy1taXhlZC0xLnBuZyDigJQgNzU4ODEg4oCUIDM5MMOXODQ0IOKAlCA4Y2ZkNmEzMWI4ZGMzODc4ZDg5N2M0NjY2NDYxOWUyODE0YzhmNmViNGFmMjM4ZmZkMTc3MTViZWIzZTM0ZTZlCm5hdGl2ZS1yMy1taXhlZC0yLnBuZyDigJQgODIyNDIg4oCUIDM5MMOXODQ0IOKAlCAwOTMyMTZjYjU2ODZhMWJkMTEzOGE2Y2VlOGQyYmExODg0OWI2MWU4ZWU2ODcwNjVhYmViYjlmM2NmNDI2NDg0Cm5hdGl2ZS1yMy1vbmx5LXNwb25zb3JlZC0yLnBuZyDigJQgNzk0NDUg4oCUIDM5MMOXODQ0IOKAlCBkMzE2MzA2NzgxMTgzMzRjYWJhOWU0MmRhZWJjMmRjNWQ3OGNjMGYxNzM3NGQ4YmE3NWY3NjgxZmZjZmEyMGI4Cm5hdGl2ZS1yMy11bmtub3duLWRpc2Nsb3N1cmUtMi5wbmcg4oCUIDgxNDc5IOKAlCAzOTDDlzg0NCDigJQgZDNmYTJhOGU2ODgxMmExMzhkOWY5MTFmZTc4ZDY4ZWFjMjVlYTU0ZGJiODczOTVkNzE2NzgyY2FmNjk3NGMzYgpuYXRpdmUtcjMtbWlzc2luZy1hbHRlcm5hdGl2ZXMtMi5wbmcg4oCUIDc5NDMzIOKAlCAzOTDDlzg0NCDigJQgZjQxYmU5OTE0MjdmMGZkYzQ1NzdiNDVkNjMzZTFhMWQxZWI4NGU5YTQ1MmIyMWEzM2ZiYWVmYTk4NzE4YThhOQpuYXRpdmUtcjMtZW1wdHktMi5wbmcg4oCUIDc5NDM4IOKAlCAzOTDDlzg0NCDigJQgOTczZjkzODM0MjNmNDViNDk1YzhhNDdmNGI5ZjRiZjU5ZDlhYjJhMDEwYWQwY2UxZTM5MGU0ZDBjMTYwMDc2NwpuYXRpdmUtcjMtbG9hZGluZy0xLnBuZyDigJQgNzA1ODAg4oCUIDM5MMOXODQ0IOKAlCA5ZTFjYjljYmQzYzhiNTI1Y2E3MGFhZmIyMTVjMzM0NGE5MTk5YjI5MzMzNWJkMGM1MDk0OTljMTBmYWE0YTdhCm5hdGl2ZS1yMy1mYWlsZWQtMS5wbmcg4oCUIDcxMDE5IOKAlCAzOTDDlzg0NCDigJQgMDJiYjVhNjRlM2RlYTY2YjJmY2Q4Y2NkYWJkOTMxYmZmOTBlZWQzNmM1ZGFkNDgwYTdhYTdjYTYxM2JmMjlkOApuYXRpdmUtcjMtaGVsZC0xLnBuZyDigJQgNzE3NjUg4oCUIDM5MMOXODQ0IOKAlCBiZTY4ZWI4OTc1M2U2ZWRiNjFkZDFjN2MwMjUzZDEyNmJiZDYyZmMzZTg2MTVmODEwNWFiOTc1MmFjMzk5ZTgwCm5hdGl2ZS1yMy1taXNzaW5nLXNvdXJjZS0xLnBuZyDigJQgNzQ3NDUg4oCUIDM5MMOXODQ0IOKAlCA4NzFiNGZlOTRmOTQ2ZDdhNDQyNDYzNzZiMGMzMDQ5OTBmZTBmNDJiYWE3ZTkyZTdlMzVhMGIwNjYxYzA4ZTQwCm5hdGl2ZS1yMy1taXNzaW5nLXNvdXJjZS0yLnBuZyDigJQgNzQ1MDEg4oCUIDM5MMOXODQ0IOKAlCA4NjlmYTVkNTYxMzhkODdlYWFlNWZhZTYwNzM4OWVkNDNjNzgyMGNhMTExNDE5OGI2NGQzYjMzMTgxMjkzYzY1Cm5hdGl2ZS1yMy1vZmZsaW5lLTEucG5nIOKAlCA3MjE3OCDigJQgMzkww5c4NDQg4oCUIGU5OTk4NmUwMDUyMGE4NjhiYjg1ZGE3MzczN2ZjYzk0YmFlNGU2OTE3N2I4OGQ2ODQzZGFkYTk0MTljM2VmNTgKbmF0aXZlLXIzLXN0YWxlLXNjb3BlLTAucG5nIOKAlCA2OTM5NCDigJQgMzkww5c4NDQg4oCUIDI2MzE4MTVjNTllNTY3Nzk3MDMzOGU0YjgzM2U5MDMwZmNjMjBhMTY5ZThmOTcxM2FmZWYwZGFhNTQyNGZmYjgKbmF0aXZlLXIzLXN0YWxlLXNjb3BlLTEucG5nIOKAlCA3NTU2NCDigJQgMzkww5c4NDQg4oCUIDk3ZDlkZWEzODlkZDU3YTllNDc5NTkzMDFjZjVmNTY1NTk2MTZhZWIzODNiZTNhZjEyZGZjN2QxMTY0Y2E5YzEKbmF0aXZlLXIzLWxvbmctMi5wbmcg4oCUIDg3MDQ4IOKAlCAzOTDDlzg0NCDigJQgZWRlZWFkODRkZjM2OTMwY2JmNGViMWVhZjQwNDU3NmI2NWYyNWI0ZWYyYTVjOTVjODY2ZDY0OGQ1OTFmNWEzZQpuYXRpdmUtcjMtcHJldmlvdXMtZGVmYXVsdC0xLnBuZyDigJQgNjMzODQg4oCUIDM5MMOXODQ0IOKAlCA2NDRlMWQ2OGM0NTg1N2M1YzQ1MTRlNDBkOTVjMDVlY2M1ZjVkZGE1ZTBhMWYzYzkxNTRiOTBjYWFjZDAzYzliCm5hdGl2ZS1yMy1yZXBsYWNlR3VpZGUtMC5wbmcg4oCUIDcwMDQzIOKAlCAzOTDDlzg0NCDigJQgMWExNWUyMWEzN2Q0MmVjMmRhY2Y3NGE2MmUwMzg5NWRhNDE1NmM1YWU4ZWU2NTAwNTg2MmE1NjdmNGQ5NTJmMwpuYXRpdmUtcjMtcmVwbGFjZUd1aWRlLTEucG5nIOKAlCA3MTM4NSDigJQgMzkww5c4NDQg4oCUIDlkMzc3OGVmMTEzYTU5MTgzZDJlMzBjMGQ4NmY1MDBlZjA1NDM3ZDk5ODhiNTJjMjE2NGRjZjNjZjVlOGU1MmIKbmF0aXZlLXIzLXNhbGVzVGFyZ2V0LTEucG5nIOKAlCA3MDg4MiDigJQgMzkww5c4NDQg4oCUIGJjZDUxMTJiYjU4Mzk2MjExN2E5NTIxZWRiNTM4MjE3YWQyNWFmZjY0NDg3NmU5Nzg5MmEzNzMxZjY5NGRhNTYKbmF0aXZlLXIzLXRlY2huaWNhbFJhbmtpbmctMS5wbmcg4oCUIDcxODY0IOKAlCAzOTDDlzg0NCDigJQgZmZmM2Y3ZjVhYTc0YWM3NGQ2Y2RjMTdiOGNmMzdlYmFjNmFkMmJmOTFmMjhhNDUyYzExMDZlZTQzYzU5Y2E4OApuYXRpdmUtcjMtdW5rbm93bi0xLnBuZyDigJQgNzE4MDcg4oCUIDM5MMOXODQ0IOKAlCBmN2U2MzAzMzY2YmZmNGRiZjM4NmIwZTQ1NTdkN2QwODllNzlmZTdlNWRiMjFiMjg5Y2Q1NTViZDk3NjM5MjE3CgpCeXRlIGXFn2l0bGnEn2kgZG/En3J1bGFuYW4gdGVrcmFyIGdydXBsYXLEsSAoZG9zeWEgc2F5xLFzxLEpCjU1MWVkYTUzMzIwYWIyMmNkNDU3MjkxYjc1OTliOGY5MzcwMmI4ODU4NDEyMDcwMGM1MGJiZDMyNWVkYWZmNTgg4oCUIDE1CjhjZmQ2YTMxYjhkYzM4NzhkODk3YzQ2NjY0NjE5ZTI4MTRjOGY2ZWI0YWYyMzhmZmQxNzcxNWJlYjNlMzRlNmUg4oCUIDYKODY5ZmE1ZDU2MTM4ZDg3ZWFhZTVmYWU2MDczODllZDQzYzc4MjBjYTExMTQxOThiNjRkM2IzMzE4MTI5M2M2NSDigJQgNQo4NzFiNGZlOTRmOTQ2ZDdhNDQyNDYzNzZiMGMzMDQ5OTBmZTBmNDJiYWE3ZTkyZTdlMzVhMGIwNjYxYzA4ZTQwIOKAlCA0CjFhMTVlMjFhMzdkNDJlYzJkYWNmNzRhNjJlMDM4OTVkYTQxNTZjNWFlOGVlNjUwMDU4NjJhNTY3ZjRkOTUyZjMg4oCUIDQKClNhYml0IDIwIHNvcnV5YSBnw7Zyc2VsbGVyZGVuIHlhbsSxdAoxLiBSZWhiZXIgw7ZybmVrIGJha8SxbSBrb251c3VudW4ga2Fwc2FtxLFuxLEgdGFuxLF0xLFyOyB1eWd1bGFtYSBhZMSxbcSxIGRlxJ9pbGRpci4gVGljYXJpIGLDtmzDvG0sIGtheW5ha3Rha2kgw7ZybmVrIHNlw6dlbmVrbGVyaSB2ZSByZWtsYW0gYmlsZ2lzaW5pIGfDtnN0ZXJpcjsgZ2Vyw6dlayBzYXTEsWPEsSB2ZXlhIHRla2xpZiBkZcSfaWxkaXIuCjIuIEhhecSxci4gVGljYXJpIGxpc3RlIHJlaGJlcmluIHllcmluaSBhbG1hei4KMy4gRXZldC4gRWtyYW4gw7ZuY2UgeXVrYXLEsWRha2kgbW90b3Npa2xldCB1eWd1bmx1xJ91IGJpbGdpc2luaSBva3VtYXnEsSBzw7Z5bMO8eW9yLgo0LiBIYXnEsXIuIMOcY3JldCB2ZXlhIHNwb25zb3IgZGVzdGXEn2kgdGVrbmlrIHV5Z3VubHXEn3UgZGXEn2nFn3Rpcm1lei4KNS4gSGF5xLFyLiBTYXTEscWfIGhlZGVmaSByZWhiZXJpIGRlxJ9pxZ90aXJtZXouCjYuIEhhecSxci4gRGF2cmFuxLHFnyB2ZSBzYXTEscWfIMO2bMOnw7xtbGVyaSB0ZWtuaWsgdXlndW5sdWsgc2XDp2ltaW5lIGthdMSxbG1hei4KNy4gUmVoYmVyIHllcmluZSBzdW51bG1heWEgw6dhbMSxxZ/EsWxhbiBsaXN0ZW5pbiB0aWNhcmkgYXlyxLFudMSxbGFyxLEgZ8O2c3RlcmlsbWV6OyByZWhiZXIgdmUgdXlndW5sdWsgYmlsZ2lzaSBnw7Zyw7xuw7xyIGthbMSxci4KOC4gSGF5xLFyLiBTYXTEscWfIGFydMSxcm1hIGFtYWPEsSB0YcWfxLF5YW4gecO2bmxlbmRpcm1lIGfDtnN0ZXJpbG1lZGnEn2kgeWF6xLF5b3IuCjkuIFRpY2FyaSBzxLFyYWxhbWEgdGVrbmlrIHV5Z3VubHVrIGthcmFyxLEgZ2liaSBzdW51bGFtYXo7IHRpY2FyaSBheXLEsW50xLFsYXIgZ8O2c3RlcmlsbWV6LgoxMC4gSGF5xLFyLiBBbWHDpyBuZXRsZcWfbWVkZW4gdGljYXJpIGF5csSxbnTEsWxhciBnw7ZzdGVyaWxtZXouCjExLiBIYXnEsXIuIEVuZ2VsbGVtZSByZWhiZXJpIHZlIG1vdG9zaWtsZXQgdXlndW5sdcSfdSBiaWxnaXNpbmkgZ2l6bGVtaXlvci4KMTIuIFJlaGJlciB2ZSB1eWd1bmx1ayBiaWxnaXNpIHl1a2FyxLFkYSBva3VuYWJpbGlyLiBBbmNhayDigJxtZXZjdXQgeW9sbGFy4oCdxLFuIHRhbWFtxLFuxLFuIGnFn2xldnNlbCBrYWxkxLHEn8SxIGHDp8SxayBkZcSfaWw7IGVrcmFuZGEgYXlyxLFtIGtvbnRyb2zDvG7DvG4gYcOnxLFsYW1hZMSxxJ/EsSBkYSB5YXrEsXlvci4gQXlyxLFudMSxIGHFn2HEn8SxZGFraSBiZWxpcnNpemxpa3RlLgoxMy4gRXZldC4gw5ZybmVrIHNwb25zb3JsdSBzZcOnZW5layDDvGNyZXRsaSByZWtsYW0gZGl5ZTsgc3BvbnNvciBkZXN0ZcSfaSBvbG1heWFuIMO2cm5layBzZcOnZW5layBheXLEsSBldGlrZXRsZSBnw7ZzdGVyaWxpeW9yLgoxNC4gSGF5xLFyLiBTcG9uc29yIGR1cnVtdSBiaWxpbm1leWVuIHNlw6dlbmVrIHJla2xhbXPEsXogc2F5xLFsbcSxeW9yOyBhw6fEsWtsYW1hIGdlbGVuZSBrYWRhciBhZMSxIHZlIHRpY2FyaSBheXLEsW50xLFzxLEgZ8O2c3RlcmlsbWl5b3IuCjE1LiBIYXnEsXIuIEtheW5hxJ/EsW4gYWx0ZXJuYXRpZmxlcmkgYmlsZGlybWVtZXNpLCBiYcWfa2EgYWx0ZXJuYXRpZiBidWx1bm1hZMSxxJ/EsW7EsSBnw7ZzdGVybWV6LgoxNi4gSGF5xLFyLiBNb3Rvc2lrbGV0LCByZWhiZXIgdmV5YSBiaWxnaSBkZcSfacWfaW5jZSBlc2tpIGxpc3RlIGt1bGxhbsSxbG1hbWFsxLE7IGtheW5hayB5ZW5pZGVuIGtvbnRyb2wgZWRpbG1lbGkuCjE3LiBIYXnEsXIuIFnDvGtsZW1lZGUgZXNraSBsaXN0ZSBnw7xuY2VsbWnFnyBnaWJpIGfDtnN0ZXJpbG1peW9yOyBoYXRhIHZlIMOnZXZyaW1kxLHFn8SxbmRhIGtheW5hayB5ZW5pZGVuIGtvbnRyb2wgZWRpbGVuZSBrYWRhciBlc2tpIGxpc3RlIGfDvG5jZWwgdGVrbGlmIHNhecSxbG3EsXlvci4KMTguIEhhecSxci4gU2F0xLFuIGFsbWEsIMO2ZGVtZSwgc2VydmlzIHJlemVydmFzeW9udSB2ZXlhIHllbmkgdXlndWxhbWEgaXpuaSBiYcWfbGF0xLFsbcSxeW9yLgoxOS4gSGF5xLFyLiBHw7ZzdGVyaW0gw7ZybmVrOyBnZXLDp2VrIHNhdMSxY8SxL3Rla2xpZiB5YSBkYSBnZXLDp2VrIG1vdG9zaWtsZXRlIHZlcmlsbWnFnyBrYXJhciBkZcSfaWwuCjIwLiBBbHQgw6d1YnVrOiBHYXJhaiwgQmFrxLFtLCBBSSBVc3RhLCBHZcOnbWnFnywgVG9wbHVsdWsuIEFsxLHFn3ZlcmnFnyBzZWttZXNpIGfDtnLDvG5tw7x5b3IuCgpTb211dCBiZWxpcnNpemxpayB2ZSBkYXIgb25hcsSxbQoxMi4gc29ydSBpa2kgYXlyxLEgaWRkaWF5xLEgdGVrbGXFn3Rpcml5b3I6IHV5Z3VubHVrIGJpbGdpc2luaW4gb2t1bmFiaWxpciBrYWxtYXPEsSB2ZSDigJxtZXZjdXQgeW9sbGFy4oCdxLFuIGtvcnVubWFzxLEuIEfDtnJzZWwsIGJpbGdpbmluIGdpemxlbm1lZGnEn2luaSB2ZSBva3VuYWJpbGVjZcSfaW5pIGHDp8Sxa8OnYSBzw7Z5bMO8eW9yOyBmYWthdCB0w7xtIGnFn2xlbSB5b2xsYXLEsW7EsW4gw6dhbMSxxZ/EsXIga2FsZMSxxJ/EsW7EsSBkb8SfcnVsYW3EsXlvci4g4oCcQXlyxLFtIGtvbnRyb2zDvCDFn3UgYW5kYSBhw6fEsWxhbcSxeW9y4oCdIHlhesSxc8SxIGJpciB5b2x1biBrdWxsYW7EsWxhbWFkxLHEn8SxbsSxIGfDtnN0ZXJpeW9yLiBTb3J1eXUgeWFsbsSxemNhIHV5Z3VubHVrIGJpbGdpc2luaW4gZ8O2csO8bsO8cmzDvMSfw7wvb2t1bmFiaWxpcmxpxJ9pIGhha2vEsW5kYSBkYXJhbHTEsW4gdmV5YSBoYW5naSBtZXZjdXQgacWfbGVtbGVyaW4ga3VsbGFuxLFsYWJpbGlyIGthbGTEscSfxLFuxLEgZWtyYW5kYSBhw6fEsWvDp2EgYmVsaXJ0aW4uIEJ1IG5lZGVubGUgZ2XDp2nFnyBrYXJhcsSxIENIQU5HRVNfUkVRVUVTVEVELgoKUmFwb3Iga29kbGFtYXPEsQpVVEYtOCwgQk9NIHlvaywgc2F0xLFyIHNvbmxhcsSxIExGIG9sYXJhayBrYXlkZWRpbGRpLg==
+
+C:\Users\Xpike\.codex\task-state\kavriva-e1021\target-r4.log RAW 1160 SHA 553c5a0641b248f8ede77b99f1cc034c78eb5b67bace8ff491f33527d7abbe05
+
+C:\Users\Xpike\.codex\task-state\kavriva-e1021\full-r3.log RAW 105847 SHA 34f2406e2a0ff25870aff343eeed6b1f9f23f1b72523bb0fc76bba7089bc4eb8
+
+C:\Users\Xpike\.codex\task-state\kavriva-e1021\format-r3.log RAW 48 SHA 1585542f9556403fde1485481a3706cac8d86684bdcad1eb907bb03dcbfb5ef5
+
+C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4.log RAW 1225 SHA 77a4331844b7ed6ea50ccfad38e06b94d3bc1aab6c3ef8bd514cf2d4f5537866
+
+C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-manifest.txt RAW 5076 SHA f26ce80f39adebee1d26c9869730aac09d44ad6f13e8045b653bdc90c4174119
+
+|durum|parça|offset/end|bayt|SHA256|RAWdosya|
+|---|---|---|---|---|---|
+|mixed|0|0.0/780.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-mixed-0.png|
+|mixed|1|600.0/780.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-mixed-1.png|
+|mixed|2|780.0/780.0|82242|093216cb5686a1bd1138a6cee8d2ba18849b61e8ee687065abebb9f3cf426484|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-mixed-2.png|
+|only-sponsored|0|0.0/734.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-only-sponsored-0.png|
+|only-sponsored|1|600.0/734.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-only-sponsored-1.png|
+|only-sponsored|2|734.0/734.0|79445|d31630678118334caba9e42daebc2dc5d78cc0f17374d8ba75f7681ffcfa20b8|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-only-sponsored-2.png|
+|unknown-disclosure|0|0.0/753.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-unknown-disclosure-0.png|
+|unknown-disclosure|1|600.0/753.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-unknown-disclosure-1.png|
+|unknown-disclosure|2|753.0/753.0|81479|d3fa2a8e68812a138d9f911fe78d68eac25ea54dbb87395d716782caf6974c3b|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-unknown-disclosure-2.png|
+|missing-alternatives|0|0.0/734.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-alternatives-0.png|
+|missing-alternatives|1|600.0/734.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-alternatives-1.png|
+|missing-alternatives|2|734.0/734.0|79433|f41be991427f0fdc4577b45d633e1a1d1eb84e9a452b21a33fbaefa98718a8a9|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-alternatives-2.png|
+|empty|0|0.0/734.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-empty-0.png|
+|empty|1|600.0/734.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-empty-1.png|
+|empty|2|734.0/734.0|79438|973f9383423f45b495c8a47f4b9f4bf59d9ab2a010ad0ce1e390e4d0c1600767|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-empty-2.png|
+|loading|0|0.0/569.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-loading-0.png|
+|loading|1|569.0/569.0|70580|9e1cb9cbd3c8b525ca70aafb215c3344a9199b293335bd0c509499c10faa4a7a|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-loading-1.png|
+|failed|0|0.0/588.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-failed-0.png|
+|failed|1|588.0/588.0|71019|02bb5a64e3dea66b2fcd8ccdabd931bff90eed36c5dad480a7aa7ca613bf29d8|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-failed-1.png|
+|held|0|0.0/569.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-held-0.png|
+|held|1|569.0/569.0|71765|be68eb89753e6edb61dd1c7c0253d126bbd62fc3e8615f8105ab9752ac399e80|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-held-1.png|
+|missing-source|0|0.0/607.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-source-0.png|
+|missing-source|1|600.0/607.0|74745|871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-source-1.png|
+|missing-source|2|607.0/607.0|74501|869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-missing-source-2.png|
+|offline|0|0.0/569.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-offline-0.png|
+|offline|1|569.0/569.0|72178|e99986e00520a868bb85da73737fcc94bae4e69177b88d6843dada9419c3ef58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-offline-1.png|
+|stale|0|0.0/607.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-0.png|
+|stale|1|600.0/607.0|74745|871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-1.png|
+|stale|2|607.0/607.0|74501|869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-2.png|
+|wrong-motorcycle|0|0.0/607.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-wrong-motorcycle-0.png|
+|wrong-motorcycle|1|600.0/607.0|74745|871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-wrong-motorcycle-1.png|
+|wrong-motorcycle|2|607.0/607.0|74501|869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-wrong-motorcycle-2.png|
+|new-revision|0|0.0/607.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-new-revision-0.png|
+|new-revision|1|600.0/607.0|74745|871b4fe94f946d7a44246376b0c304990fe0f42baa7e92e7e35a0b0661c08e40|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-new-revision-1.png|
+|new-revision|2|607.0/607.0|74501|869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-new-revision-2.png|
+|stale-scope|0|0.0/653.0|69394|2631815c59e5677970338e4b833e9030fcc20a169e8f9713afef0daa5424ffb8|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-scope-0.png|
+|stale-scope|1|600.0/653.0|75564|97d9dea389dd57a9e47959301cf5f56559616aeb383be3af12dfc7d1164ca9c1|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-scope-1.png|
+|stale-scope|2|653.0/653.0|74501|869fa5d56138d87eaae5fae607389ed43c7820ca1114198b64d3b33181293c65|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-stale-scope-2.png|
+|long|0|0.0/894.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-long-0.png|
+|long|1|600.0/894.0|75881|8cfd6a31b8dc3878d897c46664619e2814c8f6eb4af238ffd17715beb3e34e6e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-long-1.png|
+|long|2|894.0/894.0|87048|edeead84df36930cbf4eb1eaf404576b65f25b4ef2a5c95c866d648d591f5a3e|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-long-2.png|
+|previous-default|0|0.0/153.0|67762|551eda53320ab22cd457291b7599b8f93702b88584120700c50bbd325edaff58|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-previous-default-0.png|
+|previous-default|1|153.0/153.0|63384|644e1d68c45857c5c4514e40d95c05ecc5f5dda5e0a1f3c9154b90caacd03c9b|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-previous-default-1.png|
+|replaceGuide|0|0.0/477.0|70043|1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-replaceGuide-0.png|
+|replaceGuide|1|477.0/477.0|72033|42ab07d29ac95346c1a0a9a830f659ee10b19489a11e3b663504e076c1c90ce8|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-replaceGuide-1.png|
+|salesTarget|0|0.0/477.0|70043|1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-salesTarget-0.png|
+|salesTarget|1|477.0/477.0|71528|b0fb3f7c412b894452e9b13852c69a1050bd578fcff3adc09c3482aa2e1091c5|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-salesTarget-1.png|
+|technicalRanking|0|0.0/477.0|70043|1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-technicalRanking-0.png|
+|technicalRanking|1|477.0/477.0|72519|cd5fb60fa4647cd524c10c22db8b6491ab717132a5202f84fb182d91f9170bdc|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-technicalRanking-1.png|
+|unknown|0|0.0/477.0|70043|1a15e21a37d42ec2dacf74a62e03895da4156c5ae8ee65005862a567f4d952f3|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-unknown-0.png|
+|unknown|1|477.0/477.0|72460|4d01ad51901a425e9452a8d097bfa69344271ec51e1c88f471497af18cbae080|C:\Users\Xpike\.codex\task-state\kavriva-e1021\native-r4-unknown-1.png|
