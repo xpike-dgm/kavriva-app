@@ -13,7 +13,7 @@ tests: [modules/e01-app/internal/shell/test/duration_range_test.dart, modules/e0
 superseded_by: []
 last_verified: 2026-10-10
 depends_on: [V-E1-RANGE-001]
-used_by: [V-E1-RANGE-001, P-E1-018, T-E1-018]
+used_by: [V-E1-RANGE-001, P-E1-018, T-E1-018, V-E1-COST-001, P-E1-019a, E-DEV-118]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -501,3 +501,140 @@ RAWBase64: VC1FMS0wMTgg4oCUIFNPVVJDRSB3aG9sZS1yZXZpZXcgcmVwb3J0CkRhdGU6IDIwMjYtM
   - e1-shell-tests job114247909997: success; Set up job:success, Checkout kavriva-app:success, Install exact Flutter source and verify effective SDK:success, Resolve only locked widget dependencies:success, Verify Dart format and analyze presentation:success, Run headless shell behavior and accessibility checks:success, Post Checkout kavriva-app:success, Complete job:success.
 
 PR119 sohbet eki araç sınırı nedeniyle eklenemedi: thread attachment identity count exceeds 100. PR/kanıt bağlantıları korunur; önceki ekler silinmedi.
+
+## PR119 gerçek son kabul — sonraki tüketici makbuzu
+
+PR119 normalmerge b9cb56529fece0b84e2901294a79b4d0de3e5f7a; approvedFINAL bfd66b634c42bad69f41e2eee506404eac190437. Fetchedmain tree=FINAL ve actualmain8/FINAL16 bütün RAWadımları Root okudu. Özgün FINAL ayrıgpt6luna/max scopedPASS/sahip sürekli kabulü; önceki gövde/FAIL/RET/subjectdigest/reviewer/result/tarih aynen korunur. Gerçek106/100/206; üretimfiyatfeed/router/identity/human/device/physical/releaseHELD. Yeni T019a eski süre sunum kabulünü genişletmez; duration_range.dart subject kodu byte-eş korunur.
+
+RAW4303bayt/SHA256 ab662a94d539ae5d9afaa7208767656138a8611c972f83bd44f6cc16ecdecda8.
+
+<pre># PR 119 — T-E1-018 FINAL bağımsız inceleme
+
+Tarih: 2026-10-10
+İnceleyen: /root/e1018_final_review
+Hüküm: **PASS** — tam olarak FINAL `bfd66b634c42bad69f41e2eee506404eac190437` için.
+
+## Kimlik ve incelenen fark
+
+PR: https://github.com/xpike-dgm/kavriva-app/pull/119
+BASE: `cbfc954d09f808ee8e43369312843144befc5d3e`
+SOURCE: `98df2dc9d938c4e9d65f132931144972ede4a6ec`
+FINAL: `bfd66b634c42bad69f41e2eee506404eac190437`
+
+GitHub’da PR base ve head bu kimliklerle eşleşiyor; PR açık ve taslak. SOURCE, FINAL’ın atası. SOURCE→FINAL farkı tam altı kayıt dosyasıdır: E-DEV-117, P-E1-018, T-E1-018, süre sunum profili ve üretilen registry/routing indexleri. Kod, test, fixture, snapshot, sabit 20 soru veya önceki tarihsel kanıtlar değişmemiş. `git diff --check` temiz, inceleme worktree’si temiz.
+
+## Kanıt ve görev sınırı
+
+E-DEV-117’ye gömülü bağımsız SOURCE whole-review raporu 26.463 bayt ve SHA-256 `9dc3d47b1603dd5a29dc87409a1b6692a4c5c88f0e654f3331388385d98af032`. RAWBase64’ten çözülen rapor, task-state’deki özgün dosyayla bayt bayt aynı. Kaynak rapordaki özgün ifade aynen şöyledir: “Verdict: FULL PASS — no actionable source findings at the exact SOURCE below.” Bu raporun hükmü sınırlı T-E1-018 sunumuna aittir; insan/cihaz kullanılabilirliği, üretim kaynağı veya release kabulü ileri sürmez.
+
+Pinned plan commit’i `fa914f013fdcd032faed876689092da245989459` içindeki Task Index T-E1-018’i kaynaklı süre aralığı ve tarih sunumu için PROPOSED, maliyet ve varsayım kapsamlarını T-E1-019a/b olarak ayrı tutuyor; acceptance matrix BR-063/064 için review yöntemini belirtiyor. FINAL’daki durumlar bu sınıra uyuyor: T-E1-018 DONE yalnız bu sınırlı sunum adayı için; profil ve pack ACTIVE; E-DEV-117 RECORDED ve üretim kapıları HELD. Gerçek ana sayaç 105 kabul / 101 kalan / 206 olarak kalıyor; PR henüz merge edilmemiş.
+
+## Aynı FINAL CI doğrulaması
+
+`final-ci.json` 62.533 bayt; SHA-256 `8808503b276fafd4c1de7d46300444c30f8225280f9e56b4d2c2e541ca97cf73`. İçindeki 16 ham log dosyasının her birinin bayt sayısını ve SHA-256’sını yeniden hesapladım; 16/16 JSON kaydıyla eşleşti. GitHub Actions API’siyle 16 run ve 18 job/check’i karşılaştırdım: tüm head SHA’ları FINAL, run ve job kimlikleri, olay türleri, adları ve sonuçları eşleşiyor; çapraz kontrol hatası yok. Sekiz workflow ailesinin PR ve push olaylarında birer run’ı var; hepsi success. Push T3 adımı skip/0 adım olarak ayrı tutuldu.
+
+| Aile | PR run | Push run |
+|---|---:|---:|
+| architecture-checks | 38064756917 | 38064753397 |
+| e1-shell-widget-tests | 38064756892 | 38064753393 |
+| e3-commit-authorization-tests | 38064756998 | 38064753412 |
+| e3-live-auth-tests | 38064756930 | 38064753394 |
+| e4-offline-composition-tests | 38064756942 | 38064753422 |
+| e5-current-authority-tests | 38064756966 | 38064753417 |
+| e6-release-policy-tests | 38064756925 | 38064753392 |
+| e9-bounded-proposal-tests | 38064756936 | 38064753449 |
+
+Gerçek PR T3, run 38064756917 / job 114250037887, beş gerçek adımın beşinde de başarılı; eş push T3 job 114250028045 sıfır adımla skip ve başarı kanıtı sayılmadı. PR mimari job’ı 114250037730 yedi adımın yedisinde başarılı. Logda 42 mimari test ve `run-all: worst exit = 0` var; gizli anahtar taraması ve `Rebuild generated index` adımı başarılı. Index logu `build-index: 109 rows -&gt; registry.json` ve routing üretimini gösteriyor; workflow’daki `git diff --exit-code -- vault/INDEX/` başarılı.
+
+PR E1 run 38064756892 / job 114250037384 sekiz adımın sekizinde başarılı. Ham logda `Formatted 42 files (0 changed)`, `No issues found!` ve `01:03 +415: All tests passed!` kayıtları var. Yerelde Flutter/test yeniden çalıştırılmadı; sonuç aynı FINAL’a bağlı GitHub makbuzlarından doğrulandı.
+
+## Sonuç
+
+FINAL için uygulanabilir bulgu yok; **PASS**. Bu karar yalnız T-E1-018’in kaynaklı süre aralığı sunum kaydını ve SOURCE’tan sonraki altı metadata değişikliğini kapsar. PR açık/taslak ve merge edilmemiş; gerçek ana sayaç, üretim tahmini/feed, kimlik/yetki/router/fiziksel işlem, insan/cihaz/assistive teknoloji ve release kapıları bu incelemeyle açılmaz.</pre>
+
+RAWBase64: IyBQUiAxMTkg4oCUIFQtRTEtMDE4IEZJTkFMIGJhxJ/EsW1zxLF6IGluY2VsZW1lCgpUYXJpaDogMjAyNi0xMC0xMCAgCsSwbmNlbGV5ZW46IC9yb290L2UxMDE4X2ZpbmFsX3JldmlldyAgCkjDvGvDvG06ICoqUEFTUyoqIOKAlCB0YW0gb2xhcmFrIEZJTkFMIGBiZmQ2NmI2MzRjNDJiYWQ2OWY0MWUyZWVlNTA2NDA0ZWFjMTkwNDM3YCBpw6dpbi4KCiMjIEtpbWxpayB2ZSBpbmNlbGVuZW4gZmFyawoKUFI6IGh0dHBzOi8vZ2l0aHViLmNvbS94cGlrZS1kZ20va2F2cml2YS1hcHAvcHVsbC8xMTkgIApCQVNFOiBgY2JmYzk1NGQwOWY4MDhlZThlNDMzNjkzMTI4NDMxNDRiZWZjNWQzZWAgIApTT1VSQ0U6IGA5OGRmMmRjOWQ5MzhjNGU5ZDY1ZjEzMjkzMTE0NDk3MmVkZTRhNmVjYCAgCkZJTkFMOiBgYmZkNjZiNjM0YzQyYmFkNjlmNDFlMmVlZTUwNjQwNGVhYzE5MDQzN2AKCkdpdEh1YuKAmWRhIFBSIGJhc2UgdmUgaGVhZCBidSBraW1saWtsZXJsZSBlxZ9sZcWfaXlvcjsgUFIgYcOnxLFrIHZlIHRhc2xhay4gU09VUkNFLCBGSU5BTOKAmcSxbiBhdGFzxLEuIFNPVVJDReKGkkZJTkFMIGZhcmvEsSB0YW0gYWx0xLEga2F5xLF0IGRvc3lhc8SxZMSxcjogRS1ERVYtMTE3LCBQLUUxLTAxOCwgVC1FMS0wMTgsIHPDvHJlIHN1bnVtIHByb2ZpbGkgdmUgw7xyZXRpbGVuIHJlZ2lzdHJ5L3JvdXRpbmcgaW5kZXhsZXJpLiBLb2QsIHRlc3QsIGZpeHR1cmUsIHNuYXBzaG90LCBzYWJpdCAyMCBzb3J1IHZleWEgw7ZuY2VraSB0YXJpaHNlbCBrYW7EsXRsYXIgZGXEn2nFn21lbWnFny4gYGdpdCBkaWZmIC0tY2hlY2tgIHRlbWl6LCBpbmNlbGVtZSB3b3JrdHJlZeKAmXNpIHRlbWl6LgoKIyMgS2FuxLF0IHZlIGfDtnJldiBzxLFuxLFyxLEKCkUtREVWLTExN+KAmXllIGfDtm3DvGzDvCBiYcSfxLFtc8SxeiBTT1VSQ0Ugd2hvbGUtcmV2aWV3IHJhcG9ydSAyNi40NjMgYmF5dCB2ZSBTSEEtMjU2IGA5ZGMzZDQ3YjE2MDNkZDVhMjlkYzg3NDA5YTFiNjY5MmE0YzVjODhmMGU2NTRmMzMzMTM4ODM4NWQ5OGFmMDMyYC4gUkFXQmFzZTY04oCZdGVuIMOnw7Z6w7xsZW4gcmFwb3IsIHRhc2stc3RhdGXigJlkZWtpIMO2emfDvG4gZG9zeWF5bGEgYmF5dCBiYXl0IGF5bsSxLiBLYXluYWsgcmFwb3JkYWtpIMO2emfDvG4gaWZhZGUgYXluZW4gxZ/DtnlsZWRpcjog4oCcVmVyZGljdDogRlVMTCBQQVNTIOKAlCBubyBhY3Rpb25hYmxlIHNvdXJjZSBmaW5kaW5ncyBhdCB0aGUgZXhhY3QgU09VUkNFIGJlbG93LuKAnSBCdSByYXBvcnVuIGjDvGttw7wgc8SxbsSxcmzEsSBULUUxLTAxOCBzdW51bXVuYSBhaXR0aXI7IGluc2FuL2NpaGF6IGt1bGxhbsSxbGFiaWxpcmxpxJ9pLCDDvHJldGltIGtheW5hxJ/EsSB2ZXlhIHJlbGVhc2Uga2FidWzDvCBpbGVyaSBzw7xybWV6LgoKUGlubmVkIHBsYW4gY29tbWl04oCZaSBgZmE5MTRmMDEzZmRjZDAzMmZhZWQ4NzY2ODkwOTJkYTI0NTk4OTQ1OWAgacOnaW5kZWtpIFRhc2sgSW5kZXggVC1FMS0wMTjigJlpIGtheW5ha2zEsSBzw7xyZSBhcmFsxLHEn8SxIHZlIHRhcmloIHN1bnVtdSBpw6dpbiBQUk9QT1NFRCwgbWFsaXlldCB2ZSB2YXJzYXnEsW0ga2Fwc2FtbGFyxLFuxLEgVC1FMS0wMTlhL2Igb2xhcmFrIGF5csSxIHR1dHV5b3I7IGFjY2VwdGFuY2UgbWF0cml4IEJSLTA2My8wNjQgacOnaW4gcmV2aWV3IHnDtm50ZW1pbmkgYmVsaXJ0aXlvci4gRklOQUzigJlkYWtpIGR1cnVtbGFyIGJ1IHPEsW7EsXJhIHV5dXlvcjogVC1FMS0wMTggRE9ORSB5YWxuxLF6IGJ1IHPEsW7EsXJsxLEgc3VudW0gYWRhecSxIGnDp2luOyBwcm9maWwgdmUgcGFjayBBQ1RJVkU7IEUtREVWLTExNyBSRUNPUkRFRCB2ZSDDvHJldGltIGthcMSxbGFyxLEgSEVMRC4gR2Vyw6dlayBhbmEgc2F5YcOnIDEwNSBrYWJ1bCAvIDEwMSBrYWxhbiAvIDIwNiBvbGFyYWsga2FsxLF5b3I7IFBSIGhlbsO8eiBtZXJnZSBlZGlsbWVtacWfLgoKIyMgQXluxLEgRklOQUwgQ0kgZG/En3J1bGFtYXPEsQoKYGZpbmFsLWNpLmpzb25gIDYyLjUzMyBiYXl0OyBTSEEtMjU2IGA4ODA4NTAzYjI3NmZhZmQ0YzFkZTdkNDYzMDA0NDRjMzBmODIyNTI4MGY5ZTU2YjRkMmMyZTU0MWNhOTdjZjczYC4gxLDDp2luZGVraSAxNiBoYW0gbG9nIGRvc3lhc8SxbsSxbiBoZXIgYmlyaW5pbiBiYXl0IHNhecSxc8SxbsSxIHZlIFNIQS0yNTbigJlzxLFuxLEgeWVuaWRlbiBoZXNhcGxhZMSxbTsgMTYvMTYgSlNPTiBrYXlkxLF5bGEgZcWfbGXFn3RpLiBHaXRIdWIgQWN0aW9ucyBBUEnigJlzaXlsZSAxNiBydW4gdmUgMTggam9iL2NoZWNr4oCZaSBrYXLFn8SxbGHFn3TEsXJkxLFtOiB0w7xtIGhlYWQgU0hB4oCZbGFyxLEgRklOQUwsIHJ1biB2ZSBqb2Iga2ltbGlrbGVyaSwgb2xheSB0w7xybGVyaSwgYWRsYXLEsSB2ZSBzb251w6dsYXLEsSBlxZ9sZcWfaXlvcjsgw6dhcHJheiBrb250cm9sIGhhdGFzxLEgeW9rLiBTZWtpeiB3b3JrZmxvdyBhaWxlc2luaW4gUFIgdmUgcHVzaCBvbGF5bGFyxLFuZGEgYmlyZXIgcnVu4oCZxLEgdmFyOyBoZXBzaSBzdWNjZXNzLiBQdXNoIFQzIGFkxLFtxLEgc2tpcC8wIGFkxLFtIG9sYXJhayBheXLEsSB0dXR1bGR1LgoKfCBBaWxlIHwgUFIgcnVuIHwgUHVzaCBydW4gfAp8LS0tfC0tLTp8LS0tOnwKfCBhcmNoaXRlY3R1cmUtY2hlY2tzIHwgMzgwNjQ3NTY5MTcgfCAzODA2NDc1MzM5NyB8CnwgZTEtc2hlbGwtd2lkZ2V0LXRlc3RzIHwgMzgwNjQ3NTY4OTIgfCAzODA2NDc1MzM5MyB8CnwgZTMtY29tbWl0LWF1dGhvcml6YXRpb24tdGVzdHMgfCAzODA2NDc1Njk5OCB8IDM4MDY0NzUzNDEyIHwKfCBlMy1saXZlLWF1dGgtdGVzdHMgfCAzODA2NDc1NjkzMCB8IDM4MDY0NzUzMzk0IHwKfCBlNC1vZmZsaW5lLWNvbXBvc2l0aW9uLXRlc3RzIHwgMzgwNjQ3NTY5NDIgfCAzODA2NDc1MzQyMiB8CnwgZTUtY3VycmVudC1hdXRob3JpdHktdGVzdHMgfCAzODA2NDc1Njk2NiB8IDM4MDY0NzUzNDE3IHwKfCBlNi1yZWxlYXNlLXBvbGljeS10ZXN0cyB8IDM4MDY0NzU2OTI1IHwgMzgwNjQ3NTMzOTIgfAp8IGU5LWJvdW5kZWQtcHJvcG9zYWwtdGVzdHMgfCAzODA2NDc1NjkzNiB8IDM4MDY0NzUzNDQ5IHwKCkdlcsOnZWsgUFIgVDMsIHJ1biAzODA2NDc1NjkxNyAvIGpvYiAxMTQyNTAwMzc4ODcsIGJlxZ8gZ2Vyw6dlayBhZMSxbcSxbiBiZcWfaW5kZSBkZSBiYcWfYXLEsWzEsTsgZcWfIHB1c2ggVDMgam9iIDExNDI1MDAyODA0NSBzxLFmxLFyIGFkxLFtbGEgc2tpcCB2ZSBiYcWfYXLEsSBrYW7EsXTEsSBzYXnEsWxtYWTEsS4gUFIgbWltYXJpIGpvYuKAmcSxIDExNDI1MDAzNzczMCB5ZWRpIGFkxLFtxLFuIHllZGlzaW5kZSBiYcWfYXLEsWzEsS4gTG9nZGEgNDIgbWltYXJpIHRlc3QgdmUgYHJ1bi1hbGw6IHdvcnN0IGV4aXQgPSAwYCB2YXI7IGdpemxpIGFuYWh0YXIgdGFyYW1hc8SxIHZlIGBSZWJ1aWxkIGdlbmVyYXRlZCBpbmRleGAgYWTEsW3EsSBiYcWfYXLEsWzEsS4gSW5kZXggbG9ndSBgYnVpbGQtaW5kZXg6IDEwOSByb3dzIC0+IHJlZ2lzdHJ5Lmpzb25gIHZlIHJvdXRpbmcgw7xyZXRpbWluaSBnw7ZzdGVyaXlvcjsgd29ya2Zsb3figJlkYWtpIGBnaXQgZGlmZiAtLWV4aXQtY29kZSAtLSB2YXVsdC9JTkRFWC9gIGJhxZ9hcsSxbMSxLgoKUFIgRTEgcnVuIDM4MDY0NzU2ODkyIC8gam9iIDExNDI1MDAzNzM4NCBzZWtpeiBhZMSxbcSxbiBzZWtpemluZGUgYmHFn2FyxLFsxLEuIEhhbSBsb2dkYSBgRm9ybWF0dGVkIDQyIGZpbGVzICgwIGNoYW5nZWQpYCwgYE5vIGlzc3VlcyBmb3VuZCFgIHZlIGAwMTowMyArNDE1OiBBbGwgdGVzdHMgcGFzc2VkIWAga2F5xLF0bGFyxLEgdmFyLiBZZXJlbGRlIEZsdXR0ZXIvdGVzdCB5ZW5pZGVuIMOnYWzEscWfdMSxcsSxbG1hZMSxOyBzb251w6cgYXluxLEgRklOQUzigJlhIGJhxJ9sxLEgR2l0SHViIG1ha2J1emxhcsSxbmRhbiBkb8SfcnVsYW5kxLEuCgojIyBTb251w6cKCkZJTkFMIGnDp2luIHV5Z3VsYW5hYmlsaXIgYnVsZ3UgeW9rOyAqKlBBU1MqKi4gQnUga2FyYXIgeWFsbsSxeiBULUUxLTAxOOKAmWluIGtheW5ha2zEsSBzw7xyZSBhcmFsxLHEn8SxIHN1bnVtIGtheWTEsW7EsSB2ZSBTT1VSQ0XigJl0YW4gc29ucmFraSBhbHTEsSBtZXRhZGF0YSBkZcSfacWfaWtsacSfaW5pIGthcHNhci4gUFIgYcOnxLFrL3Rhc2xhayB2ZSBtZXJnZSBlZGlsbWVtacWfOyBnZXLDp2VrIGFuYSBzYXlhw6csIMO8cmV0aW0gdGFobWluaS9mZWVkLCBraW1saWsveWV0a2kvcm91dGVyL2Zpemlrc2VsIGnFn2xlbSwgaW5zYW4vY2loYXovYXNzaXN0aXZlIHRla25vbG9qaSB2ZSByZWxlYXNlIGthcMSxbGFyxLEgYnUgaW5jZWxlbWV5bGUgYcOnxLFsbWF6Lg==
+
+## PR119 aynı FINAL16 gerçek CI
+
+Gerçek baş bfd66b634c42bad69f41e2eee506404eac190437; bütün RAWlog ve iş/adımlar Root tarafından okundu.
+
+38064756966 e5-current-authority-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756966 RAW 35659 SHA256 4b05602fc6100389bae3ba33d37059fec3467680566cb4832b2262ef12c32fc8
+- 114250037763 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38064756998 e3-commit-authorization-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756998 RAW 66656 SHA256 4ea9e1aaa57168d18b0c69c58ae0d9e91290ad1e333a39c1f829adbed99f4e03
+- 114250038155 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38064756936 e9-bounded-proposal-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756936 RAW 18384 SHA256 e7f7376471d1a83730638c337623beeea057c3040c3b21b1061e4d8a2d5f55b0
+- 114250037625 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064756917 architecture-checks pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756917 RAW 47505 SHA256 bbf876b3326fe4108796a9e15925e40f3f989eba1f2577fef3a9a4a10babff02
+- 114250037730 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+- 114250037887 t3-gate success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:T3 conformance + identity gate=success, 6:Post Checkout kavriva-app=success, 7:Complete job=success
+
+38064756925 e6-release-policy-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756925 RAW 28043 SHA256 03592bc88d249197c3097a5ab0cdc94c3da3e733ff61a8d07ef8994a4c23b614
+- 114250037401 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064756942 e4-offline-composition-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756942 RAW 56247 SHA256 021f4e425ae73433dad12d772360036ff1a891b9025073a915542c8a1268e83e
+- 114250037592 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064756892 e1-shell-widget-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756892 RAW 151387 SHA256 a66c61ebc11a5084069438c9102e4e9dfa71cef459acf044ff5d2745bc259131
+- 114250037384 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+38064756930 e3-live-auth-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38064756930 RAW 25640 SHA256 2bfc9b529b3d51f05d11683750723bb5dcb6962d61c8987f29959cf953fa424e
+- 114250037394 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+38064753412 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753412 RAW 64140 SHA256 9776a33472cd165fa30265d8fd845df2af88e200486ad7af8e2922867e775ea8
+- 114250026632 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38064753449 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753449 RAW 17029 SHA256 878648a3efe9865f70a1658998bed8b71658f8f5ffd721b2f523af9b9e7521ea
+- 114250026809 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064753397 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753397 RAW 30935 SHA256 c0f5e29f7ffde2e412c823f6976cf09b8689fc560cd4ffd7d46679cb0b0383cd
+- 114250026711 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+- 114250028045 t3-gate skipped;
+
+38064753422 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753422 RAW 54893 SHA256 5ea01b97cd31bf246afd84f0ebb9f8233cc4f681b32e9cc9070558e8ef98f436
+- 114250026736 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064753392 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753392 RAW 26689 SHA256 9bdb2c32cc51bf7b5d2b0419ca8a815d62fa5629995e76e90394d94efd2a0907
+- 114250026626 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38064753417 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753417 RAW 34238 SHA256 01b18df32d6b98808059c83294ad549c5df64451f8b97baacfba577b3e31908d
+- 114250026771 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38064753393 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753393 RAW 151035 SHA256 f51e0fac6b804f780906ee472b5be8a01d184123672c0aa109c8da71a249671e
+- 114250026723 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+38064753394 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38064753394 RAW 24270 SHA256 278bec400bc91cf604c2c275edc498ef2af54901dc678060419e326ed24ba99a
+- 114250026583 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+## PR119 gerçek fetchedmain8 CI
+
+Gerçek baş b9cb56529fece0b84e2901294a79b4d0de3e5f7a; bütün RAWlog ve iş/adımlar Root tarafından okundu.
+
+38065357988 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357988 RAW 34107 SHA256 8eb1350d48ed7868d824252d8aa96453939188338ea3cb66e355ee00de195205
+- 114251772165 e5-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E5 current authority decision=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38065357908 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357908 RAW 54759 SHA256 5e4dc4cf8a5ea8a579c7e9acffdd603e0f521c6c19da099488ab0991a886de23
+- 114251771932 e4-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E4 internal composition=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38065357913 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357913 RAW 30809 SHA256 df3fffec719e84b5cbeaccc28f381517f39df7b4266e6faccd7ecacbb24b7f1f
+- 114251771966 checks success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Run architecture suite (CI mode)=success, 4:Secret-pattern scan (OUT-3 B-23; no keys/secrets may land in the tree)=success, 5:Rebuild generated index (proof that generation is reproducible)=success, 10:Post Checkout kavriva-app=success, 11:Complete job=success
+- 114251772975 t3-gate skipped;
+
+38065357864 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357864 RAW 16899 SHA256 fd52cf2f09bd424791a2cf92e97e0cfb5ceb9f2406efe9dd099ab5fe93eb3afd
+- 114251771454 e9-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E9 internal proposals=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38065357942 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357942 RAW 26558 SHA256 aae0234ba12b92b28292c0304e093b463d538f2b5cbd91f5c1523f90e8221a91
+- 114251772123 e6-tests success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Test E6 release policies=success, 6:Post Checkout Kavriva=success, 7:Complete job=success
+
+38065357902 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357902 RAW 63983 SHA256 523ca538e86ceffac5ef872c9ea5dfed930ba0ba4f5dfcb06ee8f3992647ac70
+- 114251772047 e3-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Test E3 commit authorization gate=success, 8:Post Checkout kavriva-app=success, 9:Complete job=success
+
+38065357868 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357868 RAW 24136 SHA256 2033c6f2b66bdb072d9d10a127703fca5d1ae6fd8722608d3d5705916da788c3
+- 114251771679 live-auth success; 1:Set up job=success, 2:Checkout Kavriva=success, 3:Install pinned PostgreSQL test dependencies=success, 4:Start isolated local Supabase Auth and apply migrations=success, 5:Verify real Auth signup, current session, guarded effect and logout=success, 6:Reject direct database and private Storage bypasses=success, 12:Post Checkout Kavriva=success, 13:Complete job=success
+
+38065357882 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38065357882 RAW 148890 SHA256 93fd94eb2df3d50e31875b1eaf370be647f36b3392dd8bb615ffefae50f655ff
+- 114251771880 e1-shell-tests success; 1:Set up job=success, 2:Checkout kavriva-app=success, 3:Install exact Flutter source and verify effective SDK=success, 4:Resolve only locked widget dependencies=success, 5:Verify Dart format and analyze presentation=success, 6:Run headless shell behavior and accessibility checks=success, 12:Post Checkout kavriva-app=success, 13:Complete job=success
+
+Özgün son inceleme/CI https://github.com/xpike-dgm/kavriva-app/pull/119#issuecomment-6099342433 ; yeni consumer `vault/PACKS/P-E1-019a.md`.
