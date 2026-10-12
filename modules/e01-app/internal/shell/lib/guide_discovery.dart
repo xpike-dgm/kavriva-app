@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'cost_split.dart';
 import 'duration_range.dart';
+import 'sponsored_marking.dart';
 import 'variant_resolution.dart';
 
 String _required(String value) {
@@ -262,6 +263,7 @@ class GuideScopePreview extends StatelessWidget {
     required this.onEditRequested,
     this.duration,
     this.cost,
+    this.commercial,
   });
   final VariantContext context;
   final GuideScope? scope;
@@ -274,6 +276,7 @@ class GuideScopePreview extends StatelessWidget {
   final ValueChanged<VariantContext>? onEditRequested;
   final DurationRangePresentation? duration;
   final CostSplitPresentation? cost;
+  final CommercialPresentation? commercial;
   @override
   Widget build(BuildContext context) {
     final s = scope;
@@ -321,6 +324,12 @@ class GuideScopePreview extends StatelessWidget {
           onTeachingRequested: onTeachingRequested,
           onEditRequested: onEditRequested,
         ),
+        if (commercial != null)
+          SponsoredMarkingView(
+            context: this.context,
+            presentation: commercial!,
+            scopeCurrent: matches && s.current && !busy && errorMessage == null,
+          ),
       ],
     );
   }
