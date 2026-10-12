@@ -60,3 +60,9 @@ Geçmişsiz gpt-6-luna/max okuyucu 65 RAW/34 benzersiz ekranı açtı; sabit20 s
 ## RET sonrası r2 gerçek doğrulama
 
 İlk RET raporu ve r1 makbuzları yukarıda korunur. Açık geçersizlik uyarısı eklenmiş aynı15 kapsam; sabit20 soru değişmedi. r2 gerçek427normal/44format0/analyze0/native1 PASS; 22durum198duyarlı tamkaydırma. Yeni RAW65PNG/34benzersiz/31bayteşalias; ilk r1 sayıları tarihsel olup yeni adayın sayısı değildir. Yeni bağımsız geçmişsiz okuma beklenir, task REVIEW. `vault/PACKS/P-E1-019a.md`; `vault/EVIDENCE/E-DEV-118.md`.
+
+## RET sonrası bağımsız geçmişsiz r2 ekran okuması — SOURCE adayı
+
+Geçmişsiz /root/e1019a_blind_r2, sahibin istediği gpt-6-luna/max, yalnız sabit20soru ve65PNG/22durum ham makbuzu. Kod/plan/pack/cevapanahtarı verilmedi. Özgün rapor Root tarafından tümüyle okundu;20anlam için sınırlı PASS, gerçek çalışma/insan/cihaz/ürün kabulü değildir. Kod4cc71ceb42ac5bcac24085f28318dac9f8059ec5; RAW14913bayt/SHA256 3c3c466efb72b6426603384f61a95af0e7d0e9073d04fdc98dc077f4d8643d26. Root34orijinal+D02 ve bağımsız okuyucunun gerçek görsel açımı raporda ayrı kayıtlıdır;31byteeşalias ayrı ekran sayılmaz. Yerel427/44format0/analyze0/42graphworst0/198duyarlı/native1; geri çekilen ilkindex113tahmini yerine gerçek110 ve97BASEpin/tam15/sabit20 korunur. Bütün SOURCE incelemesi, aynıSOURCECI-T3/FINAL6freshreviewCI/normalmerge-main8 beklenir. Gerçek106/100/206 değişmedi. Üretim ve ayrıSCR-TBD HELD; ayrı T019b görevi henüz yapılmadı. `vault/PACKS/P-E1-019a.md`; `vault/EVIDENCE/E-DEV-118.md`.
+
+İlk r1 RET özgün raporu yukarıda korunur; yeni r2 görüşü önceki RET tarihini silmez. Root tüm34r2 özgün görseli açtı; r2 tam427/44format0/analyze0/native1 ve kod-r2graph42worst0 doğrulandı.
