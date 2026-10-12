@@ -46,3 +46,7 @@ V-E10-CLOSE001 templates/CLOSURE_MATRIX_TEMPLATE.md10katman: bu görev kabulü f
 ## Root gerçek görsel okuması
 
 Root27benzersiz doğalPNG ve approvedD02 gerçekten açtı;60RAW/33bayteşalias,20durum tamkaydırma; metinler ve kabuk5 okunur. Kaydırma sırasında kenarda kısmen görünen satırlar komşu parçada tam okunur; kalıcı taşma gözlenmedi. D02 bilgi/uygunluk/güven ayrımı korunur; finaltokens/cihaz/üretim kabulü yok. İlk geçmişsiz okuma bekleniyor. İlk format komutu yanlış executable adresi nedeniyle çalışmadı; doğru cache/dart-sdk/bin/dart.exe ile gerçek45format0 ayrıca doğrulandı; full437/analyze0/native11 sonuçları değişmez.
+
+## Bağımsız geçmişsiz ilk ekran okuması — SOURCE adayı
+
+Geçmişsiz /root/e1019b_blind_r1, istenen gpt-6-luna/max, yalnız sabit20soru ve60PNG/20durum ham makbuzu. Kod/plan/pack/cevap anahtarı verilmedi. Özgün rapor Root tarafından tümüyle okundu;20anlam için sınırlıPASS; gerçek insan/cihaz/üretim kabulü değildir. Kod 0cd4846ac433c5ee992f8a52c9c0881865477314; RAW9512bayt/SHA256 1c5051a9155b26ab4e50feff12ad1bd31bc5953be363667f59718e7addf3a3e3. Root27özgün+D02 gerçekten açtı;33bayteşalias yeni görsel sayılmaz. Yerel437/45format0/analyze0/42graphworst0/180duyarlı/native11; tam15/105BASEpin/sabit20/iki eskiRAWsnapshot/index111 korunur. Bütün SOURCE incelemesi ve aynıCI-T3/FINAL6freshreviewCI/normalmerge-main8 gerekir. Gerçek107/99/206 değişmedi. Üretim ve ayrıSCR-TBD HELD. `vault/PACKS/P-E1-019b.md`; `vault/EVIDENCE/E-DEV-119.md`.
