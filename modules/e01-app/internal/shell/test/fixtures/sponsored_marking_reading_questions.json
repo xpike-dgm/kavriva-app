@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-020",
+  "profile": "Geçmişsiz gpt-6-luna/max; yalnız doğal tam ekranlar ve sabit sorular",
+  "passRule": "Yirmi anlamın tamamı yardım olmadan açık olmalı; belirsizlikte dar onarım ve taze okuma",
+  "questions": [
+    "Hangi seçenek reklam veya sponsor desteği içeriyor?",
+    "Sponsor bilgisini her seçeneğin yanında görebiliyor musun?",
+    "Sponsor desteği olmayan seçenek nasıl belirtiliyor?",
+    "Sponsor durumu bilinmiyorsa seçenek reklamsız sayılıyor mu?",
+    "Reklam bilgisinin eksik olduğu bir seçenek normal öneri gibi sunuluyor mu?",
+    "Diğer seçenekler nerede; yalnız sponsorlu olan mı gösteriliyor?",
+    "Kaynak alternatifleri vermediyse alternatif olmadığı kesin mi?",
+    "Boş seçenek listesi ne anlama geliyor?",
+    "Seçeneklere bakmadan önce teknik uygunluk bilgisi nerede?",
+    "Sponsor desteği motosiklete uygunluğu veya bakım iznini değiştiriyor mu?",
+    "Bu liste rehberin yerini alıyor mu?",
+    "Bir seçeneğin gösterilmesi teknik olarak en iyi olduğunu kanıtlıyor mu?",
+    "Motosiklet veya rehber değişince eski liste kullanılabilir mi?",
+    "Kaynak eski veya doğrulanmamışsa ne oluyor?",
+    "Yükleme, hata veya çevrimdışı durumda eski liste güncelmiş gibi mi gösteriliyor?",
+    "Kaynak adı, sürümü ve kontrol zamanı nerede?",
+    "Bu örnekler gerçek satıcı, teklif veya doğrulanmış fiyat mı?",
+    "Bu alanda satın alma, ödeme veya servis rezervasyonu başlatılıyor mu?",
+    "Okumak hesap açmanı veya satın almanı gerektiriyor mu?",
+    "Alt çubukta hangi bölümler var; yeni alışveriş sekmesi var mı?"
+  ]
+}
