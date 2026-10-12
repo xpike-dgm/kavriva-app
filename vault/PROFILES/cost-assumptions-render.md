@@ -16,7 +16,7 @@ depends_on: [M-E1-001, M-E3-001, V-E1-COST-001, V-E1-RANGE-001, V-E1-DISCOVERY-0
 used_by: [P-E1-019b, T-E1-019b, E-DEV-119]
 evidence: [E-DEV-119]
 supersedes: []
-status: REVIEW
+status: ACTIVE
 ---
 
 # Kaynak varsayımları ve bilinmeyen bilgi — sınırlı SCR010 sunumu
@@ -58,3 +58,15 @@ SOURCE R1 ef473b9432fbf785cef84bff39b8f50e9f916731 ayrı /root/e1019b_source_who
 Tasarım karşılaştırmasının sınırı da açıktır: önceki “D02 hiyerarşisi korunur” ifadesi birebir D02 konumu/piksel eşliği kabulü değildir. Doğal ekran, T019a'dan kabul edilmiş maliyet alanını uygunluk bölümünden önce tutar; D02 örneğinde uygunluk daha önce gelir. T019b mevcut sıralamayı değiştirmez, yalnız kaynak varsayımları uyarısını ekler. Bilgi ile uygulama izninin ayrılması ve kabuk korunur; bu mevcut görsel konum farkı ve tamtasarım/son token/cihaz/yayın kabulü HELD.
 
 Onarım yalnız5izinli metaveri dosyasında; ürün kodu/test/sabit20/60RAW/27unique/33alias/180duyarlı/427korunan/105BASEpin/iki eskiRAWsnapshot/index111 değişmez. Yeni SOURCE taze geçmişsiz bütün inceleme ve aynıCI/T3 bekler. TaskREVIEW; gerçek107DONE99kalan206 ve üretimHELD korunur. `vault/PACKS/P-E1-019b.md`; `vault/EVIDENCE/E-DEV-119.md`.
+
+## Bağımsız bütün SOURCE kabulü — sınırlı FINAL adayı
+
+2026-10-12 SOURCE 50c62a1d5ed5574dff459d36c78ff7f440da775b; gerçek ana taban 3d5eff3567ac1e694d7518f509220079dc264348. Sahibin kabul ettiği bağımsız /root/e1019b_source_whole_r2, gpt-6-luna/max, tam15/105BASEpin/iki eskiRAWsnapshot, kod/test/sabit20/ilk okuma/native/tasarım ve görev sınırlarını PASS değerlendirdi. Root özgün raporun tamamını okudu ve RAW bayt/özetini doğruladı. İlk target-r1 derlemeFAIL ve ilk bütün SOURCE CHANGES_REQUESTED özgün raporları korunur; dar test parametre düzeltmesi ve eski HTML byte iddiasına append-only kayıt düzeltmesi sonrası taze bağımsız inceleme yapılır. Aynı SOURCE gerçekGitHubCI aileleri ve PR T3 gerçek adımları başarılı. Normal437=427korunan+10yeni;45format0/analyze0;graph42worst0/index111. Ayrı native11 normal toplama eklenmez;20durum180tamkaydırma60PNG27benzersiz33alias; Root ve bağımsız ilk okuyucu gerçek doğal görselleri açtı.
+
+FINAL yalnız6kayıt dosyasıdır. Kod/test/sabit20/eskiRAWsnapshot/105BASEpin/korunan427/YAML/SDK/deps değişmez. Profil/paketACTIVE; T-E1-019b DONE yalnız dalın sınırlı kaynak varsayımları kabul adayıdır. Ayrı bağımsız FINAL incelemesi, aynıFINAL gerçekCI/T3, normalmerge ve fetchedmain8 olmadan gerçek ana107DONE99kalan206 değişmez. Üretim fiyat kaynağı/feed, ayrıSCR-TBD, gerçek kimlik/yetki/router/physical/device/releaseHELD; E3R1REVIEW/E5IN_PROGRESS korunur. `vault/PACKS/P-E1-019b.md`; `vault/EVIDENCE/E-DEV-119.md`.
+
+### Tasarım karşılaştırmasının ve RAW sunumunun açık sınırı
+
+Önceki “D02 hiyerarşisi korunur” ifadesi birebir D02 konumu veya piksel eşliği kabulü değildir. Doğal ekran T019a'dan kabul edilmiş maliyet alanını uygunluk bölümünün önünde tutar; D02 örneğinde uygunluk daha önce gelir. T019b mevcut alan sırasını değiştirmez, yalnız kaynak varsayımları uyarısını ekler. Bilgi ile uygulama izninin ayrılması ve mevcut kabuk korunmuştur; D02 ile bu mevcut konum farkı açık kalır, tam görsel tasarım/son token/yayın kabulü HELD.
+
+HTML pre görünümü okunabilir sunumdur; Git whitespace kontrolü için satır sonu boşlukları kırpılır, RAW ile byte-byte aynı olduğu iddia edilmez. Özgün rapor baytları RAWBase64 içinde ve kalıcı TXT dosyasında aynı SHA256 ile korunur. Eski EDEV118 FINAL raporunda 5satırdaki10sonboşluk yalnız HTML görünümünde kırpılmıştır; özgün7662bayt/SHA256 e9b87c452c3f4bf929c6d98d7f8b0163f917d27bedfbce3387887603c5ec3de9 değişmemiştir.
