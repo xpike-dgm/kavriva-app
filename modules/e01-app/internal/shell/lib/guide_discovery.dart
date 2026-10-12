@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'cost_split.dart';
 import 'duration_range.dart';
+import 'ranking_firewall.dart';
 import 'sponsored_marking.dart';
 import 'variant_resolution.dart';
 
@@ -264,6 +265,7 @@ class GuideScopePreview extends StatelessWidget {
     this.duration,
     this.cost,
     this.commercial,
+    this.commercialPurpose = CommercialPurpose.supplement,
   });
   final VariantContext context;
   final GuideScope? scope;
@@ -277,6 +279,9 @@ class GuideScopePreview extends StatelessWidget {
   final DurationRangePresentation? duration;
   final CostSplitPresentation? cost;
   final CommercialPresentation? commercial;
+
+  /// İç sunum amacı beyanı; üretim feed doğrulaması değildir.
+  final CommercialPurpose commercialPurpose;
   @override
   Widget build(BuildContext context) {
     final s = scope;
@@ -325,10 +330,14 @@ class GuideScopePreview extends StatelessWidget {
           onEditRequested: onEditRequested,
         ),
         if (commercial != null)
-          SponsoredMarkingView(
-            context: this.context,
-            presentation: commercial!,
-            scopeCurrent: matches && s.current && !busy && errorMessage == null,
+          RankingFirewallView(
+            purpose: commercialPurpose,
+            child: SponsoredMarkingView(
+              context: this.context,
+              presentation: commercial!,
+              scopeCurrent:
+                  matches && s.current && !busy && errorMessage == null,
+            ),
           ),
       ],
     );

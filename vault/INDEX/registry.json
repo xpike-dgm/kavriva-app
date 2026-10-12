@@ -1540,6 +1540,65 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E1-021",
+   "version": "1",
+   "flow_feature": "FL1.9.2/F1.9.2",
+   "objective": "Ticari ve teknik karar ayrımını korumak",
+   "context_pack": "P-E1-021",
+   "acceptance": "Listing never substitutes guide; sales-target blocked; fit-first; no analytics input",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-13",
+   "purpose": "Ticari listenin rehber veya teknik karar yerine geçmesini engellemek",
+   "domain": "commercial-neutrality",
+   "module": "e01-app",
+   "owner": "E1",
+   "implements": [
+    "ADR-001",
+    "ADR-008",
+    "ADR-014",
+    "C1.9",
+    "F1.9.2",
+    "FL1.9.2",
+    "SCR-010",
+    "BR-070",
+    "BR-071",
+    "BR-073",
+    "R-001",
+    "R-003",
+    "R-004",
+    "R-007",
+    "R-009",
+    "R-011",
+    "R-012",
+    "R-013",
+    "R-014"
+   ],
+   "public_contracts": [],
+   "internal_scope": "ranking-firewall-presentation",
+   "tasks": [
+    "T-E1-021"
+   ],
+   "tests": [
+    "modules/e01-app/internal/shell/test/ranking_firewall_test.dart",
+    "modules/e01-app/internal/shell/test/sponsored_marking_test.dart",
+    "modules/e10-graph/checks/check_registration.py",
+    "modules/e10-graph/checks/check_links.py"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-13",
+   "depends_on": [
+    "T-E1-020"
+   ],
+   "used_by": [
+    "V-E1-RANK-001",
+    "T-E1-021",
+    "E-DEV-121"
+   ],
+   "evidence": "E-DEV-121",
+   "supersedes": "planning TASK_INDEX T-E1-021",
+   "status": "REVIEW"
+  },
+  {
    "task_id": "T-E10-001",
    "flow_feature": "FL10.1.1/F10.1.1",
    "objective": "Graph node registration rule",
