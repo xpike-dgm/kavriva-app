@@ -152,8 +152,9 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
                 const SizedBox(height: 8),
                 if (!available)
                   const Text(
-                    'Bu adım için güncel kısa anlatım kullanılamıyor. Eski veya '
-                    'başka motosiklete ait metin gösterilmez; tam anlatımın '
+                    'Bu adım için güncel kısa anlatım kullanılamıyor. Eski, '
+                    'başka motosiklete veya başka adıma ait metin gösterilmez; '
+                    'tam anlatımın '
                     'mevcut güvenlik kontrolleri korunur.',
                   ),
               ],

@@ -444,6 +444,7 @@ void main() {
             ),
           ),
         );
+        expect(find.textContaining('başka adıma ait'), findsOneWidget);
         expect(_enabled(tester, 'Kısa anlatımı aç'), isFalse);
         await _tap(tester, 'Kısa anlatımı aç');
         expect(find.text(step.instruction), findsOneWidget);
