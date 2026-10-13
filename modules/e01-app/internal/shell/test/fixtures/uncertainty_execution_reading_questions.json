@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-022b",
+  "profile": "Geçmişsiz istenen gpt-6-luna/max; doğal tam ekranlar ve sabit20",
+  "passRule": "Tüm20 anlam yardımsız açık; belirsizlikte dar onarım/taze okuma",
+  "questions": [
+    "Hangi motosiklet, rehber ve adım gösteriliyor?",
+    "Tam veya kısa anlatım nereden seçiliyor?",
+    "Güvenlik belirsizliği uyarısı nerede?",
+    "Görevin sonuna kaydırınca belirsizlik uyarısı kayboluyor mu?",
+    "Tam ve kısa anlatımda güvenlik uyarısı kalıyor mu?",
+    "Çevrimdışı güvenlik doğrulanmadığında normal ilerleme açılır mı?",
+    "Eski veya farklı motosiklete ait durum ilerleme izni olur mu?",
+    "Bozuk ya da karışık paketle bakım adımı uygulanmış sayılır mı?",
+    "İçeriği indirmek tek başına güvenlik veya izin doğrulaması mı?",
+    "Bağlantının gelmesi veya kısa moda geçiş tek başına ilerleme açar mı?",
+    "Kontrolü tamamladım düğmesi bu belirsizlikte bildirim gönderir mi?",
+    "Sorun varsa hangi yola ulaşabilirsin?",
+    "Güvenli durdurma yoluna ulaşmak güvenli sonuç kaydeder mi?",
+    "Güncel durumu yeniden kontrol etme veya öğrenme yolu kalır mı?",
+    "Zorunlu risk, önleme ve durma koşulları nerede?",
+    "Büyük yazı veya uzun açıklama yüzünden içerik ve uyarı erişilemez olur mu?",
+    "İstek işlenirken veya hata varsa normal bildirim gönderilebilir mi?",
+    "İşleyici yoksa işlem yapılmış sayılır mı?",
+    "Örnek içerik gerçek motosiklet için bakım kararı mı?",
+    "Bu ekran motosikletin sürüşe güvenli olduğunu doğruluyor mu?"
+  ]
+}
