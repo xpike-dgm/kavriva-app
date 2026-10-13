@@ -166,6 +166,11 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
                   ),
                 const SizedBox(height: 8),
                 const Text(
+                  'Güvenli durdurma yolunu açmak bir istektir; bu ekran '
+                  "sonucu 'güvenli' diye kaydetmez.",
+                ),
+                const SizedBox(height: 8),
+                const Text(
                   'Bu ekran ilk açıldığında tam anlatım gösterilir. '
                   'Kısa anlatımı siz seçersiniz.',
                 ),

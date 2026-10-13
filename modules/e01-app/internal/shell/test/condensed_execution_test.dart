@@ -312,6 +312,10 @@ void main() {
       expect(find.text('Tam anlatım'), findsOneWidget);
       expect(find.textContaining('Bu ekran ilk açıldığında'), findsOneWidget);
       expect(find.textContaining('telefonunuzda daha hızlı'), findsOneWidget);
+      expect(
+        find.textContaining("sonucu 'güvenli' diye kaydetmez"),
+        findsOneWidget,
+      );
       expect(find.text(step.instruction), findsOneWidget);
       expect(find.text(short.instruction), findsNothing);
       await _tap(tester, 'Kısa anlatımı aç');
@@ -321,6 +325,10 @@ void main() {
       expect(rendered.step!.instruction, short.instruction);
       expect(find.textContaining('Bu ekran ilk açıldığında'), findsOneWidget);
       expect(find.textContaining('telefonunuzda daha hızlı'), findsOneWidget);
+      expect(
+        find.textContaining("sonucu 'güvenli' diye kaydetmez"),
+        findsOneWidget,
+      );
       expect(rendered.step!.stepCount, step.stepCount);
       expect(rendered.step!.stepNumber, step.stepNumber);
       expect(identical(rendered.step!.visual, step.visual), isTrue);
@@ -338,6 +346,10 @@ void main() {
         await _tap(tester, label);
       }
       expect(events.length, 3);
+      expect(
+        tester.widget<ActiveStepView>(find.byType(ActiveStepView)).step!.state,
+        step.state,
+      );
       expect(
         events.every(
           (e) => identical(e.scope, scope) && e.stepId == step.stepId,
