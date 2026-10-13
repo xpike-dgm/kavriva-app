@@ -164,6 +164,16 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
                     'tam anlatımın '
                     'mevcut güvenlik kontrolleri korunur.',
                   ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Bu ekran ilk açıldığında tam anlatım gösterilir. '
+                  'Kısa anlatımı siz seçersiniz.',
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Kısa anlatımın telefonunuzda daha hızlı olduğu henüz '
+                  'doğrulanmadı.',
+                ),
               ],
             ),
           ),

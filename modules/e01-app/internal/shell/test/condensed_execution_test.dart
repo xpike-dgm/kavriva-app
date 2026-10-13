@@ -310,6 +310,8 @@ void main() {
       final short = _short(scope: scope);
       await tester.pumpWidget(_app(_view(full: full, short: short)));
       expect(find.text('Tam anlatım'), findsOneWidget);
+      expect(find.textContaining('Bu ekran ilk açıldığında'), findsOneWidget);
+      expect(find.textContaining('telefonunuzda daha hızlı'), findsOneWidget);
       expect(find.text(step.instruction), findsOneWidget);
       expect(find.text(short.instruction), findsNothing);
       await _tap(tester, 'Kısa anlatımı aç');
@@ -317,6 +319,8 @@ void main() {
         find.byType(ActiveStepView),
       );
       expect(rendered.step!.instruction, short.instruction);
+      expect(find.textContaining('Bu ekran ilk açıldığında'), findsOneWidget);
+      expect(find.textContaining('telefonunuzda daha hızlı'), findsOneWidget);
       expect(rendered.step!.stepCount, step.stepCount);
       expect(rendered.step!.stepNumber, step.stepNumber);
       expect(identical(rendered.step!.visual, step.visual), isTrue);
