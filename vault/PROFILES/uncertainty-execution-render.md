@@ -67,3 +67,7 @@ Native-r2:22örnekdurum96PNG63özgün33tam byte eşi;390×844, scale1ve3, doğal
 ## CODE dondurma öncesi güncel kapılar
 
 Yerel473/E4176/native10/54format0/analiz0 ve graph-r2 42testworst0/index115/390ID499Markdown122evidence gerçek sonuçları Root okundu.19izinliyol/161BASEpin/sabit20 veRAWv89 doğrulandı. İlk graph-r1 task evidence listesindeki parser hatası worst1 idi; yalnız yeni task scalar alanı mevcut standarda düzeltildi, checker değişmedi. Tam snapshot 1d8c076c2890fbe182e60a82ba4801f4db75bda98b2add35f8b5e3ed866a914c. Yeni geçmişsiz kör ilk-okuma, bütün SOURCE/aynıCI-T3/FINAL/main8 henüzbeklenir. Gerçek111/95/206; taskREVIEW/üstkapılarHELD. Python okuyucu tam display-context kopyasıyla actual E4 production_gate çağırır; E1wirefixture baytları önceki aynı outputla eş, production/trust binding kanıtı değildir.
+
+## Yeni bağımsız kör ilk okuma
+
+CODE 3a726b7a331c08c741ee08dce92ea840b45313a3 üzerinde geçmişsiz gpt-6-luna/max okuyucu, yalnız gerçek doğal ekranlardan sabit20 soruya PASS verdi. Root özgün tam raporu okudu/baytSHA doğruladı; çalışanmodelattestation unavailable. Bu ilk-okuma insan/cihaz/üretim veya bütünSOURCE kabulü değildir. Yerel473/E4176/native10/54format0/analyze0/graph42worst0/index115;22durum96PNG63unique33tamalias,72responsive. Yeni bütünSOURCE/aynıCI-T3/FINAL/main8 beklenir; gerçek111/95/206, üstkapılarHELD.
