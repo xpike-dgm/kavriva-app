@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "task": "T-E1-022a",
+  "profile": "Geçmişsiz istenen gpt-6-luna/max; doğal tam ekranlar ve sabit20",
+  "passRule": "Tüm20 anlam yardım olmadan açık; belirsizlikte dar onarım ve taze okuma",
+  "questions": [
+    "Bu ekran hangi motosiklet, rehber ve adımı gösteriyor?",
+    "İlk açılışta tam mı kısa mı anlatım var?",
+    "Kısa anlatımı kim ve nasıl açıyor?",
+    "Tam anlatıma nasıl dönebilirsin?",
+    "Kısa anlatım bakımın zorunlu adımlarını atlar mı?",
+    "Adım sayısı kısa modda değişiyor mu?",
+    "Kritik risk, önleme ve durma koşulları nerede?",
+    "Kısa mod motosikletin sürüşe güvenli olduğunu doğrular mı?",
+    "Belirsizlik açıklaması iki modda da kalıyor mu?",
+    "Kısa kaynak eksik veya eskiyse ne olur?",
+    "Başka motosiklet veya adıma ait kısa metin kullanılabilir mi?",
+    "Motosiklet, rehber veya fiziksel durum değişince önceki seçim kalır mı?",
+    "Güncel güvenlik kontrolü olmadan normal ilerleme açılır mı?",
+    "Kontrolü tamamladım kendiliğinden sonraki adıma geçirir mi?",
+    "Sorun olduğunda hangi yolu açabilirsin?",
+    "Güvenli durdurma yolunu açmak sonucu güvenli diye kaydeder mi?",
+    "İstek işlenirken veya hata varsa normal bildirim gönderilebilir mi?",
+    "İşleyici yoksa işlem yapılmış sayılır mı?",
+    "Örnek içerik gerçek motosiklet için karar mı?",
+    "Gerçek cihazda daha hızlı olduğu kanıtlanmış mı?"
+  ]
+}

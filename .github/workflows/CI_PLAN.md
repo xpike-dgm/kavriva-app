@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-CONDENSED-001"
+  - "P-E1-022a"
+  - "E-DEV-122"
   - "V-E1-RANK-001"
   - "P-E1-021"
   - "E-DEV-121"
@@ -623,3 +626,10 @@ SOURCE8654b41 bağımsızRET/17CI tarihçedir; canRequest güncelstatusu gerekti
 ## Ticari yönlendirme sınırının belge tüketimi
 
 `vault/PACKS/P-E1-021.md`; `vault/EVIDENCE/E-DEV-121.md`. Mevcut SCR010 içinde fit sonrası salt metin ve yardımcı amaç dışındaki ticari içeriğin engellenmesi; yeni commercehome/catalog/route/production/publicseam/YAML yok. Yerel454/49format0/analyze0, bağımsız kabul beklenir. Gerçek109DONE97kalan206.
+
+## Kısa anlatımın belge tüketimi
+
+`vault/PACKS/P-E1-022a.md`; `vault/EVIDENCE/E-DEV-122.md`. MevcutE1ActiveStepViewkorunur, kullanıcıshort/full, samephysicalstepcount ve safety, ölçümv2boundsHELD. No newpublicseam/router/YAML/provider/Auth. Yerel463/9yeni/native10/51format/analyze0; bağımsızREVIEWbekler.110DONE96kalan206.
+
+
+T-E1-022a aynı14kapsamında bağımsızU04RET sonrası görev-önce düzen düzeltildi. Güncel yerel464normal/10yeni, ayrı11native/55PNG22özgün33alias/72responsive/51format0/analyze0. Eski463veilkSOURCECI17 tarihçedir; yeniSOURCE/aynıCI/bütünbağımsızkabul henüzbeklenir. E-DEV-122/P-E1-022a. ÜstkapılarveT022bHELD; YAML/SDK/oldactive/runtimeconsumer değişmez.
