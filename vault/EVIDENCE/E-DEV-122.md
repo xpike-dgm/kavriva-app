@@ -1065,3 +1065,177 @@ M-CONDENSED-01v2 same390×844/scale1/defaulttestfont kullanıcıtap→pump inter
 measurement-native-r9.json 888byte/SHA256816085014f08b5d9676d95c41c82f13f9143c1ba928fd98ee2979dd61b31a80d: {"method": "M-CONDENSED-01 v2", "viewport": [390, 844], "scale": 1, "interval": "tester.tap through tester.pump; excludes ensureVisible; includes pointer/build/layout/paint/harness", "warmupPairs": 1, "pairs": 3, "deviceProof": false, "bounds": "HELD", "samples": [{"pair": 0, "mode": "short", "wallMicroseconds": 27498, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 0, "mode": "full", "wallMicroseconds": 23203, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}, {"pair": 1, "mode": "short", "wallMicroseconds": 24417, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 1, "mode": "full", "wallMicroseconds": 20448, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}, {"pair": 2, "mode": "short", "wallMicroseconds": 24793, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 2, "mode": "full", "wallMicroseconds": 24414, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}]}
 
 measurement-full-r7.json 888byte/SHA2563d02dcd01394a836daf665d675664547081fd9e96e0e5843998233cd1e09231a: {"method": "M-CONDENSED-01 v2", "viewport": [390, 844], "scale": 1, "interval": "tester.tap through tester.pump; excludes ensureVisible; includes pointer/build/layout/paint/harness", "warmupPairs": 1, "pairs": 3, "deviceProof": false, "bounds": "HELD", "samples": [{"pair": 0, "mode": "short", "wallMicroseconds": 32489, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 0, "mode": "full", "wallMicroseconds": 30419, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}, {"pair": 1, "mode": "short", "wallMicroseconds": 29799, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 1, "mode": "full", "wallMicroseconds": 28839, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}, {"pair": 2, "mode": "short", "wallMicroseconds": 29641, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 39}, {"pair": 2, "mode": "full", "wallMicroseconds": 24682, "stepNumber": 4, "stepCount": 9, "instructionCharacters": 50}]}
+
+
+## Kör R7 hükmü ve Q16 kod öncesi açıklama planı
+
+CODE d7d0bccadf103c85014aaec3748492c893cce896 için bağımsız geçmişsiz R7, sabit 20 sorunun 19una PASS, Q16ya CHANGES_REQUESTED verdi. Güvenli durdurma yolunu açmanın sonucu güvenli diye kaydetmediği ekranda açık değil. Özgün rapor ve yalnız Q2/Q20 PNG atıflarını düzelten rapor ayrı korunur; Root ikisini tam okudu ve bayt/SHA doğruladı.
+
+Kod öncesi dar kapsam: aynı 14 izinli dosya ve 150 BASE pini içinde yalnız sarıcının görev sonu açıklamasına “Güvenli durdurma yolunu açmak bir istektir; bu ekran sonucu güvenli diye kaydetmez.” bilgisini eklemek ve mevcut tam/kısa callback testinde açıklamayı ve adım durumunun değişmediğini doğrulamak. Mevcut ExecutionRequest yalnız scope/stepId/checkId taşır; OutcomeRequest ayrı tiptir. Dış işleyicinin veritabanı davranışı için iddia yoktur. Görev-önce sıra, oldactive, guardlar, SDK/YAML, sabit 20 soru ve ölçüm yöntemi değişmez. Yeni yerel testler ve görüntüler, geçmişsiz ilk okuma, bütün SOURCE/aynı CI/T3, FINAL/main kanıtı gereklidir. Görev REVIEW; gerçek 110 tamamlanan/96 kalan/206 toplam. Üretim/cihaz/insan/fiziksel/sürüş/yayın ve T022b HELD.
+
+### Özgün R7 raporu: first-reading-r7.txt
+
+6649 bayt; SHA256 b51435b459a44397ebea031b1a5d61443f02a78fd55782b5eff9dc21b8c63973. Tam Root okuması kaydedildi. Görünen HTML normalleştirilir, RAW özgün baytları korur.
+
+<pre># Bağımsız arayüz ilk-okuması — R7
+
+## Genel karar
+
+**CHANGES_REQUESTED — 19/20 soru açıkça yanıtlanıyor.** Q16, güvenli durdurma yolunu açmanın sonucu “güvenli” diye kaydedip kaydetmediğini açıkça söylemiyor. Ekran yalnızca bu yolu açmanın motosikletin güvenli olduğunu doğrulamadığını belirtiyor.
+
+Bu değerlendirme yalnızca açılan ekranların verdiği bilgiyi kapsar. Kod çalıştırma, soğuk açılış, gerçek cihaz hızı, insan testi ve üretim kabulü bu görevde doğrulanmadı. Q20’deki PASS, ekranda telefon hızının henüz doğrulanmadığının açıkça yazıldığını gösterir; bağımsız hız ölçümü değildir.
+
+- Rapor kapsam kimliği: CODE d7d0bccadf103c85014aaec3748492c893cce896 (görev mesajında atanmış; git/kod üzerinden doğrulanmadı).
+- İstenen model ayarı: gpt-6-luna/max.
+- Çalışan model ve efor için bu görevde runtime kanıtı: unavailable.
+
+## Sabit 20 soru
+
+| # | Ekrandan açık cevap | Kanıt PNG | Karar |
+|---|---|---|---|
+| 1 | Motosiklet “Örnek ekran” olarak tanımlanıyor; gerçek motosiklet kararı olmadığı belirtiliyor. Rehber “Örnek konum kontrolü · guide-v2”, adım 4/9. | native-r9-full-0.png | PASS |
+| 2 | İlk açılışta tam anlatım gösterilir; kısa anlatımı kullanıcı seçer. | native-r9-full-1.png | PASS |
+| 3 | Kullanıcı üstteki “Kısa anlatımı aç” bağlantısını seçer. | native-r9-full-0.png | PASS |
+| 4 | Üstteki “Tam anlatıma dön” bağlantısıyla tam anlatıma geçilir. | native-r9-short-0.png | PASS |
+| 5 | Kısa anlatım zorunlu bakım adımlarını atlamaz; güvenlik koşulları ve durma uyarıları korunur. | native-r9-short-1.png | PASS |
+| 6 | Adım göstergesi iki modda da 4/9’dur; adım sayısının değiştiği gösterilmiyor. | native-r9-full-0.png, native-r9-short-0.png | PASS |
+| 7 | Zorunlu güvenlik, risk, önleme ve durma koşulu bölümleri ekranda ayrı ayrı yer alır. | native-r9-full-0.png, native-r9-short-0.png | PASS |
+| 8 | Hayır. Ekran, sürüş güvenliğinin bu anlatımla doğrulanmadığını açıkça söyler. | native-r9-short-1.png | PASS |
+| 9 | Evet. Her iki modun açıklamasında belirsizlik varsa normal ilerlemenin açılmayacağı yazıyor. | native-r9-full-1.png, native-r9-short-1.png | PASS |
+| 10 | Güncel kısa anlatım yoksa eski veya uygunsuz kısa metin gösterilmez; tam anlatım ve mevcut güvenlik kontrolleri korunur. | native-r9-missing-short-2.png | PASS |
+| 11 | Hayır. Eski, başka motosiklete veya başka adıma ait metnin gösterilmeyeceği açıkça yazıyor. | native-r9-missing-short-2.png | PASS |
+| 12 | Motosiklet, rehber, adım veya güncel durum değişirse yeniden tam anlatımdan başlanır. | native-r9-short-1.png | PASS |
+| 13 | Hayır. Güncel kaynak, uygunluk veya zorunlu güvenlik koşulu doğrulanmadığında normal ilerleme kapalıdır; eski onay yeterli değildir. | native-r9-unreviewed-safety-0.png | PASS |
+| 14 | Hayır. “Kontrolü tamamladım” adım bildirimi gönderir; kendiliğinden sonraki adıma geçmez ve tüm işi tamamlanmış saymaz. | native-r9-full-1.png | PASS |
+| 15 | Sorun için “Sorun var” yolu görünür. | native-r9-full-1.png | PASS |
+| 16 | Ekran, yolu açmanın motosikletin güvenli olduğunu doğrulamadığını söylüyor. Sonucun güvenli diye kaydedilmediğini açıkça söylemiyor. | native-r9-short-1.png | CHANGES_REQUESTED |
+| 17 | İstek işlenirken veya hata çözülmemişken yeni adım bildirimi gönderilemez. | native-r9-busy-short-1.png, native-r9-error-short-1.png | PASS |
+| 18 | İstek işleyicisi yoksa düğme kapalıdır ve işin yapıldığı varsayılmaz. | native-r9-no-handler-short-1.png | PASS |
+| 19 | İçerik örnek olarak işaretlenmiş; gerçek motosiklet talimatı veya kararı olmadığı açıkça yazıyor. | native-r9-long-full-0.png | PASS |
+| 20 | Hayır. Ekran, kısa anlatımın telefonda daha hızlı olduğunun henüz doğrulanmadığını söylüyor. Bu görevde gerçek cihaz ölçümü yapılmadı. | native-r9-short-1.png | PASS |
+
+## Açılan özgün PNG’ler
+
+Aşağıdaki 21 dosyanın her biri view_image ile özgün ayrıntıda açıldı:
+
+1. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-0.png
+2. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-1.png
+3. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-2.png
+4. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-short-0.png
+5. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-short-1.png
+6. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-short-2.png
+7. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-active-0.png
+8. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-active-1.png
+9. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-held-active-0.png
+10. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-held-active-1.png
+11. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-safety-0.png
+12. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-unreviewed-safety-0.png
+13. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-unreviewed-safety-1.png
+14. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-busy-short-1.png
+15. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-busy-short-2.png
+16. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-error-short-1.png
+17. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-error-short-2.png
+18. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-no-handler-short-1.png
+19. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-no-handler-short-2.png
+20. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-long-full-0.png
+21. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-long-full-1.png
+
+## Dosya ve kanıt kontrolleri
+
+- Sabit soru dosyası: 1.490 bayt; SHA-256 630543577a2dd9620b1998391370e27d4341b85665a7fe9d33a52921e40d3b3f; 20 soru. Beklenen boyut ve SHA eşleşti.
+- native-r9-proof.json: 21 vaka, 57 kayıt, 21 benzersiz görüntü ve 36 alias.
+- 57 kayıtlı görüntünün tamamında gerçek dosya boyutu ve SHA-256 kayıtla eşleşti. PNG IHDR türü ve 390×844 ölçüleri de doğrulandı.
+- 36 alias’ın her biri hedef PNG ile bayt bayt karşılaştırıldı; fark bulunmadı.
+- unique-images-native-r9.json içindeki 21 yolun tamamı açılan dosyalar arasında yer aldı.
+- Ürün, uygulama kodu, test, paket, git/PR veya önceki inceleme okunmadı ya da değiştirilmedi.
+
+## Rapor dosya biçimi
+
+Bu rapor UTF-8 BOM olmadan ve LF satır sonlarıyla yazıldı.
+</pre>
+
+RAW Base64: IyBCYcSfxLFtc8SxeiBhcmF5w7x6IGlsay1va3VtYXPEsSDigJQgUjcKCiMjIEdlbmVsIGthcmFyCgoqKkNIQU5HRVNfUkVRVUVTVEVEIOKAlCAxOS8yMCBzb3J1IGHDp8Sxa8OnYSB5YW7EsXRsYW7EsXlvci4qKiBRMTYsIGfDvHZlbmxpIGR1cmR1cm1hIHlvbHVudSBhw6dtYW7EsW4gc29udWN1IOKAnGfDvHZlbmxp4oCdIGRpeWUga2F5ZGVkaXAga2F5ZGV0bWVkacSfaW5pIGHDp8Sxa8OnYSBzw7Z5bGVtaXlvci4gRWtyYW4geWFsbsSxemNhIGJ1IHlvbHUgYcOnbWFuxLFuIG1vdG9zaWtsZXRpbiBnw7x2ZW5saSBvbGR1xJ91bnUgZG/En3J1bGFtYWTEscSfxLFuxLEgYmVsaXJ0aXlvci4KCkJ1IGRlxJ9lcmxlbmRpcm1lIHlhbG7EsXpjYSBhw6fEsWxhbiBla3JhbmxhcsSxbiB2ZXJkacSfaSBiaWxnaXlpIGthcHNhci4gS29kIMOnYWzEscWfdMSxcm1hLCBzb8SfdWsgYcOnxLFsxLHFnywgZ2Vyw6dlayBjaWhheiBoxLF6xLEsIGluc2FuIHRlc3RpIHZlIMO8cmV0aW0ga2FidWzDvCBidSBnw7ZyZXZkZSBkb8SfcnVsYW5tYWTEsS4gUTIw4oCZZGVraSBQQVNTLCBla3JhbmRhIHRlbGVmb24gaMSxesSxbsSxbiBoZW7DvHogZG/En3J1bGFubWFkxLHEn8SxbsSxbiBhw6fEsWvDp2EgeWF6xLFsZMSxxJ/EsW7EsSBnw7ZzdGVyaXI7IGJhxJ/EsW1zxLF6IGjEsXogw7Zsw6fDvG3DvCBkZcSfaWxkaXIuCgotIFJhcG9yIGthcHNhbSBraW1sacSfaTogQ09ERSBkN2QwYmNjYWRmMTAzYzg1MDE0YWFlYzM3NDg0OTJjODkzY2NlODk2IChnw7ZyZXYgbWVzYWrEsW5kYSBhdGFubcSxxZ87IGdpdC9rb2Qgw7x6ZXJpbmRlbiBkb8SfcnVsYW5tYWTEsSkuCi0gxLBzdGVuZW4gbW9kZWwgYXlhcsSxOiBncHQtNi1sdW5hL21heC4KLSDDh2FsxLHFn2FuIG1vZGVsIHZlIGVmb3IgacOnaW4gYnUgZ8O2cmV2ZGUgcnVudGltZSBrYW7EsXTEsTogdW5hdmFpbGFibGUuCgojIyBTYWJpdCAyMCBzb3J1Cgp8ICMgfCBFa3JhbmRhbiBhw6fEsWsgY2V2YXAgfCBLYW7EsXQgUE5HIHwgS2FyYXIgfAp8LS0tfC0tLXwtLS18LS0tfAp8IDEgfCBNb3Rvc2lrbGV0IOKAnMOWcm5layBla3JhbuKAnSBvbGFyYWsgdGFuxLFtbGFuxLF5b3I7IGdlcsOnZWsgbW90b3Npa2xldCBrYXJhcsSxIG9sbWFkxLHEn8SxIGJlbGlydGlsaXlvci4gUmVoYmVyIOKAnMOWcm5layBrb251bSBrb250cm9sw7wgwrcgZ3VpZGUtdjLigJ0sIGFkxLFtIDQvOS4gfCBuYXRpdmUtcjktZnVsbC0wLnBuZyB8IFBBU1MgfAp8IDIgfCDEsGxrIGHDp8SxbMSxxZ90YSB0YW0gYW5sYXTEsW0gZ8O2c3RlcmlsaXI7IGvEsXNhIGFubGF0xLFtxLEga3VsbGFuxLFjxLEgc2XDp2VyLiB8IG5hdGl2ZS1yOS1mdWxsLTEucG5nIHwgUEFTUyB8CnwgMyB8IEt1bGxhbsSxY8SxIMO8c3R0ZWtpIOKAnEvEsXNhIGFubGF0xLFtxLEgYcOn4oCdIGJhxJ9sYW50xLFzxLFuxLEgc2XDp2VyLiB8IG5hdGl2ZS1yOS1mdWxsLTAucG5nIHwgUEFTUyB8CnwgNCB8IMOcc3R0ZWtpIOKAnFRhbSBhbmxhdMSxbWEgZMO2buKAnSBiYcSfbGFudMSxc8SxeWxhIHRhbSBhbmxhdMSxbWEgZ2XDp2lsaXIuIHwgbmF0aXZlLXI5LXNob3J0LTAucG5nIHwgUEFTUyB8CnwgNSB8IEvEsXNhIGFubGF0xLFtIHpvcnVubHUgYmFrxLFtIGFkxLFtbGFyxLFuxLEgYXRsYW1hejsgZ8O8dmVubGlrIGtvxZ91bGxhcsSxIHZlIGR1cm1hIHV5YXLEsWxhcsSxIGtvcnVudXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgNiB8IEFkxLFtIGfDtnN0ZXJnZXNpIGlraSBtb2RkYSBkYSA0LznigJlkdXI7IGFkxLFtIHNhecSxc8SxbsSxbiBkZcSfacWfdGnEn2kgZ8O2c3RlcmlsbWl5b3IuIHwgbmF0aXZlLXI5LWZ1bGwtMC5wbmcsIG5hdGl2ZS1yOS1zaG9ydC0wLnBuZyB8IFBBU1MgfAp8IDcgfCBab3J1bmx1IGfDvHZlbmxpaywgcmlzaywgw7ZubGVtZSB2ZSBkdXJtYSBrb8WfdWx1IGLDtmzDvG1sZXJpIGVrcmFuZGEgYXlyxLEgYXlyxLEgeWVyIGFsxLFyLiB8IG5hdGl2ZS1yOS1mdWxsLTAucG5nLCBuYXRpdmUtcjktc2hvcnQtMC5wbmcgfCBQQVNTIHwKfCA4IHwgSGF5xLFyLiBFa3Jhbiwgc8O8csO8xZ8gZ8O8dmVubGnEn2luaW4gYnUgYW5sYXTEsW1sYSBkb8SfcnVsYW5tYWTEscSfxLFuxLEgYcOnxLFrw6dhIHPDtnlsZXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgOSB8IEV2ZXQuIEhlciBpa2kgbW9kdW4gYcOnxLFrbGFtYXPEsW5kYSBiZWxpcnNpemxpayB2YXJzYSBub3JtYWwgaWxlcmxlbWVuaW4gYcOnxLFsbWF5YWNhxJ/EsSB5YXrEsXlvci4gfCBuYXRpdmUtcjktZnVsbC0xLnBuZywgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTAgfCBHw7xuY2VsIGvEsXNhIGFubGF0xLFtIHlva3NhIGVza2kgdmV5YSB1eWd1bnN1eiBrxLFzYSBtZXRpbiBnw7ZzdGVyaWxtZXo7IHRhbSBhbmxhdMSxbSB2ZSBtZXZjdXQgZ8O8dmVubGlrIGtvbnRyb2xsZXJpIGtvcnVudXIuIHwgbmF0aXZlLXI5LW1pc3Npbmctc2hvcnQtMi5wbmcgfCBQQVNTIHwKfCAxMSB8IEhhecSxci4gRXNraSwgYmHFn2thIG1vdG9zaWtsZXRlIHZleWEgYmHFn2thIGFkxLFtYSBhaXQgbWV0bmluIGfDtnN0ZXJpbG1leWVjZcSfaSBhw6fEsWvDp2EgeWF6xLF5b3IuIHwgbmF0aXZlLXI5LW1pc3Npbmctc2hvcnQtMi5wbmcgfCBQQVNTIHwKfCAxMiB8IE1vdG9zaWtsZXQsIHJlaGJlciwgYWTEsW0gdmV5YSBnw7xuY2VsIGR1cnVtIGRlxJ9pxZ9pcnNlIHllbmlkZW4gdGFtIGFubGF0xLFtZGFuIGJhxZ9sYW7EsXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTMgfCBIYXnEsXIuIEfDvG5jZWwga2F5bmFrLCB1eWd1bmx1ayB2ZXlhIHpvcnVubHUgZ8O8dmVubGlrIGtvxZ91bHUgZG/En3J1bGFubWFkxLHEn8SxbmRhIG5vcm1hbCBpbGVybGVtZSBrYXBhbMSxZMSxcjsgZXNraSBvbmF5IHlldGVybGkgZGXEn2lsZGlyLiB8IG5hdGl2ZS1yOS11bnJldmlld2VkLXNhZmV0eS0wLnBuZyB8IFBBU1MgfAp8IDE0IHwgSGF5xLFyLiDigJxLb250cm9sw7wgdGFtYW1sYWTEsW3igJ0gYWTEsW0gYmlsZGlyaW1pIGfDtm5kZXJpcjsga2VuZGlsacSfaW5kZW4gc29ucmFraSBhZMSxbWEgZ2XDp21leiB2ZSB0w7xtIGnFn2kgdGFtYW1sYW5txLHFnyBzYXltYXouIHwgbmF0aXZlLXI5LWZ1bGwtMS5wbmcgfCBQQVNTIHwKfCAxNSB8IFNvcnVuIGnDp2luIOKAnFNvcnVuIHZhcuKAnSB5b2x1IGfDtnLDvG7DvHIuIHwgbmF0aXZlLXI5LWZ1bGwtMS5wbmcgfCBQQVNTIHwKfCAxNiB8IEVrcmFuLCB5b2x1IGHDp21hbsSxbiBtb3Rvc2lrbGV0aW4gZ8O8dmVubGkgb2xkdcSfdW51IGRvxJ9ydWxhbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIFNvbnVjdW4gZ8O8dmVubGkgZGl5ZSBrYXlkZWRpbG1lZGnEn2luaSBhw6fEsWvDp2Egc8O2eWxlbWl5b3IuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgQ0hBTkdFU19SRVFVRVNURUQgfAp8IDE3IHwgxLBzdGVrIGnFn2xlbmlya2VuIHZleWEgaGF0YSDDp8O2esO8bG1lbWnFn2tlbiB5ZW5pIGFkxLFtIGJpbGRpcmltaSBnw7ZuZGVyaWxlbWV6LiB8IG5hdGl2ZS1yOS1idXN5LXNob3J0LTEucG5nLCBuYXRpdmUtcjktZXJyb3Itc2hvcnQtMS5wbmcgfCBQQVNTIHwKfCAxOCB8IMSwc3RlayBpxZ9sZXlpY2lzaSB5b2tzYSBkw7zEn21lIGthcGFsxLFkxLFyIHZlIGnFn2luIHlhcMSxbGTEscSfxLEgdmFyc2F5xLFsbWF6LiB8IG5hdGl2ZS1yOS1uby1oYW5kbGVyLXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTkgfCDEsMOnZXJpayDDtnJuZWsgb2xhcmFrIGnFn2FyZXRsZW5tacWfOyBnZXLDp2VrIG1vdG9zaWtsZXQgdGFsaW1hdMSxIHZleWEga2FyYXLEsSBvbG1hZMSxxJ/EsSBhw6fEsWvDp2EgeWF6xLF5b3IuIHwgbmF0aXZlLXI5LWxvbmctZnVsbC0wLnBuZyB8IFBBU1MgfAp8IDIwIHwgSGF5xLFyLiBFa3Jhbiwga8Sxc2EgYW5sYXTEsW3EsW4gdGVsZWZvbmRhIGRhaGEgaMSxemzEsSBvbGR1xJ91bnVuIGhlbsO8eiBkb8SfcnVsYW5tYWTEscSfxLFuxLEgc8O2eWzDvHlvci4gQnUgZ8O2cmV2ZGUgZ2Vyw6dlayBjaWhheiDDtmzDp8O8bcO8IHlhcMSxbG1hZMSxLiB8IG5hdGl2ZS1yOS1zaG9ydC0xLnBuZyB8IFBBU1MgfAoKIyMgQcOnxLFsYW4gw7Z6Z8O8biBQTkfigJlsZXIKCkHFn2HEn8SxZGFraSAyMSBkb3N5YW7EsW4gaGVyIGJpcmkgdmlld19pbWFnZSBpbGUgw7Z6Z8O8biBheXLEsW50xLFkYSBhw6fEsWxkxLE6CgoxLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktZnVsbC0wLnBuZwoyLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktZnVsbC0xLnBuZwozLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktZnVsbC0yLnBuZwo0LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktc2hvcnQtMC5wbmcKNS4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LXNob3J0LTEucG5nCjYuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1taXNzaW5nLXNob3J0LTIucG5nCjcuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1taXNzaW5nLWFjdGl2ZS0wLnBuZwo4LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktbWlzc2luZy1hY3RpdmUtMS5wbmcKOS4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LWhlbGQtYWN0aXZlLTAucG5nCjEwLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktaGVsZC1hY3RpdmUtMS5wbmcKMTEuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1taXNzaW5nLXNhZmV0eS0wLnBuZwoxMi4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LXVucmV2aWV3ZWQtc2FmZXR5LTAucG5nCjEzLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktdW5yZXZpZXdlZC1zYWZldHktMS5wbmcKMTQuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1idXN5LXNob3J0LTEucG5nCjE1LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktYnVzeS1zaG9ydC0yLnBuZwoxNi4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LWVycm9yLXNob3J0LTEucG5nCjE3LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktZXJyb3Itc2hvcnQtMi5wbmcKMTguIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1uby1oYW5kbGVyLXNob3J0LTEucG5nCjE5LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktbm8taGFuZGxlci1zaG9ydC0yLnBuZwoyMC4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LWxvbmctZnVsbC0wLnBuZwoyMS4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LWxvbmctZnVsbC0xLnBuZwoKIyMgRG9zeWEgdmUga2FuxLF0IGtvbnRyb2xsZXJpCgotIFNhYml0IHNvcnUgZG9zeWFzxLE6IDEuNDkwIGJheXQ7IFNIQS0yNTYgNjMwNTQzNTc3YTJkZDk2MjBiMTk5ODM5MTM3MGUyN2Q0MzQxYjg1NjY1YTdmZTlkMzNhNTI5MjFlNDBkM2IzZjsgMjAgc29ydS4gQmVrbGVuZW4gYm95dXQgdmUgU0hBIGXFn2xlxZ90aS4KLSBuYXRpdmUtcjktcHJvb2YuanNvbjogMjEgdmFrYSwgNTcga2F5xLF0LCAyMSBiZW56ZXJzaXogZ8O2csO8bnTDvCB2ZSAzNiBhbGlhcy4KLSA1NyBrYXnEsXRsxLEgZ8O2csO8bnTDvG7DvG4gdGFtYW3EsW5kYSBnZXLDp2VrIGRvc3lhIGJveXV0dSB2ZSBTSEEtMjU2IGthecSxdGxhIGXFn2xlxZ90aS4gUE5HIElIRFIgdMO8csO8IHZlIDM5MMOXODQ0IMO2bMOnw7xsZXJpIGRlIGRvxJ9ydWxhbmTEsS4KLSAzNiBhbGlhc+KAmcSxbiBoZXIgYmlyaSBoZWRlZiBQTkcgaWxlIGJheXQgYmF5dCBrYXLFn8SxbGHFn3TEsXLEsWxkxLE7IGZhcmsgYnVsdW5tYWTEsS4KLSB1bmlxdWUtaW1hZ2VzLW5hdGl2ZS1yOS5qc29uIGnDp2luZGVraSAyMSB5b2x1biB0YW1hbcSxIGHDp8SxbGFuIGRvc3lhbGFyIGFyYXPEsW5kYSB5ZXIgYWxkxLEuCi0gw5xyw7xuLCB1eWd1bGFtYSBrb2R1LCB0ZXN0LCBwYWtldCwgZ2l0L1BSIHZleWEgw7ZuY2VraSBpbmNlbGVtZSBva3VubWFkxLEgeWEgZGEgZGXEn2nFn3RpcmlsbWVkaS4KCiMjIFJhcG9yIGRvc3lhIGJpw6dpbWkKCkJ1IHJhcG9yIFVURi04IEJPTSBvbG1hZGFuIHZlIExGIHNhdMSxciBzb25sYXLEsXlsYSB5YXrEsWxkxLEuCg==
+
+### Özgün R7 raporu: first-reading-r7-citations-r2.txt
+
+6854 bayt; SHA256 0e8a9a021348b753d276ddad05cb890f43d7d2c00986ffa4407cb6faac086630. Tam Root okuması kaydedildi. Görünen HTML normalleştirilir, RAW özgün baytları korur.
+
+<pre># Bağımsız arayüz ilk-okuması — R7
+
+## Genel karar
+
+**CHANGES_REQUESTED — 19/20 soru açıkça yanıtlanıyor.** Q16, güvenli durdurma yolunu açmanın sonucu “güvenli” diye kaydedip kaydetmediğini açıkça söylemiyor. Ekran yalnızca bu yolu açmanın motosikletin güvenli olduğunu doğrulamadığını belirtiyor.
+
+Bu değerlendirme yalnızca açılan ekranların verdiği bilgiyi kapsar. Kod çalıştırma, soğuk açılış, gerçek cihaz hızı, insan testi ve üretim kabulü bu görevde doğrulanmadı. Q20’deki PASS, ekranda telefon hızının henüz doğrulanmadığının açıkça yazıldığını gösterir; bağımsız hız ölçümü değildir.
+
+- Rapor kapsam kimliği: CODE d7d0bccadf103c85014aaec3748492c893cce896 (görev mesajında atanmış; git/kod üzerinden doğrulanmadı).
+- İstenen model ayarı: gpt-6-luna/max.
+- Çalışan model ve efor için bu görevde runtime kanıtı: unavailable.
+
+## Sabit 20 soru
+
+| # | Ekrandan açık cevap | Kanıt PNG | Karar |
+|---|---|---|---|
+| 1 | Motosiklet “Örnek ekran” olarak tanımlanıyor; gerçek motosiklet kararı olmadığı belirtiliyor. Rehber “Örnek konum kontrolü · guide-v2”, adım 4/9. | native-r9-full-0.png | PASS |
+| 2 | İlk açılışta tam anlatım gösterilir; kısa anlatımı kullanıcı seçer. | native-r9-full-2.png | PASS |
+| 3 | Kullanıcı üstteki “Kısa anlatımı aç” bağlantısını seçer. | native-r9-full-0.png | PASS |
+| 4 | Üstteki “Tam anlatıma dön” bağlantısıyla tam anlatıma geçilir. | native-r9-short-0.png | PASS |
+| 5 | Kısa anlatım zorunlu bakım adımlarını atlamaz; güvenlik koşulları ve durma uyarıları korunur. | native-r9-short-1.png | PASS |
+| 6 | Adım göstergesi iki modda da 4/9’dur; adım sayısının değiştiği gösterilmiyor. | native-r9-full-0.png, native-r9-short-0.png | PASS |
+| 7 | Zorunlu güvenlik, risk, önleme ve durma koşulu bölümleri ekranda ayrı ayrı yer alır. | native-r9-full-0.png, native-r9-short-0.png | PASS |
+| 8 | Hayır. Ekran, sürüş güvenliğinin bu anlatımla doğrulanmadığını açıkça söyler. | native-r9-short-1.png | PASS |
+| 9 | Evet. Her iki modun açıklamasında belirsizlik varsa normal ilerlemenin açılmayacağı yazıyor. | native-r9-full-1.png, native-r9-short-1.png | PASS |
+| 10 | Güncel kısa anlatım yoksa eski veya uygunsuz kısa metin gösterilmez; tam anlatım ve mevcut güvenlik kontrolleri korunur. | native-r9-missing-short-2.png | PASS |
+| 11 | Hayır. Eski, başka motosiklete veya başka adıma ait metnin gösterilmeyeceği açıkça yazıyor. | native-r9-missing-short-2.png | PASS |
+| 12 | Motosiklet, rehber, adım veya güncel durum değişirse yeniden tam anlatımdan başlanır. | native-r9-short-1.png | PASS |
+| 13 | Hayır. Güncel kaynak, uygunluk veya zorunlu güvenlik koşulu doğrulanmadığında normal ilerleme kapalıdır; eski onay yeterli değildir. | native-r9-unreviewed-safety-0.png | PASS |
+| 14 | Hayır. “Kontrolü tamamladım” adım bildirimi gönderir; kendiliğinden sonraki adıma geçmez ve tüm işi tamamlanmış saymaz. | native-r9-full-1.png | PASS |
+| 15 | Sorun için “Sorun var” yolu görünür. | native-r9-full-1.png | PASS |
+| 16 | Ekran, yolu açmanın motosikletin güvenli olduğunu doğrulamadığını söylüyor. Sonucun güvenli diye kaydedilmediğini açıkça söylemiyor. | native-r9-short-1.png | CHANGES_REQUESTED |
+| 17 | İstek işlenirken veya hata çözülmemişken yeni adım bildirimi gönderilemez. | native-r9-busy-short-1.png, native-r9-error-short-1.png | PASS |
+| 18 | İstek işleyicisi yoksa düğme kapalıdır ve işin yapıldığı varsayılmaz. | native-r9-no-handler-short-1.png | PASS |
+| 19 | İçerik örnek olarak işaretlenmiş; gerçek motosiklet talimatı veya kararı olmadığı açıkça yazıyor. | native-r9-long-full-0.png | PASS |
+| 20 | Hayır. Ekran, kısa anlatımın telefonda daha hızlı olduğunun henüz doğrulanmadığını söylüyor. Bu görevde gerçek cihaz ölçümü yapılmadı. | native-r9-full-2.png | PASS |
+
+## Açılan özgün PNG’ler
+
+Aşağıdaki 21 dosyanın her biri view_image ile özgün ayrıntıda açıldı:
+
+1. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-0.png
+2. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-1.png
+3. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-full-2.png
+4. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-short-0.png
+5. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-short-1.png
+6. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-short-2.png
+7. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-active-0.png
+8. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-active-1.png
+9. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-held-active-0.png
+10. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-held-active-1.png
+11. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-missing-safety-0.png
+12. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-unreviewed-safety-0.png
+13. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-unreviewed-safety-1.png
+14. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-busy-short-1.png
+15. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-busy-short-2.png
+16. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-error-short-1.png
+17. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-error-short-2.png
+18. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-no-handler-short-1.png
+19. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-no-handler-short-2.png
+20. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-long-full-0.png
+21. C:\Users\Xpike\.codex\task-state\kavriva-e1022a\native-r9-long-full-1.png
+
+## Dosya ve kanıt kontrolleri
+
+- Sabit soru dosyası: 1.490 bayt; SHA-256 630543577a2dd9620b1998391370e27d4341b85665a7fe9d33a52921e40d3b3f; 20 soru. Beklenen boyut ve SHA eşleşti.
+- native-r9-proof.json: 21 vaka, 57 kayıt, 21 benzersiz görüntü ve 36 alias.
+- 57 kayıtlı görüntünün tamamında gerçek dosya boyutu ve SHA-256 kayıtla eşleşti. PNG IHDR türü ve 390×844 ölçüleri de doğrulandı.
+- 36 alias’ın her biri hedef PNG ile bayt bayt karşılaştırıldı; fark bulunmadı.
+- unique-images-native-r9.json içindeki 21 yolun tamamı açılan dosyalar arasında yer aldı.
+- Atıf metaverisi düzeltmesi: Q2 ve Q20 native-r9-full-2.png kaynağına bağlandı; izinli manifestte native-r9-short-2.png bunun bayt eş aliası olarak kayıtlı. Yanıtlar ve Q16 hükmü değişmedi.
+- Ürün, uygulama kodu, test, paket, git/PR veya önceki inceleme okunmadı ya da değiştirilmedi.
+
+## Rapor dosya biçimi
+
+Bu rapor UTF-8 BOM olmadan ve LF satır sonlarıyla yazıldı.
+</pre>
+
+RAW Base64: IyBCYcSfxLFtc8SxeiBhcmF5w7x6IGlsay1va3VtYXPEsSDigJQgUjcKCiMjIEdlbmVsIGthcmFyCgoqKkNIQU5HRVNfUkVRVUVTVEVEIOKAlCAxOS8yMCBzb3J1IGHDp8Sxa8OnYSB5YW7EsXRsYW7EsXlvci4qKiBRMTYsIGfDvHZlbmxpIGR1cmR1cm1hIHlvbHVudSBhw6dtYW7EsW4gc29udWN1IOKAnGfDvHZlbmxp4oCdIGRpeWUga2F5ZGVkaXAga2F5ZGV0bWVkacSfaW5pIGHDp8Sxa8OnYSBzw7Z5bGVtaXlvci4gRWtyYW4geWFsbsSxemNhIGJ1IHlvbHUgYcOnbWFuxLFuIG1vdG9zaWtsZXRpbiBnw7x2ZW5saSBvbGR1xJ91bnUgZG/En3J1bGFtYWTEscSfxLFuxLEgYmVsaXJ0aXlvci4KCkJ1IGRlxJ9lcmxlbmRpcm1lIHlhbG7EsXpjYSBhw6fEsWxhbiBla3JhbmxhcsSxbiB2ZXJkacSfaSBiaWxnaXlpIGthcHNhci4gS29kIMOnYWzEscWfdMSxcm1hLCBzb8SfdWsgYcOnxLFsxLHFnywgZ2Vyw6dlayBjaWhheiBoxLF6xLEsIGluc2FuIHRlc3RpIHZlIMO8cmV0aW0ga2FidWzDvCBidSBnw7ZyZXZkZSBkb8SfcnVsYW5tYWTEsS4gUTIw4oCZZGVraSBQQVNTLCBla3JhbmRhIHRlbGVmb24gaMSxesSxbsSxbiBoZW7DvHogZG/En3J1bGFubWFkxLHEn8SxbsSxbiBhw6fEsWvDp2EgeWF6xLFsZMSxxJ/EsW7EsSBnw7ZzdGVyaXI7IGJhxJ/EsW1zxLF6IGjEsXogw7Zsw6fDvG3DvCBkZcSfaWxkaXIuCgotIFJhcG9yIGthcHNhbSBraW1sacSfaTogQ09ERSBkN2QwYmNjYWRmMTAzYzg1MDE0YWFlYzM3NDg0OTJjODkzY2NlODk2IChnw7ZyZXYgbWVzYWrEsW5kYSBhdGFubcSxxZ87IGdpdC9rb2Qgw7x6ZXJpbmRlbiBkb8SfcnVsYW5tYWTEsSkuCi0gxLBzdGVuZW4gbW9kZWwgYXlhcsSxOiBncHQtNi1sdW5hL21heC4KLSDDh2FsxLHFn2FuIG1vZGVsIHZlIGVmb3IgacOnaW4gYnUgZ8O2cmV2ZGUgcnVudGltZSBrYW7EsXTEsTogdW5hdmFpbGFibGUuCgojIyBTYWJpdCAyMCBzb3J1Cgp8ICMgfCBFa3JhbmRhbiBhw6fEsWsgY2V2YXAgfCBLYW7EsXQgUE5HIHwgS2FyYXIgfAp8LS0tfC0tLXwtLS18LS0tfAp8IDEgfCBNb3Rvc2lrbGV0IOKAnMOWcm5layBla3JhbuKAnSBvbGFyYWsgdGFuxLFtbGFuxLF5b3I7IGdlcsOnZWsgbW90b3Npa2xldCBrYXJhcsSxIG9sbWFkxLHEn8SxIGJlbGlydGlsaXlvci4gUmVoYmVyIOKAnMOWcm5layBrb251bSBrb250cm9sw7wgwrcgZ3VpZGUtdjLigJ0sIGFkxLFtIDQvOS4gfCBuYXRpdmUtcjktZnVsbC0wLnBuZyB8IFBBU1MgfAp8IDIgfCDEsGxrIGHDp8SxbMSxxZ90YSB0YW0gYW5sYXTEsW0gZ8O2c3RlcmlsaXI7IGvEsXNhIGFubGF0xLFtxLEga3VsbGFuxLFjxLEgc2XDp2VyLiB8IG5hdGl2ZS1yOS1mdWxsLTIucG5nIHwgUEFTUyB8CnwgMyB8IEt1bGxhbsSxY8SxIMO8c3R0ZWtpIOKAnEvEsXNhIGFubGF0xLFtxLEgYcOn4oCdIGJhxJ9sYW50xLFzxLFuxLEgc2XDp2VyLiB8IG5hdGl2ZS1yOS1mdWxsLTAucG5nIHwgUEFTUyB8CnwgNCB8IMOcc3R0ZWtpIOKAnFRhbSBhbmxhdMSxbWEgZMO2buKAnSBiYcSfbGFudMSxc8SxeWxhIHRhbSBhbmxhdMSxbWEgZ2XDp2lsaXIuIHwgbmF0aXZlLXI5LXNob3J0LTAucG5nIHwgUEFTUyB8CnwgNSB8IEvEsXNhIGFubGF0xLFtIHpvcnVubHUgYmFrxLFtIGFkxLFtbGFyxLFuxLEgYXRsYW1hejsgZ8O8dmVubGlrIGtvxZ91bGxhcsSxIHZlIGR1cm1hIHV5YXLEsWxhcsSxIGtvcnVudXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgNiB8IEFkxLFtIGfDtnN0ZXJnZXNpIGlraSBtb2RkYSBkYSA0LznigJlkdXI7IGFkxLFtIHNhecSxc8SxbsSxbiBkZcSfacWfdGnEn2kgZ8O2c3RlcmlsbWl5b3IuIHwgbmF0aXZlLXI5LWZ1bGwtMC5wbmcsIG5hdGl2ZS1yOS1zaG9ydC0wLnBuZyB8IFBBU1MgfAp8IDcgfCBab3J1bmx1IGfDvHZlbmxpaywgcmlzaywgw7ZubGVtZSB2ZSBkdXJtYSBrb8WfdWx1IGLDtmzDvG1sZXJpIGVrcmFuZGEgYXlyxLEgYXlyxLEgeWVyIGFsxLFyLiB8IG5hdGl2ZS1yOS1mdWxsLTAucG5nLCBuYXRpdmUtcjktc2hvcnQtMC5wbmcgfCBQQVNTIHwKfCA4IHwgSGF5xLFyLiBFa3Jhbiwgc8O8csO8xZ8gZ8O8dmVubGnEn2luaW4gYnUgYW5sYXTEsW1sYSBkb8SfcnVsYW5tYWTEscSfxLFuxLEgYcOnxLFrw6dhIHPDtnlsZXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgOSB8IEV2ZXQuIEhlciBpa2kgbW9kdW4gYcOnxLFrbGFtYXPEsW5kYSBiZWxpcnNpemxpayB2YXJzYSBub3JtYWwgaWxlcmxlbWVuaW4gYcOnxLFsbWF5YWNhxJ/EsSB5YXrEsXlvci4gfCBuYXRpdmUtcjktZnVsbC0xLnBuZywgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTAgfCBHw7xuY2VsIGvEsXNhIGFubGF0xLFtIHlva3NhIGVza2kgdmV5YSB1eWd1bnN1eiBrxLFzYSBtZXRpbiBnw7ZzdGVyaWxtZXo7IHRhbSBhbmxhdMSxbSB2ZSBtZXZjdXQgZ8O8dmVubGlrIGtvbnRyb2xsZXJpIGtvcnVudXIuIHwgbmF0aXZlLXI5LW1pc3Npbmctc2hvcnQtMi5wbmcgfCBQQVNTIHwKfCAxMSB8IEhhecSxci4gRXNraSwgYmHFn2thIG1vdG9zaWtsZXRlIHZleWEgYmHFn2thIGFkxLFtYSBhaXQgbWV0bmluIGfDtnN0ZXJpbG1leWVjZcSfaSBhw6fEsWvDp2EgeWF6xLF5b3IuIHwgbmF0aXZlLXI5LW1pc3Npbmctc2hvcnQtMi5wbmcgfCBQQVNTIHwKfCAxMiB8IE1vdG9zaWtsZXQsIHJlaGJlciwgYWTEsW0gdmV5YSBnw7xuY2VsIGR1cnVtIGRlxJ9pxZ9pcnNlIHllbmlkZW4gdGFtIGFubGF0xLFtZGFuIGJhxZ9sYW7EsXIuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTMgfCBIYXnEsXIuIEfDvG5jZWwga2F5bmFrLCB1eWd1bmx1ayB2ZXlhIHpvcnVubHUgZ8O8dmVubGlrIGtvxZ91bHUgZG/En3J1bGFubWFkxLHEn8SxbmRhIG5vcm1hbCBpbGVybGVtZSBrYXBhbMSxZMSxcjsgZXNraSBvbmF5IHlldGVybGkgZGXEn2lsZGlyLiB8IG5hdGl2ZS1yOS11bnJldmlld2VkLXNhZmV0eS0wLnBuZyB8IFBBU1MgfAp8IDE0IHwgSGF5xLFyLiDigJxLb250cm9sw7wgdGFtYW1sYWTEsW3igJ0gYWTEsW0gYmlsZGlyaW1pIGfDtm5kZXJpcjsga2VuZGlsacSfaW5kZW4gc29ucmFraSBhZMSxbWEgZ2XDp21leiB2ZSB0w7xtIGnFn2kgdGFtYW1sYW5txLHFnyBzYXltYXouIHwgbmF0aXZlLXI5LWZ1bGwtMS5wbmcgfCBQQVNTIHwKfCAxNSB8IFNvcnVuIGnDp2luIOKAnFNvcnVuIHZhcuKAnSB5b2x1IGfDtnLDvG7DvHIuIHwgbmF0aXZlLXI5LWZ1bGwtMS5wbmcgfCBQQVNTIHwKfCAxNiB8IEVrcmFuLCB5b2x1IGHDp21hbsSxbiBtb3Rvc2lrbGV0aW4gZ8O8dmVubGkgb2xkdcSfdW51IGRvxJ9ydWxhbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3IuIFNvbnVjdW4gZ8O8dmVubGkgZGl5ZSBrYXlkZWRpbG1lZGnEn2luaSBhw6fEsWvDp2Egc8O2eWxlbWl5b3IuIHwgbmF0aXZlLXI5LXNob3J0LTEucG5nIHwgQ0hBTkdFU19SRVFVRVNURUQgfAp8IDE3IHwgxLBzdGVrIGnFn2xlbmlya2VuIHZleWEgaGF0YSDDp8O2esO8bG1lbWnFn2tlbiB5ZW5pIGFkxLFtIGJpbGRpcmltaSBnw7ZuZGVyaWxlbWV6LiB8IG5hdGl2ZS1yOS1idXN5LXNob3J0LTEucG5nLCBuYXRpdmUtcjktZXJyb3Itc2hvcnQtMS5wbmcgfCBQQVNTIHwKfCAxOCB8IMSwc3RlayBpxZ9sZXlpY2lzaSB5b2tzYSBkw7zEn21lIGthcGFsxLFkxLFyIHZlIGnFn2luIHlhcMSxbGTEscSfxLEgdmFyc2F5xLFsbWF6LiB8IG5hdGl2ZS1yOS1uby1oYW5kbGVyLXNob3J0LTEucG5nIHwgUEFTUyB8CnwgMTkgfCDEsMOnZXJpayDDtnJuZWsgb2xhcmFrIGnFn2FyZXRsZW5tacWfOyBnZXLDp2VrIG1vdG9zaWtsZXQgdGFsaW1hdMSxIHZleWEga2FyYXLEsSBvbG1hZMSxxJ/EsSBhw6fEsWvDp2EgeWF6xLF5b3IuIHwgbmF0aXZlLXI5LWxvbmctZnVsbC0wLnBuZyB8IFBBU1MgfAp8IDIwIHwgSGF5xLFyLiBFa3Jhbiwga8Sxc2EgYW5sYXTEsW3EsW4gdGVsZWZvbmRhIGRhaGEgaMSxemzEsSBvbGR1xJ91bnVuIGhlbsO8eiBkb8SfcnVsYW5tYWTEscSfxLFuxLEgc8O2eWzDvHlvci4gQnUgZ8O2cmV2ZGUgZ2Vyw6dlayBjaWhheiDDtmzDp8O8bcO8IHlhcMSxbG1hZMSxLiB8IG5hdGl2ZS1yOS1mdWxsLTIucG5nIHwgUEFTUyB8CgojIyBBw6fEsWxhbiDDtnpnw7xuIFBOR+KAmWxlcgoKQcWfYcSfxLFkYWtpIDIxIGRvc3lhbsSxbiBoZXIgYmlyaSB2aWV3X2ltYWdlIGlsZSDDtnpnw7xuIGF5csSxbnTEsWRhIGHDp8SxbGTEsToKCjEuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1mdWxsLTAucG5nCjIuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1mdWxsLTEucG5nCjMuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1mdWxsLTIucG5nCjQuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1zaG9ydC0wLnBuZwo1LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktc2hvcnQtMS5wbmcKNi4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LW1pc3Npbmctc2hvcnQtMi5wbmcKNy4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LW1pc3NpbmctYWN0aXZlLTAucG5nCjguIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1taXNzaW5nLWFjdGl2ZS0xLnBuZwo5LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktaGVsZC1hY3RpdmUtMC5wbmcKMTAuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1oZWxkLWFjdGl2ZS0xLnBuZwoxMS4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LW1pc3Npbmctc2FmZXR5LTAucG5nCjEyLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktdW5yZXZpZXdlZC1zYWZldHktMC5wbmcKMTMuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS11bnJldmlld2VkLXNhZmV0eS0xLnBuZwoxNC4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LWJ1c3ktc2hvcnQtMS5wbmcKMTUuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1idXN5LXNob3J0LTIucG5nCjE2LiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktZXJyb3Itc2hvcnQtMS5wbmcKMTcuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1lcnJvci1zaG9ydC0yLnBuZwoxOC4gQzpcVXNlcnNcWHBpa2VcLmNvZGV4XHRhc2stc3RhdGVca2F2cml2YS1lMTAyMmFcbmF0aXZlLXI5LW5vLWhhbmRsZXItc2hvcnQtMS5wbmcKMTkuIEM6XFVzZXJzXFhwaWtlXC5jb2RleFx0YXNrLXN0YXRlXGthdnJpdmEtZTEwMjJhXG5hdGl2ZS1yOS1uby1oYW5kbGVyLXNob3J0LTIucG5nCjIwLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktbG9uZy1mdWxsLTAucG5nCjIxLiBDOlxVc2Vyc1xYcGlrZVwuY29kZXhcdGFzay1zdGF0ZVxrYXZyaXZhLWUxMDIyYVxuYXRpdmUtcjktbG9uZy1mdWxsLTEucG5nCgojIyBEb3N5YSB2ZSBrYW7EsXQga29udHJvbGxlcmkKCi0gU2FiaXQgc29ydSBkb3N5YXPEsTogMS40OTAgYmF5dDsgU0hBLTI1NiA2MzA1NDM1NzdhMmRkOTYyMGIxOTk4MzkxMzcwZTI3ZDQzNDFiODU2NjVhN2ZlOWQzM2E1MjkyMWU0MGQzYjNmOyAyMCBzb3J1LiBCZWtsZW5lbiBib3l1dCB2ZSBTSEEgZcWfbGXFn3RpLgotIG5hdGl2ZS1yOS1wcm9vZi5qc29uOiAyMSB2YWthLCA1NyBrYXnEsXQsIDIxIGJlbnplcnNpeiBnw7Zyw7xudMO8IHZlIDM2IGFsaWFzLgotIDU3IGthecSxdGzEsSBnw7Zyw7xudMO8bsO8biB0YW1hbcSxbmRhIGdlcsOnZWsgZG9zeWEgYm95dXR1IHZlIFNIQS0yNTYga2F5xLF0bGEgZcWfbGXFn3RpLiBQTkcgSUhEUiB0w7xyw7wgdmUgMzkww5c4NDQgw7Zsw6fDvGxlcmkgZGUgZG/En3J1bGFuZMSxLgotIDM2IGFsaWFz4oCZxLFuIGhlciBiaXJpIGhlZGVmIFBORyBpbGUgYmF5dCBiYXl0IGthcsWfxLFsYcWfdMSxcsSxbGTEsTsgZmFyayBidWx1bm1hZMSxLgotIHVuaXF1ZS1pbWFnZXMtbmF0aXZlLXI5Lmpzb24gacOnaW5kZWtpIDIxIHlvbHVuIHRhbWFtxLEgYcOnxLFsYW4gZG9zeWFsYXIgYXJhc8SxbmRhIHllciBhbGTEsS4KLSBBdMSxZiBtZXRhdmVyaXNpIGTDvHplbHRtZXNpOiBRMiB2ZSBRMjAgbmF0aXZlLXI5LWZ1bGwtMi5wbmcga2F5bmHEn8SxbmEgYmHEn2xhbmTEsTsgaXppbmxpIG1hbmlmZXN0dGUgbmF0aXZlLXI5LXNob3J0LTIucG5nIGJ1bnVuIGJheXQgZcWfIGFsaWFzxLEgb2xhcmFrIGthecSxdGzEsS4gWWFuxLF0bGFyIHZlIFExNiBow7xrbcO8IGRlxJ9pxZ9tZWRpLgotIMOccsO8biwgdXlndWxhbWEga29kdSwgdGVzdCwgcGFrZXQsIGdpdC9QUiB2ZXlhIMO2bmNla2kgaW5jZWxlbWUgb2t1bm1hZMSxIHlhIGRhIGRlxJ9pxZ90aXJpbG1lZGkuCgojIyBSYXBvciBkb3N5YSBiacOnaW1pCgpCdSByYXBvciBVVEYtOCBCT00gb2xtYWRhbiB2ZSBMRiBzYXTEsXIgc29ubGFyxLF5bGEgeWF6xLFsZMSxLgo=
