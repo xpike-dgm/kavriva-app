@@ -553,8 +553,18 @@ void main() {
         expect(_enabled(tester, 'Kontrolü tamamladım'), isFalse);
         await _tap(tester, 'Kontrolü tamamladım');
         expect(sent, isEmpty);
+        if (full.busy || full.errorMessage != null)
+          expect(
+            find.textContaining('yeni adım bildirimi gönderilemez'),
+            findsOneWidget,
+          );
         await _tap(tester, 'Tam anlatıma dön');
         expect(_enabled(tester, 'Kontrolü tamamladım'), isFalse);
+        if (full.busy || full.errorMessage != null)
+          expect(
+            find.textContaining('yeni adım bildirimi gönderilemez'),
+            findsOneWidget,
+          );
       }
     },
   );

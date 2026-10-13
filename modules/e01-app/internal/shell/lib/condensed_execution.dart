@@ -134,6 +134,13 @@ class _CondensedExecutionState extends State<CondensedExecutionView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                if (widget.full.busy || widget.full.errorMessage != null) ...[
+                  const Text(
+                    'İstek işlenirken veya hata giderilmemişken yeni adım '
+                    'bildirimi gönderilemez.',
+                  ),
+                  const SizedBox(height: 8),
+                ],
                 const Text(
                   'Anlatım kısalır; zorunlu bakım adımları atlanmaz. '
                   'Güvenlik koşulları ve durma uyarıları korunur. '
