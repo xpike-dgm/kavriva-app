@@ -1,0 +1,22 @@
+[
+  "Bu ekranın hangi motosiklet, seçili rehber ve seçim sürümü için olduğu açık mı?",
+  "Yanlış rehber seçimini düzeltmek ile kullanılamayan rehber yerine yeniden seçim istemek ayrılıyor mu?",
+  "Yanlış seçimin ilk fiziksel adımdan önce düzeltilmesi gerektiği anlaşılıyor mu?",
+  "İlk fiziksel adıma başlanıp başlanmadığı bilinmiyorsa düzeltmenin kendiliğinden açılmadığı belli mi?",
+  "Rehber kullanıcının hatası olmadan geri çekildiğinde yeniden seçim hakkının otomatik verilmediği belli mi?",
+  "Güncel kararı hangi kaynağın ne zaman verdiği görülebiliyor mu?",
+  "İstek göndermenin hakkın verildiği veya seçimin değiştiği anlamına gelmediği açık mı?",
+  "Motosiklet değiştirmek veya rehberi tamamlamak yeni hak oluşturuyor gibi gösterilmiyor mu?",
+  "Aynı anda bir seçili motosikletteki tam rehber hakkının taşındığı ve üst üste eklenmediği anlaşılıyor mu?",
+  "Kesin süre, fiyat veya seçim sıklığı uydurulmadığı belli mi?",
+  "İzin bilgisi eksik veya çevrimdışıysa yeni seçim işleminin kapalı olduğu anlaşılıyor mu?",
+  "Özel bilgi için güncel okuma izni olmadığında motosiklet ve seçim ayrıntıları gizli mi?",
+  "Eski kayıtlar ve kullanılan rehber sürümü yeni seçim yüzünden silinmiyor gibi sunuluyor mu?",
+  "Geçmiş, kanıt, düzeltme ve dışa aktarma yolları satın almaya bağlanmadan gösteriliyor mu?",
+  "Kritik güvenlik ve başlanmış işin güvenli dönüşü için ayrı yollar var mı?",
+  "Yeniden seçim hakkının bakım yapmaya veya motosikleti güvenli saymaya izin vermediği açık mı?",
+  "İşlem sürerken, hata varken veya istek işleyicisi yokken yeni istek gönderilmediği anlaşılıyor mu?",
+  "Başka hesap, motosiklet veya rehber için karar bu seçimde geçerli sayılmıyor mu?",
+  "Uzun açıklama ve büyük yazıda tüm metin ve yollar kaydırarak erişilebilir mi?",
+  "Geri dönüş ve destek yolu anlaşılır mı?"
+]

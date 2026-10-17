@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E1-REPLACEMENT-001"
+  - "P-E1-025"
+  - "E-DEV-124"
   - "V-E1-UNCERTAINTY-001"
   - "P-E1-022b"
   - "E-DEV-123"
@@ -640,3 +643,7 @@ T-E1-022a aynı14kapsamında bağımsızU04RET sonrası görev-önce düzen düz
 ## Kalıcı belirsizliğin belge tüketimi
 
 `vault/PACKS/P-E1-022b.md`; `vault/EVIDENCE/E-DEV-123.md`. Sabitwarning/closedoffline/publicJSONwire;473E1/176E4/54format0/analyze0/72responsive/22durum96PNG63unique33alias. Mevcutmoduleedge ve oldguards korunur. Görsel/temel adım alanları saklanır; kaynakHELD olduğunda eski renderer eylem talimatını kullanılamaz sayar. Profil/görev yeniREVIEW adayı;gerçek111/95/206, üretim/insan/cihaz/yayınHELD.
+
+## Seçim düzeltme ve yeniden seçim sunumunun belge tüketimi
+
+vault/PACKS/P-E1-025.md; vault/EVIDENCE/E-DEV-124.md. AynıE1history/entitlement; yeni public/runtimeedge,hak/yetki yazımı veya billing yok. DEC0053/firststep/MAYopen/sourcecited/windowHELD. Yerel482/native10/56format0/analyze0/36responsive/22durum119PNG80özgün39alias; bağımsız kabul beklenir. Gerçek112/94/206; üretim/uzman/cihaz/yayınHELD.
