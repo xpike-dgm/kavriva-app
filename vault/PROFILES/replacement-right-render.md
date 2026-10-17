@@ -16,7 +16,7 @@ depends_on: [M-E1-001, V-E1-ENTITLEMENT-001, T-E1-014a]
 used_by: [P-E1-025, T-E1-025, E-DEV-124]
 evidence: [E-DEV-124]
 supersedes: []
-status: CHANGES_REQUESTED
+status: REVIEW
 ---
 
 # Seçim düzeltme ve yeniden seçim — sınırlı sunum kanıtı
@@ -93,3 +93,7 @@ Kod öncesi dar kapsam: aynı izinli kaynakta ana istek düğmesinden önce yaln
 Kod öncesi 8f7f543954c8e1d6fc8e2129efe7cce6f06cdf7b kapsamıyla ana düğmeden önce yalnız sunucu değerlendirmesi istendiği, seçim hakkı verilmediği ve seçili rehberin değişmediği yazıldı. Eski kayıtlar için ayrı okuma izni doğrulanmadığında kapalı yollar ve ana seçim değerlendirmesinden ayrı izin denetimi açıklanır. Model/guard/politika değişmedi. İlgili test eylem öncesi metni ve eski kayıtlar kapalıyken bağımsız olarak doğrulanmış seçim değerlendirme talebinin açık kalmasını kontrol eder.
 
 Güncel normal482=473korunan+9yeni; ayrı native10;56format0/analyze0;36responsive. R4 doğal22durum/123PNG/85özgün/38tamalias. Root50yeniOriginal gerçekten açtı;35görüntü önceki gerçekten okunmuş R3 ile tüm baytları eşit. Aynı capture kodu R4 dizininde native-r3 dosya öneki kullanır; tam dizin yolları bu yeni görüntüleri ayırır. Görüntüler değiştirilmedi. Sabit20 aynı. Kör R2 ve eki Q11 belirsizliği korunur; yeni geçmişsiz kör R3 henüz beklenir, CHANGES_REQUESTED devam eder. Gerçek112/94/206 ve üretim/uzman/cihaz/yayın üst kapıları değişmez.
+
+## Yeni bağımsız kör ilk okuma
+
+CODE b2ebe5e466a6f87ba2e9ff8b155b94258882d1ba üzerinde geçmişsiz /root/e1025_blind_r3; istenen gpt-6-luna/max; yalnız doğal123PNG/85özgün/38tamalias ve kodöncesi20soru okumasına sınırlıPASS. Root tamamlandı bildirimi ardından özgün tam raporu okuyup bayt/SHA doğruladı. Çalışanmodelruntimeattestation unavailable; insan/cihaz/üretim veya bütünSOURCE kabulü değildir. Yerel482/native10/56format0/analyze0/graph42worst0/index116;36responsive/22durum;Root50yeniOriginal+35öncedenGerçektenAçılmışFullByteEş. R1başlıkRET/harnessFAIL/graphR1linkFAIL, körR1Q17-Q18 RET ve körR2Q11 BELİRSİZ ile ek raporu korunur. Yeni körR3 sabit20 okuması güncel R4 görüntülerini bağımsız değerlendirir; eski hükümler değiştirilmez. Yeni bütünSOURCE/aynıCI-T3/ayrıFINAL/main8 beklenir; gerçek112/94/206 ve üstkapılarHELD.
