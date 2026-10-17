@@ -497,6 +497,11 @@ class _ReplacementRightState extends State<ReplacementRightView> {
                             _ => 'İstek sonucu doğrulanamadı. Yeni seçim yapılmış sayılmaz.',
                           }),
                         ),
+                      text(
+                        'Bu düğme yalnız sunucudan değerlendirme ister. '
+                        'Seçim hakkı vermez ve seçili rehberi değiştirmez. '
+                        'Talep için güncel izin doğrulanmazsa düğme kapalı kalır.',
+                      ),
                       button(
                         requestLabel,
                         ReplacementAction.request,
@@ -530,6 +535,12 @@ class _ReplacementRightState extends State<ReplacementRightView> {
                         'Düzeltmenin kesin süresi, seçim sıklığı ve ücret koşulları burada belirlenmiş değil.',
                       ),
                       text('Kayıtların açık kalır', size: 22, heading: true),
+                      if (!EntitlementPath.values.any(s.pathAllowed))
+                        text(
+                          'Eski kayıtları açmak için gereken güncel okuma izni doğrulanamadı; '
+                          'aşağıdaki kayıt yolları kapalı. Bu izin, yukarıdaki seçim değerlendirmesi '
+                          'talebinin izninden ayrı kontrol edilir.',
+                        ),
                       text(
                         'Eski işlem kaydı, kullanılan rehber sürümü ve güvenlik düzeltmeleri yeni seçimle silinmez. '
                         'Bu yollar satın almaya bağlı değildir; güncel kimlik ve her yolun okuma izni yine gerekir.',

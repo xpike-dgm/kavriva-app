@@ -406,6 +406,15 @@ void main() {
       final events = <ReplacementIntent>[];
       final handler = events.add;
       await show(t, sample(), handler: handler);
+      expect(
+        find.text(
+          'Bu düğme yalnız sunucudan değerlendirme ister. '
+          'Seçim hakkı vermez ve seçili rehberi değiştirmez. '
+          'Talep için güncel izin doğrulanmazsa düğme kapalı kalır.',
+        ),
+        findsOneWidget,
+      );
+      expect(events, isEmpty);
       final old = action(t, ReplacementAction.request)!;
       old();
       await t.pump();
@@ -538,6 +547,15 @@ void main() {
         sample(noPreservedAccount: true),
       ]) {
         await show(t, s, handler: events.add);
+        expect(action(t, ReplacementAction.request), isNotNull);
+        expect(
+          find.text(
+            'Eski kayıtları açmak için gereken güncel okuma izni doğrulanamadı; '
+            'aşağıdaki kayıt yolları kapalı. Bu izin, yukarıdaki seçim değerlendirmesi '
+            'talebinin izninden ayrı kontrol edilir.',
+          ),
+          findsOneWidget,
+        );
         for (final p in EntitlementPath.values) {
           expect(action(t, ReplacementAction.read, p), isNull);
         }
