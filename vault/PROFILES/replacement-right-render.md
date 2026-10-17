@@ -16,9 +16,56 @@ depends_on: [M-E1-001, V-E1-ENTITLEMENT-001, T-E1-014a]
 used_by: [P-E1-025, T-E1-025, E-DEV-124]
 evidence: [E-DEV-124]
 supersedes: []
-status: IN_PROGRESS
+status: REVIEW
 ---
 
-# Rehber seçimi hakkının sunumu
+# Seçim düzeltme ve yeniden seçim — sınırlı sunum kanıtı
 
-Kodöncesi paket P-E1-025 ile tam14adres sabittir. Güncel sunucu kararı olmadan düzeltme veya yenileme yok; sadece istek gönderilir. Canlı kaynak/üretim HELD. T023/T024 uzman belgesi bekler. Yerel test/bağımsız kabul henüz yok; gerçek112/94/206.
+Plan fa914f013fdcd032faed876689092da245989459; BASE 29cf09064bb775324d36129001c6ba9b9869bd5a; PRECODE e177e7155063c1cd970126a9535e3603090fa83c. Tam14yol/173BASEpin/sabit20soru koddan önce kaydedildi. Gerçek112/94/206; aday index116/v91. Sahip2026-10-17 uzman belgesi olmadığını doğruladı; T023/T024 bekler. Tek sert bağımlılık T014a gerçek sınırlıDONE; mevcut T014b guardları aynıE1 içinde değişmeden tüketilir. E3R1REVIEW/E5IN_PROGRESS; gerçek server seçim/hak yazıcısı HELD.
+
+## Davranış ve kaynak sınırı
+
+Immutable sunum tupleı hesap, motosiklet, bağlam/katalog revizyonları, seçili rehber/sürümü ve seçim kimliği/revizyonunu içerir. Yanlış seçim düzeltmesi ile kullanıcı hatası olmayan kullanılamaz rehber için MAY-open talebi ayrıdır. Aynı amaç/subject/istek için güncel okuma ve altı etki boyutunun referansları gerekir. Correction ilk fiziksel adım bilinmiyorsa/başladıysa kapalıdır; uygun güncel server kararı olmadan yenileme açılmaz. E1 karar imzası doğrulayıcısı veya hak/fiziksel gerçek üreticisi değildir. current/confirmed sadece güvenilir dış üreticinin sunum girdisidir; ham istemci verisi üretim yetkisi değildir. Gerçek üretici/HTTP/DB/yazıcı bu görevde bağlanmadı; pozitifler açık örnek fixture, üretim girişinde plan/reference yok/HELD kalmalıdır.
+
+Callback yalnız tam kapsam ve amaç/subject ile kontrol isteği taşır; epoch/aynı kaynak/aynıhandler/güncel koşul ile yeniden denetlenir, ABA/çift gönderim engellenir. İstek iletilmesi hakkın verildiğini veya seçimin değiştiğini kanıtlamaz; bakım başlamış sayılmaz. Eksik/stale/foreign/offline/busy/error/received/no-handler/yanlış amaç kapalıdır. Eksik karar özel motosiklet/rehber verisini göstermez. Korunan altı yol EntitlementSnapshot.pathAllowed ve ayrıca aynıhesap currentproof ile doğrulanır; seçim kararı yokluğu onları satın almaya bağlamaz; recovery okuması güvenli sonuç yazmaz.
+
+DEC0053 tek seçili motosiklet hakkı şeklini korur: hak taşınır/üstüne eklenmez; bike-switch/completion yeni ücretsiz hak değildir. EskiQ222 kalıcı ücretsiz rehber yorumu yeni ticari politika yapılmadı. Kesin süre/sıklık/fiyat, canlı hak, uzman/cihaz/insan/üretim/yayın HELD.
+
+## Yerel sonuç ve korunmuş onarımlar
+
+Güncel482normal=473korunan+9yeni; native10=9+1capture ayrı koşu, normal toplama eklenmez. 56format0/analyze0. Dokuz tuple ekseni/delimiter/unpairedUnicode/immutablemaps; her read ve altı etki boyutu/yanlış amaç/neden/fiziksel başlangıç/phase/staleoffline; capturedcallback replay/ABA/handler değişimi, hesaba bağlı korunan6yol, request!=outcome, TabEnterSpace/semanticlabel/52min kontrol;320390768×scale123×4durum=36tamdoğalscroll doğrulandı.
+
+R1 test kabuğunda route builder eksikti; R2 kabukta routefocus yoktu; R3 gerçek klavye beklentileri geçti fakat SemanticsHandle testsonrasına kaldığı için FAIL oldu. Doğru Navigator/_Input host ve try/finally ile R4dokuzPASS; ürün izin kriteri değiştirilmedi. R1native22durum120PNG76unique44alias ve full482PASS olsa da Root yalnız ilk8unique açtı ve kapalı düğmeyle çelişen olumlu üst başlığı reddetti. R1tamRoot okuması/kabulü iddia edilmez. Dar onarımda başlık gerçek requestAllowed+handler+sent/phase/physical koşuluna bağlandı; gönderilen istekte gerçek hakkın/seçim sonucunun doğrulanmadığı yazıldı. R5hedef9/analyze0 ve R2native/full güncelPASS. Özgün tüm FAIL/RET logları ve R1kaynak/test kopyaları dış task-state içinde korunur.
+
+Native-r2:22durum119PNG80özgün39tamalias;390×844/scale1ve3, offset0→max ve ≤600adımlar. Her bayt/SHA/IHDR ve alias tambyte eşliği doğrulandı; Root80 özgün PNGnin hepsini original açtı. Üç kat yazıda uzun başlık/sözcükler satır böler; ölçek kısılmaz ve tüm içerik/eylemler doğal kaydırmayla erişilir. Viewport sınırı kesmeleri sonraki örtüşen karede sürer. Gerçek cihaz/pixel/screenreader kanıtı değildir.
+
+## Yedi tasarım karşılaştırması
+
+|Katman|Gerçek karşılaştırma ve sınır|
+|---|---|
+|Tam ekran|22durumun ilk→son doğalPNGleri: başlık/karar/kaynak/iki amaç/istek/hak şekli/korunan yollar/recovery/çıkış; canlırouter/veri yok|
+|Ekranlar arası|Yeni correction/replacement ile mevcut EntitlementGateView/LifecycleView kaynak/guard/terim,nearwhite-nav-blue-amber,22padding/640width/52kontrol/keyboard karşılaştırıldı; eski ekranlar yeni cihazda tekrar çekildi iddiası yok|
+|Durumlar arası|Started/unknown/cause/held/denied/missing/stale/foreign/offline/busy/error/received/no-handler/no-intent/no-account-read; R1başlık çelişkisi R2de onarıldı; pozitifler fixture|
+|Responsive/Türkçe|36doğalscroll; uzun görünür gerekçe ve native390scale1/3; tüm metin/kontroller erişilir; finaldevice/window/token yok|
+|Erişilebilirlik|GerçekTabEnterSpace/semanticlabel/52min ve büyükyazı; callback ve sonuç testi; gerçekscreenreader/insan yok|
+|Görsel regresyon|173korunanBASEpin/eski E1kodtestleri aynı; R1ret→R2durumbaşlığı karşılaştırması; yeni pixel toleransı yok|
+|Kanonik referans|REF-LIFECYCLE-001 J05acceptedv3/SCR037/FAM07 Rootoriginalaçtı; işlem kapısı→korunan kayıtlar→güvenlik/recovery hiyerarşisi; yeni rota/modal/nav/logo/icon/finaltokens yok|
+
+## On katman kapanış
+
+|Katman|Durum ve gerçek sınır|
+|---|---|
+|task|T025 yerelREVIEW; bağımsız20/bütünSOURCE/CI-T3/FINAL/main beklenir|
+|feature|F1.7.1 sunum dilimi; gerçekE3/E5seçimwriter HELD|
+|flow|FL1.7.2 iki kontrol isteği; canlıuçtanuca seçim değişimi yok|
+|requirement|C1.7/Q222/Q227/DEC0053/R001003004007009013014; windowHELD|
+|design|Yedi karşılaştırma yukarıda; cihaz/son tasarımHELD|
+|architecture|E1renders/E3serves/E5authorizes; aynıE1history/entitlement, yeni cross-epic/privateimport yok|
+|data/migration|Yeni DB/yazıcı/göç yok; RAWv90 ve EDEV123primary/body korunur|
+|release|Yayın/activation/onaylı bakım içeriği HELD|
+|product-scenario|Örnek tuple/fixture üzerinde negatif ve geri giriş; gerçek müşteri/cihaz/fiziksel sonuç yok|
+|gap-audit|UzmanT023/T024/E3R1REVIEW/E5IN_PROGRESS/writer/producer/window/device açık; başkaPASS kapatmaz|
+
+## İlişkiler ve açık üst kapılar
+
+`vault/PACKS/P-E1-025.md`, `vault/REGISTRY/T-E1-025.md`, `vault/EVIDENCE/E-DEV-124.md`, `vault/REGISTRY/T-E3-001-R1.md`, `vault/REGISTRY/T-E5-003.md`. Bu kayıtlar yerel sunumun bağımsız REVIEW izini ve E3R1/E5 üretim HELD sınırını bağlar; teknik uzman/cihaz/yayın kanıtı oluşturmaz.
