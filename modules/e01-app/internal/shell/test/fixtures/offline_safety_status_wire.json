@@ -1,0 +1,20 @@
+{
+  "schema": "kavriva.e4.safety-status.v1",
+  "context": {
+    "motorcycleId": "bike-a",
+    "guideId": "guide-a",
+    "contextRevision": "context-r1",
+    "executionId": "work-a",
+    "guideVersion": "guide-v2",
+    "revision": "eval-r1",
+    "physicalRevision": "physical-r1",
+    "stepId": "step-a"
+  },
+  "authority": "NONE",
+  "physicalProgression": false,
+  "reason": "HELD_CANONICAL_TAXONOMY_WINDOWS_ELIGIBILITY_RECOVERY_AND_ENCRYPTED_RUNTIME_MISSING",
+  "retainedContexts": [
+    "TEACHING_HISTORY",
+    "SAFE_STOP_RECOVERY"
+  ]
+}

@@ -21,7 +21,7 @@ tests: [modules/e01-app/internal/shell/test/condensed_execution_test.dart, modul
 superseded_by: []
 last_verified: 2026-10-13
 depends_on: [V-E1-CONDENSED-001]
-used_by: [V-E1-CONDENSED-001, P-E1-022a, T-E1-022a]
+used_by: [V-E1-CONDENSED-001, P-E1-022a, T-E1-022a, V-E1-UNCERTAINTY-001, P-E1-022b, E-DEV-123]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -1458,3 +1458,111 @@ RAW Base64: IyBULUUxLTAyMmEg4oCUIFNPVVJDRSBiw7x0w7xuIGluY2VsZW1lIFIzCgoqKkthcmFy
 38469811584 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38469811584 RAW 144539 SHA256 9f822b2405ee2592d0aafe2f8ada5ae8f2d7ea8e06f0e7f8f3c680d8e508fa88
 - 115545671762 e1-shell-tests success
 - API adım metaverisi: unavailable-empty-GitHub-API. RAW gözlenen Run grubu sayısı: 5. Bireysel adım sonuçları türetilmez.
+
+## Kalıcı belirsizliğin belge tüketimi
+
+`vault/PACKS/P-E1-022b.md`; `vault/EVIDENCE/E-DEV-123.md`. Sabitwarning/closedoffline/publicJSONwire;473E1/176E4/54format0/analyze0/72responsive/22durum96PNG63unique33alias. Mevcutmoduleedge ve oldguards korunur. Görsel/temel adım alanları saklanır; kaynakHELD olduğunda eski renderer eylem talimatını kullanılamaz sayar. Profil/görev yeniREVIEW adayı;gerçek111/95/206, üretim/insan/cihaz/yayınHELD.
+
+## PR124 bağımsız FINAL ve gerçek main kabul makbuzları
+
+Önceki primarySourcePASS/subject/tarih/gövde aynıdır. Gerçek FINAL0791aa86382af6c6b316bca9aa9ce83540630ce7 ve normal merge a2f9d2d8d71f5d7ffc4b04a601c3a9c10a770a6e; fetch edilmiş main ağacı FINAL ile aynı. Sahip sürekli kabulü/DEC0068-69 ile /root/e1022a_final_review istenengpt6luna/max boundedPASS; runtimeattestation unavailable. Root özgün tam2270bayt/SHA8a6d59d1b4a2f76a3ac99ff01c843837a1f9848e3d829a1d32a6ea01c5b251e8 raporu okudu. Auth hüküm https://github.com/xpike-dgm/kavriva-app/pull/124#issuecomment-6155865836 . Sayaç111/95/206 ancak fetchedmain8sonrası. T022b/üstkapılar bu hükümle DONE olmaz.
+
+<pre># T-E1-022a — FINAL kabul incelemesi
+
+**Karar: PASS — T-E1-022a yalnız kısa anlatım sunumu kapsamında DONE.** Paket ve profil ACTIVE; üst ürün ve yayın kapıları HELD.
+
+Plan otoritesi &#96;origin/main&#96; &#96;fa914f013fdcd032faed876689092da245989459&#96;; hüküm insanın standing bounded PASS/merge kabulü ile DEC-0068/0069 inceleme kurallarına dayanır. PR #124 açık ve draft; taban &#96;439d9aa9ad38d7f72fc3e9a403a4a178b81c0242&#96;, incelenen FINAL &#96;0791aa86382af6c6b316bca9aa9ce83540630ce7&#96;.
+
+SOURCE &#96;501093ed0a2a84d936663e1f6514702092764a8d&#96; → FINAL farkı yalnız altı metadata dosyasıdır: E-DEV-122, T-E1-022a kayıt/paket/profili, registry ve routing. Fark 150 ekleme/8 silme; kod, test, sabit 20 soru, snapshot, inventory ve consumer değişmemiş. R3 bağımsız SOURCE PASS raporunun aslı (6326 B, SHA-256 &#96;d0c8835af828b33ee2d01cf56ce57824de9223654ad02d23e88acb54f486cf80&#96;) E-DEV-122 içinde HTML ve byte-eşit RAW Base64 olarak doğrulandı.
+
+FINAL CI: 16/16 run ve job SUCCESS; 8 ailede 8 PR ve 8 push koşusu. Her run/job HEAD FINAL ile eşleşti, 16 RAW logun boyut/SHA’sı makbuzla eşleşti. E1: 464 test PASS, 51 dosya biçimi 0 değişiklik, analyze bulgusuz. Graph: 42 test, en kötü çıkış 0, index 114 satır; conformance 121 ve identity 387. PR T3 job SUCCESS; RAW çıktısı 121/387 kontrollerini gösteriyor. Push T3 beklenen biçimde SKIPPED. E3 canlı-auth RAW markerları signup, korumalı maintenance commit/logout, private Storage/Data API/client-role bypass ve restrictive Storage probe için PASS. GitHub API &#96;steps=[]&#96; döndürdü; bireysel API adımları PASS sayılmadı, RAW komut/sonuçları ayrı okundu. &#96;final-ci.json&#96;: 41629 B, SHA-256 &#96;2f68b3545dc1d16ee4986880eb0f9eaa99f81d8dd564593ea0d82e25123341dd&#96;; kök okuma makbuzu: 485 B, SHA-256 &#96;7376fea01b5f4e073be7c602d4c823bdff69bd00c4034085e8753a1b25da0165&#96;.
+
+M-CONDENSED-01 v2 örnekleri harness wall-time ölçümüdür (&#96;deviceProof=false&#96;, bounds HELD). E3 R1 REVIEW, E5 IN_PROGRESS, T022b ve insan/cihaz/fiziksel/yol/sürüş/üretim/yayın kapıları HELD. PR merge edilmedi; main sayımları 110 DONE / 96 kalan / 206 toplam.
+
+İstenen model &#96;gpt-6-luna/max&#96;; runtime attestation mevcut değil. Bu incelemede test çalıştırılmadı ve repo/PR değiştirilmedi.
+</pre>
+
+RAW Base64: IyBULUUxLTAyMmEg4oCUIEZJTkFMIGthYnVsIGluY2VsZW1lc2kKCioqS2FyYXI6IFBBU1Mg4oCUIFQtRTEtMDIyYSB5YWxuxLF6IGvEsXNhIGFubGF0xLFtIHN1bnVtdSBrYXBzYW3EsW5kYSBET05FLioqIFBha2V0IHZlIHByb2ZpbCBBQ1RJVkU7IMO8c3Qgw7xyw7xuIHZlIHlhecSxbiBrYXDEsWxhcsSxIEhFTEQuCgpQbGFuIG90b3JpdGVzaSBgb3JpZ2luL21haW5gIGBmYTkxNGYwMTNmZGNkMDMyZmFlZDg3NjY4OTA5MmRhMjQ1OTg5NDU5YDsgaMO8a8O8bSBpbnNhbsSxbiBzdGFuZGluZyBib3VuZGVkIFBBU1MvbWVyZ2Uga2FidWzDvCBpbGUgREVDLTAwNjgvMDA2OSBpbmNlbGVtZSBrdXJhbGxhcsSxbmEgZGF5YW7EsXIuIFBSICMxMjQgYcOnxLFrIHZlIGRyYWZ0OyB0YWJhbiBgNDM5ZDlhYTlhZDM4ZDdmNzJmYzNlOWE0MDNhNGExNzhiODFjMDI0MmAsIGluY2VsZW5lbiBGSU5BTCBgMDc5MWFhODYzODJhZjZjNmIzMTZiY2E5YWE5Y2U4MzU0MDYzMGNlN2AuCgpTT1VSQ0UgYDUwMTA5M2VkMGEyYTg0ZDkzNjY2M2UxZjY1MTQ3MDIwOTI3NjRhOGRgIOKGkiBGSU5BTCBmYXJrxLEgeWFsbsSxeiBhbHTEsSBtZXRhZGF0YSBkb3N5YXPEsWTEsXI6IEUtREVWLTEyMiwgVC1FMS0wMjJhIGthecSxdC9wYWtldC9wcm9maWxpLCByZWdpc3RyeSB2ZSByb3V0aW5nLiBGYXJrIDE1MCBla2xlbWUvOCBzaWxtZTsga29kLCB0ZXN0LCBzYWJpdCAyMCBzb3J1LCBzbmFwc2hvdCwgaW52ZW50b3J5IHZlIGNvbnN1bWVyIGRlxJ9pxZ9tZW1pxZ8uIFIzIGJhxJ/EsW1zxLF6IFNPVVJDRSBQQVNTIHJhcG9ydW51biBhc2zEsSAoNjMyNiBCLCBTSEEtMjU2IGBkMGM4ODM1YWY4MjhiMzNlZTJkMDFjZjU2Y2U1NzgyNGRlOTIyMzY1NGFkMDJkMjNlODhhY2I1NGY0ODZjZjgwYCkgRS1ERVYtMTIyIGnDp2luZGUgSFRNTCB2ZSBieXRlLWXFn2l0IFJBVyBCYXNlNjQgb2xhcmFrIGRvxJ9ydWxhbmTEsS4KCkZJTkFMIENJOiAxNi8xNiBydW4gdmUgam9iIFNVQ0NFU1M7IDggYWlsZWRlIDggUFIgdmUgOCBwdXNoIGtvxZ91c3UuIEhlciBydW4vam9iIEhFQUQgRklOQUwgaWxlIGXFn2xlxZ90aSwgMTYgUkFXIGxvZ3VuIGJveXV0L1NIQeKAmXPEsSBtYWtidXpsYSBlxZ9sZcWfdGkuIEUxOiA0NjQgdGVzdCBQQVNTLCA1MSBkb3N5YSBiacOnaW1pIDAgZGXEn2nFn2lrbGlrLCBhbmFseXplIGJ1bGd1c3V6LiBHcmFwaDogNDIgdGVzdCwgZW4ga8O2dMO8IMOnxLFrxLHFnyAwLCBpbmRleCAxMTQgc2F0xLFyOyBjb25mb3JtYW5jZSAxMjEgdmUgaWRlbnRpdHkgMzg3LiBQUiBUMyBqb2IgU1VDQ0VTUzsgUkFXIMOnxLFrdMSxc8SxIDEyMS8zODcga29udHJvbGxlcmluaSBnw7ZzdGVyaXlvci4gUHVzaCBUMyBiZWtsZW5lbiBiacOnaW1kZSBTS0lQUEVELiBFMyBjYW5sxLEtYXV0aCBSQVcgbWFya2VybGFyxLEgc2lnbnVwLCBrb3J1bWFsxLEgbWFpbnRlbmFuY2UgY29tbWl0L2xvZ291dCwgcHJpdmF0ZSBTdG9yYWdlL0RhdGEgQVBJL2NsaWVudC1yb2xlIGJ5cGFzcyB2ZSByZXN0cmljdGl2ZSBTdG9yYWdlIHByb2JlIGnDp2luIFBBU1MuIEdpdEh1YiBBUEkgYHN0ZXBzPVtdYCBkw7ZuZMO8cmTDvDsgYmlyZXlzZWwgQVBJIGFkxLFtbGFyxLEgUEFTUyBzYXnEsWxtYWTEsSwgUkFXIGtvbXV0L3NvbnXDp2xhcsSxIGF5csSxIG9rdW5kdS4gYGZpbmFsLWNpLmpzb25gOiA0MTYyOSBCLCBTSEEtMjU2IGAyZjY4YjM1NDVkYzFkMTZlZTQ5ODY4ODBlYjBmOWVhYTk5ZjgxZDhkZDU2NDU5M2VhMGQ4MmUyNTEyMzM0MWRkYDsga8O2ayBva3VtYSBtYWtidXp1OiA0ODUgQiwgU0hBLTI1NiBgNzM3NmZlYTAxYjVmNGUwNzNiZTdjNjAyZDRjODIzYmRmZjY5YmQwMGM0MDM0MDg1ZTg3NTNhMWIyNWRhMDE2NWAuCgpNLUNPTkRFTlNFRC0wMSB2MiDDtnJuZWtsZXJpIGhhcm5lc3Mgd2FsbC10aW1lIMO2bMOnw7xtw7xkw7xyIChgZGV2aWNlUHJvb2Y9ZmFsc2VgLCBib3VuZHMgSEVMRCkuIEUzIFIxIFJFVklFVywgRTUgSU5fUFJPR1JFU1MsIFQwMjJiIHZlIGluc2FuL2NpaGF6L2Zpemlrc2VsL3lvbC9zw7xyw7zFny/DvHJldGltL3lhecSxbiBrYXDEsWxhcsSxIEhFTEQuIFBSIG1lcmdlIGVkaWxtZWRpOyBtYWluIHNhecSxbWxhcsSxIDExMCBET05FIC8gOTYga2FsYW4gLyAyMDYgdG9wbGFtLgoKxLBzdGVuZW4gbW9kZWwgYGdwdC02LWx1bmEvbWF4YDsgcnVudGltZSBhdHRlc3RhdGlvbiBtZXZjdXQgZGXEn2lsLiBCdSBpbmNlbGVtZWRlIHRlc3Qgw6dhbMSxxZ90xLFyxLFsbWFkxLEgdmUgcmVwby9QUiBkZcSfacWfdGlyaWxtZWRpLgo=
+
+### PR124 final gerçek CI
+
+Baş 0791aa86382af6c6b316bca9aa9ce83540630ce7; 16 SUCCESS gerçekrun. API steps=[]unavailable; bireysel API adımPASS iddiası yok, gerçekRAWRun/sonuçlar ayrıca Root okundu. PR T3 jobSUCCESS/pushskip ayrı.
+
+38472103791 e3-commit-authorization-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103791 RAW 62077 SHA256 bbebd172da3cfdd036e1baa3601197a3cf1fdc695f2d5c9d7fa4664fabc5664a
+- 115553524157 e3-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103713 e5-current-authority-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103713 RAW 32264 SHA256 64b67c50465780251bbaaeb1b723ae33adafb0b786ccf99e5cd455f477037943
+- 115553523526 e5-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103657 e6-release-policy-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103657 RAW 26883 SHA256 55b88d353b9f2b84236e334b4dcdfa4834cdc5b5c66d9db3b326e3ad7aeb555e
+- 115553523171 e6-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103874 architecture-checks pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103874 RAW 43531 SHA256 11cfa8edc4e77b7282ade829b0a4b7883b66b6dd4c6946e5d9bf0bb4a99ce964
+- 115553522972 checks success; APIstepmetadata unavailable-empty-GitHub-API.
+- 115553523618 t3-gate success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103772 e9-bounded-proposal-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103772 RAW 17682 SHA256 662612ad2c24ec963aa1f0609e9b9d21e667e82a7663dd8b0fbad79ffb7a3178
+- 115553523687 e9-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103725 e4-offline-composition-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103725 RAW 52931 SHA256 083962d0bb7130984ec25ea4d03633fcb11d589c982ef38f8ef803b56437c253
+- 115553523945 e4-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103630 e3-live-auth-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103630 RAW 22733 SHA256 0a198044653d97e5e28f33ee3d3b266ca625181fbdf30beb871d041e263cf23e
+- 115553522544 live-auth success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472103646 e1-shell-widget-tests pull_request https://github.com/xpike-dgm/kavriva-app/actions/runs/38472103646 RAW 145735 SHA256 102455813197adfa53dfbe58c760181fd1fe471e25156b131b69e03a336f44f4
+- 115553523845 e1-shell-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096204 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096204 RAW 59636 SHA256 df839e5d884df3921c2794e663b463a04102df0a0d5a5bfbfb8ce3ff7f4c7f1d
+- 115553496889 e3-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096446 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096446 RAW 51676 SHA256 56c678238cbf1cda05a5f3f17eb682831671bfbb36b086f85fb1f38d58505524
+- 115553496277 e4-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096307 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096307 RAW 31008 SHA256 5a6cf1bc60109f62e243e3c6e32da4a23f6ec3462ac75d97c4e69cbcc7df690b
+- 115553493777 e5-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096216 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096216 RAW 28099 SHA256 d9aa5365cd15a1595f8ca618ca9e4450723fa78e67788f8dfbdbbe8b6ea0ccc2
+- 115553493803 checks success; APIstepmetadata unavailable-empty-GitHub-API.
+- 115553495355 t3-gate skipped; APIstepmetadata not-applicable-skipped.
+
+38472096794 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096794 RAW 16424 SHA256 60b155f3de5a23545a6f11532885434f0c4da5ea46b374eb8f40d2a202783d95
+- 115553496867 e9-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096258 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096258 RAW 25628 SHA256 4cdb908f0de1cbd169c50e7e1593600e1d8027da48f8bdb1c1d384add60181e0
+- 115553493866 e6-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096218 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096218 RAW 143300 SHA256 872f0e55eb245eea8fa6bcecfc32ddaa0f2e6a18041422f8445e5d3d22bbec4f
+- 115553493274 e1-shell-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38472096348 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38472096348 RAW 21463 SHA256 dc034502c0830dd1b1ae4e1a4df1ef8048f52e78f58f95c4518aeb727915453d
+- 115553495071 live-auth success; APIstepmetadata unavailable-empty-GitHub-API.
+
+### PR124 main gerçek CI
+
+Baş a2f9d2d8d71f5d7ffc4b04a601c3a9c10a770a6e; 8 SUCCESS gerçekrun. API steps=[]unavailable; bireysel API adımPASS iddiası yok, gerçekRAWRun/sonuçlar ayrıca Root okundu. PR T3 jobSUCCESS/pushskip ayrı.
+
+38473054222 e3-live-auth-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054222 RAW 21301 SHA256 adafae2503252cc82737533d9e436f6661bc11b3eae1d159fe445a7fe8303ce9
+- 115556778655 live-auth success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054185 e9-bounded-proposal-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054185 RAW 16256 SHA256 5be35f2842ec840bdeab938b19becc4e9a81f4f68708f0d0572ac82b2392a085
+- 115556779116 e9-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054174 e6-release-policy-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054174 RAW 25460 SHA256 23d4ce8d93c3b942999e4bc1a12bf3e93deb4592008ca0f866e46a2029ee2bb7
+- 115556778597 e6-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054190 e4-offline-composition-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054190 RAW 51507 SHA256 a678120333f54511078d47e50c6fe3c43d94965d6f6064ba71c90be511fe8c83
+- 115556778755 e4-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054211 architecture-checks push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054211 RAW 27931 SHA256 d7b04e7c29f13aee99e6ea3f7d21170f595620da138021f09e08c8f8e219c51b
+- 115556779181 checks success; APIstepmetadata unavailable-empty-GitHub-API.
+- 115556780666 t3-gate skipped; APIstepmetadata not-applicable-skipped.
+
+38473054120 e5-current-authority-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054120 RAW 30839 SHA256 f0efb70c999f42c0f1efd898704f6bbc43beeb62a2d7b0bc71b8d32c6d50f2f4
+- 115556777671 e5-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054200 e3-commit-authorization-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054200 RAW 59437 SHA256 af4bb0bf283b90c0637f85583308d24e61fe84aaad02a13b0c33b53d49a517f2
+- 115556778618 e3-tests success; APIstepmetadata unavailable-empty-GitHub-API.
+
+38473054197 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38473054197 RAW 143337 SHA256 3633b11821cefbe2c933ff0fe0af02be98ef1e5083c5376e3dd5d424086f7590
+- 115556778415 e1-shell-tests success; APIstepmetadata unavailable-empty-GitHub-API.
