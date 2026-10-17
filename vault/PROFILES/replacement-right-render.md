@@ -16,7 +16,7 @@ depends_on: [M-E1-001, V-E1-ENTITLEMENT-001, T-E1-014a]
 used_by: [P-E1-025, T-E1-025, E-DEV-124]
 evidence: [E-DEV-124]
 supersedes: []
-status: REVIEW
+status: CHANGES_REQUESTED
 ---
 
 # Seçim düzeltme ve yeniden seçim — sınırlı sunum kanıtı
@@ -69,3 +69,9 @@ Native-r2:22durum119PNG80özgün39tamalias;390×844/scale1ve3, offset0→max ve 
 ## İlişkiler ve açık üst kapılar
 
 `vault/PACKS/P-E1-025.md`, `vault/REGISTRY/T-E1-025.md`, `vault/EVIDENCE/E-DEV-124.md`, `vault/REGISTRY/T-E3-001-R1.md`, `vault/REGISTRY/T-E5-003.md`. Bu kayıtlar yerel sunumun bağımsız REVIEW izini ve E3R1/E5 üretim HELD sınırını bağlar; teknik uzman/cihaz/yayın kanıtı oluşturmaz.
+
+## Kör ilk okuma R1 reddi — kod öncesi dar onarım kapsamı
+
+CODE 0fd5e96768bf53c98b62665c3f50042f81067d6f /root/e1025_blind_r1 istenengpt6luna/max sabit20de18PASS/2BELİRSİZ-RET; Root nihai tam7362bayt/SHA256 5aee9a2d5cd41c09eed8342036eac5034ee9b8ff9e00446636283d1821932b2a raporu okudu. R1rapor ve CODE değişmez. Q17 hata mesajı yeni seçim talebinin gönderilmediğini açık söylemeli; refresh yalnız güncel bilgi isteği olup seçim talebinden ayrıdır. Q18 doğrulanamayan karar görünümünde başka hesap/motosiklet/rehber kararının bu seçimde geçersizliği açık söylenmeli.
+
+İzinli14yol/173BASEpin ve sabit20SHA c9aa588599797fbdcd114f14f932abf3d7263be0e298ab938968092b39d471c0 değişmez. Yalnız replacement_right.dart içindeki bu iki açıklama ve ilişkili davranış beklentileri/onarıma ait doğal PNG/kanıt/kayıtlar yenilenir. Yeni politika, süre/izin/hak yazıcısı/rota veya yetki üretimi yok. Yeni CODE/localproof ve geçmişsiz körR2/bütünSOURCE/CI-T3 gereklidir; R1 kabul veya DONE değildir. Gerçek112/94/206.
