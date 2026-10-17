@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "purpose": "Karşılaştırma örneği; gerçek ürün veya yetki kaynağı değildir",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "zoom": [
+    1,
+    2
+  ],
+  "rows": 240,
+  "pageSize": 20,
+  "selection": "OBJ-0001",
+  "columns": [
+    "Kayıt",
+    "Başlık",
+    "Durum",
+    "Kapsam",
+    "Sürüm",
+    "Kaynak"
+  ],
+  "scope": {
+    "tenant": "fixture-org",
+    "actor": "fixture-reader",
+    "session": "fixture-session",
+    "epoch": 1,
+    "role": "reviewer",
+    "resourceVersion": 1
+  },
+  "states": [
+    "loading",
+    "ready",
+    "empty",
+    "denied",
+    "stale",
+    "offline",
+    "error",
+    "outcome-unknown"
+  ],
+  "workload": [
+    "bounded queue table",
+    "detail with provenance",
+    "immutable two-version diff",
+    "graph with text equivalent",
+    "non-publishing draft form"
+  ],
+  "security": [
+    "no real secrets",
+    "deny missing or foreign scope",
+    "same operation id after lost response",
+    "epoch invalidation",
+    "plain text hostile content",
+    "strict external script CSP",
+    "no browser persistence for authority"
+  ],
+  "files": [
+    "private quarantine only",
+    "no active HTML preview",
+    "digest and scoped handle",
+    "archive not authority resurrection"
+  ],
+  "decision": "HELD: no winner before equal evidence and superseding ADR",
+  "screenReader": "Actual assistive-technology evidence required; DOM tree/axe is separate evidence",
+  "cost": "Record measured local time/size, no invented production tariff",
+  "noProduction": true
+}
