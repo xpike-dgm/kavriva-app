@@ -2,13 +2,13 @@
 test_id: E-DEV-124
 contract_id_version: "C1.7/F1.7.1/FL1.7.2 replacement presentation v1"
 subject_file: modules/e01-app/internal/shell/lib/replacement_right.dart
-subject_digest: e1996238c6526df0dee4d3ff781e91e10d0518d01f9df6a191188d7e3ae2061b
-result: "Yerel482 PASS; kör R1 Q17/Q18 CHANGES_REQUESTED"
+subject_digest: cfda3b926e0e493814fa849f7cb913ae12e670075483fb79c7e0a00d677f8744
+result: "Yerel482 R3 PASS; kör R1 korunur, yeni bağımsız R2 bekleniyor"
 evidence_links: [vault/EVIDENCE/E-DEV-123.md, vault/PROFILES/replacement-right-render.md, vault/PACKS/P-E1-025.md, vault/REGISTRY/T-E1-025.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-025.md.snapshot, modules/e01-app/internal/shell/lib/replacement_right.dart, modules/e01-app/internal/shell/test/replacement_right_test.dart, modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json]
-gate_verdict: "FAIL kör R1 Q17/Q18; dar metin onarımı ve taze inceleme gerekir"
-reviewer: "/root/e1025_blind_r1; only first-reading requested gpt-6-luna/max"
+gate_verdict: "RECORDED dar Q17/Q18 onarım proof; yeni REVIEW ve üretim HELD"
+reviewer: none
 timestamp: 2026-10-17
-version: 1
+version: 2
 purpose: Rehber seçimi düzeltme ve yeniden seçim taleplerini güncel sunucu kararıyla sınırlı sunmak
 domain: motorcycle-entitlement
 module: e01-app
@@ -410,3 +410,672 @@ Sabit sorular ve görsel yanıtlar
 Görsel okuma sonucu: 18 PASS, 2 BELİRSİZ/RET. Bu sonuç yalnız sağlanan örnek ekranların görsel okunabilirliği hakkındadır; üretim davranışı, gerçek kullanıcı verisi veya kaynak kodu hakkında doğrulama değildir.</pre>
 
 RAW Base64: S0FWUklWQSBFMTAyNSDigJQgQkHEnklNU0laIEvDllIgxLBMSyBBUkFZw5xaIE9LVU1BU0kgKFIxKQoKS2Fwc2FtCi0gVmVyaWxlbiBrYXBzYW0ga2ltbGnEn2k6IENPREUwZmQ1ZTk2NzY4YmY1M2M5OGI2MjY2NWMzZjUwMDQyZjgxMDY3ZDZmLiBCdSBnw7ZyZXZkZSBHaXQgZG/En3J1bGFtYXPEsSB5YXDEsWxtYWTEsS4KLSDEsHN0ZW5lbiBtb2RlbC9ha8SxbCB5w7xyw7x0bWU6IGdwdC02LWx1bmEvbWF4LgotIEdlcsOnZWsgbW9kZWwvcnVudGltZSBhdHRlc3RhdGlvbjogdW5hdmFpbGFibGUuIMSwemlubGkgbWFuaWZlc3QgdmUgcHJvb2YgZG9zeWFsYXLEsW5kYSBtb2RlbC9ydW50aW1lL2F0dGVzdGF0aW9uIGFsYW7EsSB5b2s7IGdlcsOnZWsgbW9kZWwga2ltbGnEn2kgaWRkaWEgZWRpbG1peW9yLgotIFNhYml0IDIwIHNvcnUgZG9zeWFzxLEgU0hBLTI1NjogYzlhYTU4ODU5OTc5N2ZiZGNkMTE0ZjE0ZjkzMmFiZjNkNzI2M2JlMGUyOThhYjkzODk2ODA5MmIzOWQ0NzFjMCDigJQgaXN0ZW5lbiBoYXNoIGlsZSBlxZ9sZcWfdGkuCi0gWWFsbsSxeiBzYWJpdCBzb3J1IGZpeHR1cmUnxLEsIG5hdGl2ZS1yMi1tYW5pZmVzdC5qc29uLCBuYXRpdmUtcjItcHJvb2YuanNvbiwgdW5pcXVlLWltYWdlcy1uYXRpdmUtcjIuanNvbiB2ZSBidSBsaXN0ZWxlcmRla2kgZ2Vyw6dlayBQTkcnbGVyIG9rdW5kdS4gS29kLCBwYWtldCwgdGFzay9yb290IHJhcG9ydSwgw7ZuY2VraSBSMSwgR2l0LCBQUiB2ZXlhIHBsYW4gb2t1bm1hZMSxOyB0ZXN0IMOnYWzEscWfdMSxcsSxbG1hZMSxLgotIDgwIMO2emfDvG4gUE5HJ25pbiB0YW1hbcSxIHZpZXdfaW1hZ2Ugb3JpZ2luYWwgaWxlIHRlayB0ZWsgYcOnxLFsZMSxLiBQcm9vZid0YWtpIDExOSDDp2Vyw6dldmVuaW4gZG9zeWEgdmFybMSxxJ/EsSwgZ2Vyw6dlayBiYXl0IGJveXV0dSwgU0hBLTI1NiB2ZSBQTkcgc2lnbmF0dXJlL0lIRFIgZGVuZXRsZW5kaTogMTE5LzExOSBnZcOnZXJsaSwgMzkww5c4NDQsIFNIQS9ieXRlIGFsYW5sYXLEsSBlxZ9sZcWfaXlvcjsgODAgZmFya2zEsSBTSEEgYnVsdW5kdS4gUHJvb2YndGEgMzkgYWxpYXMgb2xhcmFrIGnFn2FyZXRsaSBkb3N5YW7EsW4gdGFtYW3EsSBoZWRlZml5bGUgdGFtIGJheXQgYmF5dCBrYXLFn8SxbGHFn3TEsXLEsWxkxLE6IDM5LzM5IGXFn2l0LgotIE1hbmlmZXN0L3Byb29mIHNhecSxbWxhcsSxOiAyMiBkdXJ1bSwgMTE5IMOnZXLDp2V2ZSwgODAgw7Z6Z8O8biBQTkcsIDM5IGFsaWFzLiBTY3JvbGwgbWV0YWRhdGEnc8SxbmRhIDIyLzIyIGR1cnVtIDAgb2Zmc2V0J3RlbiBtYXhTY3JvbGxFeHRlbnQnZSB1bGHFn8SxeW9yOyBlbiBiw7x5w7xrIGFyZMSxxZ/EsWsgb2Zmc2V0IGFkxLFtxLEgNjAwcHgsIHZpZXdwb3J0IHnDvGtzZWtsacSfaSA4NDRweCAoZW4gYXogMjQ0cHggw7ZydMO8xZ9tZSk7IGJhxZ9sYW5nxLHDpywgbWF4IHZlIGFyYWRha2kga2F5ZMSxcm1hIHlha2FsYW1hbGFyxLFuZGEgYm/Fn2x1ayB5b2suCgpTYWJpdCBzb3J1bGFyIHZlIGfDtnJzZWwgeWFuxLF0bGFyCjEuIFBBU1Mg4oCUIE1vdG9zaWtsZXQsIHNlw6dpbGkgcmVoYmVyLCByZWhiZXIgc8O8csO8bcO8IHZlIHNlw6dpbSBzw7xyw7xtw7wgw7ZybmVrIGRlxJ9lcmxlcmxlIGV0aWtldGxpOyBheW7EsSBrYXJ0IMO2cm5lay/DvHJldGltIGTEscWfxLEga2FyYXIgb2xkdcSfdW51IHPDtnlsw7x5b3IuIMSwemluL2tpbWxpayBkb8SfcnVsYW5tYXlhbiBkdXJ1bWRhIGF5csSxbnTEsWxhcsSxbiBnaXpsZW5kacSfaSBheXLEsWNhIHlhesSxeW9yLiBbbmF0aXZlLXIyLWNvcnJlY3Rpb24tMC5wbmcsIG5hdGl2ZS1yMi1yZXBsYWNlbWVudC0wLnBuZywgbmF0aXZlLXIyLW1pc3NpbmctMC5wbmddCjIuIFBBU1Mg4oCUIEVrcmFuIGJhxZ9sxLHEn8SxIHZlIGV5bGVtIG1ldGlubGVyaSDigJxZYW5sxLHFnyByZWhiZXIgc2XDp2ltaW5pIGTDvHplbHRtZeKAnSBpbGUg4oCcWWVuaWRlbiByZWhiZXIgc2XDp2ltaeKAnW5pIGF5xLFyxLF5b3I7IOKAnMSwa2kgZmFya2zEsSBkdXJ1beKAnSBtZXRuaSBidSBmYXJrxLEgYcOnxLFrbMSxeW9yLiBbbmF0aXZlLXIyLWNvcnJlY3Rpb24tMC5wbmcsIG5hdGl2ZS1yMi1yZXBsYWNlbWVudC0wLnBuZywgbmF0aXZlLXIyLXN0YXJ0ZWQtMS5wbmddCjMuIFBBU1Mg4oCUIFlhbmzEscWfIHNlw6dpbWluIGlsayBmaXppa3NlbCBhZMSxbWRhbiDDtm5jZSBkw7x6ZWx0aWxlYmlsZWNlxJ9pOyBpxZ8gYmHFn2xhbcSxxZ9zYSBkw7x6ZWx0bWVuaW4gYcOnxLFsbWF5YWNhxJ/EsSBhw6fEsWvDp2EgeWF6xLF5b3IuIEJhxZ9sYW5txLHFnyBkdXJ1bWRhIGTDvHplbHRtZSBpc3RlxJ9pIGdyaS4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTAucG5nLCBuYXRpdmUtcjItc3RhcnRlZC0xLnBuZ10KNC4gUEFTUyDigJQgQmHFn2xhbmfEscOnIGJpbGlubWl5b3JzYSBkw7x6ZWx0bWVuaW4gYcOnxLFsbWFkxLHEn8SxIHlhesSxeW9yOyB1bmtub3duLXN0YXJ0IGR1cnVtdSBkb8SfcnVsYW1hIGVrc2lrbGnEn2luaSBnw7ZzdGVyaXlvciB2ZSBkw7x6ZWx0bWUgaXN0ZcSfaSBncmkuIFtuYXRpdmUtcjItY29ycmVjdGlvbi0wLnBuZywgbmF0aXZlLXIyLXVua25vd24tc3RhcnQtMS5wbmddCjUuIFBBU1Mg4oCUIFJlaGJlciBrdWxsYW7EsWPEsW7EsW4gaGF0YXPEsSBvbG1hZGFuIGdlcmkgw6dla2lsaXJzZSB5ZW5pIHNlw6dpbSBoYWtrxLFuxLFuIHN1bnVjdSBrYXJhcsSxbmEgYmHEn2zEsSBvbGR1xJ91IHZlIGtlbmRpbGnEn2luZGVuIHllbmlsZW5tZXllY2XEn2kgYcOnxLFrLiBbbmF0aXZlLXIyLWNvcnJlY3Rpb24tMC5wbmcsIG5hdGl2ZS1yMi1yZXBsYWNlbWVudC0wLnBuZ10KNi4gUEFTUyAow7ZybmVrIHZlcmkgc8SxbsSxcsSxIGHDp8Sxaykg4oCUIEtheW5haywga2FyYXIgc8O8csO8bcO8LCBrYXluYWsga29udW11IHZlIGtvbnRyb2wgemFtYW7EsSBnw7ZzdGVyaWxpeW9yOyBrYXluYWsgdmUga2FyYXLEsW4gw7ZybmVrIG9sZHXEn3UsIMO8cmV0aW1lIGJhxJ9sxLEgb2xtYWTEscSfxLEga2FydHRhIGJlbGlydGlsaXlvci4gQ2FubMSxIHN1bnVjdSBrYXJhcsSxIGdpYmkgc3VudWxtdXlvci4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTAucG5nXQo3LiBQQVNTIOKAlCDEsHN0ZWsgYWzEsW5kxLFrdGFuIHNvbnJhIGhhayB2ZXJpbGRpxJ9pIHZleWEgc2XDp2ltaW4gZGXEn2nFn3RpxJ9pbmluIGRvxJ9ydWxhbm1hZMSxxJ/EsTsgaGF0YSBoYWxpbmRlIHNlw6dpbWluIGRlxJ9pxZ9tacWfIHNhecSxbG1hZMSxxJ/EsSB5YXrEsXlvci4gW25hdGl2ZS1yMi1yZWNlaXZlZC0xLnBuZywgbmF0aXZlLXIyLWVycm9yLTEucG5nXQo4LiBQQVNTIOKAlCBNb3Rvc2lrbGV0IGRlxJ9pxZ90aXJtZSB2ZXlhIHJlaGJlcmkgdGFtYW1sYW1hIHllbmkgYmlyIMO8Y3JldHNpeiBzZcOnaW0gaGFra8SxIMO8cmV0bWV6IGHDp8Sxa2xhbWFzxLEgdmFyLiBbbmF0aXZlLXIyLWNvcnJlY3Rpb24tMS5wbmddCjkuIFBBU1Mg4oCUIFRhbSByZWhiZXIgaGFra8SxbsSxbiBiaXIgc2XDp2lsaSBtb3Rvc2lrbGV0dGUgYXluxLEgYW5kYSBhw6fEsWxkxLHEn8SxLCBtb3Rvc2lrbGV0IGRlxJ9pxZ9pbWluZGUgdGHFn8SxbmTEscSfxLEgdmUgw7xzdMO8bmUgZWtsZW5tZWRpxJ9pIGHDp8Sxay4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTEucG5nXQoxMC4gUEFTUyDigJQgU8O8cmUsIHNlw6dpbSBzxLFrbMSxxJ/EsSB2ZSDDvGNyZXQga2/Fn3VsbGFyxLFuxLFuIGJ1cmFkYSBiZWxpcmxlbm1lZGnEn2kgeWF6xLF5b3I7IGtlc2luIGRlxJ9lciB1eWR1cnVsbXV5b3IuIFtuYXRpdmUtcjItY29ycmVjdGlvbi0xLnBuZ10KMTEuIFBBU1MgKG9mZmxpbmUgYcOnxLFrOyBla3NpayBpemluIGJhxJ9sYW3EsSBnw7Zyc2VsIG9sYXJhayBrYXBhbMSxKSDigJQgw4dldnJpbWTEscWfxLF5a2VuIHllbmkgc2XDp2ltIGnDp2luIGfDvG5jZWwgc3VudWN1IGtvbnRyb2zDvCBnZXJla3RpxJ9pIHlhesSxeW9yIHZlIGlsZ2lsaSBleWxlbWxlciBncmkuIEJpbGdpL2l6aW4geW9ra2VuIGfDvG5jZWwgc2XDp2ltIGRvxJ9ydWxhbmFtxLF5b3IsIGfDvG5jZWwga2ltbGlrIHZlIG9rdW1hIGl6bmkgZ2VyZWt0acSfaSwgw7Z6ZWwgYXlyxLFudMSxbGFyxLFuIGfDtnN0ZXJpbG1lZGnEn2kgeWF6xLF5b3I7IHllbmkgc2XDp2ltIGV5bGVtaSBzdW51bG11eW9yLiBbbmF0aXZlLXIyLW9mZmxpbmUtMS5wbmcsIG5hdGl2ZS1yMi1taXNzaW5nLTAucG5nXQoxMi4gUEFTUyDigJQgT2t1bWEgaXpuaS9raW1saWsgZG/En3J1bGFubWFkxLHEn8SxbmRhIMO2emVsIG1vdG9zaWtsZXQgdmUgcmVoYmVyIGF5csSxbnTEsWxhcsSxbsSxbiBnw7ZzdGVyaWxtZWRpxJ9pIGHDp8Sxa8OnYSB5YXrEsXlvci4gW25hdGl2ZS1yMi1taXNzaW5nLTAucG5nXQoxMy4gUEFTUyDigJQgRXNraSBpxZ9sZW0ga2F5ZMSxLCBrdWxsYW7EsWxhbiByZWhiZXIgc8O8csO8bcO8IHZlIGfDvHZlbmxpayBkw7x6ZWx0bWVsZXJpbmluIHllbmkgc2XDp2ltbGUgc2lsaW5tZWRpxJ9pIGHDp8Sxay4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTIucG5nXQoxNC4gUEFTUyDigJQgR2XDp21pxZ8ga2F5xLF0bGFyxLEsIGthbsSxdC9rYXluYWssIGTDvHplbHRtZS9pdGlyYXogdmUgZMSxxZ9hIGFrdGFybWEgZXlsZW1sZXJpIGF5csSxIGfDtnN0ZXJpbGl5b3I7IGJ1IHlvbGxhcsSxbiBzYXTEsW4gYWxtYXlhIGJhxJ9sxLEgb2xtYWTEscSfxLEgeWF6xLF5b3IuIFtuYXRpdmUtcjItY29ycmVjdGlvbi0yLnBuZywgbmF0aXZlLXIyLWNvcnJlY3Rpb24tMy5wbmddCjE1LiBQQVNTIOKAlCBLcml0aWsgZ8O8dmVubGlrIGJpbGdpc2kgaWxlIGJhxZ9sYW5txLHFnyBpxZ9pbiBnw7x2ZW5saSBkw7Zuw7zFn8O8IGF5csSxIGV5bGVtbGVyIG9sYXJhayB5ZXIgYWzEsXlvci4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTIucG5nLCBuYXRpdmUtcjItY29ycmVjdGlvbi0zLnBuZ10KMTYuIFBBU1Mg4oCUIFNlw6dpbSBoYWtrxLFuxLFuIGJha8SxbSBpem5pIHZleWEgbW90b3Npa2xldGluIGfDvHZlbmxpIG9sZHXEn3VuYSBkYWlyIGthbsSxdCBvbG1hZMSxxJ/EsTsgZ8O8dmVubGlrIHlvbGxhcsSxbmEgZXJpxZ9pbWluIGnFn2kgc8O8cmTDvHJtZSBpem5pIG9sbWFkxLHEn8SxIGHDp8Sxay4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTMucG5nXQoxNy4gQkVMxLBSU8SwWiAvIEtJU03EsCBSRVQg4oCUIMSwxZ9sZW0gc8O8cmVya2VuIOKAnFllbmkgaXN0ZWsgZ8O2bmRlcmlsbWl5b3LigJ0gYcOnxLFrOyBpxZ9sZXlpY2kgeW9ra2VuIOKAnFllbmkgc2XDp2ltIHRhbGViaSBnw7ZuZGVyaWxlbWl5b3LigJ0gYcOnxLFrLiBIYXRhIGR1cnVtdW5kYSBtZXRpbiB5YWxuxLF6Y2Ega29udHJvbMO8biB0YW1hbWxhbmFtYWTEscSfxLFuxLEgdmUgc2XDp2ltaW4gZGXEn2nFn21pxZ8gc2F5xLFsbWFkxLHEn8SxbsSxIHPDtnlsw7x5b3I7IGlzdGVrIGV5bGVtaSBncmkgb2xzYSBkYSB5ZW5pIGlzdGXEn2luIGfDtm5kZXJpbG1lZGnEn2kgbWV0aW5sZSBhw6fEsWvDp2EgdGVrcmFybGFubcSxeW9yLiBbbmF0aXZlLXIyLWJ1c3ktMS5wbmcsIG5hdGl2ZS1yMi1lcnJvci0xLnBuZywgbmF0aXZlLXIyLW5vLWhhbmRsZXItMC5wbmddCjE4LiBCRUzEsFJTxLBaIC8gUkVUIOKAlCBLaW1saWsgdmUgb2t1bWEgaXpuaW5pbiBnw7xuY2VsIG9sbWFzxLEgZ2VyZWt0acSfaSBiZWxpcnRpbGl5b3I7IGJhxZ9rYSBoZXNhcCwgbW90b3Npa2xldCB2ZXlhIHJlaGJlcmUgYWl0IGthcmFyxLFuIGJ1IHNlw6dpbWUgdXlndWxhbmFtYXlhY2HEn8SxIGHDp8Sxa8OnYSBzw7Z5bGVubWl5b3IuIEtpbWxpayB1eWFyxLFzxLEgdGVrIGJhxZ/EsW5hIMO8w6cgYmHEn2xhbcSxIGRhIGtlc2luIGJpw6dpbWRlIGthcGF0bcSxeW9yLiBbbmF0aXZlLXIyLW1pc3NpbmctMC5wbmcsIG5hdGl2ZS1yMi1jb3JyZWN0aW9uLTAucG5nXQoxOS4gUEFTUyAoM8OXIGLDvHnDvGsgeWF6xLFkYSBiacOnaW0gbm90dSkg4oCUIFV6dW4gYcOnxLFrbGFtYSB2ZSAzw5cgeWF6xLEgZG/En2FsIGtheWTEsXJtYXlsYSBva3VuYWJpbGl5b3I7IG1hbmlmZXN0IHlha2FsYW1hbGFyxLEgMCdkYW4gbWF4J2Ega2FkYXIgNjAwcHggYWTEsW1sYSBpbGVybGV5aXAgw7ZydMO8xZ/DvHlvci4gQsO8ecO8ayB5YXrEsWRhIHNhdMSxcmxhciB2ZSBiYcWfbMSxa2xhciDDp29rIHV6dW47IGJhesSxIHPDtnpjw7xrbGVyIGvEsXLEsWxtYS9la3JhbiBzxLFuxLFyxLFuZGEgYsO2bMO8bsO8eW9yLCBhbmNhayBhcmTEscWfxLFrIGtheWTEsXJtYSBla3JhbsSxbmRhIG1ldGluIGRldmFtIGVkaXlvci4gS2F5xLF0LCBnw7x2ZW5saWsgZXlsZW1sZXJpIHZlIGZvb3RlciB5b2xsYXLEsSBtYXggc2Nyb2xsJ2RhIGfDtnLDvG7DvHlvci4gW25hdGl2ZS1yMi1sb25nLTAucG5nLCBuYXRpdmUtcjItbG9uZy0xLnBuZywgbmF0aXZlLXIyLWxhcmdlLWNvcnJlY3Rpb24tMC5wbmcsIG5hdGl2ZS1yMi1sYXJnZS1jb3JyZWN0aW9uLTIxLnBuZywgbmF0aXZlLXIyLWxhcmdlLXJlcGxhY2VtZW50LTAucG5nLCBuYXRpdmUtcjItbGFyZ2UtcmVwbGFjZW1lbnQtMTkucG5nXQoyMC4gUEFTUyDigJQg4oCcR2FyYWphIGTDtm7igJ0gdmUg4oCcRGVzdGVrIHNlw6dlbmVrbGVyaeKAnSBleWxlbWxlcmkgYcOnxLFrIGlzaW1sZXJsZSBzb24gYsO2bMO8bWRlIGJ1bHVudXlvci4gW25hdGl2ZS1yMi1jb3JyZWN0aW9uLTMucG5nLCBuYXRpdmUtcjItbm8taGFuZGxlci0zLnBuZywgbmF0aXZlLXIyLWxhcmdlLWNvcnJlY3Rpb24tMjEucG5nXQoKw5ZuZSDDp8Sxa2FuIGJlbGlyc2l6bGlrbGVyCi0gU29ydSAxNzogaGF0YSBoYWxpbmRlIGfDtnJzZWwgb2xhcmFrIHBhc2lmIGlzdGVrIGV5bGVtaSB2YXI7IG1ldGluIHllbmkgaXN0ZcSfaW4gZ8O2bmRlcmlsbWVkacSfaW5pIGHDp8Sxa8OnYSBzw7Z5bGVtaXlvci4KLSBTb3J1IDE4OiBmYXJrbMSxIGhlc2FwL21vdG9zaWtsZXQvcmVoYmVyIGthcmFyxLFuxLFuIGJ1IHNlw6dpbWRlIGdlw6dlcnNpeiBvbGR1xJ91IGHDp8SxayBjw7xtbGV5bGUgYmVsaXJ0aWxtaXlvci4KLSBCw7x5w7xrIHlhesSxIHRlc3RpIGnDp2VyacSfaSBrYXliZXRtaXlvcjsgYW5jYWsgM8OXIGfDtnLDvG7DvG0gw6dvayB5w7xrc2VrIHZlIGJhesSxIHV6dW4gYmHFn2zEsWtsYXJkYS9rZWxpbWVsZXJkZSBzYXTEsXIga8SxcsSxbMSxbcSxIGthYmEuCgpHw7Zyc2VsIG9rdW1hIHNvbnVjdTogMTggUEFTUywgMiBCRUzEsFJTxLBaL1JFVC4gQnUgc29udcOnIHlhbG7EsXogc2HEn2xhbmFuIMO2cm5layBla3JhbmxhcsSxbiBnw7Zyc2VsIG9rdW5hYmlsaXJsacSfaSBoYWtrxLFuZGFkxLFyOyDDvHJldGltIGRhdnJhbsSxxZ/EsSwgZ2Vyw6dlayBrdWxsYW7EsWPEsSB2ZXJpc2kgdmV5YSBrYXluYWsga29kdSBoYWtrxLFuZGEgZG/En3J1bGFtYSBkZcSfaWxkaXIu
+
+## Q17/Q18 dar onarımının güncel yerel kanıtı
+
+R1 CODE0fd5e96768bf53c98b62665c3f50042f81067d6f ve7362bayt/SHA256 5aee9a2d5cd41c09eed8342036eac5034ee9b8ff9e00446636283d1821932b2a körRET aynen korunur. Kodöncesi dar kapsam 3635d0e6ef5316d0d9155085fe0ee6b964b153c9. Hata metni yeni seçim talebinin gönderilmediğini ve tekrar güncel bilgi istemenin seçim talebi olmadığını açık söyler. Doğrulanamayan kararda başka hesap/motosiklet/rehber kararının bu seçimde kullanılamayacağı açıkça yazılır. Guard/izin/ticari politika/süre/pencere değişmedi. İlişkili davranış beklentileri güçlendirildi; sabit20soru aynı c9aa588599797fbdcd114f14f932abf3d7263be0e298ab938968092b39d471c0. Yeni körR2 bu iki bulguyu bağımsız yeniden değerlendirmeden R1 kapanmış sayılmaz.
+
+Güncel R3 normal482=473korunan+9yeni; ayrı native10,56format0/analyze0 ve36responsive. NativeR3 22durum/119PNG/81özgün/38tamalias. Root güncel tüm özgünleri kapsadı: 4 yeni original açıldı; 77 görüntü daha önce gerçekten açılmış R2original ile tam byteeş. R2kopya karşılaştırması yalnızSHAya dayanmaz; her eşin tüm baytları karşılaştırıldı. Eski R1 Root8 ve R2 Root80 gerçekokumaları ve körRET tarihi korunur. Bu yerel metin onarımı üretim/uzman/cihaz/yayın veya bağımsızPASS değildir; görev CHANGES_REQUESTED; yeni körR2 beklenir, gerçek112/94/206.
+
+## R1 konu başlığı — tarihsel ret kaynağı
+
+<pre>
+test_id: E-DEV-124
+contract_id_version: &quot;C1.7/F1.7.1/FL1.7.2 replacement presentation v1&quot;
+subject_file: modules/e01-app/internal/shell/lib/replacement_right.dart
+subject_digest: e1996238c6526df0dee4d3ff781e91e10d0518d01f9df6a191188d7e3ae2061b
+result: &quot;Yerel482 PASS; kör R1 Q17/Q18 CHANGES_REQUESTED&quot;
+evidence_links: [vault/EVIDENCE/E-DEV-123.md, vault/PROFILES/replacement-right-render.md, vault/PACKS/P-E1-025.md, vault/REGISTRY/T-E1-025.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-025.md.snapshot, modules/e01-app/internal/shell/lib/replacement_right.dart, modules/e01-app/internal/shell/test/replacement_right_test.dart, modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json]
+gate_verdict: &quot;FAIL kör R1 Q17/Q18; dar metin onarımı ve taze inceleme gerekir&quot;
+reviewer: &quot;/root/e1025_blind_r1; only first-reading requested gpt-6-luna/max&quot;
+timestamp: 2026-10-17
+version: 1
+purpose: Rehber seçimi düzeltme ve yeniden seçim taleplerini güncel sunucu kararıyla sınırlı sunmak
+domain: motorcycle-entitlement
+module: e01-app
+owner: E1
+implements: [ADR-001, ADR-004, ADR-005, C1.7, F1.7.1, FL1.7.2, SCR-037, BR-048, BR-049, BR-134, CON-001, CON-002, CON-003, R-001, R-003, R-004, R-007, R-009, R-013, R-014]
+public_contracts: []
+internal_scope: selection-replacement-presentation
+tasks: [T-E1-025]
+tests: [modules/e01-app/internal/shell/test/replacement_right_test.dart, modules/e10-graph/checks/check_registration.py, modules/e10-graph/checks/check_links.py]
+superseded_by: []
+last_verified: 2026-10-17
+depends_on: [V-E1-REPLACEMENT-001]
+used_by: [V-E1-REPLACEMENT-001, P-E1-025, T-E1-025]
+evidence: []
+supersedes: []
+status: RECORDED
+</pre>
+
+## Güncel R3 konu özetleri
+
+- modules/e01-app/internal/shell/lib/replacement_right.dart LF SHA256 cfda3b926e0e493814fa849f7cb913ae12e670075483fb79c7e0a00d677f8744
+- modules/e01-app/internal/shell/test/replacement_right_test.dart LF SHA256 817923a2bd55a21e96fe9f2923b46e06a9a833b4ed0720bd3651511e7b2b3c52
+- modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json LF SHA256 c9aa588599797fbdcd114f14f932abf3d7263be0e298ab938968092b39d471c0
+
+target-r6.log 981bayt/SHA256 d6fdd3856c8fcd62c724a942cbcfe1dae8f7df342e08c46bdbe58f56a2476439
+
+analyze-r6.log 96bayt/SHA256 bf1bdb10eb9553a187514a8f3f72f969f77aad2421064b7aac5bec64f500d643
+
+format-r3.log 48bayt/SHA256 6cb948c8e8c97c28f429d7c721183b8bac807c97fc87314a9e2ff9c37d7cb9f8
+
+native-r3.log 1056bayt/SHA256 daa21d19eed9a8598c16b5c16c52e140523b4f06db523cc39de81b07d6f24d13
+
+full-r3.log 111962bayt/SHA256 0855dbcc06e3a8d66006db1cba8d687fcf43be4c074ad54fd82f71c93bd3d1c0
+
+root-native-r3-read.json 30497bayt/SHA256 c4685a562c974abc1fb06a71b214da903dfc6f62913543fdb48eade95fe1b4c6
+
+<pre>{
+  &quot;stage&quot;: &quot;native-r3&quot;,
+  &quot;allCurrentUniqueCovered&quot;: true,
+  &quot;openedNewOriginal&quot;: 4,
+  &quot;coveredByPriorActualRead&quot;: 77,
+  &quot;totalCurrentUnique&quot;: 81,
+  &quot;frames&quot;: 119,
+  &quot;aliases&quot;: 38,
+  &quot;actuallyOpenedNewOriginal&quot;: [
+    &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-missing-0.png&quot;,
+    &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-missing-1.png&quot;,
+    &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-error-1.png&quot;,
+    &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-error-2.png&quot;
+  ],
+  &quot;fullByteMappings&quot;: [
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-correction-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-correction-0.png&quot;,
+      &quot;sha256&quot;: &quot;d31f475f40e37d7d1172849290f851cc5fb7e3d70c2879b153765ab766cd31a2&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-correction-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-correction-1.png&quot;,
+      &quot;sha256&quot;: &quot;cd6552b1d4ca76d46a1d9a5ae0a9b79c4c1ef9aceac7505019ad9b73e697b6f8&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-correction-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-correction-2.png&quot;,
+      &quot;sha256&quot;: &quot;810c843888e2e3b3ec17ecc656e2bf433ef793f40c2f514c6d53fdaba06db6d4&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-correction-3.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-correction-3.png&quot;,
+      &quot;sha256&quot;: &quot;75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-replacement-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-replacement-0.png&quot;,
+      &quot;sha256&quot;: &quot;19513ac0fe7508262df117eb918c7f179feb5acad43a20c3719cbb43342317c5&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-replacement-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-replacement-1.png&quot;,
+      &quot;sha256&quot;: &quot;218ceb5aa77359f8e7510e837f21dcb113839ac070efa3e451039015850d2485&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-replacement-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-replacement-2.png&quot;,
+      &quot;sha256&quot;: &quot;2593fafd2a7693703bd2d14569d76fba78d6c70a65eabd30fb638e231ae3174f&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-started-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-started-0.png&quot;,
+      &quot;sha256&quot;: &quot;614b3dad8a6eaa33f80b995576f124c4e71ed87e2a354d2c040e5d424c4ffc47&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-started-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-started-1.png&quot;,
+      &quot;sha256&quot;: &quot;a7345075bd3084606e9b87797fc41a3cf8d3c4535ca095155c050d6e3db17851&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-started-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-started-2.png&quot;,
+      &quot;sha256&quot;: &quot;e0b458fa6b73b3e02791bddb104a4c3ec19cb3ca66bacd17b3e343ca2142da3b&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-unknown-start-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-unknown-start-0.png&quot;,
+      &quot;sha256&quot;: &quot;7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-unknown-start-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-unknown-start-1.png&quot;,
+      &quot;sha256&quot;: &quot;e0449f60f57100c30cd8afc3bdc92d7bfdcfaf005eb106573db64b57748cb27e&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-renew-started-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-renew-started-0.png&quot;,
+      &quot;sha256&quot;: &quot;9521ef4a2b65815c47040c8f3f9e56c07baf0edbd8421b3060ef195b8c4b1aa4&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-renew-started-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-renew-started-1.png&quot;,
+      &quot;sha256&quot;: &quot;f27d8ed010da01aa5415fc2b5b99028b34705ad3f6a72aa8093c7deb31349917&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-renew-started-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-renew-started-2.png&quot;,
+      &quot;sha256&quot;: &quot;2e39624a246d8203102ec3ecdc764de3dea48811559902173992cd1b78862cb7&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-user-fault-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-user-fault-0.png&quot;,
+      &quot;sha256&quot;: &quot;c3b260f369f61fec99679fac89c09a618ebad9177c1bd4ecebdedd172a62e6d3&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-user-fault-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-user-fault-1.png&quot;,
+      &quot;sha256&quot;: &quot;4d22265298f0a091e535991d06af8866561ba418fa52e943471a49213da0f359&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-held-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-held-1.png&quot;,
+      &quot;sha256&quot;: &quot;5d8acf63d3f4e2931cfa713f558d65c5f9498fcbe0d8ddb9c4b43cd97721da76&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-denied-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-denied-0.png&quot;,
+      &quot;sha256&quot;: &quot;f4ef3af0f1993dd023ae7126aa2a960c76a20ad6514c92431341b9e03b429166&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-offline-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-offline-0.png&quot;,
+      &quot;sha256&quot;: &quot;74b9984ef14fec1524510513b156b244dad8eae37aef4a41623811de28c521e3&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-offline-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-offline-1.png&quot;,
+      &quot;sha256&quot;: &quot;7071c668d3dfeece8e09b8e2a22ecbe91b6deeb9e13406f15045e4407676954e&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-offline-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-offline-2.png&quot;,
+      &quot;sha256&quot;: &quot;467f6e9094f9557a775a7abc1a0a358d6c656440c62a42f3e1fca264a33e7c1d&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-busy-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-busy-0.png&quot;,
+      &quot;sha256&quot;: &quot;6f906e993160db4b371195278d2c20c793ce9c8f385467725b0e2d8684a05a69&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-busy-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-busy-1.png&quot;,
+      &quot;sha256&quot;: &quot;ae37168f661365395ca6564ba078bafdb21ff276754b3bd579fff5d258d64506&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-busy-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-busy-2.png&quot;,
+      &quot;sha256&quot;: &quot;ffa336c2579e876111ad96b6b4bc1129c884484d76bb91e71847bc9bdaa5ace5&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-received-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-received-1.png&quot;,
+      &quot;sha256&quot;: &quot;5499538f52593e81f3693799978fbb348c120e3251e14eeeeee3ee4f56bc6fff&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-handler-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-handler-0.png&quot;,
+      &quot;sha256&quot;: &quot;864d5b8656b6060e61c82bc5be4d269a89a6e0fdbd5f4a0ce3c9dd060335e229&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-handler-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-handler-1.png&quot;,
+      &quot;sha256&quot;: &quot;fda1cd36c7e508df8cf484a156ec28f6509fce6fa72b7406770e55d8302c5b33&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-handler-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-handler-2.png&quot;,
+      &quot;sha256&quot;: &quot;a1b6a2d054d8d1cced594bb0b8775fc499163443c01cfb8255b9d7c2dfb5217f&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-handler-3.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-handler-3.png&quot;,
+      &quot;sha256&quot;: &quot;d74addeba4afe69c012c3039684a426350c55b9712a9e17f306a77aab25f7558&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-account-read-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-account-read-1.png&quot;,
+      &quot;sha256&quot;: &quot;43c8c500b95bc3bce96a97de447fd24d748b73202cbd9e7c833a3211c4593c78&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-no-account-read-3.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-no-account-read-3.png&quot;,
+      &quot;sha256&quot;: &quot;5b3152944003a2532c1ec3498c3efaeadd256c18ab8372cc89bc38878c86bbed&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-long-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-long-0.png&quot;,
+      &quot;sha256&quot;: &quot;6f1100c52bb0bd32a89c690829ce00df50f557ad9533a8fcfc096f1a21a45fbc&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-long-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-long-1.png&quot;,
+      &quot;sha256&quot;: &quot;e512fe1acabbf028b9aeefa4bb500a591b20bb43ab26cf86b6e3dc2484eead3d&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-long-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-long-2.png&quot;,
+      &quot;sha256&quot;: &quot;76efcee12e8f03d3a62e6d6bba8ae564d35ad25c1f9480f8e630468f412761db&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-0.png&quot;,
+      &quot;sha256&quot;: &quot;c2e3366dd6822e95b1c1ec13db0bb7de0c7d7c0a68ccf76b14f83512c5b9a9e2&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-1.png&quot;,
+      &quot;sha256&quot;: &quot;c33dab4cd4475678c93dec98d927083271063298142af11e0700f63d40de7cef&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-2.png&quot;,
+      &quot;sha256&quot;: &quot;07d90088e1709c00a39cc083caac83a71acae4d6a8e24047c74bc4377b7bce21&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-3.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-3.png&quot;,
+      &quot;sha256&quot;: &quot;f9f71dae050319e1a1ef43bd89074d0b8b74525edf39594fb78ec28391cacf5b&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-4.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-4.png&quot;,
+      &quot;sha256&quot;: &quot;e99f6adeba44d6825f8c62c1e21d54243878f6334380f4be2d88105be1e80328&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-5.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-5.png&quot;,
+      &quot;sha256&quot;: &quot;f43df6121e325c6cb7fb827d9942079c423f7c181b5abf9757478387db254f11&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-6.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-6.png&quot;,
+      &quot;sha256&quot;: &quot;3f08f2976146902987d79dd19683ba864f21b3dbb27a1c95eb7ed0c464f9690f&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-7.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-7.png&quot;,
+      &quot;sha256&quot;: &quot;60c9cd2206c51f999f22944b9fa631789b4aa840fad9a688be71a6d9f98d536a&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-8.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-8.png&quot;,
+      &quot;sha256&quot;: &quot;a3a2c97ec3228a5f5b1e2f6a2f8ebd1b15e2d582a507ae07d9250705587ab6f2&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-9.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-9.png&quot;,
+      &quot;sha256&quot;: &quot;25cb2ac7bebf260772cdb7fb80d330b6cded1263e9dee6687543b5a282575cd3&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-10.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-10.png&quot;,
+      &quot;sha256&quot;: &quot;dfb652798bf56dc3c0af3e3834cbae62774cfdd3701ba25c2a7a5a7c93b5c3d4&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-11.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-11.png&quot;,
+      &quot;sha256&quot;: &quot;397b5a812235cfe37eb091ab6932115e1883201538339536af678434c7e5b5de&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-12.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-12.png&quot;,
+      &quot;sha256&quot;: &quot;e14b7cee83d2c5b2552ee56671883fb61fd84a70e730e6cd90ac39554df70afa&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-13.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-13.png&quot;,
+      &quot;sha256&quot;: &quot;756cf9c005b232abf21e0694e6e8a5e29df08d916094e76c53c5ba1b2254f193&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-14.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-14.png&quot;,
+      &quot;sha256&quot;: &quot;bf31f218d6a96b2866f7aaa9c7f29b558d24519f18db6432146d39e9d40cf31d&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-15.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-15.png&quot;,
+      &quot;sha256&quot;: &quot;a00c7791afb985098e3594a1a85b4802e13de72a9b86c5cce5e3ddd7992e5456&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-16.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-16.png&quot;,
+      &quot;sha256&quot;: &quot;fd635f1208a41cf96ca715e818c74fb0616c80c7d74eb12ea6991dd746f17eab&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-17.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-17.png&quot;,
+      &quot;sha256&quot;: &quot;41b3cd12574f19b7f59f18147ae3e6e5b4c0c9fb1f6887a7a92eaf31f39a68a5&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-18.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-18.png&quot;,
+      &quot;sha256&quot;: &quot;98335f7ee4ca1d4eb01cd4dc46bbb2368e3f7ce451f2b28d1b30bf03cf5e584a&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-19.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-19.png&quot;,
+      &quot;sha256&quot;: &quot;a565bcfe91cc7d2dc3b88708b8546dd2de2e62fb21fd899109c68eb18c88b68d&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-20.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-20.png&quot;,
+      &quot;sha256&quot;: &quot;fe5e87aedbeb55febed33abe617740c1ab68afdb4616552282ef1b0b55b9cd81&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-correction-21.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-correction-21.png&quot;,
+      &quot;sha256&quot;: &quot;3e4bdd98a677bcbb66503c554984a358724afb09661127757992c80ae81de115&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-0.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-0.png&quot;,
+      &quot;sha256&quot;: &quot;7810abfa526b6b52bfef245bbf018bab2bb72e070b6ee634a153ff4ae3871c53&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-1.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-1.png&quot;,
+      &quot;sha256&quot;: &quot;49265f82911b4d4f4c0210ac7c6d02fbbe61e7a8dd54392e01c07b90b24a834f&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-2.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-2.png&quot;,
+      &quot;sha256&quot;: &quot;b1b531736c99e8fef1a08370aeee150fc749d49fe7ece7618aa7e62a18e34bc6&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-3.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-3.png&quot;,
+      &quot;sha256&quot;: &quot;754b68c85fb19f92a68cee7b427c1925c18e02dca09bf66daff6afb5fcd673e4&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-4.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-4.png&quot;,
+      &quot;sha256&quot;: &quot;181e44ee2b4fc3e06e2b3e82718ad73ff4c0519f0c8763fbf7dd7f5ecead06d6&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-5.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-5.png&quot;,
+      &quot;sha256&quot;: &quot;c0118fdf2a3661dc23dde795b7dc301af8947a343e43957fbf14b565850f9cae&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-6.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-6.png&quot;,
+      &quot;sha256&quot;: &quot;978f5e8960e2def8f72c0a66f1376bde2e2eacb8e8f721038bad5b35db8f3055&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-7.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-7.png&quot;,
+      &quot;sha256&quot;: &quot;8316a6f0d180fcb84cb29b9b38c2c0e2a920614ad2eaa55c43068005812f46c4&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-8.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-8.png&quot;,
+      &quot;sha256&quot;: &quot;68eb04c1516ec73826e7ac33cc275de5012cc7292b010256cb43647afa4988bd&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-9.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-9.png&quot;,
+      &quot;sha256&quot;: &quot;94df99549df44a1c391e4dd0641e349d4269403a36274a9551074d8b31965940&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-10.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-10.png&quot;,
+      &quot;sha256&quot;: &quot;794f082fd855b860dedf6b6e5531e52e663e99138e8b6b5695ec183326f8a9d7&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-11.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-11.png&quot;,
+      &quot;sha256&quot;: &quot;7e1861b342754001aa5a44726e9809d0a2e170f89d56d7f3a5b81069962c687b&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-12.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-12.png&quot;,
+      &quot;sha256&quot;: &quot;00c928c20cec1429e7cb5e0aa0a43b1163dd29f6fa23739f230e1136fec5e869&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-13.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-13.png&quot;,
+      &quot;sha256&quot;: &quot;a7d41a3d115a77b5d02e4176142497eafe7addab3dbc2b6cffeec075603022a5&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-14.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-14.png&quot;,
+      &quot;sha256&quot;: &quot;c29aa15664f7d45fc96fbe2b3e076e1eea3334dfc71d51b5fe89a415fd1476d0&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-15.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-15.png&quot;,
+      &quot;sha256&quot;: &quot;98bd5b0ba060f0b3cb4cb0fbf54248f5fc8825f593a800a68bf438f728a2f02f&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-16.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-16.png&quot;,
+      &quot;sha256&quot;: &quot;4b2bf6218a0675b58494c88f13e5acee19b7004df3f40c2fcb0b15f935b2b5af&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-17.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-17.png&quot;,
+      &quot;sha256&quot;: &quot;44fa893e3b91b995a2d1cf8ac82e878d6643f6a57c50f43ee90068fc21aced56&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-18.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-18.png&quot;,
+      &quot;sha256&quot;: &quot;29e284148d28dcbcb2e2a1b64faccb3e164130533cf6fe01a4f999e8fba95022&quot;,
+      &quot;fullByteEqual&quot;: true
+    },
+    {
+      &quot;file&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r3\\native-r3-large-replacement-19.png&quot;,
+      &quot;priorActuallyOpenedOriginal&quot;: &quot;C:\\Users\\Xpike\\.codex\\task-state\\kavriva-e1025\\native-r2\\native-r2-large-replacement-19.png&quot;,
+      &quot;sha256&quot;: &quot;df67173d216104dd5953aa45141083767db065b2ccab6b4e082d7f8efb08f251&quot;,
+      &quot;fullByteEqual&quot;: true
+    }
+  ],
+  &quot;priorRootReceipt&quot;: &quot;root-native-r2-read.json; Root actually opened all80 originals&quot;,
+  &quot;sourceDigests&quot;: {
+    &quot;modules/e01-app/internal/shell/lib/replacement_right.dart&quot;: &quot;cfda3b926e0e493814fa849f7cb913ae12e670075483fb79c7e0a00d677f8744&quot;,
+    &quot;modules/e01-app/internal/shell/test/replacement_right_test.dart&quot;: &quot;817923a2bd55a21e96fe9f2923b46e06a9a833b4ed0720bd3651511e7b2b3c52&quot;,
+    &quot;modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json&quot;: &quot;c9aa588599797fbdcd114f14f932abf3d7263be0e298ab938968092b39d471c0&quot;
+  },
+  &quot;visualResult&quot;: &quot;Q17 error now explicitly blocks new selection request and distinguishes read refresh; Q18 unreadable card explicitly excludes another account/motorcycle/guide decision. This is root visual check, not independent finding closure.&quot;,
+  &quot;productionDeviceHumanScreenreaderProof&quot;: false
+}</pre>
+
+|Durum|Kare/ölçek|Offset/son|Bayt|SHA256|RAW dosya|Tam alias|
+|---|---|---|---|---|---|---|
+|correction|0/1.0|0.0/1383.0|73791|d31f475f40e37d7d1172849290f851cc5fb7e3d70c2879b153765ab766cd31a2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-correction-0.png|None|
+|correction|1/1.0|600.0/1383.0|81548|cd6552b1d4ca76d46a1d9a5ae0a9b79c4c1ef9aceac7505019ad9b73e697b6f8|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-correction-1.png|None|
+|correction|2/1.0|1200.0/1383.0|81959|810c843888e2e3b3ec17ecc656e2bf433ef793f40c2f514c6d53fdaba06db6d4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-correction-2.png|None|
+|correction|3/1.0|1383.0/1383.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-correction-3.png|None|
+|replacement|0/1.0|0.0/1337.0|72656|19513ac0fe7508262df117eb918c7f179feb5acad43a20c3719cbb43342317c5|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-replacement-0.png|None|
+|replacement|1/1.0|600.0/1337.0|83811|218ceb5aa77359f8e7510e837f21dcb113839ac070efa3e451039015850d2485|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-replacement-1.png|None|
+|replacement|2/1.0|1200.0/1337.0|77494|2593fafd2a7693703bd2d14569d76fba78d6c70a65eabd30fb638e231ae3174f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-replacement-2.png|None|
+|replacement|3/1.0|1337.0/1337.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-replacement-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|started|0/1.0|0.0/1406.0|73771|614b3dad8a6eaa33f80b995576f124c4e71ed87e2a354d2c040e5d424c4ffc47|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-started-0.png|None|
+|started|1/1.0|600.0/1406.0|82454|a7345075bd3084606e9b87797fc41a3cf8d3c4535ca095155c050d6e3db17851|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-started-1.png|None|
+|started|2/1.0|1200.0/1406.0|79816|e0b458fa6b73b3e02791bddb104a4c3ec19cb3ca66bacd17b3e343ca2142da3b|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-started-2.png|None|
+|started|3/1.0|1406.0/1406.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-started-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|unknown-start|0/1.0|0.0/1406.0|73303|7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-unknown-start-0.png|None|
+|unknown-start|1/1.0|600.0/1406.0|80856|e0449f60f57100c30cd8afc3bdc92d7bfdcfaf005eb106573db64b57748cb27e|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-unknown-start-1.png|None|
+|unknown-start|2/1.0|1200.0/1406.0|79816|e0b458fa6b73b3e02791bddb104a4c3ec19cb3ca66bacd17b3e343ca2142da3b|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-unknown-start-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-started-2.png|
+|unknown-start|3/1.0|1406.0/1406.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-unknown-start-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|renew-started|0/1.0|0.0/1360.0|72685|9521ef4a2b65815c47040c8f3f9e56c07baf0edbd8421b3060ef195b8c4b1aa4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-renew-started-0.png|None|
+|renew-started|1/1.0|600.0/1360.0|84066|f27d8ed010da01aa5415fc2b5b99028b34705ad3f6a72aa8093c7deb31349917|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-renew-started-1.png|None|
+|renew-started|2/1.0|1200.0/1360.0|80133|2e39624a246d8203102ec3ecdc764de3dea48811559902173992cd1b78862cb7|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-renew-started-2.png|None|
+|renew-started|3/1.0|1360.0/1360.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-renew-started-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|user-fault|0/1.0|0.0/1337.0|72184|c3b260f369f61fec99679fac89c09a618ebad9177c1bd4ecebdedd172a62e6d3|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-user-fault-0.png|None|
+|user-fault|1/1.0|600.0/1337.0|83673|4d22265298f0a091e535991d06af8866561ba418fa52e943471a49213da0f359|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-user-fault-1.png|None|
+|user-fault|2/1.0|1200.0/1337.0|77494|2593fafd2a7693703bd2d14569d76fba78d6c70a65eabd30fb638e231ae3174f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-user-fault-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-replacement-2.png|
+|user-fault|3/1.0|1337.0/1337.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-user-fault-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|held|0/1.0|0.0/1383.0|73303|7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-held-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-unknown-start-0.png|
+|held|1/1.0|600.0/1383.0|81460|5d8acf63d3f4e2931cfa713f558d65c5f9498fcbe0d8ddb9c4b43cd97721da76|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-held-1.png|None|
+|held|2/1.0|1200.0/1383.0|81959|810c843888e2e3b3ec17ecc656e2bf433ef793f40c2f514c6d53fdaba06db6d4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-held-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-2.png|
+|held|3/1.0|1383.0/1383.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-held-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|denied|0/1.0|0.0/1383.0|72832|f4ef3af0f1993dd023ae7126aa2a960c76a20ad6514c92431341b9e03b429166|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-denied-0.png|None|
+|denied|1/1.0|600.0/1383.0|81460|5d8acf63d3f4e2931cfa713f558d65c5f9498fcbe0d8ddb9c4b43cd97721da76|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-denied-1.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-held-1.png|
+|denied|2/1.0|1200.0/1383.0|81959|810c843888e2e3b3ec17ecc656e2bf433ef793f40c2f514c6d53fdaba06db6d4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-denied-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-2.png|
+|denied|3/1.0|1383.0/1383.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-denied-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|missing|0/1.0|0.0/1077.0|80324|5113db997f5c7a1c8536fece56a9929cb57b1a75bfb0e243e5a0074bac09d228|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-missing-0.png|None|
+|missing|1/1.0|600.0/1077.0|74951|bd72436bf872510a9b094b1d3f50f2163683a4cd72d3f032bda27173c004b9d2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-missing-1.png|None|
+|missing|2/1.0|1077.0/1077.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-missing-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|no-read|0/1.0|0.0/1077.0|80324|5113db997f5c7a1c8536fece56a9929cb57b1a75bfb0e243e5a0074bac09d228|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-read-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-0.png|
+|no-read|1/1.0|600.0/1077.0|74951|bd72436bf872510a9b094b1d3f50f2163683a4cd72d3f032bda27173c004b9d2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-read-1.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-1.png|
+|no-read|2/1.0|1077.0/1077.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-read-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|foreign|0/1.0|0.0/1077.0|80324|5113db997f5c7a1c8536fece56a9929cb57b1a75bfb0e243e5a0074bac09d228|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-foreign-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-0.png|
+|foreign|1/1.0|600.0/1077.0|74951|bd72436bf872510a9b094b1d3f50f2163683a4cd72d3f032bda27173c004b9d2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-foreign-1.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-1.png|
+|foreign|2/1.0|1077.0/1077.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-foreign-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|stale|0/1.0|0.0/1077.0|80324|5113db997f5c7a1c8536fece56a9929cb57b1a75bfb0e243e5a0074bac09d228|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-stale-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-0.png|
+|stale|1/1.0|600.0/1077.0|74951|bd72436bf872510a9b094b1d3f50f2163683a4cd72d3f032bda27173c004b9d2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-stale-1.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-missing-1.png|
+|stale|2/1.0|1077.0/1077.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-stale-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|offline|0/1.0|0.0/1441.0|74868|74b9984ef14fec1524510513b156b244dad8eae37aef4a41623811de28c521e3|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-offline-0.png|None|
+|offline|1/1.0|600.0/1441.0|80019|7071c668d3dfeece8e09b8e2a22ecbe91b6deeb9e13406f15045e4407676954e|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-offline-1.png|None|
+|offline|2/1.0|1200.0/1441.0|78542|467f6e9094f9557a775a7abc1a0a358d6c656440c62a42f3e1fca264a33e7c1d|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-offline-2.png|None|
+|offline|3/1.0|1441.0/1441.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-offline-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|busy|0/1.0|0.0/1418.0|72726|6f906e993160db4b371195278d2c20c793ce9c8f385467725b0e2d8684a05a69|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-busy-0.png|None|
+|busy|1/1.0|600.0/1418.0|81774|ae37168f661365395ca6564ba078bafdb21ff276754b3bd579fff5d258d64506|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-busy-1.png|None|
+|busy|2/1.0|1200.0/1418.0|79259|ffa336c2579e876111ad96b6b4bc1129c884484d76bb91e71847bc9bdaa5ace5|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-busy-2.png|None|
+|busy|3/1.0|1418.0/1418.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-busy-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|error|0/1.0|0.0/1464.0|73303|7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-error-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-unknown-start-0.png|
+|error|1/1.0|600.0/1464.0|81590|8380e93e14f2bd58a0f936bc8178737155d10fd8ff7af6f3b6d189d474722448|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-error-1.png|None|
+|error|2/1.0|1200.0/1464.0|79177|355e848118b729972caebbdc14da4613ee9166f6db5770aa6226441e0f42bf0c|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-error-2.png|None|
+|error|3/1.0|1464.0/1464.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-error-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|received|0/1.0|0.0/1441.0|73303|7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-received-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-unknown-start-0.png|
+|received|1/1.0|600.0/1441.0|80598|5499538f52593e81f3693799978fbb348c120e3251e14eeeeee3ee4f56bc6fff|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-received-1.png|None|
+|received|2/1.0|1200.0/1441.0|78542|467f6e9094f9557a775a7abc1a0a358d6c656440c62a42f3e1fca264a33e7c1d|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-received-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-offline-2.png|
+|received|3/1.0|1441.0/1441.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-received-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|no-handler|0/1.0|0.0/1383.0|73848|864d5b8656b6060e61c82bc5be4d269a89a6e0fdbd5f4a0ce3c9dd060335e229|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-handler-0.png|None|
+|no-handler|1/1.0|600.0/1383.0|81431|fda1cd36c7e508df8cf484a156ec28f6509fce6fa72b7406770e55d8302c5b33|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-handler-1.png|None|
+|no-handler|2/1.0|1200.0/1383.0|81901|a1b6a2d054d8d1cced594bb0b8775fc499163443c01cfb8255b9d7c2dfb5217f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-handler-2.png|None|
+|no-handler|3/1.0|1383.0/1383.0|68741|d74addeba4afe69c012c3039684a426350c55b9712a9e17f306a77aab25f7558|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-handler-3.png|None|
+|no-intent|0/1.0|0.0/1383.0|73303|7da93556c59e5bffe6251042523efe6f0bff7dd87e51163c77b9a456e3957c61|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-intent-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-unknown-start-0.png|
+|no-intent|1/1.0|600.0/1383.0|81460|5d8acf63d3f4e2931cfa713f558d65c5f9498fcbe0d8ddb9c4b43cd97721da76|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-intent-1.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-held-1.png|
+|no-intent|2/1.0|1200.0/1383.0|81959|810c843888e2e3b3ec17ecc656e2bf433ef793f40c2f514c6d53fdaba06db6d4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-intent-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-2.png|
+|no-intent|3/1.0|1383.0/1383.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-intent-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|no-account-read|0/1.0|0.0/1383.0|73791|d31f475f40e37d7d1172849290f851cc5fb7e3d70c2879b153765ab766cd31a2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-account-read-0.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-0.png|
+|no-account-read|1/1.0|600.0/1383.0|81546|43c8c500b95bc3bce96a97de447fd24d748b73202cbd9e7c833a3211c4593c78|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-account-read-1.png|None|
+|no-account-read|2/1.0|1200.0/1383.0|81901|a1b6a2d054d8d1cced594bb0b8775fc499163443c01cfb8255b9d7c2dfb5217f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-account-read-2.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-no-handler-2.png|
+|no-account-read|3/1.0|1383.0/1383.0|68814|5b3152944003a2532c1ec3498c3efaeadd256c18ab8372cc89bc38878c86bbed|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-no-account-read-3.png|None|
+|long|0/1.0|0.0/1613.0|79005|6f1100c52bb0bd32a89c690829ce00df50f557ad9533a8fcfc096f1a21a45fbc|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-long-0.png|None|
+|long|1/1.0|600.0/1613.0|76995|e512fe1acabbf028b9aeefa4bb500a591b20bb43ab26cf86b6e3dc2484eead3d|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-long-1.png|None|
+|long|2/1.0|1200.0/1613.0|79172|76efcee12e8f03d3a62e6d6bba8ae564d35ad25c1f9480f8e630468f412761db|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-long-2.png|None|
+|long|3/1.0|1613.0/1613.0|68877|75c6018030468477fb6fd08e72f9b446bbf0cbc5067a23ef0b3c5eb938f378e9|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-long-3.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-correction-3.png|
+|large-correction|0/3.0|0.0/12352.0|31123|c2e3366dd6822e95b1c1ec13db0bb7de0c7d7c0a68ccf76b14f83512c5b9a9e2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-0.png|None|
+|large-correction|1/3.0|600.0/12352.0|43921|c33dab4cd4475678c93dec98d927083271063298142af11e0700f63d40de7cef|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-1.png|None|
+|large-correction|2/3.0|1200.0/12352.0|46201|07d90088e1709c00a39cc083caac83a71acae4d6a8e24047c74bc4377b7bce21|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-2.png|None|
+|large-correction|3/3.0|1800.0/12352.0|39247|f9f71dae050319e1a1ef43bd89074d0b8b74525edf39594fb78ec28391cacf5b|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-3.png|None|
+|large-correction|4/3.0|2400.0/12352.0|42137|e99f6adeba44d6825f8c62c1e21d54243878f6334380f4be2d88105be1e80328|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-4.png|None|
+|large-correction|5/3.0|3000.0/12352.0|37233|f43df6121e325c6cb7fb827d9942079c423f7c181b5abf9757478387db254f11|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-5.png|None|
+|large-correction|6/3.0|3600.0/12352.0|35616|3f08f2976146902987d79dd19683ba864f21b3dbb27a1c95eb7ed0c464f9690f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-6.png|None|
+|large-correction|7/3.0|4200.0/12352.0|42004|60c9cd2206c51f999f22944b9fa631789b4aa840fad9a688be71a6d9f98d536a|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-7.png|None|
+|large-correction|8/3.0|4800.0/12352.0|46666|a3a2c97ec3228a5f5b1e2f6a2f8ebd1b15e2d582a507ae07d9250705587ab6f2|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-8.png|None|
+|large-correction|9/3.0|5400.0/12352.0|49860|25cb2ac7bebf260772cdb7fb80d330b6cded1263e9dee6687543b5a282575cd3|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-9.png|None|
+|large-correction|10/3.0|6000.0/12352.0|50804|dfb652798bf56dc3c0af3e3834cbae62774cfdd3701ba25c2a7a5a7c93b5c3d4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-10.png|None|
+|large-correction|11/3.0|6600.0/12352.0|42987|397b5a812235cfe37eb091ab6932115e1883201538339536af678434c7e5b5de|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-11.png|None|
+|large-correction|12/3.0|7200.0/12352.0|43489|e14b7cee83d2c5b2552ee56671883fb61fd84a70e730e6cd90ac39554df70afa|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-12.png|None|
+|large-correction|13/3.0|7800.0/12352.0|43859|756cf9c005b232abf21e0694e6e8a5e29df08d916094e76c53c5ba1b2254f193|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-13.png|None|
+|large-correction|14/3.0|8400.0/12352.0|43010|bf31f218d6a96b2866f7aaa9c7f29b558d24519f18db6432146d39e9d40cf31d|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-14.png|None|
+|large-correction|15/3.0|9000.0/12352.0|47102|a00c7791afb985098e3594a1a85b4802e13de72a9b86c5cce5e3ddd7992e5456|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-15.png|None|
+|large-correction|16/3.0|9600.0/12352.0|50737|fd635f1208a41cf96ca715e818c74fb0616c80c7d74eb12ea6991dd746f17eab|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-16.png|None|
+|large-correction|17/3.0|10200.0/12352.0|43747|41b3cd12574f19b7f59f18147ae3e6e5b4c0c9fb1f6887a7a92eaf31f39a68a5|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-17.png|None|
+|large-correction|18/3.0|10800.0/12352.0|46116|98335f7ee4ca1d4eb01cd4dc46bbb2368e3f7ce451f2b28d1b30bf03cf5e584a|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-18.png|None|
+|large-correction|19/3.0|11400.0/12352.0|52566|a565bcfe91cc7d2dc3b88708b8546dd2de2e62fb21fd899109c68eb18c88b68d|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-19.png|None|
+|large-correction|20/3.0|12000.0/12352.0|49321|fe5e87aedbeb55febed33abe617740c1ab68afdb4616552282ef1b0b55b9cd81|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-20.png|None|
+|large-correction|21/3.0|12352.0/12352.0|49938|3e4bdd98a677bcbb66503c554984a358724afb09661127757992c80ae81de115|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-correction-21.png|None|
+|large-replacement|0/3.0|0.0/11935.0|42917|7810abfa526b6b52bfef245bbf018bab2bb72e070b6ee634a153ff4ae3871c53|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-0.png|None|
+|large-replacement|1/3.0|600.0/11935.0|48074|49265f82911b4d4f4c0210ac7c6d02fbbe61e7a8dd54392e01c07b90b24a834f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-1.png|None|
+|large-replacement|2/3.0|1200.0/11935.0|40336|b1b531736c99e8fef1a08370aeee150fc749d49fe7ece7618aa7e62a18e34bc6|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-2.png|None|
+|large-replacement|3/3.0|1800.0/11935.0|40240|754b68c85fb19f92a68cee7b427c1925c18e02dca09bf66daff6afb5fcd673e4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-3.png|None|
+|large-replacement|4/3.0|2400.0/11935.0|36482|181e44ee2b4fc3e06e2b3e82718ad73ff4c0519f0c8763fbf7dd7f5ecead06d6|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-4.png|None|
+|large-replacement|5/3.0|3000.0/11935.0|34064|c0118fdf2a3661dc23dde795b7dc301af8947a343e43957fbf14b565850f9cae|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-5.png|None|
+|large-replacement|6/3.0|3600.0/11935.0|41254|978f5e8960e2def8f72c0a66f1376bde2e2eacb8e8f721038bad5b35db8f3055|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-6.png|None|
+|large-replacement|7/3.0|4200.0/11935.0|45581|8316a6f0d180fcb84cb29b9b38c2c0e2a920614ad2eaa55c43068005812f46c4|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-7.png|None|
+|large-replacement|8/3.0|4800.0/11935.0|43445|68eb04c1516ec73826e7ac33cc275de5012cc7292b010256cb43647afa4988bd|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-8.png|None|
+|large-replacement|9/3.0|5400.0/11935.0|48570|94df99549df44a1c391e4dd0641e349d4269403a36274a9551074d8b31965940|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-9.png|None|
+|large-replacement|10/3.0|6000.0/11935.0|40023|794f082fd855b860dedf6b6e5531e52e663e99138e8b6b5695ec183326f8a9d7|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-10.png|None|
+|large-replacement|11/3.0|6600.0/11935.0|44037|7e1861b342754001aa5a44726e9809d0a2e170f89d56d7f3a5b81069962c687b|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-11.png|None|
+|large-replacement|12/3.0|7200.0/11935.0|45629|00c928c20cec1429e7cb5e0aa0a43b1163dd29f6fa23739f230e1136fec5e869|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-12.png|None|
+|large-replacement|13/3.0|7800.0/11935.0|45006|a7d41a3d115a77b5d02e4176142497eafe7addab3dbc2b6cffeec075603022a5|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-13.png|None|
+|large-replacement|14/3.0|8400.0/11935.0|44847|c29aa15664f7d45fc96fbe2b3e076e1eea3334dfc71d51b5fe89a415fd1476d0|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-14.png|None|
+|large-replacement|15/3.0|9000.0/11935.0|50633|98bd5b0ba060f0b3cb4cb0fbf54248f5fc8825f593a800a68bf438f728a2f02f|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-15.png|None|
+|large-replacement|16/3.0|9600.0/11935.0|47482|4b2bf6218a0675b58494c88f13e5acee19b7004df3f40c2fcb0b15f935b2b5af|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-16.png|None|
+|large-replacement|17/3.0|10200.0/11935.0|43309|44fa893e3b91b995a2d1cf8ac82e878d6643f6a57c50f43ee90068fc21aced56|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-17.png|None|
+|large-replacement|18/3.0|10800.0/11935.0|52796|29e284148d28dcbcb2e2a1b64faccb3e164130533cf6fe01a4f999e8fba95022|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-18.png|None|
+|large-replacement|19/3.0|11400.0/11935.0|51192|df67173d216104dd5953aa45141083767db065b2ccab6b4e082d7f8efb08f251|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-19.png|None|
+|large-replacement|20/3.0|11935.0/11935.0|49938|3e4bdd98a677bcbb66503c554984a358724afb09661127757992c80ae81de115|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3/native-r3-large-replacement-20.png|C:\Users\Xpike\.codex\task-state\kavriva-e1025\native-r3\native-r3-large-correction-21.png|
+
+## Dar onarımın güncel kayıt kontrolü
+
+GraphR3 12kontrol/42testPASS,worst0; RAW 7960bayt/SHA256 84eb94a2e2ed6820d9902cbb741b3708458d33b1bcb635317d6799708c7683bc. 393ID/503Markdown/123kanıt/index116; CHECKER değişmedi. R1 körRET ile mevcut CHANGES_REQUESTED, taze körR2 beklenir; önceki bağımsız hüküm değiştirilmedi.

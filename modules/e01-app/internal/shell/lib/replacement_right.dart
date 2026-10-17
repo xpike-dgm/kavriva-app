@@ -461,7 +461,7 @@ class _ReplacementRightState extends State<ReplacementRightView> {
                               text('Kontrol zamanı: ' + s.authority!.checkedAt),
                             ] else
                               text(
-                                'Özel motosiklet ve rehber ayrıntıları gösterilmiyor. Güncel kimlik ve okuma izni gerekir.',
+                                'Özel motosiklet ve rehber ayrıntıları gösterilmiyor. Güncel kimlik ve okuma izni gerekir. Başka bir hesaba, motosiklete veya rehbere ait karar bu seçimde kullanılmaz.',
                               ),
                           ],
                         ),
@@ -492,8 +492,7 @@ class _ReplacementRightState extends State<ReplacementRightView> {
                           child: text(switch (s.phase) {
                             ReplacementPhase.submitting =>
                               'Kontrol sürüyor. Yeni istek gönderilmiyor.',
-                            ReplacementPhase.failed =>
-                              'Kontrol tamamlanamadı. Seçim değişmiş sayılmaz.',
+                            ReplacementPhase.failed => 'Kontrol tamamlanamadı. Yeni seçim talebi gönderilmiyor. Seçim değişmiş sayılmaz. Güncel bilgiyi tekrar istemek yeni seçim talebi değildir.',
                             ReplacementPhase.received => 'İstek alındı. Hakkın verildiği veya seçimin değiştiği henüz doğrulanmadı.',
                             _ => 'İstek sonucu doğrulanamadı. Yeni seçim yapılmış sayılmaz.',
                           }),

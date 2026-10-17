@@ -480,8 +480,23 @@ void main() {
           find.text('Sunucu değerlendirmesi: talep gönderilebilir'),
           findsNothing,
         );
+        if (s.phase == ReplacementPhase.failed) {
+          expect(
+            find.text(
+              'Kontrol tamamlanamadı. Yeni seçim talebi gönderilmiyor. Seçim değişmiş sayılmaz. Güncel bilgiyi tekrar istemek yeni seçim talebi değildir.',
+            ),
+            findsOneWidget,
+          );
+          expect(action(t, ReplacementAction.refresh), isNotNull);
+        }
         if (!s.readable) {
           expect(find.text(s.scope.history.motorcycleLabel), findsNothing);
+          expect(
+            find.textContaining(
+              'Başka bir hesaba, motosiklete veya rehbere ait karar bu seçimde kullanılmaz.',
+            ),
+            findsOneWidget,
+          );
           expect(find.textContaining('Seçili rehber:'), findsNothing);
           expect(find.textContaining('Kaynak konumu:'), findsNothing);
         }
@@ -832,7 +847,7 @@ void main() {
               }
             });
             final name =
-                'native-r2-' + c.name + '-' + index.toString() + '.png';
+                'native-r3-' + c.name + '-' + index.toString() + '.png';
             final file = File(out.path + '/' + name)..writeAsBytesSync(png!);
             frames.add({
               'case': c.name,
@@ -857,7 +872,7 @@ void main() {
             'maxScrollExtent': max,
           });
         }
-        File(out.path + '/native-r2-manifest.json').writeAsStringSync(
+        File(out.path + '/native-r3-manifest.json').writeAsStringSync(
           const JsonEncoder.withIndent('  ')
                   .convert({'cases': caseRows, 'frames': frames}) +
               '\n',
