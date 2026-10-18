@@ -33,3 +33,10 @@ Bağlayıcı kapsam `vault/PACKS/P-E2-001.md` ve `vault/REGISTRY/T-E2-001.md`; g
 
 
 2564b06 exact-head CI39126947518 ürünün8 browser/gerçek zoom/gerçek Orca ve sessiz olmayan WAV kontrolünü geçti. SSIP gerçek hizmet bağlantısı ve ürünün kendi bağımlılık kanıtı doğrulandı; audit0.35525c0 başarısız okuyucu kurulumu korunur. Sonuç görevin bağımsız kabulü veya üretim bağlantısı değildir; çatı kararı önerisi plan PR5te PROPOSED.
+
+
+## R3 kaynak CI ve gerçek kanıt — yeni kayıt başlığının CI sonucu değildir
+
+ad5fee396885b11d1154345599c5195ea9b3ab7b başlığında dokuz kaynak push iş akışı gerçek SUCCESS. E2 [39133278603](https://github.com/xpike-dgm/kavriva-app/actions/runs/39133278603), ham268199bayt /SHA256 1ff23019145627cd3c26ec5ff576f01d17ad717d2243e390575b73a21930aec0. İlk/eski/güncel turların her birinde104browser, toplam36 gerçek t olayında tek240 ve eski0 yok.13 gerçek ses/konuşma SHA ve sessiz olmayan PCM,22 alt komut rawlog/exit/byteSHA,46 Git kaynak özeti,16 native eşlik ve4eskiartifact dönüşünde0yazım gerçek dosyalarda doğrulandı. Ayrı kapalı ürün8browser/zoom/SSIP/Orca ve audit0. Root36 olayın gerçek konuşma sırasını ve13 transcriptteki61 benzersiz prefixin tamamını okudu; bütün WAVı dinlediği veya insan telaffuz/kullanılabilirlik onayı verdiği söylenmez. Tablo boyutu/bağlamı farklı yapısal aşamalarda tekrarlanabilir; dar kabul yalnız240 sayısının her t olayında tek anılmasıdır.
+
+R3 bağımsız hükmü CHANGES_REQUIRED/HOLD; açık P1 yok, tek P2 kabul metni/sınır tutarsızlığı. Önceki kod bulguları bağımsız olarak kapandı. Bu değişiklik yalnız metin/kanıt uyumudur; runtime, kilit, test veya checker değişmedi. Yeni kaynak başlığı için eski CI aynı-head CI diye sunulmaz. Tek P2nin bağımsız kapanışı, normal PR/CI ve kanonik çatı kararı beklenir. Görev IN_PROGRESS;113/93/206 değişmedi.
