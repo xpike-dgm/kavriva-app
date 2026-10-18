@@ -1,10 +1,10 @@
 // This transport and state are for isolated comparison fixtures only, never product authority.
 export type Row = {id:string; title:string; status:string; scope:string; version:number; source:string};
-export type Snapshot = {state:string; rows:Row[]; page:number; total:number; selected:Row|null; message:string; operation:string|null; result:string; file:string};
-const initial = ():Snapshot => ({state:'loading',rows:[],page:0,total:0,selected:null,message:'Güncel deneme verisi bekleniyor.',operation:null,result:'',file:''});
+export type Snapshot = {state:string; rows:Row[]; page:number; total:number; selected:Row|null; message:string; operation:string|null; result:string; file:string; note:string; formEpoch:number};
+const initial = ():Snapshot => ({state:'loading',rows:[],page:0,total:0,selected:null,message:'Güncel deneme verisi bekleniyor.',operation:null,result:'',file:'',note:'',formEpoch:0});
 export function workspace() {
  let current=initial(); const listeners=new Set<(s:Snapshot)=>void>(); let generation=0;
- const emit=(patch:Partial<Snapshot>)=>{current={...current,...patch};listeners.forEach(f=>f(current));};
+ const emit=(patch:Partial<Snapshot>)=>{if(patch.state&&!['ready','outcome-unknown'].includes(patch.state)){patch={...patch,note:'',file:patch.file||'',result:patch.result||'',operation:null,formEpoch:current.formEpoch+1};}current={...current,...patch};listeners.forEach(f=>f(current));};
  async function request(path:string,options?:RequestInit) {
   const response=await fetch(path,{...options,credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json','X-Fixture-Only':'1',...options?.headers}});
   if(response.headers.get('X-Fixture-Contract')!=='1')throw new Error('INCOMPATIBLE_ARTIFACT');
@@ -16,9 +16,9 @@ export function workspace() {
    emit({...data,page,selected:data.rows[0]||null,message:data.message||'Örnek veriler güncel. Gerçek ürün verisi değildir.'});
   }catch {if(token===generation)emit({state:'error',rows:[],selected:null,message:'Bilgiler alınamadı. Kayıt ayrıntıları kapalı. Yeniden yükleyin veya destek yolunu kullanın.'});}
  }
- async function command(note:string) {
+ async function command() {
   if(current.state!=='ready'||!current.selected||current.operation)return;
-  const resource=current.selected; const token=generation; const id=crypto.randomUUID();
+  const resource=current.selected; const note=current.note; const token=generation; const id=crypto.randomUUID();
   emit({operation:id,result:'Taslak isteği gönderiliyor; henüz kaydedildiği doğrulanmadı.'});
   try {const result=await request('/api/commands',{method:'POST',body:JSON.stringify({id,resource:resource.id,version:resource.version,note})});
    if(token===generation)emit({result:result.message});
@@ -30,6 +30,7 @@ export function workspace() {
   catch(error) {if(token===generation&&error instanceof Error&&error.message==='DENIED'){emit({state:'denied',rows:[],selected:null,file:'Dosya alınmadı.',message:'Güncel izin reddedildi. Özel ayrıntılar kapatıldı.'});return;}if(token===generation)emit({file:'Dosya alınamadı. Önizleme ve yayın kapalı; yeniden kontrol edin.'});}
  }
  return {subscribe(f:(s:Snapshot)=>void){listeners.add(f);f(current);return()=>{listeners.delete(f);};},load,
+ setNote(note:string){if(current.state==='ready'&&!current.operation)emit({note});},
  select(id:string){if(current.state!=='ready'||current.operation)return;emit({selected:current.rows.find(r=>r.id===id)||null,file:'',result:''});},command,lookup,quarantine,
  clear(){++generation;void request('/api/logout',{method:'POST',body:'{}'}).catch(()=>{});emit({...initial(),state:'denied',message:'Deneme oturumu kapatıldı. Özel kayıtlar temizlendi.'});}};
 }
