@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib,json,os,re,shutil,subprocess,sys,tempfile,time,wave,array
 if sys.platform!='linux':
     raise SystemExit('Real Orca test requires isolated Linux Xvfb/DBus/PulseAudio; no PASS on another platform')
+import pyatspi
 root=Path(__file__).resolve().parents[1]
 out=Path(os.environ.get('E2_ORCA_DIR',root/'artifacts/orca')).resolve();out.mkdir(parents=True,exist_ok=True)
 def command(args,**kw):return subprocess.run(args,check=True,text=True,capture_output=True,**kw)
@@ -19,6 +20,36 @@ if not any('\torca_fixture\t' in line for line in command(['pactl','list','short
 command(['pactl','set-default-sink','orca_fixture'])
 # The real speech daemon uses its installed espeak-ng module and a real PulseAudio sink.
 command(['speech-dispatcher','--spawn'])
+def accessibles():
+    stack=[pyatspi.Registry.getDesktop(0)];count=0;deadline=time.monotonic()+15
+    while stack:
+        if count>=6000 or time.monotonic()>deadline:raise RuntimeError('Actual accessibility traversal exceeded bound')
+        obj=stack.pop();count+=1
+        if obj is None:continue
+        yield obj
+        try:stack.extend(obj.getChildAtIndex(i) for i in reversed(range(obj.childCount)))
+        except Exception:continue  # Defunct transient objects cannot become positive matches.
+
+def accessible_named(label,role):
+    deadline=time.monotonic()+20
+    while time.monotonic()<deadline:
+        for obj in accessibles():
+            try:
+                if obj.getRole()==role and obj.name==label:return obj
+            except Exception:continue
+        time.sleep(.2)
+    raise RuntimeError('Actual accessible object absent: '+label)
+
+def exact_table_names():
+    names=[]
+    for obj in accessibles():
+        try:
+            if obj.getRole()==pyatspi.ROLE_TABLE:names.append(obj.name)
+        except Exception:continue
+    expected='Toplam 240 örnek kayıt; sayfada en fazla 20'
+    if names!=[expected]:raise AssertionError('Live AT-SPI table name is not the single current caption: '+repr(names))
+    return names
+
 log=out/'orca-debug.log';reader_output=(out/'orca-process.log').open('w',encoding='utf-8')
 reader=subprocess.Popen(['orca','--replace','--debug','--debug-file='+str(log)],stdout=reader_output,stderr=subprocess.STDOUT)
 rows=[]
@@ -43,9 +74,25 @@ try:
                 time.sleep(.3)
             if len(windows)!=1:raise RuntimeError('Expected one visible fixture browser window, got '+repr(windows))
             command(['xdotool','windowfocus','--sync',windows[0]]);time.sleep(3)
-            for keys in ['ctrl+Home','h','h','t','ctrl+Home']+['Tab']*8+['e']:
-                command(['xdotool','key','--clearmodifiers',keys]);time.sleep(.7)
-            time.sleep(2)
+            phases=[]
+            for phase in ['initial','revisited','next-page']:
+                if phase=='next-page':
+                    button=accessible_named('Sonraki sayfa',pyatspi.ROLE_PUSH_BUTTON)
+                    if not button.queryAction().doAction(0):raise AssertionError('Actual AT-SPI next-page action failed')
+                    accessible_named('OBJ-0021',pyatspi.ROLE_PUSH_BUTTON)
+                else:accessible_named('OBJ-0001',pyatspi.ROLE_PUSH_BUTTON)
+                names=exact_table_names()
+                phase_start=len(log.read_text(encoding='utf-8',errors='replace'))
+                for keys in ['ctrl+Home','h','h','t','ctrl+Home']+['Tab']*8+['e']:
+                    command(['xdotool','key','--clearmodifiers',keys]);time.sleep(.7)
+                time.sleep(1)
+                phase_text=log.read_text(encoding='utf-8',errors='replace')[phase_start:]
+                phase_speech='\n'.join(line for line in phase_text.splitlines() if 'SPEECH OUTPUT:' in line)
+                (out/(name+'-'+phase+'-speech.txt')).write_text(phase_speech,encoding='utf-8')
+                if 'Toplam 240 örnek kayıt' not in phase_speech:raise AssertionError('Current caption not actually spoken: '+phase)
+                if 'Toplam 0 örnek kayıt' in phase_speech or re.search(r'Toplam 240[^\n]*Toplam (?:0|240)',phase_speech):raise AssertionError('Stale or duplicated table count actually spoken: '+phase)
+                phases.append({'phase':phase,'tableNames':names,'speechSHA256':hashlib.sha256(phase_speech.encode()).hexdigest()})
+            row['phases']=phases
             text=log.read_text(encoding='utf-8',errors='replace')[start:]
             speech='\n'.join(line for line in text.splitlines() if 'SPEECH OUTPUT:' in line)
             (out/(name+'-speech.txt')).write_text(speech,encoding='utf-8')

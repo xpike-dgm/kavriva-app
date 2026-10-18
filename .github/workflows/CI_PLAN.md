@@ -659,3 +659,8 @@ vault/PACKS/P-E1-025.md; vault/EVIDENCE/E-DEV-124.md. AynıE1history/entitlement
 ## T-E2-001 ayrı kabuk adayı
 
 Aynı E2 iş akışı karşılaştırma ve ürün dizinlerini ayrı npmci/build/browser/gerçek okuyucu adımlarıyla sınar. Ürün kabuğu veri/oturum örneğini tüketmez; test sunucusu yalnız statik çıktı sunar. Kendi BOM/audit kaydı ve doğal görüntü/ses dosyaları saklanır. Bu ek yalnız kontrol planıdır; yeni kod başlığında CI başarılı olmadan çalışma kanıtı sayılmaz. Karşılaştırma CI39084979140 eski başlığının yeşili yeni ürün koduna taşınmaz. T3 ikinci göz yalnız görev sonu bağımsız incelemeyle; üretim yetki/host/çatı kapıları `vault/PACKS/P-E2-001.md` içinde korunur.
+
+
+## T-E2-001 R1 onarımının tekrar kontrolü
+
+Aynı E2 iş akışı şimdi fixture11HTTP/92browser, aynı-ID tam reload ve iki çıkış yanıtı kaybını; her aday/fazda gerçek AT-SPI tablo adı ve Orca initial/revisited/next-page konuşmasını sınar. Bunlar yeni kodda yerel PASS veya Linux bekleniyor olarak ayrılır; eski76browser kanıtı yeni kaynak kabulü değildir.25dakika iş ve5dakika alt komut sınırı korunur. Ürün kapalı kabuğu kaynakları değişmedi, fakat exact-head bütün CI ve görevsonu bağımsız yeniden hüküm yine gerekir.

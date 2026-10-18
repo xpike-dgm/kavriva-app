@@ -5,7 +5,7 @@ import {readFile,stat} from 'node:fs/promises';
 import {resolve,sep,extname} from 'node:path';
 import {createHash} from 'node:crypto';
 export async function fixtureServer(artifact) {
- const state={view:'ready',epoch:1,active:true,dropResponse:false,contract:'1',audits:[],writes:new Map(),files:new Map()};
+ const state={view:'ready',epoch:1,active:true,dropResponse:false,dropLogoutResponse:false,contract:'1',audits:[],writes:new Map(),files:new Map()};
  const root=artifact?resolve(artifact):null;
  const scriptHashes=[],styleHashes=[];
  if(root){for(const name of ['index.html','200.html']){try{const html=await readFile(resolve(root,name),'utf8');for(const [tag,list] of [['script',scriptHashes],['style',styleHashes]]){for(const match of html.matchAll(new RegExp(`<${tag}\\b([^>]*)>([\\s\\S]*?)<\\/${tag}>`,'gi'))){if(!/\bsrc\s*=/.test(match[1])&&match[2])list.push("'sha256-"+createHash('sha256').update(match[2]).digest('base64')+"'");}}}catch{}}}
@@ -20,10 +20,14 @@ export async function fixtureServer(artifact) {
    const url=new URL(req.url,'http://127.0.0.1');
    if(url.pathname.startsWith('/api/')){
     const authenticated=state.active&&req.headers.cookie==='fixture_session=reader-epoch-'+state.epoch;
+    // The same current cookie may confirm an already-ended fixture session.
+    if(url.pathname==='/api/logout'&&req.method==='POST'){
+     if(req.headers.cookie!=='fixture_session=reader-epoch-'+state.epoch||req.headers.origin!==origin||req.headers['x-fixture-only']!=='1')return json(403,{reason:'SESSION_OR_ORIGIN_NOT_CURRENT'});
+     state.active=false;if(state.dropLogoutResponse){res.destroy();return;}return json(200,{message:'Deneme oturumu kapatıldı.'});
+    }
     if(!authenticated)return json(403,{reason:'SESSION_NOT_CURRENT'});
     if(req.method!=='GET'&&(req.headers.origin!==origin||req.headers['x-fixture-only']!=='1'))return json(403,{reason:'ORIGIN_OR_CSRF'});
     if(req.url!==url.pathname+url.search||/%|\.\.|\/\//.test(url.pathname))return json(400,{reason:'NON_CANONICAL_PATH'});
-    if(url.pathname==='/api/logout'&&req.method==='POST'){state.active=false;return json(200,{message:'Deneme oturumu kapatıldı.'});}
     if(url.pathname==='/api/workspace'&&req.method==='GET'){
      if(state.view==='error'||state.view==='offline')return json(503,{reason:'FIXTURE_UNAVAILABLE'});
      const page=Number(url.searchParams.get('page')||0);if(!Number.isInteger(page)||page<0||page>11)return json(400,{reason:'PAGE_RANGE'});

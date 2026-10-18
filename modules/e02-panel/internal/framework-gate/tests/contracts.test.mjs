@@ -18,3 +18,10 @@ test('fixture teardown closes a real incomplete HTTP connection',async()=>{
  try{await once(socket,'connect');socket.write('GET / HTTP/1.1\r\nHost: 127.0.0.1\r\n');await new Promise(resolve=>setImmediate(resolve));const closed=new Promise((resolve,reject)=>{socket.once('close',resolve);socket.on('error',error=>{if(error.code!=='ECONNRESET')reject(error);});});await Promise.race([Promise.all([s.close(),closed]),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Incomplete HTTP connection blocked fixture teardown')),1000);})]);assert.equal(socket.destroyed,true);
  }finally{clearTimeout(timer);socket.destroy();await s.close();}
 });
+
+
+test('lost logout response is confirmed idempotently only by current cookie and origin',async t=>{
+ const s=await fixture(t);s.state.dropLogoutResponse=true;await assert.rejects(s.call('/api/logout',{}));assert.equal(s.state.active,false);assert.equal((await s.call('/api/workspace')).status,403);s.state.dropLogoutResponse=false;
+ for(const extra of [{Origin:'https://foreign.invalid'},{'X-Fixture-Only':''},{Cookie:'fixture_session=reader-epoch-0'}])assert.equal((await s.call('/api/logout',{},extra)).status,403);
+ assert.equal((await s.call('/api/logout',{})).status,200);assert.equal(s.state.active,false);assert.equal(s.state.writes.size,0);assert.equal(s.state.audits.length,0);
+});
