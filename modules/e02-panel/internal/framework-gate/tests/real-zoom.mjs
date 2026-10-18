@@ -1,19 +1,28 @@
 import {chromium} from 'playwright';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';import {resolve} from 'node:path';import {mkdir,readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import {fixtureServer} from './server.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));const out=resolve(process.env.E2_ZOOM_DIR||root+'/artifacts/real-zoom');await mkdir(out,{recursive:true});
 const extension=resolve(root,'tests/zoom-extension');const context=await chromium.launchPersistentContext('',{channel:'chromium',headless:true,viewport:{width:1440,height:900},...(process.env.E2_CHROMIUM?{executablePath:process.env.E2_CHROMIUM}:{}),args:[`--disable-extensions-except=${extension}`,`--load-extension=${extension}`]});
+context.setDefaultTimeout(10000);
 const results={at:new Date().toISOString(),method:'Actual Chromium tabs.setZoom/getZoom in a disposable test profile; no CSS zoom or device-scale emulation',browser:context.browser()?.version(),candidates:[]};let failures=0;
 try{let worker=context.serviceWorkers()[0];if(!worker)worker=await context.waitForEvent('serviceworker',{timeout:15000});assert.match(worker.url(),/chrome-extension:.*worker\.js$/);
+const callWorker=async(fn,arg)=>{let timer;try{return await Promise.race([worker.evaluate(fn,arg),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Test extension evaluation timed out')),12000);})]);}finally{clearTimeout(timer);}};
 for(const [name,artifact]of Object.entries({react:'dist',angular:'dist/browser',nuxt:'.output/public',svelte:'build'})){
- const row={name};results.candidates.push(row);let server;let page;
+ const row={name};console.log(name,'starting');results.candidates.push(row);let server;let page;
  try{server=await fixtureServer(resolve(root,name,artifact));page=await context.newPage();await page.goto(server.origin);await page.getByRole('button',{name:'OBJ-0001',exact:true}).waitFor();
- await worker.evaluate(async origin=>{const tabs=await chrome.tabs.query({});const tab=tabs.find(t=>t.url?.startsWith(origin+'/'));if(!tab?.id)throw Error('Scoped fixture tab absent');await chrome.tabs.setZoom(tab.id,1);},server.origin);await page.waitForFunction(()=>innerWidth===1440);
- const before=await page.evaluate(()=>({width:innerWidth,dpr:devicePixelRatio,cssZoom:getComputedStyle(document.documentElement).zoom}));
- const value=await worker.evaluate(async origin=>{const tabs=await chrome.tabs.query({});const tab=tabs.find(t=>t.url?.startsWith(origin+'/'));if(!tab?.id)throw Error('Exactly scoped fixture tab absent');await chrome.tabs.setZoom(tab.id,2);return chrome.tabs.getZoom(tab.id);},server.origin);
- assert.equal(value,2);await page.waitForFunction(w=>innerWidth<=w/2+1,before.width);
+ await callWorker(async origin=>{const tabs=await chrome.tabs.query({});const tab=tabs.find(t=>t.url?.startsWith(origin+'/'));if(!tab?.id)throw Error('Scoped fixture tab absent');await chrome.tabs.setZoom(tab.id,1);},server.origin);await page.waitForFunction(()=>innerWidth===1440);
+ console.log(name,'baseline reset');const before=await page.evaluate(()=>({width:innerWidth,dpr:devicePixelRatio,cssZoom:getComputedStyle(document.documentElement).zoom}));
+ const value=await callWorker(async origin=>{const tabs=await chrome.tabs.query({});const tab=tabs.find(t=>t.url?.startsWith(origin+'/'));if(!tab?.id)throw Error('Exactly scoped fixture tab absent');await chrome.tabs.setZoom(tab.id,2);return chrome.tabs.getZoom(tab.id);},server.origin);
+ console.log(name,'zoom applied',value);assert.equal(value,2);await page.waitForFunction(w=>innerWidth<=w/2+1,before.width);
  const after=await page.evaluate(()=>({width:innerWidth,dpr:devicePixelRatio,cssZoom:getComputedStyle(document.documentElement).zoom,overflow:document.documentElement.scrollWidth>innerWidth}));
  assert.equal(after.cssZoom,before.cssZoom);assert.equal(after.overflow,false);
  const panels=await page.locator('.panels > section').evaluateAll(es=>es.map(e=>{const b=e.getBoundingClientRect();return{x:b.x,y:b.y,right:b.right,bottom:b.bottom};}));assert.ok(panels[0].right<=panels[1].x||panels[0].bottom<=panels[1].y);
  await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').innerText(),'İçeriğe geç');await page.keyboard.press('Enter');assert.equal(await page.locator(':focus').getAttribute('id'),'workspace');await page.getByRole('link',{name:'Destek',exact:true}).focus();await page.keyboard.press('Enter');
- const file=resolve(out,name+'-actual-zoom-200.png');await page.screenshot({path:file,fullPage:true});const bytes=await readFile(file);Object.assign(row,{result:'PASS',before,after,reportedZoom:value,image:{path:file,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20)}});
+ const cdp=await context.newCDPSession(page);const images=[];console.log(name,'capturing native frames');await page.evaluate(()=>scrollTo(0,0));
+ for(let frame=0;frame<40;frame++){
+  await page.waitForTimeout(100);const position=await page.evaluate(()=>({y:scrollY,max:document.documentElement.scrollHeight-innerHeight,step:Math.floor(innerHeight*.8)}));
+  const file=resolve(out,name+'-actual-zoom-200-'+String(frame).padStart(2,'0')+'.png');const screenshot=await cdp.send('Page.captureScreenshot',{format:'png',fromSurface:true,captureBeyondViewport:false});const bytes=Buffer.from(screenshot.data,'base64');await writeFile(file,bytes);
+  assert.equal(bytes.readUInt32BE(16),1440);assert.equal(bytes.readUInt32BE(20),900);images.push({path:file,scrollY:position.y,scrollMax:position.max,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),width:1440,height:900});
+  if(position.y>=position.max-1)break;await page.evaluate(step=>scrollBy(0,step),position.step);
+ }
+ assert.ok(images.at(-1).scrollY>=images.at(-1).scrollMax-1,'Natural viewport series must reach actual bottom');await cdp.detach();Object.assign(row,{result:'PASS',before,after,reportedZoom:value,images,capture:'Unedited native CDP viewport frames from top to actual bottom; no fullPage zoom clipping or image stitching'});
  }catch(e){failures++;Object.assign(row,{result:'FAIL',error:e.message});}finally{if(page)await page.close();if(server)await server.close();await writeFile(resolve(out,'results.json'),JSON.stringify(results,null,2));}console.log(name,row.result,row.error||'');}
 }finally{await context.close();}process.exitCode=failures?1:0;
