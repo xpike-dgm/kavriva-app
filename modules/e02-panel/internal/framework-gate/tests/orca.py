@@ -14,7 +14,8 @@ versions['packages']=command(['dpkg-query','-W','orca','speech-dispatcher','spee
 (out/'versions.json').write_text(json.dumps(versions,indent=2),encoding='utf-8')
 command(['gsettings','set','org.gnome.desktop.interface','toolkit-accessibility','true'])
 command(['pulseaudio','--start','--exit-idle-time=-1'])
-command(['pactl','load-module','module-null-sink','sink_name=orca_fixture'])
+if not any('\torca_fixture\t' in line for line in command(['pactl','list','short','sinks']).stdout.splitlines()):
+    command(['pactl','load-module','module-null-sink','sink_name=orca_fixture'])
 command(['pactl','set-default-sink','orca_fixture'])
 # The real speech daemon uses its installed espeak-ng module and a real PulseAudio sink.
 command(['speech-dispatcher','--spawn'])

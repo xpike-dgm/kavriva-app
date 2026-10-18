@@ -30,3 +30,20 @@ API yalnız loopback deneme sunucusunda; HttpOnly/SameSite cookie, güncel epoch
 Dört adayın tam kilidi/lisans/engine/audit/SBOM raporu saklanır. Gerçek ekran okuyucu, gerçek browserzoom, majoryükseltme, destekömrü, operasyonmaliyeti/çıkış ve bağımsız kapılar olmadan tüm adaylar HELD. Nuxt paket açığı diğerini otomatik kazandırmaz. Yeni framework seçimi ancak kanıt ve supersedingADR ile mümkündür.
 
 Bağlayıcı açıkkapı kaynağı: `vault/PACKS/P-E2-001.md` ve `vault/REGISTRY/T-E2-001.md`; ADR010 seçimi ve ürün kabulü henüz kapalıdır.
+
+
+## Destek ömrü — 18 Ekim 2026 tarihli kaynak okuması
+
+- [React resmi sürüm politikası](https://react.dev/community/versioning-policy): kararlı sürümlerde semver; etkilenen major sürümlere güvenlik düzeltmesi geri taşınır. Bu belgeye dayanarak tarihli LTS bitişi veya ücretli müdahale garantisi yazılamaz. Vite ve TypeScript ayrı bakım bağımlılıklarıdır.
+- [Angular resmi sürüm/destek tablosu](https://angular.dev/reference/releases): v22 aktif destek yaklaşık Haziran2027, LTS bitişi Haziran2028; v22 ile major ritmi yıllık ve toplam tipik destek24ay. Tarihler değişebilir. Eski altı aylık ritim bu sürüm için güncel kabul edilmez. CLI/core eşliği ve TS uyumu kilitlerle korunur.
+- [Nuxt resmi yol haritası](https://nuxt.com/docs/4.x/community/roadmap/): Nuxt3 desteği31Temmuz2026da bitti. Bu deneyde3.21.11 yalnız eski-major göç girdisidir; yeni ürün için öneri veya güvenli eski sürüme dönüş hedefi değildir. Nuxt4 destek çizgisi ve kilitte görülen güvenlik bulguları ayrı değerlendirilmelidir;3ün bittiği bilgisi4ün reddi anlamına gelmez.
+- [SvelteKit3 resmi göç belgesi](https://svelte.dev/docs/kit/migrating-to-sveltekit-3): Vite eklentisine taşınan yapılandırma ve yükselen minimum bağımlılıklar açık değişikliklerdir. SvelteKit2→3 deneyi, Svelte4→5 göçü olarak adlandırılmaz. İncelenen kaynakta tarihli LTS taahhüdü doğrulanmadı; garanti varsayılmaz.
+
+## Gerçek deneme sınırları ve bakım yükü
+
+Normal çalışma bu örnekte statik dosya ve aynı loopbackAPI ile ölçülür; ayrı SSR sunucusu yoktur. Paket/BOM/artifact boyutları ve komut süreleri gerçek deney verisidir; üretim aylık faturası veya gelecek bakım saatine çevrilmez. Olay yolu aynı kapalı durum ve aynı işlemkimliği sorgusudur; dosya yolu özel karantinadır; destek/çıkış her adayda görünür. Sahibe SQL/SSH/konsol onarımı atanmaz. Üretim hostu, kapasitesi ve kullanım trafiği seçilmediğinden üretim parasal maliyeti HELD kalır.
+
+AI çakışması için mevcut E10 kuralı ayrı çıktı/sabit görev/dosya sahipliği/kaynak pinleri ve görsel-anlamsal denetimdir. Otomatik çalışma zamanı dosya kilidi veya çoklu ajan ekran üretimi gerçekleştirilmiş sayılmaz. Bu görevde uygulamayı tek yazar üretir; bağımsız görevsonu inceleme ayrı yapılır. Dört nativeUI aynı model ve iş yükünü kullanır; birebir gövde eşliği, kapalıform temizliği ve doğalPNG okuması tasarım gerilemesini sınar. Framework seçimi bu ortak sözleşmenin yerine geçmez.
+
+
+Nuxt yol haritasının gerçek Markdown yanıtı ayrıca saklandı: 4.x şu an kararlı sürüm; destek bitişi 5.x yayımlandıktan altı ay sonrası. 5.x için Q4 2026 yalnız tahmin, yayımlanmış sürüm gibi yazılmaz. Bu nedenle 4.x için uydurma kesin bitiş tarihi verilmez. Bu destek çizgisi ile mevcut kilitteki güvenlik bulguları ayrı risklerdir.

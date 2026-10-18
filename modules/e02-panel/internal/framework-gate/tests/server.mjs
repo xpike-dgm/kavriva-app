@@ -71,7 +71,7 @@ export async function fixtureServer(artifact) {
   }catch(error){if(!res.destroyed)json(400,{reason:'FIXTURE_BAD_REQUEST'});}
  });
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));const origin='http://127.0.0.1:'+server.address().port;
- return {origin,state,csp,close:()=>new Promise(resolve=>server.close(resolve))};
+ return {origin,state,csp,close:()=>new Promise(resolve=>{server.close(resolve);server.closeAllConnections();})};
 }
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(text.length>70000)throw Error('bounded body');}return JSON.parse(text);}
 

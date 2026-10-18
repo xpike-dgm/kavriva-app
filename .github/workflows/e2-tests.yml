@@ -52,6 +52,8 @@ jobs:
           export XDG_CONFIG_HOME="$RUNNER_TEMP/e2-orca-config"
           mkdir -p "$XDG_CONFIG_HOME"
           xvfb-run -a -s '-screen 0 1600x1200x24' dbus-run-session -- python3 tests/orca.py
+      - name: Compare locked previous majors, upgrade and restored old artifacts
+        run: npm run upgrade
       - name: Collect lock SBOM license audit and static artifact evidence
         if: always()
         run: npm run evidence

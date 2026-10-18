@@ -11,7 +11,8 @@
     "browser": "node tests/browser.mjs",
     "evidence": "node tools/evidence.mjs",
     "build": "node tools/run.mjs",
-    "zoom": "node tests/real-zoom.mjs"
+    "zoom": "node tests/real-zoom.mjs",
+    "upgrade": "node tools/upgrade.mjs"
   },
   "devDependencies": {
     "playwright": "1.64.1",

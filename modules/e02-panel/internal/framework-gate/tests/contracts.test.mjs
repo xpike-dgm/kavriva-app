@@ -1,3 +1,4 @@
+import {connect} from 'node:net';import {once} from 'node:events';
 import {test} from 'node:test';import assert from 'node:assert/strict';import {fixtureServer} from './server.mjs';
 async function fixture(t){const s=await fixtureServer();t.after(()=>s.close());const call=(path,body,extra={})=>fetch(s.origin+path,{method:body?'POST':'GET',headers:{Cookie:'fixture_session=reader-epoch-1',Origin:s.origin,'X-Fixture-Only':'1','Content-Type':'application/json',...extra},...(body?{body:JSON.stringify(body)}:{})});return {...s,call};}
 const command={id:'same-operation',resource:'OBJ-0001',version:1,note:'Yalnız deneme notu'};
@@ -10,3 +11,10 @@ test('response loss keeps same-id lookup without a second mutation',async t=>{co
 test('denied/stale views expose no rows or commands',async t=>{const s=await fixture(t);for(const v of ['denied','stale']){s.state.view=v;assert.deepEqual((await(await s.call('/api/workspace')).json()).rows,[]);assert.equal((await s.call('/api/commands',command)).status,403);}});
 test('private quarantine digest; no active preview; restore never revives epoch',async t=>{const s=await fixture(t);const a=await(await s.call('/api/files',{name:'x.html',content:'<script>alert(1)</script>',resource:'OBJ-0001'})).json();assert.match(a.digest,/^[a-f0-9]{64}$/);assert.equal((await s.call('/api/files/'+a.handle+'/preview')).status,403);for(const action of ['archive','restore'])assert.equal((await s.call('/api/files/'+a.handle+'/'+action,{})).status,200);s.state.epoch++;assert.equal((await s.call('/api/files/'+a.handle+'/restore',{})).status,403);});
 test('status lookup does not return a previous epoch operation',async t=>{const s=await fixture(t);await s.call('/api/commands',command);s.state.epoch=2;assert.equal((await s.call('/api/status/'+command.id,undefined,{Cookie:'fixture_session=reader-epoch-2'})).status,404);});
+
+// A partial HTTP header must not hold an already-finished fixture run open.
+test('fixture teardown closes a real incomplete HTTP connection',async()=>{
+ const s=await fixtureServer();const url=new URL(s.origin);const socket=connect(Number(url.port),url.hostname);let timer;
+ try{await once(socket,'connect');socket.write('GET / HTTP/1.1\r\nHost: 127.0.0.1\r\n');await new Promise(resolve=>setImmediate(resolve));const closed=new Promise((resolve,reject)=>{socket.once('close',resolve);socket.on('error',error=>{if(error.code!=='ECONNRESET')reject(error);});});await Promise.race([Promise.all([s.close(),closed]),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Incomplete HTTP connection blocked fixture teardown')),1000);})]);assert.equal(socket.destroyed,true);
+ }finally{clearTimeout(timer);socket.destroy();await s.close();}
+});

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "purpose": "Aynı örnekte önceki major, güncel major ve eski dosyalara dönüşün kontrollü denemesi; gerçek ürün göçü değildir",
+  "node": "v24.19.0",
+  "npm": "11.10.1",
+  "candidates": [
+    "react",
+    "angular",
+    "nuxt",
+    "svelte"
+  ],
+  "sourceFiles": [
+    "fixture.json",
+    "reading-questions.json",
+    "package.json",
+    "package-lock.json",
+    "shared/model.ts",
+    "shared/workspace.css",
+    "tests/server.mjs",
+    "tests/browser.mjs",
+    "tests/contracts.test.mjs",
+    "tools/evidence.mjs",
+    "tools/run.mjs",
+    "react/package.json",
+    "react/package-lock.json",
+    "react/tsconfig.json",
+    "react/index.html",
+    "react/vite.config.ts",
+    "react/src/main.tsx",
+    "angular/package.json",
+    "angular/package-lock.json",
+    "angular/tsconfig.json",
+    "angular/angular.json",
+    "angular/tsconfig.app.json",
+    "angular/src/index.html",
+    "angular/src/main.ts",
+    "nuxt/package.json",
+    "nuxt/package-lock.json",
+    "nuxt/tsconfig.json",
+    "nuxt/nuxt.config.ts",
+    "nuxt/app/app.vue",
+    "svelte/package.json",
+    "svelte/package-lock.json",
+    "svelte/tsconfig.json",
+    "svelte/vite.config.ts",
+    "svelte/src/app.html",
+    "svelte/src/routes/+layout.ts",
+    "svelte/src/routes/+page.svelte",
+    "tests/real-zoom.mjs",
+    "tests/zoom-extension/manifest.json",
+    "tests/zoom-extension/worker.js",
+    "tests/orca.py",
+    "tools/upgrade.mjs",
+    "tools/upgrade-versions.json",
+    "tests/previous-locks/react.package-lock.json",
+    "tests/previous-locks/angular.package-lock.json",
+    "tests/previous-locks/nuxt.package-lock.json",
+    "tests/previous-locks/svelte.package-lock.json"
+  ],
+  "previousLocks": {
+    "react": {
+      "file": "tests/previous-locks/react.package-lock.json",
+      "sha256": "585dbf7f27b6f0f6853a495d36b33c4f4751aa29b9720d1dcc0a8dbc6bf87fdb"
+    },
+    "angular": {
+      "file": "tests/previous-locks/angular.package-lock.json",
+      "sha256": "534e17d3817180f310ee11d84f095bfc2f883439b450b48c9111254361c9e5bc"
+    },
+    "nuxt": {
+      "file": "tests/previous-locks/nuxt.package-lock.json",
+      "sha256": "c25eb51a97373f005d2c08544e238b7c590e7844d8e6e37bb576fc33eb6b2d58"
+    },
+    "svelte": {
+      "file": "tests/previous-locks/svelte.package-lock.json",
+      "sha256": "c2d086345995d46e11da8027cac24ce3821a3c60e947049a4ff54562bacaada8"
+    }
+  },
+  "compatibilityEdits": {
+    "nuxt": "future.compatibilityVersion4 for previous3.x layout; explicit dev commander15.0.0 resolves actual optional-peer collision; terser retains nested2.20.3",
+    "svelte": "generated .svelte-kit/tsconfig.json extends for previous2.x only; flattened Vite config already backported and unchanged"
+  },
+  "authority": "All identity/role/epoch/audit/restore assertions are explicitly isolated fixture authority, not a production E3/E5 acceptance"
+}
