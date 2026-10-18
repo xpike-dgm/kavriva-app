@@ -1,11 +1,16 @@
 """Real Linux Orca + Chromium AT-SPI speech test. No virtual-reader substitution."""
 from pathlib import Path
-import hashlib,json,os,re,shutil,subprocess,sys,tempfile,time,wave,array
+import hashlib,json,os,re,shutil,subprocess,sys,tempfile,time,wave,array,traceback
 if sys.platform!='linux':
     raise SystemExit('Real Orca test requires isolated Linux Xvfb/DBus/PulseAudio; no PASS on another platform')
 root=Path(__file__).resolve().parents[1]
 out=Path(os.environ.get('E2_ORCA_DIR',root/'artifacts/orca')).resolve();out.mkdir(parents=True,exist_ok=True)
-def command(args,**kw):return subprocess.run(args,check=True,text=True,capture_output=True,**kw)
+def command(args,**kw):
+    result=subprocess.run(args,text=True,capture_output=True,timeout=30,**kw)
+    with (out/'commands.jsonl').open('a',encoding='utf-8') as diagnostic:
+        diagnostic.write(json.dumps({'args':args,'returncode':result.returncode,'stdout':result.stdout,'stderr':result.stderr},ensure_ascii=False)+'\n')
+    result.check_returncode()
+    return result
 chromium=command(['node','--input-type=module','-e',"import {chromium} from 'playwright'; console.log(chromium.executablePath())"],cwd=root).stdout.strip()
 for tool in ['orca','xdotool','parec','pactl']:
     if not shutil.which(tool):raise RuntimeError('Missing actual tool: '+tool)
@@ -14,11 +19,24 @@ versions['packages']=command(['dpkg-query','-W','orca','speech-dispatcher','spee
 (out/'versions.json').write_text(json.dumps(versions,indent=2),encoding='utf-8')
 command(['gsettings','set','org.gnome.desktop.interface','toolkit-accessibility','true'])
 command(['pulseaudio','--start','--exit-idle-time=-1'])
-if not any('\torca_workspace\t' in line for line in command(['pactl','list','short','sinks']).stdout.splitlines()):
-    command(['pactl','load-module','module-null-sink','sink_name=orca_workspace'])
-command(['pactl','set-default-sink','orca_workspace'])
+if not any('\torca_fixture\t' in line for line in command(['pactl','list','short','sinks']).stdout.splitlines()):
+    command(['pactl','load-module','module-null-sink','sink_name=orca_fixture'])
+command(['pactl','set-default-sink','orca_fixture'])
 # The real speech daemon uses its installed espeak-ng module and a real PulseAudio sink.
-command(['speech-dispatcher','--spawn'])
+# SSIPClient first connects to a real running socket, autospawning only if absent.
+# A prior CI step can leave the speech daemon alive; a second --spawn is not a probe.
+try:
+    import speechd
+    client=speechd.SSIPClient('kavriva-workspace-ci')
+    try:
+        modules=client.list_output_modules()
+        if not modules:raise RuntimeError('Real speech daemon has no output modules')
+        (out/'speech-service.json').write_text(json.dumps({'result':'CONNECTED','modules':modules,'sink':'orca_fixture'},ensure_ascii=False,indent=2),encoding='utf-8')
+    finally:
+        client.close()
+except Exception:
+    (out/'speech-service-error.txt').write_text(traceback.format_exc(),encoding='utf-8')
+    raise
 log=out/'orca-debug.log';reader_output=(out/'orca-process.log').open('w',encoding='utf-8')
 reader=subprocess.Popen(['orca','--replace','--debug','--debug-file='+str(log)],stdout=reader_output,stderr=subprocess.STDOUT)
 rows=[]
@@ -32,7 +50,7 @@ try:
             origin=json.loads(server.stdout.readline())['origin'];assert origin.startswith('http://127.0.0.1:')
             start=len(log.read_text(encoding='utf-8',errors='replace')) if log.exists() else 0
             audio=out/(name+'-speech.wav')
-            recording=subprocess.Popen(['parec','--device=orca_workspace.monitor','--format=s16le','--rate=16000','--channels=1','--file-format=wav',str(audio)],stdout=subprocess.DEVNULL,stderr=(out/(name+'-audio.stderr')).open('w'))
+            recording=subprocess.Popen(['parec','--device=orca_fixture.monitor','--format=s16le','--rate=16000','--channels=1','--file-format=wav',str(audio)],stdout=subprocess.DEVNULL,stderr=(out/(name+'-audio.stderr')).open('w'))
             profile=tempfile.mkdtemp(prefix='e2-orca-'+name+'-')
             browser=subprocess.Popen([chromium,'--no-sandbox','--disable-dev-shm-usage','--no-first-run','--force-renderer-accessibility','--user-data-dir='+profile,'--window-size=1440,900',origin],stdout=subprocess.DEVNULL,stderr=(out/(name+'-chromium.stderr')).open('w'))
             deadline=time.monotonic()+20;windows=[]
