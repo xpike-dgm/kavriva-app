@@ -34,12 +34,21 @@ jobs:
         run: npm test
       - name: Typecheck and build four native static candidates
         run: npm run build
+      - name: Clean install and build closed workspace shell candidate
+        working-directory: modules/e02-panel/internal/workspace-shell
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          git diff --exit-code -- package-lock.json
       - name: Install browser paired with exact Playwright lock
         run: npx --no-install playwright install --with-deps chromium
       - name: Run same browser keyboard accessibility and security workload
         run: npm run browser
       - name: Test actual browser zoom in disposable profile
         run: npm run zoom
+      - name: Test product shell layout keyboard closed state and actual zoom
+        working-directory: modules/e02-panel/internal/workspace-shell
+        run: npm run browser
       - name: Install real assistive technology in isolated CI image
         run: |
           sudo apt-get update
@@ -52,6 +61,22 @@ jobs:
           export XDG_CONFIG_HOME="$RUNNER_TEMP/e2-orca-config"
           mkdir -p "$XDG_CONFIG_HOME"
           xvfb-run -a -s '-screen 0 1600x1200x24' dbus-run-session -- python3 tests/orca.py
+      - name: Read closed product shell with actual Orca speech and audio
+        working-directory: modules/e02-panel/internal/workspace-shell
+        env:
+          NO_AT_BRIDGE: '0'
+          ACCESSIBILITY_ENABLED: '1'
+        run: |
+          export XDG_CONFIG_HOME="$RUNNER_TEMP/e2-shell-orca-config"
+          mkdir -p "$XDG_CONFIG_HOME"
+          xvfb-run -a -s '-screen 0 1600x1200x24' dbus-run-session -- python3 tests/orca.py
+      - name: Collect closed product shell dependency and audit evidence
+        working-directory: modules/e02-panel/internal/workspace-shell
+        run: |
+          mkdir -p artifacts/dependencies
+          npm ls --all --json > artifacts/dependencies/tree.json
+          npm sbom --sbom-format cyclonedx --package-lock-only > artifacts/dependencies/sbom.json
+          npm audit --json > artifacts/dependencies/audit.json
       - name: Compare locked previous majors, upgrade and restored old artifacts
         run: npm run upgrade
       - name: Collect lock SBOM license audit and static artifact evidence
@@ -62,5 +87,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: e2-four-family-fixture-${{ github.sha }}
-          path: modules/e02-panel/internal/framework-gate/artifacts/
+          path: |
+            modules/e02-panel/internal/framework-gate/artifacts/
+            modules/e02-panel/internal/workspace-shell/artifacts/
           retention-days: 14

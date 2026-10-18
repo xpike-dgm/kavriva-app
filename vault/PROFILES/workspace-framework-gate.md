@@ -13,7 +13,7 @@ tests: [modules/e02-panel/internal/framework-gate/tests/contracts.test.mjs, modu
 superseded_by: []
 last_verified: 2026-10-18
 depends_on: [M-E2-001]
-used_by: [P-E2-001, T-E2-001, E-DEV-125]
+used_by: [P-E2-001, T-E2-001, E-DEV-125, V-E2-SHELL-001]
 evidence: [E-DEV-125]
 supersedes: []
 status: IN_PROGRESS
@@ -47,3 +47,24 @@ AI çakışması için mevcut E10 kuralı ayrı çıktı/sabit görev/dosya sahi
 
 
 Nuxt yol haritasının gerçek Markdown yanıtı ayrıca saklandı: 4.x şu an kararlı sürüm; destek bitişi 5.x yayımlandıktan altı ay sonrası. 5.x için Q4 2026 yalnız tahmin, yayımlanmış sürüm gibi yazılmaz. Bu nedenle 4.x için uydurma kesin bitiş tarihi verilmez. Bu destek çizgisi ile mevcut kilitteki güvenlik bulguları ayrı risklerdir.
+
+## Aynı örneğin yerel karşılaştırma ölçümleri
+
+Bu tablo R3 denemesinin gerçek çıktısıdır. Derleme klasörlerindeki bütün dosyaları kapsar; ağ aktarımı veya uygulama hız ölçümü değildir. gzip toplamı her dosyanın ayrı sıkıştırılmasıdır. Eski sürümler göç girdisidir; üretimde eski sürüme dönme önerisi değildir.
+
+| Aday | Eski / güncel kilit paketi | Güncel statik çıktı (bayt) | Güncel ayrı gzip toplamı (bayt) | Yerel güvenlik taraması |
+|---|---:|---:|---:|---|
+| react | 51 / 48 | 232033 | 72588 | 0 kayıtlı bulgu |
+| angular | 512 / 347 | 124303 | 42417 | 0 kayıtlı bulgu |
+| nuxt | 757 / 712 | 163615 | 63760 | 11 yüksek bağlı bulgu; iki kök; açık |
+| svelte | 84 / 80 | 100635 | 39822 | 0 kayıtlı bulgu |
+
+Dört adayda da lisans alanı eksik paket sayısı sıfır; bu bir hukuk incelemesi değildir. Güncel dört adayın npm ağacı ve kilit temelli CycloneDX üretimi başarılı. Eski SvelteKit2 ağacında cookie üzerinden düşük düzey bulgular, eski Nuxt3 ağacında ek destek/güvenlik riski raporda korunur. Yeni ürünün bu eski sürümlere kurulması kabul edilmez.
+
+React en küçük bağımlılık ağacını, SvelteKit en küçük statik çıktıyı verdi; Angular açık tarihli destek çizgisine sahip. Bunlar ayrı ödünleşimlerdir. Dosya boyutu, tanınırlık veya başka adayın sorunu tek başına kazanan seçmez. R3 yerel toplam dört-aday build süresi eski fazda 44.692 saniye, güncel fazda 35.913 saniye. Bu toplamlar tek adayın performansı veya üretim faturası olarak sunulmaz. İki fazda Windows gerçek okuyucu NOT_RUN; yeni Linux CI ve bağımsız görevsonu inceleme beklenir.
+
+## Dosya sahipliği ve çakışma denemesi
+
+`bc057850192d8f27e9f22e22bfd87ac9542c5edd` başlığındaki dört gerçek native bileşenin her biri için aynı tabandan iki sentetik başlık değişikliği ayrı dosyalara yazıldı. Gerçek `git merge-file --stdout proposal-a.txt base.txt proposal-b.txt` dört adayda da exit1 ve açık çakışma işaretleri üretti; iki öneri ve çakışma çıktısı ayrı korundu, depodaki kaynak baytları değişmedi. Bu gerçek Git çakışma deneyidir; iki bağımsız AI tarafından kod yazıldığı veya otomatik runtime dosya kilidi kurulduğu iddiası değildir.
+
+Kontrol yolu E10 kuralıyla aynı: sabit görev ve taban, tek dosyanın sahipliği, ayrı öneri çıktıları, çakışmayı görünür bırakma, incelemeden birini doğru kabul etmeme. Değişen headingin tasarım/okuma sözleşmesini koruduğu kanıtlanmadığından hiçbir öneri uygulanmadı. Semantic/görsel kabul ve görev sonu bağımsız inceleme ayrıca gerekir. Çerçeve seçimi çoklu AI üretiminin otomatik tutarlı olduğu garantisini vermez.

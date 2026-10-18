@@ -19,3 +19,8 @@ modules/e02-panel/internal/framework-gate/**/.output/
 modules/e02-panel/internal/framework-gate/**/.svelte-kit/
 modules/e02-panel/internal/framework-gate/**/.angular/
 modules/e02-panel/internal/framework-gate/artifacts/
+
+# Isolated E2 product-shell candidate
+/modules/e02-panel/internal/workspace-shell/node_modules/
+/modules/e02-panel/internal/workspace-shell/dist/
+/modules/e02-panel/internal/workspace-shell/artifacts/

@@ -654,3 +654,8 @@ vault/PACKS/P-E1-025.md; vault/EVIDENCE/E-DEV-124.md. AynıE1history/entitlement
 ## E2 ortak altyapı örneği CI
 
 `e2-tests.yml`: pinnedNode24.19/npm11.10.1; beşnpmci --ignore-scripts; aynı9HTTP negatif ve dört gerçek nativebuild; aynıPlaywright tarayıcı/klavye/axe/durum/CSP/CSRF/response-loss çalışması; lock-temelliSBOM/lisans/audit/artifact raporları. Yeni CI yalnız karşılaştırma çalışmasının yürüdüğünü gösterir; HELD vendor açığı/gerçek okuyucu/majorupgrade/maliyet veya ADR010 seçim kapısını otomatikPASS yapmaz. T3 otomasyonu bağımsız hükmün yerine geçmez; tasksonu bağımsız inceleme gerekir.
+
+
+## T-E2-001 ayrı kabuk adayı
+
+Aynı E2 iş akışı karşılaştırma ve ürün dizinlerini ayrı npmci/build/browser/gerçek okuyucu adımlarıyla sınar. Ürün kabuğu veri/oturum örneğini tüketmez; test sunucusu yalnız statik çıktı sunar. Kendi BOM/audit kaydı ve doğal görüntü/ses dosyaları saklanır. Bu ek yalnız kontrol planıdır; yeni kod başlığında CI başarılı olmadan çalışma kanıtı sayılmaz. Karşılaştırma CI39084979140 eski başlığının yeşili yeni ürün koduna taşınmaz. T3 ikinci göz yalnız görev sonu bağımsız incelemeyle; üretim yetki/host/çatı kapıları `vault/PACKS/P-E2-001.md` içinde korunur.

@@ -6,7 +6,7 @@ domain: "module-contract"
 module: "e02-panel"
 owner: "E2"
 depends_on: [M-E3-001, M-E5-001, M-E8-001]
-used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E2-FRAMEWORK-001, P-E2-001, E-DEV-125]
+used_by: [I-E10-REGISTRATION-BASELINE, I-E10-PATHS-001, P-E10-006, E-DEV-033, V-E2-FRAMEWORK-001, P-E2-001, E-DEV-125, V-E2-SHELL-001]
 implements:
   - "planning 06_DELIVERY_PLANNING/EPIC_CATALOG.md row E2"
 public_contracts:
@@ -95,3 +95,8 @@ Registration authority for this metadata frame: `modules/e10-graph/GRAPH_NODE_RE
 ## T-E2-001 karşılaştırma örneği
 
 `internal/framework-gate/` aynı dört framework için açıkça sentetik loopbackdenemedir. Ürün yolu/otorite/yayın seçimi değildir. ADR010 kapıları ve görevinIN_PROGRESS durumu `vault/EVIDENCE/E-DEV-125.md` içinde görünür. Mevcut E2renders/E3serves/E5authorizes sınırı aynıdır; yeni E6edge yok.
+
+
+## Ayrı çalışma alanı kabuğu adayı
+
+`internal/workspace-shell/`, karşılaştırma örneğinin oturum/veri/modelini tüketmeyen ayrı statik adaydır. Gezinti ve paneller dışında kayıt/rol/onay/yayın etkisi oluşturmaz; bağlantı doğrulanmadı durumunda kalır. Bağlayıcı çatı seçimi veya üretim E3/E5 bağlantısı iddia edilmez. `vault/PROFILES/workspace-shell.md`, `vault/PACKS/P-E2-001.md` ve `vault/EVIDENCE/E-DEV-125.md` kapsam/kabul sınırlarını tutar. Mevcut E2renders/E3serves/E5authorizes yönü korunur.

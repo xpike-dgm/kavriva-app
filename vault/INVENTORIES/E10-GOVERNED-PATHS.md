@@ -2006,3 +2006,21 @@ RAWv90snapshot vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-02
 - `modules/e02-panel/internal/framework-gate/tests/previous-locks/angular.package-lock.json` — `modules/e02-panel/MANIFEST.md` altında sabitdeneme/kilit; üretim veya framework seçimi değil.
 - `modules/e02-panel/internal/framework-gate/tests/previous-locks/nuxt.package-lock.json` — `modules/e02-panel/MANIFEST.md` altında sabitdeneme/kilit; üretim veya framework seçimi değil.
 - `modules/e02-panel/internal/framework-gate/tests/previous-locks/svelte.package-lock.json` — `modules/e02-panel/MANIFEST.md` altında sabitdeneme/kilit; üretim veya framework seçimi değil.
+
+
+### Aynı görevde ayrı kapalı ürün kabuğu adayı
+
+- `modules/e02-panel/internal/workspace-shell/package.json` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/package-lock.json` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tsconfig.json` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/vite.config.ts` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/index.html` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/src/main.tsx` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/src/workspace-shell.tsx` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/src/workspace.css` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tests/server.mjs` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tests/browser.mjs` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tests/orca.py` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tests/zoom-extension/manifest.json` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `modules/e02-panel/internal/workspace-shell/tests/zoom-extension/worker.js` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.
+- `vault/PROFILES/workspace-shell.md` — `modules/e02-panel/MANIFEST.md` altında ayrı kabuk adayı; çatı kararı veya üretim etkinleştirmesi değil.

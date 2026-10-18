@@ -1,0 +1,36 @@
+/* Task-local layout values; this file does not lock the final E2 design tokens. */
+:root { font-family: Arial, sans-serif; color: #172b43; background: #eef2f6; line-height: 1.55; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #185998; text-underline-offset: .2em; }
+a:focus-visible, [tabindex]:focus { outline: 3px solid #a64100; outline-offset: 4px; }
+h1, h2, p { overflow-wrap: anywhere; }
+h1 { margin: .2rem 0 0; font-size: 1.7rem; line-height: 1.3; }
+h2 { margin: 0 0 .8rem; font-size: 1.15rem; }
+p { margin: .65rem 0; }
+.skip-link { position: absolute; left: 1rem; top: -6rem; padding: .75rem 1rem; background: white; z-index: 2; }
+.skip-link:focus { top: .7rem; }
+.workspace-header { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.5rem 2rem; background: #142b47; color: white; }
+.brand { font-size: .95rem; font-weight: bold; margin: 0; }
+.connection-label { border: 1px solid #c6d7e9; padding: .5rem .9rem; flex-shrink: 0; }
+.access-notice { padding: 1.1rem 2rem; background: #fff4d4; border-bottom: 2px solid #9f8122; }
+.access-notice h2 { margin-bottom: .25rem; }
+.access-notice p { margin: .25rem 0; }
+.workspace-layout { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem 2rem; align-items: start; }
+.workspace-navigation { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.workspace-navigation a { display: block; padding: .65rem .75rem; min-height: 2.75rem; }
+main { min-width: 0; }
+.workspace-summary { border-left: 4px solid #516e90; background: #e1eaf4; padding: .8rem 1rem; margin-bottom: 1rem; }
+.workspace-panels { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1rem; }
+.workspace-panel { min-width: 0; padding: 1.2rem; border: 1px solid #a8b9cc; border-radius: .45rem; background: white; }
+.work-list { grid-row: span 2; }
+.panel-state { display: inline-block; background: #eef2f6; border-left: 3px solid #516e90; padding: .4rem .65rem; font-weight: bold; }
+footer { margin: 0 2rem 2rem; padding: 1.2rem; border-top: 1px solid #a8b9cc; }
+@media (max-width: 70rem) {
+  .workspace-header { flex-wrap: wrap; }
+  .workspace-layout { grid-template-columns: minmax(0, 1fr); }
+  .workspace-navigation { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .workspace-navigation h2 { width: 100%; margin-bottom: 0; }
+  .workspace-panels { grid-template-columns: minmax(0, 1fr); }
+  .work-list { grid-row: auto; }
+}
