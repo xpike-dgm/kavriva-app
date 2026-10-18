@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Isolated localhost comparison server. No real identities, secrets, storage or E3/E5 authority.
 import {createServer} from 'node:http';
 import {readFile,stat} from 'node:fs/promises';
@@ -73,3 +74,12 @@ export async function fixtureServer(artifact) {
  return {origin,state,csp,close:()=>new Promise(resolve=>server.close(resolve))};
 }
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(text.length>70000)throw Error('bounded body');}return JSON.parse(text);}
+
+// Optional CLI for a real assistive-technology fixture process, never a deployment entry point.
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+ const artifacts={react:'dist',angular:'dist/browser',nuxt:'.output/public',svelte:'build'};
+ const name=process.argv[2];if(!Object.hasOwn(artifacts,name))throw Error('Known fixture candidate required');
+ const root=resolve(fileURLToPath(new URL('../',import.meta.url)),name,artifacts[name]);
+ const fixture=await fixtureServer(root);console.log(JSON.stringify({origin:fixture.origin,candidate:name}));
+ process.on('SIGTERM',()=>{void fixture.close().then(()=>process.exit(0));});
+}

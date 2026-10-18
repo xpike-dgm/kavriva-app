@@ -1990,3 +1990,10 @@ RAWv90snapshot vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-02
 | `modules/e02-panel/internal/framework-gate/svelte/src/app.html` | `modules/e02-panel/MANIFEST.md` | Aynı dört adayın sınırlı denemesi; üretim değil |
 | `modules/e02-panel/internal/framework-gate/svelte/src/routes/+layout.ts` | `modules/e02-panel/MANIFEST.md` | Aynı dört adayın sınırlı denemesi; üretim değil |
 | `modules/e02-panel/internal/framework-gate/svelte/src/routes/+page.svelte` | `modules/e02-panel/MANIFEST.md` | Aynı dört adayın sınırlı denemesi; üretim değil |
+
+### Aynı görevde yardımcı teknoloji ölçüm adresleri
+
+- `modules/e02-panel/internal/framework-gate/tests/real-zoom.mjs` — `modules/e02-panel/MANIFEST.md` altında yalnız gerçekzoom/Orca ölçümü; üretim değil.
+- `modules/e02-panel/internal/framework-gate/tests/zoom-extension/manifest.json` — `modules/e02-panel/MANIFEST.md` altında yalnız gerçekzoom/Orca ölçümü; üretim değil.
+- `modules/e02-panel/internal/framework-gate/tests/zoom-extension/worker.js` — `modules/e02-panel/MANIFEST.md` altında yalnız gerçekzoom/Orca ölçümü; üretim değil.
+- `modules/e02-panel/internal/framework-gate/tests/orca.py` — `modules/e02-panel/MANIFEST.md` altında yalnız gerçekzoom/Orca ölçümü; üretim değil.
