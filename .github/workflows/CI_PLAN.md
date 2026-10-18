@@ -664,3 +664,7 @@ Aynı E2 iş akışı karşılaştırma ve ürün dizinlerini ayrı npmci/build/
 ## T-E2-001 R1 onarımının tekrar kontrolü
 
 Aynı E2 iş akışı şimdi fixture11HTTP/92browser, aynı-ID tam reload ve iki çıkış yanıtı kaybını; her aday/fazda gerçek AT-SPI tablo adı ve Orca initial/revisited/next-page konuşmasını sınar. Bunlar yeni kodda yerel PASS veya Linux bekleniyor olarak ayrılır; eski76browser kanıtı yeni kaynak kabulü değildir.25dakika iş ve5dakika alt komut sınırı korunur. Ürün kapalı kabuğu kaynakları değişmedi, fakat exact-head bütün CI ve görevsonu bağımsız yeniden hüküm yine gerekir.
+
+## T-E2-001 R2 onarımının tekrar kontrolü
+
+Aynı E2 işi fixture11HTTP/104browser ve her tek gerçek Orca t gezinmesinde ayrı konuşma satırlarının tamamında sayının tam bir kez anılmasını sınar. İlk/eski/güncel ve initial/revisited/next-page kapsamı korunur; tablo adı/gerçek zoom/ses kontrolleri gevşetilmez. Geçici ve kalıcı çıkış takip yazımı hatasında kapalı görünüm, gerçek sunucu çıkışı ve retry olumsuzları eklendi. Yerel104PASS yeni Linux veya bağımsız kabul değildir.25dakika iş sınırı,73 adres/130 pin, ürün kapalı sınırı ve tek görev PRı değişmez.

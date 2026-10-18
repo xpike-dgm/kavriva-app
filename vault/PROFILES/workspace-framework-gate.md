@@ -71,3 +71,12 @@ Kontrol yolu E10 kuralıyla aynı: sabit görev ve taban, tek dosyanın sahipli�
 
 
 R1 bütün görev incelemesi CHANGES_REQUIRED/HOLD verdi. Ortak modelde aynı-ID yenileme/reload ve doğrulanmamış çıkış onarımı; dört native tabloda aynı güncel erişilebilir ad;92 browser/11HTTP yerel PASS. Tab içi iz sürme kaydı yalnız fixture UUID/çıkış niyetidir, yetki veya özel veri değildir. Gerçek Linux3aşamalı okuyucu/majorCI ve bağımsız yeniden hüküm beklenir. Eski76browser/10HTTP kanıtları yalnız eski exact-head kaynaklarını kapsar. Nuxt Q4 2026 resmi yönlenmiş ham yanıt8.853bayt SHA25666cb5a6fa9b7a149b5c8064abc5b8418c728b170eea7fb56f71966bb80267d1d ile tekrar okundu; resmi releaseAPI4.6.2 published2026-10-16T17:21:23Z döndü. Yeni kaynak R1deki Q1/4.6.0 gözlemini sessizce değiştirmez; yeniden incelemeye sunulur.
+
+
+## R2 onarımının yerel sonucu — yeni Linux ve bağımsız hüküm bekleniyor
+
+Dört adayın typecheck/build adımı başarılı; HTTP11/11 ve gerçek tarayıcı104/104 geçti. Yeni olumsuzlar her adayda tek yerel yazım hatası, aynı hatayla ağ kesintisi ve kalıcı yerel yazım hatası sonrasını kapsar. Çıkış niyeti açıkken aynı sayfada yenileme veri getirmez; yerel kayıt arızası sunucu revokasyon isteğini durdurmaz; retry gerçek yanıtla çözülür, sunucu kapandıktan sonraki tam reload özel satır açmaz. Yerel kaydın hiç yazılamaması+ağ kesintisi+tam sayfanın kapanması için garanti verilmez. Komutların kalıcı aynı-ID önkoşulu korunur.
+
+Görsel40 dosyanın37si önceki gerçekten okunmuş onarım kareleriyle bütün baytları aynı; Root kalan üç Angular/Nuxt/Svelte karantina özgününü original açtı. Bunlar kasıtlı yatay kaydırma konumunda soldan kesilmiş caption/hücre içerebilir; tablonun tamamının görünürlüğü diye raporlanmaz. Yeni panel çakışması yok. Ürün kabuğu kaynakları değişmedi. İlk caption-yazıcı shell denemesi tırnaklama hatasıyla çalışmadan durdu; ardından mutlak yollu Python yazıcısı kullanıldı. Browser çıkış dizini değişkeni ilk çağrıda yanlış adla verildi;104 gerçek başarılı sonuç varsayılan geçici dizinden baytlarıyla dış makbuza kopyalandı; test yeniden çalıştırılmış gibi gösterilmez.
+
+Erişilebilir tablo adı görünür sayıyla tam eşleşir; yalnız yinelenen caption AXden çıkar. Yeni Orca her t eyleminin bütün ayrı konuşma satırlarını sayar, tekrarları tekilleştirmez ve tam1 ister; fakat bu Linux onarımı henüz çalıştırılmadı. Yeni gerçek CI ve bütün görev bağımsız inceleme olmadan kapanış yok. R1/R2 özgün ret raporları aynen korunur; görev IN_PROGRESS ve ADR016 PROPOSED.

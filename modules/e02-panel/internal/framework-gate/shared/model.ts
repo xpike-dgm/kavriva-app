@@ -5,7 +5,7 @@ type Recovery = {version:1; kind:'idle'} | {version:1; kind:'operation'; id:stri
 const recoveryKey='kavriva.fixture.recovery.v1';
 const initial = ():Snapshot => ({state:'loading',rows:[],page:0,total:0,selected:null,message:'Güncel deneme verisi bekleniyor.',operation:null,result:'',file:'',note:'',formEpoch:0});
 export function workspace() {
- let current=initial();const listeners=new Set<(s:Snapshot)=>void>();let generation=0;let signingOut=false;
+ let current=initial();const listeners=new Set<(s:Snapshot)=>void>();let generation=0;let signingOut=false;let logoutPending=false;
  const emit=(patch:Partial<Snapshot>)=>{if(patch.state&&!['ready','submitting','outcome-unknown'].includes(patch.state)){patch={...patch,note:'',file:patch.file||'',result:patch.result||'',operation:null,formEpoch:current.formEpoch+1};}current={...current,...patch};listeners.forEach(f=>f(current));};
  function readRecovery():Recovery {
   const raw=sessionStorage.getItem(recoveryKey);let value:Recovery={version:1,kind:'idle'};
@@ -28,15 +28,16 @@ export function workspace() {
   const body=await response.json();if(!response.ok)throw new Error(response.status===403?'DENIED':body.reason||'İşlem reddedildi');return body;
  }
  async function load(page=0) {
+  if(logoutPending||signingOut){emit({state:'logout-unknown',rows:[],selected:null,total:0,message:'Çıkış doğrulanmadı. Özel görünüm kapalı; güvenli çıkışı yeniden deneyin.'});return;}
   let recovery:Recovery;try{recovery=readRecovery();}catch{storageClosed();return;}
-  if(recovery.kind==='logout'||signingOut){emit({state:'logout-unknown',rows:[],selected:null,total:0,message:'Çıkış doğrulanmadı. Özel görünüm kapalı; güvenli çıkışı yeniden deneyin.'});return;}
+  if(recovery.kind==='logout'){logoutPending=true;emit({state:'logout-unknown',rows:[],selected:null,total:0,message:'Çıkış doğrulanmadı. Özel görünüm kapalı; güvenli çıkışı yeniden deneyin.'});return;}
   if(recovery.kind==='operation'){emit({state:'outcome-unknown',operation:recovery.id,result:'Önceki isteğin sonucu bilinmiyor. Aynı işlem kimliğiyle durumu sorgulayın; yeni işlem göndermeyin.'});return;}
   const token=++generation;emit({state:'loading',rows:[],selected:null,total:0,result:'',operation:null,file:'',message:'Güncel deneme verisi bekleniyor.'});
   try{const data=await request('/api/workspace?page='+page);if(token!==generation)return;emit({...data,page,selected:data.rows[0]||null,message:data.message||'Örnek veriler güncel. Gerçek ürün verisi değildir.'});}
   catch{if(token===generation)emit({state:'error',rows:[],selected:null,total:0,message:'Bilgiler alınamadı. Kayıt ayrıntıları kapalı. Yeniden yükleyin veya destek yolunu kullanın.'});}
  }
  async function command() {
-  if(current.state!=='ready'||!current.selected||current.operation||signingOut)return;
+  if(current.state!=='ready'||!current.selected||current.operation||signingOut||logoutPending)return;
   try{if(readRecovery().kind!=='idle'){await load();return;}}catch{storageClosed();return;}
   const resource=current.selected,note=current.note,token=generation,id=crypto.randomUUID();
   try{saveRecovery({version:1,kind:'operation',id});}catch{storageClosed();return;}
@@ -45,19 +46,22 @@ export function workspace() {
   catch(error){if(token!==generation)return;if(error instanceof Error&&error.message==='DENIED'){try{idle();}catch{}emit({state:'denied',rows:[],selected:null,total:0,message:'Güncel izin reddedildi. Özel ayrıntılar kapatıldı; yeni işlem gönderilmedi.',result:'İşlem reddedildi.'});return;}emit({state:'outcome-unknown',result:'Yanıt alınamadı; sonuç bilinmiyor. Aynı işlem kimliğiyle durumu sorgulayın; yeni işlem göndermeyin.'});}
  }
  async function lookup() {
-  if(!current.operation||signingOut)return;const token=generation,id=current.operation;
+  if(!current.operation||signingOut||logoutPending)return;const token=generation,id=current.operation;
   try{const data=await request('/api/status/'+encodeURIComponent(id));if(token===generation){idle();emit({result:data.message,state:data.state});}}
   catch(error){if(token!==generation)return;if(error instanceof Error&&error.message==='DENIED'){try{idle();}catch{}emit({state:'denied',rows:[],selected:null,total:0,file:'',message:'Güncel izin reddedildi. Özel ayrıntılar kapatıldı.',result:'Durum bilgisine erişim reddedildi.'});return;}emit({state:'outcome-unknown',result:'Durum doğrulanamadı. Yeni işlem göndermeyin. Destek yolunu kullanın.'});}
  }
  async function quarantine(file:File) {
-  if(current.state!=='ready'||!current.selected||current.operation||signingOut)return;const token=generation,resource=current.selected.id;
+  if(current.state!=='ready'||!current.selected||current.operation||signingOut||logoutPending)return;const token=generation,resource=current.selected.id;
   try{const data=await request('/api/files',{method:'POST',body:JSON.stringify({name:file.name,type:file.type,content:await file.text(),resource})});if(token===generation)emit({file:data.message});}
   catch(error){if(token!==generation)return;if(error instanceof Error&&error.message==='DENIED'){emit({state:'denied',rows:[],selected:null,total:0,file:'Dosya alınmadı.',message:'Güncel izin reddedildi. Özel ayrıntılar kapatıldı.'});return;}emit({file:'Dosya alınamadı. Önizleme ve yayın kapalı; yeniden kontrol edin.'});}
  }
  async function clear() {
-  if(signingOut)return;const token=++generation;signingOut=true;
+  if(signingOut)return;const token=++generation;signingOut=true;logoutPending=true;
   emit({...initial(),state:'logging-out',message:'Özel görünüm kapatıldı. Sunucu çıkışı henüz doğrulanmadı.'});
-  try{saveRecovery({version:1,kind:'logout'});await request('/api/logout',{method:'POST',body:'{}'});if(token===generation){idle();emit({state:'denied',message:'Deneme oturumu kapatıldı. Özel kayıtlar temizlendi.'});}}
+  // Local journal failure must not prevent this authority-reducing request.
+  // The in-memory latch still closes every data/effect path until confirmed retry.
+  try{saveRecovery({version:1,kind:'logout'});}catch{}
+  try{await request('/api/logout',{method:'POST',body:'{}'});if(token===generation){idle();logoutPending=false;emit({state:'denied',message:'Deneme oturumu kapatıldı. Özel kayıtlar temizlendi.'});}}
   catch{if(token===generation)emit({state:'logout-unknown',message:'Çıkış doğrulanmadı. Özel görünüm kapalı; güvenli çıkışı yeniden deneyin.'});}
   finally{signingOut=false;}
  }

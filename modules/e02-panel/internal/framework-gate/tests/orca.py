@@ -83,15 +83,28 @@ try:
                 else:accessible_named('OBJ-0001',pyatspi.ROLE_PUSH_BUTTON)
                 names=exact_table_names()
                 phase_start=len(log.read_text(encoding='utf-8',errors='replace'))
+                table_event=None
                 for keys in ['ctrl+Home','h','h','t','ctrl+Home']+['Tab']*8+['e']:
+                    event_start=len(log.read_text(encoding='utf-8',errors='replace'))
                     command(['xdotool','key','--clearmodifiers',keys]);time.sleep(.7)
+                    if keys=='t':
+                        time.sleep(1)
+                        event_text=log.read_text(encoding='utf-8',errors='replace')[event_start:]
+                        table_event='\n'.join(line for line in event_text.splitlines() if 'SPEECH OUTPUT:' in line)
+                        (out/(name+'-'+phase+'-table-event.txt')).write_text(table_event,encoding='utf-8')
+                        # One actual navigation action may emit multiple speech records.
+                        # Never deduplicate them: a repeated caption is a real failure.
+                        mentions=table_event.count('Toplam 240 örnek kayıt')
+                        if mentions!=1 or 'Toplam 0 örnek kayıt' in table_event:
+                            raise AssertionError('Single table navigation must announce the current count exactly once: '+phase+' mentions='+str(mentions))
                 time.sleep(1)
                 phase_text=log.read_text(encoding='utf-8',errors='replace')[phase_start:]
                 phase_speech='\n'.join(line for line in phase_text.splitlines() if 'SPEECH OUTPUT:' in line)
                 (out/(name+'-'+phase+'-speech.txt')).write_text(phase_speech,encoding='utf-8')
                 if 'Toplam 240 örnek kayıt' not in phase_speech:raise AssertionError('Current caption not actually spoken: '+phase)
                 if 'Toplam 0 örnek kayıt' in phase_speech or re.search(r'Toplam 240[^\n]*Toplam (?:0|240)',phase_speech):raise AssertionError('Stale or duplicated table count actually spoken: '+phase)
-                phases.append({'phase':phase,'tableNames':names,'speechSHA256':hashlib.sha256(phase_speech.encode()).hexdigest()})
+                if table_event is None:raise AssertionError('Actual table navigation event missing')
+                phases.append({'phase':phase,'tableNames':names,'speechSHA256':hashlib.sha256(phase_speech.encode()).hexdigest(),'tableEventSpeechSHA256':hashlib.sha256(table_event.encode()).hexdigest(),'tableEventCountMentions':1})
             row['phases']=phases
             text=log.read_text(encoding='utf-8',errors='replace')[start:]
             speech='\n'.join(line for line in text.splitlines() if 'SPEECH OUTPUT:' in line)
