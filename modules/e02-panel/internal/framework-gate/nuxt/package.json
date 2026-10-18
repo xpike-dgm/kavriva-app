@@ -1,0 +1,21 @@
+{
+  "name": "kavriva-e2-fixture-nuxt",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0 <25"
+  },
+  "scripts": {
+    "build": "nuxt typecheck && nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "4.6.2",
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vue-tsc": "3.3.13",
+    "@nuxt/nitro-server": "4.6.2"
+  }
+}

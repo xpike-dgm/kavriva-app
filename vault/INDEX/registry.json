@@ -2684,6 +2684,47 @@
    "status": "DONE"
   },
   {
+   "task_id": "T-E2-001",
+   "version": "1",
+   "purpose": "Yönetim çalışma alanı için aynı koşullarda dört altyapı denemesi",
+   "domain": "internal-operations",
+   "module": "e02-panel",
+   "owner": "E2",
+   "implements": [
+    "ADR-010",
+    "ADR-015",
+    "C2.1",
+    "F2.1.1",
+    "FL2.1.1"
+   ],
+   "public_contracts": [],
+   "internal_scope": "framework-evidence-fixture",
+   "tasks": [
+    "T-E2-001"
+   ],
+   "tests": [
+    "modules/e02-panel/internal/framework-gate/tests/contracts.test.mjs",
+    "modules/e02-panel/internal/framework-gate/tests/browser.mjs"
+   ],
+   "superseded_by": [],
+   "last_verified": "2026-10-18",
+   "flow_feature": "FL2.1.1/F2.1.1",
+   "objective": "Dört adayın aynı yönetim işi örneğindeki gerçek davranışını karşılaştırılabilir kanıtla ölçmek.",
+   "context_pack": "P-E2-001",
+   "acceptance": "Panels render without overlap at baseline viewport; a11y baseline; responsive deferred",
+   "claimed_by": "Codex",
+   "claimed_at": "2026-10-18",
+   "depends_on": [],
+   "used_by": [
+    "P-E2-001",
+    "V-E2-FRAMEWORK-001",
+    "E-DEV-125"
+   ],
+   "evidence": "E-DEV-125",
+   "supersedes": "planning TASK_INDEX T-E2-001",
+   "status": "IN_PROGRESS"
+  },
+  {
    "task_id": "T-E3-001-R1",
    "flow_feature": "FL3.1.1/F3.1.1",
    "objective": "Enforce commit-time tuple decision point in product code",

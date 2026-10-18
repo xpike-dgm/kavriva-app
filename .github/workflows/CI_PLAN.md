@@ -12,6 +12,9 @@ module: "e10-graph"
 depends_on:
   - "ADR-015"
 used_by:
+  - "V-E2-FRAMEWORK-001"
+  - "P-E2-001"
+  - "E-DEV-125"
   - "V-E1-REPLACEMENT-001"
   - "P-E1-025"
   - "E-DEV-124"
@@ -647,3 +650,7 @@ T-E1-022a aynı14kapsamında bağımsızU04RET sonrası görev-önce düzen düz
 ## Seçim düzeltme ve yeniden seçim sunumunun belge tüketimi
 
 vault/PACKS/P-E1-025.md; vault/EVIDENCE/E-DEV-124.md. AynıE1history/entitlement; yeni public/runtimeedge,hak/yetki yazımı veya billing yok. DEC0053/firststep/MAYopen/sourcecited/windowHELD. Yerel482/native10/56format0/analyze0/36responsive/22durum119PNG80özgün39alias; bağımsız kabul beklenir. Gerçek112/94/206; üretim/uzman/cihaz/yayınHELD.
+
+## E2 ortak altyapı örneği CI
+
+`e2-tests.yml`: pinnedNode24.19/npm11.10.1; beşnpmci --ignore-scripts; aynı9HTTP negatif ve dört gerçek nativebuild; aynıPlaywright tarayıcı/klavye/axe/durum/CSP/CSRF/response-loss çalışması; lock-temelliSBOM/lisans/audit/artifact raporları. Yeni CI yalnız karşılaştırma çalışmasının yürüdüğünü gösterir; HELD vendor açığı/gerçek okuyucu/majorupgrade/maliyet veya ADR010 seçim kapısını otomatikPASS yapmaz. T3 otomasyonu bağımsız hükmün yerine geçmez; tasksonu bağımsız inceleme gerekir.

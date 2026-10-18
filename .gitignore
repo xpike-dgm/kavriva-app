@@ -9,3 +9,13 @@ supabase/.temp/
 !.env.example
 *.pem
 *.key
+
+# E2 isolated framework comparison build artifacts
+modules/e02-panel/internal/framework-gate/**/node_modules/
+modules/e02-panel/internal/framework-gate/**/dist/
+modules/e02-panel/internal/framework-gate/**/build/
+modules/e02-panel/internal/framework-gate/**/.nuxt/
+modules/e02-panel/internal/framework-gate/**/.output/
+modules/e02-panel/internal/framework-gate/**/.svelte-kit/
+modules/e02-panel/internal/framework-gate/**/.angular/
+modules/e02-panel/internal/framework-gate/artifacts/

@@ -4,7 +4,7 @@ contract_id_version: "C1.7/F1.7.1/FL1.7.2 replacement presentation v1"
 subject_file: modules/e01-app/internal/shell/lib/replacement_right.dart
 subject_digest: 9f3e132b8905c11ca06a6c44de8ef2778e45f4a4bcd9a9f1a3f441fab8bcc475
 result: "Bağımsız bütün SOURCE PASS; ayrı FINAL kabulü bekleniyor"
-evidence_links: [vault/EVIDENCE/E-DEV-123.md, vault/PROFILES/replacement-right-render.md, vault/PACKS/P-E1-025.md, vault/REGISTRY/T-E1-025.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-025.md.snapshot, modules/e01-app/internal/shell/lib/replacement_right.dart, modules/e01-app/internal/shell/test/replacement_right_test.dart, modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json]
+evidence_links: [vault/EVIDENCE/E-DEV-123.md, vault/PROFILES/replacement-right-render.md, vault/PACKS/P-E1-025.md, vault/REGISTRY/T-E1-025.md, vault/EVIDENCE/SNAPSHOTS/E-DEV-123-E10-GOVERNED-PATHS-FOR-T-E1-025.md.snapshot, modules/e01-app/internal/shell/lib/replacement_right.dart, modules/e01-app/internal/shell/test/replacement_right_test.dart, modules/e01-app/internal/shell/test/fixtures/replacement_right_reading_questions.json, vault/EVIDENCE/SNAPSHOTS/E-DEV-124-E10-GOVERNED-PATHS-FOR-T-E2-001.md.snapshot]
 gate_verdict: "PASS sınırlı seçim değerlendirmesi sunumu; üretim HELD"
 reviewer: "/root/e1025_source_whole_r1; requested gpt-6-luna/max"
 timestamp: 2026-10-17
@@ -21,7 +21,7 @@ tests: [modules/e01-app/internal/shell/test/replacement_right_test.dart, modules
 superseded_by: []
 last_verified: 2026-10-17
 depends_on: [V-E1-REPLACEMENT-001]
-used_by: [V-E1-REPLACEMENT-001, P-E1-025, T-E1-025]
+used_by: [V-E1-REPLACEMENT-001, P-E1-025, T-E1-025, V-E2-FRAMEWORK-001, P-E2-001, E-DEV-125]
 evidence: []
 supersedes: []
 status: RECORDED
@@ -3322,3 +3322,7 @@ RAW Base64: IyBULUUxLTAyNSBTT1VSQ0UgQmHEn8SxbXPEsXogQsO8dMO8bnNlbCDEsG5jZWxlbWVz
 
 38999910677 e1-shell-widget-tests push https://github.com/xpike-dgm/kavriva-app/actions/runs/38999910677 RAW 173139 SHA256 7d21b4e2da00c17ebe36e964a038e67f61312a1c97ff8af62126f143f5ff91e3
 - job 117300449511 e1-shell-tests success; API available; gerçek API adımı 8; RAW Run grubu 5
+
+## T-E2-001 yeni tüketim makbuzu
+
+PR126 gerçek normalmerge972622acb2a9e3ea2f6b696a2b368bfeb11fba70 ve FINAL39342c652cd4f4fc6ec2ca6a36b221283c14ff4c; ana8CIgerçekbaşarılı. Sahip sürekli kabulü ve özgün bağımsızFINALtamrapor kaydı https://github.com/xpike-dgm/kavriva-app/pull/126#issuecomment-6229388334 . Bu ek önceki sınırlı kabul kapsamını değiştirmez. E10v91 RAW snapshot vault/EVIDENCE/SNAPSHOTS/E-DEV-124-E10-GOVERNED-PATHS-FOR-T-E2-001.md.snapshot SHA256 7d8dbe0ab7c1d883be00863a0b5c6d7fb8c3c6c208b6cbb1bea1a10a145f0acc. Yeni T-E2-001 henüzIN_PROGRESS; ürün/üretim/diğer görevlerDONEdeğil.

@@ -1,0 +1,50 @@
+name: e2-framework-fixture-tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  e2-framework-fixture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: 'true'
+      NUXT_TELEMETRY_DISABLED: '1'
+    defaults:
+      run:
+        working-directory: modules/e02-panel/internal/framework-gate
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - name: Install exact Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.19.0'
+      - name: Install exact package manager
+        run: npm install --global npm@11.10.1 --ignore-scripts --no-audit --no-fund
+      - name: Clean install all five exact locks without install scripts
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          for candidate in react angular nuxt svelte; do
+            (cd "$candidate" && npm ci --ignore-scripts --no-audit --no-fund)
+          done
+          git diff --exit-code -- '*package-lock.json'
+      - name: Run isolated HTTP negative cases
+        run: npm test
+      - name: Typecheck and build four native static candidates
+        run: npm run build
+      - name: Install browser paired with exact Playwright lock
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Run same browser keyboard accessibility and security workload
+        run: npm run browser
+      - name: Collect lock SBOM license audit and static artifact evidence
+        if: always()
+        run: npm run evidence
+      - name: Preserve actual fixture evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: e2-four-family-fixture-${{ github.sha }}
+          path: modules/e02-panel/internal/framework-gate/artifacts/
+          retention-days: 14
