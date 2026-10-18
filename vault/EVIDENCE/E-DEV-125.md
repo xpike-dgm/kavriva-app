@@ -146,3 +146,32 @@ Yerel ürün install/clean npmci/typecheck/build başarılı; R1 ve kısaltılm�
 
 
 Yerel kabuk R2 için Root altı doğal görüntünün tamamını kapsadı: üç yeni özgünü original açtı; diğer üçü okunmuş R1 dosyalarıyla bütün baytları eşti. İlk metadata kontrolü gate_verdict alanındaki noktalı virgülü kapalı durum sözlüğü dışında saydı; yalnız alanın ilk durum sözcüğü ayrıldı, kural değiştirilmedi. İlk RET logu korunur.130 korunan taban pini değişmedi.
+
+
+## Ürün okuyucusu onarımı ve bütün kaynak CI makbuzu
+
+35525c0 / CI39086356023 ürün speech-dispatcher --spawn çıkış1 nedeniyle FAIL oldu; gerçek stderr önceki yardımcı tarafından saklanmadığı için kesin neden iddia edilmez. Kod öncesi1bdf837 sonrası2564b06 gerçek speechd SSIP bağlantısını yeniden kullanır veya hizmet yoksa başlatır; hata gizlenmez. Önceki gerçek PulseAudio test çıkışı kullanılır. Ürün kendi sunucu/veri/model/kimlik sınırını korur. Gerçek komut stdout/stderr/çıkış günlüğü ve SSIP modül yanıtı artık dosyaya yazılır. Konuşma etiketi/ses genliği koşulları gevşemedi.
+
+`2564b06bbf9f46803d8d1eb81b654125d65eb411` exact-head dokuz push iş akışı başarılı. [E2 CI39126947518](https://github.com/xpike-dgm/kavriva-app/actions/runs/39126947518) kendi ürün8 browser, gerçek200% zoom ve gerçek Orca/ses kaydını geçti. SSIP gerçek modülleri espeak-ng/openjtalk; ürün konuşmasında üç panelin başlık ve linkleri ile erişimin doğrulanmadığı duyurusu okundu. Ürün WAV547596bayt /17.111saniye / genlik32768; speechSHA256 b375ba5b1a5c1c1721bb694fdbb2678a8e6c9a6afadbdeed6574cf73137bb846; audioSHA256 7f73c5821f3447963aeffded91ea12533c6cebd1cfd2611587da6c5a5d763b4a. Gerçek dosya baytları ve WAV örnekleri ayrıca doğrulandı. İnsan telaffuz/onayı değildir. Ürün npm ağacı, kilit CycloneDX ve audit başarılı; audit0.
+
+Aynı CI ortak ilk76 browser/dört zoom/dört Orca; önceki ve güncel major fazlarında76şar browser/dörder zoom/dörder Orca verdi.22 alt komut logunun bütün bayt/süre/özetleri,46 Git kaynak özeti,16 native eşlik ve dört eskiartifact geri dönüşü doğrulandı. Ürün dahil13 gerçek konuşma/WAV dosyasının özetleri doğrulandı. Root ses kayıtlarının gerçek konuşma içeriklerini üç sınırlı çıktı halinde okudu; ilk metadata ağırlıklı çıktının kesilmiş olması gizlenmez ve tam ham debug okuması iddia edilmez. Eski ve güncel ortak fixture üretim E3/E5 yetkisi değildir.
+
+**Açık gözlem:** Anguların ilk ve önceki-major konuşmalarında bir tabloya yeniden girişte “Toplam240 ... Toplam0” birleşik başlığı duyuluyor; kaynakta tek dinamik caption var. Güncel-major tekrarında aynı birleşme yok. CI gerekli etiketleri bulduğu için PASS verdi; bu ek konuşmanın nedenini veya kullanıcı etkisini çözmüş sayılmaz. Bütün görev bağımsız incelemesinde ve gerekirse dar gerçek tarayıcı/okuyucu teşhisinde değerlendirilmelidir; Angular erişilebilirliği kusursuz ilan edilmez.
+
+Diğer gerçek ham loglar: E1 482; E3 107; E5 59; E4 176; E6 50; E9 9 test; mimari42 test /worst exit0. LiveAuth gerçek kayıt/korumalı bakım yazımı/çıkış ve doğrudan yol olumsuzlarını tekrar geçti. Bu önceki ürün testlerinin gerileme kontrolüdür; E2ye canlı bağ kurulduğu anlamına gelmez. Push T3 adımının atlanması bağımsız inceleme yerine sayılmaz.
+
+Plan önerisi [PR5](https://github.com/xpike-dgm/motobakim-plan/pull/5): ADR016 PROPOSED, ADR010 değiştirilmedi. Plan checks CI39127235399 başarılı. Görev IN_PROGRESS, reviewer none; bütün görev incelemesi ve kayıtlı karar olmadan DONE veya seçilmiş çatı yok.
+
+### Kaynak CI ham log makbuzları
+
+| İş akışı / run | Gerçek log baytı | SHA256 |
+|---|---:|---|
+| e6-release-policy-tests /39126947537 | 26695 | e16cfbb6dc83f3bd0c37ff4053363e32dc253a1e532a5e5d9ac52c1f9df8d19a |
+| e4-offline-composition-tests /39126947545 | 56420 | 0cf0a151a1931a5c9a96626520aa43dff6c47eba78916fb30f0fd4a257042748 |
+| e9-bounded-proposal-tests /39126947476 | 17037 | 5eb30a08f8b68fcc958cbfaecd10b41aba028f0d3868d600f4c888415245fa84 |
+| architecture-checks /39126947717 | 31119 | 8790d3045f7915e23c3251b979e8179063ac612e49a1290ea6ea9c7b32fd8fb7 |
+| e3-commit-authorization-tests /39126947477 | 65292 | 3af12c8211f5079eee9248be3a917b0a5cad0bf40093d9b25bf67924d2a5074d |
+| e3-live-auth-tests /39126947475 | 24279 | 01c36e21f664c139d581f0255ee5e61836f2241ab68cedbb8b0e92868374accd |
+| e5-current-authority-tests /39126947444 | 34253 | 77b41b6e10ac5b74e7055c9cbfe87bf6d6acdf819c7319b12cc11a3d5f7fcd12 |
+| e1-shell-widget-tests /39126947441 | 175723 | 74605b12f12653db000e27a498def1ecd6cc3f6d288c350a6d1686b115e3e06f |
+| e2-framework-fixture-tests /39126947518 | 262301 | 3c4a4571a4189907ae3f5ad8eb8434b219ed58ae5add0f9467e77bb2d6819135 |
